@@ -23,7 +23,9 @@
         {%- render 'prd-card-media', product: product, pesto_image_ratio: pesto_image_ratio -%}
       {% else %}
         <figure class="image pesto-image-{{ pesto_image_ratio }}" role="none">
-          {{ grid_it.image | image_url: width: 500 | image_tag: alt:grid_it.image.alt }}
+          <a href="{% if btnUrl != blank %}{{ btnUrl }}{% else %}{{ grid_it.p_link.url | default: '#' }}{% endif %}">
+            {{ grid_it.image | image_url: width: 500 | image_tag: alt:grid_it.image.alt }}
+          </a>
         </figure>
       {%- endif -%}
       {% if product %}

@@ -156,7 +156,9 @@
                           <ul class="ai-sp-sub-nested-menu">
                             {% for sublink in link.links %}
                               <li>
-                                <a href="{{ sublink.url }}" role="button" class="ai-sp-menu-btn"> {{ sublink.title }} </a>
+                                <a href="{{ sublink.url }}" role="button" class="ai-sp-menu-btn">
+                                  {{ sublink.title }}
+                                </a>
                               </li>
                             {% endfor %}
                           </ul>
@@ -181,7 +183,7 @@
                           {% if nmenu.links != blank %}
                             <li>
                               <button
-                                class="header__sub-nested-menu-link is-active-ai"
+                                class="header__sub-nested-menu-link {{ nmenu.title | handleize }} is-active-ai"
                                 data-index="{{ forloop.index0 }}"
                               >
                                 {{ nmenu.title }}
@@ -220,7 +222,7 @@
                               {% assign dmenuhandle = lsmenu.url | replace: '/products/', '' %}
                               <a
                                 href="{{ lsmenu.url }}"
-                                class="header__sub-nested-block header__sub-nested-product-block"
+                                class="header__sub-nested-block header__sub-nested-product-block {% if lsmenu.title contains 'View All' %}header__sub-nested-block-view-all{% endif %}"
                               >
                                 <div class="header__sub-nested-product-block-title">{{ lsmenu.title }}</div>
 
@@ -362,7 +364,7 @@
                               {% for sublink in link.links %}
                                 <div class="header-drawer__expand-wrapper">
                                   {% if sublink.links != blank %}
-                                    <button class="header-drawer__link">
+                                    <button class="header-drawer__link {{ sublink.title | handleize }}">
                                       {{ sublink.title }}
                                       <svg
                                         aria-hidden="true"
@@ -413,7 +415,7 @@
                                             {% for link in sublink.links %}
                                               <a
                                                 href="{{ link.url }}"
-                                                class="header__sub-nested-block header__sub-nested-product-block"
+                                                class="header__sub-nested-block header__sub-nested-product-block {% if link.title contains 'View All' %}header__sub-nested-block-view-all{% endif %}"
                                               >
                                                 <div class="header__sub-nested-product-block-title">
                                                   {{ link.title }}

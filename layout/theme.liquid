@@ -1,6 +1,18 @@
 <!doctype html>
 <html class="no-js" lang="{{ request.locale.iso_code }}">
   <head>
+
+<script nowprocket nitro-exclude type="text/javascript" id="sa-dynamic-optimization" data-uuid="e495db05-49fc-4a3e-b058-911b5432d959" src="data:text/javascript;base64,dmFyIHNjcmlwdCA9IGRvY3VtZW50LmNyZWF0ZUVsZW1lbnQoInNjcmlwdCIpO3NjcmlwdC5zZXRBdHRyaWJ1dGUoIm5vd3Byb2NrZXQiLCAiIik7c2NyaXB0LnNldEF0dHJpYnV0ZSgibml0cm8tZXhjbHVkZSIsICIiKTtzY3JpcHQuc3JjID0gImh0dHBzOi8vZGFzaGJvYXJkLnNlYXJjaGF0bGFzLmNvbS9zY3JpcHRzL2R5bmFtaWNfb3B0aW1pemF0aW9uLmpzIjtzY3JpcHQuZGF0YXNldC51dWlkID0gImU0OTVkYjA1LTQ5ZmMtNGEzZS1iMDU4LTkxMWI1NDMyZDk1OSI7c2NyaXB0LmlkID0gInNhLWR5bmFtaWMtb3B0aW1pemF0aW9uLWxvYWRlciI7ZG9jdW1lbnQuaGVhZC5hcHBlbmRDaGlsZChzY3JpcHQpOw=="></script>
+
+    
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-NWJNWXV');</script>
+<!-- End Google Tag Manager -->
+
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -113,26 +125,74 @@
     {{ 'sportea-styles.css' | asset_url | stylesheet_tag }}
 
     <style>
-              .header__menu-btn:hover{color:rgb(220,35,42)}
-               @media (min-width: 768px) {
-                    .header-drawer {
-                        display: block;
-                    }
+                    .header__menu-btn:hover{color:rgb(220,35,42)}
+                     @media (min-width: 768px) {
+                          .header-drawer {
+                              display: block;
+                          }
+                      }
+                .banner-carousel .content-box {
+                          background: rgba(0, 0, 0, 0.4);
+                          padding: 1rem;
+                          padding-top: 2rem;
+                          padding-bottom: 2rem;
+                      }
+                .banner-carousel .content-box {
+                    width: 80%;
                 }
-          .banner-carousel .content-box {
-                    background: rgba(0, 0, 0, 0.4);
-                    padding: 1rem;
-                    padding-top: 2rem;
-                    padding-bottom: 2rem;
+            @media (max-width: 1025px) {
+                .header__toggle-mobile-menu {
+                    display: block;
                 }
-          .banner-carousel .content-box {
-              width: 80%;
-          }
-      @media (max-width: 1025px) {
-          .header__toggle-mobile-menu {
-              display: block;
-          }
+            }
+            {% if page.handle == 'special-offer' %}
+              .content-box.pesto-text-left:before {
+                content: url('{{ 'logo-sportea1_817ba1e2-fbf0-4c4c-87fb-3e25d193df11.png' | file_url }}');
+              }
+           .banner-carousel .content-box h1.lg {
+          font-size: 50px;
+          line-height: normal;
+          margin-bottom: 10px;
       }
+              .banner-section.no-slider-area .banner-carousel .content-box p {
+          width: 70%;
+          font-size: 20px;
+        }
+          {% endif %}
+            {% if template.name == 'index' %}
+                .content-box.pesto-text-left {
+                    font-size: 16px!important;
+                    vertical-align: 6px;
+              }
+
+              .sportea-testimonials-section .sportea-trademark-sup {
+                vertical-align: 26px;
+                  font-size: 16px!important;
+              }
+
+              .sportea-testimonials-section .sportea-trademark-sup{
+                  margin-top:-5px;
+              }
+
+              .banner-carousel .btn-two-ai .sportea-trademark-sup {
+                margin-top:-12px;
+              }
+              .banner-carousel .btn-two-ai {
+                    gap: 0;
+              }
+              .banner-carousel .btn-two:not(.btn-two-ai) {
+                gap:10px;
+              }
+              .banner-carousel .btn-two svg{
+                position:static;
+              }
+
+              @media(max-width:767px){
+                .sportea-testimonials-section .sportea-trademark-sup {
+                      vertical-align: 14px;
+                  }
+              }
+            {% endif %}
     </style>
 
     {% if template.suffix == 'landing-page' %}
@@ -160,6 +220,7 @@
         document.documentElement.classList.add('shopify-design-mode');
       }
     </script>
+    
   </head>
 
   <style>
@@ -170,7 +231,14 @@
         border-radius: 35px;
     }
   </style>
+
   <body class="gradient {{ template.suffix }} {% if template.name == "product" %} body-for-product-template {% endif %} {% if template.name == "index" %} body-for-index-template {% endif %}">
+
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NWJNWXV"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+    
     <a class="skip-to-content-link button visually-hidden" href="#MainContent">
       {{ 'accessibility.skip_to_text' | t }}
     </a>
@@ -197,7 +265,14 @@
       {% assign backToTop = settings.pesto_back_to_top %}
       {% if backToTop %}
         <a href="#" class="back-to-top color-{{ settings.color_scheme_back_to_top }}">
-          <svg role="presentation" xmlns="http://www.w3.org/2000/svg" width="18" height="20" viewBox="0 0 18 20" fill="none">
+          <svg
+            role="presentation"
+            xmlns="http://www.w3.org/2000/svg"
+            width="18"
+            height="20"
+            viewBox="0 0 18 20"
+            fill="none"
+          >
             <path d="M1.5 8.5L9 1M9 1L16.5 8.5M9 1V19" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
         </a>
@@ -221,49 +296,79 @@ window.addEventListener('DOMContentLoaded', () => {
     document.body.classList.add('dom-contentloaded');
 
     function checkTrademarkUsageInPage() {
+        const correctTerms = {
+            "SPORTea<span class='sportea-trademark-sup'>®</span>": /\bSPORTea\b(®)?/gi,
+            "<div class='sportea-ultimate'>The Ultimate Daily Beverage<span class='sportea-trademark-sup'>®</span></div>": /\bThe Ultimate Daily Beverage\b(®)?/gi
+        };
 
-            const correctTerms = {
-                "SPORTea<span class='sportea-trademark-sup'>®</span>": /\bSPORTea\b(®)?/gi,
-                "<div class='sportea-ultimate'>The Ultimate Daily Beverage<span class='sportea-trademark-sup'>®</span></div>": /\bThe Ultimate Daily Beverage\b(®)?/gi
-            };
+        let corrections = [];
 
-            let corrections = [];
+        function replaceTextNodes(node) {
+            if (node.nodeName === 'STYLE' || node.nodeName === 'SCRIPT') return;
 
-            function replaceTextNodes(node) {
-                // Skip <style> tags and their content
-                if (node.nodeName === 'STYLE') return;
+            if (node.nodeType === Node.TEXT_NODE) {
+                let originalText = node.textContent;
 
-                if (node.nodeType === Node.TEXT_NODE) {
-                    let originalText = node.textContent;
-                    for (const [correctTerm, pattern] of Object.entries(correctTerms)) {
-                        if (pattern.test(originalText)) {
-                            originalText = originalText.replace(pattern, correctTerm);
-                            corrections.push(`Replaced incorrect usage in text node with: "${correctTerm}"`);
+                // Split text into parts, separating potential email addresses
+                const parts = originalText.split(/(\S+@\S+\.\S+)/);
+
+                // Process only non-email parts
+                const processedParts = parts.map(part => {
+                    if (/^\S+@\S+\.\S+$/.test(part)) {
+                        return part; // Return email addresses unchanged
+                    } else {
+                        // Replace trademark terms in non-email parts
+                        for (const [correctTerm, pattern] of Object.entries(correctTerms)) {
+                            if (pattern.test(part)) {
+                                part = part.replace(pattern, correctTerm);
+                                corrections.push(`Replaced incorrect usage in text node with: "${correctTerm}"`);
+                            }
                         }
+                        return part;
                     }
-                    if (originalText !== node.textContent) {
-                        const span = document.createElement('div');
-                        span.innerHTML = originalText;
-                        node.replaceWith(span);
-                    }
-                } else {
-                    node.childNodes.forEach(childNode => replaceTextNodes(childNode));
+                });
+
+                // Join processed parts back into a single string
+                const newText = processedParts.join('');
+
+                if (newText !== node.textContent) {
+                    const span = document.createElement('span');
+                    span.innerHTML = newText;
+                    node.replaceWith(...span.childNodes);
                 }
-            }
-
-            replaceTextNodes(document.body);
-
-            if (corrections.length > 0) {
-                console.log("Trademark Usage Corrections Applied:");
-                corrections.forEach(correction => console.log(correction));
             } else {
-                console.log("No trademark usage errors found on the page.");
+                node.childNodes.forEach(childNode => replaceTextNodes(childNode));
             }
+        }
 
+        replaceTextNodes(document.body);
+
+        if (corrections.length > 0) {
+            console.log("Trademark Usage Corrections Applied:");
+            corrections.forEach(correction => console.log(correction));
+        } else {
+            console.log("No trademark usage errors found on the page.");
+        }
     }
 
     checkTrademarkUsageInPage();
+    let trademarks = document.querySelectorAll('.sportea-trademark-sup');
+
+    for (let i = 0; i < trademarks.length - 1; i++) {
+        let current = trademarks[i];
+        let next = trademarks[i + 1];
+    
+        if (current.nextElementSibling === next && next.classList.contains('sportea-trademark-sup')) {
+            setTimeout(() => {
+                next.remove();
+            }, 100);
+            i++;  // Skip the next span to avoid re-checking
+        }
+    }
+
+
 });
+
 
 
 
@@ -347,6 +452,67 @@ window.addEventListener('DOMContentLoaded', () => {
         }
     }
     customElements.define('localization-form', LocalizationForm);
+    </script>
+    <script>
+                // Function to enhance accessibility
+function addAccessibilityAttributes() {
+    // Add `aria-label` to all links opening in a new tab
+    document.querySelectorAll('a[target="_blank"]').forEach((link) => {
+        if (!link.hasAttribute('aria-label')) {
+            const linkText = link.textContent.trim();
+            link.setAttribute('aria-label', `${linkText} (opens in a new tab)`);
+            link.setAttribute('rel', 'noopener noreferrer');
+        }
+    });
+
+    // Add `role` attributes to common semantic elements
+    document.querySelectorAll('nav').forEach((nav) => {
+        nav.setAttribute('role', 'navigation');
+    });
+    document.querySelectorAll('header').forEach((header) => {
+        header.setAttribute('role', 'banner');
+    });
+    document.querySelectorAll('footer').forEach((footer) => {
+        footer.setAttribute('role', 'contentinfo');
+    });
+    document.querySelectorAll('main').forEach((main) => {
+        main.setAttribute('role', 'main');
+    });
+    document.querySelectorAll('aside').forEach((aside) => {
+        aside.setAttribute('role', 'complementary');
+    });
+
+    // Add `aria-required` to required input fields
+    document.querySelectorAll('input[required]').forEach((input) => {
+        input.setAttribute('aria-required', 'true');
+    });
+
+    // Add `aria-live` to alert elements
+    document.querySelectorAll('.alert').forEach((alert) => {
+        alert.setAttribute('role', 'alert');
+        alert.setAttribute('aria-live', 'assertive');
+    });
+
+    // Add `aria-describedby` for inputs with helper text
+    document.querySelectorAll('input').forEach((input) => {
+        const helperText = input.nextElementSibling;
+        if (helperText && helperText.tagName.toLowerCase() === 'span' && helperText.classList.contains('helper-text')) {
+            const helperId = helperText.id || `helper-${Math.random().toString(36).substr(2, 9)}`;
+            helperText.id = helperId;
+            input.setAttribute('aria-describedby', helperId);
+        }
+    });
+
+    // Add `tabindex` to focusable elements if missing
+    document.querySelectorAll('button, a, input, textarea, select').forEach((element) => {
+        if (!element.hasAttribute('tabindex')) {
+            element.setAttribute('tabindex', '0');
+        }
+    });
+}
+
+// Run the function when the DOM is fully loaded
+document.addEventListener('DOMContentLoaded', addAccessibilityAttributes);
     </script>
     {%- if settings.predictive_search_enabled -%}
       <script src="{{ 'predictive-search.js' | asset_url }}" defer="defer"></script>

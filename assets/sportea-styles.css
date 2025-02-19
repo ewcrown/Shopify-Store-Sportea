@@ -1,65 +1,98 @@
+.header-style-two .header-lower.border-true {
+  z-index:9;
+  position:relative;
+}
+.header__sub .container {
+  padding: 0 30px !important;
+}
+
+.header__sub-nested-block-view-all {
+  background: #ff0000;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  justify-content: center;
+  text-align: center;
+}
+.header__sub-nested-block-view-all .header__sub-nested-product-block-title {
+  color: #fff;
+}
+.header__sub-nested-block-view-all .header__sub-nested-product-block-image {
+  display: none;
+}
 .ai-sp-menu-btn .sportea-trademark-sup {
-    display: none !important;
+  /* display: none !important; */
+  font-size:12px !important;
 }
 /* .page-title-three .inner-box span {
     font-size: 100px !important;
 } */
 
-.banner-carousel .content-box h1.lg .sportea-trademark-sup,.page-title-three-header span.sportea-trademark-sup {
-    font-size: 26px !important;
-    vertical-align: 30px;
+.banner-carousel .content-box h1.lg .sportea-trademark-sup,
+.page-title-three-header span.sportea-trademark-sup {
+  font-size: 26px !important;
+  vertical-align: 30px;
 }
- p span.sportea-trademark-sup {
-    font-size: 12px !important;
-    vertical-align: 5px ;
+p span.sportea-trademark-sup {
+  font-size: 12px !important;
+  vertical-align: 5px;
 }
 
 .header__sub-nested-menu .sportea-trademark-sup,
 .ai-sp-menu-item .sportea-trademark-sup {
-    font-size: 14px;
-    vertical-align: 6px;
+  font-size: 14px !important;
+  vertical-align: 6px;
 }
 .sportea-review-block-qoute p .sportea-trademark-sup {
-    font-size: 14px;
-    vertical-align: 10px;
+  font-size: 14px;
+  vertical-align: 10px;
 }
-.product-card-text-large .shop-block-one .inner-box .content-box h4 .sportea-trademark-sup {
-    font-size: 14px;
-    vertical-align: 10px;
+.product-card-text-large
+  .shop-block-one
+  .inner-box
+  .content-box
+  h4
+  .sportea-trademark-sup {
+  font-size: 14px;
+  vertical-align: 10px;
 }
 .sportea-testimonials-wrap h2 span .sportea-trademark-sup {
-    font-size: 22px;
-    vertical-align: 30px;
+  font-size: 22px;
+  vertical-align: 30px;
 }
 .sportea-faq-wrap .sportea-trademark-sup {
-    font-size: 12px;
-    vertical-align: 7px;
+  font-size: 12px;
+  vertical-align: 7px;
 }
 .sportea-trademark-sup {
-    display: inline-block !important;
-    font-size: 20px !important;
-    vertical-align: 10px;
+  display: inline-block !important;
+  font-size: 20px !important;
+  vertical-align: 10px;
 }
 .he-tvc-video video {
-    max-width: 100%;
-    height: auto;
+  max-width: 100%;
+  height: auto;
 }
 .skip-to-content-link {
-  display:none !important;
+  display: none !important;
 }
-.banner-section .banner-carousel .theme-btn{
-  color:#fff !important;
+.banner-section .banner-carousel .theme-btn {
+  color: #fff !important;
 }
 
-.ai-sp-menu-item:last-of-type a:hover{
-  background:#2B4E92;
+.ai-sp-menu-item:last-of-type a:hover {
+  background: #2b4e92;
 }
 .ai-sp-menu-item:last-of-type a {
-    background: #dc222a;
-    border-radius: 5px;
-    color: #fff !important;
+  background: #dc222a;
+  border-radius: 5px;
+  color: #fff !important;
 }
 @media (max-width: 1300px) {
+  .header__sub-nested-blocks {
+    grid-template-columns: repeat(2, 1fr);
+  }
   .ai-sp-menu-item {
     margin-right: 12px !important;
   }
@@ -68,9 +101,7 @@
     font-size: 12px !important;
   }
   .header .container {
-    padding-left: 0 !important;
-    padding-right: 0 !important;
-    max-width: 100% !imo;
+    max-width: 100% !important;
   }
 
   .sp-search-container svg {
@@ -115,7 +146,8 @@
   margin-bottom: 30px;
 }
 @media (max-width: 767px) {
-  .banner-carousel .btn-group, .btn-group-vertical {
+  .banner-carousel .btn-group,
+  .btn-group-vertical {
     flex-direction: column;
     gap: 16px !important;
     margin-top: 20px;
@@ -139,4 +171,97 @@
   .sportea-why-us-wrap ul li img {
     width: 50px;
   }
+}
+@media (max-width: 1199px) {
+  .header-style-two .header-layout-regular .logo-box.logo_img {
+    margin: unset;
+  }
+  .header__sub-nested-product-block-title {
+    font-size: 14px !important;
+  }
+  .header__sub-nested-blocks {
+    gap: 10px !important;
+  }
+  .header__sub-nested-menu-link {
+    font-size: 14px !important;
+    padding: 6px 0px !important;
+  }
+  .header__sub-nested-menu-link svg {
+    width: 20px !important;
+    height: 20px !important;
+    position: relative !important;
+    top: 5px !important;
+  }
+}
+
+@media (max-width: 1024px) {
+  body:not(.has-open-menu) .new-ai-head {
+    display:none !important;
+  }
+}
+.header__sub-nested-menu-link.hot-sportea .sportea-trademark-sup {
+    position: relative;
+    left: -65px;
+    top: -10px;
+}
+
+.header__sub-nested-menu-link.iced-sportea-cold-brewed .sportea-trademark-sup
+{
+      position: relative;
+    left: -5px;
+    top: -10px;
+}
+/* Default styling */
+button.header-drawer__link.iced-sportea-cold-brewed span.sportea-trademark-sup {
+    position: relative;
+    left: -15.5%;
+    top: -5px;
+}
+
+.hot-sportea span.sportea-trademark-sup {
+    position: relative;
+    left: -36%;
+    top: -10px;
+}
+
+/* Media Queries for responsiveness */
+
+/* For screens 768px and smaller (tablets and below) */
+@media (max-width: 768px) {
+    button.header-drawer__link.iced-sportea-cold-brewed span.sportea-trademark-sup {
+        left: -10%;
+        top: -3px;
+    }
+
+    .hot-sportea span.sportea-trademark-sup {
+        left: -25%;
+        top: -7px;
+    }
+}
+
+/* For screens 480px and smaller (mobile devices) */
+@media (max-width: 480px) {
+    button.header-drawer__link.iced-sportea-cold-brewed span.sportea-trademark-sup {
+        left: -12%%;
+        top: -2px;
+    }
+
+    .hot-sportea span.sportea-trademark-sup {
+        left: -21%;
+        top: -5px;
+    }
+}
+a.gf-button span {
+    left: -20px;
+    position: relative;
+    top: -7.5px;
+}
+.sportea-testimonials-section .sportea-trademark-sup {
+    position: relative;
+    top: 15px;
+}
+@media only screen and (max-width: 770px) {
+  a.gf-button span {
+    left: -10px;
+}
 }

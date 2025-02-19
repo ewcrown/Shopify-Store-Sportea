@@ -1500,6 +1500,6 @@ form#contact_form button {
 }
 @media (min-width: 768px) {
     .header__sub-nested-blocks {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(3, 1fr);
     }
 }

@@ -1,0 +1,214 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "166165787689f301bd": {
+      "type": "collections-header",
+      "custom_css": [
+        "h1 {font-size: 30px; text-align: left;}"
+      ],
+      "settings": {
+        "color_scheme": "scheme-23d60601-f3f5-4d14-8bd4-c16c0e99b7c4",
+        "title_font_size": "medium",
+        "enable_breadcrumb_navigation": false,
+        "collections_dec": true,
+        "collections_img": false,
+        "pesto_section_padding_top": 50,
+        "pesto_section_padding_bottom": 0
+      }
+    },
+    "1650523003996e3ac9": {
+      "type": "pesto-categories",
+      "blocks": {
+        "cff93ca7-b324-41d0-82d6-91fb357c464a": {
+          "type": "featured_collection",
+          "settings": {
+            "collection_select": ""
+          }
+        },
+        "8cf8aa13-e55c-43bb-92d5-2a28eaf8f03a": {
+          "type": "featured_collection",
+          "settings": {
+            "collection_select": ""
+          }
+        },
+        "faf133e0-27d7-4791-8232-5cfc10467d68": {
+          "type": "featured_collection",
+          "settings": {
+            "collection_select": ""
+          }
+        },
+        "5fbc37b5-9a6b-44cf-8d38-7e9f8866448b": {
+          "type": "featured_collection",
+          "settings": {
+            "collection_select": ""
+          }
+        },
+        "acee173b-710f-4a21-9589-6b198aa67f4d": {
+          "type": "featured_collection",
+          "settings": {
+            "collection_select": ""
+          }
+        },
+        "3cdb6c9c-ad0b-45dc-800b-ee50cf4468b3": {
+          "type": "featured_collection",
+          "settings": {
+            "collection_select": ""
+          }
+        }
+      },
+      "block_order": [
+        "cff93ca7-b324-41d0-82d6-91fb357c464a",
+        "8cf8aa13-e55c-43bb-92d5-2a28eaf8f03a",
+        "faf133e0-27d7-4791-8232-5cfc10467d68",
+        "5fbc37b5-9a6b-44cf-8d38-7e9f8866448b",
+        "acee173b-710f-4a21-9589-6b198aa67f4d",
+        "3cdb6c9c-ad0b-45dc-800b-ee50cf4468b3"
+      ],
+      "disabled": true,
+      "settings": {
+        "color_scheme": "",
+        "product_card_layout_type": "grid",
+        "collection_card_type": "normal",
+        "collection_item_count": false,
+        "collection_card_image_size": "large",
+        "col_settings": "6",
+        "title": "",
+        "banner_button_label": "Button",
+        "banner_button_url": "",
+        "pesto_section_padding_top": 50,
+        "pesto_section_padding_bottom": 30
+      }
+    },
+    "product-grid": {
+      "type": "main-collection-product-grid",
+      "custom_css": [
+        ".collection {padding-top: 4rem;}"
+      ],
+      "settings": {
+        "color_scheme": "scheme-23d60601-f3f5-4d14-8bd4-c16c0e99b7c4",
+        "enable_full_width": false,
+        "col_settings": 4,
+        "products_per_page": 16,
+        "product_filters_type": "card",
+        "product_card_type": "box",
+        "product_card_text_size": "large",
+        "title_font_family": "body-font",
+        "product_collection_img": "top",
+        "pesto_image_ratio": "auto",
+        "product_card_image_padding": 36,
+        "product_card_content_top_padding": 1,
+        "product_card_content_bottom_padding": 12,
+        "card_border_raidus": 5,
+        "enable_vendor": false,
+        "enable_collection_desc": false,
+        "card_border_visibility": false,
+        "enable_filtering": true,
+        "enable_sorting": true,
+        "padding_top": 52,
+        "padding_bottom": 100
+      }
+    },
+    "custom_liquid_itp4VP": {
+      "type": "custom-liquid",
+      "settings": {
+        "color_scheme": "scheme-23d60601-f3f5-4d14-8bd4-c16c0e99b7c4",
+        "custom_liquid": "<div class=\"large-container \">{{collection.metafields.custom.meta_copy.value.content}}</div>",
+        "padding_top": 30,
+        "padding_bottom": 30
+      }
+    },
+    "ew_content_section_JRMMmC": {
+      "type": "ew-content-section",
+      "blocks": {
+        "why_choose_eG9giy": {
+          "type": "why_choose",
+          "settings": {
+            "title": "The Health Benefits of Hot Tea with Every Sip of SPORTea®",
+            "content": "<h3><strong>1. Boosts Immunity and Fights Illness</strong></h3><p>Drinking hot tea is a time-honored remedy for immune support, and with SPORTea®, you get an added boost from powerful natural ingredients:</p><ul><li><strong>🍊Vitamin C:</strong> A key immunity booster that helps your body fight off colds and flu.</li><li>🌿<strong>Ginger:</strong> Known for its anti-inflammatory properties, ginger is excellent for relieving sore throats and clearing sinuses.</li><li><strong>💪Siberian Ginseng:</strong> An adaptogen that helps your body resist stress and boosts immune function.</li></ul><p></p><h3><strong><br/>2. Provides Sustained Energy Without Jitters</strong></h3><p>Unlike sugary energy drinks or coffee, <strong>hot SPORTea®</strong>provides a steady, balanced boost of energy without a crash:</p><ul><li><strong>🍃Green Tea & Black Tea:</strong> Provide natural, mild caffeine for focus and clarity.</li><li>🌿<strong>Brazilian Maté:</strong> A natural energy booster loaded with nutrients and antioxidants.</li><li><strong>💪Siberian Ginseng:</strong> Enhances stamina and reduces fatigue.</li></ul><p></p><h3><strong><br/>3. Supports Digestive Health and Reduces Inflammation</strong></h3><p>The warmth of <strong>hot tea </strong>is known for aiding digestion, and SPORTea® takes it a step further:</p><ul><li>🌿<strong>Ginger:</strong> Soothes the stomach, reduces nausea, and aids digestion.</li><li><strong>☕Green Tea:</strong> Supports a healthy metabolism and promotes gut health.</li></ul><p></p><h3><strong><br/>4. Promotes Relaxation and Reduces Stress</strong></h3><p>Enjoying a cup of <strong>hot tea </strong>isn’t just about flavor—it’s about self-care and relaxation:</p><ul><li><strong>🍃L-theanine in Green Tea:</strong> Promotes relaxation without drowsiness.</li><li>🌿<strong>Ginger & Ginseng:</strong> Help reduce cortisol levels and calm the mind.</li></ul>"
+          }
+        },
+        "why_choose_ihqeXa": {
+          "type": "why_choose",
+          "settings": {
+            "title": "Types of Tea in Hot SPORTea® and Their Unique Benefits",
+            "content": "<h3><strong>1. Green Tea: Antioxidant Powerhouse</strong></h3><p>Green tea is known for its numerous health benefits:</p><ul><li><strong>✅</strong>Rich in catechins that fight cell damage.</li><li><strong>✅</strong>Boosts metabolism and aids weight management.</li><li><strong>✅</strong>Supports brain function and mental clarity.</li></ul><h3><br/></h3><h3><strong>2. Black Tea: Heart-Healthy and Energizing</strong></h3><p>Black tea adds a robust flavor to SPORTea® and is packed with benefits:</p><ul><li><strong>✅</strong>Supports heart health by lowering bad cholesterol.</li><li><strong>✅</strong>Enhances focus and alertness.</li><li><strong>✅</strong>Contains antioxidants that help reduce inflammation.</li></ul><h3><br/></h3><h3><strong>3. Brazilian Maté: The Energizing Superleaf </strong></h3><p>A unique addition to SPORTea®, Brazilian maté offers:</p><ul><li><strong>✅</strong>Natural energy without the jitters.</li><li><strong>✅</strong>Rich in vitamins and minerals.</li><li><strong>✅</strong>Supports metabolism and helps suppress appetite.</li></ul><h3><br/></h3><h3><strong>4. Siberian Ginseng: The Endurance Booster</strong></h3><p>An essential adaptogen for wellness and stamina:</p><ul><li><strong>✅</strong>Enhances physical performance.</li><li><strong>✅</strong>Supports immunity and reduces stress.</li><li><strong>✅</strong>Provides a natural, sustained energy boost.</li></ul><p><br/></p><h3><strong>5. Ginger: Nature’s Healing Root </strong></h3><p>Ginger is a key player in SPORTea®’s hot blend:</p><ul><li><strong>✅</strong>Reduces inflammation and relieves muscle soreness.</li><li><strong>✅</strong>Supports digestion and gut health.</li><li><strong>✅</strong>Warms the body and promotes circulation.</li></ul><h3><br/></h3><h3><strong>6. Vitamin C: Immune Support Superstar<br/></strong></h3><p>Essential for health and wellness:</p><ul><li><strong>✅</strong>Strengthens the immune system.</li><li><strong>✅</strong>Promotes skin health and wound healing.</li><li><strong>✅</strong>Fights free radicals with antioxidant power.</li></ul>"
+          }
+        },
+        "why_choose_7QB8MP": {
+          "type": "why_choose",
+          "settings": {
+            "title": "How to Enjoy Hot SPORTea® – Brewing Tips for Maximum Flavor and Benefits",
+            "content": "<h3><strong>Simple Hot Brew Method</strong></h3><ul><li><strong>1️⃣Boil fresh water </strong>to 190-200°F (just below boiling).</li><li><strong>2️⃣Steep one tea bag </strong>in your cup for <strong>5-7 minutes </strong>for a full-bodied flavor.</li><li><strong>3️⃣Optional: </strong>Add a slice of lemon or a drop of honey for an extra twist.</li></ul><h3><br/><strong>Try These Hot Tea Variations</strong></h3><ul><li><strong>☕Golden Ginger Latte: </strong>Add frothed almond milk and a sprinkle of cinnamon.</li><li><strong>🥭Citrus Immunity Tea: </strong>Add lemon slices and a teaspoon of honey for extra vitamin C.</li><li><strong>🌿Minty Fresh Brew: </strong>Add fresh mint leaves for a refreshing aroma and taste.</li></ul>"
+          }
+        },
+        "why_choose_dyMAFc": {
+          "type": "why_choose",
+          "settings": {
+            "title": "Why Hot Tea Is a Wellness Essential – Key Health Benefits of Hot Tea",
+            "content": "<p><strong>1.✅Hot Tea for Immunity: </strong>Supports your body’s natural defenses.<br/><strong>2.✅ Hot Tea for Digestion: </strong>Soothes the stomach and aids metabolism.<br/><strong>3.✅ Hot Tea for Hydration: </strong>Keeps you hydrated and refreshed.<br/><strong>4.✅ Hot Tea for Relaxation: </strong>Reduces stress and promotes calmness.<br/><strong>5.✅ Hot Tea for Energy: </strong>Provides a steady boost without a crash.</p>"
+          }
+        },
+        "why_choose_xmVhdJ": {
+          "type": "why_choose",
+          "settings": {
+            "title": "Shop Hot SPORTea® – Find Your Perfect Brew",
+            "content": "<h3><strong>1. </strong><a href=\"/products/hot-sportea-natural-brew\" title=\"Hot SPORTea® Box (20 Cup Size Tea Bags)\"><strong>Hot SPORTea® Box</strong></a><strong> (20 Individual Tea Bags)</strong></h3><p>The perfect daily companion for wellness and energy. Ideal for on-the-go sipping.</p><h3></h3><h3><strong>2. </strong><a href=\"/products/hot-sportea-case-bulk-savings\" title=\"Hot SPORTea® Case (12 Boxes)\"><strong>Hot SPORTea® Case</strong></a><strong> (12 Boxes)</strong></h3><p>Stock up and save! Ideal for hot tea lovers who want their supply ready all year round.</p><h3></h3><h3><strong>3. </strong><a href=\"/products/special-offer-buy-any-2-boxes-of-sportea-get-free-shipping\" title=\"First Time Customer Offer: Buy any 2 boxes of SPORTea® and get free shipping!\"><strong>Hot SPORTea® First time Customer Offer</strong></a></h3><p>Includes two boxes of SPORTea® plus FREE SHIPPING.</p>"
+          }
+        },
+        "why_choose_6xMMN9": {
+          "type": "why_choose",
+          "settings": {
+            "title": "Why Customers Love Hot SPORTea® – Real Reviews",
+            "content": "<ol><li>⭐⭐⭐⭐⭐“This is my go-to hot tea for the winter months! It keeps me warm, energized, and healthy during flu season.” – Mary G.<br/></li><li>⭐⭐⭐⭐⭐“I drink Hot SPORTea® every morning instead of coffee. I get the energy boost without the jitters!” – John P.<br/></li><li>⭐⭐⭐⭐⭐“Love how smooth and flavorful it is. Plus, knowing it boosts my immunity makes me feel great about every cup.” – Sarah L.</li></ol>"
+          }
+        },
+        "why_choose_PhMipj": {
+          "type": "why_choose",
+          "settings": {
+            "title": "Hot SPORTea® FAQs – Your Questions Answered",
+            "content": "<h3><strong>Is Hot SPORTea® caffeinated?</strong></h3><p>SPORTea® has a low, balanced caffeine level from green and black tea—equivalent to a cup of decaf coffee.</p><h3><strong>Can I drink Hot SPORTea® every day?</strong></h3><p>Absolutely! Hot SPORTea® is designed for daily consumption, supporting your energy and immunity without additives.</p><h3><strong>How does Hot SPORTea® boost immunity?</strong></h3><p>It’s packed with natural immunity boosters like <strong>vitamin C, ginger, and ginseng</strong>, all known for their protective benefits.</p><h3><strong>Is Hot SPORTea® good for digestion?</strong></h3><p>Yes! With natural ginger and green tea, it helps soothe your stomach and aids in digestion.</p>"
+          }
+        },
+        "why_choose_xdfc94": {
+          "type": "why_choose",
+          "settings": {
+            "title": "Final Thoughts: The Ultimate Hot Tea for Health, Immunity, and Energy",
+            "content": "<p>Hot SPORTea® is more than just a beverage—it’s a wellness ritual that supports your body, boosts your immunity, and fuels your day with natural energy. Whether you’re a seasoned tea lover or exploring new health habits, this premium hot tea delivers on both <strong>flavor and function</strong>.<br/></p><p>Ready to elevate your tea time? <a href=\"https://sportea.com/collections/hot-sportea\" target=\"_blank\"><strong>Shop Hot SPORTea® Now </strong></a>and experience the difference in every cup!</p><p></p><p></p>"
+          }
+        }
+      },
+      "block_order": [
+        "why_choose_eG9giy",
+        "why_choose_ihqeXa",
+        "why_choose_7QB8MP",
+        "why_choose_dyMAFc",
+        "why_choose_xmVhdJ",
+        "why_choose_6xMMN9",
+        "why_choose_PhMipj",
+        "why_choose_xdfc94"
+      ],
+      "custom_css": [
+        ".sportea-block ul li {list-style: disc; margin-left: 20px;}",
+        ".sportea-trademark-sup {vertical-align: 3px !important;}"
+      ],
+      "settings": {
+        "heading_tag": "h2"
+      }
+    }
+  },
+  "order": [
+    "166165787689f301bd",
+    "1650523003996e3ac9",
+    "product-grid",
+    "custom_liquid_itp4VP",
+    "ew_content_section_JRMMmC"
+  ]
+}

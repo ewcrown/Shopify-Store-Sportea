@@ -1,1 +1,96 @@
-{"name":"Header","type":"header","sections":{"pesto_announcement":{"type":"pesto-announcement","blocks":{"cdc6bd5c-1a05-4e30-8862-c81372189b62":{"type":"announcement","settings":{"announcement_top_svg":"","text":"First Time Customer Special: 2 Boxes with Free Shipping - ORDER NOW","announce_btn_text":"","link":"shopify:\/\/pages\/special-offer","link_open_in_new_tab":false,"content_alignment":"center"}}},"block_order":["cdc6bd5c-1a05-4e30-8862-c81372189b62"],"settings":{"color_scheme":"scheme-5e7c3643-fbff-41a1-8cd0-e4adc91df113","enable_country_selector":false,"enable_country_selector_label":false,"enable_language_selector":false,"enable_language_selector_label":false,"show_social_icon_announce":false}},"header_order":{"type":"pesto-header-one","blocks":{"12b61c06-802f-4616-af8c-287a8b24aed9":{"type":"search_action","settings":{}},"1f06d62a-7971-4c4e-9781-4feeda53a91a":{"type":"authior_action","settings":{}},"0f09dcca-d956-477e-b5bf-7e506d0fd298":{"type":"cart_action","settings":{}}},"block_order":["12b61c06-802f-4616-af8c-287a8b24aed9","1f06d62a-7971-4c4e-9781-4feeda53a91a","0f09dcca-d956-477e-b5bf-7e506d0fd298"],"custom_css":["a:not(.is-plain):not(.button):not(.link-btn):not(.link):hover {color: #000000;}"],"settings":{"color_scheme":"background-4","color_scheme_slide_menu":"","logo_img":"shopify:\/\/shop_images\/logo-sportea1_817ba1e2-fbf0-4c4c-87fb-3e25d193df11.png","header_logo_svg":"","image_logo_width":100,"header_menu_phone_label":"Number label here","header_menu_phone":"+123456","header_menu_phone_icon":true,"pesto_header_border":true,"pesto_menu_layout":"regular","pesto_sticky_scroll_direction":"none","header_menu":"paestro-menu","mobilemenu":"paestro-mobile-menu","slide_menu_positions":"right","social_options":false,"enable_country_selector":false,"enable_country_selector_label":false,"enable_language_selector":false,"enable_language_selector_label":false,"logo_img_promo_url":""}}},"order":["pesto_announcement","header_order"]}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "name": "Header",
+  "type": "header",
+  "sections": {
+    "pesto_announcement": {
+      "type": "pesto-announcement",
+      "blocks": {
+        "cdc6bd5c-1a05-4e30-8862-c81372189b62": {
+          "type": "announcement",
+          "settings": {
+            "announcement_top_svg": "",
+            "text": "First Time Customer Special: 2 Boxes with Free Shipping - ORDER NOW",
+            "announce_btn_text": "",
+            "link": "shopify://pages/special-offer",
+            "link_open_in_new_tab": false,
+            "content_alignment": "center"
+          }
+        }
+      },
+      "block_order": [
+        "cdc6bd5c-1a05-4e30-8862-c81372189b62"
+      ],
+      "custom_css": [
+        "a:not(.is-plain):not(.button):not(.link-btn):not(.link):hover {color: #ffffff; text-decoration: underline;}"
+      ],
+      "settings": {
+        "color_scheme": "scheme-5e7c3643-fbff-41a1-8cd0-e4adc91df113",
+        "enable_country_selector": false,
+        "enable_country_selector_label": false,
+        "enable_language_selector": false,
+        "enable_language_selector_label": false,
+        "show_social_icon_announce": false
+      }
+    },
+    "header_order": {
+      "type": "pesto-header-one",
+      "blocks": {
+        "12b61c06-802f-4616-af8c-287a8b24aed9": {
+          "type": "search_action",
+          "settings": {}
+        },
+        "1f06d62a-7971-4c4e-9781-4feeda53a91a": {
+          "type": "authior_action",
+          "settings": {}
+        },
+        "0f09dcca-d956-477e-b5bf-7e506d0fd298": {
+          "type": "cart_action",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "12b61c06-802f-4616-af8c-287a8b24aed9",
+        "1f06d62a-7971-4c4e-9781-4feeda53a91a",
+        "0f09dcca-d956-477e-b5bf-7e506d0fd298"
+      ],
+      "custom_css": [
+        "a:not(.is-plain):not(.button):not(.link-btn):not(.link):hover {color: #000000;}"
+      ],
+      "settings": {
+        "color_scheme": "background-4",
+        "color_scheme_slide_menu": "",
+        "logo_img": "shopify://shop_images/SPORTea.png",
+        "header_logo_svg": "",
+        "image_logo_width": 100,
+        "header_menu_phone_label": "Number label here",
+        "header_menu_phone": "+123456",
+        "header_menu_phone_icon": true,
+        "pesto_header_border": true,
+        "pesto_menu_layout": "regular",
+        "pesto_sticky_scroll_direction": "none",
+        "header_menu": "paestro-menu",
+        "mobilemenu": "paestro-mobile-menu",
+        "slide_menu_positions": "right",
+        "social_options": false,
+        "enable_country_selector": false,
+        "enable_country_selector_label": false,
+        "enable_language_selector": false,
+        "enable_language_selector_label": false,
+        "logo_img_promo_url": ""
+      }
+    }
+  },
+  "order": [
+    "pesto_announcement",
+    "header_order"
+  ]
+}

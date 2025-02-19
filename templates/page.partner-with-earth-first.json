@@ -1,0 +1,275 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "color_scheme": "",
+        "enable_breadcrumb_navigation": true,
+        "main_page_breadcrumb_position": "flex-column",
+        "page_title_breadcrumb_gap": 0,
+        "title_font_size": "medium",
+        "pesto_page_title_bg_opacity": 0,
+        "pesto_section_padding_top": 100,
+        "pesto_section_padding_bottom": 100
+      }
+    },
+    "pesto_about_us_page_yaMRJ4": {
+      "type": "pesto-about-us-page",
+      "blocks": {
+        "banner_title_test_YnCRRt": {
+          "type": "banner_title_test",
+          "settings": {
+            "banner_title_text": "SPORTea® Partners with EarthFirst Organics: Wellness That Works Together",
+            "richtext_heading_size": 36,
+            "richtext_heading_size_responsive": 25
+          }
+        },
+        "banner_subtitle_EbEjCn": {
+          "type": "banner_subtitle",
+          "settings": {
+            "banner_sub_title": "<p>At SPORTea, we’ve always believed in offering products that fuel your active, healthy lifestyle. Whether you’re starting your day with a cup of invigorating SPORTea® Iced or Hot, or sipping throughout the day to stay hydrated and energized, we’re here to help you feel your best. That’s why we’re excited to share a brand we love: <strong>EarthFirst Organics</strong>.<br/><br/>EarthFirst Organics, much like SPORTea, focuses on real, natural solutions for wellness. Their premium, organic vitamins and supplements are designed to support your body, your health, and your energy levels naturally—without artificial additives, chemicals, or compromise. We’ve seen firsthand how their products can complement the benefits of SPORTea, and we think you’ll love them as much as we do.<br/></p>"
+          }
+        },
+        "banner_button_text_ziCxc4": {
+          "type": "banner_button_text",
+          "settings": {
+            "banner_button_label": "SPORTea® Customers Get 20% OFF with Code SPORTEA20",
+            "banner_button_url": "https://earthfirstorganic.com/discount/SPORTEA20?ref=SPORTEA20"
+          }
+        }
+      },
+      "block_order": [
+        "banner_title_test_YnCRRt",
+        "banner_subtitle_EbEjCn",
+        "banner_button_text_ziCxc4"
+      ],
+      "custom_css": [
+        "h1 {color: #2b4e92; text-align: left; width: 90%; margin-bottom: 1rem;}",
+        "p {text-align: left; color: rgb(32 22 23);}",
+        "h1 span {min-height: auto; position: relative; top: 15px;}",
+        "a:not(.is-plain):not(.button):not(.link-btn):not(.link):hover {color: #ffffff;}",
+        "@media (min-width: 791px) and (max-width: 1199px) {span {font-size: 13px !important; }}",
+        "@media (max-width: 790px) {span, a {font-size: 13px !important; } h2 {font-size: 25px !important; line-height: 30px; }}"
+      ],
+      "settings": {
+        "color_scheme": "scheme-23d60601-f3f5-4d14-8bd4-c16c0e99b7c4",
+        "image_overlay_opacity": 30,
+        "image_overlay_color": "#ffffff",
+        "pesto_section_padding_top": 40,
+        "pesto_section_padding_bottom": 40
+      }
+    },
+    "pesto_about_us_two_DnddnT": {
+      "type": "pesto-about-us-two",
+      "blocks": {
+        "img_txt_heading_jrHgwH": {
+          "type": "img_txt_heading",
+          "settings": {
+            "about_content_title": "A Perfect Pairing for Energy, Hydration, and Nutrition",
+            "about_content_title_font_size": 36,
+            "about_content_title_font_weight": "400"
+          }
+        },
+        "img_txt_text_R8R6wV": {
+          "type": "img_txt_text",
+          "settings": {
+            "about_content_content": "<div>\n  <p>While SPORTea® is your go-to beverage for sustained energy and hydration, EarthFirst Organics provides the nutrients your body craves to perform at its peak. Here’s how they work together:</p>\n\n  <h3>Sustained Energy Without the Crash:</h3>\n  <p>\n    SPORTea® delivers a clean energy boost thanks to natural ingredients like Green Tea, Brazilian Maté, and Siberian Ginseng. Pair that with EarthFirst Organics’ vitamins—packed with plant-based nutrients—and you’re giving your body the tools it needs to stay energized and balanced throughout the day.\n  </p>\n\n  <h3>Support for Active Lifestyles:</h3>\n  <p>\n    Whether you’re running a 5K, hiking a mountain, or tackling a packed schedule, hydration and proper nutrition are key. SPORTea® helps keep you refreshed and hydrated, while EarthFirst Organics fills in the gaps with clean, organic vitamins like their Multi Essentials or Omega-3 blends, which support your endurance, recovery, and overall wellness.\n  </p>\n\n  <h3>All–Natural, No Compromises:</h3>\n  <p>\n    Just like SPORTea®, EarthFirst Organics puts purity and quality first. Their products are USDA-certified organic, made with plant-based ingredients, and free of fillers, synthetics, or harmful chemicals. It’s wellness you can trust—inside and out.\n  </p>\n</div>",
+            "about_content_font_size": 16
+          }
+        },
+        "img_txt_button_68jeJ7": {
+          "type": "img_txt_button",
+          "settings": {
+            "about_content_link_text": "SPORTea® Customers Get 20% OFF with Code SPORTEA20",
+            "about_content_link": "https://earthfirstorganic.com/discount/SPORTEA20?ref=SPORTEA20"
+          }
+        }
+      },
+      "block_order": [
+        "img_txt_heading_jrHgwH",
+        "img_txt_text_R8R6wV",
+        "img_txt_button_68jeJ7"
+      ],
+      "custom_css": [
+        ".about-section .content-box {padding: 50px 0 50px 0px;}",
+        "a:not(.is-plain):not(.button):not(.link-btn):not(.link):hover {color: #ffffff;}",
+        "theme-btn svg {right: 15%;}",
+        "h2 {color: #2b4e92; text-align: left; font-size: 36px;}",
+        "p,h3 {text-align: left;}",
+        "@media (min-width: 791px) and (max-width: 1199px) {span {font-size: 13px !important; }}",
+        "@media (max-width: 790px) {span, a {font-size: 13px !important; } h2 {font-size: 25px !important; line-height: 30px; }}"
+      ],
+      "settings": {
+        "color_scheme": "scheme-23d60601-f3f5-4d14-8bd4-c16c0e99b7c4",
+        "about_content_url": "shopify://shop_images/Fruit_inforgraphic_grande.jpg_2.png",
+        "about_image_position": "image_position_left",
+        "pesto_section_padding_top": 40,
+        "pesto_section_padding_bottom": 40
+      }
+    },
+    "pesto_about_us_page_QmznQH": {
+      "type": "pesto-about-us-page",
+      "blocks": {
+        "banner_title_test_9hCP4w": {
+          "type": "banner_title_test",
+          "settings": {
+            "banner_title_text": "Why We Love EarthFirst Organics",
+            "richtext_heading_size": 36,
+            "richtext_heading_size_responsive": 25
+          }
+        },
+        "banner_subtitle_JFCfmD": {
+          "type": "banner_subtitle",
+          "settings": {
+            "banner_sub_title": "<p>At SPORTea®, we’ve always aimed to create a product that you can feel good about drinking every day—zero calories, no artificial additives, and 100% natural. That’s why EarthFirst Organics resonates with us so deeply. Their commitment to sustainability, clean ingredients, and real results aligns perfectly with our own values. We both believe that taking care of your body with simple, natural products can make a world of difference in how you feel and perform..<br/><br/>Whether you’re starting fresh with a new wellness routine or enhancing the one you already have, pairing SPORTea® with EarthFirst Organics can help you take it to the next level.</p>"
+          }
+        },
+        "banner_button_text_iaRJYX": {
+          "type": "banner_button_text",
+          "disabled": true,
+          "settings": {
+            "banner_button_label": "SPORTea® Customers Get 20% OFF with Code SPORTEA20",
+            "banner_button_url": "https://earthfirstorganic.com/discount/SPORTEA20?ref=SPORTEA20"
+          }
+        }
+      },
+      "block_order": [
+        "banner_title_test_9hCP4w",
+        "banner_subtitle_JFCfmD",
+        "banner_button_text_iaRJYX"
+      ],
+      "custom_css": [
+        "h1 {color: #2b4e92; text-align: left; margin-bottom: 1rem;}",
+        "p {text-align: left; color: rgb(32 22 23);}",
+        "span {line-height: 0px !important; min-height: auto;}"
+      ],
+      "settings": {
+        "color_scheme": "scheme-23d60601-f3f5-4d14-8bd4-c16c0e99b7c4",
+        "image_overlay_opacity": 30,
+        "image_overlay_color": "#ffffff",
+        "pesto_section_padding_top": 40,
+        "pesto_section_padding_bottom": 40
+      }
+    },
+    "pesto_banner_three_PY3icR": {
+      "type": "pesto-banner-three",
+      "blocks": {
+        "slider_item_3wAmfi": {
+          "type": "slider_item",
+          "settings": {
+            "slider_item_title": "",
+            "slider_item_title_size": "lg",
+            "slider_item_content_one": "",
+            "slider_item_content_two": "",
+            "image_placement": "text_left",
+            "text_alignment": "left",
+            "slider_item_button_label": "",
+            "slider_item_button_link": "",
+            "slider_item_secondary_button_label": "",
+            "slider_item_secondary_button_link": "",
+            "slide_item_background_shap_image": "shopify://shop_images/Fruit_inforgraphic_grande.jpg_3.png",
+            "show_the_secondary_image": true,
+            "banner_column_option": "medium",
+            "banner_image_position": "right",
+            "banner_image_overflow": false
+          }
+        }
+      },
+      "block_order": [
+        "slider_item_3wAmfi"
+      ],
+      "custom_css": [
+        ".banner-carousel .content-box {background: none;}",
+        ".banner-carousel .placeholder-svg-banner-three {display: none;}",
+        ".banner-section {margin-bottom: 4.5rem; margin-top: 1.5rem !important; width: 92.5%;}",
+        "@media (max-width: 1360px) {.banner-section {margin-bottom: 1.5rem; margin-top: 1.5rem !important; padding: 1rem; width: 92.5%; }}"
+      ],
+      "settings": {
+        "color_scheme": "scheme-23d60601-f3f5-4d14-8bd4-c16c0e99b7c4",
+        "pesto_section_padding_top": 200,
+        "pesto_section_padding_bottom": 200
+      }
+    },
+    "pesto_about_us_page_b9YQhR": {
+      "type": "pesto-about-us-page",
+      "blocks": {
+        "banner_title_test_iVaABj": {
+          "type": "banner_title_test",
+          "settings": {
+            "banner_title_text": "Exclusive Offer Just for You",
+            "richtext_heading_size": 56,
+            "richtext_heading_size_responsive": 25
+          }
+        },
+        "banner_subtitle_XXN4hM": {
+          "type": "banner_subtitle",
+          "settings": {
+            "banner_sub_title": "<p>To celebrate our partnership with EarthFirst Organics, we’re thrilled to offer you an exclusive discount. Use code SPORTEA20 at checkout to save 20% off their entire product line.<br/><br/>Take the next step in your wellness journey with SPORTea® and EarthFirst Organics—because when you feel your best, you can do your best.<br/></p>"
+          }
+        },
+        "item_gap_q6xVpn": {
+          "type": "item_gap",
+          "settings": {
+            "richtext_item_gap": 49
+          }
+        },
+        "banner_button_text_WTVVdM": {
+          "type": "banner_button_text",
+          "settings": {
+            "banner_button_label": "Explore EarthFirst Organics & Save 20% with code SPORTEA20",
+            "banner_button_url": "https://earthfirstorganic.com/discount/SPORTEA20?ref=SPORTEA20"
+          }
+        },
+        "banner_subtitle_VQerLL": {
+          "type": "banner_subtitle",
+          "settings": {
+            "banner_sub_title": "<p><br/>Together, let’s keep your energy flowing, your hydration on point, and your health first.<br/>—The SPORTea® Team<br/></p>"
+          }
+        }
+      },
+      "block_order": [
+        "banner_title_test_iVaABj",
+        "banner_subtitle_XXN4hM",
+        "item_gap_q6xVpn",
+        "banner_button_text_WTVVdM",
+        "banner_subtitle_VQerLL"
+      ],
+      "custom_css": [
+        "span {line-height: 50px !important;}",
+        "h1,p,span {color: #fff;}",
+        "p {width: 60%; margin: auto; font-size: 20px !important; font-weight: 400;}",
+        "h1 {text-align: center !important; width: 100%;}",
+        "a:not(.is-plain):not(.button):not(.link-btn):not(.link):hover {color: #ffffff;}",
+        "@media (min-width: 768px) and (max-width: 1023px) {p {width: 70%; }}",
+        "@media (min-width: 791px) and (max-width: 1199px) {span {font-size: 13px !important; }}",
+        "@media (max-width: 767px) {p {width: 90%; } span, a {font-size: 13px !important; }}"
+      ],
+      "settings": {
+        "color_scheme": "scheme-23d60601-f3f5-4d14-8bd4-c16c0e99b7c4",
+        "section_bg_image": "shopify://shop_images/Section_b194284f-3efa-4b85-bb6f-f2461ca23a26.png",
+        "image_overlay_opacity": 30,
+        "image_overlay_color": "rgba(0,0,0,0)",
+        "pesto_section_padding_top": 50,
+        "pesto_section_padding_bottom": 50
+      }
+    }
+  },
+  "order": [
+    "main",
+    "pesto_about_us_page_yaMRJ4",
+    "pesto_about_us_two_DnddnT",
+    "pesto_about_us_page_QmznQH",
+    "pesto_banner_three_PY3icR",
+    "pesto_about_us_page_b9YQhR"
+  ]
+}

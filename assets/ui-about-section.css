@@ -240,12 +240,13 @@
 }
 .about-section .btn-box{
 	text-align: left;
+    width:100%;
 }
 @media (max-width: 991px) {
-	.about-section .btn-box{ 
+	/* .about-section .btn-box{ 
 		margin-left: 37px !important;
 		margin-right: 37px  !important;
-	} 
+	}  */
 } 
 .pesto-contact-btn a:hover h4{
 	text-decoration: underline; 

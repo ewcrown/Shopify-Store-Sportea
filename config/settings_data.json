@@ -1,1 +1,812 @@
-{"current":{"theme_radius_style":"round","color_scheme_pickup":"scheme-23d60601-f3f5-4d14-8bd4-c16c0e99b7c4","type_header_font":"cooper_bt_n5","heading_scale":100,"type_body_font":"inter_n4","social_twitter_link":"","social_facebook_link":"https:\/\/www.facebook.com\/SPORTeaFanPage","social_pinterest_link":"","social_instagram_link":"https:\/\/www.instagram.com\/officialsportea\/","social_tiktok_link":"","social_youtube_link":"https:\/\/www.youtube.com\/sporteatv","currency_code_enabled":false,"spacing_grid_vertical":8,"colors_solid_button_labels":"#efecec","colors_accent_1":"#2a332f","colors_accent_2":"#476154","colors_text":"#1c1a1a","colors_outline_button_labels":"#7b8382","colors_background_1":"#efecec","colors_background_2":"#c1bcae","sections":{"pesto-header-one":{"type":"pesto-header-one","blocks":{"14ce570e-ef22-44fb-aadf-3349e04645df":{"type":"search_action","settings":{}},"88e8a196-0964-4890-9787-aaaa":{"type":"authior_action","settings":{}},"fdf0f978-07ab-4b11-b5cf-fe8e9e3985bc":{"type":"cart_action","settings":{}}},"block_order":["14ce570e-ef22-44fb-aadf-3349e04645df","88e8a196-0964-4890-9787-aaaa","fdf0f978-07ab-4b11-b5cf-fe8e9e3985bc"],"settings":{"logo_img":"","header_logo_svg":"","header_menu":"main-menu"}},"main-password-header":{"type":"main-password-header","settings":{"logo_max_width":100}},"main-password-footer":{"type":"main-password-footer","settings":{}},"pesto-footer-one":{"type":"pesto-footer-one","blocks":{"a1f223a0-3ffe-4e90-aa08-c5f45ac7abe8":{"type":"contact_us","settings":{"contact_item_title":"Heading","contact_item_contact_number_title":"Block subheading","contact_item_contact_number":"Store number","contact_item_contact_address_text":"Type your store address here","contact_item_contact_mail":"Type store support mail"}},"3fef6cf4-51c7-4bc6-80be-4ff8a0c2afe3":{"type":"opening_hours","settings":{"opening_item_title":"Heading","opening_item_time_1":"9:00 - 20:30","opening_item_time_2":"9:00 - 20:30","opening_item_time_3":"9:00 - 20:30","opening_item_time_4":"9:00 - 20:30","opening_item_time_5":"9:00 - 20:30","opening_item_time_6":"9:00 - 20:30","opening_item_time_7":"Closed"}},"da0f9dc6-9ee1-4e97-b8d9-98f4773adb5e":{"type":"information","settings":{"information_item_title":"Heading","information_item_title_menu":"footer"}},"c3ad8720-8ddd-4e7c-9ee1-a18c41bfca45":{"type":"newsletter","settings":{"newsletter_item_title":"Heading","newsletter_item_content_text":"Describe a newsletter information.","newsletter_form_placeholder":"Enter your email","newsletter_subscribe_button_label":"Button","newsletter_item_policy_content":"Describe a policy of your store."}}},"block_order":["a1f223a0-3ffe-4e90-aa08-c5f45ac7abe8","3fef6cf4-51c7-4bc6-80be-4ff8a0c2afe3","da0f9dc6-9ee1-4e97-b8d9-98f4773adb5e","c3ad8720-8ddd-4e7c-9ee1-a18c41bfca45"],"settings":{"col_settings":4,"enable_country_selector":true,"enable_language_selector":true}},"pesto-announcement":{"type":"pesto-announcement","blocks":{"3ce148a7-8fe0-4bb5-988d-9bad591cefe6":{"type":"announcement","settings":{"announcement_top_svg":"<svg xmlns=\"http:\/\/www.w3.org\/2000\/svg\" width=\"16\" height=\"16\" fill=\"currentColor\" class=\"bi bi-egg-fried\" viewbox=\"0 0 16 16\">\n  <path d=\"M8 11a3 3 0 1 0 0-6 3 3 0 0 0 0 6z\"><\/path>\n  <path d=\"M13.997 5.17a5 5 0 0 0-8.101-4.09A5 5 0 0 0 1.28 9.342a5 5 0 0 0 8.336 5.109 3.5 3.5 0 0 0 5.201-4.065 3.001 3.001 0 0 0-.822-5.216zm-1-.034a1 1 0 0 0 .668.977 2.001 2.001 0 0 1 .547 3.478 1 1 0 0 0-.341 1.113 2.5 2.5 0 0 1-3.715 2.905 1 1 0 0 0-1.262.152 4 4 0 0 1-6.67-4.087 1 1 0 0 0-.2-1 4 4 0 0 1 3.693-6.61 1 1 0 0 0 .8-.2 4 4 0 0 1 6.48 3.273z\"><\/path>\n<\/svg>","text":"announcement text here","link":"","content_alignment":"center"}}},"block_order":["3ce148a7-8fe0-4bb5-988d-9bad591cefe6"],"settings":{}}},"content_for_index":[],"blocks":{"855628211100114053":{"type":"shopify:\/\/apps\/klaviyo-email-marketing-sms\/blocks\/klaviyo-onsite-embed\/2632fe16-c075-4321-a88b-50b567f42507","disabled":false,"settings":{}},"7570552984445421165":{"type":"shopify:\/\/apps\/yotpo-product-reviews-ugc\/blocks\/settings\/eb7dfd7d-db44-4334-bc49-c893b51b36cf","disabled":false,"settings":{}}},"color_schemes_new":{"background-1":{"settings":{"background":"#201617","background_gradient":"","text":"#ffffff","secondary_background":"#392729","secondary_text":"#ffffff","highlight_text":"#ffa00b","button":"#ffc044","button_label":"#121212","button_hover":"#121212","button_label_hover":"#ffffff","secondary_button":"#121212","secondary_button_label":"#ffffff","secondary_button_hover":"#f1ebe4","secondary_button_label_hover":"#121212"}},"background-2":{"settings":{"background":"#edeceb","background_gradient":"","text":"#000000","secondary_background":"#ffffff","secondary_text":"#201617","highlight_text":"#ffa00b","button":"#7e6238","button_label":"#ffffff","button_hover":"#201617","button_label_hover":"#ffffff","secondary_button":"#7e6238","secondary_button_label":"#ffffff","secondary_button_hover":"#ffa00b","secondary_button_label_hover":"#121212"}},"background-3":{"settings":{"background":"#201617","background_gradient":"","text":"#ffffff","secondary_background":"#ffc044","secondary_text":"#121212","highlight_text":"#ffa00b","button":"#ffc044","button_label":"#121212","button_hover":"#f1ebe4","button_label_hover":"#000000","secondary_button":"#f1ebe4","secondary_button_label":"#121212","secondary_button_hover":"#ffa00b","secondary_button_label_hover":"#f1ebe4"}},"background-4":{"settings":{"background":"#ffffff","background_gradient":"","text":"#264786","secondary_background":"#f1ebe4","secondary_text":"#4b1203","highlight_text":"#ffa00b","button":"#dc232a","button_label":"#ffffff","button_hover":"#201617","button_label_hover":"#ffffff","secondary_button":"#7e6238","secondary_button_label":"#f1ebe4","secondary_button_hover":"#ffa00b","secondary_button_label_hover":"#121212"}},"scheme-5e7c3643-fbff-41a1-8cd0-e4adc91df113":{"settings":{"background":"#2b4e92","background_gradient":"","text":"#ffffff","secondary_background":"#ffffff","secondary_text":"#ffffff","highlight_text":"#264786","button":"#dc232a","button_label":"#ffffff","button_hover":"#121212","button_label_hover":"#ffffff","secondary_button":"#121212","secondary_button_label":"#ffffff","secondary_button_hover":"#f1ebe4","secondary_button_label_hover":"#121212"}},"scheme-23d60601-f3f5-4d14-8bd4-c16c0e99b7c4":{"settings":{"background":"#ffffff","background_gradient":"","text":"#201617","secondary_background":"#ffffff","secondary_text":"#121212","highlight_text":"#d72a31","button":"#d72a31","button_label":"#ffffff","button_hover":"#ffffff","button_label_hover":"#ffffff","secondary_button":"#121212","secondary_button_label":"#ffffff","secondary_button_hover":"#f1ebe4","secondary_button_label_hover":"#121212"}},"scheme-980112c1-de54-455d-9989-e069b5a58ab1":{"settings":{"background":"#201617","background_gradient":"","text":"#ffffff","secondary_background":"#392729","secondary_text":"#ffffff","highlight_text":"#ffa00b","button":"#ffc044","button_label":"#121212","button_hover":"#121212","button_label_hover":"#ffffff","secondary_button":"#121212","secondary_button_label":"#ffffff","secondary_button_hover":"#f1ebe4","secondary_button_label_hover":"#121212"}}}},"presets":{"Restaurant":{"color_schemes_new":{"background-1":{"settings":{"background":"#b33012","secondary_background":"#862D19","text":"#FFFFFF","secondary_text":"#FFFFFF","highlight_text":"#FFA00B","button":"#FFA00B","button_hover":"#121212","button_label":"#121212","button_label_hover":"#ffffff","secondary_button":"#121212","secondary_button_hover":"#f1ebe4","secondary_button_label":"#ffffff","secondary_button_label_hover":"#121212"}},"background-2":{"settings":{"background":"#f1ebe4","secondary_background":"#ffffff","text":"#4b1203","secondary_text":"#4b1203","highlight_text":"#FFA00B","button":"#FFA00B","button_hover":"#4b1203","button_label":"#4b1203","button_label_hover":"#FFFFFF","secondary_button":"#121212","secondary_button_hover":"#ffa00b","secondary_button_label":"#f1ebe4","secondary_button_label_hover":"#121212"}},"background-3":{"settings":{"background":"#000000","secondary_background":"#191919","text":"#ffffff","secondary_text":"#FFFFFF","highlight_text":"#FFA00B","button":"#ffa00b","button_hover":"#f1ebe4","button_label":"#121212","button_label_hover":"#000000","secondary_button":"#f1ebe4","secondary_button_hover":"#ffa00b","secondary_button_label":"#121212","secondary_button_label_hover":"#f1ebe4"}},"background-4":{"settings":{"background":"#FFFFFF","secondary_background":"#f1ebe4","text":"#4b1203","secondary_text":"#4b1203","highlight_text":"#FFA00B","button":"#FFA00B","button_hover":"#4b1203","button_label":"#4b1203","button_label_hover":"#FFFFFF","secondary_button":"#121212","secondary_button_hover":"#ffa00b","secondary_button_label":"#f1ebe4","secondary_button_label_hover":"#121212"}}},"theme_radius_style":"round","type_header_font":"righteous_n4","heading_scale":100,"type_body_font":"daytona_n4","currency_code_enabled":false,"spacing_grid_vertical":8,"colors_solid_button_labels":"#efecec","colors_accent_1":"#2a332f","colors_accent_2":"#476154","colors_text":"#1c1a1a","colors_outline_button_labels":"#7b8382","colors_background_1":"#efecec","colors_background_2":"#c1bcae","sections":{"pesto-header-one":{"type":"pesto-header-one","blocks":{"14ce570e-ef22-44fb-aadf-3349e04645df":{"type":"search_action","settings":{}},"88e8a196-0964-4890-9787-aaaa":{"type":"authior_action","settings":{}},"fdf0f978-07ab-4b11-b5cf-fe8e9e3985bc":{"type":"cart_action","settings":{}}},"block_order":["14ce570e-ef22-44fb-aadf-3349e04645df","88e8a196-0964-4890-9787-aaaa","fdf0f978-07ab-4b11-b5cf-fe8e9e3985bc"],"settings":{"logo_img":"","header_logo_svg":"","header_menu":"main-menu"}},"main-password-header":{"type":"main-password-header","settings":{"logo_max_width":100}},"main-password-footer":{"type":"main-password-footer","settings":{}},"pesto-footer-one":{"type":"pesto-footer-one","blocks":{"a1f223a0-3ffe-4e90-aa08-c5f45ac7abe8":{"type":"contact_us","settings":{"contact_item_title":"Heading","contact_item_contact_number_title":"Block subheading","contact_item_contact_number":"Store number","contact_item_contact_address_text":"Type your store address here","contact_item_contact_mail":"Type store support mail"}},"3fef6cf4-51c7-4bc6-80be-4ff8a0c2afe3":{"type":"opening_hours","settings":{"opening_item_title":"Heading","opening_item_time_1":"9:00 - 20:30","opening_item_time_2":"9:00 - 20:30","opening_item_time_3":"9:00 - 20:30","opening_item_time_4":"9:00 - 20:30","opening_item_time_5":"9:00 - 20:30","opening_item_time_6":"9:00 - 20:30","opening_item_time_7":"Closed"}},"da0f9dc6-9ee1-4e97-b8d9-98f4773adb5e":{"type":"information","settings":{"information_item_title":"Heading","information_item_title_menu":"footer"}},"c3ad8720-8ddd-4e7c-9ee1-a18c41bfca45":{"type":"newsletter","settings":{"newsletter_item_title":"Heading","newsletter_item_content_text":"Describe a newsletter information.","newsletter_form_placeholder":"Enter your email","newsletter_subscribe_button_label":"Button","newsletter_item_policy_content":"Describe a policy of your store."}}},"block_order":["a1f223a0-3ffe-4e90-aa08-c5f45ac7abe8","3fef6cf4-51c7-4bc6-80be-4ff8a0c2afe3","da0f9dc6-9ee1-4e97-b8d9-98f4773adb5e","c3ad8720-8ddd-4e7c-9ee1-a18c41bfca45"],"settings":{"col_settings":4,"enable_country_selector":true,"enable_language_selector":true}},"pesto-announcement":{"type":"pesto-announcement","blocks":{"3ce148a7-8fe0-4bb5-988d-9bad591cefe6":{"type":"announcement","settings":{"announcement_top_svg":"<svg xmlns=\"http:\/\/www.w3.org\/2000\/svg\" width=\"16\" height=\"16\" fill=\"currentColor\" class=\"bi bi-egg-fried\" viewbox=\"0 0 16 16\">\n  <path d=\"M8 11a3 3 0 1 0 0-6 3 3 0 0 0 0 6z\"><\/path>\n  <path d=\"M13.997 5.17a5 5 0 0 0-8.101-4.09A5 5 0 0 0 1.28 9.342a5 5 0 0 0 8.336 5.109 3.5 3.5 0 0 0 5.201-4.065 3.001 3.001 0 0 0-.822-5.216zm-1-.034a1 1 0 0 0 .668.977 2.001 2.001 0 0 1 .547 3.478 1 1 0 0 0-.341 1.113 2.5 2.5 0 0 1-3.715 2.905 1 1 0 0 0-1.262.152 4 4 0 0 1-6.67-4.087 1 1 0 0 0-.2-1 4 4 0 0 1 3.693-6.61 1 1 0 0 0 .8-.2 4 4 0 0 1 6.48 3.273z\"><\/path>\n<\/svg>","text":"announcement text here","link":"","content_alignment":"center"}}},"block_order":["3ce148a7-8fe0-4bb5-988d-9bad591cefe6"],"settings":{}}},"content_for_index":[]},"Coffee":{"color_schemes_new":{"background-1":{"settings":{"background":"#201617","text":"#ffffff","secondary_background":"#392729","secondary_text":"#ffffff","highlight_text":"#ffa00b","button":"#ffc044","button_label":"#121212","button_hover":"#121212","button_label_hover":"#ffffff","secondary_button":"#121212","secondary_button_label":"#ffffff","secondary_button_hover":"#f1ebe4","secondary_button_label_hover":"#121212"}},"background-2":{"settings":{"background":"#edeceb","text":"#121212","secondary_background":"#ffffff","secondary_text":"#201617","highlight_text":"#ffa00b","button":"#7e6238","button_label":"#ffffff","button_hover":"#201617","button_label_hover":"#ffffff","secondary_button":"#7e6238","secondary_button_label":"#ffffff","secondary_button_hover":"#ffa00b","secondary_button_label_hover":"#121212"}},"background-3":{"settings":{"background":"#201617","text":"#ffffff","secondary_background":"#ffc044","secondary_text":"#121212","highlight_text":"#ffa00b","button":"#ffc044","button_label":"#121212","button_hover":"#f1ebe4","button_label_hover":"#000000","secondary_button":"#f1ebe4","secondary_button_label":"#121212","secondary_button_hover":"#ffa00b","secondary_button_label_hover":"#f1ebe4"}},"background-4":{"settings":{"background":"#ffffff","text":"#121212","secondary_background":"#f1ebe4","secondary_text":"#4b1203","highlight_text":"#ffa00b","button":"#7e6238","button_label":"#ffffff","button_hover":"#201617","button_label_hover":"#ffffff","secondary_button":"#7e6238","secondary_button_label":"#f1ebe4","secondary_button_hover":"#ffa00b","secondary_button_label_hover":"#121212"}}},"theme_radius_style":"round","type_header_font":"cooper_bt_n5","heading_scale":100,"type_body_font":"inter_n4","currency_code_enabled":false,"spacing_grid_vertical":8},"Health & Beauty":{"color_schemes_new":{"background-1":{"settings":{"background":"#ffffff","text":"#121212","secondary_background":"#15383a","secondary_text":"#ffffff","highlight_text":"#ec1f57","button":"#15383a","button_label":"#ffffff","button_hover":"#f9f2ee","button_label_hover":"#121212","secondary_button":"#f9f2ee","secondary_button_label":"#121212","secondary_button_hover":"#15383a","secondary_button_label_hover":"#ffffff"}},"background-2":{"settings":{"background":"#f7f4f2","text":"#121212","secondary_background":"#ffffff","secondary_text":"#121212","highlight_text":"#ec1f57","button":"#15383a","button_label":"#ffffff","button_hover":"#f7f4f2","button_label_hover":"#121212","secondary_button":"#f7f4f2","secondary_button_label":"#121212","secondary_button_hover":"#15383a","secondary_button_label_hover":"#ffffff"}},"background-3":{"settings":{"background":"#15383a","text":"#ffffff","secondary_background":"#f7f4f2","secondary_text":"#121212","highlight_text":"#ec1f57","button":"#ffffff","button_label":"#121212","button_hover":"#f7f4f2","button_label_hover":"#121212","secondary_button":"#f7f4f2","secondary_button_label":"#121212","secondary_button_hover":"#ffffff","secondary_button_label_hover":"#121212"}},"background-4":{"settings":{"background":"#ffffff","text":"#121212","secondary_background":"#15383a","secondary_text":"#ffffff","highlight_text":"#ec1f57","button":"#f9f2ee","button_label":"#15383a","button_hover":"#f9f2ee","button_label_hover":"#121212","secondary_button":"#f9f2ee","secondary_button_label":"#121212","secondary_button_hover":"#15383a","secondary_button_label_hover":"#ffffff"}}},"theme_radius_style":"none","type_header_font":"josefin_sans_n4","heading_scale":100,"type_body_font":"inter_n4","currency_code_enabled":false,"spacing_grid_vertical":8},"Kids & Baby":{"color_schemes_new":{"background-1":{"settings":{"background":"#ffffff","text":"#121212","secondary_background":"#fff6f9","secondary_text":"#000000","highlight_text":"#ec1f57","button":"#fb538f","button_label":"#ffffff","button_hover":"#f9f2ee","button_label_hover":"#121212","secondary_button":"#f9f2ee","secondary_button_label":"#121212","secondary_button_hover":"#15383a","secondary_button_label_hover":"#ffffff"}},"background-2":{"settings":{"background":"#fff6f9","text":"#121212","secondary_background":"#ffffff","secondary_text":"#121212","highlight_text":"#ec1f57","button":"#fb538f","button_label":"#ffffff","button_hover":"#f7f4f2","button_label_hover":"#121212","secondary_button":"#fb538f","secondary_button_label":"#ffffff","secondary_button_hover":"#f9f2ee","secondary_button_label_hover":"#000000"}},"background-3":{"settings":{"background":"#121212","text":"#ffffff","secondary_background":"#f7f4f2","secondary_text":"#121212","highlight_text":"#ec1f57","button":"#fb538f","button_label":"#ffffff","button_hover":"#f7f4f2","button_label_hover":"#121212","secondary_button":"#f7f4f2","secondary_button_label":"#121212","secondary_button_hover":"#ffffff","secondary_button_label_hover":"#121212"}},"background-4":{"settings":{"background":"#ffffff","text":"#121212","secondary_background":"#15383a","secondary_text":"#ffffff","highlight_text":"#ec1f57","button":"#fb538f","button_label":"#ffffff","button_hover":"#f9f2ee","button_label_hover":"#121212","secondary_button":"#f9f2ee","secondary_button_label":"#121212","secondary_button_hover":"#15383a","secondary_button_label_hover":"#ffffff"}}},"theme_radius_style":"round","type_header_font":"josefin_sans_n4","heading_scale":100,"type_body_font":"inter_n4","currency_code_enabled":false,"spacing_grid_vertical":8},"Sunglasses":{"color_schemes_new":{"background-1":{"settings":{"background":"#ffffff","background_gradient":"","text":"#121212","secondary_background":"#00c0fb","secondary_text":"#121212","highlight_text":"#ffa00b","button":"#121212","button_label":"#ffffff","button_hover":"#121212","button_label_hover":"#ffffff","secondary_button":"#121212","secondary_button_label":"#ffffff","secondary_button_hover":"#f1ebe4","secondary_button_label_hover":"#121212"}},"background-2":{"settings":{"background":"#f3f3f3","background_gradient":"","text":"#121212","secondary_background":"#ffffff","secondary_text":"#121212","highlight_text":"#ffa00b","button":"#00c0fb","button_label":"#ffffff","button_hover":"#121212","button_label_hover":"#ffffff","secondary_button":"#ffffff","secondary_button_label":"#121212","secondary_button_hover":"#121212","secondary_button_label_hover":"#ffffff"}},"background-3":{"settings":{"background":"#121212","background_gradient":"","text":"#ffffff","secondary_background":"#191919","secondary_text":"#ffffff","highlight_text":"#ffa00b","button":"#ffffff","button_label":"#121212","button_hover":"#f1ebe4","button_label_hover":"#000000","secondary_button":"#f1ebe4","secondary_button_label":"#121212","secondary_button_hover":"#ffa00b","secondary_button_label_hover":"#f1ebe4"}},"background-4":{"settings":{"background":"#ffffff","background_gradient":"","text":"#121212","secondary_background":"#f3f3f3","secondary_text":"#121212","highlight_text":"#ffa00b","button":"#00c0fb","button_label":"#ffffff","button_hover":"#121212","button_label_hover":"#ffffff","secondary_button":"#121212","secondary_button_label":"#f1ebe4","secondary_button_hover":"#ffa00b","secondary_button_label_hover":"#121212"}}},"theme_radius_style":"round","type_header_font":"inter_n4","heading_scale":100,"type_body_font":"inter_n4","currency_code_enabled":false,"spacing_grid_vertical":8}}}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "current": {
+    "theme_radius_style": "round",
+    "color_scheme_pickup": "scheme-23d60601-f3f5-4d14-8bd4-c16c0e99b7c4",
+    "type_header_font": "cooper_bt_n5",
+    "heading_scale": 100,
+    "type_body_font": "inter_n4",
+    "social_twitter_link": "",
+    "social_facebook_link": "https://www.facebook.com/SPORTeaFanPage",
+    "social_pinterest_link": "",
+    "social_instagram_link": "https://www.instagram.com/officialsportea/",
+    "social_tiktok_link": "",
+    "social_youtube_link": "https://www.youtube.com/sporteatv",
+    "favicon": "shopify://shop_images/SPORTea.png",
+    "currency_code_enabled": false,
+    "spacing_grid_vertical": 8,
+    "colors_solid_button_labels": "#efecec",
+    "colors_accent_1": "#2a332f",
+    "colors_accent_2": "#476154",
+    "colors_text": "#1c1a1a",
+    "colors_outline_button_labels": "#7b8382",
+    "colors_background_1": "#efecec",
+    "colors_background_2": "#c1bcae",
+    "sections": {
+      "pesto-header-one": {
+        "type": "pesto-header-one",
+        "blocks": {
+          "14ce570e-ef22-44fb-aadf-3349e04645df": {
+            "type": "search_action",
+            "settings": {}
+          },
+          "88e8a196-0964-4890-9787-aaaa": {
+            "type": "authior_action",
+            "settings": {}
+          },
+          "fdf0f978-07ab-4b11-b5cf-fe8e9e3985bc": {
+            "type": "cart_action",
+            "settings": {}
+          }
+        },
+        "block_order": [
+          "14ce570e-ef22-44fb-aadf-3349e04645df",
+          "88e8a196-0964-4890-9787-aaaa",
+          "fdf0f978-07ab-4b11-b5cf-fe8e9e3985bc"
+        ],
+        "settings": {
+          "logo_img": "",
+          "header_logo_svg": "",
+          "header_menu": "main-menu"
+        }
+      },
+      "main-password-header": {
+        "type": "main-password-header",
+        "settings": {
+          "logo_max_width": 100
+        }
+      },
+      "main-password-footer": {
+        "type": "main-password-footer",
+        "settings": {}
+      },
+      "pesto-footer-one": {
+        "type": "pesto-footer-one",
+        "blocks": {
+          "a1f223a0-3ffe-4e90-aa08-c5f45ac7abe8": {
+            "type": "contact_us",
+            "settings": {
+              "contact_item_title": "Heading",
+              "contact_item_contact_number_title": "Block subheading",
+              "contact_item_contact_number": "Store number",
+              "contact_item_contact_address_text": "Type your store address here",
+              "contact_item_contact_mail": "Type store support mail"
+            }
+          },
+          "3fef6cf4-51c7-4bc6-80be-4ff8a0c2afe3": {
+            "type": "opening_hours",
+            "settings": {
+              "opening_item_title": "Heading",
+              "opening_item_time_1": "9:00 - 20:30",
+              "opening_item_time_2": "9:00 - 20:30",
+              "opening_item_time_3": "9:00 - 20:30",
+              "opening_item_time_4": "9:00 - 20:30",
+              "opening_item_time_5": "9:00 - 20:30",
+              "opening_item_time_6": "9:00 - 20:30",
+              "opening_item_time_7": "Closed"
+            }
+          },
+          "da0f9dc6-9ee1-4e97-b8d9-98f4773adb5e": {
+            "type": "information",
+            "settings": {
+              "information_item_title": "Heading",
+              "information_item_title_menu": "footer"
+            }
+          },
+          "c3ad8720-8ddd-4e7c-9ee1-a18c41bfca45": {
+            "type": "newsletter",
+            "settings": {
+              "newsletter_item_title": "Heading",
+              "newsletter_item_content_text": "Describe a newsletter information.",
+              "newsletter_form_placeholder": "Enter your email",
+              "newsletter_subscribe_button_label": "Button",
+              "newsletter_item_policy_content": "Describe a policy of your store."
+            }
+          }
+        },
+        "block_order": [
+          "a1f223a0-3ffe-4e90-aa08-c5f45ac7abe8",
+          "3fef6cf4-51c7-4bc6-80be-4ff8a0c2afe3",
+          "da0f9dc6-9ee1-4e97-b8d9-98f4773adb5e",
+          "c3ad8720-8ddd-4e7c-9ee1-a18c41bfca45"
+        ],
+        "settings": {
+          "col_settings": 4,
+          "enable_country_selector": true,
+          "enable_language_selector": true
+        }
+      },
+      "pesto-announcement": {
+        "type": "pesto-announcement",
+        "blocks": {
+          "3ce148a7-8fe0-4bb5-988d-9bad591cefe6": {
+            "type": "announcement",
+            "settings": {
+              "announcement_top_svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\" fill=\"currentColor\" class=\"bi bi-egg-fried\" viewbox=\"0 0 16 16\">\n  <path d=\"M8 11a3 3 0 1 0 0-6 3 3 0 0 0 0 6z\"></path>\n  <path d=\"M13.997 5.17a5 5 0 0 0-8.101-4.09A5 5 0 0 0 1.28 9.342a5 5 0 0 0 8.336 5.109 3.5 3.5 0 0 0 5.201-4.065 3.001 3.001 0 0 0-.822-5.216zm-1-.034a1 1 0 0 0 .668.977 2.001 2.001 0 0 1 .547 3.478 1 1 0 0 0-.341 1.113 2.5 2.5 0 0 1-3.715 2.905 1 1 0 0 0-1.262.152 4 4 0 0 1-6.67-4.087 1 1 0 0 0-.2-1 4 4 0 0 1 3.693-6.61 1 1 0 0 0 .8-.2 4 4 0 0 1 6.48 3.273z\"></path>\n</svg>",
+              "text": "announcement text here",
+              "link": "",
+              "content_alignment": "center"
+            }
+          }
+        },
+        "block_order": [
+          "3ce148a7-8fe0-4bb5-988d-9bad591cefe6"
+        ],
+        "settings": {}
+      }
+    },
+    "content_for_index": [],
+    "blocks": {
+      "855628211100114053": {
+        "type": "shopify://apps/klaviyo-email-marketing-sms/blocks/klaviyo-onsite-embed/2632fe16-c075-4321-a88b-50b567f42507",
+        "disabled": false,
+        "settings": {}
+      },
+      "7570552984445421165": {
+        "type": "shopify://apps/yotpo-product-reviews-ugc/blocks/settings/eb7dfd7d-db44-4334-bc49-c893b51b36cf",
+        "disabled": false,
+        "settings": {}
+      },
+      "3667842014806057753": {
+        "type": "shopify://apps/one-click-upsell/blocks/app-embed/bfe6e378-b73a-4871-b8d3-7d6ede22678e",
+        "disabled": false,
+        "settings": {
+          "allowed_templates": ""
+        }
+      }
+    },
+    "color_schemes_new": {
+      "background-1": {
+        "settings": {
+          "background": "#201617",
+          "background_gradient": "",
+          "text": "#ffffff",
+          "secondary_background": "#392729",
+          "secondary_text": "#ffffff",
+          "highlight_text": "#ffa00b",
+          "button": "#ffc044",
+          "button_label": "#121212",
+          "button_hover": "#121212",
+          "button_label_hover": "#ffffff",
+          "secondary_button": "#121212",
+          "secondary_button_label": "#ffffff",
+          "secondary_button_hover": "#f1ebe4",
+          "secondary_button_label_hover": "#121212"
+        }
+      },
+      "background-2": {
+        "settings": {
+          "background": "#edeceb",
+          "background_gradient": "",
+          "text": "#000000",
+          "secondary_background": "#ffffff",
+          "secondary_text": "#201617",
+          "highlight_text": "#ffa00b",
+          "button": "#7e6238",
+          "button_label": "#ffffff",
+          "button_hover": "#201617",
+          "button_label_hover": "#ffffff",
+          "secondary_button": "#7e6238",
+          "secondary_button_label": "#ffffff",
+          "secondary_button_hover": "#ffa00b",
+          "secondary_button_label_hover": "#121212"
+        }
+      },
+      "background-3": {
+        "settings": {
+          "background": "#201617",
+          "background_gradient": "",
+          "text": "#ffffff",
+          "secondary_background": "#ffc044",
+          "secondary_text": "#121212",
+          "highlight_text": "#ffa00b",
+          "button": "#ffc044",
+          "button_label": "#121212",
+          "button_hover": "#f1ebe4",
+          "button_label_hover": "#000000",
+          "secondary_button": "#f1ebe4",
+          "secondary_button_label": "#121212",
+          "secondary_button_hover": "#ffa00b",
+          "secondary_button_label_hover": "#f1ebe4"
+        }
+      },
+      "background-4": {
+        "settings": {
+          "background": "#ffffff",
+          "background_gradient": "",
+          "text": "#264786",
+          "secondary_background": "#f1ebe4",
+          "secondary_text": "#4b1203",
+          "highlight_text": "#ffa00b",
+          "button": "#dc232a",
+          "button_label": "#ffffff",
+          "button_hover": "#201617",
+          "button_label_hover": "#ffffff",
+          "secondary_button": "#7e6238",
+          "secondary_button_label": "#f1ebe4",
+          "secondary_button_hover": "#ffa00b",
+          "secondary_button_label_hover": "#121212"
+        }
+      },
+      "scheme-5e7c3643-fbff-41a1-8cd0-e4adc91df113": {
+        "settings": {
+          "background": "#2b4e92",
+          "background_gradient": "",
+          "text": "#ffffff",
+          "secondary_background": "#ffffff",
+          "secondary_text": "#ffffff",
+          "highlight_text": "#264786",
+          "button": "#dc232a",
+          "button_label": "#ffffff",
+          "button_hover": "#121212",
+          "button_label_hover": "#ffffff",
+          "secondary_button": "#121212",
+          "secondary_button_label": "#ffffff",
+          "secondary_button_hover": "#f1ebe4",
+          "secondary_button_label_hover": "#121212"
+        }
+      },
+      "scheme-23d60601-f3f5-4d14-8bd4-c16c0e99b7c4": {
+        "settings": {
+          "background": "#ffffff",
+          "background_gradient": "",
+          "text": "#201617",
+          "secondary_background": "#ffffff",
+          "secondary_text": "#121212",
+          "highlight_text": "#d72a31",
+          "button": "#d72a31",
+          "button_label": "#ffffff",
+          "button_hover": "#ffffff",
+          "button_label_hover": "#ffffff",
+          "secondary_button": "#121212",
+          "secondary_button_label": "#ffffff",
+          "secondary_button_hover": "#f1ebe4",
+          "secondary_button_label_hover": "#121212"
+        }
+      },
+      "scheme-980112c1-de54-455d-9989-e069b5a58ab1": {
+        "settings": {
+          "background": "#201617",
+          "background_gradient": "",
+          "text": "#ffffff",
+          "secondary_background": "#392729",
+          "secondary_text": "#ffffff",
+          "highlight_text": "#ffa00b",
+          "button": "#ffc044",
+          "button_label": "#121212",
+          "button_hover": "#121212",
+          "button_label_hover": "#ffffff",
+          "secondary_button": "#121212",
+          "secondary_button_label": "#ffffff",
+          "secondary_button_hover": "#f1ebe4",
+          "secondary_button_label_hover": "#121212"
+        }
+      }
+    }
+  },
+  "presets": {
+    "Restaurant": {
+      "color_schemes_new": {
+        "background-1": {
+          "settings": {
+            "background": "#b33012",
+            "secondary_background": "#862D19",
+            "text": "#FFFFFF",
+            "secondary_text": "#FFFFFF",
+            "highlight_text": "#FFA00B",
+            "button": "#FFA00B",
+            "button_hover": "#121212",
+            "button_label": "#121212",
+            "button_label_hover": "#ffffff",
+            "secondary_button": "#121212",
+            "secondary_button_hover": "#f1ebe4",
+            "secondary_button_label": "#ffffff",
+            "secondary_button_label_hover": "#121212"
+          }
+        },
+        "background-2": {
+          "settings": {
+            "background": "#f1ebe4",
+            "secondary_background": "#ffffff",
+            "text": "#4b1203",
+            "secondary_text": "#4b1203",
+            "highlight_text": "#FFA00B",
+            "button": "#FFA00B",
+            "button_hover": "#4b1203",
+            "button_label": "#4b1203",
+            "button_label_hover": "#FFFFFF",
+            "secondary_button": "#121212",
+            "secondary_button_hover": "#ffa00b",
+            "secondary_button_label": "#f1ebe4",
+            "secondary_button_label_hover": "#121212"
+          }
+        },
+        "background-3": {
+          "settings": {
+            "background": "#000000",
+            "secondary_background": "#191919",
+            "text": "#ffffff",
+            "secondary_text": "#FFFFFF",
+            "highlight_text": "#FFA00B",
+            "button": "#ffa00b",
+            "button_hover": "#f1ebe4",
+            "button_label": "#121212",
+            "button_label_hover": "#000000",
+            "secondary_button": "#f1ebe4",
+            "secondary_button_hover": "#ffa00b",
+            "secondary_button_label": "#121212",
+            "secondary_button_label_hover": "#f1ebe4"
+          }
+        },
+        "background-4": {
+          "settings": {
+            "background": "#FFFFFF",
+            "secondary_background": "#f1ebe4",
+            "text": "#4b1203",
+            "secondary_text": "#4b1203",
+            "highlight_text": "#FFA00B",
+            "button": "#FFA00B",
+            "button_hover": "#4b1203",
+            "button_label": "#4b1203",
+            "button_label_hover": "#FFFFFF",
+            "secondary_button": "#121212",
+            "secondary_button_hover": "#ffa00b",
+            "secondary_button_label": "#f1ebe4",
+            "secondary_button_label_hover": "#121212"
+          }
+        }
+      },
+      "theme_radius_style": "round",
+      "type_header_font": "righteous_n4",
+      "heading_scale": 100,
+      "type_body_font": "daytona_n4",
+      "currency_code_enabled": false,
+      "spacing_grid_vertical": 8,
+      "colors_solid_button_labels": "#efecec",
+      "colors_accent_1": "#2a332f",
+      "colors_accent_2": "#476154",
+      "colors_text": "#1c1a1a",
+      "colors_outline_button_labels": "#7b8382",
+      "colors_background_1": "#efecec",
+      "colors_background_2": "#c1bcae",
+      "sections": {
+        "pesto-header-one": {
+          "type": "pesto-header-one",
+          "blocks": {
+            "14ce570e-ef22-44fb-aadf-3349e04645df": {
+              "type": "search_action",
+              "settings": {}
+            },
+            "88e8a196-0964-4890-9787-aaaa": {
+              "type": "authior_action",
+              "settings": {}
+            },
+            "fdf0f978-07ab-4b11-b5cf-fe8e9e3985bc": {
+              "type": "cart_action",
+              "settings": {}
+            }
+          },
+          "block_order": [
+            "14ce570e-ef22-44fb-aadf-3349e04645df",
+            "88e8a196-0964-4890-9787-aaaa",
+            "fdf0f978-07ab-4b11-b5cf-fe8e9e3985bc"
+          ],
+          "settings": {
+            "logo_img": "",
+            "header_logo_svg": "",
+            "header_menu": "main-menu"
+          }
+        },
+        "main-password-header": {
+          "type": "main-password-header",
+          "settings": {
+            "logo_max_width": 100
+          }
+        },
+        "main-password-footer": {
+          "type": "main-password-footer",
+          "settings": {}
+        },
+        "pesto-footer-one": {
+          "type": "pesto-footer-one",
+          "blocks": {
+            "a1f223a0-3ffe-4e90-aa08-c5f45ac7abe8": {
+              "type": "contact_us",
+              "settings": {
+                "contact_item_title": "Heading",
+                "contact_item_contact_number_title": "Block subheading",
+                "contact_item_contact_number": "Store number",
+                "contact_item_contact_address_text": "Type your store address here",
+                "contact_item_contact_mail": "Type store support mail"
+              }
+            },
+            "3fef6cf4-51c7-4bc6-80be-4ff8a0c2afe3": {
+              "type": "opening_hours",
+              "settings": {
+                "opening_item_title": "Heading",
+                "opening_item_time_1": "9:00 - 20:30",
+                "opening_item_time_2": "9:00 - 20:30",
+                "opening_item_time_3": "9:00 - 20:30",
+                "opening_item_time_4": "9:00 - 20:30",
+                "opening_item_time_5": "9:00 - 20:30",
+                "opening_item_time_6": "9:00 - 20:30",
+                "opening_item_time_7": "Closed"
+              }
+            },
+            "da0f9dc6-9ee1-4e97-b8d9-98f4773adb5e": {
+              "type": "information",
+              "settings": {
+                "information_item_title": "Heading",
+                "information_item_title_menu": "footer"
+              }
+            },
+            "c3ad8720-8ddd-4e7c-9ee1-a18c41bfca45": {
+              "type": "newsletter",
+              "settings": {
+                "newsletter_item_title": "Heading",
+                "newsletter_item_content_text": "Describe a newsletter information.",
+                "newsletter_form_placeholder": "Enter your email",
+                "newsletter_subscribe_button_label": "Button",
+                "newsletter_item_policy_content": "Describe a policy of your store."
+              }
+            }
+          },
+          "block_order": [
+            "a1f223a0-3ffe-4e90-aa08-c5f45ac7abe8",
+            "3fef6cf4-51c7-4bc6-80be-4ff8a0c2afe3",
+            "da0f9dc6-9ee1-4e97-b8d9-98f4773adb5e",
+            "c3ad8720-8ddd-4e7c-9ee1-a18c41bfca45"
+          ],
+          "settings": {
+            "col_settings": 4,
+            "enable_country_selector": true,
+            "enable_language_selector": true
+          }
+        },
+        "pesto-announcement": {
+          "type": "pesto-announcement",
+          "blocks": {
+            "3ce148a7-8fe0-4bb5-988d-9bad591cefe6": {
+              "type": "announcement",
+              "settings": {
+                "announcement_top_svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\" fill=\"currentColor\" class=\"bi bi-egg-fried\" viewbox=\"0 0 16 16\">\n  <path d=\"M8 11a3 3 0 1 0 0-6 3 3 0 0 0 0 6z\"></path>\n  <path d=\"M13.997 5.17a5 5 0 0 0-8.101-4.09A5 5 0 0 0 1.28 9.342a5 5 0 0 0 8.336 5.109 3.5 3.5 0 0 0 5.201-4.065 3.001 3.001 0 0 0-.822-5.216zm-1-.034a1 1 0 0 0 .668.977 2.001 2.001 0 0 1 .547 3.478 1 1 0 0 0-.341 1.113 2.5 2.5 0 0 1-3.715 2.905 1 1 0 0 0-1.262.152 4 4 0 0 1-6.67-4.087 1 1 0 0 0-.2-1 4 4 0 0 1 3.693-6.61 1 1 0 0 0 .8-.2 4 4 0 0 1 6.48 3.273z\"></path>\n</svg>",
+                "text": "announcement text here",
+                "link": "",
+                "content_alignment": "center"
+              }
+            }
+          },
+          "block_order": [
+            "3ce148a7-8fe0-4bb5-988d-9bad591cefe6"
+          ],
+          "settings": {}
+        }
+      },
+      "content_for_index": []
+    },
+    "Coffee": {
+      "color_schemes_new": {
+        "background-1": {
+          "settings": {
+            "background": "#201617",
+            "text": "#ffffff",
+            "secondary_background": "#392729",
+            "secondary_text": "#ffffff",
+            "highlight_text": "#ffa00b",
+            "button": "#ffc044",
+            "button_label": "#121212",
+            "button_hover": "#121212",
+            "button_label_hover": "#ffffff",
+            "secondary_button": "#121212",
+            "secondary_button_label": "#ffffff",
+            "secondary_button_hover": "#f1ebe4",
+            "secondary_button_label_hover": "#121212"
+          }
+        },
+        "background-2": {
+          "settings": {
+            "background": "#edeceb",
+            "text": "#121212",
+            "secondary_background": "#ffffff",
+            "secondary_text": "#201617",
+            "highlight_text": "#ffa00b",
+            "button": "#7e6238",
+            "button_label": "#ffffff",
+            "button_hover": "#201617",
+            "button_label_hover": "#ffffff",
+            "secondary_button": "#7e6238",
+            "secondary_button_label": "#ffffff",
+            "secondary_button_hover": "#ffa00b",
+            "secondary_button_label_hover": "#121212"
+          }
+        },
+        "background-3": {
+          "settings": {
+            "background": "#201617",
+            "text": "#ffffff",
+            "secondary_background": "#ffc044",
+            "secondary_text": "#121212",
+            "highlight_text": "#ffa00b",
+            "button": "#ffc044",
+            "button_label": "#121212",
+            "button_hover": "#f1ebe4",
+            "button_label_hover": "#000000",
+            "secondary_button": "#f1ebe4",
+            "secondary_button_label": "#121212",
+            "secondary_button_hover": "#ffa00b",
+            "secondary_button_label_hover": "#f1ebe4"
+          }
+        },
+        "background-4": {
+          "settings": {
+            "background": "#ffffff",
+            "text": "#121212",
+            "secondary_background": "#f1ebe4",
+            "secondary_text": "#4b1203",
+            "highlight_text": "#ffa00b",
+            "button": "#7e6238",
+            "button_label": "#ffffff",
+            "button_hover": "#201617",
+            "button_label_hover": "#ffffff",
+            "secondary_button": "#7e6238",
+            "secondary_button_label": "#f1ebe4",
+            "secondary_button_hover": "#ffa00b",
+            "secondary_button_label_hover": "#121212"
+          }
+        }
+      },
+      "theme_radius_style": "round",
+      "type_header_font": "cooper_bt_n5",
+      "heading_scale": 100,
+      "type_body_font": "inter_n4",
+      "currency_code_enabled": false,
+      "spacing_grid_vertical": 8
+    },
+    "Health & Beauty": {
+      "color_schemes_new": {
+        "background-1": {
+          "settings": {
+            "background": "#ffffff",
+            "text": "#121212",
+            "secondary_background": "#15383a",
+            "secondary_text": "#ffffff",
+            "highlight_text": "#ec1f57",
+            "button": "#15383a",
+            "button_label": "#ffffff",
+            "button_hover": "#f9f2ee",
+            "button_label_hover": "#121212",
+            "secondary_button": "#f9f2ee",
+            "secondary_button_label": "#121212",
+            "secondary_button_hover": "#15383a",
+            "secondary_button_label_hover": "#ffffff"
+          }
+        },
+        "background-2": {
+          "settings": {
+            "background": "#f7f4f2",
+            "text": "#121212",
+            "secondary_background": "#ffffff",
+            "secondary_text": "#121212",
+            "highlight_text": "#ec1f57",
+            "button": "#15383a",
+            "button_label": "#ffffff",
+            "button_hover": "#f7f4f2",
+            "button_label_hover": "#121212",
+            "secondary_button": "#f7f4f2",
+            "secondary_button_label": "#121212",
+            "secondary_button_hover": "#15383a",
+            "secondary_button_label_hover": "#ffffff"
+          }
+        },
+        "background-3": {
+          "settings": {
+            "background": "#15383a",
+            "text": "#ffffff",
+            "secondary_background": "#f7f4f2",
+            "secondary_text": "#121212",
+            "highlight_text": "#ec1f57",
+            "button": "#ffffff",
+            "button_label": "#121212",
+            "button_hover": "#f7f4f2",
+            "button_label_hover": "#121212",
+            "secondary_button": "#f7f4f2",
+            "secondary_button_label": "#121212",
+            "secondary_button_hover": "#ffffff",
+            "secondary_button_label_hover": "#121212"
+          }
+        },
+        "background-4": {
+          "settings": {
+            "background": "#ffffff",
+            "text": "#121212",
+            "secondary_background": "#15383a",
+            "secondary_text": "#ffffff",
+            "highlight_text": "#ec1f57",
+            "button": "#f9f2ee",
+            "button_label": "#15383a",
+            "button_hover": "#f9f2ee",
+            "button_label_hover": "#121212",
+            "secondary_button": "#f9f2ee",
+            "secondary_button_label": "#121212",
+            "secondary_button_hover": "#15383a",
+            "secondary_button_label_hover": "#ffffff"
+          }
+        }
+      },
+      "theme_radius_style": "none",
+      "type_header_font": "josefin_sans_n4",
+      "heading_scale": 100,
+      "type_body_font": "inter_n4",
+      "currency_code_enabled": false,
+      "spacing_grid_vertical": 8
+    },
+    "Kids & Baby": {
+      "color_schemes_new": {
+        "background-1": {
+          "settings": {
+            "background": "#ffffff",
+            "text": "#121212",
+            "secondary_background": "#fff6f9",
+            "secondary_text": "#000000",
+            "highlight_text": "#ec1f57",
+            "button": "#fb538f",
+            "button_label": "#ffffff",
+            "button_hover": "#f9f2ee",
+            "button_label_hover": "#121212",
+            "secondary_button": "#f9f2ee",
+            "secondary_button_label": "#121212",
+            "secondary_button_hover": "#15383a",
+            "secondary_button_label_hover": "#ffffff"
+          }
+        },
+        "background-2": {
+          "settings": {
+            "background": "#fff6f9",
+            "text": "#121212",
+            "secondary_background": "#ffffff",
+            "secondary_text": "#121212",
+            "highlight_text": "#ec1f57",
+            "button": "#fb538f",
+            "button_label": "#ffffff",
+            "button_hover": "#f7f4f2",
+            "button_label_hover": "#121212",
+            "secondary_button": "#fb538f",
+            "secondary_button_label": "#ffffff",
+            "secondary_button_hover": "#f9f2ee",
+            "secondary_button_label_hover": "#000000"
+          }
+        },
+        "background-3": {
+          "settings": {
+            "background": "#121212",
+            "text": "#ffffff",
+            "secondary_background": "#f7f4f2",
+            "secondary_text": "#121212",
+            "highlight_text": "#ec1f57",
+            "button": "#fb538f",
+            "button_label": "#ffffff",
+            "button_hover": "#f7f4f2",
+            "button_label_hover": "#121212",
+            "secondary_button": "#f7f4f2",
+            "secondary_button_label": "#121212",
+            "secondary_button_hover": "#ffffff",
+            "secondary_button_label_hover": "#121212"
+          }
+        },
+        "background-4": {
+          "settings": {
+            "background": "#ffffff",
+            "text": "#121212",
+            "secondary_background": "#15383a",
+            "secondary_text": "#ffffff",
+            "highlight_text": "#ec1f57",
+            "button": "#fb538f",
+            "button_label": "#ffffff",
+            "button_hover": "#f9f2ee",
+            "button_label_hover": "#121212",
+            "secondary_button": "#f9f2ee",
+            "secondary_button_label": "#121212",
+            "secondary_button_hover": "#15383a",
+            "secondary_button_label_hover": "#ffffff"
+          }
+        }
+      },
+      "theme_radius_style": "round",
+      "type_header_font": "josefin_sans_n4",
+      "heading_scale": 100,
+      "type_body_font": "inter_n4",
+      "currency_code_enabled": false,
+      "spacing_grid_vertical": 8
+    },
+    "Sunglasses": {
+      "color_schemes_new": {
+        "background-1": {
+          "settings": {
+            "background": "#ffffff",
+            "background_gradient": "",
+            "text": "#121212",
+            "secondary_background": "#00c0fb",
+            "secondary_text": "#121212",
+            "highlight_text": "#ffa00b",
+            "button": "#121212",
+            "button_label": "#ffffff",
+            "button_hover": "#121212",
+            "button_label_hover": "#ffffff",
+            "secondary_button": "#121212",
+            "secondary_button_label": "#ffffff",
+            "secondary_button_hover": "#f1ebe4",
+            "secondary_button_label_hover": "#121212"
+          }
+        },
+        "background-2": {
+          "settings": {
+            "background": "#f3f3f3",
+            "background_gradient": "",
+            "text": "#121212",
+            "secondary_background": "#ffffff",
+            "secondary_text": "#121212",
+            "highlight_text": "#ffa00b",
+            "button": "#00c0fb",
+            "button_label": "#ffffff",
+            "button_hover": "#121212",
+            "button_label_hover": "#ffffff",
+            "secondary_button": "#ffffff",
+            "secondary_button_label": "#121212",
+            "secondary_button_hover": "#121212",
+            "secondary_button_label_hover": "#ffffff"
+          }
+        },
+        "background-3": {
+          "settings": {
+            "background": "#121212",
+            "background_gradient": "",
+            "text": "#ffffff",
+            "secondary_background": "#191919",
+            "secondary_text": "#ffffff",
+            "highlight_text": "#ffa00b",
+            "button": "#ffffff",
+            "button_label": "#121212",
+            "button_hover": "#f1ebe4",
+            "button_label_hover": "#000000",
+            "secondary_button": "#f1ebe4",
+            "secondary_button_label": "#121212",
+            "secondary_button_hover": "#ffa00b",
+            "secondary_button_label_hover": "#f1ebe4"
+          }
+        },
+        "background-4": {
+          "settings": {
+            "background": "#ffffff",
+            "background_gradient": "",
+            "text": "#121212",
+            "secondary_background": "#f3f3f3",
+            "secondary_text": "#121212",
+            "highlight_text": "#ffa00b",
+            "button": "#00c0fb",
+            "button_label": "#ffffff",
+            "button_hover": "#121212",
+            "button_label_hover": "#ffffff",
+            "secondary_button": "#121212",
+            "secondary_button_label": "#f1ebe4",
+            "secondary_button_hover": "#ffa00b",
+            "secondary_button_label_hover": "#121212"
+          }
+        }
+      },
+      "theme_radius_style": "round",
+      "type_header_font": "inter_n4",
+      "heading_scale": 100,
+      "type_body_font": "inter_n4",
+      "currency_code_enabled": false,
+      "spacing_grid_vertical": 8
+    }
+  }
+}

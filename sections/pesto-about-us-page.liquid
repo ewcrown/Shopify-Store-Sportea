@@ -2,72 +2,144 @@
   rel="stylesheet"
   href="{{ 'ui-page-title.css' | asset_url }}"
   media="print"
-  onload="this.media='all'">
+  onload="this.media='all'"
+>
 <noscript>{{ 'ui-page-title.css' | asset_url | stylesheet_tag }}</noscript>
-
 {%- style -%}
+      {%- if section.settings.image_overlay_opacity != blank -%}
+        #shopify-section-{{ section.id }} .page-title-three:before {
+          opacity: 1;
+          background-color: {{ section.settings.image_overlay_color }};
+          z-index: 1;
+        }
+      {%- endif -%}
+      {%- if section.settings.pesto_section_padding_top != blank -%}
+        #shopify-section-{{ section.id}} .page-title-three.about-page {
+          padding-top: {{ section.settings.pesto_section_padding_top }}px !important;
+        }
+      {%- endif -%}
 
-  {%- if section.settings.image_overlay_opacity != blank -%}
-    #shopify-section-{{ section.id }} .page-title-three:before {
-      opacity: {{ section.settings.image_overlay_opacity | divided_by: 100.0 }};
-      background-color: {{ section.settings.image_overlay_color }};
-      z-index: 1;
-    }
-  {%- endif -%}
-  {%- if section.settings.pesto_section_padding_top != blank -%}
-    #shopify-section-{{ section.id}} .page-title-three.about-page {
-      padding-top: {{ section.settings.pesto_section_padding_top }}px !important;
-    }
-  {%- endif -%}
+    {%- if section.settings.pesto_section_padding_bottom != blank -%}
+      #shopify-section-{{ section.id}} .page-title-three.about-page {
+        padding-bottom: {{ section.settings.pesto_section_padding_bottom }}px !important;
+      }
+    {%- endif -%}
 
-{%- if section.settings.pesto_section_padding_bottom != blank -%}
-  #shopify-section-{{ section.id}} .page-title-three.about-page {
-    padding-bottom: {{ section.settings.pesto_section_padding_bottom }}px !important;
+    {%- for block in section.blocks -%}
+        {%- if block.type == 'banner_title_test' and block.settings.richtext_heading_size != blank -%}
+          #shopify-section-{{ section.id }} .page-title-three-header {
+            font-size: {{ block.settings.richtext_heading_size }}px !important;
+          }
+          @media (max-width: 767px){
+            #shopify-section-{{ section.id }} .page-title-three-header {
+              font-size: {{ block.settings.richtext_heading_size_responsive }}px !important;
+            }
+          }
+        {%- endif -%}
+        {%- if block.type == 'banner_subtitle_test' and block.settings.richtext_subheading_size != blank -%}
+          #shopify-section-{{ section.id }} .page-title-three-subheader {
+            font-size: {{ block.settings.richtext_subheading_size }}px !important;
+          }
+          @media (max-width: 767px){
+            #shopify-section-{{ section.id }} .page-title-three-subheader {
+              font-size: {{ block.settings.richtext_subheading_size_responsive }}px !important;
+            }
+          }
+
+        {%- endif -%}
+
+        {%- if block.type == 'item_gap' -%}
+          #shopify-section-{{ section.id }} .richtext-item-gap {
+            height: {{ block.settings.richtext_item_gap }}px !important;
+          }
+        {%- endif -%}
+
+      {%- endfor -%}
+   /* #shopify-section-{{ section.id }}  a:not(.is-plain):not(.button):not(.link-btn):not(.link):hover{
+    border:1px solid #dc3545 !important;
+  } */
+{%- endstyle -%}
+<style>
+                          #shopify-section-{{ section.id }}  .theme-btn:before {
+                               background-color: #1556af !important;
+                           }
+                        {% if template.suffix == 'partner-with-earth-first' %}
+                     #shopify-section-{{ section.id }} h3 {
+        margin-bottom: 10px;
+    }
+
+    #shopify-section-{{ section.id }} a.theme-btn {
+        width: 60% !important;
+        margin: auto;
+        position: relative;
+        font-size: 20px !important;
+        display: block;
+        height: 60px;
+        line-height: 60px;
+        margin-top: 2rem;
+    }
+
+    #shopify-section-{{ section.id }} span {
+        line-height: 0px !important;
+        min-height: 20px !important;
+    }
+
+    .banner-carousel .shape img {
+        border-radius: 20px;
+    }
+
+    /* Responsive Styles */
+    @media (max-width: 1050px) {
+        #shopify-section-{{ section.id }} a.theme-btn {
+            font-size: 15px !important;
+        }
+       #shopify-section-{{ section.id }}   .theme-btn svg {
+      right: 7%;
   }
-{%- endif -%}
+    }
 
-{%- for block in section.blocks -%}
-    {%- if block.type == 'banner_title_test' and block.settings.richtext_heading_size != blank -%}
-      #shopify-section-{{ section.id }} .page-title-three-header {
-        font-size: {{ block.settings.richtext_heading_size }}px !important;
-      }
-      @media (max-width: 767px){
-        #shopify-section-{{ section.id }} .page-title-three-header {
-          font-size: {{ block.settings.richtext_heading_size_responsive }}px !important;
+    @media (max-width: 790px) {
+        #shopify-section-{{ section.id }} a.theme-btn {
+            font-size: 13px !important;
+            height: 45px;
+            line-height: 30px;
+            padding-top: 0.5rem !important;
+            width: 100% !important;
         }
-      }
-    {%- endif -%}
-    {%- if block.type == 'banner_subtitle_test' and block.settings.richtext_subheading_size != blank -%}
-      #shopify-section-{{ section.id }} .page-title-three-subheader {
-        font-size: {{ block.settings.richtext_subheading_size }}px !important;
-      }
-      @media (max-width: 767px){
-        #shopify-section-{{ section.id }} .page-title-three-subheader {
-          font-size: {{ block.settings.richtext_subheading_size_responsive }}px !important;
+
+        #shopify-section-{{ section.id }} a.theme-btn .sportea-trademark-sup {
+            display: inline-block !important;
+            font-size: 15px !important;
+            vertical-align: 5px;
         }
-      }
+    }
 
-    {%- endif -%}
+    @media (max-width: 500px) {
+        #shopify-section-{{ section.id }} a.theme-btn {
+            font-size: 12px !important;
+        }
+    }
 
-    {%- if block.type == 'item_gap' -%}
-      #shopify-section-{{ section.id }} .richtext-item-gap {
-        height: {{ block.settings.richtext_item_gap }}px !important;
-      }
-    {%- endif -%}
-  
-  {%- endfor -%}
-{%- endstyle -%} 
+    @media (max-width: 375px) {
+        #shopify-section-{{ section.id }} a.theme-btn {
+            height: 70px !important;
+            line-height: 15px  !important;
+            padding-top: 1rem !important;
+        }
+    }
 
+
+                        {% endif %}
+</style>
 <div
   id="{{ section.id }}"
   class="color-{{ section.settings.color_scheme }} lazyload page-title-three about-page centred"
-  >
-
+>
   {% if section.settings.section_bg_image != blank %}
     <div
-        class="overlay-object-section-bg"
+      class="overlay-object-section-bg"
     >
-        {{ section.settings.section_bg_image | image_url: width: 7680 | image_tag: loading: 'lazy', class: 'lazyload' }}
+      {{ section.settings.section_bg_image | image_url: width: 7680 | image_tag: loading: 'lazy', class: 'lazyload' }}
     </div>
   {%- endif -%}
 
@@ -80,11 +152,11 @@
       {%- for block in section.blocks -%}
         {%- case block.type -%}
           {%- when 'banner_subtitle' -%}
-          <div class="rich-text-block-single-inner rte-content-area">{{ block.settings.banner_sub_title }}</div>
+            <div class="rich-text-block-single-inner rte-content-area">{{ block.settings.banner_sub_title }}</div>
           {%- when 'banner_title_test' -%}
-          <h1 class="page-title-three-header">{{ block.settings.banner_title_text }}</h1>
+            <h1 class="page-title-three-header">{{ block.settings.banner_title_text }}</h1>
           {%- when 'banner_subtitle_test' -%}
-          <h4 class="page-title-three-subheader">{{ block.settings.banner_subtitle_text }}</h4>
+            <h4 class="page-title-three-subheader">{{ block.settings.banner_subtitle_text }}</h4>
 
           {%- when 'banner_button_text' -%}
             {% if block.settings.banner_button_label != blank %}
@@ -92,7 +164,11 @@
                 <a
                   href="{{ block.settings.banner_button_url }}"
                   class="theme-btn btn-two"
-                  aria-label="{{ block.settings.banner_button_label }}">{{ block.settings.banner_button_label }}</a>
+                  aria-label="{{ block.settings.banner_button_label }}"
+                >
+                  {{- block.settings.banner_button_label -}}
+                  {% render 'arrow' %}
+                </a>
               </div>
             {% endif %}
           {%- when 'item_gap' -%}
@@ -105,191 +181,193 @@
 <!-- section rnd code -->
 
 {% schema %}
-  {
-    "name": "Rich text",
-    "tag": "section",
-    "class": "about-us-page rich-tex-tt-area",
-    "settings": [
-      {
-        "type": "color_scheme",
-        "id": "color_scheme",
-        "default": "background-3",
-        "label": "Color scheme"
-      },
-      {
-        "type": "image_picker",
-        "id": "section_bg_image",
-        "label": "Background image"
-      },
-      {
-        "type": "range",
-        "id": "image_overlay_opacity",
-        "min": 0,
-        "max": 100,
-        "step": 1,
-        "unit": "%",
-        "label": "Overlay opacity",
-        "default": 30
-      },
-      {
-        "type": "color",
-        "id": "image_overlay_color",
-        "label": "Image overlay color",
-        "default": "#000000"
-      }, 
-      {
-        "type": "header",
-        "content": "Section padding"
-      }, 
-      {
-        "type": "range",
-        "id": "pesto_section_padding_top",
-        "min": 0,
-        "max": 200,
-        "step": 10,
-        "unit": "px",
-        "label": "t:sections.all.padding.padding_top",
-        "default": 150
-      },
-       {
-        "type": "range",
-        "id": "pesto_section_padding_bottom",
-        "min": 0,
-        "max": 200,
-        "step": 10,
-        "unit": "px",
-        "label": "t:sections.all.padding.padding_bottom",
-        "default": 150
-      }
-    ],
-    "blocks": [
-      {
-        "name": "Content",
-        "type": "banner_subtitle",
-        "limit": 1,
-        "settings": [
-          {
-            "type": "richtext",
-            "id": "banner_sub_title",
-            "label": "Content",
-            "default": "<h5>Describe a product, make announcements, or welcome customers to your store.</h5>"
-          }
-        ]
-      }, {
-        "name": "Heading",
-        "type": "banner_title_test",
-        "limit": 1,
-        "settings": [
-          {
-            "type": "text",
-            "id": "banner_title_text",
-            "label": "Heading",
-            "default": "Block heading"
-          },
-          {
-            "type": "range",
-            "id": "richtext_heading_size",
-            "min": 42,
-            "max": 120,
-            "step": 1,
-            "unit": "px",
-            "label": "Font size on desktop",
-            "default": 115
-          },
-          {
-            "type": "range",
-            "id": "richtext_heading_size_responsive",
-            "min": 42,
-            "max": 120,
-            "step": 1,
-            "unit": "px",
-            "label": "Font size on mobile",
-            "default": 60
-          }
-        ]
-      }, {
-        "name": "Subheading",
-        "type": "banner_subtitle_test",
-        "limit": 1,
-        "settings": [
-          {
-            "type": "text",
-            "id": "banner_subtitle_text",
-            "label": "Subheading",
-            "default": "Block subheading"
-          },
-          {
-            "type": "range",
-            "id": "richtext_subheading_size",
-            "min": 24,
-            "max": 120,
-            "step": 1,
-            "unit": "px",
-            "label": "Font size on desktop",
-            "default": 24
-          },
-          {
-            "type": "range", 
-            "id": "richtext_subheading_size_responsive",
-            "min": 16,
-            "max": 100,
-            "step": 1,
-            "unit": "px",
-            "label": "Font size on mobile",
-            "default": 24
-          }
-        ]
-      }, 
-      {
-        "name": "Button",
-        "type": "banner_button_text",
-        "limit": 1,
-        "settings": [
-          {
-            "type": "text",
-            "id": "banner_button_label",
-            "label": "Button label",
-            "default": "Button",
-            "info": "Leave the label blank to hide the button"
-          }, {
-            "type": "url",
-            "id": "banner_button_url",
-            "label": "Button link"
-          }
-        ]
-      },
-      {
-        "name": "Gap",
-        "type": "item_gap",
-        "settings": [
-          {
-            "type": "range",
-            "id": "richtext_item_gap",
-            "min": 0,
-            "max": 100,
-            "step": 1,
-            "unit": "px",
-            "label": "Space between content",
-            "default": 49
-          }
-        ]
-      }
-    ],
-    "presets": [
-      {
-        "name": "Rich text",
-        "blocks": [
-          {
-            "type": "banner_subtitle"
-          }, 
-          {
-            "type": "banner_title_test"
-          },
-          {
-            "type": "item_gap"
-          }
-        ]
-      }
-    ]
-  }
+{
+  "name": "Rich text",
+  "tag": "section",
+  "class": "about-us-page rich-tex-tt-area",
+  "settings": [
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "default": "background-3",
+      "label": "Color scheme"
+    },
+    {
+      "type": "image_picker",
+      "id": "section_bg_image",
+      "label": "Background image"
+    },
+    {
+      "type": "range",
+      "id": "image_overlay_opacity",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "%",
+      "label": "Overlay opacity",
+      "default": 30
+    },
+    {
+      "type": "color",
+      "id": "image_overlay_color",
+      "label": "Image overlay color",
+      "default": "#000000"
+    },
+    {
+      "type": "header",
+      "content": "Section padding"
+    },
+    {
+      "type": "range",
+      "id": "pesto_section_padding_top",
+      "min": 0,
+      "max": 200,
+      "step": 10,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 150
+    },
+     {
+      "type": "range",
+      "id": "pesto_section_padding_bottom",
+      "min": 0,
+      "max": 200,
+      "step": 10,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 150
+    }
+  ],
+  "blocks": [
+    {
+      "name": "Content",
+      "type": "banner_subtitle",
+      "limit": 2,
+      "settings": [
+        {
+          "type": "richtext",
+          "id": "banner_sub_title",
+          "label": "Content",
+          "default": "<h5>Describe a product, make announcements, or welcome customers to your store.</h5>"
+        }
+      ]
+    },
+    {
+      "name": "Heading",
+      "type": "banner_title_test",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "text",
+          "id": "banner_title_text",
+          "label": "Heading",
+          "default": "Block heading"
+        },
+        {
+          "type": "range",
+          "id": "richtext_heading_size",
+          "min": 20,
+          "max": 120,
+          "step": 1,
+          "unit": "px",
+          "label": "Font size on desktop",
+          "default": 115
+        },
+        {
+          "type": "range",
+          "id": "richtext_heading_size_responsive",
+          "min": 20,
+          "max": 120,
+          "step": 1,
+          "unit": "px",
+          "label": "Font size on mobile",
+          "default": 60
+        }
+      ]
+    },
+     {
+      "name": "Subheading",
+      "type": "banner_subtitle_test",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "text",
+          "id": "banner_subtitle_text",
+          "label": "Subheading",
+          "default": "Block subheading"
+        },
+        {
+          "type": "range",
+          "id": "richtext_subheading_size",
+          "min": 24,
+          "max": 120,
+          "step": 1,
+          "unit": "px",
+          "label": "Font size on desktop",
+          "default": 24
+        },
+        {
+          "type": "range",
+          "id": "richtext_subheading_size_responsive",
+          "min": 16,
+          "max": 100,
+          "step": 1,
+          "unit": "px",
+          "label": "Font size on mobile",
+          "default": 24
+        }
+      ]
+    },
+    {
+      "name": "Button",
+      "type": "banner_button_text",
+      "limit": 2,
+      "settings": [
+        {
+          "type": "text",
+          "id": "banner_button_label",
+          "label": "Button label",
+          "default": "Button",
+          "info": "Leave the label blank to hide the button"
+        }, {
+          "type": "url",
+          "id": "banner_button_url",
+          "label": "Button link"
+        }
+      ]
+    },
+    {
+      "name": "Gap",
+      "type": "item_gap",
+      "settings": [
+        {
+          "type": "range",
+          "id": "richtext_item_gap",
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "unit": "px",
+          "label": "Space between content",
+          "default": 49
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Rich text",
+      "blocks": [
+        {
+          "type": "banner_subtitle"
+        },
+        {
+          "type": "banner_title_test"
+        },
+        {
+          "type": "item_gap"
+        }
+      ]
+    }
+  ]
+}
 {% endschema %}

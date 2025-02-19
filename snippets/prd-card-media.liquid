@@ -1,5 +1,6 @@
 {%- if product.featured_media -%}
   <figure class="image pesto-image-{{ pesto_image_ratio }}" role="none">
+    <a href="{{ product.url }}">
     <img
       srcset="
         {%- if product.featured_media.width >= 165 -%}{{ product.featured_media | img_url: '165x' }} 165w,{%- endif -%}
@@ -32,5 +33,6 @@
         endif
       endcomment
     %}
+    </a>
   </figure>
 {%- endif -%}

@@ -31,8 +31,11 @@
   }
   }
 </style>
-<div id="{{ section.id }}" class="banner-section no-slider-area color-{{ section.settings.color_scheme }}">
-  <div class="banner-carousel no-slider">
+<div
+  id="{{ section.id }}"
+  class=" {% if template.suffix == 'partner-with-earth-first' %}large-container {% endif %} banner-section no-slider-area color-{{ section.settings.color_scheme }}"
+>
+  <div class="banner-carousel no-slider ">
     {% for block in section.blocks %}
       {%- case block.type -%}
         {%- when 'slider_item' -%}

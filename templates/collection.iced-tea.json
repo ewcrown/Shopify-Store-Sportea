@@ -1,0 +1,217 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "166165787689f301bd": {
+      "type": "collections-header",
+      "custom_css": [
+        "h1 {font-size: 30px; text-align: left;}"
+      ],
+      "settings": {
+        "color_scheme": "scheme-23d60601-f3f5-4d14-8bd4-c16c0e99b7c4",
+        "title_font_size": "medium",
+        "enable_breadcrumb_navigation": false,
+        "collections_dec": true,
+        "collections_img": false,
+        "pesto_section_padding_top": 50,
+        "pesto_section_padding_bottom": 0
+      }
+    },
+    "1650523003996e3ac9": {
+      "type": "pesto-categories",
+      "blocks": {
+        "cff93ca7-b324-41d0-82d6-91fb357c464a": {
+          "type": "featured_collection",
+          "settings": {
+            "collection_select": ""
+          }
+        },
+        "8cf8aa13-e55c-43bb-92d5-2a28eaf8f03a": {
+          "type": "featured_collection",
+          "settings": {
+            "collection_select": ""
+          }
+        },
+        "faf133e0-27d7-4791-8232-5cfc10467d68": {
+          "type": "featured_collection",
+          "settings": {
+            "collection_select": ""
+          }
+        },
+        "5fbc37b5-9a6b-44cf-8d38-7e9f8866448b": {
+          "type": "featured_collection",
+          "settings": {
+            "collection_select": ""
+          }
+        },
+        "acee173b-710f-4a21-9589-6b198aa67f4d": {
+          "type": "featured_collection",
+          "settings": {
+            "collection_select": ""
+          }
+        },
+        "3cdb6c9c-ad0b-45dc-800b-ee50cf4468b3": {
+          "type": "featured_collection",
+          "settings": {
+            "collection_select": ""
+          }
+        }
+      },
+      "block_order": [
+        "cff93ca7-b324-41d0-82d6-91fb357c464a",
+        "8cf8aa13-e55c-43bb-92d5-2a28eaf8f03a",
+        "faf133e0-27d7-4791-8232-5cfc10467d68",
+        "5fbc37b5-9a6b-44cf-8d38-7e9f8866448b",
+        "acee173b-710f-4a21-9589-6b198aa67f4d",
+        "3cdb6c9c-ad0b-45dc-800b-ee50cf4468b3"
+      ],
+      "disabled": true,
+      "settings": {
+        "color_scheme": "",
+        "product_card_layout_type": "grid",
+        "collection_card_type": "normal",
+        "collection_item_count": false,
+        "collection_card_image_size": "large",
+        "col_settings": "6",
+        "title": "",
+        "banner_button_label": "Button",
+        "banner_button_url": "",
+        "pesto_section_padding_top": 50,
+        "pesto_section_padding_bottom": 30
+      }
+    },
+    "product-grid": {
+      "type": "main-collection-product-grid",
+      "custom_css": [
+        ".collection {padding-top: 4rem;}"
+      ],
+      "settings": {
+        "color_scheme": "scheme-23d60601-f3f5-4d14-8bd4-c16c0e99b7c4",
+        "enable_full_width": false,
+        "col_settings": 4,
+        "products_per_page": 16,
+        "product_filters_type": "card",
+        "product_card_type": "box",
+        "product_card_text_size": "large",
+        "title_font_family": "body-font",
+        "product_collection_img": "top",
+        "pesto_image_ratio": "auto",
+        "product_card_image_padding": 36,
+        "product_card_content_top_padding": 1,
+        "product_card_content_bottom_padding": 12,
+        "card_border_raidus": 5,
+        "enable_vendor": false,
+        "enable_collection_desc": false,
+        "card_border_visibility": false,
+        "enable_filtering": true,
+        "enable_sorting": true,
+        "padding_top": 52,
+        "padding_bottom": 100
+      }
+    },
+    "custom_liquid_itp4VP": {
+      "type": "custom-liquid",
+      "settings": {
+        "color_scheme": "scheme-23d60601-f3f5-4d14-8bd4-c16c0e99b7c4",
+        "custom_liquid": "<div class=\"large-container \">{{collection.metafields.custom.meta_copy.value.content}}</div>",
+        "padding_top": 30,
+        "padding_bottom": 30
+      }
+    },
+    "pesto_about_us_page_mypYyH": {
+      "type": "pesto-about-us-page",
+      "blocks": {
+        "banner_subtitle_JypVgq": {
+          "type": "banner_subtitle",
+          "settings": {
+            "banner_sub_title": "{{ collection.metafields.custom.metacopy | metafield_tag }}"
+          }
+        }
+      },
+      "block_order": [
+        "banner_subtitle_JypVgq"
+      ],
+      "disabled": true,
+      "settings": {
+        "color_scheme": "scheme-23d60601-f3f5-4d14-8bd4-c16c0e99b7c4",
+        "image_overlay_opacity": 30,
+        "image_overlay_color": "#ffffff",
+        "pesto_section_padding_top": 0,
+        "pesto_section_padding_bottom": 0
+      }
+    },
+    "ew_content_section_VepmJH": {
+      "type": "ew-content-section",
+      "blocks": {
+        "why_choose_AUbK64": {
+          "type": "why_choose",
+          "settings": {
+            "title": "Why Choose Iced SPORTea?",
+            "content": "<p>When it comes to <strong>cold brew tea</strong>, not all options are created equal. Here’s why SPORTea® stands out:</p><p>✔️<strong>Naturally Energizing</strong>– Unlike traditional <strong>iced tea </strong>that relies on sugar or caffeine spikes, SPORTea®provides long-lasting, steady energy.<br/>✔️<strong>Hydration + Electrolytes</strong>– Replenish your body with a perfectly balanced tea that hydrates without artificial additives.<br/>✔️<strong>Zero Calories, No Sugar</strong>– Enjoy a delicious, flavorful tea without the guilt of added sugars or artificial sweeteners.<br/>✔️<strong>Cold Brew Convenience</strong>– No need for boiling water! Just drop a bag in cold water and let it steep in your fridge.<br/>✔️<strong>Smooth & Refreshing Taste</strong>– No bitterness, no dry aftertaste—just crisp, clean refreshment.</p>"
+          }
+        },
+        "cold_brew_44dWNg": {
+          "type": "cold_brew",
+          "settings": {
+            "title": "Cold Brew Iced Tea: The Best Way to Enjoy Iced SPORTea®",
+            "content": "<h3><strong>What is Cold Brew Tea?</strong></h3><p>Cold brew tea is a <strong>gentler, smoother way</strong> of brewing tea without the use of boiling water. Unlike hot-brewed <strong>iced tea</strong>, cold brew tea:</p><ul><li>Extracts fewer tannins, making it <strong>less bitter</strong></li><li>Retains more natural antioxidants and nutrients</li><li>Delivers a <strong>smoother, more refreshing</strong> taste</li></ul><h3><strong>How to Cold Brew Iced SPORTea®</strong></h3><p>SPORTea® was <strong>one of the first cold brew teas</strong> on the market—even before major brands jumped on the trend! We make it incredibly easy to <strong>cold brew iced tea</strong> right in your fridge.</p><h4><strong>Arctic Brewing Method™ – How It Works</strong></h4><p>1️⃣ <strong>Drop</strong> one tea bag into <strong>one quart of cold water</strong>.<br/>2️⃣ <strong>Refrigerate for 4 hours</strong> (or overnight for stronger flavor).<br/>3️⃣ <strong>Enjoy!</strong> Serve over ice for a crisp, naturally energizing drink.</p><p>This simple <strong>cold brew method</strong> ensures maximum flavor, smoothness, and nutritional retention.</p>"
+          }
+        },
+        "health_benefits_Eax3wi": {
+          "type": "health_benefits",
+          "settings": {
+            "title": "Iced Tea Benefits: More Than Just Refreshing",
+            "content": "<p>Iced SPORTea® isn’t just a <strong>thirst-quenching drink</strong>—it’s packed with benefits that make it stand out from regular <strong>iced tea variations</strong> and sugary alternatives.</p><h3><strong>Health Benefits of Drinking Iced SPORTea®</strong></h3><p><strong>✅ Sustained Energy Without the Crash</strong><br/>Unlike traditional energy drinks, SPORTea® provides <strong>natural, balanced energy</strong> from Brazilian maté, green tea, and Siberian ginseng—without jitters or sugar spikes.</p><p><strong>✅ Hydration for an Active Lifestyle</strong><br/>The unique blend of <strong>electrolytes and antioxidants</strong> makes this the <strong>best iced tea</strong> for hydration, whether you're working out, hiking, or simply staying cool in the heat.</p><p><strong>✅ Zero Calories & No Sugar</strong><br/>Many <strong>iced tea brands</strong> rely on sugar for flavor, but SPORTea® is naturally delicious with <strong>zero calories</strong> and no artificial sweeteners.</p><p><strong>✅ Supports Digestion & Metabolism</strong><br/>Thanks to <strong>ginger and green tea</strong>, SPORTea® supports gut health, digestion, and even boosts metabolism—helping you feel great all day long.</p>"
+          }
+        },
+        "variations_yE7UUp": {
+          "type": "variations",
+          "settings": {
+            "title": "Iced Tea Variations: Creative Ways to Enjoy SPORTea®",
+            "content": "<p>Looking to mix things up? Here are a few <strong>iced tea variations</strong> you can try with SPORTea®.</p><h3><strong>Flavor Infusions – Customize Your Cold Brew Tea</strong></h3><p>🌿 <strong>Lemon Mint Cold Brew</strong> – Add fresh lemon slices and mint leaves for a citrusy, herbal kick.<br/>🍓 <strong>Berry Bliss Iced Tea</strong> – Toss in strawberries, blueberries, or raspberries for a fruity boost.<br/>🥒 <strong>Cucumber Detox Tea</strong> – Infuse with cucumber slices for a spa-inspired refresher.<br/>🌶️ <strong>Ginger Spice Tea</strong> – Add fresh ginger slices for an extra <strong>anti-inflammatory</strong> boost.</p><h3><strong>Creative Cold Brew Methods</strong></h3><p><strong>💧 Cold Brew & Go</strong> – Use the <a href=\"/products/sportea-32oz-sport-bottle\" title=\"SPORTea® 32oz Sport Bottle\"><strong>SPORTea® Brew & Go Bottle</strong></a> for <strong>on-the-go cold brewing</strong>—just add water and drop in a bag!<br/><strong>🍹 SPORTea® Spritzer</strong> – Mix <strong>iced SPORTea® with sparkling water</strong> for a refreshing, bubbly twist.<br/><strong>🍵 Cold Brew Tea Latte</strong> – Blend cold brew SPORTea® with <strong>almond milk or oat milk</strong> for a creamy, energy-boosting drink.</p>"
+          }
+        },
+        "shop_bKiNpB": {
+          "type": "shop",
+          "settings": {
+            "title": "Shop Iced SPORTea® – Find Your Perfect Pack",
+            "content": "<h3><strong>What’s in the Iced SPORTea® Collection?</strong></h3><p>We offer multiple <strong>iced tea options</strong> to fit your lifestyle:</p><p>🛒 <a href=\"/products/iced-sportea-cold-brew-tea\" title=\"Iced SPORTea® Box (7 Quart Size Tea Bags)\"><strong>Iced SPORTea® Box (7-Count)</strong></a>– Perfect for those new to cold brewing! Get a week’s worth of energizing hydration.<br/>🛒 <a href=\"/products/iced-sportea-case-bulk-cold-brew-tea\" title=\"Iced SPORTea® Case (12 Boxes)\"><strong>Iced SPORTea® Case (12 Boxes)</strong></a>– Stock up and save! The best deal for long-time SPORTea® fans.<br/>🛒 <a href=\"/products/sportea-starter-kit\" title=\"SPORTea® Starter Kit\"><strong>SPORTea® Starter Kit</strong></a>– Get 2 boxes plus our<strong>Brew & Go Bottle</strong>—the easiest way to enjoy SPORTea® anywhere!</p><h3><strong>Why Customers Love Iced SPORTea®</strong></h3><p>🗣️ <a href=\"/pages/sportea-testimonials-and-reviews\" title=\"SPORTea Testimonials and Reviews\"><strong>Watch Tesimonials and Read Reviews of SPORTea®</strong></a><br/>🏆 <strong>Rated #1 Cold Brew Tea by Thousands of Happy Customers</strong><br/>🥇 <strong>Trusted by Athletes, Fitness Enthusiasts & Everyday Tea Lovers</strong></p><h3><strong>Ready to Refresh with Cold Brew Iced Tea?</strong></h3><p>Whether you’re looking for<strong>a healthier alternative to sugary drinks </strong>or the <strong>best cold brew tea </strong>for energy and hydration, Iced SPORTea® is the <strong>perfect daily beverage</strong>.</p><p>🔥 <a href=\"/products/special-offer-buy-any-2-boxes-of-sportea-get-free-shipping\" title=\"First Time Customer Offer: Buy any 2 boxes of SPORTea® and get free shipping!\"><strong>Limited-Time Offer</strong></a><strong>: </strong>Try <strong>Iced SPORTea® in our First Time Customer Offer - 2 Boxes with FREE SHIPPING!</strong></p><p>💛 <strong>Shop Now</strong> and experience the difference of <strong>naturally energizing, cold brew tea!</strong></p>"
+          }
+        },
+        "faq_tpTAw9": {
+          "type": "faq",
+          "settings": {
+            "title": "Frequently Asked Questions",
+            "content": "<h3><strong>How does Iced SPORTea® compare to other iced tea brands?</strong></h3><p>Unlike many <strong>cold brew teas</strong>, SPORTea® is specifically formulated for <strong>energy, hydration, and overall wellness</strong>—without sugar or artificial ingredients.</p><h3><strong>How long does cold brew tea last?</strong></h3><p>SPORTea® stays fresh in the fridge for up to <strong>5 days</strong>, making it easy to prep ahead for daily hydration.</p><h3><strong>Does SPORTea® contain caffeine?</strong></h3><p>SPORTea® has <strong>a decaf equivalent level of caffeine</strong>, providing <strong>gentle, sustained energy</strong> without crashes.</p><h2><strong>Final Thoughts: The Best Iced Tea for Your Lifestyle</strong></h2><p>No matter how you enjoy it, <strong>Iced SPORTea® is the ultimate cold brew tea for active, health-conscious individuals</strong>. Try it today and <strong>feel the difference of natural energy, hydration, and refreshment in every sip!</strong></p><p>👉 <a href=\"https://sportea.com/collections/iced-sportea\" title=\"https://sportea.com/collections/iced-sportea\"><strong>Order Now</strong></a><strong> and Make Iced SPORTea® Part of Your Daily Routine!</strong></p>"
+          }
+        }
+      },
+      "block_order": [
+        "why_choose_AUbK64",
+        "cold_brew_44dWNg",
+        "health_benefits_Eax3wi",
+        "variations_yE7UUp",
+        "shop_bKiNpB",
+        "faq_tpTAw9"
+      ],
+      "settings": {
+        "heading_tag": "h2"
+      }
+    }
+  },
+  "order": [
+    "166165787689f301bd",
+    "1650523003996e3ac9",
+    "product-grid",
+    "custom_liquid_itp4VP",
+    "pesto_about_us_page_mypYyH",
+    "ew_content_section_VepmJH"
+  ]
+}

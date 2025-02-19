@@ -2,7 +2,8 @@
   rel="stylesheet"
   href="{{ 'ui-about-section.css' | asset_url }}"
   media="print"
-  onload="this.media='all'">
+  onload="this.media='all'"
+>
 <noscript>{{ 'ui-about-section.css' | asset_url | stylesheet_tag }}</noscript>
 {%- style -%}
   {%- if section.settings.pesto_section_padding_top != blank -%}
@@ -10,7 +11,7 @@
       padding-top: {{ section.settings.pesto_section_padding_top }}px;
     }
   {%- endif -%}
-  
+
   {%- if section.settings.pesto_section_padding_bottom != blank -%}
     #shopify-section-{{ section.id}} .about-section {
       padding-bottom: {{ section.settings.pesto_section_padding_bottom }}px;
@@ -39,13 +40,94 @@
         }
     {%- endcase -%}
   {%- endfor -%}
- 
 {%- endstyle -%}
+<style>
+                    {% if template.suffix == 'partner-with-earth-first' %}
+    #shopify-section-{{ section.id }} h3 {
+        margin-bottom: 10px;
+    }
 
+    #shopify-section-{{ section.id }} a.theme-btn {
+        width: 60% !important;
+        margin: auto;
+        position: relative;
+        font-size: 20px !important;
+        display: block;
+        height: 60px;
+        line-height: 60px;
+        margin-top: 2rem;
+    }
+
+    #shopify-section-{{ section.id }} span {
+        line-height: 0px !important;
+        min-height: 20px !important;
+    }
+
+    .banner-carousel .shape img {
+        border-radius: 20px;
+    }
+
+    /* Responsive Styles */
+    @media (max-width: 1050px) {
+        #shopify-section-{{ section.id }} a.theme-btn {
+            font-size: 15px !important;
+        }
+        #shopify-section-{{ section.id }} .about-section .btn-box {
+      width: 100% !important;
+  }
+    }
+
+    @media (max-width: 790px) {
+        #shopify-section-{{ section.id }} a.theme-btn {
+            font-size: 13px !important;
+            height: 45px;
+            line-height: 30px;
+            padding-top: 0.5rem !important;
+            width: 100% !important;
+        }
+
+        #shopify-section-{{ section.id }} a.theme-btn .sportea-trademark-sup {
+            display: inline-block !important;
+            font-size: 15px !important;
+            vertical-align: 5px;
+        }
+    }
+
+    @media (max-width: 500px) {
+        #shopify-section-{{ section.id }} a.theme-btn {
+                 font-size: 12px !important;
+
+        }
+
+    }
+
+    @media (max-width: 375px) {
+        #shopify-section-{{ section.id }} a.theme-btn {
+            height: 70px !important;
+            line-height: 15px  !important;
+            padding-top: 1rem !important;
+        }
+    }
+
+
+        {% endif %}
+</style>
 <div id="{{ section.id }}" class="about-section color-{{ section.settings.color_scheme }}">
   <div class="large-container">
+    {% if template.suffix == 'partner-with-earth-first' %}
+      {%- for block in section.blocks -%}
+        {%- case block.type -%}
+          {%- when 'img_txt_heading' -%}
+            {%- if block.settings.about_content_title != blank -%}
+              <div class="sec-title {{ block.id }}">
+                <h2>{{ block.settings.about_content_title }}</h2>
+              </div>
+            {%- endif -%}
+        {% endcase %}
+      {% endfor %}
+    {% endif %}
     <div class="align-items-center row {% if section.settings.about_image_position == "image_position_right"%}flex-row-reverse{% endif %} clearfix">
-      <div class="col-lg-6 col-md-12 col-sm-12 image-column">
+      <div class="{% if template.suffix == 'partner-with-earth-first' %}  col-lg-4 {% else %}  col-lg-6 {% endif %} col-md-12 col-sm-12 image-column">
         <figure class="image-box">
           {%- if section.settings.about_content_url != blank -%}
             <img
@@ -54,22 +136,25 @@
               class="lazyload"
               width="{{ section.settings.about_content_url.width }}"
               height="{{ section.settings.about_content_url.height }}"
-              alt="{{ section.settings.about_content_url.alt | escape }}">
-            {%- else -%}
-              {{ 'collection-5' | placeholder_svg_tag: 'placeholder-svg-promo-two-two' }}
-            {%- endif -%}
+              alt="{{ section.settings.about_content_url.alt | escape }}"
+            >
+          {%- else -%}
+            {{ 'collection-5' | placeholder_svg_tag: 'placeholder-svg-promo-two-two' }}
+          {%- endif -%}
         </figure>
       </div>
-      <div class="col-lg-6 col-md-12 col-sm-12 content-column">
-        <div class="content-box"> 
+      <div class="{% if template.suffix == 'partner-with-earth-first' %}  col-lg-8 {% else %}  col-lg-6 {% endif %}  col-md-12 col-sm-12 content-column">
+        <div class="content-box">
           {%- for block in section.blocks -%}
             {%- case block.type -%}
               {%- when 'img_txt_heading' -%}
-                {%- if block.settings.about_content_title != blank -%}
-                  <div class="sec-title {{ block.id }}">
-                    <h2>{{ block.settings.about_content_title }}</h2>
-                  </div>
-                {%- endif -%}
+                {% unless template.suffix == 'partner-with-earth-first' %}
+                  {%- if block.settings.about_content_title != blank -%}
+                    <div class="sec-title {{ block.id }}">
+                      <h2>{{ block.settings.about_content_title }}</h2>
+                    </div>
+                  {%- endif -%}
+                {% endunless %}
               {%- when 'img_txt_text' -%}
                 <div class="text {{ block.id }}">
                   {%- if block.settings.about_content_content != blank -%}
@@ -77,15 +162,17 @@
                   {%- endif -%}
                 </div>
               {%- when 'img_txt_button' -%}
-                {% if block.settings.about_content_link_text != blank %}
-                  <div class="btn-box about-story-buttton">
-                    {% if block.settings.about_content_link_text != blank %}
-                      <a href="{{ block.settings.about_content_link }}" class="theme-btn btn-one">
+                {% unless template.suffix == 'partner-with-earth-first' %}
+                  {% if block.settings.about_content_link_text != blank %}
+                    <div class="btn-box about-story-buttton">
+                      {% if block.settings.about_content_link_text != blank %}
+                        <a href="{{ block.settings.about_content_link }}" class="theme-btn btn-one">
                           {{ block.settings.about_content_link_text }}
-                      </a>
-                    {%- endif -%}
-                  </div>
-                {%- endif -%}
+                        </a>
+                      {%- endif -%}
+                    </div>
+                  {%- endif -%}
+                {% endunless %}
               {%- when 'img_txt_caption' -%}
                 {%- if block.settings.about_content_caption != blank -%}
                   <div class="caption {{ block.id }}">
@@ -99,26 +186,34 @@
                   <div class="pesto-story-list-content">
                     {% if block.settings.pesto_icon_select_option == 'tick' %}
                       <span>{% render 'icon-right-tick' %}</span>
-                      {% elsif block.settings.pesto_icon_select_option == 'none-icon' %}
-                        <span>{% render 'icon-none' %}</span>
-                        {% elsif block.settings.pesto_icon_select_option == 'leaf' %}
-                          <span>{% render 'icon-leaf' %}</span>
-                          {% elsif block.settings.pesto_icon_select_option == 'chemistry' %}
-                            <span>{% render 'icon-chemistry' %}</span>
-                            {% elsif block.settings.pesto_icon_select_option == 'organic' %}
-                              <span>{% render 'icon-organic' %}</span>
-                              {% else %}
+                    {% elsif block.settings.pesto_icon_select_option == 'none-icon' %}
+                      <span>{% render 'icon-none' %}</span>
+                    {% elsif block.settings.pesto_icon_select_option == 'leaf' %}
+                      <span>{% render 'icon-leaf' %}</span>
+                    {% elsif block.settings.pesto_icon_select_option == 'chemistry' %}
+                      <span>{% render 'icon-chemistry' %}</span>
+                    {% elsif block.settings.pesto_icon_select_option == 'organic' %}
+                      <span>{% render 'icon-organic' %}</span>
+                    {% else %}
+
                     {% endif %}
-                            <p>
-                              {{ block.settings.about_content_list_text }}
-                              </p>
+                    <p>
+                      {{ block.settings.about_content_list_text }}
+                    </p>
                   </div>
                 {%- endif -%}
               {%- when 'contact_button' -%}
                 <div class="pesto-contact-btn btn-box contact_button">
                   <a href="tel:{{ block.settings.contact_btn_number }}" class="">
                     <span class="icon">
-                      <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" role="none">
+                      <svg
+                        width="36"
+                        height="36"
+                        viewBox="0 0 36 36"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                        role="none"
+                      >
                         <g clip-path="url(#clip0_4367_286)">
                         <path d="M31.6808 14.4009C31.6808 13.6061 31.0357 12.9609 30.2408 12.9609C29.4459 12.9609 28.8008 13.6061 28.8008 14.4009C28.8008 14.7437 28.8008 24.8582 28.8008 25.2009C28.8008 25.9958 29.4459 26.6409 30.2408 26.6409C31.0357 26.6409 31.6808 25.9958 31.6808 25.2009C31.6808 24.8582 31.6808 14.7437 31.6808 14.4009Z" stroke="currentColor" stroke-width="2" stroke-miterlimit="10"/>
                         <path d="M20.1611 33.8409C20.956 33.8409 21.6011 33.1958 21.6011 32.4009C21.6011 31.6061 20.956 30.9609 20.1611 30.9609C19.8184 30.9609 16.9038 30.9609 16.5611 30.9609C15.7662 30.9609 15.1211 31.6061 15.1211 32.4009C15.1211 33.1958 15.7662 33.8409 16.5611 33.8409C16.9038 33.8409 19.8184 33.8409 20.1611 33.8409Z" stroke="currentColor" stroke-width="2" stroke-miterlimit="10"/>
@@ -136,7 +231,7 @@
                       </svg>
                     </span>
                     <span>
-                      <p>{{ block.settings. contact_btn_text}}</p>
+                      <p>{{ block.settings.contact_btn_text }}</p>
                       <h4>{{ block.settings.contact_btn_number }}</h4>
                     </span>
                   </a>
@@ -144,249 +239,266 @@
             {%- endcase -%}
           {%- endfor -%}
         </div>
-      </div> 
-    </div> 
+      </div>
+      {% if template.suffix == 'partner-with-earth-first' %}
+        {%- for block in section.blocks -%}
+          {%- case block.type -%}
+            {%- when 'img_txt_button' -%}
+              {% if block.settings.about_content_link_text != blank %}
+                <div class="btn-box about-story-buttton">
+                  {% if block.settings.about_content_link_text != blank %}
+                    <a href="{{ block.settings.about_content_link }}" class="theme-btn btn-one">
+                      {{ block.settings.about_content_link_text }}
+                      {% render 'arrow' %}
+                    </a>
+                  {%- endif -%}
+                </div>
+              {%- endif -%}
+          {%- endcase -%}
+        {%- endfor -%}
+      {% endif %}
+    </div>
   </div>
 </div>
 {% schema %}
-  {
-    "name": "Image with text",
-    "tag": "section",
-    "class": "about-two-info",
-    "blocks": [
-      {
-        "name": "Heading",
-        "type": "img_txt_heading",
-        "limit": 1,
-        "settings": [
-          {
-            "type": "text",
-            "id": "about_content_title",
-            "default": "Heading.",
-            "label": "Heading"
-          },
-          {
-            "type": "range",
-            "id": "about_content_title_font_size",
-            "min": 36,
-            "max": 100,
-            "step": 1,
-            "unit": "px",
-            "label": "Size",
-            "default": 72
-          },
-          {
-            "type": "select",
-            "id": "about_content_title_font_weight",
-            "label": "Font weight",
-            "default": "400",
-            "options": [
-              {
-                "value": "400",
-                "label": "Regular"
-              },
-              {
-                "value": "700",
-                "label": "Bold"
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "name": "Text",
-        "type": "img_txt_text",
-        "settings": [
-          {
-            "type": "textarea",
-            "id": "about_content_content",
-            "default": "Describe a product, make announcements, or welcome customers to your store.",
-            "label": "Content"
-          },
-          {
-            "type": "range",
-            "id": "about_content_font_size",
-            "min": 16,
-            "max": 36,
-            "step": 1,
-            "unit": "px",
-            "label": "Size",
-            "default": 18
-          }
-        ]
-      },
-      {
-        "name": "Button",
-        "type": "img_txt_button",
-        "settings": [
-          {
-            "type": "text",
-            "id": "about_content_link_text",
-            "label": "Label",
-            "default": "Button label",
-            "info": "Leave the label blank to hide the button"
-          },
-          {
-            "type": "url",
-            "id": "about_content_link",
-            "label": "Link"
-          }
-        ]
-      },
-      {
-        "name": "Contact button",
-        "type": "contact_button",
-        "settings": [
-          {
-            "type": "text",
-            "id": "contact_btn_text",
-            "label": "Label",
-            "default": "Label",
-            "info": "Leave the label blank to hide the button"
-          },
-          {
-            "type": "text",
-            "id": "contact_btn_number",
-            "label": "Phone number",
-            "default": "098765432900"
-          }
-        ]
-      },
-      {
-        "name": "Caption",
-        "type": "img_txt_caption",
-        "settings": [
-          {
-            "type": "text",
-            "id": "about_content_caption",
-            "default": "Add a tagline.",
-            "label": "Caption"
-          },
-          {
-            "type": "range",
-            "id": "about_caption_font_size",
-            "min": 16,
-            "max": 36,
-            "step": 1,
-            "unit": "px",
-            "label": "Size",
-            "default": 18
-          }
-        ]
-      },
-      {
-        "name": "Icon with text",
-        "type": "icon_with_text",
-        "settings": [
-          {
-            "type": "select",
-            "id": "pesto_icon_select_option",
-            "label": "Icon",
-            "options": [
-              {
-                "value": "none",
-                "label": "None"
-              },
-              {
-                "value": "tick",
-                "label": "Tick"
-              },
-              {
-                "value": "none-icon",
-                "label": "Restricted"
-              },
-              {
-                "value": "leaf",
-                "label": "Leaf"
-              },
-              {
-                "value": "chemistry",
-                "label": "Chemical"
-              },
-              {
-                "value": "organic",
-                "label": "Organic"
-              }
-            ],
-            "default": "tick"
-          },
-          {
-            "type": "text",
-            "id": "about_content_list_text",
-            "default": "Pair text with features",
-            "label": "Text"
-          }
-        ]
-      }
-    ],
-    "settings": [
-      {
-        "type": "color_scheme",
-        "id": "color_scheme",
-        "default": "background-1",
-        "label": "Color scheme"
-      }, 
-      {
-        "type": "image_picker",
-        "id": "about_content_url",
-        "label": "Image"
-      }, 
-      {
-        "type": "select",
-        "id": "about_image_position",
-        "label": "Image position",
-        "default": "image_position_left",
-        "options": [
-          {
-            "value": "image_position_left",
-            "label": "Left"
-          },
-          {
-            "value": "image_position_right",
-            "label": "Right"
-          }
-        ]
-      },
-      {
-        "type": "header",
-        "content": "Section padding"
-      }, 
-      {
-        "type": "range",
-        "id": "pesto_section_padding_top",
-        "min": 0,
-        "max": 200,
-        "step": 10,
-        "unit": "px",
-        "label": "t:sections.all.padding.padding_top",
-        "default": 150
-      }, 
-      {
-        "type": "range",
-        "id": "pesto_section_padding_bottom",
-        "min": 0,
-        "max": 200,
-        "step": 10,
-        "unit": "px",
-        "label": "t:sections.all.padding.padding_bottom",
-        "default": 150
-      }
-    ],
-    "presets": [
-      {
-        "name": "Image with text",
-        "blocks": [
-          {
-            "type": "img_txt_heading"
-          },
-          {
-            "type": "img_txt_text"
-          },
-          {
-            "type": "img_txt_button"
-          }
-        ]
-      }
-    ]
-  }
-{% endschema %} 
+{
+  "name": "Image with text",
+  "tag": "section",
+  "class": "about-two-info",
+  "blocks": [
+    {
+      "name": "Heading",
+      "type": "img_txt_heading",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "text",
+          "id": "about_content_title",
+          "default": "Heading.",
+          "label": "Heading"
+        },
+        {
+          "type": "range",
+          "id": "about_content_title_font_size",
+          "min": 36,
+          "max": 100,
+          "step": 1,
+          "unit": "px",
+          "label": "Size",
+          "default": 72
+        },
+        {
+          "type": "select",
+          "id": "about_content_title_font_weight",
+          "label": "Font weight",
+          "default": "400",
+          "options": [
+            {
+              "value": "400",
+              "label": "Regular"
+            },
+            {
+              "value": "700",
+              "label": "Bold"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Text",
+      "type": "img_txt_text",
+      "settings": [
+        {
+          "type": "textarea",
+          "id": "about_content_content",
+          "default": "Describe a product, make announcements, or welcome customers to your store.",
+          "label": "Content"
+        },
+        {
+          "type": "range",
+          "id": "about_content_font_size",
+          "min": 16,
+          "max": 36,
+          "step": 1,
+          "unit": "px",
+          "label": "Size",
+          "default": 18
+        }
+      ]
+    },
+    {
+      "name": "Button",
+      "type": "img_txt_button",
+      "settings": [
+        {
+          "type": "text",
+          "id": "about_content_link_text",
+          "label": "Label",
+          "default": "Button label",
+          "info": "Leave the label blank to hide the button"
+        },
+        {
+          "type": "url",
+          "id": "about_content_link",
+          "label": "Link"
+        }
+      ]
+    },
+    {
+      "name": "Contact button",
+      "type": "contact_button",
+      "settings": [
+        {
+          "type": "text",
+          "id": "contact_btn_text",
+          "label": "Label",
+          "default": "Label",
+          "info": "Leave the label blank to hide the button"
+        },
+        {
+          "type": "text",
+          "id": "contact_btn_number",
+          "label": "Phone number",
+          "default": "098765432900"
+        }
+      ]
+    },
+    {
+      "name": "Caption",
+      "type": "img_txt_caption",
+      "settings": [
+        {
+          "type": "text",
+          "id": "about_content_caption",
+          "default": "Add a tagline.",
+          "label": "Caption"
+        },
+        {
+          "type": "range",
+          "id": "about_caption_font_size",
+          "min": 16,
+          "max": 36,
+          "step": 1,
+          "unit": "px",
+          "label": "Size",
+          "default": 18
+        }
+      ]
+    },
+    {
+      "name": "Icon with text",
+      "type": "icon_with_text",
+      "settings": [
+        {
+          "type": "select",
+          "id": "pesto_icon_select_option",
+          "label": "Icon",
+          "options": [
+            {
+              "value": "none",
+              "label": "None"
+            },
+            {
+              "value": "tick",
+              "label": "Tick"
+            },
+            {
+              "value": "none-icon",
+              "label": "Restricted"
+            },
+            {
+              "value": "leaf",
+              "label": "Leaf"
+            },
+            {
+              "value": "chemistry",
+              "label": "Chemical"
+            },
+            {
+              "value": "organic",
+              "label": "Organic"
+            }
+          ],
+          "default": "tick"
+        },
+        {
+          "type": "text",
+          "id": "about_content_list_text",
+          "default": "Pair text with features",
+          "label": "Text"
+        }
+      ]
+    }
+  ],
+  "settings": [
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "default": "background-1",
+      "label": "Color scheme"
+    },
+    {
+      "type": "image_picker",
+      "id": "about_content_url",
+      "label": "Image"
+    },
+    {
+      "type": "select",
+      "id": "about_image_position",
+      "label": "Image position",
+      "default": "image_position_left",
+      "options": [
+        {
+          "value": "image_position_left",
+          "label": "Left"
+        },
+        {
+          "value": "image_position_right",
+          "label": "Right"
+        }
+      ]
+    },
+    {
+      "type": "header",
+      "content": "Section padding"
+    },
+    {
+      "type": "range",
+      "id": "pesto_section_padding_top",
+      "min": 0,
+      "max": 200,
+      "step": 10,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 150
+    },
+    {
+      "type": "range",
+      "id": "pesto_section_padding_bottom",
+      "min": 0,
+      "max": 200,
+      "step": 10,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 150
+    }
+  ],
+  "presets": [
+    {
+      "name": "Image with text",
+      "blocks": [
+        {
+          "type": "img_txt_heading"
+        },
+        {
+          "type": "img_txt_text"
+        },
+        {
+          "type": "img_txt_button"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

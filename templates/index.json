@@ -1,1 +1,543 @@
-{"sections":{"99c91902-511f-496c-ae6b-e0a918c99c8e":{"type":"pesto-banner-three","blocks":{"template--15959440490674__99c91902-511f-496c-ae6b-e0a918c99c8e-1668074236a2f9d398-0":{"type":"slider_item","settings":{"slider_item_title":"The Ultimate Daily Beverage® Energy + Hydration","slider_item_title_size":"lg","slider_item_content_one":"A delicious blend that fuels, quenches and boosts all without the crash of caffeine or sugar.","slider_item_content_two":"","image_placement":"text_left","text_alignment":"left","slider_item_button_label":"Shop Now","slider_item_button_link":"shopify:\/\/collections\/all","slider_item_secondary_button_label":"What is SPORTea®?","slider_item_secondary_button_link":"shopify:\/\/pages\/about-us","slide_item_background_shap_image":"shopify:\/\/shop_images\/Screenshot_2024-09-14_at_3.32.51_AM.png","show_the_secondary_image":false,"banner_column_option":"medium","banner_image_position":"right","banner_image_overflow":false}}},"block_order":["template--15959440490674__99c91902-511f-496c-ae6b-e0a918c99c8e-1668074236a2f9d398-0"],"custom_css":[],"settings":{"color_scheme":"scheme-5e7c3643-fbff-41a1-8cd0-e4adc91df113","pesto_section_padding_top":200,"pesto_section_padding_bottom":200}},"featured_reviews_bp4jha":{"type":"featured-reviews","settings":{"bg":"#2b4e92","ai-count":"Thousands of Verified 5-Star Reviews","ai-featured-review":"I have been drinking SPORTea® for over 20 years. It has so many win-win ingredients. No matter what I face over the course of the years the hard times and the good SPORTea® has been part of them.","ai-author-name":"Diana J.","ai-date":"3\/1\/2024"}},"properties_MEdzVY":{"type":"properties","blocks":{"left_q6gTmk":{"type":"left","settings":{"title":"Naturally <br>Energizing","image":"shopify:\/\/shop_images\/Energy_Saving_Bulb.png"}},"left_wVBb8r":{"type":"left","settings":{"title":"Diabetic-<br>Friendly","image":"shopify:\/\/shop_images\/Rh_1.png"}},"left_gxVfmD":{"type":"left","settings":{"title":"No Sugar","image":"shopify:\/\/shop_images\/Sugar_Free_1.png"}},"left_nTpkjn":{"type":"left","settings":{"title":"Zero Calorie","image":"shopify:\/\/shop_images\/Creative_Commons_Zero.png"}},"right_tayxVh":{"type":"right","settings":{"title":"Gluten<br>Free","image":"shopify:\/\/shop_images\/No_Gluten.png"}},"right_W7nwbD":{"type":"right","settings":{"title":"No Artificial <br>Additives","image":"shopify:\/\/shop_images\/No_Sugar.png"}},"right_TB8T84":{"type":"right","settings":{"title":"Vegan","image":"shopify:\/\/shop_images\/Natural_Food.png"}},"right_tPbzxw":{"type":"right","settings":{"title":"Keto-Friendly","image":"shopify:\/\/shop_images\/Healthy_Eating.png"}}},"block_order":["left_q6gTmk","left_wVBb8r","left_gxVfmD","left_nTpkjn","right_tayxVh","right_W7nwbD","right_TB8T84","right_tPbzxw"],"settings":{"title":"Natural Energy & Hydration","description":"SPORTea® is a delicious, high-performance beverage formulated for active people desiring a nutritious alternative to coffee, soda, alcohol, and sugary athletic drinks.","image":"shopify:\/\/shop_images\/Iced-SPORTea-for-Shopify_1024x1024_2.png","image_2":"shopify:\/\/shop_images\/MYm3J-mV.jpg","button":"Shop Now","link":"shopify:\/\/collections\/all"}},"ingrediants_UEX9EQ":{"type":"ingrediants","blocks":{"properties_DXmrf8":{"type":"properties","settings":{"title":"Green Tea","desc":"","sub-title":"A Natural Energizer","prop_1":"Antioxidant","prop_2":"Energy","prop_3":"Metabolism","icon":"shopify:\/\/shop_images\/Overlay_4.png"}},"properties_h7UpRN":{"type":"properties","settings":{"title":"Siberian Ginseng","desc":"","sub-title":"Endurance and  Stress Relief","prop_1":"Endurance","prop_2":"Vitality","prop_3":"Immunity","icon":"shopify:\/\/shop_images\/Overlay_1.png"}},"properties_6zEfr7":{"type":"properties","settings":{"title":"Brazilian Maté","desc":"","sub-title":"Nourishing Energizer","prop_1":"Energy","prop_2":"Vigor","prop_3":"Mental Focus","icon":"shopify:\/\/shop_images\/Overlay_2.png"}},"properties_7bFgJN":{"type":"properties","settings":{"title":"Ginger","desc":"","sub-title":"Circulatory and Comforting","prop_1":"Digestion","prop_2":"Anti-inflammatory","prop_3":"","icon":"shopify:\/\/shop_images\/Overlay_3.png"}},"properties_Dcgyqg":{"type":"properties","settings":{"title":"Black Tea","desc":"","sub-title":"Robust Health Benefits","prop_1":"Alertness","prop_2":"Heart Health","prop_3":"","icon":"shopify:\/\/shop_images\/Overlay.png"}},"properties_dCadUm":{"type":"properties","settings":{"title":"Vitamin C","desc":"","sub-title":"Immune System Booster","prop_1":"Antioxidant","prop_2":"Immunity","prop_3":"","icon":"shopify:\/\/shop_images\/Overlay_5.png"}}},"block_order":["properties_DXmrf8","properties_h7UpRN","properties_6zEfr7","properties_7bFgJN","properties_Dcgyqg","properties_dCadUm"],"settings":{"title":"Ingredients","button":"","link":""}},"featured_collection_KyMqMe":{"type":"featured-collection","blocks":{"grid_FyMLWy":{"type":"grid","settings":{"p_link":"iced-sportea-cold-brew-tea","title":"SPORTea® ICED","desc":"Available by the box or case.","image":"shopify:\/\/shop_images\/Iced-SPORTea-for-Shopify_1024x1024_2_1.png","btn_text":"Shop Iced SPORTea®","btn_url":"shopify:\/\/collections\/iced-sportea"}},"grid_ycqLUf":{"type":"grid","settings":{"p_link":"hot-sportea-natural-brew","title":"Shop Hot SPORTea®","desc":"Available by the box or case.","image":"shopify:\/\/shop_images\/WhatsApp_Image_2024-10-29_at_21.36.58.jpg","btn_text":"Shop Hot SPORTea®","btn_url":"shopify:\/\/collections\/hot-sportea"}},"grid_F3GXCV":{"type":"grid","settings":{"p_link":"special-offer-buy-any-2-boxes-of-sportea-get-free-shipping","title":"First Time Customer Offer","desc":"2 Boxes with Free Shipping","image":"shopify:\/\/shop_images\/Frame_1000003446.png","btn_text":"First Time Customer Offer","btn_url":"shopify:\/\/collections\/special-offers-4"}}},"block_order":["grid_FyMLWy","grid_ycqLUf","grid_F3GXCV"],"custom_css":[".shop-block-one .gf-button {width: 100%;}"],"settings":{"color_scheme":"scheme-5e7c3643-fbff-41a1-8cd0-e4adc91df113","section_background":"shopify:\/\/shop_images\/Section_2.png","enable_full_width":false,"section_title":"Best Sellers","banner_button_label":"","banner_button_url":"","product_collection":"","col_settings":3,"product_limit":3,"product_card_layout_type":"grid","product_card_type":"box","title_font_family":"body-font","product_card_text_size":"large","product_collection_img":"top","pesto_image_ratio":"auto","product_card_image_padding":36,"product_card_content_top_padding":2,"product_card_content_bottom_padding":30,"card_border_raidus":15,"enable_vendor":false,"enable_collection_desc":false,"card_border_visibility":false,"pesto_section_padding_top":150,"pesto_section_padding_bottom":150}},"testimonials_mU9yKt":{"type":"testimonials","blocks":{"video_UgHDy9":{"type":"video","settings":{"video_url":"https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/64d9cee8759048adbf0c19193d7f6f36.mp4","video_thumb":"shopify:\/\/shop_images\/Screenshot_2024-10-31_at_4.01.44_AM.png"}},"video_jW4pWH":{"type":"video","settings":{"video_url":"https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/c29035d5356a4198a405e32dcbc8f996.mp4","video_thumb":"shopify:\/\/shop_images\/Screenshot_2024-10-31_at_4.02.15_AM.png"}},"video_wDM88i":{"type":"video","settings":{"video_url":"https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/cc5d44176de4498ea5294bb18241904b.mp4","video_thumb":"shopify:\/\/shop_images\/Screenshot_2024-10-31_at_4.02.31_AM.png"}},"review_RtQ3cC":{"type":"Review","settings":{"description":"SPORTea® is an amazing alternative to the sugared sports drinks! This is my absolute favorite workout drink. My family uses it as an electrolyte replacement, an alternative to fruit drinks and we have found it works great on an upset tummy. As I have investigated it, ordered it and recommended it over the years I have found it to be our healthiest alternative to replacing lost nutrients and preventing dehydration in the AZ summers! We love it. Amazing taste that the kids will drink, no aftertaste, and just plain good for you. Thanks and best of luck with continuing to get your name out there.","author":"Carrie","city":"","state":"Arizona","icon":"shopify:\/\/shop_images\/profile-19-64.png"}},"review_LztpEG":{"type":"Review","settings":{"description":"In 1997, I worked for a boss who expected me to be at work, no matter what. One day, I had viral bronchitis and could not have felt worse. The man who owned the coffee shop next door appeared at my desk with a mug of SPORTea®. He kept coming back all day to replenish mySPORTea®, while I tried to do my best to help clients. I continued to feel better as the day progressed. I was amazed. He merely smiled. I never needed antibiotics... yes! Needless to say, I was a devotee from that day on! I cannot tell you the number of times I have been able to pay that favor forward.","author":"Christina Loy","city":"","state":"Florida","icon":"shopify:\/\/shop_images\/profile-19-64.png"}},"review_bGXC7T":{"type":"Review","settings":{"description":"I don't know what i would do with my SPORTea®! I drink in continually throughout the day, and I have done so for years. It is the one, perfect indulgence that has no down side... it keeps me hydrated, satisfied, so easy to make, tastes great while it provides only healthy ingredients. I can't think of another food or drink that has these attributes. Please don't ever stop making this product!","author":"Karen","city":"","state":"California","icon":"shopify:\/\/shop_images\/profile-19-64.png"}},"review_agtw97":{"type":"Review","settings":{"description":"We have used SPORTea® for over 15 years. My husband runs a lawn service and in the heat of the summer would normally sweat out his minerals. With SPORTea®, he stays hydrated and completely energized. Our boys grew up on SPORTea® as opposed to sodas. It is a staple in our home and the first thing we go for in the event of a cold, the blahs or illness. It really helps me when I'm stressed out too!","author":"Kathy Ostrander","city":"Farmington","state":"MI"}}},"block_order":["video_UgHDy9","video_jW4pWH","video_wDM88i","review_RtQ3cC","review_LztpEG","review_bGXC7T","review_agtw97"],"settings":{"title":"See What Customers Say About SPORTea®","caption":""}},"faq_Fck7P4":{"type":"faq","blocks":{"faq_myqpfk":{"type":"faq","settings":{"question":"What is the caffeine content in SPORTea®, and how does it affect energy levels?","answer":"<p>SPORTea® contains trace amounts of caffeine, comparable to the amount found in decaffeinated coffee, making it a 'decaf equivalent.' Despite its low caffeine content, SPORTea® provides a natural energy boost, thanks to its unique blend of ingredients such as Siberian Eleuthero root and mate. These ingredients contribute to sustained energy levels without the crashes or jitters associated with higher-caffeine drinks. This makes SPORTea® an ideal choice for those seeking a mild energy boost while limiting their caffeine intake.<\/p><ul><li>Low Caffeine Content: Comparable to decaf coffee, suitable for those reducing caffeine.<\/li><li>Natural Energy Boost: Ingredients like Siberian Eleuthero root and mate provide sustained energy.<\/li><li>No Crashes or Jitters: Energy without the adverse effects typical of high-caffeine beverages.<\/li><\/ul>"}},"faq_6Aabkp":{"type":"faq","settings":{"question":"How does SPORTea® differentiate from competitors?","answer":"<p>SPORTea® stands out from competitors through its unique blend of natural ingredients, high consumer satisfaction, and versatile product usage. Unlike many health beverages, SPORTea® is free from artificial colors, flavors, preservatives, or additives.<\/p><ul><li>Unique Ingredients: Natural formulation without artificial additives.<\/li><li>Consumer Loyalty: High satisfaction and repeat purchase rate.<\/li><li>Versatility: Enjoyable both hot and iced, catering to different preferences.<\/li><\/ul>"}},"faq_a9KBbt":{"type":"faq","settings":{"question":"What are the benefits of drinking SPORTea®?","answer":"<p>SPORTea® offers several health benefits due to its natural and nutritious ingredients. It is known for promoting sustained energy without crashes or jitters, boosting immunity, fighting stress, and enhancing physical performance. The beverage is rich in electrolytes and minerals, making it an excellent choice for hydration. It's also 98% caffeine-free, making it a suitable option for those looking to reduce their caffeine intake while still enjoying a flavorful and energizing drink.<\/p><ul><li>Health Benefits: Energy boosting, immunity strengthening, and stress fighting.<\/li><li>Hydration: Contains electrolytes and minerals for optimal hydration.<\/li><li>Low Caffeine: A great option for those reducing caffeine intake.<\/li><\/ul>"}},"faq_BVdUgB":{"type":"faq","settings":{"question":"What is SPORTea®?","answer":"<p>SPORTea® is a unique health beverage offering a blend of natural ingredients designed for individuals leading an active and health-conscious lifestyle. It is known for its high consumer satisfaction, evidenced by repeat purchases and long-term use. The beverage stands out for its blend of black and green teas, Siberian Eleuthero root, ginger, mate, vitamin C, and natural flavorings, offering health benefits without artificial additives. SPORTea® can be enjoyed both hot and iced, catering to various consumer preferences and occasions.<\/p><ul><li>Unique Product Offerings: Blend of natural ingredients catering to health-conscious consumers without artificial additives.<\/li><li>Versatile Usage: Can be consumed hot or iced, suitable for different occasions and consumer preferences.<\/li><li>High Consumer Satisfaction: Evidenced by repeat purchases and strong loyalty.<\/li><\/ul>"}},"faq_W6Ekyw":{"type":"faq","settings":{"question":"How should SPORTea® be prepared?","answer":"<p>SPORTea® offers distinct preparation methods for both its iced and hot varieties to ensure optimal flavor and health benefits. Here's how you can prepare each version:<\/p><p>ICED Tea Preparation:<\/p><ul><li>ARCTIC ICED™ Cold Steep Method: Place one SPORTea® BIG BAG (from the 7-count iced tea retail box) into one quart of water. Seal your container and place it in the refrigerator for at least four hours, though overnight steeping is recommended for the best results. SPORTea® prepared this way will last for several days in the refrigerator, retaining a full-bodied and robust flavor thanks to natural preserving elements like vitamin C.<\/li><li>Coffee Brewer Method: Place one big bag (from the 7-count iced tea retail box) in the brew basket and run one quart of water through the bag. Allow the tea to cool to room temperature before serving over ice. Note that refrigerating the tea after brewing may cause cloudiness, but this will not affect the taste.<\/li><\/ul><p>HOT Tea Preparation:<\/p><ul><li>Place one 2g tea bag into a 6-ounce cup of hot water and allow it to steep for 3 to 5 minutes. You can adjust the steeping time according to your taste preference; the longer it steeps, the stronger the flavor will be. Due to SPORTea®'s unique composition, it never becomes bitter, so you can leave the bag in the water as long as you like.<\/li><\/ul><p>Special Notes:<\/p><ul><li>SPORTea® continues to enhance in flavor over time and does not turn bitter, allowing you to steep it for extended periods without compromising taste.<\/li><li>Iced SPORTea® may exhibit some settling due to the natural citrus extracts in each tea bag. Stir well before serving to ensure peak flavor.<\/li><li>Try SPORTea® without additional condiments like lemon or sugar, as it is naturally sweet and possesses a delightful citrus flavor already.<\/li><li>Versatile Preparation: Offers methods for both hot and iced preferences.<\/li><li>Longevity: Can be stored for several days when prepared using the ARCTIC ICED™ method.<\/li><li>Natural Sweetness: Designed to be enjoyed without the need for added condiments.<\/li><\/ul>"}}},"block_order":["faq_myqpfk","faq_6Aabkp","faq_a9KBbt","faq_BVdUgB","faq_W6Ekyw"],"settings":{"title":"FAQs","caption":"Discover answers to all your SPORTea® queries, from brewing the perfect cup to exploring the full range of health benefits and dietary information, in our comprehensive FAQ section.","button":"Contact Us","link":"shopify:\/\/pages\/contact-us"}},"aedf9b37-ca08-4d60-86c6-20c551a3e06f":{"type":"pesto-blog-grid","settings":{"color_scheme":"","blog_heading_text":"What's New On Our Blog","blog_list":"news","col_settings":3,"blog_list_item":3,"show_featured_image":true,"featured_img_radius":0,"show_blog_tag":false,"show_blog_dec":true,"show_blog_readmore":true,"show_blog_readmore_positions":"bottom","show_author":true,"show_blog_date":true,"show_blog_date_auth_icon":false,"show_blog_date_rif":"bottom","show_blog_border_show_hide":true,"banner_button_label":"Read More","banner_button_url":"shopify:\/\/blogs\/news","pesto_section_padding_top":60,"pesto_section_padding_bottom":120,"pesto_section_margin_top":0,"pesto_section_margin_bottom":0}},"af54b8d1-311d-46d2-8c3d-685f963953ac":{"type":"pesto-subscribe","blocks":{"template--17037562937665__af54b8d1-311d-46d2-8c3d-685f963953ac-1669178835c432d7db-0":{"type":"heading_area","disabled":true,"settings":{"heading_title":"Get 15% Off Your First Order","heading_content":""}},"klaviyo_email_marketing_sms_form_embed_block_438BpY":{"type":"shopify:\/\/apps\/klaviyo-email-marketing-sms\/blocks\/form-embed-block\/2632fe16-c075-4321-a88b-50b567f42507","disabled":true,"settings":{"formId":"RZkrvA"}},"template--17037562937665__af54b8d1-311d-46d2-8c3d-685f963953ac-1669178835c432d7db-1":{"type":"form_area","settings":{"subscribe_form_style":"style-one","form_label":"Enter your email address","form_placeholder":"Enter your email address","form_btn":"Yes! I want FREE SPORTea®!"}},"template--17037562937665__af54b8d1-311d-46d2-8c3d-685f963953ac-1669178835c432d7db-2":{"type":"policy_area","settings":{"policy_title":"More information","policy_position":"left","policy_position_mobile":"m-left"}}},"block_order":["template--17037562937665__af54b8d1-311d-46d2-8c3d-685f963953ac-1669178835c432d7db-0","klaviyo_email_marketing_sms_form_embed_block_438BpY","template--17037562937665__af54b8d1-311d-46d2-8c3d-685f963953ac-1669178835c432d7db-1","template--17037562937665__af54b8d1-311d-46d2-8c3d-685f963953ac-1669178835c432d7db-2"],"settings":{"color_scheme":"","subscribe_layout":"fullwidth","pesto_section_padding_top":100,"pesto_section_padding_bottom":100,"pesto_section_padding_top_mobile":60,"pesto_section_padding_bottom_mobile":60,"pesto_section_margin_top":0,"pesto_section_margin_bottom":0}},"172788719340b10170":{"type":"apps","blocks":{"klaviyo_email_marketing_sms_form_embed_block_QPAnJX":{"type":"shopify:\/\/apps\/klaviyo-email-marketing-sms\/blocks\/form-embed-block\/2632fe16-c075-4321-a88b-50b567f42507","disabled":true,"settings":{"formId":"RZkrvA"}}},"block_order":["klaviyo_email_marketing_sms_form_embed_block_QPAnJX"],"custom_css":[".klaviyo-form.klaviyo-form.klaviyo-form {margin: auto;}"],"settings":{}}},"order":["99c91902-511f-496c-ae6b-e0a918c99c8e","featured_reviews_bp4jha","properties_MEdzVY","ingrediants_UEX9EQ","featured_collection_KyMqMe","testimonials_mU9yKt","faq_Fck7P4","aedf9b37-ca08-4d60-86c6-20c551a3e06f","af54b8d1-311d-46d2-8c3d-685f963953ac","172788719340b10170"]}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "99c91902-511f-496c-ae6b-e0a918c99c8e": {
+      "type": "pesto-banner-three",
+      "blocks": {
+        "template--15959440490674__99c91902-511f-496c-ae6b-e0a918c99c8e-1668074236a2f9d398-0": {
+          "type": "slider_item",
+          "settings": {
+            "slider_item_title": "The Ultimate Daily Beverage® Energy + Hydration",
+            "slider_item_title_size": "lg",
+            "slider_item_content_one": "A delicious blend that fuels, quenches and boosts all without the crash of caffeine or sugar.",
+            "slider_item_content_two": "",
+            "image_placement": "text_left",
+            "text_alignment": "left",
+            "slider_item_button_label": "Shop Now",
+            "slider_item_button_link": "shopify://collections/all",
+            "slider_item_secondary_button_label": "What is SPORTea®?",
+            "slider_item_secondary_button_link": "shopify://pages/about-us-old",
+            "slide_item_background_shap_image": "shopify://shop_images/SPORTea-Hero-Iced-Tea.jpg",
+            "show_the_secondary_image": false,
+            "banner_column_option": "medium",
+            "banner_image_position": "right",
+            "banner_image_overflow": false
+          }
+        }
+      },
+      "block_order": [
+        "template--15959440490674__99c91902-511f-496c-ae6b-e0a918c99c8e-1668074236a2f9d398-0"
+      ],
+      "custom_css": [],
+      "settings": {
+        "color_scheme": "scheme-5e7c3643-fbff-41a1-8cd0-e4adc91df113",
+        "pesto_section_padding_top": 80,
+        "pesto_section_padding_bottom": 80
+      }
+    },
+    "featured_reviews_bp4jha": {
+      "type": "featured-reviews",
+      "settings": {
+        "bg": "#2b4e92",
+        "ai-count": "Thousands of Verified 5-Star Reviews",
+        "ai-featured-review": "I have been drinking SPORTea® for over 20 years. It has so many win-win ingredients. No matter what I face over the course of the years the hard times and the good SPORTea® has been part of them.",
+        "ai-author-name": "Diana J.",
+        "ai-date": "3/1/2024"
+      }
+    },
+    "properties_MEdzVY": {
+      "type": "properties",
+      "blocks": {
+        "left_q6gTmk": {
+          "type": "left",
+          "settings": {
+            "title": "Naturally <br>Energizing",
+            "image": "shopify://shop_images/Energy_Saving_Bulb.png"
+          }
+        },
+        "left_wVBb8r": {
+          "type": "left",
+          "settings": {
+            "title": "Diabetic-<br>Friendly",
+            "image": "shopify://shop_images/Rh_1.png"
+          }
+        },
+        "left_gxVfmD": {
+          "type": "left",
+          "settings": {
+            "title": "No Sugar",
+            "image": "shopify://shop_images/Sugar_Free_1.png"
+          }
+        },
+        "left_nTpkjn": {
+          "type": "left",
+          "settings": {
+            "title": "Zero Calorie",
+            "image": "shopify://shop_images/Creative_Commons_Zero.png"
+          }
+        },
+        "right_tayxVh": {
+          "type": "right",
+          "settings": {
+            "title": "Gluten<br>Free",
+            "image": "shopify://shop_images/No_Gluten.png"
+          }
+        },
+        "right_W7nwbD": {
+          "type": "right",
+          "settings": {
+            "title": "No Artificial <br>Additives",
+            "image": "shopify://shop_images/No_Sugar.png"
+          }
+        },
+        "right_TB8T84": {
+          "type": "right",
+          "settings": {
+            "title": "Vegan",
+            "image": "shopify://shop_images/Natural_Food.png"
+          }
+        },
+        "right_tPbzxw": {
+          "type": "right",
+          "settings": {
+            "title": "Keto-Friendly",
+            "image": "shopify://shop_images/Healthy_Eating.png"
+          }
+        }
+      },
+      "block_order": [
+        "left_q6gTmk",
+        "left_wVBb8r",
+        "left_gxVfmD",
+        "left_nTpkjn",
+        "right_tayxVh",
+        "right_W7nwbD",
+        "right_TB8T84",
+        "right_tPbzxw"
+      ],
+      "settings": {
+        "title": "Natural Energy & Hydration",
+        "description": "SPORTea® is a delicious, high-performance beverage formulated for active people desiring a nutritious alternative to coffee, soda, alcohol, and sugary athletic drinks.",
+        "image": "shopify://shop_images/Iced-SPORTea-for-Shopify_1024x1024_2.png",
+        "image_2": "shopify://shop_images/MYm3J-mV.jpg",
+        "button": "Shop Now",
+        "link": "shopify://collections/all"
+      }
+    },
+    "ingrediants_UEX9EQ": {
+      "type": "ingrediants",
+      "blocks": {
+        "properties_DXmrf8": {
+          "type": "properties",
+          "settings": {
+            "title": "Green Tea",
+            "desc": "",
+            "sub-title": "A Natural Energizer",
+            "prop_1": "Antioxidant",
+            "prop_2": "Energy",
+            "prop_3": "Metabolism",
+            "icon": "shopify://shop_images/Overlay_4.png"
+          }
+        },
+        "properties_h7UpRN": {
+          "type": "properties",
+          "settings": {
+            "title": "Siberian Ginseng",
+            "desc": "",
+            "sub-title": "Endurance and  Stress Relief",
+            "prop_1": "Endurance",
+            "prop_2": "Vitality",
+            "prop_3": "Immunity",
+            "icon": "shopify://shop_images/Overlay_1.png"
+          }
+        },
+        "properties_6zEfr7": {
+          "type": "properties",
+          "settings": {
+            "title": "Brazilian Maté",
+            "desc": "",
+            "sub-title": "Nourishing Energizer",
+            "prop_1": "Energy",
+            "prop_2": "Vigor",
+            "prop_3": "Mental Focus",
+            "icon": "shopify://shop_images/Overlay_2.png"
+          }
+        },
+        "properties_7bFgJN": {
+          "type": "properties",
+          "settings": {
+            "title": "Ginger",
+            "desc": "",
+            "sub-title": "Circulatory and Comforting",
+            "prop_1": "Digestion",
+            "prop_2": "Anti-inflammatory",
+            "prop_3": "",
+            "icon": "shopify://shop_images/Overlay_3.png"
+          }
+        },
+        "properties_Dcgyqg": {
+          "type": "properties",
+          "settings": {
+            "title": "Black Tea",
+            "desc": "",
+            "sub-title": "Robust Health Benefits",
+            "prop_1": "Alertness",
+            "prop_2": "Heart Health",
+            "prop_3": "",
+            "icon": "shopify://shop_images/Overlay.png"
+          }
+        },
+        "properties_dCadUm": {
+          "type": "properties",
+          "settings": {
+            "title": "Vitamin C",
+            "desc": "",
+            "sub-title": "Immune System Booster",
+            "prop_1": "Antioxidant",
+            "prop_2": "Immunity",
+            "prop_3": "",
+            "icon": "shopify://shop_images/Overlay_5.png"
+          }
+        }
+      },
+      "block_order": [
+        "properties_DXmrf8",
+        "properties_h7UpRN",
+        "properties_6zEfr7",
+        "properties_7bFgJN",
+        "properties_Dcgyqg",
+        "properties_dCadUm"
+      ],
+      "settings": {
+        "title": "Ingredients",
+        "button": "",
+        "link": ""
+      }
+    },
+    "featured_collection_KyMqMe": {
+      "type": "featured-collection",
+      "blocks": {
+        "grid_FyMLWy": {
+          "type": "grid",
+          "settings": {
+            "p_link": "iced-sportea-cold-brew-tea",
+            "title": "SPORTea® ICED",
+            "desc": "Available by the box or case.",
+            "image": "shopify://shop_images/Iced-SPORTea-for-Shopify_1024x1024_2_1.png",
+            "btn_text": "Shop Iced SPORTea®",
+            "btn_url": "shopify://collections/iced-sportea"
+          }
+        },
+        "grid_ycqLUf": {
+          "type": "grid",
+          "settings": {
+            "p_link": "hot-sportea-natural-brew",
+            "title": "Shop Hot SPORTea®",
+            "desc": "Available by the box or case.",
+            "image": "shopify://shop_images/WhatsApp_Image_2024-10-29_at_21.36.58.jpg",
+            "btn_text": "Shop Hot SPORTea®",
+            "btn_url": "shopify://collections/hot-sportea"
+          }
+        },
+        "grid_F3GXCV": {
+          "type": "grid",
+          "settings": {
+            "p_link": "special-offer-buy-any-2-boxes-of-sportea-get-free-shipping",
+            "title": "First Time Customer Offer",
+            "desc": "2 Boxes with Free Shipping",
+            "image": "shopify://shop_images/Frame_1000003446.png",
+            "btn_text": "First Time Customer Offer",
+            "btn_url": "shopify://collections/special-offers-4"
+          }
+        }
+      },
+      "block_order": [
+        "grid_FyMLWy",
+        "grid_ycqLUf",
+        "grid_F3GXCV"
+      ],
+      "custom_css": [
+        ".shop-block-one .gf-button {width: 100%;}"
+      ],
+      "settings": {
+        "color_scheme": "scheme-5e7c3643-fbff-41a1-8cd0-e4adc91df113",
+        "section_background": "shopify://shop_images/Section_2.png",
+        "enable_full_width": false,
+        "section_title": "Best Sellers",
+        "banner_button_label": "",
+        "banner_button_url": "",
+        "product_collection": "",
+        "col_settings": 3,
+        "product_limit": 3,
+        "product_card_layout_type": "grid",
+        "product_card_type": "box",
+        "title_font_family": "body-font",
+        "product_card_text_size": "large",
+        "product_collection_img": "top",
+        "pesto_image_ratio": "auto",
+        "product_card_image_padding": 36,
+        "product_card_content_top_padding": 2,
+        "product_card_content_bottom_padding": 30,
+        "card_border_raidus": 15,
+        "enable_vendor": false,
+        "enable_collection_desc": false,
+        "card_border_visibility": false,
+        "pesto_section_padding_top": 150,
+        "pesto_section_padding_bottom": 150
+      }
+    },
+    "testimonials_mU9yKt": {
+      "type": "testimonials",
+      "blocks": {
+        "video_UgHDy9": {
+          "type": "video",
+          "settings": {
+            "video_url": "https://cdn.shopify.com/videos/c/o/v/64d9cee8759048adbf0c19193d7f6f36.mp4",
+            "video_thumb": "shopify://shop_images/Screenshot_2024-10-31_at_4.01.44_AM.png"
+          }
+        },
+        "video_jW4pWH": {
+          "type": "video",
+          "settings": {
+            "video_url": "https://cdn.shopify.com/videos/c/o/v/c29035d5356a4198a405e32dcbc8f996.mp4",
+            "video_thumb": "shopify://shop_images/Screenshot_2024-10-31_at_4.02.15_AM.png"
+          }
+        },
+        "video_wDM88i": {
+          "type": "video",
+          "settings": {
+            "video_url": "https://cdn.shopify.com/videos/c/o/v/cc5d44176de4498ea5294bb18241904b.mp4",
+            "video_thumb": "shopify://shop_images/Screenshot_2024-10-31_at_4.02.31_AM.png"
+          }
+        },
+        "review_RtQ3cC": {
+          "type": "Review",
+          "settings": {
+            "description": "SPORTea® is an amazing alternative to the sugared sports drinks! This is my absolute favorite workout drink. My family uses it as an electrolyte replacement, an alternative to fruit drinks and we have found it works great on an upset tummy. As I have investigated it, ordered it and recommended it over the years I have found it to be our healthiest alternative to replacing lost nutrients and preventing dehydration in the AZ summers! We love it. Amazing taste that the kids will drink, no aftertaste, and just plain good for you. Thanks and best of luck with continuing to get your name out there.",
+            "author": "Carrie",
+            "city": "",
+            "state": "Arizona",
+            "icon": "shopify://shop_images/profile-19-64.png"
+          }
+        },
+        "review_LztpEG": {
+          "type": "Review",
+          "settings": {
+            "description": "In 1997, I worked for a boss who expected me to be at work, no matter what. One day, I had viral bronchitis and could not have felt worse. The man who owned the coffee shop next door appeared at my desk with a mug of SPORTea®. He kept coming back all day to replenish my SPORTea, while I tried to do my best to help clients. I continued to feel better as the day progressed. I was amazed. He merely smiled. I never needed antibiotics... yes! Needless to say, I was a devotee from that day on! I cannot tell you the number of times I have been able to pay that favor forward.",
+            "author": "Christina Loy",
+            "city": "",
+            "state": "Florida",
+            "icon": "shopify://shop_images/profile-19-64.png"
+          }
+        },
+        "review_bGXC7T": {
+          "type": "Review",
+          "settings": {
+            "description": "I don't know what i would do with my SPORTea®! I drink in continually throughout the day, and I have done so for years. It is the one, perfect indulgence that has no down side... it keeps me hydrated, satisfied, so easy to make, tastes great while it provides only healthy ingredients. I can't think of another food or drink that has these attributes. Please don't ever stop making this product!",
+            "author": "Karen",
+            "city": "",
+            "state": "California",
+            "icon": "shopify://shop_images/profile-19-64.png"
+          }
+        },
+        "review_agtw97": {
+          "type": "Review",
+          "settings": {
+            "description": "We have used SPORTea for over 15 years. My husband runs a lawn service and in the heat of the summer would normally sweat out his minerals. With SPORTea, he stays hydrated and completely energized. Our boys grew up on SPORTea as opposed to sodas. It is a staple in our home and the first thing we go for in the event of a cold, the blahs or illness. It really helps me when I'm stressed out too!",
+            "author": "Kathy Ostrander",
+            "city": "Farmington",
+            "state": "MI"
+          }
+        }
+      },
+      "block_order": [
+        "video_UgHDy9",
+        "video_jW4pWH",
+        "video_wDM88i",
+        "review_RtQ3cC",
+        "review_LztpEG",
+        "review_bGXC7T",
+        "review_agtw97"
+      ],
+      "custom_css": [
+        ".sportea-testimonials-section .sportea-trademark-sup {margin-top: -20px;}"
+      ],
+      "settings": {
+        "title": "See What Customers Say About SPORTea®",
+        "caption": ""
+      }
+    },
+    "faq_Fck7P4": {
+      "type": "faq",
+      "blocks": {
+        "faq_myqpfk": {
+          "type": "faq",
+          "settings": {
+            "question": "What is the caffeine content in SPORTea®, and how does it affect energy levels?",
+            "answer": "<p>SPORTea® contains trace amounts of caffeine, comparable to the amount found in decaffeinated coffee, making it a 'decaf equivalent.' Despite its low caffeine content, SPORTea® provides a natural energy boost, thanks to its unique blend of ingredients such as Siberian Eleuthero root and mate. These ingredients contribute to sustained energy levels without the crashes or jitters associated with higher-caffeine drinks. This makes SPORTea® an ideal choice for those seeking a mild energy boost while limiting their caffeine intake.</p><ul><li>Low Caffeine Content: Comparable to decaf coffee, suitable for those reducing caffeine.</li><li>Natural Energy Boost: Ingredients like Siberian Eleuthero root and mate provide sustained energy.</li><li>No Crashes or Jitters: Energy without the adverse effects typical of high-caffeine beverages.</li></ul>"
+          }
+        },
+        "faq_6Aabkp": {
+          "type": "faq",
+          "settings": {
+            "question": "How does SPORTea® differentiate from competitors?",
+            "answer": "<p>SPORTea® stands out from competitors through its unique blend of natural ingredients, high consumer satisfaction, and versatile product usage. Unlike many health beverages, SPORTea® is free from artificial colors, flavors, preservatives, or additives.</p><ul><li>Unique Ingredients: Natural formulation without artificial additives.</li><li>Consumer Loyalty: High satisfaction and repeat purchase rate.</li><li>Versatility: Enjoyable both hot and iced, catering to different preferences.</li></ul>"
+          }
+        },
+        "faq_a9KBbt": {
+          "type": "faq",
+          "settings": {
+            "question": "What are the benefits of drinking SPORTea®?",
+            "answer": "<p>SPORTea® offers several health benefits due to its natural and nutritious ingredients. It is known for promoting sustained energy without crashes or jitters, boosting immunity, fighting stress, and enhancing physical performance. The beverage is rich in electrolytes and minerals, making it an excellent choice for hydration. It's also 98% caffeine-free, making it a suitable option for those looking to reduce their caffeine intake while still enjoying a flavorful and energizing drink.</p><ul><li>Health Benefits: Energy boosting, immunity strengthening, and stress fighting.</li><li>Hydration: Contains electrolytes and minerals for optimal hydration.</li><li>Low Caffeine: A great option for those reducing caffeine intake.</li></ul>"
+          }
+        },
+        "faq_BVdUgB": {
+          "type": "faq",
+          "settings": {
+            "question": "What is SPORTea®?",
+            "answer": "<p>SPORTea® is a unique health beverage offering a blend of natural ingredients designed for individuals leading an active and health-conscious lifestyle. It is known for its high consumer satisfaction, evidenced by repeat purchases and long-term use. The beverage stands out for its blend of black and green teas, Siberian Eleuthero root, ginger, mate, vitamin C, and natural flavorings, offering health benefits without artificial additives. SPORTea® can be enjoyed both hot and iced, catering to various consumer preferences and occasions.</p><ul><li>Unique Product Offerings: Blend of natural ingredients catering to health-conscious consumers without artificial additives.</li><li>Versatile Usage: Can be consumed hot or iced, suitable for different occasions and consumer preferences.</li><li>High Consumer Satisfaction: Evidenced by repeat purchases and strong loyalty.</li></ul>"
+          }
+        },
+        "faq_W6Ekyw": {
+          "type": "faq",
+          "settings": {
+            "question": "How should SPORTea® be prepared?",
+            "answer": "<p>SPORTea® offers distinct preparation methods for both its iced and hot varieties to ensure optimal flavor and health benefits. Here's how you can prepare each version:</p><p>ICED Tea Preparation:</p><ul><li>ARCTIC ICED™ Cold Steep Method: Place one SPORTea® BIG BAG (from the 7-count iced tea retail box) into one quart of water. Seal your container and place it in the refrigerator for at least four hours, though overnight steeping is recommended for the best results. SPORTea® prepared this way will last for several days in the refrigerator, retaining a full-bodied and robust flavor thanks to natural preserving elements like vitamin C.</li><li>Coffee Brewer Method: Place one big bag (from the 7-count iced tea retail box) in the brew basket and run one quart of water through the bag. Allow the tea to cool to room temperature before serving over ice. Note that refrigerating the tea after brewing may cause cloudiness, but this will not affect the taste.</li></ul><p>HOT Tea Preparation:</p><ul><li>Place one 2g tea bag into a 6-ounce cup of hot water and allow it to steep for 3 to 5 minutes. You can adjust the steeping time according to your taste preference; the longer it steeps, the stronger the flavor will be. Due to SPORTea®'s unique composition, it never becomes bitter, so you can leave the bag in the water as long as you like.</li></ul><p>Special Notes:</p><ul><li>SPORTea® continues to enhance in flavor over time and does not turn bitter, allowing you to steep it for extended periods without compromising taste.</li><li>Iced SPORTea® may exhibit some settling due to the natural citrus extracts in each tea bag. Stir well before serving to ensure peak flavor.</li><li>Try SPORTea® without additional condiments like lemon or sugar, as it is naturally sweet and possesses a delightful citrus flavor already.</li><li>Versatile Preparation: Offers methods for both hot and iced preferences.</li><li>Longevity: Can be stored for several days when prepared using the ARCTIC ICED™ method.</li><li>Natural Sweetness: Designed to be enjoyed without the need for added condiments.</li></ul>"
+          }
+        }
+      },
+      "block_order": [
+        "faq_myqpfk",
+        "faq_6Aabkp",
+        "faq_a9KBbt",
+        "faq_BVdUgB",
+        "faq_W6Ekyw"
+      ],
+      "settings": {
+        "title": "FAQs",
+        "caption": "Discover answers to all your SPORTea® queries, from brewing the perfect cup to exploring the full range of health benefits and dietary information, in our comprehensive FAQ section.",
+        "button": "Contact Us",
+        "link": "shopify://pages/contact-us"
+      }
+    },
+    "aedf9b37-ca08-4d60-86c6-20c551a3e06f": {
+      "type": "pesto-blog-grid",
+      "settings": {
+        "color_scheme": "",
+        "blog_heading_text": "What's New On Our Blog",
+        "blog_list": "news",
+        "col_settings": 3,
+        "blog_list_item": 3,
+        "show_featured_image": true,
+        "featured_img_radius": 0,
+        "show_blog_tag": false,
+        "show_blog_dec": true,
+        "show_blog_readmore": true,
+        "show_blog_readmore_positions": "bottom",
+        "show_author": true,
+        "show_blog_date": true,
+        "show_blog_date_auth_icon": false,
+        "show_blog_date_rif": "bottom",
+        "show_blog_border_show_hide": true,
+        "banner_button_label": "Read More",
+        "banner_button_url": "shopify://blogs/news",
+        "pesto_section_padding_top": 60,
+        "pesto_section_padding_bottom": 120,
+        "pesto_section_margin_top": 0,
+        "pesto_section_margin_bottom": 0
+      }
+    },
+    "af54b8d1-311d-46d2-8c3d-685f963953ac": {
+      "type": "pesto-subscribe",
+      "blocks": {
+        "template--17037562937665__af54b8d1-311d-46d2-8c3d-685f963953ac-1669178835c432d7db-0": {
+          "type": "heading_area",
+          "disabled": true,
+          "settings": {
+            "heading_title": "Get 15% Off Your First Order",
+            "heading_content": ""
+          }
+        },
+        "klaviyo_email_marketing_sms_form_embed_block_438BpY": {
+          "type": "shopify://apps/klaviyo-email-marketing-sms/blocks/form-embed-block/2632fe16-c075-4321-a88b-50b567f42507",
+          "disabled": true,
+          "settings": {
+            "formId": "RZkrvA"
+          }
+        },
+        "template--17037562937665__af54b8d1-311d-46d2-8c3d-685f963953ac-1669178835c432d7db-1": {
+          "type": "form_area",
+          "settings": {
+            "subscribe_form_style": "style-one",
+            "form_label": "Enter your email address",
+            "form_placeholder": "Enter your email address",
+            "form_btn": "Yes! I want FREE SPORTea®!"
+          }
+        },
+        "template--17037562937665__af54b8d1-311d-46d2-8c3d-685f963953ac-1669178835c432d7db-2": {
+          "type": "policy_area",
+          "settings": {
+            "policy_title": "More information",
+            "policy_position": "left",
+            "policy_position_mobile": "m-left"
+          }
+        }
+      },
+      "block_order": [
+        "template--17037562937665__af54b8d1-311d-46d2-8c3d-685f963953ac-1669178835c432d7db-0",
+        "klaviyo_email_marketing_sms_form_embed_block_438BpY",
+        "template--17037562937665__af54b8d1-311d-46d2-8c3d-685f963953ac-1669178835c432d7db-1",
+        "template--17037562937665__af54b8d1-311d-46d2-8c3d-685f963953ac-1669178835c432d7db-2"
+      ],
+      "settings": {
+        "color_scheme": "",
+        "subscribe_layout": "fullwidth",
+        "pesto_section_padding_top": 100,
+        "pesto_section_padding_bottom": 100,
+        "pesto_section_padding_top_mobile": 60,
+        "pesto_section_padding_bottom_mobile": 60,
+        "pesto_section_margin_top": 0,
+        "pesto_section_margin_bottom": 0
+      }
+    },
+    "172788719340b10170": {
+      "type": "apps",
+      "blocks": {
+        "klaviyo_email_marketing_sms_form_embed_block_QPAnJX": {
+          "type": "shopify://apps/klaviyo-email-marketing-sms/blocks/form-embed-block/2632fe16-c075-4321-a88b-50b567f42507",
+          "disabled": true,
+          "settings": {
+            "formId": "RZkrvA"
+          }
+        }
+      },
+      "block_order": [
+        "klaviyo_email_marketing_sms_form_embed_block_QPAnJX"
+      ],
+      "custom_css": [
+        ".klaviyo-form.klaviyo-form.klaviyo-form {margin: auto;}"
+      ],
+      "settings": {}
+    }
+  },
+  "order": [
+    "99c91902-511f-496c-ae6b-e0a918c99c8e",
+    "featured_reviews_bp4jha",
+    "properties_MEdzVY",
+    "ingrediants_UEX9EQ",
+    "featured_collection_KyMqMe",
+    "testimonials_mU9yKt",
+    "faq_Fck7P4",
+    "aedf9b37-ca08-4d60-86c6-20c551a3e06f",
+    "af54b8d1-311d-46d2-8c3d-685f963953ac",
+    "172788719340b10170"
+  ]
+}
