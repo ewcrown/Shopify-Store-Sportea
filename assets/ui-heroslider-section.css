@@ -1,0 +1,86 @@
+.banner-slideshow items-carousel .flickity-page-dots{
+    bottom: 64px;
+}
+@media (max-width: 991px) {
+    .banner-slideshow items-carousel .flickity-page-dots{
+        bottom: 29px;
+    }
+}
+.banner-slideshow items-carousel .flickity-page-dots .dot{
+    width: 5px;
+    height: 5px;
+    background: rgb(var(--color-foreground));
+    position: relative;
+    opacity: 1;
+}
+.banner-slideshow items-carousel .flickity-page-dots .dot:after{
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%; 
+    border: 1px solid transparent;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: .4s;
+}
+.banner-slideshow items-carousel .flickity-page-dots .dot.is-selected:after{
+    border: 1px solid rgb(var(--color-foreground));
+}
+.banner-slideshow .content-box.text-position-center{
+    margin: 0 auto;
+}
+.banner-slideshow .content-box.text-position-right{
+    margin-left: auto;
+}
+
+.banner-slideshow .items-carousel-selector .items-carousel-items{
+    min-height: 100%;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+.banner-slideshow .items-carousel-selector  .videobloc-area {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+.banner-slideshow .items-carousel-selector .large-container {
+    width: 100%;
+}
+.banner-slideshow .content-box h1{
+    font-weight: 600 !important;
+}
+.banner-slideshow .banner-carousel .row.pesto-image-reverse .content-box{
+    margin-left: auto;
+}
+
+@media (max-width: 991px) {
+    .banner-slideshow .banner-carousel .image-box .image{
+        text-align: center !important;
+    }
+}
+@media (max-width: 767px) {
+    .banner-slideshow .banner-carousel .image-box .image{
+        text-align: center !important;
+    }
+    .banner-slideshow .banner-carousel .image-box .image img{
+        max-height: 200px;
+        width: auto;
+    }
+    .banner-slideshow .content-box h1{
+        font-size: 44px !important;
+        line-height: 45px !important;
+        margin-bottom: 34px !important;
+    }
+    .banner-slideshow .content-box p{
+        margin-bottom: 21px !important;
+    }
+    .banner-slideshow .items-carousel-selector .image-column {
+        display: none;
+    }
+}
+

@@ -1,0 +1,25 @@
+
+h2.email-signup-banner__heading.h1 {
+  font-size: 25px;
+  margin-top: 0px;
+  margin-bottom: 20px;
+}
+.email-signup-banner__box .email-signup-banner__heading.h1{
+  text-align: left;
+}
+.email-signup-banner {
+  margin: auto 0px;
+}
+.newsletter-form__field-wrapper .newsletter-form__message {
+  margin-top: 1.5rem;
+}
+.newsletter__button {
+  margin-top: 3rem;
+  width: fit-content;
+}
+@media screen and (min-width: 750px) {
+  .newsletter__button {
+    flex-shrink: 0;
+    margin: 0 0 0 1rem;
+  }
+}

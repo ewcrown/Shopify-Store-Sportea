@@ -1,0 +1,556 @@
+<link rel="stylesheet" href="{{ 'ui-page-title.css' | asset_url }}" media="print" onload="this.media='all'">
+<noscript>{{ 'ui-page-title.css' | asset_url | stylesheet_tag }}</noscript>
+
+<link rel="stylesheet" href="{{ 'ui-blog.css' | asset_url }}" media="print" onload="this.media='all'">
+<noscript>{{ 'ui-blog.css' | asset_url | stylesheet_tag }}</noscript>
+
+{%- style -%}
+
+    {%- if section.settings.pesto_section_padding_top != blank -%}
+        #shopify-section-{{section.id}} .padding-heading-{{ section.id }} {
+            padding-top: {{ section.settings.pesto_section_padding_top }}px;
+        }
+    {%- endif -%}
+    {%- if section.settings.pesto_section_padding_bottom != blank -%}
+        #shopify-section-{{section.id}} .padding-heading-{{ section.id }} {
+            padding-bottom: {{ section.settings.pesto_section_padding_bottom }}px;
+        }
+    {%- endif -%}
+    
+    .news-block-two .inner-box .image-box, .blog-sidebar .post-widget .post .post-thumb, 
+    .news-block-two .inner-box{
+        border-radius: {{ section.settings.blog_image_radius }}px;
+    }
+
+{%- endstyle -%}
+
+<section  class="padding-heading-{{ section.id }} page-title centred section-heading have-blog-border-{{ section.settings.enable_breadcrumb_border }} color-{{ section.settings.color_scheme }}">
+  <div class="large-container">
+    {% if section.settings.enable_breadcrumb_navigation == true %}
+    <ul class="bread-crumb clearfix">
+        <li><a href="{{ routes.root_url }}">{{ 'products.product.bred_text' | t }}</a></li>
+        <li>
+            {{ blog.title | escape }}
+        </li>
+    </ul>
+    {% endif %}
+      <div class="text">
+          <h1>{{ blog.title }}</h1>
+      </div>
+  </div>
+  {% if section.settings.pesto_heading_bg_img != blank %}
+    <div class="section-bg">
+      {{ section.settings.pesto_heading_bg_img | image_url: width: section.settings.pesto_heading_bg_img.width
+      | image_tag: loading: 'lazy', class: 'lazyload', rel: 'preload', data-src: dataImg }}
+    </div>
+  {% endif %}
+</section>
+
+{% assign hasPostItemsBlock = false %}
+{% for block in section.blocks %}
+  {% if block.type == 'post_items' %}
+    {% assign hasPostItemsBlock = true %}
+    {% break %}
+  {% endif %}
+{% endfor %}
+<section class="sidebar-page-container color-{{ section.settings.color_scheme }}">
+  <div class="large-container">
+      <div class="row clearfix post-items-border-{{ section.settings.show_border_in_item }} card-layout-{{ section.settings.blog_card_layout_option }} secondary-bg-{{ section.settings.secondary_bg_show }}">
+            <div class="col-lg-8 col-md-12 col-sm-12 content-side blog-page-pro">
+                <div class="our-blog-content">
+                    <div class="blog-grid-content {% if hasPostItemsBlock %} show-block-have {% else %} show-block-none {% endif %}">
+                        <div class="row clearfix">
+                            {% for block in section.blocks %}
+                                {% case block.type %}
+                                    {% when 'post_items' %} 
+                                        <div class="col-lg-6 col-md-6 col-sm-12 news-block">
+                                            {%- render 'article-card-grid', article: block.settings.post_items_select -%}
+                                        </div>
+                                {% endcase %}
+                            {% endfor %}
+                        </div>
+                    </div>
+                    {% if blog.articles.size == 0 %}
+                        {%- for i in (1..section.settings.blog_list_item) -%}
+                            <div class="blank-post-area-me">
+                                {%- render 'article-card-list-blank' -%}
+                            </div>
+                        {%- endfor -%}
+                    {% else %}
+                        {%- paginate blog.articles by {{section.settings.blog_list_item}} -%}
+                            <div class="blog-list-content ">
+                            {%- for article in blog.articles -%}
+                                {%- render 'article-card-list', article: article, show_featured_image: section.settings.show_featured_image, show_blog_tags: section.settings.show_blog_tags, show_blog_date: section.settings.show_blog_date -%}
+                            {%- endfor -%}
+                            </div>
+                        {%- endpaginate -%}
+                    {% endif %}
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-12 col-sm-12 sidebar-side">
+                <div class="blog-sidebar sidebar-block-border-{{ section.settings.sidebar_block_border }}">
+  
+                  {% for block in section.blocks %}
+                    {% case block.type %}
+                      {% when 'sidebar_tag' %} 
+                        <div class="category-widget sidebar-widget cat-have-border-{{ block.settings.enable_border_in_item }}">
+                            <div class="widget-title">
+                                <h5>{{ block.settings.sidebar_tag_title }}</h5>
+                            </div>
+                            <ul class="category-list clearfix">
+                                {% if blog.tags.size == 0 %}
+                                    <li><a href="#_">{{ 'blogs.article.sidebar.category_name' | t }}</a></li>
+                                    <li><a href="#_">{{ 'blogs.article.sidebar.category_name' | t }}</a></li>
+                                    <li><a href="#_">{{ 'blogs.article.sidebar.category_name' | t }}</a></li>
+                                    <li><a href="#_">{{ 'blogs.article.sidebar.category_name' | t }}</a></li>
+                                    <li><a href="#_">{{ 'blogs.article.sidebar.category_name' | t }}</a></li>
+                                {% else %}
+                                    {% for tag in blog.tags %}
+                                        <li>{{ tag | link_to_tag: tag }}</li>
+                                    {% endfor %}
+                                {% endif %}
+                            </ul>
+                        </div>
+                      {% when 'sidebar_post_list' %} 
+                        <div class="post-widget sidebar-widget postlist-have-border-{{ block.settings.post_enable_border_in_item }}">
+                            <div class="widget-title">
+                                <h5>{{ block.settings.sidebar_post_list_title }}</h5>
+                            </div>
+                            <div class="post-inner">
+                                {% if blog.articles.size > 0 %}
+                                    {%- for article in blog.articles limit: 4 -%}
+                                        <div class="post">
+                                            {% if article.image != blank %}
+                                                <figure class="post-thumb"><a href="{{ article.url }}">
+                                                    {% if article.image != blank %}
+                                                        <img
+                                                        data-src="{{ article.image | img_url: 'master' }}"
+                                                            loading="lazy"  class="lazyload"
+                                                            width="{{ article.image.width }}"
+                                                            height="{{ article.image.height }}"
+                                                            alt="{{ article.image.alt | escape }}"
+                                                        >
+                                                    {% endif %}
+                                                </a></figure>
+                                            {% endif %}
+                                            <div class="post-content">
+                                                {% if block.settings.post_show_meta %}
+                                                    <ul class="post-meta">
+                                                        <li><a href="{{ article.url }}"><span>{{ article.author }}</span></a></li> /
+                                                        <li>{{ article.published_at | date: "%b %d, %Y" }}</li>
+                                                    </ul>
+                                                {% endif %}
+                                                <h6><a href="{{ article.url }}">{{ article.title | truncatewords: 5 }}</a></h6>
+                                                {% if block.settings.post_show_excerpt %}
+                                                    <div class="post-ex-trun">
+                                                        {{ article.excerpt | truncatewords: 8 }}
+                                                    </div>
+                                                {% endif %}
+                                            </div>
+                                        </div>
+                                    {%- endfor -%}
+                                {% else %}
+                                    <div class="post place-holder-img">
+                                        <figure class="post-thumb">
+                                            {{ 'collection-1' | placeholder_svg_tag }}
+                                        </figure>
+                                        <h6>
+                                            {{ 'blogs.article.sidebar.post_title' | t }}
+                                        </h6>
+                                    </div>
+                                    <div class="post place-holder-img">
+                                        <figure class="post-thumb">
+                                            {{ 'collection-1' | placeholder_svg_tag }}
+                                        </figure>
+                                        <h6>
+                                            {{ 'blogs.article.sidebar.post_title' | t }}
+                                        </h6>
+                                    </div>
+                                    <div class="post place-holder-img">
+                                        <figure class="post-thumb">
+                                            {{ 'collection-1' | placeholder_svg_tag }}
+                                        </figure>
+                                        <h6>
+                                            {{ 'blogs.article.sidebar.post_title' | t }}
+                                        </h6>
+                                    </div>
+                                    <div class="post place-holder-img">
+                                        <figure class="post-thumb">
+                                            {{ 'collection-1' | placeholder_svg_tag }}
+                                        </figure>
+                                        <h6>
+                                            {{ 'blogs.article.sidebar.post_title' | t }}
+                                        </h6>
+                                    </div>
+                                {% endif %}
+                            </div>
+                            
+                        </div>
+                      {% when 'product_category' %} 
+                        <div class="product-category sidebar-widget">
+                            <div class="product-category-inner">
+                                <h4>{{ block.settings.product_category_title}}</h4>
+                            <ul class="product-list clearfix">
+                                {% for collection in collections limit: block.settings.product_category_count %}
+                                    <li>
+                                        {% if collection.image != blank %}
+                                            <div class="image">
+                                                <img
+                                                    data-src="{{ collection.image | img_url: '40x40' }}"
+                                                    loading="lazy"  class="lazyload"
+                                                    width="{{ collection.image.width }}"
+                                                    height="{{ collection.image.height }}"
+                                                    alt="{{ collection.title }}"
+                                                >
+                                            </div>
+                                        {% endif %}
+                                        <h6>
+                                            <a href="{{ collection.url }}">{{ collection.title }}</a>
+                                        </h6>
+                                    </li>
+                                {% endfor %}
+                            </ul>
+                            </div>
+                        </div>
+                      {% when 'sidebar_product' %}
+                        <div class="best-product sidebar-widget">
+                            {% if block.settings.product_collection_content != blank %}
+                                <div class="widget-title">
+                                    <h5>{{ block.settings.product_collection_content.title }}</h5>
+                                </div>
+                            {% endif %}
+
+                            <div class="product-inner">
+
+                                {% assign product_collection_content = block.settings.product_collection_content %}
+                                {% if product_collection_content != blank %}
+                                    {%- for product in product_collection_content.products limit: block.settings.product_collection_content_count -%}
+                                        <div class="product-box {% if product.featured_media == blank %}no-post-thumb{% endif %}">
+                                            {% if product.featured_media != blank %}
+                                            <figure class="image">
+                                                <img
+                                                    srcset="
+                                                        {%- if product.featured_media.width >= 165 -%}{{ product.featured_media | img_url: '165x' }} 165w,{%- endif -%}
+                                                        {%- if product.featured_media.width >= 360 -%}{{ product.featured_media | img_url: '360x' }} 360w,{%- endif -%}
+                                                        {%- if product.featured_media.width >= 533 -%}{{ product.featured_media | img_url: '533x' }} 533w,{%- endif -%}
+                                                        {%- if product.featured_media.width >= 720 -%}{{ product.featured_media | img_url: '720x' }} 720w,{%- endif -%}
+                                                        {%- if product.featured_media.width >= 940 -%}{{ product.featured_media | img_url: '940x' }} 940w,{%- endif -%}
+                                                        {%- if product.featured_media.width >= 1066 -%}{{ product.featured_media | img_url: '1066x' }} 1066w,{%- endif -%}
+                                                        {{ product.featured_media | img_url: 'master' }} {{ product.featured_media.width }}w
+                                                        "
+                                                        data-src="{{ product.featured_media | img_url: '533x' }}"
+                                                    alt="{{ product.featured_media.alt | escape }}"
+                                                    loading="lazy"  class="lazyload img-reduce"
+                                                    width="{{ product.featured_media.width }}"
+                                                    height="{{ product.featured_media.height }}"
+                                                >
+                                            </figure>
+                                            {% endif %}
+                                            <h6><a href="{{ product.url }}"> {{ product.title }} </a></h6>
+                                            <div class="content-of-product">
+                                                {% if product.description != blank %}  {{ product.description | strip_html | truncatewords: 10 }} {% endif %}
+                                            </div>
+                                            <div class="title-of-product">
+                                                {% render 'price-raw', product: product %}
+                                            </div>
+                                        </div>
+                                    {%- endfor -%}
+                                {%- else -%}
+                                    <div class="product-box {% if product_collection_content == blank %}image-absu{% endif %}">
+                                        <figure class="image">
+                                            {{ 'collection-1' | placeholder_svg_tag }}
+                                        </figure>
+                                        <h6>
+                                            <a href="#_">
+                                                {{ 'blogs.article.sidebar.product_title' | t }}
+                                            </a>
+                                        </h6>
+                                    </div>
+                                    <div class="product-box {% if product_collection_content == blank %}image-absu{% endif %}">
+                                        <figure class="image">
+                                            {{ 'collection-1' | placeholder_svg_tag }}
+                                        </figure>
+                                        <h6>
+                                            <a href="#_">
+                                                {{ 'blogs.article.sidebar.product_title' | t }}
+                                            </a>
+                                        </h6>
+                                    </div>
+                                {%- endif -%}
+
+                            </div>
+                        </div>
+                    {% endcase %}
+                  {% endfor %}
+                  
+                </div>
+            </div>
+
+            {%- paginate blog.articles by {{section.settings.blog_list_item}} -%}
+                {%- if paginate.pages > 1 -%}
+                    <div class="col-lg-12 col-md-12 col-sm-12 pagination-border-{{ section.settings.show_pagination_border }}">
+                        {%- render 'pagination', paginate: paginate -%}
+                    </div>
+                {%- endif -%}
+            {%- endpaginate -%}
+      </div>
+  </div>
+</section>
+
+
+
+{% schema %}
+  {
+    "name": "Blog",
+    "tag": "section",
+    "class": "pesto-blog-area-main",
+    "settings": [
+        {
+            "type": "color_scheme",
+            "id": "color_scheme",
+            "default": "background-2",
+            "label": "Color scheme"
+        },
+        {
+            "type": "range",
+            "id": "blog_list_item",
+            "min": 1,
+            "max": 10,
+            "step": 1,
+            "label": "Posts per page",
+            "default": 5
+        },
+        {
+          "type": "checkbox",
+          "id": "enable_breadcrumb_navigation",
+          "default": false,
+          "label": "Enable breadcrumb navigation"
+        },
+        {
+          "type": "checkbox",
+          "id": "enable_breadcrumb_border",
+          "default": false,
+          "label": "Show breadcrumb border"
+        },
+        {
+            "type": "checkbox",
+            "id": "sidebar_block_border",
+            "default": false,
+            "label": "Show sidebar block border"
+        },
+        {
+            "type": "header",
+            "content": "Card options",
+            "info": "Options will work, when post available"
+        },
+        {
+            "type": "select",
+            "id": "blog_card_layout_option",
+            "label": "Card layout",
+            "options": [
+                {
+                "value": "box",
+                "label": "Box"
+                },
+                {
+                "value": "simple",
+                "label": "Simple"
+                }
+            ],
+            "default": "simple"
+        },
+        {
+          "type": "checkbox",
+          "id": "show_border_in_item",
+          "default": true,
+          "label": "Show border"
+        },
+        {
+            "type": "checkbox",
+            "id": "show_featured_image",
+            "default": true,
+            "label": "Show featured image"
+        },
+        {
+            "type": "checkbox",
+            "id": "show_blog_date",
+            "default": true,
+            "label": "Show date"
+        },
+        {
+            "type": "checkbox",
+            "id": "show_blog_author",
+            "default": true,
+            "label": "Show author"
+        },
+        {
+            "type": "checkbox",
+            "id": "show_blog_comments",
+            "default": true,
+            "label": "Show comment count"
+        },
+        {
+          "type": "checkbox",
+          "id": "show_blog_readmore",
+          "default": false,
+          "label": "Show read more link"
+        },
+        {
+            "type": "range",
+            "id": "blog_image_radius",
+            "min": 0,
+            "max": 30,
+            "step": 1,
+            "label": "Border radius",
+            "default": 0
+        },
+        {
+            "type": "header",
+            "content": "Heading options"
+        },
+        {
+            "type": "image_picker",
+            "id": "pesto_heading_bg_img",
+            "label": "Background image"
+        },
+        {
+          "type": "checkbox",
+          "id": "show_pagination_border",
+          "default": true,
+          "label": "Pagination border"
+        },
+        {
+            "type": "range",
+            "id": "pesto_section_padding_top",
+            "min": 0,
+            "max": 200,
+            "step": 10,
+            "unit": "px",
+            "label": "t:sections.all.padding.padding_top",
+            "default": 150
+        },
+        {
+            "type": "range",
+            "id": "pesto_section_padding_bottom",
+            "min": 0,
+            "max": 200,
+            "step": 10,
+            "unit": "px",
+            "label": "t:sections.all.padding.padding_bottom",
+            "default": 150
+        }
+    ],
+    "blocks": [
+        {
+            "type": "@app"
+        },
+        {
+            "name": "Feature post",
+            "limit": 2,
+            "type": "post_items",
+            "settings": [
+                {
+                    "type": "article",
+                    "id": "post_items_select",
+                    "label": "Single post"
+                }
+            ]
+        },
+        {
+            "name": "Tag list",
+            "limit": 1,
+            "type": "sidebar_tag",
+            "settings": [
+                {
+                    "type": "text",
+                    "id": "sidebar_tag_title",
+                    "label": "Heading",
+                    "default": "Categories"
+                },
+                {
+                    "type": "checkbox",
+                    "id": "enable_border_in_item",
+                    "default": true,
+                    "label": "Enable border in item"
+                }
+            ]
+        },
+        {
+            "name": "Latest post",
+            "limit": 1,
+            "type": "sidebar_post_list",
+            "settings": [
+                {
+                    "type": "text",
+                    "id": "sidebar_post_list_title",
+                    "label": "Heading",
+                    "default": "Latest Post"
+                },
+                {
+                    "type": "checkbox",
+                    "id": "post_enable_border_in_item",
+                    "default": true,
+                    "label": "Enable border in item"
+                },
+                {
+                    "type": "checkbox",
+                    "id": "post_show_excerpt",
+                    "default": true,
+                    "label": "Show excerpt"
+                },
+                {
+                    "type": "checkbox",
+                    "id": "post_show_meta",
+                    "default": false,
+                    "label": "Show Post meta"
+                }
+            ]
+        },
+        {
+            "name": "Product category",
+            "limit": 1,
+            "type": "product_category",
+            "settings": [
+                {
+                    "type": "text",
+                    "id": "product_category_title",
+                    "label": "Heading",
+                    "default": "Product Category"
+                },
+                {
+                    "type": "range",
+                    "id": "product_category_count",
+                    "label": "Number of collections to show",
+                    "min": 1,
+                    "max": 8,
+                    "step": 1,
+                    "default": 5
+                }
+            ]
+        },
+        {
+            "name": "Sidebar product ",
+            "limit": 2,
+            "type": "sidebar_product",
+            "settings": [
+                {
+                    "type": "collection",
+                    "id": "product_collection_content",
+                    "label": "Select collection"
+                },
+                {
+                    "type": "range",
+                    "id": "product_collection_content_count",
+                    "label": "Number of products to show",
+                    "min": 1,
+                    "max": 8,
+                    "step": 1,
+                    "default": 5
+                }
+            ]
+        }
+    ]
+  }
+{% endschema %}
+
+

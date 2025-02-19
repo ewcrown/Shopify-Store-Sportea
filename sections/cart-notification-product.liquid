@@ -1,0 +1,39 @@
+{%- if cart != empty -%}
+  {%- for item in cart.items -%}
+    <div id="cart-notification-product-{{ item.id }}" class="cart-item">
+      {% if item.image %}
+        <img
+          loading="lazy"
+          class="lazyload cart-notification-product__image"
+          data-src="{{ item.image | img_url: '200x' }}"
+          alt="{{ item.image.alt | escape }}"
+          width="70"
+          height="{{ 70 | divided_by: item.image.aspect_ratio | ceil }}"
+        >
+      {% endif %}
+      
+      <h3 class="cart-notification-product__name h4">{{ item.product.title | escape }}</h3>
+      
+      {%- if item.variant.available and item.unit_price_measurement -%}
+        <div class="unit-price caption">
+          <span class="visually-hidden">{{ 'products.product.price.unit_price' | t }}</span>
+          {{ item.variant.unit_price | money }}
+          <span aria-hidden="true">/</span>
+          <span class="visually-hidden">&nbsp;{{ 'accessibility.unit_price_separator' | t }}&nbsp;</span>
+          {%- if item.variant.unit_price_measurement.reference_value != 1 -%}
+            {{- item.variant.unit_price_measurement.reference_value -}}
+          {%- endif -%}
+          {{ item.variant.unit_price_measurement.reference_unit }}
+        </div>
+      {%- endif -%}
+      {%- if item.selling_plan_allocation != nil -%}
+        <p class="product-option">{{ item.selling_plan_allocation.selling_plan.name }}</p>
+      {%- endif -%}
+
+      {%- if settings.show_vendor -%}
+        <p class="cart_show_vendor_notifcations">{{ item.product.vendor }}</p>
+      {%- endif -%}
+
+    </div>
+  {%- endfor -%}
+{%- endif -%}

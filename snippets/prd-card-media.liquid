@@ -1,0 +1,36 @@
+{%- if product.featured_media -%}
+  <figure class="image pesto-image-{{ pesto_image_ratio }}" role="none">
+    <img
+      srcset="
+        {%- if product.featured_media.width >= 165 -%}{{ product.featured_media | img_url: '165x' }} 165w,{%- endif -%}
+        {%- if product.featured_media.width >= 360 -%}{{ product.featured_media | img_url: '360x' }} 360w,{%- endif -%}
+        {%- if product.featured_media.width >= 533 -%}{{ product.featured_media | img_url: '533x' }} 533w,{%- endif -%}
+        {%- if product.featured_media.width >= 720 -%}{{ product.featured_media | img_url: '720x' }} 720w,{%- endif -%}
+        {%- if product.featured_media.width >= 940 -%}{{ product.featured_media | img_url: '940x' }} 940w,{%- endif -%}
+        {%- if product.featured_media.width >= 1066 -%}{{ product.featured_media | img_url: '1066x' }} 1066w,{%- endif -%}
+        {{ product.featured_media | img_url: 'master' }} {{ product.featured_media.width }}w
+      "
+      data-src="{{ product.featured_media | img_url: '533x' }}"
+      alt="{{ product.featured_media.alt | escape }}"
+      loading="lazy"
+      class="lazyload img-reduce"
+      width="{{ product.featured_media.width }}"
+      height="{{ product.featured_media.height }}"
+    >
+    {% liquid
+      comment
+        if product.media.size > 1
+            for media in product.media
+                case media.media_type
+                    when 'image'
+                        if forloop.index0 == 1
+                            assign imgUrl = media | image_url: width: media.width, height: media.height | image_tag: loading: 'lazy', class: 'hover-images lazyload'
+                            echo imgUrl
+                        endif
+                endcase
+            endfor
+        endif
+      endcomment
+    %}
+  </figure>
+{%- endif -%}

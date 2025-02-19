@@ -1,0 +1,173 @@
+<link rel="stylesheet" href="{{ 'ui-gallery-section.css' | asset_url }}" media="print" onload="this.media='all'">
+<noscript>{{ 'ui-gallery-section.css' | asset_url | stylesheet_tag }}</noscript>
+{% assign col_dextop = section.settings.col_settings %}
+{% if col_dextop == 1 %}
+    {% assign col_dextop_val = '12' %}
+{% elsif col_dextop == 2 %}
+    {% assign col_dextop_val = '6' %}
+{% elsif col_dextop == 3 %}
+    {% assign col_dextop_val = '4' %}
+{% elsif col_dextop == 4 %}
+    {% assign col_dextop_val = '3' %}
+{% endif  %}
+
+{%- style -%}
+    
+    {%- if section.settings.pesto_section_padding_top != blank -%}
+    #shopify-section-{{section.id}} .gallery-section{
+            padding-top: {{ section.settings.pesto_section_padding_top }}px !important;
+        }
+    {%- endif -%}
+    {%- if section.settings.pesto_section_padding_bottom != blank -%}
+    #shopify-section-{{section.id}} .gallery-section{
+            padding-bottom: {{ section.settings.pesto_section_padding_bottom }}px !important;
+        }
+    {%- endif -%}
+
+{%- endstyle -%}
+
+<div id="{{ section.id }}" class="{% if section.settings.in_page == true %}gallery-page {% endif %} gallery-section centred color-{{ section.settings.color_scheme }}">
+ 
+    {% if section.settings.section_background != blank %}
+        <div
+            class="overlay-object-section-bg"
+        >
+            {{ section.settings.section_background | image_url: width: 7680 | image_tag:  loading: 'lazy', class: 'lazyload' }}
+        </div>
+    {%- endif -%}
+
+    <div class="large-container">
+        <div class="sec-title">
+            <h2>{{ section.settings.sections_title }}</h2>
+        </div>
+        <div class="sortable-masonry">
+            <div class="items-container row clearfix">
+                {% for block in section.blocks %}
+                    {% case block.type %}
+                        {% when 'gallery_items' %}
+                            <div class="col-lg-{{col_dextop_val}} col-md-6 col-sm-12 masonry-item small-column clearfix">
+                                <div class="gallery-block-one">
+                                    <div class="inner-box">
+                                        <figure class="image-box">
+                                        {%- if block.settings.images != blank -%}
+                                            {{ block.settings.images | image_url: width: block.settings.images.width | image_tag: loading: 'lazy', class: 'lazyload' }}
+                                        {%- else -%}
+                                            {{ 'image' | placeholder_svg_tag: 'placeholder-svg-gallery-one' }}
+                                        {%- endif -%}
+                                        </figure>
+                                    </div>
+                                </div>
+                            </div>
+                    {% endcase %}
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+
+{% schema %}
+    {
+        "name": "Gallery",
+        "tag": "section",
+        "class": "gallery-area",
+        "settings": [
+            {
+                "type": "color_scheme",
+                "id": "color_scheme",
+                "default": "background-4",
+                "label": "Color scheme"
+            },
+            {
+                "type": "range",
+                "id": "col_settings",
+                "min": 1,
+                "max": 4,
+                "step": 1,
+                "label": "Columns",
+                "default": 4
+            },
+            {
+                "type": "image_picker",
+                "id": "section_background",
+                "label": "Image"
+            },
+            {
+                "type": "text",
+                "id": "sections_title",
+                "label": "Heading",
+                "default": "Heading"
+            },
+            {
+                "type": "header",
+                "content": "Section padding"
+            },
+            {
+                "type": "range",
+                "id": "pesto_section_padding_top",
+                "min": 0,
+                "max": 200,
+                "step": 10,
+                "unit": "px",
+                "label": "t:sections.all.padding.padding_top",
+                "default": 150
+            },
+            {
+                "type": "range",
+                "id": "pesto_section_padding_bottom",
+                "min": 0,
+                "max": 200,
+                "step": 10,
+                "unit": "px",
+                "label": "t:sections.all.padding.padding_bottom",
+                "default": 150
+            }
+        ],
+        "blocks": [
+            {
+                "type": "@app"
+            },
+            {
+                "name": "Items",
+                "type": "gallery_items",
+                "settings": [
+                    {
+                        "type": "image_picker",
+                        "id": "images",
+                        "label": "Image"
+                    }
+                ]
+            }
+        ],
+        "presets": [
+          {
+            "name": "Gallery",
+            "blocks": [
+                {
+                    "type": "gallery_items"
+                },
+                {
+                    "type": "gallery_items"
+                },
+                {
+                    "type": "gallery_items"
+                },
+                {
+                    "type": "gallery_items"
+                },
+                {
+                    "type": "gallery_items"
+                },
+                {
+                    "type": "gallery_items"
+                },
+                {
+                    "type": "gallery_items"
+                },
+                {
+                    "type": "gallery_items"
+                }
+            ]
+          }
+        ]
+    }
+{% endschema %}

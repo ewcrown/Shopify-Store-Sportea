@@ -1,0 +1,14 @@
+  {% assign ship_count = settings.cart_shipping_amount | plus: 0 %}
+  <div class="drawer__header_free_ship">
+    {% assign drawer__header_shipper =  ship_count | times: 100 %}
+    {% assign drawer__header_cart_total = cart.total_price | money_without_currency %}
+    {% if cart.total_price < drawer__header_shipper %}
+      {% assign drawer_free_ship = drawer__header_cart_total | times: 100 | minus: drawer__header_shipper | abs %}
+      {{ 'general.shipping_spend_text' | t }} <span>{{ drawer_free_ship | money_with_currency }}</span> {{ 'general.shipping_spend' | t }}
+    {% else %}
+      {{ 'general.eligible_spend' | t }}
+    {% endif %}
+  </div>
+
+
+ 

@@ -1,0 +1,131 @@
+<link rel="stylesheet" href="{{ 'ui-about-section.css' | asset_url }}" media="print" onload="this.media='all'">
+<noscript>{{ 'ui-about-section.css' | asset_url | stylesheet_tag }}</noscript>
+
+{%- style -%}
+  {%- if section.settings.pesto_section_padding_top != blank -%}
+      #shopify-section-{{section.id}} .about-style-three{
+          padding-top: {{ section.settings.pesto_section_padding_top }}px;
+      }
+  {%- endif -%}
+  {%- if section.settings.pesto_section_padding_bottom != blank -%}
+      #shopify-section-{{section.id}} .about-style-three{
+          padding-bottom: {{ section.settings.pesto_section_padding_bottom }}px;
+      }
+  {%- endif -%}
+{%- endstyle -%}
+
+<div id="{{ section.id }}" class="about-style-three centred color-{{ section.settings.color_scheme }}">
+  <div class="auto-container">
+    <div class="inner-box">
+      {%- if section.settings.enable_topbar_image -%}
+        <figure class="image-box">
+          {%- if section.settings.about_three_content_url != blank -%}
+            <img
+              data-src="{{ section.settings.about_three_content_url | img_url: 'master' }}"
+              loading="lazy"
+              class="lazyload"
+              width="{{ section.settings.about_three_content_url.width }}"
+              height="{{ section.settings.about_three_content_url.height }}"
+              alt="{{ section.settings.about_three_content_url.alt | escape }}"
+            >
+          {%- endif -%}
+        </figure>
+      {%- endif -%}
+      <div class="sec-title">
+        <h2>{{ section.settings.about_three_content_title }}</h2>
+      </div>
+      <div class="text">
+        <p>{{ section.settings.about_three_content_content }}</p>
+      </div>
+      <div class="support-center">
+        <span>{{ section.settings.about_content_bottom_hotline_title }}</span>
+        <h2>
+          <a href="tel:{{ section.settings.about_content_bottom_hotline_number | replace: ' ', '' }}">
+            {{- section.settings.about_content_bottom_hotline_number -}}
+          </a>
+        </h2>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+    "name": "Text with phone number",
+    "tag": "section",
+    "class": "about-three-info",
+    "settings": [
+        {
+            "type": "color_scheme",
+            "id": "color_scheme",
+            "default": "background-1",
+            "label": "Color scheme"
+        },
+        {
+            "type": "checkbox",
+            "id": "enable_topbar_image",
+            "default": true,
+            "label": "Enable image"
+        },
+        {
+            "type": "image_picker",
+            "id": "about_three_content_url",
+            "label": "Image"
+        },
+        {
+            "type": "text",
+            "id": "about_three_content_title",
+            "default": "Heading",
+            "label": "Heading"
+        },
+        {
+            "type": "textarea",
+            "id": "about_three_content_content",
+            "default": "Describe a product, make announcements, or welcome customers to your store.",
+            "label": "Description"
+        },
+        {
+            "type": "text",
+            "id": "about_content_bottom_hotline_title",
+            "label": "Information content",
+            "default": "Share information about your brand with your customers."
+        },
+        {
+            "type": "text",
+            "id": "about_content_bottom_hotline_number",
+            "default": "+123456",
+            "label": "Phone number"
+        },
+        {
+            "type": "header",
+            "content": "Section padding"
+        },
+        {
+            "type": "range",
+            "id": "pesto_section_padding_top",
+            "min": 0,
+            "max": 200,
+            "step": 10,
+            "unit": "px",
+            "label": "t:sections.all.padding.padding_top",
+            "default": 150
+        },
+        {
+            "type": "range",
+            "id": "pesto_section_padding_bottom",
+            "min": 0,
+            "max": 200,
+            "step": 10,
+            "unit": "px",
+            "label": "t:sections.all.padding.padding_bottom",
+            "default": 150
+        }
+
+    ],
+    "presets": [
+        {
+            "name": "Text with phone number"
+        }
+    ]
+}
+{% endschema %}

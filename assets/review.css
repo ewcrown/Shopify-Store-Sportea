@@ -1,0 +1,29 @@
+/* Review Sectoin */
+.sportea-review-row {
+    padding: 65px 0;
+}
+
+.sportea-review-wrap {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 50px
+}
+
+.sportea-review-wrap h5 {
+    padding-top: 10px;
+}
+
+.sportea-review-block-qoute p {
+    font-family: var(--montserrat);
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 25px;
+    letter-spacing: 0em;
+    text-align: left;
+}
+
+.sportea-review-block-qoute p span {
+    display: block;
+    font-weight: 300;
+    padding-top: 5px;
+}

@@ -1,0 +1,194 @@
+
+{%- render 'sub-popup' -%}
+
+
+{% schema %}
+    {
+        "name": "Newsletter popup",
+        "tag": "section",
+        "class": "section",
+        "enabled_on": {
+          "groups": ["custom.overlay"]
+        },
+        "settings": [
+            {
+                "type": "color_scheme",
+                "id": "color_scheme",
+                "default": "background-4",
+                "label": "Color scheme"
+            },
+            {
+                "type": "select",
+                "id": "display_mode_popup",
+                "label": "Display mode",
+                "options": [
+                {
+                    "value": "display_mode_popup_test_disable",
+                    "label": "Disable"
+                },
+                {
+                    "value": "display_mode_popup_test_enable",
+                    "label": "Enable"
+                }
+                ],
+                "default": "display_mode_popup_test_disable",
+                "info": "You should only use this for editing the popup. Make sure 'Test mode' is disabled when publishing your theme."
+            },
+            {
+                "type": "range",
+                "id": "show_again_rif_after",
+                "min": 1,
+                "max": 30,
+                "step": 1,
+                "label": "Show again after (days)",
+                "info": "Independent to each browser and device",
+                "default": 30
+            },
+            {
+                "type": "range",
+                "id": "show_again_delay",
+                "min": 1,
+                "max": 60,
+                "step": 1,
+                "unit": "sec",
+                "label": "Delay",
+                "info": "Delay is disabled in theme editor for visibility.",
+                "default": 60
+            },
+            {
+                "type": "image_picker",
+                "id": "news_popup_image",
+                "label": "Image"
+            }
+        ],
+        "blocks": [
+            {
+              "name": "Image",
+              "limit": 1,
+              "type": "news_pop_logo_image",
+              "settings": [
+                {
+                  "type": "image_picker",
+                  "id": "news_popup_logo_image",
+                  "label": "Image"
+                }
+              ]
+            },
+            {
+                "name": "Empty space",
+                "limit": 2,
+                "type": "news_popup_empty_space",
+                "settings": [
+                    {
+                        "type": "range",
+                        "id": "news_popup_space_desktop",
+                        "min": 0,
+                        "max": 100,
+                        "step": 1,
+                        "unit": "px",
+                        "label": "Height",
+                        "default": 50
+                    }
+                ]
+            },
+            { 
+                "name": "Subheading",
+                "limit": 1,
+                "type": "news_pop_sub_heading",
+                "settings": [
+                    {
+                        "type": "text",
+                        "id": "news_pop_subheading",
+                        "label": "Subheading",
+                        "default": "Subheading"
+                    }
+                ]
+            }, 
+            { 
+                "name": "Heading",
+                "limit": 1,
+                "type": "news_popup_heading",
+                "settings": [
+                    {
+                        "type": "textarea",
+                        "id": "popup_heading_title",
+                        "label": "Heading",
+                        "default": "Heading"
+                    },
+                    {
+                        "type": "textarea",
+                        "id": "popup_heading_content",
+                        "label": "Content",
+                        "default": "Add content for your signup form"
+                    }
+                ]
+            }, 
+            {
+                "name": "Form",
+                "limit": 1,
+                "type": "news_pop_form_area",
+                "settings": [
+                      {
+                          "type": "text",
+                          "id": "form_placeholder",
+                          "label": "Placeholder for input field",
+                          "default": "Email address"
+                      },
+                      {
+                          "type": "textarea",
+                          "id": "form_btn",
+                          "label": "Button label",
+                          "default": "Button"
+                      },
+                      {
+                        "type": "checkbox",
+                        "id": "popup_form_label",
+                        "default": false,
+                        "label": "Enable label"
+                        }
+                  ]
+              },
+              { 
+                "name": "Additional description",
+                "limit": 1,
+                "type": "news_pop_lower_content",
+                "settings": [
+                    {
+                        "type": "textarea",
+                        "id": "news_pop_lower_content_text",
+                        "label": "Description",
+                        "default": "Text from here describes your description."
+                    }
+                ]
+            },
+            { 
+                "name": "Social links",
+                "limit": 1,
+                "type": "news_pop_social_icon"
+            }
+
+          ],
+        "presets": [
+            {
+                "name": "Newsletter popup",
+                "blocks": [
+                    {
+                      "type": "news_pop_sub_heading"
+                    },
+                    {
+                      "type": "news_popup_heading"
+                    },
+                    {
+                        "type": "news_pop_form_area"
+                    },
+                    {
+                        "type": "news_pop_lower_content"
+                    },
+                    {
+                        "type": "news_pop_social_icon"
+                    }
+                ]
+            }
+        ]
+    }
+{% endschema %}

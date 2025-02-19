@@ -1,0 +1,201 @@
+
+.subscribe-section .subscribe-section-inner{
+	padding: 113px 20px 120px 20px;
+	position: relative;
+}
+
+.subscribe-section .shape-bg {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+.subscribe-section .shape-bg img {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.subscribe-section .sec-title h2{
+	margin: 0;
+}
+
+.subscribe-section .sec-title p{
+	font-size: 18px;
+	margin-top: 16px;
+}
+
+.subscribe-section .form-inner{
+	position: relative;
+	max-width: 1045px;
+	width: 100%;
+	margin: 0 auto;
+	margin-bottom: 26px;
+}
+
+.subscribe-section .form-inner .form-group{
+	position: relative;
+	margin: 0px;
+}
+
+
+.subscribe-section .form-inner .form-group input[type='email']::placeholder{
+	color: rgb(var(--color-secondary-foreground));
+}
+
+.subscribe-section .form-inner .form-group i{
+	position: absolute;
+	left: 26px;
+	top: 22px;
+	font-size: 28px;
+	font-weight: 700;
+	z-index: 1;
+}
+
+.subscribe-section .form-inner .form-group svg{
+	position: absolute;
+	left: 26px;
+	top: 22px;
+	font-size: 28px;
+	font-weight: 700;
+	z-index: 1;
+}
+
+.subscribe-section .form-inner .form-group button[type='submit'] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 18px;
+    line-height: 28px;
+    font-weight: 700;
+    text-transform: uppercase;
+    transition: all 500ms ease;
+    height: 100%;
+    padding-right: 30px;
+    padding-left: 30px;
+}
+
+.subscribe-section .lower-text p{
+	font-size: 14px;
+}
+
+.subscribe-section .lower-text p a{
+	display: inline-block;
+	line-height: 16px;
+	text-decoration: underline;
+}
+.subscribe-section .lower-text{
+	max-width: 1045px;
+	margin: 0 auto;
+}
+.subscribe-section .lower-text.left{
+	text-align: left;
+}
+.subscribe-section .lower-text.right{
+	text-align: right;
+}
+.subscribe-section .lower-text.center{
+	text-align: center;
+}
+.subscribe-section .lower-text p{
+	font-size: 16px;
+	line-height: 29.99px;
+}
+
+
+/* Style Two */
+.subscribe-section .form-inner.style-two {
+	margin-bottom: 14px;
+}
+.subscribe-section .form-inner.style-two .form-group{
+	display: flex;
+	gap: 14px 19px;
+	align-items: center;
+}
+
+.subscribe-section .form-inner.style-two .form-group svg{
+	display: none;
+}
+.subscribe-section .form-inner.style-two .form-group input[type='email']{
+	border-radius: var(--input-rds-two);
+	border: 1px solid rgb(var(--color-foreground));
+	background: transparent;
+	height: 80px;
+	padding-inline: 36px;
+	font-size: 18px;
+	color: rgb(var(--color-foreground));
+}
+.subscribe-section .form-inner.style-two .form-group input[type='email']::placeholder {
+	color: rgb(var(--color-foreground));
+}
+.subscribe-section .form-inner.style-two .form-group button[type='submit']{
+	position: unset;
+	white-space: nowrap;
+	border-radius: var(--btn-rds-one);
+	padding-inline: 70px;
+	text-transform: capitalize;
+	height: 80px;
+	font-size: 18px !important;
+}
+
+
+@media (max-width: 767px) {
+	.subscribe-section .sec-title{
+		margin-bottom: 26px;
+	}
+	.subscribe-section .sec-title p{
+		margin-top: 13px;
+	}
+	.subscribe-section .lower-text.m-left{
+		text-align: left;
+	}
+	.subscribe-section .lower-text.m-right{
+		text-align: right;
+	}
+	.subscribe-section .lower-text.m-center{
+		text-align: center;
+	}
+	.subscribe-section .form-inner.style-two .form-group {
+		position: relative;
+	}
+	.subscribe-section .form-inner.style-two .form-group input[type='email']{
+		height: 80px;
+	}
+	.subscribe-section .form-inner .form-group input[type='email']{
+		width: 100%;
+		padding-inline: 45px 24px !important;
+	}
+	.subscribe-section .form-inner.style-one .form-group input[type='email']{
+		margin-bottom: 10px;
+	}
+	/* .subscribe-section .form-inner.style-two .form-group button[type='submit']{
+		height: 60px;
+		position: absolute;
+		top: 7px;
+		right: 7px;
+		padding-inline: 20px !important;
+		font-size: 15px !important;
+	} */
+	.subscribe-section .form-inner .form-group { 
+		flex-direction: column;
+	}
+	.subscribe-section .form-inner.style-two .form-group button[type='submit']{
+		height: 80px;
+	}
+	.subscribe-section .form-inner .form-group button[type='submit']{
+		width: 100%;
+		position: unset;
+		padding: 15px !important;
+	}
+	.subscribe-section .lower-text p{
+		line-height: 24px;
+	}
+	.subscribe-section .form-inner.style-two{
+		margin-bottom: 19px;
+	}
+}
+

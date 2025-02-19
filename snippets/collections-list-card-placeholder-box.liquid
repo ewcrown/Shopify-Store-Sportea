@@ -1,0 +1,32 @@
+{% comment %}
+    collections-list-card-placeholder-box
+{% endcomment %}
+{% liquid
+    assign settings = section.settings 
+    assign pesto_image_ratio = settings.pesto_image_ratio
+    assign card_border_visibility = settings.card_border_visibility
+    assign enable_collection_desc = settings.enable_collection_desc
+    assign product_collection_img = settings.product_collection_img
+
+%}
+
+
+    <div class="col-xl-{{col_dextop_init}} col-md-6 col-12 {{product_item_slider_class}}">
+        <div class="shop-block-one sin-prd-item hover-two">
+            <div class="inner-box">
+                <div class="content-box-img">
+                    <figure class="image">
+                        {{ 'product-1' | placeholder_svg_tag: 'placeholder-svg-all-collection' }}
+                    </figure>
+                </div>
+                <div class="content-box">
+                    <h4>{{ 'onboarding.product_title' | t }}</h4>
+                    <div class="content-of-product">
+                        {{ 'onboarding.product_content' | t }}
+                    </div>
+                    <h3>{{ 'onboarding.product_price' | t }}</h3>
+                    <div class="btn-box"><a href="#_" class="theme-btn btn-one"><i class="flaticon-shopping-cart"></i>{{ 'onboarding.product_view_button' | t }}</a></div>
+                </div>
+            </div>
+        </div>
+    </div>

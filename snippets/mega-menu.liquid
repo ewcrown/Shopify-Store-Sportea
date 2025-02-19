@@ -1,0 +1,506 @@
+<style>
+    p.announcement-bar-link a {
+        color: #ffffff;
+    }
+                      .header {
+                        top:0;
+            position : relative;
+                        box-shadow: none;
+                    }
+                  .header__inner {
+                      display: flex;
+                      align-items: center;
+                      justify-content: center;
+                     height: 105px;
+
+                  }
+              .ai-sp-menu-btn:hover {
+                color:rgb(var(--color-button)) !important;
+              }
+              /* Styling the main menu item */
+              .ai-sp-menu-item {
+                  position: relative;
+                  list-style: none;
+                  display: inline-block;
+                  margin-right: 20px;
+              }
+
+              /* Styling the main menu button */
+              .ai-sp-menu-btn {
+                  padding: 10px 20px;
+                  font-weight: bold;
+                  color: #1A237E; /* Dark Blue */
+                  text-decoration: none;
+                  display: block;
+              }
+
+              /* Style for the nested sub-menu */
+              .ai-sp-sub-nested-menu {
+                  display: none; /* Initially hidden */
+                  position: absolute;
+                  top: 100%; /* Align the submenu directly below the main item */
+                  left: 0;
+                  background-color: #fff;
+                  padding: 10px;
+                  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                  border: 1px solid #ddd;
+                  z-index: 10;
+                  min-width: 200px; /* Ensure the menu has some width */
+              }
+
+              /* Display the sub-menu when hovering over the parent menu item */
+              .ai-sp-menu-item:hover .ai-sp-sub-nested-menu {
+                  display: block;
+              }
+
+              /* Style for each sub-menu item (button) */
+              .ai-sp-sub-nested-menu-link {
+                  display: flex;
+                  justify-content: space-between;
+                  align-items: center;
+                  padding: 10px;
+                  width: 100%;
+                  background-color: transparent;
+                  border: none;
+                  text-align: left;
+                  font-size: 16px;
+                  color: #C62828; /* Dark Red */
+                  cursor: pointer;
+              }
+
+              /* Styling for the SVG icon */
+              .ai-sp-sub-nested-menu-link svg {
+                  width: 20px;
+                  height: 20px;
+                  fill: #000; /* Black arrow icon */
+              }
+
+              /* Change color on hover */
+              .ai-sp-sub-nested-menu-link:hover {
+                  color: #1A237E; /* Dark Blue */
+              }
+
+              /* Optional: Add some spacing between each sub-menu item */
+              .ai-sp-sub-nested-menu li {
+                  margin-bottom: 5px;
+              }
+
+                  .header__sub-list {
+                      max-height: calc(100vh - 24px);
+                      overflow-y: auto;
+                      position: absolute;
+                  }
+          .header__sub-nested-product-block {
+              flex-direction: column;
+              padding:10px;
+          }
+        .header__sub-nested-product-block-title {
+            flex: 0;
+        }
+          .header-layout-regular .header-layout-regular-inner {
+              display: flex;
+          }
+      .header__sub-nested-menu-link.is-active, a:not(.is-plain):not(.button):not(.link-btn):not(.link):hover{ color : rgb(var(--color-button))}
+  .header-drawer.is-search, .header-drawer.is-root {
+  top: 0;
+  }
+
+
+  .header-drawer__link {
+    text-align: left;
+  }
+  .header__sub-nested-block {
+  height: auto;
+  }
+
+  @media only screen and (max-width: 769px) {
+  .header__container {
+  display: none;
+  }
+  .header-style-two .header-layout-regular .logo-box.logo_img {
+  left: 15px;
+  }
+  }
+</style>
+{% if mega_menu %}
+  <div class="new-ai-head">
+    <main-header>
+      <header class="header">
+        <div class="header__container-wrapper">
+          <div class="header__container container">
+            <div class="header__inner">
+              <div class="header__left">
+                <ul class="header__menu">
+                  {%- for link in mega_menu.links -%}
+                    {% if forloop.first %}
+                      <li class="header__menu-item">
+                        <button class="header__menu-btn" data-index="0">
+                          Shop
+                          <svg
+                            aria-hidden="true"
+                            focusable="false"
+                            role="presentation"
+                            width="100"
+                            height="100"
+                            viewBox="0 0 100 100"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path d="m51.199 62.699 17.801-17.699h-36z"></path>
+                          </svg>
+                        </button>
+                      </li>
+                    {% else %}
+                      <li class="ai-sp-menu-item">
+                        <a href="{{ link.url }}" class="ai-sp-menu-btn" role="button"> {{ link.title }} </a>
+                        {% if link.links != blank %}
+                          <ul class="ai-sp-sub-nested-menu">
+                            {% for sublink in link.links %}
+                              <li>
+                                <a href="{{ sublink.url }}" role="button" class="ai-sp-menu-btn"> {{ sublink.title }} </a>
+                              </li>
+                            {% endfor %}
+                          </ul>
+                        {% endif %}
+                      </li>
+                    {% endif %}
+                  {% endfor %}
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        {%- for link in mega_menu.links -%}
+          <div class="header__sub-list">
+            <div class="header__sub" data-submenu="0" data-type="menu_products">
+              <product-menu open="false">
+                <div class="container">
+                  <div class="header__sub-nested">
+                    {% if link.links != blank %}
+                      <ul class="header__sub-nested-menu">
+                        {% for nmenu in link.links %}
+                          {% if nmenu.links != blank %}
+                            <li>
+                              <button
+                                class="header__sub-nested-menu-link is-active-ai"
+                                data-index="{{ forloop.index0 }}"
+                              >
+                                {{ nmenu.title }}
+                                <svg
+                                  aria-hidden="true"
+                                  focusable="false"
+                                  role="presentation"
+                                  class="icon icon-arrow-right2"
+                                  width="65"
+                                  height="65"
+                                  viewBox="0 0 65 65"
+                                  fill="none"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path d="M11 35C9.89542 35 9 34.1046 9 33C9 31.8954 9.89544 31 11 31L11 35ZM53.4137 31.586C54.1948 32.367 54.1948 33.6333 53.4137 34.4144L40.6857 47.1423C39.9047 47.9233 38.6384 47.9233 37.8573 47.1422C37.0763 46.3612 37.0763 45.0949 37.8573 44.3138L49.1711 33.0002L37.8574 21.6864C37.0764 20.9053 37.0764 19.639 37.8574 18.858C38.6385 18.0769 39.9048 18.0769 40.6858 18.858L53.4137 31.586ZM11 31L51.9995 31.0002L51.9995 35.0002L11 35L11 31Z" fill="black"></path>
+                                </svg>
+                              </button>
+                            </li>
+                          {% else %}
+                            <li>
+                              <a href="{{ nmenu.url }}" class="header__sub-nested-menu-link is-plain">
+                                {{ nmenu.title }}
+                              </a>
+                            </li>
+                          {% endif %}
+                        {% endfor %}
+                      </ul>
+
+                      <div class="header__sub-nested-blocks-wrapper">
+                        {% for lmenu in link.links %}
+                          <div
+                            class="header__sub-nested-blocks is-active is-visible"
+                            data-index="{{ forloop.index0 }}"
+                          >
+                            {% for lsmenu in lmenu.links %}
+                              {% assign dmenuhandle = lsmenu.url | replace: '/products/', '' %}
+                              <a
+                                href="{{ lsmenu.url }}"
+                                class="header__sub-nested-block header__sub-nested-product-block"
+                              >
+                                <div class="header__sub-nested-product-block-title">{{ lsmenu.title }}</div>
+
+                                <div class="header__sub-nested-product-block-image">
+                                  <img
+                                    loading="lazy"
+                                    class="lazy-img"
+                                    width=""
+                                    height=""
+                                    onload="this.style.opacity=1"
+                                    alt="{{ link.title }}"
+                                    src="{{ all_products[dmenuhandle].featured_image | image_url }}"
+                                    style="opacity: 1;"
+                                  >
+                                </div>
+                              </a>
+                            {% endfor %}
+                          </div>
+                        {% endfor %}
+                      </div>
+                    {% endif %}
+                  </div>
+                </div>
+              </product-menu>
+            </div>
+          </div>
+        {% endfor %}
+        <header-drawer>
+          <div class="header-drawer is-search">
+            <div class="header-drawer__header">
+              <a href="/" itemprop="url">
+                <img
+                  src="/https://sportea.com/cdn/shop/files/Screenshot_2024-09-11_at_1.05.48_AM.png?v=1725998778"
+                  alt="Nuun Hydration"
+                  class="header__logo-img"
+                  itemprop="logo"
+                >
+                <span class="visually-hidden">Back to homepage</span>
+              </a>
+              <button class="header-drawer__close-btn" aria-label="Close menu">
+                <svg
+                  aria-hidden="true"
+                  focusable="false"
+                  role="presentation"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="37"
+                  height="37"
+                  viewBox="0 0 37 37"
+                  fill="none"
+                >
+                  <path d="M29.5422 27.9055C29.7662 28.1209 29.8934 28.4171 29.8963 28.7279C29.8977 29.0372 29.7763 29.3364 29.5566 29.5546C29.3384 29.7743 29.0392 29.8957 28.7299 29.8943C28.4191 29.8914 28.1229 29.7642 27.9075 29.5402L18.5028 20.1355L9.09816 29.5402C8.88281 29.7642 8.58653 29.8914 8.27576 29.8943C7.96647 29.8957 7.6673 29.7743 7.44904 29.5546C7.22935 29.3364 7.10794 29.0372 7.10939 28.7279C7.11228 28.4172 7.23946 28.1209 7.46349 27.9055L16.8681 18.5008L7.46349 9.09618C7.02411 8.64234 7.03133 7.92113 7.4765 7.47454C7.92309 7.0294 8.64429 7.02215 9.09813 7.46154L18.5028 16.8662L27.9075 7.46154C28.1228 7.23751 28.4191 7.11032 28.7299 7.10743C29.0392 7.10599 29.3383 7.2274 29.5566 7.44708C29.7763 7.66532 29.8977 7.96449 29.8962 8.27381C29.8933 8.58455 29.7662 8.88083 29.5421 9.09621L20.1375 18.5009L29.5422 27.9055Z" fill="black"></path>
+                </svg>
+
+                <span class="visually-hidden">Close menu</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="header-drawer is-root ">
+            <div class="header-drawer__header">
+              <a href="/" itemprop="url">
+                <span class="visually-hidden">Back to homepage</span>
+              </a>
+              <button class="header-drawer__close-btn" aria-label="Close menu">
+                <svg
+                  aria-hidden="true"
+                  focusable="false"
+                  role="presentation"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="37"
+                  height="37"
+                  viewBox="0 0 37 37"
+                  fill="none"
+                >
+                  <path d="M29.5422 27.9055C29.7662 28.1209 29.8934 28.4171 29.8963 28.7279C29.8977 29.0372 29.7763 29.3364 29.5566 29.5546C29.3384 29.7743 29.0392 29.8957 28.7299 29.8943C28.4191 29.8914 28.1229 29.7642 27.9075 29.5402L18.5028 20.1355L9.09816 29.5402C8.88281 29.7642 8.58653 29.8914 8.27576 29.8943C7.96647 29.8957 7.6673 29.7743 7.44904 29.5546C7.22935 29.3364 7.10794 29.0372 7.10939 28.7279C7.11228 28.4172 7.23946 28.1209 7.46349 27.9055L16.8681 18.5008L7.46349 9.09618C7.02411 8.64234 7.03133 7.92113 7.4765 7.47454C7.92309 7.0294 8.64429 7.02215 9.09813 7.46154L18.5028 16.8662L27.9075 7.46154C28.1228 7.23751 28.4191 7.11032 28.7299 7.10743C29.0392 7.10599 29.3383 7.2274 29.5566 7.44708C29.7763 7.66532 29.8977 7.96449 29.8962 8.27381C29.8933 8.58455 29.7662 8.88083 29.5421 9.09621L20.1375 18.5009L29.5422 27.9055Z" fill="black"></path>
+                </svg>
+
+                <span class="visually-hidden">Close menu</span>
+              </button>
+            </div>
+            <!-- Mobile menu -->
+            <div class="header-drawer__body-wrapper">
+              <div class="header-drawer__body">
+                {%- for link in linklists['paestro-menu'].links -%}
+                  {% if link != blank %}
+                    <div class="header-drawer__expand-wrapper">
+                      {% if link.links != blank %}
+                        <button class="header-drawer__link">
+                          {{ link.title }}
+                          <svg
+                            aria-hidden="true"
+                            focusable="false"
+                            role="presentation"
+                            class="icon icon-chevron-right"
+                            viewBox="0 0 14 14"
+                          >
+                            <path d="M3.871.604c.44-.439 1.152-.439 1.591 0l5.515 5.515s-.049-.049.003.004l.082.08c.439.44.44 1.153 0 1.592l-5.6 5.6a1.125 1.125 0 0 1-1.59-1.59L8.675 7 3.87 2.195a1.125 1.125 0 0 1 0-1.59z" fill="#fff"></path>
+                          </svg>
+                        </button>
+                        <div class="header-drawer header-drawer__submenu">
+                          <div class="header-drawer__header">
+                            <button class="header-drawer__back-btn">
+                              <svg
+                                aria-hidden="true"
+                                focusable="false"
+                                role="presentation"
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="49"
+                                height="49"
+                                viewBox="0 0 49 49"
+                                fill="none"
+                              >
+                                <path d="M29.3967 13.67C30.2293 13.67 30.8667 14.3552 30.8667 15.14C30.8667 15.5324 30.7193 15.9248 30.4265 16.1698L21.754 24.4998L30.4265 32.8298C31.0141 33.4174 31.0141 34.3496 30.4265 34.8874C29.8867 35.4272 29.0063 35.475 28.4167 34.9372L18.6167 25.5772C18.0291 25.0374 18.0291 24.1072 18.5669 23.5196L18.6167 23.4698L28.4167 14.0623C28.6617 13.8173 29.0043 13.67 29.3967 13.67Z" fill="black"></path>
+                              </svg>
+
+                              <span class="visually-hidden">Previous menu</span>
+                            </button>
+                            <div class="header-drawer__title">{{ link.title }}</div>
+                            <button class="header-drawer__close-btn" aria-label="Close menu">
+                              <svg
+                                aria-hidden="true"
+                                focusable="false"
+                                role="presentation"
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="37"
+                                height="37"
+                                viewBox="0 0 37 37"
+                                fill="none"
+                              >
+                                <path d="M29.5422 27.9055C29.7662 28.1209 29.8934 28.4171 29.8963 28.7279C29.8977 29.0372 29.7763 29.3364 29.5566 29.5546C29.3384 29.7743 29.0392 29.8957 28.7299 29.8943C28.4191 29.8914 28.1229 29.7642 27.9075 29.5402L18.5028 20.1355L9.09816 29.5402C8.88281 29.7642 8.58653 29.8914 8.27576 29.8943C7.96647 29.8957 7.6673 29.7743 7.44904 29.5546C7.22935 29.3364 7.10794 29.0372 7.10939 28.7279C7.11228 28.4172 7.23946 28.1209 7.46349 27.9055L16.8681 18.5008L7.46349 9.09618C7.02411 8.64234 7.03133 7.92113 7.4765 7.47454C7.92309 7.0294 8.64429 7.02215 9.09813 7.46154L18.5028 16.8662L27.9075 7.46154C28.1228 7.23751 28.4191 7.11032 28.7299 7.10743C29.0392 7.10599 29.3383 7.2274 29.5566 7.44708C29.7763 7.66532 29.8977 7.96449 29.8962 8.27381C29.8933 8.58455 29.7662 8.88083 29.5421 9.09621L20.1375 18.5009L29.5422 27.9055Z" fill="black"></path>
+                              </svg>
+
+                              <span class="visually-hidden">Close menu</span>
+                            </button>
+                          </div>
+
+                          <div class="header-drawer__body-wrapper">
+                            <div class="header-drawer__body">
+                              {% for sublink in link.links %}
+                                <div class="header-drawer__expand-wrapper">
+                                  {% if sublink.links != blank %}
+                                    <button class="header-drawer__link">
+                                      {{ sublink.title }}
+                                      <svg
+                                        aria-hidden="true"
+                                        focusable="false"
+                                        role="presentation"
+                                        class="icon icon-chevron-right"
+                                        viewBox="0 0 14 14"
+                                      >
+                                        <path d="M3.871.604c.44-.439 1.152-.439 1.591 0l5.515 5.515s-.049-.049.003.004l.082.08c.439.44.44 1.153 0 1.592l-5.6 5.6a1.125 1.125 0 0 1-1.59-1.59L8.675 7 3.87 2.195a1.125 1.125 0 0 1 0-1.59z" fill="#fff"></path>
+                                      </svg>
+                                    </button>
+
+                                    <div class="header-drawer header-drawer__submenu">
+                                      <div class="header-drawer__header">
+                                        <button class="header-drawer__back-btn">
+                                          <svg
+                                            aria-hidden="true"
+                                            focusable="false"
+                                            role="presentation"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            width="49"
+                                            height="49"
+                                            viewBox="0 0 49 49"
+                                            fill="none"
+                                          >
+                                            <path d="M29.3967 13.67C30.2293 13.67 30.8667 14.3552 30.8667 15.14C30.8667 15.5324 30.7193 15.9248 30.4265 16.1698L21.754 24.4998L30.4265 32.8298C31.0141 33.4174 31.0141 34.3496 30.4265 34.8874C29.8867 35.4272 29.0063 35.475 28.4167 34.9372L18.6167 25.5772C18.0291 25.0374 18.0291 24.1072 18.5669 23.5196L18.6167 23.4698L28.4167 14.0623C28.6617 13.8173 29.0043 13.67 29.3967 13.67Z" fill="black"></path>
+                                          </svg>
+                                        </button>
+                                        <div class="header-drawer__title">{{ sublink.title }}</div>
+                                        <button class="header-drawer__close-btn" aria-label="Close menu">
+                                          <svg
+                                            aria-hidden="true"
+                                            focusable="false"
+                                            role="presentation"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            width="37"
+                                            height="37"
+                                            viewBox="0 0 37 37"
+                                            fill="none"
+                                          >
+                                            <path d="M29.5422 27.9055C29.7662 28.1209 29.8934 28.4171 29.8963 28.7279C29.8977 29.0372 29.7763 29.3364 29.5566 29.5546C29.3384 29.7743 29.0392 29.8957 28.7299 29.8943C28.4191 29.8914 28.1229 29.7642 27.9075 29.5402L18.5028 20.1355L9.09816 29.5402C8.88281 29.7642 8.58653 29.8914 8.27576 29.8943C7.96647 29.8957 7.6673 29.7743 7.44904 29.5546C7.22935 29.3364 7.10794 29.0372 7.10939 28.7279C7.11228 28.4172 7.23946 28.1209 7.46349 27.9055L16.8681 18.5008L7.46349 9.09618C7.02411 8.64234 7.03133 7.92113 7.4765 7.47454C7.92309 7.0294 8.64429 7.02215 9.09813 7.46154L18.5028 16.8662L27.9075 7.46154C28.1228 7.23751 28.4191 7.11032 28.7299 7.10743C29.0392 7.10599 29.3383 7.2274 29.5566 7.44708C29.7763 7.66532 29.8977 7.96449 29.8962 8.27381C29.8933 8.58455 29.7662 8.88083 29.5421 9.09621L20.1375 18.5009L29.5422 27.9055Z" fill="black"></path>
+                                          </svg>
+                                        </button>
+                                      </div>
+                                      <div class="header-drawer__body-wrapper">
+                                        <div class="header-drawer__body">
+                                          <div class="header__sub-nested-blocks" data-index="0">
+                                            {% for link in sublink.links %}
+                                              <a
+                                                href="{{ link.url }}"
+                                                class="header__sub-nested-block header__sub-nested-product-block"
+                                              >
+                                                <div class="header__sub-nested-product-block-title">
+                                                  {{ link.title }}
+                                                </div>
+                                                {% assign menuhandle = link.url | replace: '/products/', '' %}
+
+                                                <div class="header__sub-nested-product-block-image">
+                                                  <img
+                                                    loading="lazy"
+                                                    class="lazy-img"
+                                                    width=""
+                                                    height=""
+                                                    onload="this.style.opacity=1"
+                                                    alt="{{ link.title }}"
+                                                    src="{{ all_products[menuhandle].featured_image | image_url }}"
+                                                    style="opacity: 1;"
+                                                  >
+                                                </div>
+                                              </a>
+                                            {% endfor %}
+                                          </div>
+                                        </div>
+                                        <!--
+                                          <div class="header-drawer__footer">
+                                            <div class="header-drawer__footer-inner">
+                                              <div class="links-wrapper is-alt is-pink">
+                                                <p>
+                                                  Ready To Go All Out?
+                                                  <a
+                                                    href="https://nuunlife.com/products/nuun-sport-powder?variant=44988049817787"
+                                                    title="https://nuunlife.com/products/nuun-sport-powder?variant=44988049817787"
+                                                    >Start with Nuun x Orangetheory's Newest Flavor</a
+                                                  >
+                                                </p>
+                                              </div>
+                                              <div class="header-drawer__footer-cta">
+                                                <a href="/pages/products" class="button"> Shop All Hydration </a>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        -->
+                                      </div>
+                                    </div>
+                                  {% else %}
+                                    <a href="{{ sublink.url }}" class="header-drawer__link"> {{ sublink.title }}</a>
+                                  {% endif %}
+                                </div>
+                              {% endfor %}
+                            </div>
+
+                            <!--
+                              <div class="header-drawer__footer">
+                                <div class="header-drawer__footer-inner">
+                                  <div class="links-wrapper is-alt is-pink">
+                                    <p>
+                                      Ready To Go All Out?
+                                      <a
+                                        href="https://nuunlife.com/products/nuun-sport-powder?variant=44988049817787"
+                                        title="https://nuunlife.com/products/nuun-sport-powder?variant=44988049817787"
+                                        >Start with Nuun x Orangetheory's Newest Flavor</a
+                                      >
+                                    </p>
+                                  </div>
+                                  <div class="header-drawer__footer-cta">
+                                    <a href="/pages/products" class="button is-pink"> Shop All </a>
+                                  </div>
+                                </div>
+                              </div>
+                            -->
+                          </div>
+                        </div>
+                      {% else %}
+                        <a href="{{ link.url }}" class="header-drawer__link">
+                          {{ link.title }}
+                        </a>
+                      {% endif %}
+                    </div>
+                  {% else %}
+                    <a href="{{ link.url }}" class="header-drawer__link"> {{ link.title }} </a>
+                  {% endif %}
+                {% endfor %}
+              </div>
+            </div>
+            <!-- end mobile menu -->
+          </div>
+        </header-drawer>
+      </header>
+    </main-header>
+  </div>
+{% endif %}

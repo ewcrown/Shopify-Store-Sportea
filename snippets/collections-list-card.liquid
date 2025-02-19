@@ -1,0 +1,133 @@
+{% comment %}
+  collections-list-card
+{% endcomment %}
+<script src="{{ 'product-form.js' | asset_url }}" defer="defer"></script>
+<style>
+    .shop-section .shop-block-one .inner-box .content-box .theme-btn:hover {
+    color: #fff !important;
+  }
+</style>
+{% liquid
+  assign settings = section.settings
+  assign pesto_image_ratio = settings.pesto_image_ratio
+  assign card_border_visibility = settings.card_border_visibility
+  assign enable_collection_desc = settings.enable_collection_desc
+  assign product_collection_img = settings.product_collection_img
+%}
+
+<div class="shop-block-one sin-prd-item hover-two img-postions-{{ product_collection_img }} {% if product.featured_media == blank %}no-img-available-loop{%- endif -%}">
+  <div class="inner-box {% if card_border_visibility %}show-border{% endif %}">
+    {%- render 'prd-card-media-badge', product: product -%}
+    <div class="content-box-img position-relative">
+      {% if product.featured_media != blank %}
+        {%- render 'prd-card-media', product: product, pesto_image_ratio: pesto_image_ratio -%}
+      {% else %}
+        <figure class="image pesto-image-{{ pesto_image_ratio }}" role="none">
+          {{ grid_it.image | image_url: width: 500 | image_tag: alt:grid_it.image.alt }}
+        </figure>
+      {%- endif -%}
+      {% if product %}
+        {%- render 'q-button', product: product- %}
+      {% endif %}
+    </div>
+    <div class="content-box">
+      <div class="content-box-info">
+        {% if product %}
+          <h4 class="{{ section.settings.title_font_family }}">
+            <a href="{{ product.url | default: '#' }}">{{ product.title | escape }}</a>
+          </h4>
+        {% else %}
+          <h4 class="{{ section.settings.title_font_family }}">
+            <a href="{{ grid_it.p_link.url | default: '#' }}">{{ grid_it.btn_text | escape }}</a>
+          </h4>
+          <p class="p_grid_note">{{ grid_it.desc }}</p>
+        {% endif %}
+        {%- if section.settings.enable_vendor -%}
+          <div class="product-bendor-item">
+            {{ product.vendor }}
+          </div>
+        {% endif %}
+        {% if enable_collection_desc %}
+          <div class="content-of-product">
+            {% if product.description != blank %}
+              {{ product.description | strip_html | truncatewords: 10 }}
+            {% endif %}
+          </div>
+        {% endif %}
+        {% if product %}
+          <div class="title-of-product">
+            {% render 'price-raw', product: product %}
+          </div>
+        {% else %}
+          <div class="title-of-product">
+            {% render 'price-raw', product: grid_it.p_link %}
+          </div>
+        {% endif %}
+      </div>
+      {%- liquid
+        assign qty_rules = false
+        if product.selected_or_first_available_variant.quantity_rule.min > 1 or product.selected_or_first_available_variant.quantity_rule.max != null or product.selected_or_first_available_variant.quantity_rule.increment > 1
+          assign qty_rules = true
+        endif
+      -%}
+      {% if grid_it.p_link %}
+        <div class="btn-box">
+          <a href="{% if btnUrl != blank %}{{ btnUrl }}{% else %}{{ grid_it.p_link.url | default: '#' }}{% endif %}" class="gf-button theme-btn">
+            {{- grid_it.btn_text -}}
+          </a>
+        </div>
+      {% endif %}
+      {%- if product.variants.size > 1 or qty_rules -%}
+        <div class="btn-box">
+          <a href="{{ product.url | default: '#' }}" class="gf-button theme-btn">
+            {{- 'product_tiny.view_product' | t -}}
+          </a>
+        </div>
+      {%- else -%}
+        {% if product %}
+          <product-form class="product-form">
+            <div class="product-form__error-message-wrapper" role="alert" hidden>
+              <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-error" viewBox="0 0 13 13">
+                <circle cx="6.5" cy="6.50049" r="5.5" stroke="white" stroke-width="2"/>
+                <circle cx="6.5" cy="6.5" r="5.5" fill="#EB001B" stroke="#EB001B" stroke-width="0.7"/>
+                <path d="M5.87413 3.52832L5.97439 7.57216H7.02713L7.12739 3.52832H5.87413ZM6.50076 9.66091C6.88091 9.66091 7.18169 9.37267 7.18169 9.00504C7.18169 8.63742 6.88091 8.34917 6.50076 8.34917C6.12061 8.34917 5.81982 8.63742 5.81982 9.00504C5.81982 9.37267 6.12061 9.66091 6.50076 9.66091Z" fill="white"/>
+                <path d="M5.87413 3.17832H5.51535L5.52424 3.537L5.6245 7.58083L5.63296 7.92216H5.97439H7.02713H7.36856L7.37702 7.58083L7.47728 3.537L7.48617 3.17832H7.12739H5.87413ZM6.50076 10.0109C7.06121 10.0109 7.5317 9.57872 7.5317 9.00504C7.5317 8.43137 7.06121 7.99918 6.50076 7.99918C5.94031 7.99918 5.46982 8.43137 5.46982 9.00504C5.46982 9.57872 5.94031 10.0109 6.50076 10.0109Z" fill="white" stroke="#EB001B" stroke-width="0.7">
+              </svg>
+              <span class="product-form__error-message"></span>
+            </div>
+
+            {%- form 'product',
+              product,
+              id: product_form_id,
+              class: 'form form-addto-cart-feature-form',
+              novalidate: 'novalidate',
+              data-type: 'add-to-cart-form'
+            -%}
+              <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}" disabled>
+              <div class="product-form__buttons">
+                <button
+                  type="submit"
+                  name="add"
+                  style="font-weight:500"
+                  class="product-form__submit theme-btn gf-button"
+                  {% if product.selected_or_first_available_variant.available == false %}
+                    disabled
+                  {% endif %}
+                >
+                  <span>
+                    {%- if product.selected_or_first_available_variant.available -%}
+                      {{ 'featured_product.add_to_cart' | t }}
+                    {%- else -%}
+                      {{ 'featured_product.sold_out' | t }}
+                    {%- endif -%}
+                  </span>
+                  {%- render 'icon-btn-loader-infi' -%}
+                </button>
+              </div>
+            {% endform %}
+          </product-form>
+        {% endif %}
+      {%- endif -%}
+    </div>
+  </div>
+</div>

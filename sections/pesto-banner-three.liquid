@@ -1,0 +1,268 @@
+{%- style -%}
+  {%- if section.settings.pesto_section_padding_top != blank -%}
+
+      #{{ section.id }}.banner-section{
+          padding-top: {{ section.settings.pesto_section_padding_top }}px !important;
+      }
+      @media (max-width:1200px){
+          #{{ section.id }}.banner-section{
+              padding-top: 42px !important;
+          }
+      }
+  {%- endif -%}
+
+  {%- if section.settings.pesto_section_padding_bottom != blank -%}
+
+      #{{ section.id }}.banner-section{
+          padding-bottom: {{ section.settings.pesto_section_padding_bottom }}px !important;
+      }
+      @media (max-width:1200px){
+          #{{ section.id }}.banner-section{
+              padding-bottom: 20px !important;
+          }
+      }
+
+  {%- endif -%}
+{%- endstyle -%}
+<style>
+    @media only screen and (max-width: 750px) {
+   .banner-carousel .content-box {
+      width: 100%;
+  }
+  }
+</style>
+<div id="{{ section.id }}" class="banner-section no-slider-area color-{{ section.settings.color_scheme }}">
+  <div class="banner-carousel no-slider">
+    {% for block in section.blocks %}
+      {%- case block.type -%}
+        {%- when 'slider_item' -%}
+          {% render 'pesto-banner-three-no-slider', block: block %}
+      {% endcase %}
+    {% endfor %}
+  </div>
+</div>
+{% schema %}
+{
+    "name": "Image banner",
+    "tag": "section",
+    "class": "banner-slider-three",
+    "max_blocks": 1,
+    "settings": [
+        {
+            "type": "color_scheme",
+            "id": "color_scheme",
+            "default": "background-1",
+            "label": "Color scheme"
+        },
+        {
+            "type": "header",
+            "content": "Section padding"
+        },
+        {
+            "type": "range",
+            "id": "pesto_section_padding_top",
+            "min": 0,
+            "max": 200,
+            "step": 10,
+            "unit": "px",
+            "label": "t:sections.all.padding.padding_top",
+            "default": 150
+        },
+        {
+            "type": "range",
+            "id": "pesto_section_padding_bottom",
+            "min": 0,
+            "max": 200,
+            "step": 10,
+            "unit": "px",
+            "label": "t:sections.all.padding.padding_bottom",
+            "default": 150
+        }
+    ],
+    "blocks": [
+        {
+            "name": "Banner content",
+            "type": "slider_item",
+            "settings": [
+                {
+                    "type": "text",
+                    "id": "slider_item_title",
+                    "label": "Heading",
+                    "default": "Banner image"
+                },
+                {
+                    "type": "select",
+                    "id": "slider_item_title_size",
+                    "options": [
+                        {
+                        "value": "sm",
+                        "label": "Small"
+                        },
+                        {
+                        "value": "md",
+                        "label": "Medium"
+                        },
+                        {
+                        "value": "lg",
+                        "label": "Large"
+                        }
+                    ],
+                    "default": "lg",
+                    "label": "Heading size"
+                },
+                {
+                    "type": "textarea",
+                    "id": "slider_item_content_one",
+                    "label": "Content",
+                    "default": "Tell your brand's story through images"
+                },
+                {
+                    "type": "textarea",
+                    "id": "slider_item_content_two",
+                    "label": "Subheading",
+                    "default": "Subheading"
+                },
+                {
+                    "type": "select",
+                    "id": "image_placement",
+                    "options": [
+                    {
+                        "value": "text_left",
+                        "label": "Left"
+                    },
+                    {
+                        "value": "text_right",
+                        "label": "Right"
+                    }
+                    ],
+                    "default": "text_left",
+                    "label": "Desktop text position",
+                    "info": "Only applies if the secondary image is enabled"
+                },
+                {
+                    "type": "select",
+                    "id": "text_alignment",
+                    "options": [
+                        {
+                            "value": "left",
+                            "label": "Left"
+                        },
+                        {
+                            "value": "center",
+                            "label": "Center"
+                        },
+                        {
+                            "value": "right",
+                            "label": "Right"
+                        }
+                    ],
+                    "default": "left",
+                    "label": "Text alignment"
+                },
+                {
+                    "type": "text",
+                    "id": "slider_item_button_label",
+                    "label": "Button label",
+                    "default": "Button",
+                    "info": "Leave the label blank to hide the button"
+                },
+                {
+                    "type": "url",
+                    "id": "slider_item_button_link",
+                    "label": "Button link"
+                },
+               {
+                    "type": "text",
+                    "id": "slider_item_secondary_button_label",
+                    "label": "Button label",
+                    "default": "Button",
+                    "info": "Leave the label blank to hide the button"
+                },
+                {
+                    "type": "url",
+                    "id": "slider_item_secondary_button_link",
+                    "label": "Button link"
+                },
+                {
+                    "type": "image_picker",
+                    "id": "slide_item_background_shap_image",
+                    "label": "Background image"
+                },
+                {
+                    "type": "video",
+                    "id": "slide_item_video",
+                    "label": "Video background",
+                    "info": "Overrides the background image setting."
+                },
+                {
+                    "type": "checkbox",
+                    "id": "show_the_secondary_image",
+                    "default": true,
+                    "label": "Enable the secondary image"
+                },
+                {
+                    "type": "image_picker",
+                    "id": "slider_item_right_images",
+                    "label": "Secondary image"
+                },
+                {
+                    "type": "select",
+                    "id": "banner_column_option",
+                    "options": [
+                        {
+                        "value": "small",
+                        "label": "Small"
+                        },
+                        {
+                        "value": "medium",
+                        "label": "Medium"
+                        },
+                        {
+                        "value": "large",
+                        "label": "Large"
+                        }
+                    ],
+                    "default": "medium",
+                    "label": "Image width in desktop",
+                    "info": "The image is optimized for mobile devices automatically."
+                },
+                {
+                    "type": "select",
+                    "id": "banner_image_position",
+                    "options": [
+                        {
+                            "value": "left",
+                            "label": "Left"
+                        },
+                        {
+                            "value": "center",
+                            "label": "Center"
+                        },
+                        {
+                            "value": "right",
+                            "label": "Right"
+                        }
+                    ],
+                    "default": "right",
+                    "label": "Image alignment"
+                },
+                {
+                    "type": "checkbox",
+                    "id": "banner_image_overflow",
+                    "label": "Secondary image can go outside the container"
+                }
+            ]
+        }
+    ],
+    "presets": [
+        {
+            "name": "Image banner",
+            "blocks": [
+                {
+                    "type": "slider_item"
+                }
+            ]
+        }
+    ]
+}
+{% endschema %}

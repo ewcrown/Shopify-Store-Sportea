@@ -1,0 +1,189 @@
+<link rel="stylesheet" href="{{ 'ui-feature-section.css' | asset_url }}" media="print" onload="this.media='all'">
+<noscript>{{ 'ui-feature-section.css' | asset_url | stylesheet_tag }}</noscript>
+{% assign col_dextop = section.settings.col_settings %}
+
+{% if col_dextop == 1 %}
+    {% assign col_dextop_val = '12' %}
+{% elsif col_dextop == 2 %}
+    {% assign col_dextop_val = '6' %}
+{% elsif col_dextop == 3 %}
+    {% assign col_dextop_val = '4' %}
+{% elsif col_dextop == 4 %}
+    {% assign col_dextop_val = '3' %}
+{% endif  %}
+
+{%- style -%}
+    {%- if section.settings.pesto_section_padding_top != blank -%}
+        #shopify-section-{{section.id}} .feature-section{
+            padding-top: {{ section.settings.pesto_section_padding_top }}px;
+        }
+    {%- endif -%}
+    {%- if section.settings.pesto_section_padding_bottom != blank -%}
+        #shopify-section-{{section.id}} .feature-section{
+            padding-bottom: {{ section.settings.pesto_section_padding_bottom }}px;
+        }
+    {%- endif -%}
+{%- endstyle -%}
+
+
+<div id="{{ section.id }}" class="feature-section {{ section.settings.layout_type }} color-{{ section.settings.color_scheme }} border-bottom-{{ section.settings.bottom_border_width }}">
+    <div class="section-inner">
+        <div class="large-container">
+            <div class="inner-container">
+                <div class="row clearfix">
+                    {% for block in section.blocks %}
+                        {%- case block.type -%}
+                            {%- when '@app' -%}
+                                {% render block %}
+                            {%- when 'features_content' -%}
+                                <div class="col-lg-{{col_dextop_val}} col-md-6 col-sm-12 feature-block">
+                                    <div class="feature-block-one">
+                                        <div class="inner-box">
+                                            <div class="icon-box">
+                                                {%- if block.settings.features_content_url != blank -%}
+                                                    {{ block.settings.features_content_url | image_url: width: block.settings.features_content_url.width | image_tag: loading: 'lazy', class: 'lazyload' }}
+                                                {%- else -%}
+                                                    {{ 'image' | placeholder_svg_tag: 'placeholder-svg-features' }}
+                                                {%- endif -%}
+                                            </div>
+                                            <h5>{{ block.settings.features_content_title }}</h5>
+                                            <p>{{ block.settings.features_content_content }}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                        {% endcase %}
+                    {% endfor %}
+    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% schema %}
+    {
+        "name": "Features list",
+        "tag": "section",
+        "class": "features-info-one",
+        "settings":[
+            {
+                "type": "color_scheme",
+                "id": "color_scheme",
+                "default": "background-4",
+                "label": "Color scheme"
+            },
+            {
+              "label": "Layout type",
+              "id": "layout_type",
+              "type": "select",
+              "default": "box",
+              "options": [
+                {
+                  "value": "style-two",
+                  "label": "Normal"
+                },
+                {
+                  "value": "box",
+                  "label": "Box"
+                }
+              ]
+            },
+            {
+              "label": "Border width",
+              "id": "bottom_border_width",
+              "type": "select",
+              "default": "boxed",
+              "options": [
+                {
+                  "value": "fullwidth",
+                  "label": "Full width"
+                },
+                {
+                  "value": "boxed",
+                  "label": "Container"
+                }
+              ]
+            },
+            {
+                "type": "range",
+                "id": "col_settings",
+                "min": 1,
+                "max": 4,
+                "step": 1,
+                "label": "Columns",
+                "default": 4
+            },
+            {
+                "type": "header",
+                "content": "Section padding"
+            },
+            {
+                "type": "range",
+                "id": "pesto_section_padding_top",
+                "min": 0,
+                "max": 200,
+                "step": 10,
+                "unit": "px",
+                "label": "t:sections.all.padding.padding_top",
+                "default": 150
+            },
+            {
+                "type": "range",
+                "id": "pesto_section_padding_bottom",
+                "min": 0,
+                "max": 200,
+                "step": 10,
+                "unit": "px",
+                "label": "t:sections.all.padding.padding_bottom",
+                "default": 150
+            }
+        ],
+        "blocks": [
+            {
+                "type": "@app"
+            },
+            {
+                "name": "Item",
+                "type": "features_content",
+                "settings": [
+                    {
+                        "type": "text",
+                        "id": "features_content_title",
+                        "label": "Heading",
+                        "default": "Block heading"
+                    },
+                    {
+                        "type": "textarea",
+                        "id": "features_content_content",
+                        "label": "Content",
+                        "default": "Block content"
+                    },
+                    {
+                        "type": "image_picker",
+                        "id": "features_content_url",
+                        "label": "Image"
+                    }
+                ]
+            }
+        ],
+        "presets": [
+            {
+                "name": "Features list",
+                "blocks": [
+                    {
+                        "type": "features_content"
+                    },
+                    {
+                        "type": "features_content"
+                    },
+                    {
+                        "type": "features_content"
+                    },
+                    {
+                        "type": "features_content"
+                    }
+                ]
+            }
+        ]
+    }
+{% endschema %}

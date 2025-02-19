@@ -1,0 +1,229 @@
+{{ 'ui-page-title.css' | asset_url | stylesheet_tag }}
+{{ 'ui-blog.css' | asset_url | stylesheet_tag }}
+{%- liquid
+  assign sort_by = search.sort_by | default: search.default_sort_by
+  assign terms = search.terms | escape
+  assign search_url = '?q=' | append: terms | append: '&options%5Bprefix%5D=last&sort_by=' | append: sort_by
+-%}
+
+{%- style -%}
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+      padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+    }
+
+    @media screen and (min-width: 750px) {
+      .section-{{ section.id }}-padding {
+        padding-top: {{ section.settings.padding_top }}px;
+        padding-bottom: {{ section.settings.padding_bottom }}px;
+      }
+    }
+    div#FacetsWrapperDesktop {
+        overflow: hidden;
+        width: 100%;
+        clear: both;
+    }
+    .enable_img_radius .sin-prd-item .inner-box .image img {
+        border-radius: 0;
+    }
+  .header__sub-nested-menu-link.is-active, a:not(.is-plain):not(.button):not(.link-btn):not(.link):hover {
+      color: #dc3545;
+      border: 1px solid;
+  }
+{%- endstyle -%}
+<style>
+    .search-page-heading-with-form form input[type=text] {
+        border: 0.5px solid #002e6d;
+    }
+  .search-page-heading-with-form {
+      padding: 50px;
+  }
+  .shop-search-page-section .collection {
+      padding-top: 0;
+  }
+</style>
+<div class="section-{{ section.id }}-padding shop-search-page-section shop-page-section color-{{ section.settings.color_scheme }}">
+  <div class="large-container">
+    {%- if search.performed -%}
+      {%- if search.results.size == 0 -%}
+        <div class="search-page-heading-with-form page-title faq-page centred">
+          <div class="large-container">
+            <div class="text">
+              <h1>
+                {{ 'general.search.search_result' | t }}
+              </h1>
+            </div>
+            <form action="{{ routes.search_url }}">
+              <label for="search-amain">
+                {{ 'general.search.search' | t }}
+              </label>
+              <input
+                type="text"
+                id="search-amain"
+                name="q"
+                value="{{ search.terms | escape }}"
+                placeholder="What are you looking for?"
+              >
+              <input type="submit" value="{{ 'general.placeholder_search' | t }}">
+            </form>
+            <br>
+            <br>
+            <h1>
+              {{ 'sections.collection_template_search.empty' | t: terms: search.terms }}
+            </h1>
+          </div>
+        </div>
+      {%- else -%}
+        <div class="search-page-heading-with-form page-title faq-page centred">
+          <div class="large-container">
+            <div class="text">
+              <h1>
+                {{ 'general.search.search_result' | t }}
+              </h1>
+            </div>
+            <form action="{{ routes.search_url }}">
+              <label for="search-amain">
+                {{ 'general.search.search' | t }}
+              </label>
+              <input
+                type="text"
+                id="search-amain"
+                name="q"
+                value="{{ search.terms | escape }}"
+              >
+              <input type="submit" value="{{ 'general.placeholder_search' | t }}">
+            </form>
+          </div>
+        </div>
+        {% paginate search.results by 10 %}
+          <div class="our-shop the-search-result-page" id="ProductGridContainer">
+            <div class="collection wrapper grid {% if section.settings.enable_img_radius == true %} enable_img_radius {% endif %}">
+              <div id="product-grid" data-id="{{ section.id }}" class="shop-grid-content">
+                <div class="row">
+                  <div class="col-md-12">
+                    <div class="row clearfix search-result-content-grid">
+                      {%- for item in search.results -%}
+                        {%- case item.object_type -%}
+                          {%- when 'product' -%}
+                            {% if item.id != '2187362243' %}
+                              <div class="col-lg-3 col-md-3 col-sm-6 shop-block">
+                                {%- render 'pesto-product-tiny-three' -%, product: item -%}
+                              </div>
+                            {% endif %}
+                        {%- endcase -%}
+                      {%- endfor -%}
+                      <div class="col-md-12">
+                        {%- if paginate.pages > 1 -%}
+                          {% render 'pagination', paginate: paginate, anchor: '' %}
+                        {%- endif -%}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        {% endpaginate %}
+      {%- endif -%}
+    {%- else -%}
+      <div class="search-page-heading-with-form page-title faq-page centred">
+        <div class="large-container">
+          <div class="text">
+            <h1>
+              {{ 'general.search.search' | t }}
+            </h1>
+          </div>
+          <form action="{{ routes.search_url }}">
+            <label for="search-amain">
+              {{ 'general.search.search' | t }}
+            </label>
+            <input
+              type="text"
+              id="search-amain"
+              placeholder="{{ 'general.close_search' | t }}"
+              name="q"
+              value="{{ search.terms | escape }}"
+            >
+            <input type="submit" value="{{ 'general.placeholder_search' | t }}">
+          </form>
+        </div>
+      </div>
+    {%- endif -%}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "t:sections.main-search.name",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+        "type": "color_scheme",
+        "id": "color_scheme",
+        "default": "background-2",
+        "label": "Color scheme"
+    },
+    {
+        "type": "header",
+        "content": "Card options"
+    },
+    {
+      "type": "select",
+      "default": "top",
+      "label": "Image position",
+      "id": "product_collection_img",
+      "options": [
+        {
+          "value": "top",
+          "label": "Before content"
+        },
+        {
+          "value": "bottom",
+          "label": "After content"
+        }
+      ]
+    },
+    {
+        "type": "select",
+        "id": "title_font_family",
+        "label": "Title font family",
+        "default": "body-font",
+        "options": [
+            {
+            "value": "title-font",
+            "label": "Heading"
+            },
+            {
+            "value": "body-font",
+            "label": "Body"
+            }
+        ]
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.padding.section_padding_heading"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 36
+    }
+  ]
+}
+{% endschema %}

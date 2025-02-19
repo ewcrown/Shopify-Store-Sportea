@@ -1,0 +1,247 @@
+<style>
+    /* By default, both mobile-none and desktop-none are visible */
+    .mobile-none {
+      display: block !important; /* Show by default */
+    }
+
+    .desktop-none {
+      display: block !important; /* Show by default */
+    }
+
+    /* Hide .mobile-none on screens 768px and below (mobile) */
+    @media (max-width: 1024px) {
+      .mobile-none, .header__menu {
+        display: none !important; /* Hide on mobile devices */
+      }
+
+    }
+
+    /* Hide .desktop-none on screens wider than 768px (desktop) */
+    @media (min-width: 1024px) {
+      .desktop-none {
+        display: none !important; /* Hide on desktop devices */
+      }
+    }
+    .search-popup-area .search-popup-content form .field .search__button ,.search-popup-area .search-popup-content form .field input {
+      border: 1px solid rgb(38,71,134) !important;
+  }
+  .search-popup-area .search-popup-content form .field .search__button {
+      background:none;
+
+  }
+</style>
+{% if pesto_menu_layout != 'regular' %}
+  <div class="user-link search">
+    <div class="mobile-screen-search">
+      <search-icon-area>
+        <button class="header-search-btn-click" aria-label="{{ 'general.placeholder_search' | t }}">
+          <svg role="none"  width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path  d="M19.0008 18.8016L13.8038 13.6046M13.8038 13.6046C15.2104 12.198 16.0006 10.2903 16.0006 8.30106C16.0006 6.31186 15.2104 4.40414 13.8038 2.99756C12.3972 1.59099 10.4895 0.800781 8.50028 0.800781C6.51108 0.800781 4.60336 1.59099 3.19678 2.99756C1.79021 4.40414 1 6.31186 1 8.30106C1 10.2903 1.79021 12.198 3.19678 13.6046C4.60336 15.0111 6.51108 15.8013 8.50028 15.8013C10.4895 15.8013 12.3972 15.0111 13.8038 13.6046Z" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+      </search-icon-area>
+      <search-popup-area class="search-popup-area">
+        <div class="close-the-search">
+          <button class="button-search-uns" aria-label="{{ 'general.close_search' | t }}">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              fill="currentColor"
+              class="bi bi-x"
+              viewBox="0 0 16 16"
+            >
+              <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
+            </svg>
+          </button>
+        </div>
+        <div class="search-popup-header"></div>
+        <div class="search-popup-content">
+          {%- if settings.predictive_search_enabled -%}
+            <predictive-search class="search-modal__form" data-loading-text="{{ 'accessibility.loading' | t }}">
+          {%- endif -%}
+          <form action="{{ routes.search_url }}" method="get" role="search" class="search search-modal__form">
+            <label class="field__label " for="Search-In-Modal-1">{{ 'general.search.search' | t }}</label>
+            <div class="field">
+              <input
+                class="search__input field__input"
+                id="Search-In-Modal-1"
+                type="search"
+                name="q"
+                value=""
+                {%- if settings.predictive_search_enabled -%}
+                  role="combobox"
+                  aria-expanded="false"
+                  aria-owns="predictive-search-results-list"
+                  aria-controls="predictive-search-results-list"
+                  aria-haspopup="listbox"
+                  aria-autocomplete="list"
+                  autocorrect="off"
+                  autocomplete="off"
+                  autocapitalize="off"
+                  spellcheck="false"
+                {%- endif -%}
+              >
+              <input type="hidden" name="options[prefix]" value="last">
+              <button class="search__button field__button" aria-label="{{ 'general.search.search' | t }}">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  fill="currentColor"
+                  class="icon icon-search"
+                  viewBox="0 0 16 16"
+                >
+                  <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                </svg>
+              </button>
+            </div>
+            {%- if settings.predictive_search_enabled -%}
+              <div class="predictive-search predictive-search--header" tabindex="-1" data-predictive-search>
+                <div class="predictive-search__loading-state">
+                  <svg
+                    aria-hidden="true"
+                    focusable="false"
+                    role="presentation"
+                    class="spinner"
+                    viewBox="0 0 66 66"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <circle class="path" fill="none" stroke-width="6" cx="33" cy="33" r="30"></circle>
+                  </svg>
+                </div>
+              </div>
+              <span class="predictive-search-status visually-hidden" role="status" aria-hidden="true"></span>
+            {%- endif -%}
+          </form>
+          {%- if settings.predictive_search_enabled -%}
+            </predictive-search>
+          {%- endif -%}
+        </div>
+      </search-popup-area>
+    </div>
+    <div class="desktop-screen-search">
+      <form action="{{ routes.search_url }}" method="get" role="search" class="search search-modal__form">
+        <div class="field">
+          <input
+            class="search__input field__input"
+            id="Search-In-Modal-1"
+            type="search"
+            name="q"
+            value=""
+            placeholder="{{ 'general.placeholder_search' | t }}"
+            {%- if settings.predictive_search_enabled -%}
+              role="combobox"
+              aria-expanded="false"
+              aria-owns="predictive-search-results-list"
+              aria-controls="predictive-search-results-list"
+              aria-haspopup="listbox"
+              aria-autocomplete="list"
+              autocorrect="off"
+              autocomplete="off"
+              autocapitalize="off"
+              spellcheck="false"
+            {%- endif -%}
+          >
+          <button class="search__button field__button" aria-label="{{ 'general.search.search' | t }}">
+            <svg width="23" height="23" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M0 8.28309C0.0844412 7.69967 0.169781 7.11715 0.344053 6.55126C0.850251 4.90573 1.7288 3.49841 3.01428 2.34596C4.33525 1.16204 5.86956 0.41366 7.61857 0.126894C9.42103 -0.168412 11.1678 0.0491344 12.8351 0.806502C14.6344 1.62365 16.0339 2.89072 17.0207 4.60053C17.6325 5.6604 18.0255 6.79847 18.1625 8.0197C18.436 10.4635 17.8297 12.6691 16.3537 14.6342C16.2275 14.8023 16.263 14.889 16.3955 15.0207C18.4742 17.0892 20.5471 19.1636 22.624 21.2338C22.7856 21.3952 22.9208 21.5692 22.9968 21.7858C22.9968 22.1521 22.9923 22.5185 22.9999 22.8848C23.0017 22.9814 22.9815 23.0021 22.8845 22.9998C22.518 22.9927 22.151 22.9967 21.784 22.9967C21.568 22.9198 21.3933 22.7859 21.2316 22.6245C19.1956 20.5875 17.1582 18.5523 15.1181 16.5193C14.7655 16.1678 14.8913 16.1813 14.4821 16.4725C12.2673 18.0484 9.82258 18.586 7.16268 18.0246C5.24703 17.6201 3.63187 16.6595 2.31899 15.2046C1.22305 13.9901 0.506647 12.5787 0.167086 10.9795C0.098365 10.6518 0.0552461 10.3183 0 9.9875V8.28309ZM9.09854 16.259C13.0304 16.282 16.2576 13.0453 16.2545 9.11777C16.2513 5.25632 13.1355 1.98278 9.1174 1.97739C5.14238 1.97199 1.95877 5.14934 1.95158 9.11058C1.94439 13.1374 5.22817 16.2748 9.09854 16.259Z" fill="currentColor"/>
+            </svg>
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+{% else %}
+  <div class="user-link">
+    <search-icon-area class="desktop-none">
+      <button class="header-search-btn-click" aria-label="{{ 'general.placeholder_search' | t }}">
+        <svg role="none"  width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M19.0008 18.8016L13.8038 13.6046M13.8038 13.6046C15.2104 12.198 16.0006 10.2903 16.0006 8.30106C16.0006 6.31186 15.2104 4.40414 13.8038 2.99756C12.3972 1.59099 10.4895 0.800781 8.50028 0.800781C6.51108 0.800781 4.60336 1.59099 3.19678 2.99756C1.79021 4.40414 1 6.31186 1 8.30106C1 10.2903 1.79021 12.198 3.19678 13.6046C4.60336 15.0111 6.51108 15.8013 8.50028 15.8013C10.4895 15.8013 12.3972 15.0111 13.8038 13.6046Z" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+    </search-icon-area>
+    {% render 'search-snip' %}
+    <search-popup-area class="search-popup-area">
+      <div class="close-the-search">
+        <button class="button-search-uns" aria-label="{{ 'general.close_search' | t }}">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            fill="currentColor"
+            class="bi bi-x"
+            viewBox="0 0 16 16"
+          >
+            <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
+          </svg>
+        </button>
+      </div>
+      <div class="search-popup-header"></div>
+      <div class="search-popup-content">
+        {%- if settings.predictive_search_enabled -%}
+          <predictive-search class="search-modal__form" data-loading-text="{{ 'accessibility.loading' | t }}">
+        {%- endif -%}
+        <form action="{{ routes.search_url }}" method="get" role="search" class="search search-modal__form">
+          <label class="field__label " for="Search-In-Modal-1">{{ 'general.search.search' | t }}</label>
+          <div class="field">
+            <input
+              class="search__input field__input"
+              id="Search-In-Modal-1"
+              type="search"
+              name="q"
+              value=""
+              {%- if settings.predictive_search_enabled -%}
+                role="combobox"
+                aria-expanded="false"
+                aria-owns="predictive-search-results-list"
+                aria-controls="predictive-search-results-list"
+                aria-haspopup="listbox"
+                aria-autocomplete="list"
+                autocorrect="off"
+                autocomplete="off"
+                autocapitalize="off"
+                spellcheck="false"
+              {%- endif -%}
+            >
+            <input type="hidden" name="options[prefix]" value="last">
+            <button class="search__button field__button" aria-label="{{ 'general.search.search' | t }}">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                class="icon icon-search"
+                viewBox="0 0 16 16"
+              >
+                <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+              </svg>
+            </button>
+          </div>
+
+          {%- if settings.predictive_search_enabled -%}
+            <div class="predictive-search predictive-search--header" tabindex="-1" data-predictive-search>
+              <div class="predictive-search__loading-state">
+                <svg
+                  aria-hidden="true"
+                  focusable="false"
+                  role="presentation"
+                  class="spinner"
+                  viewBox="0 0 66 66"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <circle class="path" fill="none" stroke-width="6" cx="33" cy="33" r="30"></circle>
+                </svg>
+              </div>
+            </div>
+
+            <span class="predictive-search-status visually-hidden" role="status" aria-hidden="true"></span>
+          {%- endif -%}
+        </form>
+        {%- if settings.predictive_search_enabled -%}
+          </predictive-search>
+        {%- endif -%}
+      </div>
+    </search-popup-area>
+  </div>
+{% endif %}

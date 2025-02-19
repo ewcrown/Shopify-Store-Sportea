@@ -1,0 +1,41 @@
+<section>
+  <div class="pes-about-banner">
+    <div class="page-width">
+      <div class="pes-about-wrap">
+        {% if section.settings.bg_img %}
+          <img src="{{ section.settings.bg_img | img_url : 'master' }}" alt="img">
+        {% endif %}
+        <div class="pes-about-content">
+          {% if section.settings.page %}
+            <p>{{ section.settings.page }}</p>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Pesto About Banner",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "bg_img",
+      "label": "Backgroung Image"
+    },
+    {
+      "type": "richtext",
+      "label": "Content",
+      "id":"page"
+
+
+    }
+  ],
+  "presets": [
+    {
+ "name": "Pesto About Banner"
+    }
+  ]
+}
+{% endschema %}

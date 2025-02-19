@@ -1,0 +1,172 @@
+<link rel="stylesheet" href="{{ 'ui-achievement-section.css' | asset_url }}" media="print" onload="this.media='all'">
+<noscript>{{ 'ui-achievement-section.css' | asset_url | stylesheet_tag }}</noscript>
+{% assign col_dextop = section.settings.col_settings %}
+
+{% if col_dextop == 1 %}
+    {% assign col_dextop_val = '12' %}
+{% elsif col_dextop == 2 %}
+    {% assign col_dextop_val = '6' %}
+{% elsif col_dextop == 3 %}
+    {% assign col_dextop_val = '4' %}
+{% elsif col_dextop == 4 %}
+    {% assign col_dextop_val = '3' %}
+{% endif  %}
+
+{%- style -%}
+
+    {%- if section.settings.pesto_section_padding_top != blank -%}
+        #shopify-section-{{section.id}} .achievement-section{
+            padding-top: {{ section.settings.pesto_section_padding_top }}px;
+        }
+    {%- endif -%}
+    {%- if section.settings.pesto_section_padding_bottom != blank -%}
+        #shopify-section-{{section.id}} .achievement-section{
+            padding-bottom: {{ section.settings.pesto_section_padding_bottom }}px;
+        }
+    {%- endif -%}
+    
+{%- endstyle -%}
+
+
+<div id="{{ section.id }}" class="achievement-section color-{{ section.settings.color_scheme }}">
+    {% if section.settings.sections_bg != blank %}
+        <div class="overlay-object-section-bg">
+            {{ section.settings.sections_bg | image_url: width: 7680 | image_tag: loading: 'lazy', class: 'lazyload' }}
+        </div>
+    {%- endif -%}
+
+    <div class="large-container">
+        <div class="inner-container">
+            <div class="sec-title centred">
+                <h2>{{ section.settings.heading_title }}</h2>            
+                <p>{{ section.settings.heading_content }}</p>
+            </div>
+            <div class="row clearfix">
+                {% for block in section.blocks %}
+                    {%- case block.type -%}
+                        {%- when '@app' -%}
+                            {% render block %}
+                        {%- when 'achievement_content' -%}
+                            <div class="col-lg-{{col_dextop_val}} col-md-6 col-sm-12 achievement-block">
+                                <div class="achievement-block-item">
+                                    <div class="inner-box">
+                                        <h5>{{ block.settings.achievement_content_title }}</h5>
+                                        <p>{{ block.settings.features_content_content }}</p>
+                                    </div>
+                                </div>
+                            </div>
+                    {% endcase %}
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% schema %}
+    {
+        "name": "Highlighted list",
+        "tag": "section",
+        "class": "pesto-achievement-list",
+        "settings":[
+            {
+                "type": "color_scheme",
+                "id": "color_scheme",
+                "default": "background-1",
+                "label": "Color scheme"
+            },
+            {
+                "type": "image_picker",
+                "id": "sections_bg",
+                "label": "Image"
+            },
+            {
+                "type": "text",
+                "id": "heading_title",
+                "label": "Heading",
+                "default": "Some header for your sections "
+            },
+            {
+                "type": "textarea",
+                "id": "heading_content",
+                "label": "Content",
+                "default": "Describe a product, make announcements, or welcome customers to your store."
+            },
+            {
+                "type": "range",
+                "id": "col_settings",
+                "min": 1,
+                "max": 4,
+                "step": 1,
+                "label": "Columns",
+                "default": 4
+            },
+            {
+                "type": "header",
+                "content": "Section padding"
+            },
+            {
+                "type": "range",
+                "id": "pesto_section_padding_top",
+                "min": 0,
+                "max": 200,
+                "step": 10,
+                "unit": "px",
+                "label": "t:sections.all.padding.padding_top",
+                "default": 150
+            },
+            {
+                "type": "range",
+                "id": "pesto_section_padding_bottom",
+                "min": 0,
+                "max": 200,
+                "step": 10,
+                "unit": "px",
+                "label": "t:sections.all.padding.padding_bottom",
+                "default": 150
+            }
+        ],
+        "blocks": [
+            {
+                "type": "@app"
+            },
+            {
+                "name": "Item",
+                "type": "achievement_content",
+                "settings": [
+                    {
+                        "type": "text",
+                        "id": "achievement_content_title",
+                        "label": "Heading",
+                        "default": "Block heading"
+                    },
+                    {
+                        "type": "textarea",
+                        "id": "features_content_content",
+                        "label": "Content",
+                        "default": "Block content"
+                    }
+                ]
+            }
+        ],
+        "presets": [
+            {
+                "name": "Achievement list",
+                "blocks": [
+                    {
+                        "type": "achievement_content"
+                    },
+                    {
+                        "type": "achievement_content"
+                    },
+                    {
+                        "type": "achievement_content"
+                    },
+                    {
+                        "type": "achievement_content"
+                    }
+                ]
+            }
+        ]
+    }
+{% endschema %}

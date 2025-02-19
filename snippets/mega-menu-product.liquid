@@ -1,0 +1,75 @@
+
+<div class="mega-menu style-one">
+    <div class="large-container">
+        <div class="mega-menu-inner">
+            {%- render 'two-lvl-menu-mega', link: link -%}
+            {% for product in block.settings.mega_selected_product.products limit: block.settings.mega_selected_product_qty%}
+                <div class="selected-product">
+                    <a href="{{ product.url }}" class="product-card-single card-width">
+                        <div class="card-single-thumb no-white-space">
+                            {%- if product.featured_media -%}
+                                <figure class="image-box">
+                                    <img srcset="
+                                        {%- if product.featured_media.width >= 165 -%}{{ product.featured_media | img_url: '165x' }} 165w,{%- endif -%}
+                                        {%- if product.featured_media.width >= 360 -%}{{ product.featured_media | img_url: '360x' }} 360w,{%- endif -%}
+                                        {%- if product.featured_media.width >= 533 -%}{{ product.featured_media | img_url: '533x' }} 533w,{%- endif -%}
+                                        {%- if product.featured_media.width >= 720 -%}{{ product.featured_media | img_url: '720x' }} 720w,{%- endif -%}
+                                        {%- if product.featured_media.width >= 940 -%}{{ product.featured_media | img_url: '940x' }} 940w,{%- endif -%}
+                                        {%- if product.featured_media.width >= 1066 -%}{{ product.featured_media | img_url: '1066x' }} 1066w,{%- endif -%}
+                                        {{ product.featured_media | img_url: 'master' }} {{ product.featured_media.width }}w
+                                        "
+                                        data-src="{{ product.featured_media | img_url: '533x' }}"
+                                        alt="{{ product.featured_media.alt | escape }}"
+                                        loading="lazy" class="lazyload" class="img-reduce"
+                                        width="{{ product.featured_media.width }}"
+                                        height="{{ product.featured_media.height }}">
+                                </figure>
+                            {%- endif -%}
+                        </div>
+                        <h4>{{ product.title }}</h4>
+                        {% if product.compare_at_price %}
+                        <p class="product-price">
+                            <span class="new-price">{{ product.price | money }}</span>
+                            <del class="old-price">{{ product.compare_at_price | money }}</del>
+                        </p>
+                        {% else %}
+                        <p class="product-price">{{ product.price | money }}</p>
+                        {% endif %}
+                    </a>
+                </div>
+            {% endfor %}
+
+            <div class="menu-add-banner {% if block.settings.mega_add_img == blank %}no-bbanner-img-rif{% endif %}">
+                <a class="menu-add-banner-inner card-width"
+                href="{% if block.settings.mega_Add_button_link != blank %} {{block.settings.mega_Add_button_link.url}} {% else %}#{% endif %}"
+                >
+                    {% if block.settings.mega_add_img != blank %}
+                        <div class="bg-image no-white-space">
+                            {{ block.settings.mega_add_img | image_url: width: block.settings.mega_add_img.width | image_tag: loading: 'lazy' }}
+                        </div>
+                    {% endif %}
+                        
+                    <div class="banner-content">
+                        {% if block.settings.mega_add_title != blank %}
+                            <h4>{{ block.settings.mega_add_title }}</h4>
+                        {% endif %}
+                        {% if block.settings.mega_Add_button_text != blank %}
+                            <span> {{ block.settings.mega_Add_button_text }}
+                                <svg width="10" height="10" viewBox="0 0 10 10" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M0.625 9.375L9.375 0.625L0.625 9.375ZM9.375 0.625H2.8125H9.375ZM9.375 0.625V7.1875V0.625Z"
+                                        fill="currentColor" />
+                                    <path
+                                        d="M0.625 9.375L9.375 0.625M9.375 0.625H2.8125M9.375 0.625V7.1875"
+                                        stroke="currentColor" stroke-width="0.875"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                            </span>
+                        {% endif %}
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

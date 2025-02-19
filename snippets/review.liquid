@@ -1,0 +1,24 @@
+<!-- Reviews Section -->
+<section class="sportea-review-section " id="sportea-review-section" style="background:#2B4E92">
+  <div class="sportea-row sportea-review-row large-container">
+    <div class="page-width">
+      <div class="sportea-review-wrap">
+        <div class="sportea-review-rating">
+          <img src="https://cdn.shopify.com/s/files/1/0894/2636/files/stars.svg?v=1709308415" class="img-responsive" alt="Stars">
+          <h5 class="sportea-color-white">
+            {% if count %}{{ count }}{% endif %}
+          </h5>
+        </div>
+        <div class="sportea-review-block-qoute">
+          <p class="sportea-color-white">
+            "{{ description }}"
+            {% if author %}
+              <span>{{ author }}, {{ date }}</span>
+            {% endif %}
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Reviews Section  End -->

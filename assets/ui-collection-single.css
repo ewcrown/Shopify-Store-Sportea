@@ -1,0 +1,144 @@
+
+.pesto-collection-area .center-page-width{
+    max-width: 1500px;
+    padding: 0px 15px;
+    margin: 0 auto;
+}
+
+.pesto-collection-area .card__inner .card__information{
+    display: none;
+}
+.card-collection-box {
+    padding: 40px 30px 40px 30px;
+    border-radius: var(--box-rds-three);
+    text-align: center;
+    overflow: hidden;
+    transition: all 500ms ease;
+}
+.pesto-collection-name a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+}
+.pesto-collection-list{
+    padding-bottom: 30px;
+}
+.card__media.pesto-collection-image .media {
+    justify-content: center;
+    margin-bottom: 25px;
+}
+.pesto-collection-name a > span {
+    margin-left: 10px;
+}
+.pesto-collection-only-area {
+    padding: 100px 20px;
+}
+
+.pesto-collection-only-area .card__caption a {
+    margin-top: 20px;
+    display: block;
+}
+.pesto-collection-list .card__content .pesto-collection-list-count{
+    font-size: 16px;
+    line-height: 22px;
+    margin-top: 5px;
+    opacity: .7;
+}
+.pesto-collection-only-type-normal .pesto-collection-list .card__content .pesto-collection-list-count {
+    margin-top: 10px;
+    opacity: 1;
+}
+.pesto-collection-only-type-normal .collection-list .card-collection-box{
+    padding: 0px 0px;
+    border-radius: 0;
+}
+.pesto-collection-only-type-normal .collection-list .pesto-collection-list .card__media{
+    margin-bottom: 0px;
+}
+.pesto-collection-only-type-normal .pesto-collection-list .card__content{
+    position: absolute;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    padding: 0px 38px 40px 38px;
+}
+.pesto-collection-only-type-card .card__content.pesto-collection-card-content-align-left {
+    text-align: left;
+}
+.pesto-collection-only-type-card .card__content.pesto-collection-card-content-align-left .pesto-collection-name {
+    text-align: left;
+    display: inline-block;
+}
+.pesto-collection-only-type-card .card__content.pesto-collection-card-content-align-center .card__information{
+    text-align: center;
+}
+.pesto-collection-only-type-card .card__content.pesto-collection-card-content-align-right{
+    text-align: right;
+}
+.pesto-collection-only-type-card .card__content.pesto-collection-card-content-align-right .pesto-collection-name a {
+    justify-content: flex-end;
+}
+.pesto-collection-only-type-normal.pesto-collection-only-area .card-collection-box{
+    border: unset;
+    background: unset;
+}
+.pesto-collection-only-type-normal.pesto-collection-only-area .pesto-collection-list .card__media {
+    height: 400px;
+}
+.pesto-collection-only-type-normal .pesto-collection-name{
+    font-size: 30px;
+    font-weight: 500;
+    line-height: 30px;
+}
+
+@media (max-width: 767px) {
+    .pesto-collection-only-type-normal .pesto-collection-name {
+        font-size: 22px;
+    }
+}
+.pesto-collection-area.title-underline-true .pesto-collection-name a{
+    text-decoration: none;
+}
+.pesto-collection-only-area .pesto-collection-name a:hover{
+    text-decoration: none;
+}
+.pesto-collection-only-area .pesto-collection-name a .only-text{
+	background-image: linear-gradient(transparent calc(100% - 2px), rgba(var(--color-secondary-foreground), 1) 2px);
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	transition: background-size .4s;
+    margin-left: 0;
+}
+.pesto-collection-only-area .pesto-collection-name a:hover .only-text{
+	animation: underlineanimation .4s linear;
+}
+@keyframes underlineanimation {
+	0% { 
+		background-size: 0% 100%;
+	}
+	100% {
+		background-size: 100% 100%;
+	}
+}
+.pesto-collection-only-type-normal .pesto-collection-card-content-align-left .pesto-collection-name a{
+    justify-content: flex-start;
+    text-align: left;
+}
+.pesto-collection-only-type-normal .pesto-collection-card-content-align-right .pesto-collection-name a{
+    justify-content: flex-end;
+    text-align: right;
+}
+.pesto-collection-only-type-normal .pesto-collection-card-content-align-right .pesto-collection-list-count {
+    text-align: right;
+}
+.pesto-collection-only-type-normal .pesto-collection-card-content-align-left .pesto-collection-list-count {
+    text-align: left;
+}
+
+.pesto-collection-only-type-normal.pesto-collection-only-area .pesto-collection-list .card-wrapper .card--text {
+    background: rgba(var(--color-secondary-background), 1);
+}
+.pesto-collection-only-type-normal .pesto-collection-list-count {
+    color: rgba(var(--color-secondary-foreground), 1);
+}

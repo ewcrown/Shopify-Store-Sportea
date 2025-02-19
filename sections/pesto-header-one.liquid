@@ -1,0 +1,399 @@
+{%- style -%}
+  .header-style-two .outer-box .logo-box.logo_img {
+    width: 100%;
+    max-width: {{ section.settings.image_logo_width }}px;
+  }
+
+  .header-style-two .outer-box .logo-box.header_logo_svg svg {
+    font-size: {{ section.settings.image_logo_width }}px;
+  }
+
+
+  .header-style-two .header-layout-regular .logo-box.logo_img {
+    width: 100%;
+    max-width: {{ section.settings.image_logo_width }}px;
+  }
+
+  .header-style-two .header-layout-regular .logo-box.header_logo_svg svg {
+    font-size: {{ section.settings.image_logo_width }}px;
+  }
+{%- endstyle -%}
+{%- assign pesto_menu_layout = section.settings.pesto_menu_layout -%}
+<style>
+  @media only screen and (max-width: 750px) { .header-style-two .header-layout-regular .logo-box.logo_img { left: 15px;
+  position: relative; }
+
+  }
+</style>
+
+<main-header
+  class="color-{{ section.settings.color_scheme }} slider-menu-{{ section.settings.slide_menu_positions }} main-header header-style-two {% if template.name == "index" %} this-is-index-template {% endif %}scroll-{{ section.settings.pesto_sticky_scroll_direction }} layout-{{ section.settings.pesto_menu_layout }}"
+>
+  <div
+    class="
+      header-lower border-{{ section.settings.pesto_header_border }} {% if pesto_menu_layout == "regular"
+      %}no-padding{% endif %}
+    "
+  >
+    {% if pesto_menu_layout == 'drawer' %}
+      <div class="large-container">
+        <div div class="outer-box clearfix">
+          <div class="menu-bar-area">
+            {% render 'pesto-menu-bar' %}
+          </div>
+          <div class="menu-area">
+            {% render 'pesto-logo' %}
+            {% render 'pesto-menu' %}
+          </div>
+          {% render 'pesto-header-info-two' %}
+        </div>
+      </div>
+    {% else %}
+      {% render 'pesto-mega-menu', pesto_menu_layout: pesto_menu_layout, mobile_menu: mobile_menu %}
+    {% endif %}
+  </div>
+</main-header>
+
+<script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "Organization",
+    "name": {{ shop.name | json }},
+    {% if section.settings.logo %}
+      {% assign image_size = section.settings.logo.width | append: 'x' %}
+      "logo": {{ section.settings.logo | image_url: image_size | prepend: "https:" | json }},
+    {% endif %}
+    "sameAs": [
+      {{ settings.social_twitter_link | json }},
+      {{ settings.social_facebook_link | json }},
+      {{ settings.social_pinterest_link | json }},
+      {{ settings.social_instagram_link | json }},
+      {{ settings.social_tiktok_link | json }},
+      {{ settings.social_tumblr_link | json }},
+      {{ settings.social_snapchat_link | json }},
+      {{ settings.social_youtube_link | json }},
+      {{ settings.social_vimeo_link | json }}
+    ],
+    "url": {{ request.origin | append: page.url | json }}
+  }
+</script>
+
+{%- if request.page_type == 'index' -%}
+  {% assign potential_action_target = request.origin | append: routes.search_url | append: '?q={search_term_string}' %}
+  <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "WebSite",
+      "name": {{ shop.name | json }},
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": {{ potential_action_target | json }},
+        "query-input": "required name=search_term_string"
+      },
+      "url": {{ request.origin | append: page.url | json }}
+    }
+  </script>
+{%- endif -%}
+
+{% schema %}
+{
+"name": "Header",
+"tag": "header",
+"class": "pesto-header-two",
+"settings": [
+{
+"type": "color_scheme",
+"id": "color_scheme",
+"default": "background-1",
+"label": "Color scheme"
+},
+{
+"type": "color_scheme",
+"id": "color_scheme_slide_menu",
+"default": "background-4",
+"label": "Slide menu color scheme",
+"info": "Only applies to header layout: Logo left, menu drawer."
+},
+{
+"type": "image_picker",
+"id": "logo_img",
+"label": "Logo"
+},
+{
+  "type": "textarea",
+  "id": "header_logo_svg",
+  "label": "Logo SVG",
+  "info": "Paste your logo's SVG image code, overwrites logo image"
+},
+{
+"type": "range",
+"id": "image_logo_width",
+"min": 0,
+"max": 300,
+"step": 10,
+"unit": "px",
+"label": "Logo width",
+"default": 100
+},
+{
+"type": "text",
+"id": "header_menu_phone_label",
+"label": "Number label",
+"default": "Number label here"
+},
+{
+"type": "text",
+"id": "header_menu_phone",
+"label": "Phone number",
+"default": "+123456"
+},
+{
+"type": "checkbox",
+"id": "header_menu_phone_icon",
+"default": true,
+"label": "Show phone icon"
+},
+{
+"type": "checkbox",
+"id": "pesto_header_border",
+"default": true,
+"label": "Show border bottom"
+},
+{
+  "label": "Header layout",
+  "id": "pesto_menu_layout",
+  "type": "select",
+  "default": "drawer",
+  "options": [
+    {
+    "value": "drawer",
+    "label": "Logo center, menu drawer"
+    },
+    {
+      "value": "regular",
+      "label": "Logo left, menu below"
+    }
+  ]
+},
+{
+"label": "Sticky header",
+"id": "pesto_sticky_scroll_direction",
+"type": "select",
+"default": "none",
+"info": "Only applies to header layout: Logo left, menu drawer.",
+"options": [
+{
+"value": "none",
+"label": "None"
+},
+{
+"value": "down",
+"label": "Always"
+},
+{
+"value": "up",
+"label": "On scroll up"
+}
+]
+},
+{
+"type": "link_list",
+"id": "header_menu",
+"default": "main-menu",
+"label": "Menu"
+},
+{
+"type": "link_list",
+"id": "mobilemenu",
+"label": "Mobile Menu"
+},
+{
+"label": "Open menu drawer from",
+"id": "slide_menu_positions",
+"type": "select",
+"default": "right",
+"options": [
+{
+"value": "left",
+"label": "Left"
+},
+{
+"value": "right",
+"label": "Right"
+}
+]
+},
+{
+"type": "checkbox",
+"id": "social_options",
+"default": false,
+"label": "Show social media"
+},
+{
+"type": "header",
+"content": "Country/region selector",
+"info": "To add a country/region, go to your [market settings.](/admin/settings/markets)"
+},
+{
+  "type": "paragraph",
+  "content": "Only applies to header layout: Logo left, menu drawer."
+},
+{
+"type": "checkbox",
+"id": "enable_country_selector",
+"default": false,
+"label": "Enable country/region selector"
+},
+{
+"type": "checkbox",
+"id": "enable_country_selector_label",
+"default": false,
+"label": "Enable country/region selector label"
+},
+{
+"type": "header",
+"content": "Language selector",
+"info": "To add a language, go to your [language settings.](/admin/settings/languages)"
+},
+{
+  "type": "paragraph",
+  "content": "Only applies to header layout: Logo left, menu drawer."
+},
+{
+"type": "checkbox",
+"id": "enable_language_selector",
+"default": false,
+"label": "Enable language selector"
+},
+{
+"type": "checkbox",
+"id": "enable_language_selector_label",
+"default": false,
+"label": "Enable language selector label"
+},
+{
+"type": "header",
+"content": "Promo banner",
+"info": "Only applies to header layout: Logo left, menu drawer."
+},
+{
+"type": "image_picker",
+"id": "logo_img_promo",
+"label": "Image"
+},
+{
+"type": "url",
+"id": "logo_img_promo_url",
+"label": "Image link",
+"info": "Works on promo image"
+}
+],
+"blocks": [
+  {
+  "name": "Cart",
+  "type": "cart_action",
+  "limit": 1,
+  "settings": []
+  },
+  {
+  "name": "Account",
+  "type": "authior_action",
+  "limit": 1
+  },
+  {
+  "name": "Search",
+  "type": "search_action",
+  "limit": 1
+  },
+  {
+  "name": "Menu with product",
+  "type": "mega_menu_one",
+  "settings": [
+    {
+      "type": "paragraph",
+      "content": "Only applies to header layout: Logo left, menu below."
+    },
+    {
+      "id": "mega_menu_one_text",
+      "label": "Menu Item",
+      "type": "text",
+      "info": "Enter the name of the menu item you'd like to apply a mega menu."
+    },
+    {
+      "type": "collection",
+      "id": "mega_selected_product",
+      "label": "Select collection products"
+    },
+    {
+      "type": "range",
+      "id": "mega_selected_product_qty",
+      "label": "Maximum products to show",
+      "min": 1,
+      "max": 5,
+      "step": 1,
+      "default": 2
+    },
+    {
+        "type": "header",
+        "content": "Promotion banner"
+    },
+    {
+      "type": "image_picker",
+      "id": "mega_add_img",
+      "label": "Image"
+    },
+    {
+      "type": "text",
+      "id": "mega_add_title",
+      "label": "Heading"
+    },
+    {
+      "type": "text",
+      "id": "mega_Add_button_text",
+      "label": "Button label",
+      "info": "Leave the label blank to hide the button."
+    },
+    {
+      "type": "url",
+      "id": "mega_Add_button_link",
+      "label": "Button link"
+    }
+
+]
+},
+{
+  "name": "Menu with collection",
+  "type": "mega_menu_two",
+  "settings": [
+    {
+      "type": "paragraph",
+      "content": "Only applies to header layout: Logo left, menu below."
+    },
+    {
+      "id": "mega_menu_two_text",
+      "label": "Menu Item",
+      "type": "text",
+      "info": "Enter the name of the menu item you'd like to apply a mega menu."
+    },
+    {
+      "type": "collection_list",
+      "id": "mega_selected_collection",
+      "label": "Select collection(s)"
+    },
+    {
+      "type": "text",
+      "id": "mega_two_button_text",
+      "label": "Button label",
+      "default": "Button label",
+      "info": "Leave the label blank to hide the button."
+    },
+    {
+      "type": "url",
+      "id": "mega_two_button_link",
+      "label": "Button link"
+    }
+  ]
+}
+]
+}
+{% endschema %}

@@ -1,0 +1,111 @@
+
+{%- style -%}
+    {%- if section.settings.pesto_section_padding_top != blank -%}
+    #shopify-section-{{section.id}} .video-section{
+            padding-top: {{ section.settings.pesto_section_padding_top }}px;
+        }
+    {%- endif -%}
+    {%- if section.settings.pesto_section_padding_bottom != blank -%}
+    #shopify-section-{{section.id}} .video-section{
+            padding-bottom: {{ section.settings.pesto_section_padding_bottom }}px;
+        }
+    {%- endif -%}
+{%- endstyle -%}
+
+
+
+<div id="{{ section.id }}" class="video-section centred color-{{ section.settings.color_scheme }}">
+    
+    <div class="large-container">
+        <youtube-vimio
+            data-video-url="{{ section.settings.video_url }}"
+            data-video-id="{{ section.id }}"
+            data-autoplay="false"
+            data-background="true"
+            data-description=""
+        >
+            <div></div>
+            <div class="video-inner">
+                {% if section.settings.section_bg_image != blank %}
+                    <div
+                        class="overlay-object-section-bg"
+                    >
+                        {{ section.settings.section_bg_image | image_url: width: 7680 | image_tag: loading: 'lazy', class: 'lazyload' }}
+                    </div>
+                {%- endif -%}
+        
+                {%- if section.settings.section_bg_image == blank -%}
+                    {{ 'lifestyle-1' | placeholder_svg_tag: 'placeholder-svg-video-one' }}
+                {%- endif -%}
+                <a aria-label="{{ 'general.link_to_video' | t }}" href="{{ section.settings.video_url }}" class="main-btn" data-caption="">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-play-fill" viewBox="0 0 16 16">
+                        <path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393z"/>
+                    </svg>
+                </a>
+            </div>
+        </youtube-vimio>
+    </div>
+</div>
+
+
+
+{% schema %}
+    {
+        "name": "Video",
+        "tag": "section",
+        "class": "video-area-custom",
+        "settings": [
+            {
+                "type": "color_scheme",
+                "id": "color_scheme",
+                "default": "background-1",
+                "label": "Color scheme"
+            },
+            {
+                "type": "image_picker",
+                "id": "section_bg_image",
+                "label": "Cover image"
+            },
+            {
+                "type": "video_url",
+                "id": "video_url",
+                "label": "URL",
+                "accept": [
+                    "youtube",
+                    "vimeo"
+                ],
+                "default": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+                "info": "Use YouTube or Vimeo URL"
+            },
+            {
+                "type": "header",
+                "content": "Section padding"
+            },
+            {
+                "type": "range",
+                "id": "pesto_section_padding_top",
+                "min": 0,
+                "max": 200,
+                "step": 10,
+                "unit": "px",
+                "label": "t:sections.all.padding.padding_top",
+                "default": 50
+            },
+            {
+                "type": "range",
+                "id": "pesto_section_padding_bottom",
+                "min": 0,
+                "max": 200,
+                "step": 10,
+                "unit": "px",
+                "label": "t:sections.all.padding.padding_bottom",
+                "default": 50
+            }
+        ],
+        "presets": [
+            {
+                "name": "Video"
+            }
+        ]
+    }
+{% endschema %}

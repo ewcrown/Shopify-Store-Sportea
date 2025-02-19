@@ -1,0 +1,402 @@
+<link rel="stylesheet" href="{{ 'ui-team-section.css' | asset_url }}" media="print" onload="this.media='all'">
+<noscript>{{ 'ui-team-section.css' | asset_url | stylesheet_tag }}</noscript>
+
+<link rel="stylesheet" href="{{ 'ui-page-title.css' | asset_url }}" media="print" onload="this.media='all'">
+
+<noscript>{{ 'ui-page-title.css' | asset_url | stylesheet_tag }}</noscript>
+{% assign col_dextop = section.settings.col_settings %}
+{% if col_dextop == 1 %}
+    {% assign col_dextop_val = '12' %}
+{% elsif col_dextop == 2 %}
+    {% assign col_dextop_val = '6' %}
+{% elsif col_dextop == 3 %}
+    {% assign col_dextop_val = '4' %}
+{% elsif col_dextop == 4 %}
+    {% assign col_dextop_val = '3' %}
+{% endif %}
+
+{%- style -%}
+
+    {%- if section.settings.pesto_section_padding_top != blank -%}
+        #shopify-section-{{section.id}} .team-section-padding {
+          padding-top: {{ section.settings.pesto_section_padding_top }}px !important;
+        }
+    {%- endif -%}
+    {%- if section.settings.pesto_section_padding_bottom != blank -%}
+      #shopify-section-{{section.id}} .team-section-padding {
+        padding-bottom: {{ section.settings.pesto_section_padding_bottom }}px !important;
+      }
+    {%- endif -%}
+    {%- if section.settings.team_image_overlay_opacity == true -%}
+      #shopify-section-{{section.id}} .inner-box .image-box:before {
+        background: {{ section.settings.team_image_overlay_color }};
+      }
+    {%- endif -%}
+
+{%- endstyle -%}
+
+{%- if section.settings.layout_style == 'layout_style_one' -%}
+
+  <div id="team-one-{{ section.id }}" class="team-section-padding team-section centred bg-color-2 color-{{ section.settings.color_scheme }}">
+      <div class="large-container">
+          <div class="sec-title">
+              <h2>{{ section.settings.team_area_title }}</h2>
+          </div>
+          <div class="row clearfix">
+              {% for block in section.blocks %}
+                  {% case block.type %}
+                    {% when 'team_item' %}
+                      <div class="col-lg-{{col_dextop_val}} col-md-6 col-sm-12 team-block">
+                          <div class="team-block-one wow fadeInUp animated" data-wow-delay="00ms" data-wow-duration="1500ms">
+                              <div class="inner-box">
+                                  <figure class="image-box">
+                                    {%- if block.settings.team_images_picket != blank -%}
+                                      <img
+                                            data-src="{{ block.settings.team_images_picket | img_url: 'master' }}"
+                                            loading="lazy"  class="lazyload"
+                                            width="{{ block.settings.team_images_picket.width }}"
+                                            height="{{ block.settings.team_images_picket.height }}"
+                                            alt="{{ block.settings.team_images_picket.alt | escape }}"
+                                        >
+                                      {%- else -%}
+                                          {{ 'image' | placeholder_svg_tag: 'placeholder-svg-team-one' }}
+                                    {%- endif -%}
+                                  </figure>
+                                  <div class="lower-content">
+                                  
+                                  {%- if block.settings.teams_item_url != blank -%}
+                                    <h3>
+                                      <a href="{{ block.settings.teams_item_url }}">{{ block.settings.team_title }}</a>
+                                    </h3>
+                                  {%- else -%}
+                                  <h3>
+                                    {{ block.settings.team_title }}
+                                  </h3>
+                                  {%- endif -%}
+
+                                  <span class="designation">{{ block.settings.team_position }}</span>
+                                      
+                                  <p>{{ block.settings.team_content }}</p>
+                                  
+                                  <ul class="social-links">
+                                    {%- if block.settings.teams_social_facebook_link != blank -%}
+                                      <li>
+                                        <a aria-label="{{ 'general.link_to_social' | t }}"  href="{{ block.settings.teams_social_facebook_link }}">
+                                          {% render 'icon-facebook', block: block %}
+                                        </a>
+                                      </li>
+                                    {%- endif -%}
+                                    {%- if block.settings.teams_social_twitter_link != blank -%}
+                                      <li>
+                                        <a aria-label="{{ 'general.link_to_social' | t }}" href="{{ block.settings.teams_social_twitter_link }}">
+                                          {% render 'icon-twitter', block: block %}
+                                        </a>
+                                      </li>
+                                    {%- endif -%}
+                                    {%- if block.settings.teams_social_instagram_link != blank -%}
+                                      <li>
+                                        <a aria-label="{{ 'general.link_to_social' | t }}"  href="{{ block.settings.teams_social_instagram_link }}">
+                                          {% render 'icon-instagram', block: block %}
+                                        </a>
+                                      </li>
+                                    {%- endif -%}
+                                    {%- if block.settings.teams_social_youtube_link != blank -%}
+                                      <li>
+                                        <a aria-label="{{ 'general.link_to_social' | t }}"  href="{{ block.settings.teams_social_youtube_link }}">
+                                          {% render 'icon-youtube', block: block %}
+                                        </a>
+                                      </li>
+                                    {%- endif -%}
+                                  </ul>
+                                </div>
+                            </div>
+                          </div>
+                      </div>
+                  {% endcase %}
+              {% endfor %}
+          </div>
+      </div>
+  </div>
+
+{%- endif -%}
+
+{%- if section.settings.layout_style == 'layout_style_two' -%}
+  <div class="team-section-padding area-of-teal-two color-{{ section.settings.color_scheme }}">
+    <div class="page-title team-page centred color-{{ section.settings.color_scheme }}">
+      <div class="large-container">
+          <div class="text">
+              <h1>{{ section.settings.team_area_title }}</h1>
+          </div>
+      </div>
+    </div>
+
+    <div class="team-style-two team-style-two-me color-{{ section.settings.color_scheme }}">
+      <div class="large-container">
+          <div class="inner-container">
+              <div class="row clearfix">
+                {% for block in section.blocks %}
+                    {% case block.type %}
+                      {% when 'team_item' %}
+                        <div class="col-lg-{{col_dextop_val}} col-md-6 col-sm-12 team-block">
+                            <div class="team-block-two wow fadeInLeft animated" data-wow-delay="00ms" data-wow-duration="1500ms">
+                                <div class="inner-box">
+                                    <figure class="image-box">
+                                        {%- if block.settings.team_images_picket != blank -%}
+                                            {{ block.settings.team_images_picket | image_url: width: 400 | image_tag: loading: 'lazy', class: 'lazyload' }}
+                                        {%- else -%}
+                                            {{ 'image' | placeholder_svg_tag: 'placeholder-svg-team-two' }}
+                                        {%- endif -%}
+                                    </figure>
+                                    <div class="content-box">
+                                        <h2>
+                                          {%- if block.settings.teams_item_url != blank -%}
+                                            <a href="{{ block.settings.teams_item_url }}">{{ block.settings.team_title }}</a>
+                                          {%- else -%}
+                                            {{ block.settings.team_title }}
+                                          {%- endif -%}
+                                        </h2>
+                                        <span class="designation">{{ block.settings.team_position }}</span>
+                                        <p>{{ block.settings.team_content }}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    {% endcase %}
+                {% endfor %}
+              </div>
+          </div>
+      </div>
+    </div>
+  </div>
+
+{%- endif -%}
+
+{%- if section.settings.layout_style == 'layout_style_three' -%}
+  <div class="team-section-padding area-of-teal-three color-{{ section.settings.color_scheme }}">
+    <div class="page-title team-page centred color-{{ section.settings.color_scheme }}">
+      <div class="large-container">
+          <div class="text">
+              <h1>{{ section.settings.team_area_title }}</h1>
+          </div>
+      </div>
+    </div>
+    
+    <div class="team-style-three team-style-box color-{{ section.settings.color_scheme }}">
+      <div class="large-container">
+          <div class="inner-container">
+              <div class="row clearfix">
+                {% for block in section.blocks %}
+                    {% case block.type %}
+                      {% when 'team_item' %}
+                        <div class="col-lg-{{col_dextop_val}} col-md-6 col-sm-12 team-block">
+                            <div class="team-block-three wow fadeInLeft animated" data-wow-delay="00ms" data-wow-duration="1500ms">
+                                <div class="inner-box">
+                                    <div class="team-three-box-content">
+                                     
+                                      <figure class="image-box">
+                                        {%- if block.settings.team_images_picket != blank -%}
+                                          <img
+                                                data-src="{{ block.settings.team_images_picket | img_url: 'master' }}"
+                                                loading="lazy"  class="lazyload"
+                                                width="{{ block.settings.team_images_picket.width }}"
+                                                height="{{ block.settings.team_images_picket.height }}"
+                                                alt="{{ block.settings.team_images_picket.alt | escape }}"
+                                            >
+                                          {%- else -%}
+                                              {{ 'image' | placeholder_svg_tag: 'placeholder-svg-team-one' }}
+                                          {%- endif -%}
+                                      </figure>
+                                      
+                                      <div class="content-box">
+                                          <h2>
+                                            {%- if block.settings.teams_item_url != blank -%}
+                                              <a href="{{ block.settings.teams_item_url }}">{{ block.settings.team_title }}</a>
+                                            {%- else -%}
+                                              {{ block.settings.team_title }}
+                                            {%- endif -%}
+                                          </h2>
+                                          <span class="designation">{{ block.settings.team_position }}</span>
+                                          <p>{{ block.settings.team_content }}</p>
+                                      </div>
+                                    </div>
+                                  
+                                </div>
+                            </div>
+                        </div>
+                    {% endcase %}
+                {% endfor %}
+
+              </div>
+          </div>
+      </div>
+    </div>
+  </div>
+
+{%- endif -%}
+
+{% schema %}
+  {
+    "name": "Team",
+    "tag": "section",
+    "class": "pesto-team-section",
+    "settings": [
+      {
+          "type": "color_scheme",
+          "id": "color_scheme",
+          "default": "background-4",
+          "label": "Color scheme"
+      },
+      {
+          "type": "range",
+          "id": "col_settings",
+          "min": 1,
+          "max": 4,
+          "step": 1,
+          "label": "Columns",
+          "default": 4
+      },
+      {
+          "label": "Layout",
+          "id": "layout_style",
+          "type": "select",
+          "default": "layout_style_two",
+          "options": [
+              {
+                  "value": "layout_style_one",
+                  "label": "Flat"
+              },
+              {
+                  "value": "layout_style_two",
+                  "label": "Classic"
+              },
+              {
+                  "value": "layout_style_three",
+                  "label": "Box"
+              }
+          ]
+      },
+      {
+        "type": "text",
+        "id": "team_area_title",
+        "label": "Heading",
+        "default": "Some header for your collection"
+      },
+      {
+        "type": "checkbox",
+        "id": "team_image_overlay_opacity",
+        "default": false,
+        "label": "Enable custom overlay color"
+      },
+      {
+          "type": "color_background",
+          "id": "team_image_overlay_color",
+          "label": "Image overlay color"
+      },
+      {
+          "type": "header",
+          "content": "Section padding"
+      },
+      {
+          "type": "range",
+          "id": "pesto_section_padding_top",
+          "min": 0,
+          "max": 200,
+          "step": 10,
+          "unit": "px",
+          "label": "t:sections.all.padding.padding_top",
+          "default": 150
+      },
+      {
+          "type": "range",
+          "id": "pesto_section_padding_bottom",
+          "min": 0,
+          "max": 200,
+          "step": 10,
+          "unit": "px",
+          "label": "t:sections.all.padding.padding_bottom",
+          "default": 150
+      }
+    ],
+    "blocks": [
+      {
+        "type": "@app"
+      },
+      {
+        "name": "Item",
+        "type": "team_item",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "team_images_picket",
+            "label": "Image"
+          },
+          {
+            "type": "text",
+            "id": "team_title",
+            "label": "Name",
+            "default": "Name"
+          },
+          {
+            "type": "url",
+            "id": "teams_item_url",
+            "label": "Link"
+          },
+          {
+            "type": "text",
+            "id": "team_position",
+            "label": "Designation",
+            "default": "Person designation"
+          },
+          {
+            "type": "textarea",
+            "id": "team_content",
+            "label": "Content",
+            "default": "Person information"
+          },
+          { 
+            "type": "header",
+            "content": "Social media",
+            "info": "Only applies for flat layout"
+          },
+          {
+            "type": "text",
+            "id": "teams_social_facebook_link",
+            "label": "Facebook",
+            "info": "https://facebook.com"
+          },
+          {
+            "type": "text",
+            "id": "teams_social_twitter_link",
+            "label": "Twitter",
+            "info": "https://twitter.com"
+          },
+          {
+            "type": "text",
+            "id": "teams_social_instagram_link",
+            "label": "Instagram",
+            "info": "https://instagram.com"
+          },
+          {
+            "type": "text",
+            "id": "teams_social_youtube_link",
+            "label": "YouTube",
+            "info": "https://youtube.com"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Team",
+        "blocks": [
+            {
+              "type": "team_item"
+            },
+            {
+              "type": "team_item"
+            }
+          ]
+      }
+    ]
+  }
+{% endschema %}

@@ -1,0 +1,34 @@
+
+{% liquid
+    assign settings = block.settings 
+    assign slider_item_title = settings.slider_item_title
+    assign slider_item_content = settings.slider_item_content
+
+
+    assign slider_item_url = settings.slider_item_url
+    assign slider_item_url_text = settings.slider_item_url_text
+
+    assign slider_item_images_bg = settings.slider_item_images_bg
+    assign slider_bg_color = settings.slider_bg_color
+%}
+
+<div id="shopify-block-{{ block.id }}" class="swiper-slide slide-item">
+    {%- if slider_item_images_bg.id != '' or slider_bg_color -%}
+        {%- style -%}
+            #shopify-block-{{ block.id }} .image-layer {
+                background-image: url( {{ slider_item_images_bg | img_url: 'master' }} );
+                background-color: {{ slider_bg_color }};
+            }
+        {%- endstyle -%}
+    {%- endif -%}
+    <div class="image-layer"></div>
+    <div class="large-container">
+        <div class="content-box centred">
+            <h3>{{ slider_item_title }}</h3>
+            <h2>{{ slider_item_content }}</h2>
+            <div class="btn-box">
+                <a href="{{ slider_item_url }}" class="theme-btn btn-two" aria-label="{{ slider_item_url_text }}">{{ slider_item_url_text }}</a>
+            </div>
+        </div>
+    </div>
+</div>

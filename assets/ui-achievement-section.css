@@ -1,0 +1,36 @@
+.achievement-section {
+    position: relative;
+    padding: 245px 0 230px;
+    width: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: bottom center;
+}
+.achievement-section .sec-title{
+    margin-bottom: 40px;
+}
+.achievement-block-item .inner-box{
+    text-align: center;
+}
+.achievement-block-item .inner-box{
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+.achievement-section {
+    background: rgba(var(--color-background), 1);
+}
+.achievement-section .sec-title h2{
+    color: rgba(var(--color-foreground), 1);
+}
+.achievement-section .sec-title p {
+    color: rgba(var(--color-foreground), .7);
+}
+.achievement-block-item .inner-box h5{
+    color: rgba(var(--color-foreground), 1);
+}
+.achievement-block-item .inner-box p {
+    color: rgba(var(--color-foreground), .8);
+}
+.achievement-block-item .inner-box h5 {
+    font-family: var(--font-heading-family);
+}

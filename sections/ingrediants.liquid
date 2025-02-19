@@ -1,0 +1,269 @@
+<style>
+          section#sportea-ingredients-section {
+            padding-top: 75px;
+            padding-bottom: 75px;
+            text-align: center;
+        }
+              .ing-container {
+                  display: grid;
+                  grid-template-columns: repeat(3, 1fr);
+                  gap: 20px;
+                  /* padding: 20px; */
+              }
+    .ing-item p {
+        font-size: 14px;
+        height: auto;
+        padding: 1rem;
+      text-align:left;
+    }
+  .ing-overlay p.parent_prop{padding-left:0;}
+
+
+              .ing-item {
+                  position: relative;
+                  border-radius: 10px;
+                  overflow: hidden;
+                  background-color: #fff;
+                  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+              }
+
+              .ing-item img {
+                  width: 100%;
+                  height: auto;
+                  display: block;
+              }
+
+             .ing-overlay {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                color: white;
+                width: 100%;
+                padding: 10px;
+                text-align: left;
+                box-sizing: border-box;
+                display: flex;
+                flex-direction: column;
+                height: 125px;
+                align-items: baseline;
+                justify-content: center;
+            }
+          p.parent_prop span {
+              border: 1px solid;
+              padding: 4px;
+              border-radius: 4px;
+          }
+              .ing-overlay h3 {
+                  margin: 0;
+                  font-size: 18px;
+              }
+
+              .ing-overlay p {
+                  margin: 5px 0 0;
+                  font-size: 14px;
+                  line-height: 1.5;
+              }
+
+              /* Responsive Design */
+
+              @media (max-width: 1024px) {
+                  .ing-container {
+                      grid-template-columns: repeat(2, 1fr); /* 2 columns for tablets and smaller screens */
+                  }
+              }
+
+              @media (max-width: 768px) {
+                  .ing-container {
+                      grid-template-columns: repeat(1, 1fr); /* 1 column for mobile phones */
+                      gap: 10px;
+                  }
+
+                  .ing-overlay h3 {
+                      font-size: 16px;
+                  }
+
+                  .ing-overlay p {
+                      font-size: 12px;
+                  }
+              }
+
+              @media (max-width: 480px) {
+                  .ing-overlay h3 {
+                      font-size: 14px;
+                  }
+
+                  .ing-overlay p {
+                      font-size: 11px;
+                  }
+              }
+      @media (max-width: 768px) {
+          .gf-container__title {
+              font-size: 38px;
+          }
+      }
+      @media (max-width: 1200px) {
+          .gf-container__title {
+              font-size: 48px;
+          }
+      }
+      @media (max-width: 768px) {
+          .gf-container__title {
+              font-size: 38px;
+          }
+      }
+      @media (max-width: 1200px) {
+          .gf-container__title {
+              font-size: 48px;
+          }
+      }
+      .gf-container__title {
+          font-size: 61px;
+          color: #2b4e92;
+          font-weight: 400 !important;
+          padding-bottom: 2rem;
+      }
+</style>
+<!-- Ingredients Section -->
+<section class="sportea-ingredients-section" id="sportea-ingredients-section" style="background:#EDF8FF">
+  <div class="large-container">
+    <div class="page-width">
+      <!-- Validate and display the title if it exists -->
+      {% if section.settings.title %}
+        <h2 class="sportea-color-secondary gf-container__title">{{ section.settings.title }}</h2>
+      {% else %}
+        <h2 class="sportea-color-secondary">Our Ingredients</h2>
+        <!-- Fallback title -->
+      {% endif %}
+
+      <div class=" ing-container">
+        {% for block in section.blocks %}
+          {% if block.settings.icon %}
+            <div class="ing-item">
+              <div style="position:relative">
+                <img
+                  src="{{ block.settings.icon  | image_url }}"
+                  width=""
+                  height=""
+                  class="img-responsive"
+                  alt="{{ block.settings.title | escape }}"
+                >
+                <div class="ing-overlay">
+                  {% if block.settings.title %}
+                    <h6>{{ block.settings.title }}</h6>
+                  {% else %}
+                    <h6>Ingredient</h6>
+                    <!-- Fallback for missing title -->
+                  {% endif %}
+                  <p class="parent_prop">
+                    {% if block.settings.prop_1 != '' -%}
+                      <span class="prop_1"> {{ block.settings.prop_1 }}</span>
+                    {%- endif %}
+                    {% if block.settings.prop_2 != '' -%}
+                      <span class="prop_2"> {{ block.settings.prop_2 }}</span>
+                    {%- endif %}
+                    {% if block.settings.prop_3 != '' %}
+                      <span class="prop_3">{{ block.settings.prop_3 }}</span>
+                    {%- endif %}
+                  </p>
+                </div>
+              </div>
+              {% if block.settings.desc != '' %}
+                <p style="color:#000000" class="desc">{{ block.settings.desc }}</p>
+              {%- endif %}
+            </div>
+          {% endif %}
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Ingredients Section End -->
+
+{% schema %}
+  {
+  "name": "Ingredients",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "title",
+      "default": "Why Choose SPORTea®?",
+      "placeholder": "Why Choose SPORTea®?"
+    },
+    {
+      "type": "text",
+      "id": "button",
+      "label": "Button",
+      "default": "Shop Now",
+      "placeholder": "Shop Now"
+    },
+    {
+      "type": "url",
+      "id": "link",
+      "label": "link"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "Properties",
+      "type": "properties",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "title",
+          "default": "title",
+          "placeholder": "title"
+        },
+        {
+          "type": "textarea",
+          "id": "desc",
+          "label": "description"
+        },
+        {
+          "type": "text",
+          "id": "sub-title",
+          "label": "sub title",
+          "default": "title",
+          "placeholder": "title"
+        },
+        {
+          "type": "text",
+          "id": "prop_1",
+          "label": "First Property",
+          "default": "First Property"
+        },
+        {
+          "type": "text",
+          "id": "prop_2",
+          "label": "Second Property",
+          "default": "Second Property"
+        },
+        {
+          "type": "text",
+          "id": "prop_3",
+          "label": "Third Property",
+          "default": "Third Property"
+        },
+        {
+          "type": "image_picker",
+          "id": "icon",
+          "label": "Icon",
+          "info": "icon"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Ingredients"
+    }
+  ]
+}
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

@@ -1,0 +1,437 @@
+<link rel="stylesheet" href="{{ 'ui-blog.css' | asset_url }}" media="print" onload="this.media='all'">
+<noscript>{{ 'ui-blog.css' | asset_url | stylesheet_tag }}</noscript>
+
+{%- style -%}
+    .subscribe-section {
+      background: url(https://sportea.com/cdn/shop/files/Screenshot_1420px.png?v=1726571997&width=1420);
+      background-position: 70%;
+      background-size: cover;
+      background-repeat: no-repeat;
+  }
+    {%- if section.settings.pesto_section_padding_top != blank -%}
+      #shopify-section-{{ section.id }} .news-section{
+            padding-top: {{ section.settings.pesto_section_padding_top }}px;
+        }
+    {%- endif -%}
+    {%- if section.settings.pesto_section_padding_bottom != blank -%}
+      #shopify-section-{{ section.id }} .news-section{
+            padding-bottom: {{ section.settings.pesto_section_padding_bottom }}px;
+        }
+    {%- endif -%}
+
+    {%- if section.settings.pesto_section_margin_top != blank -%}
+      #shopify-section-{{ section.id }} .news-section{
+        margin-top: {{ section.settings.pesto_section_margin_top }}px;
+        }
+    {%- endif -%}
+    {%- if section.settings.pesto_section_margin_bottom != blank -%}
+      #shopify-section-{{ section.id }} .news-section{
+        margin-bottom: {{ section.settings.pesto_section_margin_bottom }}px;
+        }
+    {%- endif -%}
+
+    #shopify-section-{{ section.id }} .news-block-one .inner-box .image-box{
+      border-radius: {{ section.settings.featured_img_radius }}px;
+    }
+{%- endstyle -%}
+
+{%- assign show_blog_border_show_hide = section.settings.show_blog_border_show_hide %}
+{%- assign show_featured_image = section.settings.show_featured_image %}
+{%- assign show_author = section.settings.show_author %}
+{%- assign show_blog_date_auth_icon = section.settings.show_blog_date_auth_icon %}
+{%- assign show_blog_date_rif = section.settings.show_blog_date_rif %}
+{%- assign show_blog_date = section.settings.show_blog_date %}
+{%- assign show_blog_dec = section.settings.show_blog_dec %}
+{%- assign show_blog_readmore = section.settings.show_blog_readmore %}
+{%- assign show_blog_readmore_positions = section.settings.show_blog_readmore_positions %}
+
+{% assign col_dextop = section.settings.col_settings %}
+{% if col_dextop == 1 %}
+  {% assign col_dextop_val = '12' %}
+{% elsif col_dextop == 2 %}
+  {% assign col_dextop_val = '6' %}
+{% elsif col_dextop == 3 %}
+  {% assign col_dextop_val = '4' %}
+{% elsif col_dextop == 4 %}
+  {% assign col_dextop_val = '3' %}
+{% endif %}
+
+<div
+  id="{{ section.id }}"
+  class="news-section color-{{ section.settings.color_scheme }} area-border-{{ show_blog_border_show_hide }}"
+>
+  <div class="large-container">
+    <div class="inner-container">
+      <div class="sec-title centred">
+        <h2>{{ section.settings.blog_heading_text }}</h2>
+      </div>
+      <div class="row clearfix">
+        {%- if section.settings.blog_list != blank and section.settings.blog_list.articles_count > 0 -%}
+          {%- for article in section.settings.blog_list.articles limit: section.settings.blog_list_item -%}
+            <div class="col-lg-{{col_dextop_val}} col-md-6 col-sm-12 news-block">
+              <div class="news-block-one wow fadeInUp animated" data-wow-delay="00ms" data-wow-duration="1500ms">
+                <div class="inner-box the-dateshow-{{show_blog_date_rif}}">
+                  {%- if show_featured_image == true -%}
+                    {%- if article.image -%}
+                      <figure class="image-box" role="none">
+                        {% if section.settings.show_blog_tag %}
+                          <ul class="blog-tag">
+                            {% for tag in article.tags %}
+                              <li>{{ tag }}</li>
+                            {% endfor %}
+                          </ul>
+                        {% endif %}
+                        <a
+                          href="{{ article.url }}"
+                          aria-label="{{ 'general.link_to_article' | t }} {{ article.title }}"
+                        >
+                          <img
+                            data-src="{{ article.image | img_url: 'master' }}"
+                            loading="lazy"
+                            class="lazyload"
+                            width="{{ article.image.width }}"
+                            height="{{ article.image.height }}"
+                            alt="{{ article.image.alt | escape }}"
+                          >
+                        </a>
+                      </figure>
+                    {% endif %}
+                  {% endif %}
+                  <div class="lower-content">
+                    {%- if show_blog_date_rif == 'top' -%}
+                      {%- render 'article-data-user',
+                        article: article,
+                        show_author: show_author,
+                        show_blog_date_auth_icon: show_blog_date_auth_icon,
+                        show_blog_date: show_blog_date
+                      -%}
+                    {%- endif -%}
+                    {%- if show_blog_date_rif == 'bottom' -%}
+                      {%- render 'article-data-user',
+                        article: article,
+                        show_author: show_author,
+                        show_blog_date_auth_icon: show_blog_date_auth_icon,
+                        show_blog_date: show_blog_date
+                      -%}
+                    {%- endif -%}
+                    <h4>
+                      <a href="{{ article.url }}" aria-label="{{ 'general.link_to_article' | t }} {{ article.title }}">
+                        {{- article.title -}}
+                      </a>
+                    </h4>
+                    {%- if show_blog_dec -%}
+                      <p class="show-link-{{ show_blog_readmore_positions }}">
+                        {{ article.excerpt_or_content | strip_html | truncatewords: 15 }}
+
+                        {%- if show_blog_readmore_positions == 'top' -%}
+                          {%- if show_blog_readmore -%}
+                            <a href="{{ article.url }}">
+                              {{ 'article_area.article_read_more' | t }}
+                            </a>
+                          {%- endif -%}
+                        {%- endif -%}
+                      </p>
+                    {%- endif -%}
+
+                    {%- if show_blog_readmore_positions == 'bottom' -%}
+                      {%- if show_blog_readmore -%}
+                        <a class="read-more-link" href="{{ article.url }}">
+                          {{ 'article_area.article_read_more' | t }}
+                        </a>
+                      {%- endif -%}
+                    {%- endif -%}
+                  </div>
+                </div>
+              </div>
+            </div>
+          {% endfor %}
+        {%- else -%}
+          {%- for i in (1..section.settings.blog_list_item) -%}
+            <div class="col-lg-{{col_dextop_val}} col-md-6 col-sm-12 news-block">
+              <div class="news-block-one wow fadeInUp animated" data-wow-delay="00ms" data-wow-duration="1500ms">
+                <div class="inner-box the-dateshow-{{show_blog_date_rif}}">
+                  {%- if show_featured_image == true -%}
+                    <figure class="image-box" role="none">
+                      <a aria-label="{{ 'general.link_to_article_only' | t }}" href="#_">
+                        {{ 'image' | placeholder_svg_tag: 'placeholder-svg-blog' }}
+                      </a>
+                    </figure>
+                  {%- endif -%}
+                  <div class="lower-content">
+                    {%- if show_blog_date_rif == 'top' -%}
+                      {%- render 'article-data-user-place',
+                        article: article,
+                        show_author: show_author,
+                        show_blog_date_auth_icon: show_blog_date_auth_icon,
+                        show_blog_date: show_blog_date
+                      -%}
+                    {%- endif -%}
+                    <h4>
+                      <a href="#_">{{ 'blogs.placeholder.blog_title' | t }}</a>
+                    </h4>
+                    {%- if show_blog_dec -%}
+                      <p>
+                        {{ 'blogs.placeholder.placeholder_post_content' | t }}
+                        {%- if show_blog_readmore_positions == 'top' -%}
+                          {%- if show_blog_readmore -%}
+                            <a href="{{ article.url }}">
+                              {{ 'article_area.article_read_more' | t }}
+                            </a>
+                          {%- endif -%}
+                        {%- endif -%}
+                      </p>
+                    {%- endif -%}
+                    {%- if show_blog_date_rif == 'bottom' -%}
+                      {%- render 'article-data-user-place',
+                        article: article,
+                        show_author: show_author,
+                        show_blog_date_auth_icon: show_blog_date_auth_icon,
+                        show_blog_date: show_blog_date
+                      -%}
+                    {%- endif -%}
+                    {%- if show_blog_readmore_positions == 'bottom' -%}
+                      {%- if show_blog_readmore -%}
+                        <a class="read-more-link" href="{{ article.url }}">
+                          {{ 'article_area.article_read_more' | t }}
+                        </a>
+                      {%- endif -%}
+                    {%- endif -%}
+                  </div>
+                </div>
+              </div>
+            </div>
+          {%- endfor -%}
+        {%- endif -%}
+
+        {% if section.settings.banner_button_label != blank %}
+          <div class="col-md-12">
+            <div class="more-btn">
+              <a
+                href="{{ section.settings.banner_button_url }}"
+                class="gf-button theme-btn"
+                aria-label="{{ section.settings.banner_button_label }}"
+              >
+                {{ section.settings.banner_button_label }}
+                <svg
+                role="presentation"
+                  xmlns="http://www.w3.org/2000/svg"
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                  fill="#ffffff"
+                  height="800px"
+                  width="800px"
+                  version="1.1"
+                  id="Layer_1"
+                  viewBox="0 0 330 330"
+                  xml:space="preserve"
+                >
+                  <path id="XMLID_27_" d="M15,180h263.787l-49.394,49.394c-5.858,5.857-5.858,15.355,0,21.213C232.322,253.535,236.161,255,240,255  s7.678-1.465,10.606-4.394l75-75c5.858-5.857,5.858-15.355,0-21.213l-75-75c-5.857-5.857-15.355-5.857-21.213,0  c-5.858,5.857-5.858,15.355,0,21.213L278.787,150H15c-8.284,0-15,6.716-15,15S6.716,180,15,180z"></path>
+                </svg>
+              </a>
+            </div>
+          </div>
+        {%- endif -%}
+      </div>
+    </div>
+  </div>
+</div>
+{% schema %}
+{
+  "name": "Blog posts",
+  "tag": "section",
+  "class": "blog-post-section-grid",
+  "settings": [
+    {
+        "type": "color_scheme",
+        "id": "color_scheme",
+        "default": "background-4",
+        "label": "Color scheme"
+    },
+    {
+      "type": "text",
+      "id": "blog_heading_text",
+      "label": "Heading",
+      "default": "Blog posts"
+    },
+    {
+      "type": "blog",
+      "id": "blog_list",
+      "label": "Blog"
+    },
+    {
+        "type": "range",
+        "id": "col_settings",
+        "min": 1,
+        "max": 4,
+        "step": 1,
+        "label": "Number of columns on desktop",
+        "default": 4
+    },
+    {
+      "type": "range",
+      "id": "blog_list_item",
+      "min": 1,
+      "max": 8,
+      "step": 1,
+      "label": "Number of blog posts to show",
+      "default": 4
+    },
+    {
+      "type": "checkbox",
+      "id": "show_featured_image",
+      "default": true,
+      "label": "Show featured image"
+    },
+    {
+      "type": "range",
+      "id": "featured_img_radius",
+      "label": "Border radius",
+      "min": 0,
+      "max": 50,
+      "step": 1,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "checkbox",
+      "id": "show_blog_tag",
+      "default": false,
+      "label": "Show Tags"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_blog_dec",
+      "default": false,
+      "label": "Show content"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_blog_readmore",
+      "default": false,
+      "label": "Show read more link"
+    },
+    {
+      "type": "select",
+      "default": "bottom",
+      "label": "Read more position",
+      "id": "show_blog_readmore_positions",
+      "info": "Inline option works when content is displayed.",
+      "options": [
+        {
+          "value": "top",
+          "label": "Inline"
+        },
+        {
+          "value": "bottom",
+          "label": "Below content"
+        }
+      ]
+    },
+    {
+      "type": "checkbox",
+      "id": "show_author",
+      "default": true,
+      "label": "Show author"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_blog_date",
+      "default": true,
+      "label": "Show date"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_blog_date_auth_icon",
+      "default": false,
+      "label": "Show author and date icon"
+    },
+    {
+      "type": "select",
+      "default": "bottom",
+      "label": "Author and date position",
+      "id": "show_blog_date_rif",
+      "info": "Below content option will work when content is displayed",
+      "options": [
+        {
+          "value": "top",
+          "label": "Before title"
+        },
+        {
+          "value": "bottom",
+          "label": "Below content"
+        }
+      ]
+    },
+    {
+      "type": "checkbox",
+      "id": "show_blog_border_show_hide",
+      "default": true,
+      "label": "Show border"
+    },
+    {
+      "type": "text",
+      "id": "banner_button_label",
+      "label": "Button label",
+      "default": "Button",
+      "info": "Leave the label blank to hide the button"
+    },
+    {
+      "type": "url",
+      "id": "banner_button_url",
+      "label": "Button link"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.padding.section_padding_heading"
+    },
+    {
+        "type": "range",
+        "id": "pesto_section_padding_top",
+        "min": 0,
+        "max": 200,
+        "step": 10,
+        "unit": "px",
+        "label": "t:sections.all.padding.padding_top",
+        "default": 150
+    },
+    {
+        "type": "range",
+        "id": "pesto_section_padding_bottom",
+        "min": 0,
+        "max": 200,
+        "step": 10,
+        "unit": "px",
+        "label": "t:sections.all.padding.padding_bottom",
+        "default": 150
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.margin.section_margin_heading"
+    },
+    {
+        "type": "range",
+        "id": "pesto_section_margin_top",
+        "min": 0,
+        "max": 200,
+        "step": 10,
+        "unit": "px",
+        "label": "t:sections.all.margin.margin_top",
+        "default": 0
+    },
+    {
+        "type": "range",
+        "id": "pesto_section_margin_bottom",
+        "min": 0,
+        "max": 200,
+        "step": 10,
+        "unit": "px",
+        "label": "t:sections.all.margin.margin_bottom",
+        "default": 0
+    }
+  ],
+  "presets": [
+    {
+      "name": "Blog posts"
+    }
+  ]
+}
+{% endschema %}

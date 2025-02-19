@@ -1,0 +1,131 @@
+.placeholder-svg-locations{
+    width: 100%;
+    height: 100%;
+    border-radius: 10px 10px 0px 0px;
+}
+.placeholder-svg-banner-three{
+    width: 70%;
+    height: 70%;
+}
+.placeholder-svg-promo-two-one {
+    max-width: 80rem;
+    transform: translate(-8%,4%);
+    width: 100%;
+    height: auto;
+}
+.placeholder-svg-promo-two-two{
+    max-width: 80rem;
+    transform: translate(-8%,0%);
+    width: 100%;
+    height: auto;
+}
+.placeholder-svg-promo-two-three{
+    max-width: 80rem;
+    transform: translate(0%,20%);
+    width: 100%;
+    height: auto;
+}
+.placeholder-svg-promo-two-four {
+    max-width: 80rem;
+    transform: translate(0%,20%);
+    width: 100%;
+    height: auto;
+}
+.placeholder-svg-promo-two-five {
+    max-width: 11rem;
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+}
+.placeholder-svg-review-slider-one{
+    width: 100%;
+    height: auto;
+    border-radius: 50%;
+}
+items-carousel .placeholder-svg-review-slider-one{
+    border-radius: 0;
+}
+.placeholder-svg-features {
+    font-size: 123px;
+    transform: translate(-39%,-33%);
+}
+.placeholder-svg-about-four {
+    width: 100%;
+    height: 100%;
+}
+.placeholder-svg-advance-promo-one {
+    width: 100%;
+    height: 100%;
+    transform: translate(0%,-41%);
+}
+.placeholder-svg-advance-promo-two {
+    width: 100%;
+    height: 100%;
+    transform: translate(25%,28%);
+}
+.placeholder-svg-advance-promo-three {
+    max-width: 80rem;
+    transform: translate(5%,18%);
+    width: 100%;
+    height: auto;
+}
+.placeholder-svg-banner-one{
+    width: 100%;
+    height: 100%;
+}
+.placeholder-svg-about-us-one {
+    font-size: 185px;
+    margin: 0 auto;
+    transform: translate(0%,36%);
+    margin-top: -110px;
+}
+.placeholder-svg-gallery-one {
+    width: 100%;
+    height: 100%;
+}
+.placeholder-svg-event {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+.placeholder-svg-team-one {
+    width: 100%;
+    height: 100%;
+}
+.placeholder-svg-team-two {
+    width: 100%;
+    height: 100%;
+}
+.placeholder-svg-blog {
+    width: 100%;
+    height: 100%;
+}
+.placeholder-svg-categories-main {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+.placeholder-svg-all-collection {
+    width: 100%;
+    height: 100%;
+}
+.placeholder-overlay-video-one{
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    opacity: 0.3;
+}
+.placeholder-svg-video-one{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+.placeholder-svg-phone{
+    width: 50%;
+    height: 50%;
+    fill: rgba(var(--color-foreground),.5);
+}

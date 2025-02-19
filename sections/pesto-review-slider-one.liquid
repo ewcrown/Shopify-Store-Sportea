@@ -1,0 +1,382 @@
+{% assign col_dextop = section.settings.col_settings %}
+
+{% if col_dextop == 1 %}
+    {% assign col_dextop_val = '12' %}
+{% elsif col_dextop == 2 %}
+    {% assign col_dextop_val = '6' %}
+{% elsif col_dextop == 3 %}
+    {% assign col_dextop_val = '4' %}
+{% endif %}
+
+<link rel="stylesheet" href="{{ 'ui-testimonial-section.css' | asset_url }}" media="print" onload="this.media='all'">
+<noscript>{{ 'ui-testimonial-section.css' | asset_url | stylesheet_tag }}</noscript>
+
+{%- style -%}
+
+    {%- if section.settings.pesto_section_padding_top != blank -%}
+        #shopify-section-{{ section.id }} .testimonial-section{
+            padding-top: {{ section.settings.pesto_section_padding_top }}px;
+        }
+        @media(max-width: 991px){
+          #shopify-section-{{ section.id }} .testimonial-section{
+            padding-top: {{ section.settings.pesto_section_padding_top_mobile }}px;
+        }
+      }
+    {%- endif -%}
+    {%- if section.settings.pesto_section_padding_bottom != blank -%}
+        #shopify-section-{{ section.id }} .testimonial-section{
+            padding-bottom: {{ section.settings.pesto_section_padding_bottom }}px;
+        }
+        @media(max-width: 991px){
+          #shopify-section-{{ section.id }} .testimonial-section{
+            padding-bottom: {{ section.settings.pesto_section_padding_bottom_mobile }}px;
+        }
+        }
+      {%- endif -%}
+    
+{%- endstyle -%}
+{% assign testimonial_layout = section.settings.product_card_layout_type %}
+<div id="{{ section.id }}" class="testimonial-section no-slider-area color-{{ section.settings.color_scheme }}">
+  <div class="large-container">
+      <div class="sec-title {% if section.settings.banner_button_label == blank %} centred {% endif %}">
+          <h2>{{ section.settings.review_area_four_title }}</h2>
+          {%- if section.settings.banner_button_label != blank -%}
+            <a class="theme-btn btn-one" href="{{ section.settings.banner_button_url }}">
+              {{ section.settings.banner_button_label }}
+            </a>
+          {%- endif -%}
+      </div>
+  
+      
+      <div class="testimonial-carousel no-slider">
+        {% if testimonial_layout == "grid" %}
+          <div class="row">
+              {% for block in section.blocks %}
+                  {% case block.type %}
+                      {% when 'review_items' %}
+                        <div class="col-xl-{{col_dextop_val}} col-12">
+                          <div class="testimonial-block-one">
+                              <div class="inner-box">
+                                  {% if block.settings.user_star_rating == "1" %}
+                                    <div class="user-rating"> {% render 'icon-star-1' %} </div>
+                                  {% elsif block.settings.user_star_rating == "2" %}
+                                    <div class="user-rating"> {% render 'icon-star-2' %} </div>
+                                  {% elsif block.settings.user_star_rating == "3" %}
+                                    <div class="user-rating"> {% render 'icon-star-3' %} </div>
+                                  {% elsif block.settings.user_star_rating == "4" %}
+                                    <div class="user-rating"> {% render 'icon-star-4' %} </div>
+                                  {% elsif block.settings.user_star_rating == "5" %}
+                                    <div class="user-rating"> {% render 'icon-star-5' %} </div>
+                                  {% endif  %}
+                                  <p class="review-content">{{ block.settings.review_item_content }}</p>
+                                  <div class="author-box">
+                                        <figure class="author-thumb">
+                                            {%- if block.settings.review_author_image != blank -%}
+                                                {{ block.settings.review_author_image | image_url: width: 100 | image_tag }}
+                                            {%- else -%}
+                                                {{ 'image' | placeholder_svg_tag: 'placeholder-svg-review-slider-one' }}
+                                            {%- endif -%}
+                                        </figure>                                          
+                                      {%- if block.settings.review_author_name != blank -%}
+                                          <h5>{{ block.settings.review_author_name }}</h5>
+                                      {%- endif -%}
+                                      {%- if block.settings.review_author_designation != blank -%}
+                                          <span class="designation">{{ block.settings.review_author_designation }}</span>
+                                      {%- endif -%}
+                                  </div>
+                                  {% if block.settings.testimonial_product != blank %}
+                                    <div class="review-related-product">
+                                        <div class="product-thumb">
+                                          {% render 'prd-card-media', product: block.settings.testimonial_product %}
+                                        </div>
+                                        <div class="product-info">
+                                          <h4> <a href="{{ block.settings.testimonial_product.url }}"></a>{{ block.settings.testimonial_product.title | truncate: 30}}</h4>
+                                          <p>{{ block.settings.testimonial_product.price | money }}</p>
+                                        </div>
+                                        <a href="{{ block.settings.testimonial_product.url }}" class="product-btn">
+                                          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                          <path d="M2.625 11.375L11.375 2.625L2.625 11.375ZM11.375 2.625H4.8125H11.375ZM11.375 2.625V9.1875V2.625Z" fill="#121212"/>
+                                          <path d="M2.625 11.375L11.375 2.625M11.375 2.625H4.8125M11.375 2.625V9.1875" stroke="#121212" stroke-width="0.875" stroke-linecap="round" stroke-linejoin="round"/>
+                                          </svg>                                          
+                                        </a>
+                                    </div>
+                                  {% endif %}
+                              </div>
+                          </div>
+                        </div>
+                  {% endcase %}
+              {% endfor %}
+          </div> 
+        {% else %}
+          <div class="testimonial-carousel-wrapper">
+            <items-carousel>
+              <div class="items-carousel-selector top-slider-rev"
+                data-flickity='{ "draggable": false, "cellAlign": "center", "groupCells": false, "wrapAround": true, "pageDots": true, "prevNextButtons": false }'
+              >
+                {% for block in section.blocks %}
+                    {% case block.type %}
+                        {% when 'review_items' %}
+                          <div class="items-carousel-items">
+                            <div class="testimonial-block-one">
+                                <div class="inner-box">
+                                  <div class="rating-star">
+                                    {% if block.settings.user_star_rating == "1" %}
+                                      <div class="user-rating"> {% render 'icon-star-1' %} </div>
+                                    {% elsif block.settings.user_star_rating == "2" %}
+                                      <div class="user-rating"> {% render 'icon-star-2' %} </div>
+                                    {% elsif block.settings.user_star_rating == "3" %}
+                                      <div class="user-rating"> {% render 'icon-star-3' %} </div>
+                                    {% elsif block.settings.user_star_rating == "4" %}
+                                      <div class="user-rating"> {% render 'icon-star-4' %} </div>
+                                    {% elsif block.settings.user_star_rating == "5" %}
+                                      <div class="user-rating"> {% render 'icon-star-5' %} </div>
+                                    {% endif  %}
+                                  </div>
+                                    <p class="review-content">{{ block.settings.review_item_content }}</p>
+                                    <div class="author-box">
+                                          <figure class="author-thumb">
+                                              {%- if block.settings.review_author_image != blank -%}
+                                                  {{ block.settings.review_author_image | image_url: width: 100 | image_tag }}
+                                              {%- else -%}
+                                                  {{ 'image' | placeholder_svg_tag: 'placeholder-svg-review-slider-one' }}
+                                              {%- endif -%}
+                                          </figure>   
+                                          {%- if block.settings.review_author_name != blank -%}
+                                            <h5>{{ block.settings.review_author_name }}</h5>
+                                        {%- endif -%}
+                                        {%- if block.settings.review_author_designation != blank -%}
+                                            <span class="designation">{{ block.settings.review_author_designation }}</span>
+                                        {%- endif -%}
+                                    </div>
+                                    {% if block.settings.testimonial_product != blank %}
+                                      <div class="review-related-product">
+                                          <div class="product-thumb">
+                                            {% render 'prd-card-media', product: block.settings.testimonial_product %}
+                                          </div>
+                                          <div class="product-info">
+                                            <h4> 
+                                                <a href="{{ block.settings.testimonial_product.url }}">
+                                                  {{ block.settings.testimonial_product.title | truncate: 30}}
+                                                </a>
+                                              </h4>
+                                            <p>{{ block.settings.testimonial_product.price | money }}</p>
+                                          </div>
+                                          <a href="{{ block.settings.testimonial_product.url }}" class="product-btn">
+                                            <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M0.625 9.375L9.375 0.625L0.625 9.375ZM9.375 0.625H2.8125H9.375ZM9.375 0.625V7.1875V0.625Z" fill="#121212"/>
+                                            <path d="M0.625 9.375L9.375 0.625M9.375 0.625H2.8125M9.375 0.625V7.1875" stroke="#121212" stroke-width="0.875" stroke-linecap="round" stroke-linejoin="round"/>
+                                            </svg>
+                                                                                     
+                                          </a>
+                                      </div>
+                                    {% endif %}
+                              </div>
+                            </div>
+                          </div>
+                    {% endcase %}
+                {% endfor %}
+              </div>
+            </items-carousel>
+          </div> 
+        {% endif %}
+      </div>
+
+      
+      {%- if section.settings.banner_button_label != blank -%}
+        <div class="small-screen-btn">
+          <a class="theme-btn btn-one" href="{{ section.settings.banner_button_url }}">
+            {{ section.settings.banner_button_label }}
+          </a>
+        </div>
+      {%- endif -%}
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Testimonials",
+    "tag": "section",
+    "class": "review-slider-one",
+    "settings": [
+        {
+            "type": "color_scheme",
+            "id": "color_scheme",
+            "default": "background-4",
+            "label": "Color scheme"
+        },
+        {
+          "type": "select",
+          "default": "grid",
+          "label": "Layout type",
+          "id": "product_card_layout_type",
+          "options": [
+            {
+                "value": "grid",
+                "label": "Grid"
+            },
+            {
+                "value": "slider",
+                "label": "Slider"
+            }
+          ]
+        },
+        {
+            "type": "text",
+            "id": "review_area_four_title",
+            "label": "Heading",
+            "default": "Tell your story"
+        },
+        {
+            "type": "text",
+            "id": "banner_button_label",
+            "label": "Button label",
+          "info": "Leave the label blank to hide the button"
+        },
+        {
+            "type": "url",
+            "id": "banner_button_url",
+            "label": "Button link"
+        },
+        {
+            "type": "range",
+            "id": "col_settings",
+            "min": 1,
+            "max": 3,
+            "step": 1,
+            "label": "Columns",
+            "default": 2
+        },
+        {
+            "type": "header",
+            "content": "Section padding"
+        },
+        {
+            "type": "range",
+            "id": "pesto_section_padding_top",
+            "min": 0,
+            "max": 200,
+            "step": 10,
+            "unit": "px",
+            "label": "t:sections.all.padding.padding_top",
+            "default": 150
+        },
+        {
+            "type": "range",
+            "id": "pesto_section_padding_bottom",
+            "min": 0,
+            "max": 200,
+            "step": 10,
+            "unit": "px",
+            "label": "t:sections.all.padding.padding_bottom",
+            "default": 150
+        },
+        {
+        "type": "header",
+        "content": "Section padding for mobile"
+        },
+        {
+        "type": "range",
+        "id": "pesto_section_padding_top_mobile",
+        "min": 0,
+        "max": 300,
+        "step": 10,
+        "unit": "px",
+        "label": "t:sections.all.padding.padding_top",
+        "default": 30
+        },
+        {
+        "type": "range",
+        "id": "pesto_section_padding_bottom_mobile",
+        "min": 0,
+        "max": 300,
+        "step": 10,
+        "unit": "px",
+        "label": "t:sections.all.padding.padding_bottom",
+        "default": 30
+        }
+    ],
+    "blocks": [
+      {
+        "type": "@app"
+      },
+      {
+        "name": "Testimonial",
+        "type": "review_items",
+        "settings": [
+          {
+            "type": "select",
+            "id": "user_star_rating",
+            "label": "Review star",
+            "options": [
+              {
+                  "value": "0",
+                  "label": "None"
+              },
+              {
+                  "value": "1",
+                  "label": "1 stars"
+              },
+              {
+                  "value": "2",
+                  "label": "2 stars"
+              },
+              {
+                  "value": "3",
+                  "label": "3 stars"
+              },
+              {
+                  "value": "4",
+                  "label": "4 stars"
+              },
+              {
+                  "value": "5",
+                  "label": "5 stars"
+              }
+            ],
+            "default": "5"
+          },
+          {
+            "type": "text",
+            "id": "review_author_name",
+            "label": "Name",
+            "default": "Name"
+          },
+          {
+            "type": "text",
+            "id": "review_author_designation",
+            "label": "Designation",
+            "default": "Designation"
+          },
+          {
+            "type": "textarea",
+            "id": "review_item_content",
+            "label": "Content",
+            "default": "“Share what your customers are saying about your products, your company...”"
+          },
+          {
+            "type": "image_picker",
+            "id": "review_author_image",
+            "label": "Avatar",
+            "info": "60x60px recommended"
+          },
+          {
+          "type": "product",
+          "id": "testimonial_product",
+          "label": "Product"
+          }
+          
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Testimonials",
+        "blocks": [
+          {
+              "type": "review_items"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}

@@ -1,0 +1,53 @@
+
+<ul class="mega-menu style-two">
+    <div class="large-container">
+        {%- render 'two-lvl-menu-mega', link: link -%}
+        <div class="mega-menu-inner">
+
+                <div class="items-carousel-selector category-menu-item-slider">
+                    {% assign collections = block.settings.mega_selected_collection %}
+                    {% for collection in collections %}
+                        <div class="items-carousel-items slide-item">
+                            <a class="slide-item-inner" href="{{ collection.url }}">
+                                <div class="item-thumb">
+                                    {% if collection.featured_image != blank %}
+                                        <img
+                                        data-src="{{ collection.featured_image | img_url: '350x' }}"
+                                        loading="lazy"
+                                        class="lazyload"
+                                        width="{{ collection.featured_image.width }}"
+                                        height="{{ collection.featured_image.height }}"
+                                        alt="{{ collection.title }}">
+                                    {% else %}
+                                        {{ 'collection-1' | placeholder_svg_tag }}
+                                    {% endif %}
+                                </div>
+                                {% if collection.title != blank %}
+                                    <div class="item-info">
+                                        <p>({{ collection.products.size }} {{ 'general.menu_items' | t }})</p>
+                                        <h4><span>{{ collection.title }}</span></h4>
+                                    </div>
+                                {% endif %}
+                            </a>
+                        </div>
+                    {% endfor %}
+                </div>
+       
+
+            {% if block.settings.mega_two_button_text != blank %}
+                <a href="{{ block.settings.mega_two_button_link }}" class="bottom-btn">
+                    <h4>{{ block.settings.mega_two_button_text }}</h4>
+                    <span>
+                        <svg width="43" height="28" viewBox="0 0 43 28" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M28.9375 26.1875L41.125 14M41.125 14L28.9375 1.8125M41.125 14H1.875"
+                                stroke="currentColor" stroke-width="2.4375" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+                    </span>
+                </a>
+            {% endif %}
+        </div>
+    </div>
+</ul>

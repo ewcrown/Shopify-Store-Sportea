@@ -1,0 +1,179 @@
+<link rel="stylesheet" href="{{ 'ui-marquee.css' | asset_url }}" media="print" onload="this.media='all'">
+<noscript>{{ 'ui-marquee.css' | asset_url | stylesheet_tag }}</noscript>
+
+{%- style -%}
+    {%- if section.settings.pesto_section_padding_top != blank -%}
+        #shopify-section-{{ section.id }} .marquee-section{
+            padding-top: {{ section.settings.pesto_section_padding_top }}px;
+            --playspeed : {{ section.settings.pesto_animation_play_speed }}s;
+            
+        }
+    {%- endif -%}
+    
+    {%- if section.settings.pesto_section_padding_bottom != blank -%}
+        #shopify-section-{{ section.id }} .marquee-section{
+            padding-bottom: {{ section.settings.pesto_section_padding_bottom }}px;
+        }
+    {%- endif -%}
+{%- endstyle -%}
+
+<scroll-rif-are-at>
+<div id="{{ section.id }}" class="marquee-section color-{{ section.settings.color_scheme }}">
+    <div class="scrolling-text marquee-section-inner">
+        <scrolling-text class="marquee-inner-content scrolling-text__content scrolling-text__content--pause-on-hover">
+            <div class="scrolling-text__list">
+                {% for block in section.blocks %}
+                    
+                        {%- case block.type -%} 
+                            {%- when 'marquee_content' -%}
+                                <div class="content-block">
+                                    {%- if block.settings.marquee_text_link != blank -%}
+                                        <a href="{{ block.settings.marquee_text_link }}"><h3> {{ block.settings.marquee_text_content }} </h3></a>
+                                    {%- else -%}
+                                        <h3> {{ block.settings.marquee_text_content }} </h3>
+                                    {%- endif -%}
+                                </div>
+                        {% endcase %}
+                {% endfor %}
+            </div>
+            <div class="scrolling-text__list">
+                {% for block in section.blocks %}
+                    
+                        {%- case block.type -%} 
+                            {%- when 'marquee_content' -%}
+                                <div class="content-block">
+                                    {%- if block.settings.marquee_text_link != blank -%}
+                                        <a href="{{ block.settings.marquee_text_link }}"><h3> {{ block.settings.marquee_text_content }} </h3></a>
+                                    {%- else -%}
+                                        <h3> {{ block.settings.marquee_text_content }} </h3>
+                                    {%- endif -%}
+                                </div>
+                        {% endcase %}
+                {% endfor %}
+            </div>
+            
+        </scrolling-text>
+    </div>
+</div>
+</scroll-rif-are-at>
+{% javascript %}
+
+    if (!customElements.get('scrolling-text')) {
+        customElements.define('scrolling-text', class ScrollingText extends HTMLElement {
+        constructor() {
+            super();
+        }
+    
+        connectedCallback() {
+            this.observer = new IntersectionObserver((entries, observer) => {
+            if(entries[0].isIntersecting) {
+                this.runAnimation();
+                this.observer.disconnect();
+            }
+            });
+        
+            this.observer.observe(this);
+        }
+    
+        disconnectedCallback() {
+            if(this.observer) {
+            this.observer.disconnect();
+            }
+        }
+    
+        runAnimation() {
+            setTimeout(() => {
+            this.classList.add('enable-animation');
+            }, 500);
+        }
+    });
+  }
+
+
+{% endjavascript %}
+
+{% schema %}
+    {
+        "name": "Scrolling text",
+        "tag": "section",
+        "class": "marquee-section",
+        "settings":[
+            {
+                "type": "color_scheme",
+                "id": "color_scheme",
+                "default": "background-4",
+                "label": "Color scheme"
+            },
+            {
+                "type": "range",
+                "id": "pesto_animation_play_speed",
+                "min": 1,
+                "max": 60,
+                "step": 1,
+                "unit": "s",
+                "label": "Scrolling speed",
+                "default": 10
+            },
+            {
+                "type": "header",
+                "content": "Section padding"
+            },
+            {
+                "type": "range",
+                "id": "pesto_section_padding_top",
+                "min": 0,
+                "max": 200,
+                "step": 10,
+                "unit": "px",
+                "label": "t:sections.all.padding.padding_top",
+                "default": 120
+            },
+            {
+                "type": "range",
+                "id": "pesto_section_padding_bottom",
+                "min": 0,
+                "max": 200,
+                "step": 10,
+                "unit": "px",
+                "label": "t:sections.all.padding.padding_bottom",
+                "default": 90
+            }
+        ],
+        "blocks": [
+            {
+                "name": "Text",
+                "type": "marquee_content",
+                "settings": [
+                    {
+                        "type": "text",
+                        "id": "marquee_text_content",
+                        "label": "Text",
+                        "default": "Welcome to store"
+                    },
+                    {
+                        "type": "url",
+                        "id": "marquee_text_link",
+                        "label": "Link"
+                    }
+                ]
+            }
+        ],
+        "presets": [
+            {
+                "name": "Scrolling text",
+                "blocks": [
+                    {
+                        "type": "marquee_content"
+                    },
+                    {
+                        "type": "marquee_content"
+                    },
+                    {
+                        "type": "marquee_content"
+                    }
+                ]
+            }
+        ]
+    }
+{% endschema %}
+

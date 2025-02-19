@@ -1,0 +1,925 @@
+<link rel="stylesheet" href="{{ 'ui-countdown-section.css' | asset_url }}" media="print" onload="this.media='all'">
+<noscript>{{ 'ui-countdown-section.css' | asset_url | stylesheet_tag }}</noscript>
+{%- style -%}
+    {%- if section.settings.pesto_section_padding_top != blank -%}
+    #shopify-section-{{section.id}} .pesto-countdown-section{
+            padding-top: {{ section.settings.pesto_section_padding_top }}px;
+            padding-bottom: {{ section.settings.pesto_section_padding_bottom }}px;
+        }
+        @media(max-width: 991px){
+            #shopify-section-{{section.id}} .pesto-countdown-section{
+            padding-top: {{ section.settings.pesto_section_padding_top_mobile }}px;
+            padding-bottom: {{ section.settings.pesto_section_padding_bottom_mobile }}px;
+        }
+        }
+    {%- endif -%}
+    #shopify-section-{{section.id}} .pesto-countdown-section .countdown-bg-media:after{
+        opacity: {{ section.settings.pesto_countdown_bg_opacity | divided_by: 100.0 }};
+    }
+{%- endstyle -%}
+
+<count-down class="count-element-area">
+    <div class="pesto-countdown-section  color-{{ section.settings.color_scheme }} layout-direction-{{ section.settings.pesto_countdown_layout }}">
+    
+        {% if section.settings.pesto_countdown_bg_img != blank %}
+            <div class="countdown-bg-media">
+                <img
+                    data-src="{{ section.settings.pesto_countdown_bg_img | img_url: 'master' }}"
+                    loading="lazy"  class="lazyload"
+                    width="{{ section.settings.pesto_countdown_bg_img.width }}"
+                    height="{{ section.settings.pesto_countdown_bg_img.height }}"
+                    alt="{{ section.settings.pesto_countdown_bg_img.alt | escape }}"
+                />
+            </div>
+        {% endif %}
+
+        <div class="large-container">
+            <div class="countdown-section-inner">
+                {% for block in section.blocks %}
+                    {%- case block.type -%}
+                        {%- when 'heading_text' -%}
+                            <div class="countdown-text">
+                                <h3 class="heading-size-{{ block.settings.pesto_heading_text_size }}">{{ block.settings.heading }}</h3>
+                                <p>{{block.settings.description}}</p>
+                            </div>
+                        {%- when 'timer' -%} 
+                            <div
+                                class="countdown-timer" 
+                                data-year="{{ block.settings.select_year }}"
+                                data-month="{{ block.settings.select_month }}"
+                                data-day="{{ block.settings.select_day }}"
+                                data-hour="{{ block.settings.select_hour }}"
+                                data-min="{{ block.settings.select_min }}"
+                            >
+                                <div data-time-message="{{ block.settings.timer_end_message }}" class="timer-end-message">{{ block.settings.timer_end_message }}</div>
+                                
+                                <div data-timer-visibility="false" class="countdown-timer-inner show-border-{{ block.settings.pesto_countdown_border }} timer-text-size-{{ block.settings.pesto_countdown_timer_size }}">
+                                    <div class="timer-block">
+                                        <p>{{ 'general.place_day' | t }}</p>
+                                        <h3 class="id-days"></h3>
+                                    </div>
+                                    <span>:</span>
+                                    <div class="timer-block">
+                                        <p>{{ 'general.place_hrs' | t }}</p>
+                                        <h3 class="id-hours"></h3>
+                                    </div>
+                                    <span>:</span>
+                                    <div class="timer-block">
+                                        <p>{{ 'general.place_min' | t }}</p>
+                                        <h3 class="id-minutes"></h3>
+                                    </div>
+                                    <span>:</span>
+                                    <div class="timer-block">
+                                        <p>{{ 'general.place_sec' | t }}</p>
+                                        <h3 class="id-seconds"></h3>
+                                    </div>
+                                </div>
+                            </div>
+                        {%- when 'button' -%}
+                            {%- if block.settings.button_text != blank -%}
+                                <div class="countdown-button">
+                                    <a class="{{ block.settings.pesto_button_style }}" href="{{ block.settings.button_link }}">{{ block.settings.button_text }}
+                                        {% if block.settings.pesto_button_icon == "icon1" %}
+                                            {% render "pesto-btn-icon-arrow" %}
+                                        {% elsif block.settings.pesto_button_icon == "icon2" %}
+                                            {% render 'icon-right-tick' %}
+                                        {% elsif block.settings.pesto_button_icon == "icon3" %}
+                                            {% render 'icon-leaf' %}
+                                        {% elsif block.settings.pesto_button_icon == "icon4" %}
+                                            {% render 'icon-chemistry' %}
+                                        {% elsif block.settings.pesto_button_icon == "icon5" %}
+                                            {% render 'icon-organic' %}
+                                        {% endif %}
+                                    </a>
+                                </div>
+                            {%- endif -%}
+                    {% endcase %}
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</count-down>
+{% schema %}
+    {
+        "name": "Countdown timer",
+        "tag": "section",
+        "class": "countdown-area",
+        "settings": [
+            {
+                "type": "color_scheme",
+                "id": "color_scheme",
+                "default": "background-3",
+                "label": "Color scheme"
+            },
+            {
+                "type": "image_picker",
+                "id": "pesto_countdown_bg_img",
+                "label": "Background image"
+            },
+            {
+            "type": "select",
+            "id": "pesto_countdown_layout",
+            "label": "Select a layout",
+            "options": [
+                {
+                "value": "row",
+                "label": "Row"
+                },
+                {
+                "value": "column",
+                "label": "Column"
+                }
+            ]
+            },
+            {
+                "type": "range",
+                "id": "pesto_countdown_bg_opacity",
+                "min": 0,
+                "max": 100,
+                "step": 10,
+                "unit": "%",
+                "label": "Image overlay opacity",
+                "default": 80
+            },
+            {
+                "type": "header",
+                "content": "Section padding"
+            },
+            {
+                "type": "range",
+                "id": "pesto_section_padding_top",
+                "min": 0,
+                "max": 300,
+                "step": 10,
+                "unit": "px",
+                "label": "t:sections.all.padding.padding_top",
+                "default": 30
+            },
+            {
+                "type": "range",
+                "id": "pesto_section_padding_bottom",
+                "min": 0,
+                "max": 300,
+                "step": 10,
+                "unit": "px",
+                "label": "t:sections.all.padding.padding_bottom",
+                "default": 30
+            },
+            {
+                "type": "header",
+                "content": "Section padding for mobile"
+            },
+            {
+                "type": "range",
+                "id": "pesto_section_padding_top_mobile",
+                "min": 0,
+                "max": 300,
+                "step": 10,
+                "unit": "px",
+                "label": "t:sections.all.padding.padding_top",
+                "default": 30
+            },
+            {
+                "type": "range",
+                "id": "pesto_section_padding_bottom_mobile",
+                "min": 0,
+                "max": 300,
+                "step": 10,
+                "unit": "px",
+                "label": "t:sections.all.padding.padding_bottom",
+                "default": 30
+            }
+        ],
+        "blocks": [
+            {
+                "name": "Content",
+                "type": "heading_text",
+                "limit": 1,
+                "settings": [
+                    {
+                        "type": "text",
+                        "id": "heading",
+                        "label": "Title",
+                        "default": "Countdown Timer"
+                    },
+                    {
+                        "type": "select",
+                        "id": "pesto_heading_text_size",
+                        "label": "Heading size",
+                        "options": [
+                            {
+                            "value": "small",
+                            "label": "Small"
+                            },
+                            {
+                            "value": "medium",
+                            "label": "Medium"
+                            },
+                            {
+                            "value": "large",
+                            "label": "Large"
+                            }
+                        ],
+                        "default": "small"
+                    },
+                    {
+                        "type": "inline_richtext",
+                        "id": "description",
+                        "label": "Description",
+                        "default": "Maximize sales with this timer by creating a sense of urgency."
+                    }
+                ]
+            },
+            {
+                "name": "Timer",
+                "type": "timer",
+                "limit": 1,
+                "settings": [
+                    {
+                        "type": "select",
+                        "id": "select_year",
+                        "label": "Year",
+                        "options": [
+                            {
+                                "value": "2023",
+                                "label": "2023"
+                            },
+                            {
+                                "value": "2024",
+                                "label": "2024"
+                            },
+                            {
+                                "value": "2025",
+                                "label": "2025"
+                            },
+                            {
+                                "value": "2026",
+                                "label": "2026"
+                            }
+                        ],
+                        "default": "2024"
+                    },
+                    {
+                        "type": "select",
+                        "id": "select_month",
+                        "label": "Month",
+                        "options": [
+                        {
+                            "value": "0",
+                            "label": "January"
+                        },
+                        {
+                            "value": "1",
+                            "label": "February"
+                        },
+                        {
+                            "value": "2",
+                            "label": "March"
+                        },
+                        {
+                            "value": "3",
+                            "label": "April"
+                        },
+                        {
+                            "value": "4",
+                            "label": "May"
+                        },
+                        {
+                            "value": "5",
+                            "label": "June"
+                        },
+                        {
+                            "value": "6",
+                            "label": "july"
+                        },
+                        {
+                            "value": "7",
+                            "label": "August"
+                        },
+                        {
+                            "value": "8",
+                            "label": "Septermber"
+                        },
+                        {
+                            "value": "9",
+                            "label": "October"
+                        },
+                        {
+                            "value": "10",
+                            "label": "November"
+                        },
+                        {
+                            "value": "11",
+                            "label": "December"
+                        }
+                        
+                        ],
+                        "default": "0"
+                    },
+                    {
+                        "type": "select",
+                        "id": "select_day",
+                        "label": "Date",
+                        "options": [
+                        {
+                            "value": "1",
+                            "label": "1"
+                        },
+                        {
+                            "value": "2",
+                            "label": "2"
+                        },
+                        {
+                            "value": "3",
+                            "label": "3"
+                        },
+                        {
+                            "value": "4",
+                            "label": "4"
+                        },
+                        {
+                            "value": "5",
+                            "label": "5"
+                        },
+                        {
+                            "value": "6",
+                            "label": "6"
+                        },
+                        {
+                            "value": "7",
+                            "label": "7"
+                        },
+                        {
+                            "value": "8",
+                            "label": "8"
+                        },
+                        {
+                            "value": "9",
+                            "label": "9"
+                        },
+                        {
+                            "value": "10",
+                            "label": "10"
+                        },
+                        {
+                            "value": "11",
+                            "label": "11"
+                        },
+                        {
+                            "value": "12",
+                            "label": "12"
+                        }
+                        ,
+                        {
+                            "value": "13",
+                            "label": "13"
+                        },
+                        {
+                            "value": "14",
+                            "label": "14"
+                        },
+                        {
+                            "value": "15",
+                            "label": "15"
+                        },
+                        {
+                            "value": "16",
+                            "label": "16"
+                        },
+                        {
+                            "value": "17",
+                            "label": "17"
+                        },
+                        {
+                            "value": "18",
+                            "label": "18"
+                        },
+                        {
+                            "value": "19",
+                            "label": "19"
+                        },
+                        {
+                            "value": "20",
+                            "label": "20"
+                        },
+                        {
+                            "value": "21",
+                            "label": "21"
+                        },
+                        {
+                            "value": "22",
+                            "label": "22"
+                        },
+                        {
+                            "value": "23",
+                            "label": "23"
+                        },
+                        {
+                            "value": "24",
+                            "label": "24"
+                        },
+                        {
+                            "value": "25",
+                            "label": "25"
+                        },
+                        {
+                            "value": "26",
+                            "label": "26"
+                        },
+                        {
+                            "value": "27",
+                            "label": "27"
+                        },
+                        {
+                            "value": "28",
+                            "label": "28"
+                        },
+                        {
+                            "value": "29",
+                            "label": "29"
+                        },
+                        {
+                            "value": "30",
+                            "label": "30"
+                        },
+                        {
+                            "value": "31",
+                            "label": "31"
+                        }
+                        ],
+                        "default": "1"
+                    },
+                    {
+                        "type": "select",
+                        "id": "select_hour",
+                        "label": "Hour",
+                        "options": [
+                        {
+                            "label": "01 AM",
+                            "value": "01"
+                        },
+                        {
+                            "label": "02 AM",
+                            "value": "02"
+                        },
+                        {
+                            "label": "03 AM",
+                            "value": "03"
+                        },
+                        {
+                            "label": "04 AM",
+                            "value": "04"
+                        },
+                        {
+                            "label": "05 AM",
+                            "value": "05"
+                        },
+                        {
+                            "label": "06 AM",
+                            "value": "06"
+                        },
+                        {
+                            "label": "07 AM",
+                            "value": "07"
+                        },
+                        {
+                            "label": "08 AM",
+                            "value": "08"
+                        },
+                        {
+                            "label": "09 AM",
+                            "value": "09"
+                        },
+                        {
+                            "label": "10 AM",
+                            "value": "10"
+                        },
+                        {
+                            "label": "11 AM",
+                            "value": "11"
+                        },
+                        {
+                            "label": "12 PM",
+                            "value": "12"
+                        }
+                        ,
+                        {
+                            "label": "1 PM",
+                            "value": "13"
+                        },
+                        {
+                            "label": "2 PM",
+                            "value": "14"
+                        },
+                        {
+                            "label": "3 PM",
+                            "value": "15"
+                        },
+                        {
+                            "label": "4 PM",
+                            "value": "16"
+                        },
+                        {
+                            "label": "5 PM",
+                            "value": "17"
+                        },
+                        {
+                            "label": "6 PM",
+                            "value": "18"
+                        },
+                        {
+                            "label": "7 PM",
+                            "value": "19"
+                        },
+                        {
+                            "label": "8 PM",
+                            "value": "20"
+                        },
+                        {
+                            "label": "9 PM",
+                            "value": "21"
+                        },
+                        {
+                            "label": "10 PM",
+                            "value": "22"
+                        },
+                        {
+                            "label": "11 PM",
+                            "value": "23"
+                        },
+                        {
+                            "label": "12 AM",
+                            "value": "24"
+                        }
+                        ],
+                        "default": "01"
+                    },
+                    {
+                        "type": "select",
+                        "id": "select_min",
+                        "label": "Minutes",
+                        "options": [
+                        {
+                            "value": "1",
+                            "label": "1"
+                        },
+                        {
+                            "value": "2",
+                            "label": "2"
+                        },
+                        {
+                            "value": "3",
+                            "label": "3"
+                        },
+                        {
+                            "value": "4",
+                            "label": "4"
+                        },
+                        {
+                            "value": "5",
+                            "label": "5"
+                        },
+                        {
+                            "value": "6",
+                            "label": "6"
+                        },
+                        {
+                            "value": "7",
+                            "label": "7"
+                        },
+                        {
+                            "value": "8",
+                            "label": "8"
+                        },
+                        {
+                            "value": "9",
+                            "label": "9"
+                        },
+                        {
+                            "value": "10",
+                            "label": "10"
+                        },
+                        {
+                            "value": "11",
+                            "label": "11"
+                        },
+                        {
+                            "value": "12",
+                            "label": "12"
+                        }
+                        ,
+                        {
+                            "value": "13",
+                            "label": "13"
+                        },
+                        {
+                            "value": "14",
+                            "label": "14"
+                        },
+                        {
+                            "value": "15",
+                            "label": "15"
+                        },
+                        {
+                            "value": "16",
+                            "label": "16"
+                        },
+                        {
+                            "value": "17",
+                            "label": "17"
+                        },
+                        {
+                            "value": "18",
+                            "label": "18"
+                        },
+                        {
+                            "value": "19",
+                            "label": "19"
+                        },
+                        {
+                            "value": "20",
+                            "label": "20"
+                        },
+                        {
+                            "value": "21",
+                            "label": "21"
+                        },
+                        {
+                            "value": "22",
+                            "label": "22"
+                        },
+                        {
+                            "value": "23",
+                            "label": "23"
+                        },
+                        {
+                            "value": "24",
+                            "label": "24"
+                        },
+                        {
+                            "value": "25",
+                            "label": "25"
+                        },
+                        {
+                            "value": "26",
+                            "label": "26"
+                        },
+                        {
+                            "value": "27",
+                            "label": "27"
+                        },
+                        {
+                            "value": "28",
+                            "label": "28"
+                        },
+                        {
+                            "value": "29",
+                            "label": "29"
+                        },
+                        {
+                            "value": "30",
+                            "label": "30"
+                        },
+                        {
+                            "value": "31",
+                            "label": "31"
+                        },
+                        {
+                            "value": "32",
+                            "label": "32"
+                        },
+                        {
+                            "value": "33",
+                            "label": "33"
+                        },
+                        {
+                            "value": "34",
+                            "label": "34"
+                        },
+                        {
+                            "value": "35",
+                            "label": "35"
+                        },
+                        {
+                            "value": "36",
+                            "label": "36"
+                        },
+                        {
+                            "value": "37",
+                            "label": "37"
+                        },
+                        {
+                            "value": "38",
+                            "label": "38"
+                        },
+                        {
+                            "value": "39",
+                            "label": "39"
+                        },
+                        {
+                            "value": "40",
+                            "label": "40"
+                        },
+                        {
+                            "value": "41",
+                            "label": "41"
+                        },
+                        {
+                            "value": "42",
+                            "label": "42"
+                        },
+                        {
+                            "value": "43",
+                            "label": "43"
+                        },
+                        {
+                            "value": "44",
+                            "label": "44"
+                        },
+                        {
+                            "value": "45",
+                            "label": "45"
+                        },
+                        {
+                            "value": "46",
+                            "label": "46"
+                        },
+                        {
+                            "value": "47",
+                            "label": "47"
+                        },
+                        {
+                            "value": "48",
+                            "label": "48"
+                        },
+                        {
+                            "value": "49",
+                            "label": "49"
+                        },
+                        {
+                            "value": "50",
+                            "label": "50"
+                        },
+                        {
+                            "value": "51",
+                            "label": "51"
+                        },
+                        {
+                            "value": "52",
+                            "label": "52"
+                        },
+                        {
+                            "value": "53",
+                            "label": "53"
+                        },
+                        {
+                            "value": "54",
+                            "label": "54"
+                        },
+                        {
+                            "value": "55",
+                            "label": "55"
+                        },
+                        {
+                            "value": "56",
+                            "label": "56"
+                        },
+                        {
+                            "value": "57",
+                            "label": "57"
+                        },
+                        {
+                            "value": "58",
+                            "label": "58"
+                        },
+                        {
+                            "value": "59",
+                            "label": "59"
+                        },
+                        {
+                            "value": "60",
+                            "label": "60"
+                        }
+                        ],
+                        "default": "1"
+                    },
+                    {
+                        "type": "checkbox",
+                        "id": "pesto_countdown_border",
+                        "label": "Show border",
+                        "default": false
+                    },
+                    {
+                        "type": "select",
+                        "id": "pesto_countdown_timer_size",
+                        "label": "Timer size",
+                        "options": [
+                            {
+                            "value": "small",
+                            "label": "Small"
+                            },
+                            {
+                            "value": "medium",
+                            "label": "Medium"
+                            },
+                            {
+                            "value": "large",
+                            "label": "Large"
+                            }
+                        ],
+                        "default": "small"
+                    },
+                    {
+                        "type": "inline_richtext",
+                        "id": "timer_end_message",
+                        "label": "Message after countdown ends"
+                    }
+                ]
+            },
+            {
+                "name": "Button",
+                "type": "button",
+                "limit": 1,
+                "settings": [
+                    {
+                        "type": "text",
+                        "id": "button_text",
+                        "label": "Label",
+                        "default": "Button",
+                        "info": "Leave the label blank to hide the button"
+                    },
+                    {
+                        "type": "url",
+                        "id": "button_link",
+                        "label": "Link"
+                    },
+                    {
+                    "type": "select",
+                    "id": "pesto_button_style",
+                    "label": "Style",
+                    "options": [
+                        {
+                        "value": "theme-btn",
+                        "label": "Primary"
+                        },
+                        {
+                        "value": "theme-btn-secondary",
+                        "label": "Secondary"
+                        },
+                        {
+                        "value": "theme-btn-outline",
+                        "label": "Outline"
+                        }
+                    ],
+                    "default": "theme-btn"
+                    },
+                    {
+                        "type": "select",
+                        "id": "pesto_button_icon",
+                        "label": "Icon",
+                        "options": [
+                            {
+                            "value": "none",
+                            "label": "None"
+                            },
+                            {
+                            "value": "icon1",
+                            "label": "Arrow"
+                            },
+                            {
+                            "value": "icon3",
+                            "label": "Leaf"
+                            },
+                            {
+                            "value": "icon4",
+                            "label": "Chemistry"
+                            },
+                            {
+                            "value": "icon5",
+                            "label": "Organic"
+                            }
+                        ],
+                        "default": "none"
+                    }
+                ]
+            }
+        ],
+        "presets": [
+            {
+                "name": "Countdown timer",
+                "blocks": [
+                    {
+                        "type": "heading_text"
+                    },
+                    {
+                        "type": "timer"
+                    },
+                    {
+                        "type": "button"
+                    }
+                ]
+            }
+        ]
+    }
+{% endschema %}
+

@@ -1,0 +1,200 @@
+<link rel="stylesheet" href="{{ 'ui-error-section.css' | asset_url }}" media="print" onload="this.media='all'">
+<noscript>{{ 'ui-error-section.css' | asset_url | stylesheet_tag }}</noscript>
+
+{%- style -%}
+
+  {%- if section.settings.pesto_section_padding_top != blank -%}
+    #shopify-section-{{ section.id}} .error-section {
+      padding-top: {{ section.settings.pesto_section_padding_top }}px;
+    }
+  {%- endif -%}
+
+  {%- if section.settings.pesto_section_padding_bottom != blank -%}
+    #shopify-section-{{ section.id}} .error-section {
+      padding-bottom: {{ section.settings.pesto_section_padding_bottom }}px;
+    }
+  {%- endif -%}
+
+{%- endstyle -%}
+
+<div id="{{ section.id }}" class="error-section centred color-{{ section.settings.color_scheme }}">
+
+    {% if section.settings.error_page_background_page != blank %}
+        <div class="error-section-bg-image">
+            {{ section.settings.error_page_background_page | image_url: width: 7680 | image_tag: loading: 'lazy', class: 'lazyload' }}
+        </div>
+    {%- endif -%}
+
+    {% if section.settings.layout_type == 'normal' %}
+        <div class="large-container">
+            <div class="inner-box error-content-align-{{ section.settings.text_alignment }}">
+                {% if section.settings.images != blank %}
+                    <figure class="image-box">
+                        <img
+                            data-src="{{ section.settings.images | img_url: 'master' }}"
+                            loading="lazy"  class="lazyload"
+                            width="{{ section.settings.images.width }}"
+                            height="{{ section.settings.images.height }}"
+                            alt="{{ section.settings.images.alt | escape }}"
+                        >
+                    </figure>
+                {% endif %}
+                <div class="sec-title">
+                    <h2>{{ section.settings.title }}</h2>
+                </div>
+                <p>{{ section.settings.content }}</p>
+                {% if section.settings.back_home_btn_label != blank %}
+                    <a class="theme-btn btn-one" href="{{ routes.root_url }}">{{ section.settings.back_home_btn_label }}</a>
+                {%- endif -%}
+            </div>
+        </div>
+    {% elsif section.settings.layout_type == 'box' %}
+        <div class="large-container error-box-layout error-box-position-{{ section.settings.box_position }}">
+            <div class="inner-box error-content-align-{{ section.settings.text_alignment }}">
+                {% if section.settings.images != blank %}
+                    <figure class="image-box">
+                        <img
+                            data-src="{{ section.settings.images | img_url: 'master' }}"
+                            loading="lazy"  class="lazyload"
+                            width="{{ section.settings.images.width }}"
+                            height="{{ section.settings.images.height }}"
+                            alt="{{ section.settings.images.alt | escape }}"
+                        >
+                    </figure>
+                {% endif %}
+                <div class="sec-title">
+                    <h2>{{ section.settings.title }}</h2>
+                </div>
+                <p>{{ section.settings.content }}</p>
+                {% if section.settings.back_home_btn_label != blank %}
+                    <a class="theme-btn btn-one" href="{{ routes.root_url }}">{{ section.settings.back_home_btn_label }}</a>
+                {%- endif -%}
+            </div>
+        </div>
+    {% endif %}
+</div>
+
+{% schema %}
+    {
+        "name": "Page 404",
+        "tag": "section",
+        "class": "four-04-main-area",
+        "settings": [    
+            {
+                "type": "color_scheme",
+                "id": "color_scheme",
+                "default": "background-1",
+                "label": "Color scheme"
+            },
+            {
+                "label": "Layout type",
+                "id": "layout_type",
+                "type": "select",
+                "default": "normal",
+                "options": [
+                  {
+                    "value": "normal",
+                    "label": "Normal"
+                  },
+                  {
+                    "value": "box",
+                    "label": "Box"
+                  }
+                ]
+            },
+            {
+                "type": "select",
+                "id": "box_position",
+                "options": [
+                    {
+                        "value": "left",
+                        "label": "Left"
+                    },
+                    {
+                        "value": "center",
+                        "label": "Center"
+                    },
+                    {
+                        "value": "right",
+                        "label": "Right"
+                    }
+                ],
+                "default": "center",
+                "label": "Box position",
+                "info": "Only applies if the box layout type is enabled"
+            },
+            {
+                "type": "select",
+                "id": "text_alignment",
+                "options": [
+                    {
+                        "value": "left",
+                        "label": "Left"
+                    },
+                    {
+                        "value": "center",
+                        "label": "Center"
+                    },
+                    {
+                        "value": "right",
+                        "label": "Right"
+                    }
+                ],
+                "default": "center",
+                "label": "Text alignment"
+            },
+            {
+                "type": "image_picker",
+                "id": "error_page_background_page",
+                "label": "Background image"
+            },
+            {
+                "type": "image_picker",
+                "id": "images",
+                "label": "Secondary image"
+            },
+            {
+                "type": "text",
+                "id": "title",
+                "label": "Heading",
+                "default": "Can I pay in cash?"
+            },
+            {
+                "type": "textarea",
+                "id": "content",
+                "label": "Content",
+                "default": "Yes, we go above and beyond to ensure all items in Neat are plant-based."
+            },
+            {
+                "type": "text",
+                "id": "back_home_btn_label",
+                "label": "Button label",
+                "default": "Back To Home"
+            },
+            {
+                "type": "header",
+                "content": "Section padding"
+            }, 
+            {
+                "type": "range",
+                "id": "pesto_section_padding_top",
+                "min": 0,
+                "max": 200,
+                "step": 10,
+                "unit": "px",
+                "label": "t:sections.all.padding.padding_top",
+                "default": 150
+            }, 
+            {
+                "type": "range",
+                "id": "pesto_section_padding_bottom",
+                "min": 0,
+                "max": 200,
+                "step": 10,
+                "unit": "px",
+                "label": "t:sections.all.padding.padding_bottom",
+                "default": 150
+            }
+        ]
+    }
+{% endschema %}

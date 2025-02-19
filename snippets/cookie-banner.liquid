@@ -1,0 +1,15 @@
+{% if settings.notice_btn_acc != blank %}
+    <div id="cookies-banner" class="color-{{ settings.color_scheme_notice }}">
+        {% if settings.notice_text != blank %}
+            <span>{{ settings.notice_text }}</span>
+        {% endif %}
+
+        {% if settings.notice_text_reg != blank %}
+            <button id="decline-btn-cok">{{ settings.notice_text_reg }}</button>
+        {% endif %}
+
+        {% if settings.notice_btn_acc != blank %}
+            <button id="accept-btn-cok">{{ settings.notice_btn_acc }}</button>
+        {% endif %}
+    </div>
+{% endif %}

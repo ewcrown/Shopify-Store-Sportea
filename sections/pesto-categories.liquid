@@ -1,0 +1,353 @@
+
+
+{% assign product_card_layout_type = section.settings.product_card_layout_type %}
+{% if product_card_layout_type == 'slider' %}
+    {% assign product_row_slider_class = 'items-carousel-selector' %}
+    {% assign product_item_slider_class = 'items-carousel-items' %}
+{% endif %}
+
+{% assign col_dextop = section.settings.col_settings %}
+
+{% if col_dextop == '1' %}
+  {% assign col_dextop_val = '12' %}
+{% elsif col_dextop == '2' %}
+  {% assign col_dextop_val = '6' %}
+{% elsif col_dextop == '3' %}
+  {% assign col_dextop_val = '4' %}
+{% elsif col_dextop == '4' %}
+  {% assign col_dextop_val = '3' %}
+{% elsif col_dextop == '5' %}
+  {% assign col_dextop_val = '25' %}
+{% elsif col_dextop == '6' %}
+  {% assign col_dextop_val = '2' %}
+{% endif %}
+
+<link
+  rel="stylesheet"
+  href="{{ 'ui-categories-section.css' | asset_url }}"
+  media="print"
+  onload="this.media='all'">
+<noscript>{{ 'ui-categories-section.css' | asset_url | stylesheet_tag }}</noscript>
+
+{%- style -%}
+
+  {%- if section.settings.pesto_section_padding_top != blank -%}
+    #shopify-section-{{ section.id}} .shop-categories, #shopify-section-{{ section.id}} .categories-section {
+      padding-top: {{ section.settings.pesto_section_padding_top }}px;
+    }
+  {%- endif -%}
+
+  {%- if section.settings.pesto_section_padding_bottom != blank -%}
+    #shopify-section-{{ section.id}} .shop-categories, #shopify-section-{{ section.id}} .categories-section {
+      padding-bottom: {{ section.settings.pesto_section_padding_bottom }}px;
+    }
+  {%- endif -%}
+
+{%- endstyle -%}
+
+
+
+  <div id="{{ section.id }}" class="categories-section card-type-{{ section.settings.collection_card_type }} centred color-{{ section.settings.color_scheme }} image-size-{{ section.settings.collection_card_image_size }}">
+
+    {% if section.settings.banner_bottom_shape_image != blank %}
+        <div
+            class="overlay-object-section-bg"
+        >
+            {{ section.settings.banner_bottom_shape_image | image_url: width: 7680 | image_tag: loading: 'lazy', class: 'lazyload' }}
+        </div>
+    {%- endif -%}
+    
+     
+
+    <div class="large-container">
+      <div class="inner-content">
+        {% if section.settings.title != blank %}
+          <div class="sec-title centred">
+            <h2>{{ section.settings.title }}</h2>
+          </div>
+        {% endif %}
+          {% if product_card_layout_type == 'slider' %}<items-carousel>{%- endif -%}
+            <div class="{{product_row_slider_class}}  row clearfix justify-content-center items-carousel-selector">
+                {% for block in section.blocks %}
+                  <div class="{{product_item_slider_class}} col-xl-{{col_dextop_val}} col-lg-3 col-md-4 col-sm-6 col-12 single-column items-carousel-items" {{ block.shopify_attributes }}>
+                    <div class="shop-categories-two {% if block.settings.collection_select == blank %}svg-me-lacef-img{% endif %}">
+                      
+                      {% if section.settings.card_hover_banner_bottom_shape_image != blank %}
+                          {{ section.settings.card_hover_banner_bottom_shape_image | image_url: width: 7680 | image_tag: loading: 'lazy', class: 'lazyload card-hover-section-bg' }}
+                      {%- endif -%}
+
+                      {% if block.settings.collection_select.url != blank %}
+                        <a aria-label="{{block.settings.collection_select.title}}" class="all-ver-link" href="{{ block.settings.collection_select.url }}"></a>
+                      {% endif %}
+                      
+                      <figure class="image">
+                        {% if block.settings.collection_image_hover != blank%}
+                          {{ block.settings.collection_image_hover | image_url: width: 350 | image_tag: loading: 'lazy', class: 'lazyload hover-img-cat' }}
+                        {% endif %}
+                        {% if block.settings.collection_image != blank%}
+                          {{ block.settings.collection_image | image_url: width: 350 | image_tag: loading: 'lazy', class: 'lazyload' }}
+                        {% elsif block.settings.collection_select != blank %}
+                          {% if block.settings.collection_select.featured_image != blank %}
+                            <img
+                              data-src="{{ block.settings.collection_select.featured_image | img_url: '350x' }}"
+                              loading="lazy"
+                              class="lazyload"
+                              width="{{ block.settings.collection_select.featured_image.width }}"
+                              height="{{ block.settings.collection_select.featured_image.height }}"
+                              alt="{{ block.settings.collection_select.title }}">
+                          {% else %}
+                            {{ 'collection-1' | placeholder_svg_tag }}
+                          {% endif %}
+                        {% else %}
+                            {{ 'collection-1' | placeholder_svg_tag }}
+                        {% endif %}
+                      </figure>
+
+
+
+                      {% if block.settings.collection_select.url != blank %}
+                        <h4>
+                          {{ block.settings.collection_select.title }}
+                        </h4>
+                        {% if section.settings.collection_item_count == true %}
+                          <p>
+                            {% if block.settings.collection_select.all_products_count > 1 %}
+                              ({{ block.settings.collection_select.all_products_count }} items)
+                            {% else %}
+                              ({{ block.settings.collection_select.all_products_count }} item)
+                            {% endif %}
+                          </p>
+                        {% endif %}
+                      {% else %}
+                        <h4>
+                          {{ 'collection_list.collection_title_name' | t }}
+                        </h4>
+                        {% if section.settings.collection_item_count == true %}
+                          <p>
+                            (0 item)
+                          </p>
+                        {% endif %}
+                      {% endif %}
+                    </div>
+                  </div>
+                {%- endfor -%}
+            </div>
+          {% if product_card_layout_type == 'slider' %}</items-carousel>{%- endif -%}
+
+        {% if section.settings.banner_button_label != blank %}
+            <div class="more-btn">
+                <a
+                    href="{{ section.settings.banner_button_url }}"
+                    class="theme-btn btn-one"
+                    aria-label="{{ section.settings.banner_button_label }}"
+                >
+                    {{ section.settings.banner_button_label }}
+                </a>
+            </div>
+        {%- endif -%}
+      </div>
+    </div>
+    
+  </div>
+
+
+
+{% schema %}
+  {
+    "name": "Collection list",
+    "tag": "section",
+    "class": "shop-categories-custom",
+    "settings": [
+      {
+        "type": "color_scheme",
+        "id": "color_scheme",
+        "default": "background-4",
+        "label": "Color scheme"
+      },
+      {
+        "type": "image_picker",
+        "id": "banner_bottom_shape_image",
+        "label": "Background image"
+      },
+      {
+          "type": "header",
+          "content": "Layout"
+      },
+      {
+        "type": "select",
+        "default": "grid",
+        "label": "Layout type",
+        "id": "product_card_layout_type",
+        "options": [
+          {
+              "value": "grid",
+              "label": "Grid"
+          },
+          {
+              "value": "slider",
+              "label": "Slider"
+          }
+        ]
+      },
+      {
+        "label": "Card type",
+        "id": "collection_card_type",
+        "type": "select",
+        "default": "normal",
+        "options": [
+          {
+            "value": "normal",
+            "label": "Normal"
+          },
+          {
+            "value": "card",
+            "label": "Card"
+          }
+        ]
+      },
+      {
+        "type": "image_picker",
+        "id": "card_hover_banner_bottom_shape_image",
+        "label": "Card hover background image"
+      },
+      {
+        "type": "checkbox",
+        "id": "collection_item_count",
+        "default": false,
+        "label": "Show products count"
+      },
+      {
+        "label": "Image size",
+        "id": "collection_card_image_size",
+        "type": "select",
+        "default": "large",
+        "options": [
+          {
+            "value": "large",
+            "label": "Large"
+          },
+          {
+            "value": "small", 
+            "label": "Small"
+          }
+        ]
+      },
+      {
+        "label": "Columns",
+        "id": "col_settings",
+        "type": "select",
+        "default": "6",
+        "options": [
+          {
+            "value": "1",
+            "label": "1 Column"
+          },
+          {
+            "value": "2",
+            "label": "2 Columns"
+          },
+          {
+            "value": "3",
+            "label": "3 Columns"
+          },
+          {
+            "value": "4",
+            "label": "4 Columns"
+          }, {
+            "value": "5",
+            "label": "5 Columns"
+          }, {
+            "value": "6",
+            "label": "6 Columns"
+          }
+        ]
+      }, {
+        "type": "text",
+        "id": "title",
+        "label": "Heading",
+        "default": "Some header for your collection"
+      },
+      {
+        "type": "text",
+        "id": "banner_button_label",
+        "label": "Button label",
+        "default": "Button",
+        "info": "Leave the label blank to hide the button"
+      },
+      {
+        "type": "url",
+        "id": "banner_button_url",
+        "label": "Button link"
+      },
+      {
+        "type": "header",
+        "content": "Section padding"
+      }, {
+        "type": "range",
+        "id": "pesto_section_padding_top",
+        "min": 0,
+        "max": 200,
+        "step": 10,
+        "unit": "px",
+        "label": "t:sections.all.padding.padding_top",
+        "default": 150
+      }, {
+        "type": "range",
+        "id": "pesto_section_padding_bottom",
+        "min": 0,
+        "max": 200,
+        "step": 10,
+        "unit": "px",
+        "label": "t:sections.all.padding.padding_bottom",
+        "default": 150
+      }
+    ],
+    "blocks": [
+      {
+        "type": "featured_collection",
+        "name": "Collection",
+        "settings": [
+          {
+            "type": "collection",
+            "id": "collection_select",
+            "label": "Collection"
+          },
+          {
+            "type": "image_picker",
+            "id": "collection_image",
+            "label": "Collection image",
+            "info": "Optional. The selected image will be displayed instead of the collection's image."
+          },
+          {
+            "type": "image_picker",
+            "id": "collection_image_hover",
+            "label": "Collection hover image"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Collection list",
+        "blocks": [
+          {
+            "type": "featured_collection"
+          },
+          {
+            "type": "featured_collection"
+          },
+          {
+            "type": "featured_collection"
+          },
+          {
+            "type": "featured_collection"
+          }, {
+            "type": "featured_collection"
+          }, {
+            "type": "featured_collection"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}

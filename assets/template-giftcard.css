@@ -1,0 +1,358 @@
+/* Base */
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+a:empty,
+ul:empty,
+dl:empty,
+div:empty,
+section:empty,
+article:empty,
+p:empty,
+h1:empty,
+h2:empty,
+h3:empty,
+h4:empty,
+h5:empty,
+h6:empty {
+  display: none;
+}
+
+html {
+  box-sizing: border-box;
+  height: 100%;
+}
+
+body {
+  font-size: 1.5rem;
+  letter-spacing: 0.07rem;
+  margin: 0 auto;
+  padding: 0 2rem;
+  flex: 1 0 auto;
+  font-family: var(--font-body-family);
+}
+
+@media only screen and (min-width: 750px) {
+  body {
+    font-size: 1.6rem;
+    padding: 0 5rem;
+  }
+}
+
+
+
+
+.skip-to-content-link:focus {
+  z-index: 9999;
+  position: inherit;
+  overflow: auto;
+  width: auto;
+  height: auto;
+  clip: auto;
+}
+
+.link {
+  cursor: pointer;
+  display: inline-block;
+  border: none;
+  box-shadow: none;
+  padding: 0.4rem;
+  text-decoration: underline;
+  padding: 15px;
+  border-radius: 5px;
+  font-size: 18px;
+  line-height: 23px;
+}
+
+.button {
+  font-family: inherit;
+  cursor: pointer;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  padding: 1.5rem 3rem;
+  text-decoration: none;
+  min-width: 12rem;
+  height: auto;
+  font-size: 1.5rem;
+  letter-spacing: 0.1rem;
+  border-radius: 5px;
+}
+
+
+
+
+
+.gift-card {
+  padding-bottom: 3.4rem;
+}
+
+.gift-card__title {
+  text-align: center;
+  word-break: break-word;
+  padding: 4rem 0 1.7rem;
+}
+
+@media only screen and (min-width: 990px) {
+  .gift-card__title {
+    padding: 6rem 0 2.6rem;
+  }
+}
+
+.gift-card__image-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  margin-bottom: 0.8rem;
+  margin: 0 auto;
+}
+
+@media only screen and (min-width: 750px) {
+  .gift-card__image-wrapper {
+    margin-bottom: 0;
+    width: 40rem;
+  }
+}
+
+.gift-card__image {
+  max-width: 100%;
+  padding: 0 2rem;
+  height: auto;
+}
+
+@media only screen and (min-width: 750px) {
+  .gift-card__image {
+    padding: 0;
+  }
+}
+
+.gift-card__heading {
+  font-weight: 400;
+  margin: 2.5rem 0 1rem;
+}
+
+.gift-card__price {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.6rem;
+  font-weight: 400;
+  letter-spacing: 1px;
+  opacity: 0.85;
+}
+
+.gift-card__price > p:first-child {
+  margin-bottom: 1rem;
+}
+
+@media only screen and (min-width: 750px) {
+  .gift-card__price {
+    font-size: 2rem;
+    line-height: 1rem;
+  }
+}
+
+.gift-card__label:not(.badge) {
+  font-weight: 400;
+  opacity: 0.7;
+}
+
+.gift-card__number {
+  border: none;
+  font-size: 1.2rem;
+  font-weight: 400;
+  text-align: center;
+  width: 100%;
+  margin: 25px auto;
+  padding: 4px;
+  border-radius: 5px;
+  background: rgb(var(--color-background));
+  border: 1px solid rgb(var(--color-background));
+  color: rgb(var(--color-foreground));
+}
+
+
+.gift-card__text {
+  margin-bottom: 4rem;
+  opacity: 0.7;
+}
+
+.gift-card__information {
+  text-align: center;
+  margin-top: 3rem;
+}
+
+.gift-card__label {
+  font-size: 1.3rem;
+  letter-spacing: 0.05rem;
+  font-weight: 500;
+  display: inline;
+  margin-left: 1rem;
+}
+
+.badge {
+  margin: 1.7rem 0 1rem 1rem;
+  border-radius: 4rem;
+  display: inline-block;
+  font-size: 1.2rem;
+  letter-spacing: 0.1rem;
+  line-height: 1;
+  padding: 0.6rem 1.3rem;
+  text-align: center;
+}
+
+
+
+.caption-large {
+  font-size: 1.3rem;
+  letter-spacing: 0.04rem;
+}
+
+.gift-card__copy-code {
+  margin-bottom: 2.2rem;
+}
+
+.gift-card__qr-code {
+  margin-top: 3rem;
+}
+
+@media only screen and (min-width: 750px) {
+  .gift-card__qr-code {
+    margin-top: 5rem;
+  }
+}
+
+.gift-card__qr-code img {
+  margin: 0 auto;
+}
+
+.gift_card__apple-wallet {
+  line-height: 0;
+  display: block;
+  margin-bottom: 5rem;
+}
+
+.gift-card__buttons {
+  display: flex;
+  flex-direction: column;
+  max-width: 25rem;
+  flex-wrap: wrap;
+  margin: 0 auto;
+}
+
+.gift-card__buttons > .button:first-child {
+  display: block;
+  margin-bottom: 2rem;
+}
+
+/*
+  Focus ring - default (with offset)
+*/
+
+/* Fallback - for browsers that don't support :focus-visible, a fallback is set for :focus */
+*:focus {
+  outline: 0;
+  box-shadow: none;
+}
+
+*:focus-visible {
+  outline-offset: 0.3rem;
+}
+
+/* Fallback - for browsers that don't support :focus-visible, a fallback is set for :focus */
+.focused, .no-js *:focus {
+  outline-offset: 0.3rem;
+}
+
+/* Negate the fallback side-effect for browsers that support :focus-visible */
+.no-js *:focus:not(:focus-visible) {
+  outline: 0;
+  box-shadow: none;
+}
+
+.form__message {
+  align-items: center;
+  display: flex;
+  font-size: 1.2rem;
+  line-height: 1;
+  margin-top: 1rem;
+  justify-content: center;
+}
+
+.form__message .icon {
+  flex-shrink: 0;
+  height: 1.3rem;
+  margin-right: 0.5rem;
+  width: 1.3rem;
+}
+
+@media print {
+  .no-print {
+    display: none;
+  }
+}
+
+h1.gift-card__heading {
+  font-weight: 400;
+  font-size: 17px;
+  margin: 30px auto;
+}
+.gift-card__buttons a, .gift-card__buttons button {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: middle;
+  font-family: var(--font-body-family);
+  font-size: 14px;
+  line-height: 25px;
+  font-weight: 700;
+  text-align: center;
+  padding: 15px 38px;
+  border-radius: 5px;
+  text-transform: uppercase;
+  z-index: 1;
+  transition: all 500ms ease;
+  background: rgb(var(--color-button));
+  color: rgb(var(--color-button-text));
+}
+.gift-card__buttons a:hover, .gift-card__buttons button:hover {
+  background: rgb(var(--color-button-hover));
+  color: rgb(var(--color-button-text-hover));
+}
+.gift-card__copy-code .link {
+  background: rgb(var(--color-secondary-button));
+  color: rgb(var(--color-secondary-button-text));
+  border: 5px;
+}
+.gift-card__copy-code:hover .link {
+  background: rgb(var(--color-secondary-button-hover));
+  color: rgb(var(--color-secondary-button-text-hover));
+}
+.gift-card__image-wrapper img {
+  max-width: 420px;
+  width: 100%;
+  margin: 0 auto;
+}
+.gift-card__information label[for="gift-cardform"] {
+  color: rgb(var(--color-foreground));
+}
+.gift-card__title span.h2 {
+  color: rgb(var(--color-foreground));
+}
+
+.gift-card__title .gift-card__heading {
+  color: rgb(var(--color-foreground));
+}
+.gift-card__title .gift-card__price p {
+  color: rgb(var(--color-foreground));
+}
+
+.gift-card-me-area {
+  background: rgb(var(--color-background));
+  color: rgb(var(--color-foreground));
+}

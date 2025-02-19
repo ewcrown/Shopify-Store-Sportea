@@ -1,0 +1,153 @@
+<style>
+  /* General Menu Styles */
+  .gf-menu {
+    background-color: #fff;
+    padding: 20px;
+  }
+
+  .gf-menu__container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .gf-menu__list {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+  }
+
+  .gf-menu__item {
+    position: relative;
+    margin-right: 30px;
+  }
+
+  .gf-menu__link {
+    text-decoration: none;
+    color: #264786;
+    font-size: 17.89px; /* Updated font size */
+    padding: 10px;
+    transition: color 0.3s ease;
+    font-family: 'Poppins', sans-serif !important;
+    font-weight: 500;
+  }
+
+  .gf-menu__link:hover {
+    color: #007BFF;
+  }
+
+  .gf-menu__item--has-dropdown .gf-menu__dropdown-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding-left: 5px;
+    display: inline-flex;
+    align-items: center;
+  }
+
+  .gf-menu__dropdown-toggle svg {
+    width: 12px; /* Reduced icon size */
+    height: 6px; /* Reduced icon size */
+    transition: transform 0.3s ease;
+  }
+
+  .gf-menu__sub-list {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #fff;
+    list-style: none;
+    padding: 15px 0;
+    margin: 0;
+    display: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+  }
+
+  .gf-menu__sub-item {
+    margin: 0;
+    padding: 0;
+  }
+
+  .gf-menu__sub-link {
+    display: block;
+    padding: 10px 20px;
+    color: #1A192E;
+    text-decoration: none;
+    font-size: 14px;
+    white-space: nowrap;
+    transition: background-color 0.3s ease;
+  }
+
+  .gf-menu__sub-link:hover {
+    background-color: #f5f5f5;
+  }
+
+  .gf-menu__item--has-dropdown:hover .gf-menu__sub-list {
+    display: block;
+  }
+
+  .gf-menu__item--has-dropdown:hover .gf-menu__dropdown-toggle svg {
+    transform: rotate(180deg);
+  }
+
+  /* Media Queries for Responsiveness */
+  @media (max-width: 1024px) {
+    .gf-menu__link {
+      font-size: 16.5px; /* Slightly reduced font size for tablets */
+    }
+
+    .gf-menu__item {
+      margin-right: 20px;
+    }
+  }
+
+  @media (max-width: 1260px) {
+    .gf-menu__link {
+      font-size: 15px !important;
+    }
+
+    .gf-menu__item {
+      margin-right: 15px;
+    }
+  }
+
+  /* Hide Menu on Mobile Screens (Below 768px) */
+  @media (max-width: 1199px) {
+    .gf-menu {
+      display: none;
+    }
+
+  }
+</style>
+{% if mega_menu %}
+  <ul class="gf-menu gf-menu__list">
+    {%- for link in mega_menu.links -%}
+      <li class="gf-menu__item {% if link.links != blank %}gf-menu__item--has-dropdown{% endif %}">
+        <a href="{{ link.url }}" class="gf-menu__link">{{ link.title }}</a>
+
+        {% if link.links != blank %}
+          <button class="gf-menu__dropdown-toggle">
+            <svg width="12" height="6" viewBox="0 0 12 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M11 1L6 5L1 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+
+          <!-- Render Sub-menu if available -->
+          <ul class="gf-menu__sub-list">
+            {%- for sublink in link.links -%}
+              <li class="gf-menu__sub-item">
+                <a href="{{ sublink.url }}" class="gf-menu__sub-link">{{ sublink.title }}</a>
+              </li>
+            {%- endfor -%}
+          </ul>
+        {% endif %}
+      </li>
+    {%- endfor -%}
+  </ul>
+{% else %}
+  <p>No menu data available</p>
+{% endif %}

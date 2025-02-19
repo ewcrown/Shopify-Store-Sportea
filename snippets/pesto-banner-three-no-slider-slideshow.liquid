@@ -1,0 +1,92 @@
+{% liquid
+assign settings = block.settings 
+assign banner_image_overflow = settings.banner_image_overflow
+    assign banner_column_option = settings.banner_column_option
+    assign show_the_secondary_image = settings.show_the_secondary_image
+    assign slider_item_title = settings.slider_item_title
+    assign slider_item_title_size = settings.slider_item_title_size
+    assign slider_item_content_one = settings.slider_item_content_one
+    assign slider_item_content_two = settings.slider_item_content_two
+    assign slider_item_button_label = settings.slider_item_button_label
+    assign slider_item_button_link = settings.slider_item_button_link
+    assign slider_item_right_images = settings.slider_item_right_images
+    assign banner_image_position = settings.banner_image_position
+    assign text_alignment = settings.text_alignment
+    assign image_placement = settings.image_placement
+    assign text_placement = settings.text_placement 
+    assign slide_item_background_shap_image = settings.slide_item_background_shap_image | img_url: 'master'
+    assign slide_item_video = settings.slide_item_video
+    
+%}
+
+{% style %}
+    .banner-slideshow #slideshow-content-{{ block.id }}{
+        max-width: {{ block.settings.slider_item_title_width }}% !important;
+    }
+    @media(max-width: 991px){
+        .banner-slideshow #slideshow-content-{{ block.id }}{
+            max-width: 100% !important;
+        }
+    }
+{% endstyle %}
+
+<div class="some-{{ block.id }} videobloc-area">
+    
+    {%- if slide_item_video != blank -%}
+        <div class="fullscreen-video-wrap">
+            {{ slide_item_video | video_tag: autoplay: true, loop: true, muted: true }}
+        </div>
+    {%- endif -%}
+
+    {%- if block.settings.slide_item_background_shap_image != blank -%}
+        {% assign dataImg = block.settings.slide_item_background_shap_image | img_url %}
+        <div
+            class="shape"
+        >
+            {{ block.settings.slide_item_background_shap_image | image_url: width: block.settings.slide_item_background_shap_image.width | image_tag: loading: 'lazy', class: 'lazyload', rel: 'preload', data-src: dataImg, alt: block.settings.slide_item_background_shap_image.alt }}
+        </div>
+    {%- endif -%}
+    <div class="large-container">
+        <div class="row align-items-center {% if show_the_secondary_image == true %}{% if image_placement == 'text_right' %}pesto-image-reverse {% endif %}{% endif %}clearfix">  
+            <div class="col-lg-{% if show_the_secondary_image %}{% if banner_column_option == 'small' %}8{% elsif banner_column_option == 'medium' %}6{% elsif banner_column_option == 'large' %}4{% endif %}{% else %}12{% endif %} col-md-12 col-sm-12 content-column">
+            <div id="slideshow-content-{{ block.id }}" class="content-box pesto-text-{{ text_alignment }} {% if show_the_secondary_image == false %}{% if text_placement == 'text_p_left' %} text-position-left{% elsif text_placement == 'text_p_center' %}text-position-center{% else %}text-position-right{% endif %}{% endif %}">
+                    {%- if slider_item_content_one != blank -%}
+                        <p role="heading">{{ slider_item_content_one }}</p>
+                    {%- endif -%}
+                    {%- if slider_item_title != blank -%}
+                        <h1 role="heading" class="{{ slider_item_title_size }}">{{ slider_item_title }}</h1>
+                    {%- endif -%}
+                    {%- if slider_item_content_two != blank -%}
+                        <h2 role="heading">{{ slider_item_content_two }}</h2>
+                    {%- endif -%}
+                    {%- if slider_item_button_label != blank -%}
+                        <div class="btn-box">
+                            <a href="{{ slider_item_button_link }}" class="theme-btn btn-two" aria-label="{{ slider_item_button_label }}">{{ slider_item_button_label }}</a>
+                        </div>
+                    {%- endif -%}
+                </div>
+            </div>  
+            {% if show_the_secondary_image %}
+                <div class="col-lg-{% if banner_column_option == 'small' %}4{% elsif banner_column_option == 'medium' %}6{% elsif banner_column_option == 'large' %}8{% endif %} col-md-12 col-sm-12 image-column">
+                    <div class="image-box {% if banner_image_overflow %}image-overflow{% endif %}">
+                        <figure class="image {{banner_image_position}}">
+                            {%- if slider_item_right_images -%}
+                                <img
+                                data-src="{{ slider_item_right_images | img_url: '550x' }}"
+                                loading="lazy"  class="lazyload"
+                                width="{{ slider_item_right_images.width }}"
+                                height="{{ slider_item_right_images.height }}"
+                                alt="{{ slider_item_right_images.alt | escape }}"
+                                >
+                            {%- else -%}
+                                {{ 'collection-6' | placeholder_svg_tag: 'placeholder-svg-banner-three' }}
+                            {%- endif -%}
+                        </figure>
+                    </div>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+</div>
+
+

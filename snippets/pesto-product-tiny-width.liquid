@@ -1,0 +1,39 @@
+<div class="col-lg-6 col-md-12 col-sm-12 explore-block">
+    <div class="explore-block-one wow fadeInLeft animated" data-wow-delay="00ms" data-wow-duration="1500ms">
+        <div class="inner-box">
+           {% if product.featured_media != blank %}
+                <figure class="image-box">
+                    <img
+                        data-src="{{ product.featured_media | img_url: '130x130' }}"
+                        alt="{{ product.featured_media.alt | escape }}"
+                        loading="lazy"  class="lazyload"
+                        class="img-reduce"
+                        width="{{ product.featured_media.width }}"
+                        height="{{ product.featured_media.height }}"
+                    >
+                </figure>
+            {% endif %}
+            <div class="inner">
+                <div class="title-box">
+                    <h4><a aria-label="{{ 'general.link_to_product' | t }}" href="{{ product.url | default: '#' }}">{{ product.title | escape }}</a></h4>
+                    <div class="line"></div>
+                    <div class="title-of-product">
+                        {% render 'price-raw', product: product %}
+                    </div>
+                </div>
+            
+                {% if product.description != blank %}
+                    <div class="content-of-product">
+                        {{ product.description | strip_html | truncatewords: 10 }}
+                    </div>
+                {% endif %}
+               
+                <div class="cart-box"><a aria-label="{{ 'general.link_to_product' | t }}" href="{{ product.url | default: '#' }}" class="theme-btn btn-one">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
+                      </svg>
+                </a></div>
+            </div>
+        </div>
+    </div>
+</div>

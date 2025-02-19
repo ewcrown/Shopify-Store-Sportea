@@ -1,0 +1,60 @@
+{% liquid
+    assign settings = section.settings 
+    assign pesto_image_ratio = settings.pesto_image_ratio
+    assign card_border_visibility = settings.card_border_visibility
+    assign enable_collection_desc = settings.enable_collection_desc
+%}
+<div class="shop-block-one sin-prd-item hover-one">
+    <div class="inner-box {% if card_border_visibility %}show-border{% endif %}">
+        <div class="card__badge">
+            {%- if product.available == false -%}
+              <span id="Badge-{{ section_id }}-{{ product.id }}" class="badge badge--bottom-left color-{{ settings.sold_out_badge_color_scheme }}">{{ 'products.product.sold_out' | t }}</span>
+            {%- elsif product.compare_at_price > product.price and product.available -%}
+              <span id="Badge-{{ section_id }}-{{ product.id }}" class="badge badge--bottom-left color-{{ settings.sale_badge_color_scheme }}">{{ 'products.product.on_sale' | t }}</span>
+            {%- endif -%}
+        </div>
+        {%- if product.featured_media -%}
+            <figure class="image pesto-image-{{ pesto_image_ratio }}" role="none">
+                <img
+                    srcset="
+                        {%- if product.featured_media.width >= 165 -%}{{ product.featured_media | img_url: '165x' }} 165w,{%- endif -%}
+                        {%- if product.featured_media.width >= 360 -%}{{ product.featured_media | img_url: '360x' }} 360w,{%- endif -%}
+                        {%- if product.featured_media.width >= 533 -%}{{ product.featured_media | img_url: '533x' }} 533w,{%- endif -%}
+                        {%- if product.featured_media.width >= 720 -%}{{ product.featured_media | img_url: '720x' }} 720w,{%- endif -%}
+                        {%- if product.featured_media.width >= 940 -%}{{ product.featured_media | img_url: '940x' }} 940w,{%- endif -%}
+                        {%- if product.featured_media.width >= 1066 -%}{{ product.featured_media | img_url: '1066x' }} 1066w,{%- endif -%}
+                        {{ product.featured_media | img_url: 'master' }} {{ product.featured_media.width }}w
+                        "
+                    data-src="{{ product.featured_media | img_url: '533x' }}"
+                    alt="{{ product.featured_media.alt | escape }}"
+                    class="img-reduce lazyload"
+                    width="{{ product.featured_media.width }}"
+                    height="{{ product.featured_media.height }}"
+                >
+            </figure>
+        {%- else -%}
+            <figure class="image">
+                {{ 'product-1' | placeholder_svg_tag: 'placeholder-svg-all-collection' }}
+            </figure>
+        {%- endif -%}
+        <div class="content-box">
+            <div class="content-box-info">
+                <h4><a href="{{ product.url | default: '#' }}">{{ product.title | escape }}</a></h4>
+                {% if enable_collection_desc %}
+                    <div class="content-of-product">
+                        {% if product.description != blank %}  {{ product.description | strip_html | truncatewords: 10 }} {% endif %}
+                    </div>
+                {% endif %}
+                <div class="title-of-product">
+                    {% render 'price-raw', product: product %}
+                </div>
+                {%- if section.settings.enable_vendor -%}
+                    <div class="product-bendor-item">
+                        {{ product.vendor }}
+                    </div>
+                {% endif %}
+            </div>
+            <div class="btn-box"><a href="{{ product.url | default: '#' }}" class="theme-btn btn-one style-two">{{ 'product_tiny.view_product' | t }}</a></div>
+        </div>
+    </div>
+</div>

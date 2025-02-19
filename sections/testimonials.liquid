@@ -1,0 +1,237 @@
+<!-- Testimonials Section -->
+<section class="sportea-testimonials-section" id="sportea-testimonials-section" style="background:rgb(43 78 146)">
+  <div class="sportea-row sportea-testimonials-row">
+    <div class="sportea-testimonials-wrap page-width">
+      <div class="page-width">
+        {% if section.settings.title %}
+          <h2 class="sportea-color-white">{{ section.settings.title }}</h2>
+        {% endif %}
+        {% if section.settings.caption %}
+          <p class="sportea-color-white caption-testimonial">{{ section.settings.caption }}</p>
+        {% endif %}
+        <div class="he-tvc-row">
+          <div class="he-tvc-container">
+            <div class="he-tvc-inner-row">
+              <div class="he-tvc-wrap">
+                {% for video in section.blocks %}
+                  {% if video.type == 'video' %}
+                    <div class="he-tvc-video" onclick="window.open('{{ video.settings.productUrl }}','_self')">
+                      <video
+                        width="100%"
+                        height="600"
+                        loop
+                        controls
+                        playsinline
+                        poster="{{ video.settings.video_thumb | image_url }}?text=Video+Thumbnail"
+                      >
+                        <source src="{{ video.settings.video_url }}" type="video/mp4">
+                      </video>
+                      <h4>{{ video.settings.product_title }}</h4>
+                    </div>
+                  {% endif %}
+                {% endfor %}
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="splide sportea-testimonials-slider">
+          <div class="splide__track">
+            <ul class="splide__list">
+              {% for block in section.blocks %}
+                {% if block.type == 'Review' %}
+                  <li class="splide__slide">
+                    <div class="sportea-testimonials-card">
+                      <img
+                        src="https://cdn.shopify.com/s/files/1/0894/2636/files/Stars.png?v=1726102616"
+                        class="img-responsive"
+                        alt="Stars"
+                      >
+                      {% if block.settings.description %}
+                        <p class="short-description">
+                          "{{ block.settings.description | truncate: 250 }}"
+                          <a href="javascript:void(0);" role="button" class="toggle-description">Read More</a>
+                        </p>
+                        <p class="full-description" style="max-height: 0; overflow: hidden;">
+                          "{{ block.settings.description }}"
+                          <a href="javascript:void(0);" role="button" class="toggle-description">Read Less</a>
+                        </p>
+                      {% endif %}
+                      <div class="sportea-testimonials-author">
+                        {% if block.settings.icon %}
+                          <img
+                            src="{{ block.settings.icon | image_url }}"
+                            width="40px"
+                            height=""
+                            class=""
+                          >
+                        {% endif %}
+                        <div class="sportea-testimonials-text-block">
+                          <p style="color:#000000">
+                            {% if block.settings.author %}
+                              <b>{{ block.settings.author }}</b>
+                            {% endif %}
+                            {% if block.settings.city %}
+                              {{ block.settings.city }}
+                            {% endif %}
+                            {% if block.settings.state %}
+                              {{ block.settings.state }}
+                            {% endif %}
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                {% endif %}
+              {% endfor %}
+            </ul>
+          </div>
+          <div class="sportea-testimonial-slider-options">
+            <ul class="splide__pagination"></ul>
+
+            <div class="splide__arrows">
+              <button class="splide__arrow splide__arrow--prev">
+                <img
+                  src="https://cdn.shopify.com/s/files/1/0894/2636/files/arrow-left.svg?v=1709311059"
+                  class="img-responsive"
+                  alt="Splide Arrow Prev"
+                >
+              </button>
+              <button class="splide__arrow splide__arrow--next">
+                <img
+                  src="https://cdn.shopify.com/s/files/1/0894/2636/files/arrow-right.svg?v=1709311059"
+                  class="img-responsive"
+                  alt="Splide Arrow Next"
+                >
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Testimonials Section End -->
+
+<style>
+    /* CSS for smooth transition */
+    .full-description {
+      transition: max-height 0.5s ease-out, padding 0.5s ease-out;
+    }
+
+    .short-description {
+      transition: opacity 0.5s ease-out;
+    }
+    a.toggle-description {
+      color: #dc3545;
+      font-weight: 700;
+  }
+</style>
+
+<script>
+  document.querySelectorAll('.toggle-description').forEach(function(toggleLink) {
+    toggleLink.addEventListener('click', function() {
+      var isShortDescription = this.closest('.short-description') !== null;
+      var shortDesc = isShortDescription ? this.closest('.short-description') : this.closest('.full-description').previousElementSibling;
+      var fullDesc = shortDesc.nextElementSibling;
+
+      if (fullDesc.style.maxHeight === "0px" || fullDesc.style.maxHeight === "") {
+        // Expand full description and hide short description
+        fullDesc.style.maxHeight = fullDesc.scrollHeight + "px";
+        fullDesc.style.overflow = "visible";
+        shortDesc.style.display = "none";
+        this.innerText = 'Read More'; // Change link text
+      } else {
+        // Collapse full description and show short description
+        fullDesc.style.maxHeight = "0px";
+        fullDesc.style.overflow = "hidden";
+        shortDesc.style.display = "block";
+        this.innerText = 'Read Less'; // Change link text back
+      }
+    });
+  });
+</script>
+
+{% schema %}
+  {
+  "name": "Testimonials",
+  "settings": [
+    {
+      "type": "html",
+      "id": "title",
+      "label": "title",
+      "default": "See What Customers Say About SPORTea®",
+      "placeholder": "See What Customers Say About SPORTea®"
+    },
+    {
+      "type": "text",
+      "id": "caption",
+      "label": "caption",
+      "default": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      "placeholder": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+    }
+  ],
+  "blocks": [
+    {
+      "name": "Review",
+      "type": "Review",
+      "settings": [
+        {
+          "type": "html",
+          "id": "description",
+          "label": "description",
+          "default": "description",
+          "placeholder": "description"
+        },
+        {
+          "type": "text",
+          "id": "author",
+          "label": "Author",
+          "default": "Author",
+          "placeholder": "Author"
+        },
+        {
+          "type": "text",
+          "id": "city",
+          "label": "city",
+          "default": "city",
+          "placeholder": "city"
+        },
+        {
+          "type": "text",
+          "id": "state",
+          "label": "state",
+          "default": "state",
+          "placeholder": "state"
+        },
+        {
+          "type": "image_picker",
+          "id": "icon",
+          "label": "Icon",
+          "info": "icon"
+        }
+      ]
+    },
+    {
+       "name": "Video",
+        "type": "video",
+        "settings": [
+          {
+            "id": "video_url",
+            "type": "url",
+            "label": "Video URL"
+          },
+          {
+            "id": "video_thumb",
+            "type": "image_picker",
+            "label": "Video Thumbnail"
+          }
+        ]
+    },
+  ],
+  "presets": [
+    {
+      "name": "Testimonials"
+    }
+  ]
+}
+{% endschema %}

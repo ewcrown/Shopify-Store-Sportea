@@ -1,0 +1,50 @@
+
+{% liquid
+    assign settings = block.settings 
+    assign slider_item_title = settings.slider_item_title
+    assign slider_item_content = settings.slider_item_content
+    assign slider_item_url = settings.slider_item_url
+    assign slider_item_url_text = settings.slider_item_url_text
+    assign slider_item_images = settings.slider_item_images
+    assign slider_item_images_bg = settings.slider_item_images_bg
+    assign slider_bg_color = settings.slider_bg_color
+%}
+
+<div id="shopify-block-{{ block.id }}" class="swiper-slide slide-item">
+    {%- if slider_item_images_bg.id != '' or slider_bg_color -%}
+        {%- style -%}
+           
+        {%- endstyle -%}
+    {%- endif -%}
+    <div class="large-container">
+        <div class="row align-items-center clearfix">
+            <div class="col-lg-6 col-md-12 col-sm-12 content-column">
+                <div class="content-box">
+                    <h1>{{ slider_item_title }}</h1>
+                    <p>{{ slider_item_content }}</p>
+                    <div class="btn-box">
+                        <a href="{{ slider_item_url }}" class="theme-btn">{{ slider_item_url_text }}</a>
+                    </div>
+                </div>
+            </div>  
+            <div class="col-lg-6 col-md-12 col-sm-12 image-column">
+                <div class="image-box">
+                    <figure class="image">
+                        {%- if slider_item_images != blank -%}
+                            <img
+                            src="{{ slider_item_images | img_url: 'master' }}"
+                            loading="lazy"  class="lazyload"
+                            width="{{ slider_item_images.width }}"
+                            height="{{ slider_item_images.height }}"
+                            alt="{{ slider_item_images.alt | escape }}"
+                            >
+                        {%- else -%}
+                            {{ 'collection-6' | placeholder_svg_tag: 'placeholder-svg-banner-one' }}
+                        {%- endif -%}
+
+                    </figure>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

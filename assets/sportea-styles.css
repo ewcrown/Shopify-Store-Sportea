@@ -1,0 +1,142 @@
+.ai-sp-menu-btn .sportea-trademark-sup {
+    display: none !important;
+}
+/* .page-title-three .inner-box span {
+    font-size: 100px !important;
+} */
+
+.banner-carousel .content-box h1.lg .sportea-trademark-sup,.page-title-three-header span.sportea-trademark-sup {
+    font-size: 26px !important;
+    vertical-align: 30px;
+}
+ p span.sportea-trademark-sup {
+    font-size: 12px !important;
+    vertical-align: 5px ;
+}
+
+.header__sub-nested-menu .sportea-trademark-sup,
+.ai-sp-menu-item .sportea-trademark-sup {
+    font-size: 14px;
+    vertical-align: 6px;
+}
+.sportea-review-block-qoute p .sportea-trademark-sup {
+    font-size: 14px;
+    vertical-align: 10px;
+}
+.product-card-text-large .shop-block-one .inner-box .content-box h4 .sportea-trademark-sup {
+    font-size: 14px;
+    vertical-align: 10px;
+}
+.sportea-testimonials-wrap h2 span .sportea-trademark-sup {
+    font-size: 22px;
+    vertical-align: 30px;
+}
+.sportea-faq-wrap .sportea-trademark-sup {
+    font-size: 12px;
+    vertical-align: 7px;
+}
+.sportea-trademark-sup {
+    display: inline-block !important;
+    font-size: 20px !important;
+    vertical-align: 10px;
+}
+.he-tvc-video video {
+    max-width: 100%;
+    height: auto;
+}
+.skip-to-content-link {
+  display:none !important;
+}
+.banner-section .banner-carousel .theme-btn{
+  color:#fff !important;
+}
+
+.ai-sp-menu-item:last-of-type a:hover{
+  background:#2B4E92;
+}
+.ai-sp-menu-item:last-of-type a {
+    background: #dc222a;
+    border-radius: 5px;
+    color: #fff !important;
+}
+@media (max-width: 1300px) {
+  .ai-sp-menu-item {
+    margin-right: 12px !important;
+  }
+  .header__menu-btn,
+  .ai-sp-menu-btn {
+    font-size: 12px !important;
+  }
+  .header .container {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    max-width: 100% !imo;
+  }
+
+  .sp-search-container svg {
+    width: 0.5em !important;
+    height: 0.5em !important;
+    font-size: 37px !important;
+  }
+
+  .sp-header-search-btn-click {
+    right: 10px !important;
+    top: 45% !important;
+  }
+}
+@media (max-width: 1600px) {
+  .ai-sp-menu-btn {
+    padding: 10px 5px !important;
+  }
+}
+.header__menu {
+  gap: 0px !important;
+}
+.header__menu-btn,
+.ai-sp-menu-btn {
+  font-size: 15px;
+}
+.pesto-announcement-bar .announcement-bar-link-active {
+  color: #fff;
+  text-decoration: none;
+}
+.content-box a:hover {
+  color: rgb(var(--color-button)) !important;
+}
+.price-item--sale {
+  color: #dc232a !important;
+}
+
+.product-description-content li {
+  line-height: 26px;
+}
+.product-description-content p {
+  line-height: 26px;
+  margin-bottom: 30px;
+}
+@media (max-width: 767px) {
+  .banner-carousel .btn-group, .btn-group-vertical {
+    flex-direction: column;
+    gap: 16px !important;
+    margin-top: 20px;
+  }
+  .title-of-product .price.price--on-sale .price__sale {
+    justify-content: center !important;
+  }
+  .banner-section.no-slider-area .banner-carousel .shape::before {
+    content: "";
+    background: rgba(0, 0, 0, 0.4);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+  }
+  .gf-container__title {
+    font-size: 30px !important;
+  }
+  .sportea-why-us-wrap ul li img {
+    width: 50px;
+  }
+}

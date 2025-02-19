@@ -1,0 +1,1072 @@
+{% assign col_dextop = section.settings.col_settings %}
+{% if col_dextop == 1 %}
+  {% assign col_dextop_val = '12' %}
+{% elsif col_dextop == 2 %}
+  {% assign col_dextop_val = '6' %}
+{% elsif col_dextop == 3 %}
+  {% assign col_dextop_val = '4' %}
+{% elsif col_dextop == 4 %}
+  {% assign col_dextop_val = '3' %}
+{% endif %}
+
+{%- style -%}
+  {%- if section.settings.pesto_section_padding_top != blank -%}
+    #shopify-section-{{ section.id }} .footer-top{
+        padding-top: {{ section.settings.pesto_section_padding_top }}px;
+    }
+  {%- endif -%}
+  {%- if section.settings.pesto_section_padding_bottom != blank -%}
+    #shopify-section-{{ section.id }} .footer-top{
+        padding-bottom: {{ section.settings.pesto_section_padding_bottom }}px;
+    }
+  {%- endif -%}
+
+  {%- if section.settings.pesto_footer_bottom_padding_top != blank -%}
+    #shopify-section-{{ section.id }} .rif-ftr-bottom{
+        padding-top: {{ section.settings.pesto_footer_bottom_padding_top }}px;
+    }
+  {%- endif -%}
+  {%- if section.settings.pesto_footer_bottom_padding_bottom != blank -%}
+    #shopify-section-{{ section.id }} .rif-ftr-bottom{
+        padding-bottom: {{ section.settings.pesto_footer_bottom_padding_bottom }}px;
+    }
+  {%- endif -%}
+{%- endstyle -%}
+
+<!-- footer-style-two -->
+<footer>
+  <div id="{{ section.id }}" class="color-{{section.settings.color_scheme}} footer-style-two second-version">
+    {% if section.settings.footer_section_bg_image != blank %}
+      <div
+        class="overlay-object-section-bg"
+      >
+        {{
+          section.settings.footer_section_bg_image
+          | image_url: width: 7680
+          | image_tag: loading: 'lazy', class: 'lazyload'
+        }}
+      </div>
+    {%- endif -%}
+
+    {% if section.blocks != blank %}
+      <div class="footer-top">
+        <div class="large-container">
+          <div class="row clearfix">
+            {%- for block in section.blocks -%}
+              {%- case block.type -%}
+                {%- when 'contact_us' -%}
+                  <div class="col-lg-{{col_dextop_val}} col-md-6 col-sm-12 footer-column">
+                    <div class="footer-widget contact-widget">
+                      <div class="widget-title {% if block.settings.contact_item_title != blank %}have-heading-text{% endif %} {% if block.settings.pesto_footer_logo != blank %}have-logo-footer{% endif %} ">
+                        {% style %}
+                          .contact-widget .contact-subheading {
+                              padding-bottom: {{ block.settings.contact_number_title_pb }}px;
+                          }
+                          #shopify-section-{{ section.id }} .footer-style-two .footer-top .contact-widget .social-links{
+                              padding-top: {{ block.settings.contact_social_pt }}px;
+                          }
+                        {% endstyle %}
+
+                        {%- if block.settings.contact_item_title != blank -%}
+                          <h4>{{ block.settings.contact_item_title }}</h4>
+                        {%- endif -%}
+
+                        {%- if block.settings.pesto_footer_logo != blank -%}
+                          {{
+                            block.settings.pesto_footer_logo
+                            | image_url: width: block.settings.pesto_footer_logo.width
+                            | image_tag: loading: 'lazy', class: 'lazyload'
+                          }}
+                        {%- endif -%}
+                      </div>
+                      <div class="widget-content">
+                        {% if block.settings.contact_item_contact_number_title != blank %}
+                          <span class="contact-subheading">{{ block.settings.contact_item_contact_number_title }}</span>
+                        {% endif %}
+                        {%- if block.settings.contact_item_contact_number != blank -%}
+                          <h3>
+                            <a href="tel:{{ block.settings.contact_item_contact_number | replace: ' ', '' }}">
+                              {{- block.settings.contact_item_contact_number -}}
+                            </a>
+                          </h3>
+                        {%- endif -%}
+
+                        {%- if block.settings.contact_item_contact_address_text != blank -%}
+                          <p>{{ block.settings.contact_item_contact_address_text }}</p>
+                        {%- endif -%}
+
+                        {%- if block.settings.contact_item_contact_mail != blank -%}
+                          <div class="mail">
+                            <a href="mailto:{{ block.settings.contact_item_contact_mail }}">
+                              {{- block.settings.contact_item_contact_mail -}}
+                            </a>
+                          </div>
+                        {%- endif -%}
+
+                        <ul
+                          aria-label="{{ 'general.social_lvl_list' | t }}"
+                          class="social-links list list-social list-unstyled"
+                          role="list"
+                        >
+                          {%- if settings.social_twitter_link != blank -%}
+                            <li class="list-social__item">
+                              <a
+                                aria-label="{{ 'general.link_to_social' | t }}"
+                                href="{{ settings.social_twitter_link }}"
+                                class="list-social__link link"
+                              >
+                                {%- render 'icon-twitter' -%}
+                                <span class="visually-hidden">{{ 'general.social.links.twitter' | t }}</span>
+                              </a>
+                            </li>
+                          {%- endif -%}
+                          {%- if settings.social_facebook_link != blank -%}
+                            <li class="list-social__item">
+                              <a
+                                aria-label="{{ 'general.link_to_social' | t }}"
+                                href="{{ settings.social_facebook_link }}"
+                                class="list-social__link link"
+                              >
+                                {%- render 'icon-facebook' -%}
+                                <span class="visually-hidden">{{ 'general.social.links.facebook' | t }}</span>
+                              </a>
+                            </li>
+                          {%- endif -%}
+                          {%- if settings.social_pinterest_link != blank -%}
+                            <li class="list-social__item">
+                              <a
+                                aria-label="{{ 'general.link_to_social' | t }}"
+                                href="{{ settings.social_pinterest_link }}"
+                                class="list-social__link link"
+                              >
+                                {%- render 'icon-pinterest' -%}
+                                <span class="visually-hidden">{{ 'general.social.links.pinterest' | t }}</span>
+                              </a>
+                            </li>
+                          {%- endif -%}
+                          {%- if settings.social_instagram_link != blank -%}
+                            <li class="list-social__item">
+                              <a
+                                aria-label="{{ 'general.link_to_social' | t }}"
+                                href="{{ settings.social_instagram_link }}"
+                                class="list-social__link link"
+                              >
+                                {%- render 'icon-instagram' -%}
+                                <span class="visually-hidden">{{ 'general.social.links.instagram' | t }}</span>
+                              </a>
+                            </li>
+                          {%- endif -%}
+                          {%- if settings.social_tiktok_link != blank -%}
+                            <li class="list-social__item">
+                              <a
+                                aria-label="{{ 'general.link_to_social' | t }}"
+                                href="{{ settings.social_tiktok_link }}"
+                                class="list-social__link link"
+                              >
+                                {%- render 'icon-tiktok' -%}
+                                <span class="visually-hidden">{{ 'general.social.links.tiktok' | t }}</span>
+                              </a>
+                            </li>
+                          {%- endif -%}
+                          {%- if settings.social_tumblr_link != blank -%}
+                            <li class="list-social__item">
+                              <a
+                                aria-label="{{ 'general.link_to_social' | t }}"
+                                href="{{ settings.social_tumblr_link }}"
+                                class="list-social__link link"
+                              >
+                                {%- render 'icon-tumblr' -%}
+                                <span class="visually-hidden">{{ 'general.social.links.tumblr' | t }}</span>
+                              </a>
+                            </li>
+                          {%- endif -%}
+                          {%- if settings.social_snapchat_link != blank -%}
+                            <li class="list-social__item">
+                              <a
+                                aria-label="{{ 'general.link_to_social' | t }}"
+                                href="{{ settings.social_snapchat_link }}"
+                                class="list-social__link link"
+                              >
+                                {%- render 'icon-snapchat' -%}
+                                <span class="visually-hidden">{{ 'general.social.links.snapchat' | t }}</span>
+                              </a>
+                            </li>
+                          {%- endif -%}
+                          {%- if settings.social_youtube_link != blank -%}
+                            <li class="list-social__item">
+                              <a
+                                aria-label="{{ 'general.link_to_social' | t }}"
+                                href="{{ settings.social_youtube_link }}"
+                                class="list-social__link link"
+                              >
+                                {%- render 'icon-youtube' -%}
+                                <span class="visually-hidden">{{ 'general.social.links.youtube' | t }}</span>
+                              </a>
+                            </li>
+                          {%- endif -%}
+                          {%- if settings.social_vimeo_link != blank -%}
+                            <li class="list-social__item">
+                              <a
+                                aria-label="{{ 'general.link_to_social' | t }}"
+                                href="{{ settings.social_vimeo_link }}"
+                                class="list-social__link link"
+                              >
+                                {%- render 'icon-vimeo' -%}
+                                <span class="visually-hidden">{{ 'general.social.links.vimeo' | t }}</span>
+                              </a>
+                            </li>
+                          {%- endif -%}
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                {%- when 'opening_hours' -%}
+                  <div class="col-lg-{{col_dextop_val}} col-md-6 col-sm-12 footer-column schedule-style-{{ block.settings.opening_hours_layout_type }}">
+                    <div class="footer-widget schedule-widget">
+                      <div class="widget-title">
+                        <h4>{{ block.settings.opening_item_title }}</h4>
+                      </div>
+                      <div class="widget-content">
+                        <ul class="schedule-list clearfix">
+                          {%- if block.settings.show_closed_1 == true -%}
+                            <li>
+                              <span class="day">{{ 'sections.footer.opening_time.mon_day' | t }}</span>
+                              <div class="line"></div>
+                              <span class="time">{{ 'sections.footer.opening_time.closed' | t }}</span>
+                            </li>
+                          {%- elsif block.settings.opening_item_time_1 != blank
+                            and block.settings.show_closed_1 == false
+                          -%}
+                            <li>
+                              <span class="day">{{ 'sections.footer.opening_time.mon_day' | t }}</span>
+                              <div class="line"></div>
+                              <span class="time">{{ block.settings.opening_item_time_1 }}</span>
+                            </li>
+                          {%- endif -%}
+                          {%- if block.settings.show_closed_2 == true -%}
+                            <li>
+                              <span class="day">{{ 'sections.footer.opening_time.tue_day' | t }}</span>
+                              <div class="line"></div>
+                              <span class="time">{{ 'sections.footer.opening_time.closed' | t }}</span>
+                            </li>
+                          {%- elsif block.settings.opening_item_time_2 != blank
+                            and block.settings.show_closed_2 == false
+                          -%}
+                            <li>
+                              <span class="day">{{ 'sections.footer.opening_time.tue_day' | t }}</span>
+                              <div class="line"></div>
+                              <span class="time">{{ block.settings.opening_item_time_2 }}</span>
+                            </li>
+                          {%- endif -%}
+                          {%- if block.settings.show_closed_3 == true -%}
+                            <li>
+                              <span class="day">{{ 'sections.footer.opening_time.wed_day' | t }}</span>
+                              <div class="line"></div>
+                              <span class="time">{{ 'sections.footer.opening_time.closed' | t }}</span>
+                            </li>
+                          {%- elsif block.settings.opening_item_time_3 != blank
+                            and block.settings.show_closed_3 == false
+                          -%}
+                            <li>
+                              <span class="day">{{ 'sections.footer.opening_time.wed_day' | t }}</span>
+                              <div class="line"></div>
+                              <span class="time">{{ block.settings.opening_item_time_3 }}</span>
+                            </li>
+                          {%- endif -%}
+                          {%- if block.settings.show_closed_4 == true -%}
+                            <li>
+                              <span class="day">{{ 'sections.footer.opening_time.thu_day' | t }}</span>
+                              <div class="line"></div>
+                              <span class="time">{{ 'sections.footer.opening_time.closed' | t }}</span>
+                            </li>
+                          {%- elsif block.settings.opening_item_time_4 != blank
+                            and block.settings.show_closed_4 == false
+                          -%}
+                            <li>
+                              <span class="day">{{ 'sections.footer.opening_time.thu_day' | t }}</span>
+                              <div class="line"></div>
+                              <span class="time">{{ block.settings.opening_item_time_4 }}</span>
+                            </li>
+                          {%- endif -%}
+                          {%- if block.settings.show_closed_5 == true -%}
+                            <li>
+                              <span class="day">{{ 'sections.footer.opening_time.fri_day' | t }}</span>
+                              <div class="line"></div>
+                              <span class="time">{{ 'sections.footer.opening_time.closed' | t }}</span>
+                            </li>
+                          {%- elsif block.settings.opening_item_time_5 != blank
+                            and block.settings.show_closed_5 == false
+                          -%}
+                            <li>
+                              <span class="day">{{ 'sections.footer.opening_time.fri_day' | t }}</span>
+                              <div class="line"></div>
+                              <span class="time">{{ block.settings.opening_item_time_5 }}</span>
+                            </li>
+                          {%- endif -%}
+                          {%- if block.settings.show_closed_6 == true -%}
+                            <li>
+                              <span class="day">{{ 'sections.footer.opening_time.sat_day' | t }}</span>
+                              <div class="line"></div>
+                              <span class="time">{{ 'sections.footer.opening_time.closed' | t }}</span>
+                            </li>
+                          {%- elsif block.settings.opening_item_time_6 != blank
+                            and block.settings.show_closed_6 == false
+                          -%}
+                            <li>
+                              <span class="day">{{ 'sections.footer.opening_time.sat_day' | t }}</span>
+                              <div class="line"></div>
+                              <span class="time">{{ block.settings.opening_item_time_6 }}</span>
+                            </li>
+                          {%- endif -%}
+                          {%- if block.settings.show_closed_7 == true -%}
+                            <li>
+                              <span class="day">{{ 'sections.footer.opening_time.sun_day' | t }}</span>
+                              <div class="line"></div>
+                              <span class="time">{{ 'sections.footer.opening_time.closed' | t }}</span>
+                            </li>
+                          {%- elsif block.settings.opening_item_time_7 != blank
+                            and block.settings.show_closed_7 == false
+                          -%}
+                            <li>
+                              <span class="day">{{ 'sections.footer.opening_time.sun_day' | t }}</span>
+                              <div class="line"></div>
+                              <span class="time">{{ block.settings.opening_item_time_7 }}</span>
+                            </li>
+                          {%- endif -%}
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                {%- when 'information' -%}
+                  <div class="col-lg-{{col_dextop_val}} col-md-6 col-sm-12 footer-column">
+                    <div class="footer-widget links-widget">
+                      <div class="widget-title">
+                        <h4>{{ block.settings.information_item_title }}</h4>
+                      </div>
+                      <div class="widget-content">
+                        <ul class="links-list clearfix">
+                          {% for link in linklists[block.settings.information_item_title_menu].links -%}
+                            <li>
+                              {{ link.title | link_to: link.url }}
+                            </li>
+                          {%- endfor %}
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                {%- when 'newsletter' -%}
+                  <div class="col-lg-{{col_dextop_val}} col-md-6 col-sm-12 footer-column">
+                    <div class="footer-widget newsletter-widget">
+                      <div class="widget-title">
+                        <h4>{{ block.settings.newsletter_item_title }}</h4>
+                      </div>
+                      <div class="widget-content">
+                        <div class="text">
+                          <p>{{ block.settings.newsletter_item_content_text }}</p>
+                        </div>
+                        {% form 'customer', class: 'newsletter-form' %}
+                          <div class="form-label">
+                            <label class="field__label " for="NewsletterForm--{{ section.id }}">
+                              {{- block.settings.newsletter_form_placeholder -}}
+                            </label>
+                          </div>
+                          <div class="form-group">
+                            <input
+                              id="NewsletterForm--{{ section.id }}"
+                              type="email"
+                              name="contact[email]"
+                              class="field__input"
+                              value="{{ form.email }}"
+                              aria-required="true"
+                              autocorrect="off"
+                              autocapitalize="off"
+                              autocomplete="email"
+                              {% if form.errors %}
+                                autofocus
+                                aria-invalid="true"
+                                aria-describedby="Newsletter-error--{{ section.id }}"
+                              {% elsif form.posted_successfully? %}
+                                aria-describedby="Newsletter-success--{{ section.id }}"
+                              {% endif %}
+                              required
+                            >
+                            <button type="submit">{{ block.settings.newsletter_subscribe_button_label }}</button>
+                          </div>
+                          {%- if form.errors -%}
+                            <small
+                              class="newsletter-form__message form__message"
+                              id="Newsletter-error--{{ section.id }}"
+                            >
+                              {%- render 'icon-error' -%}
+                              {{- form.errors.translated_fields.email | capitalize }}
+                              {{ form.errors.messages.email -}}
+                            </small>
+                          {%- endif -%}
+                          {%- if form.posted_successfully? -%}
+                            <h3
+                              class="newsletter-form__message newsletter-form__message--success form__message"
+                              id="Newsletter-success--{{ section.id }}"
+                              tabindex="-1"
+                              autofocus
+                            >
+                              {% render 'icon-success' -%}
+                              {{- 'newsletter.success' | t }}
+                            </h3>
+                          {%- endif -%}
+                        {% endform %}
+                        <div class="lower-text">
+                          <p>{{ block.settings.newsletter_item_policy_content }}</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                {%- when 'contactinfo' -%}
+                  <div class="col-lg-{{col_dextop_val}} col-md-6 col-sm-12 footer-column">
+                    <div class="footer-widget contactinfo-widget">
+                      <div class="widget-title">
+                        <h4>{{ block.settings.contactinfo_item_title }}</h4>
+                      </div>
+                      <div class="widget-content">
+                        <ul>
+                          {% if block.settings.contact_info_phone != blank
+                            or block.settings.contact_info_phone2 != blank
+                          %}
+                            <li>
+                              <div class="icon">{% render 'icon-cell' %}</div>
+                              <div class="text">
+                                {%- if block.settings.contact_info_phone != blank -%}
+                                  <a href="tel: {{ block.settings.contact_info_phone }}">
+                                    {{- block.settings.contact_info_phone -}}
+                                  </a>
+                                  <br>
+                                {%- endif -%}
+                                {%- if block.settings.contact_info_phone2 != blank -%}
+                                  <a href="tel: {{ block.settings.contact_info_phone2 }}">
+                                    {{- block.settings.contact_info_phone2 -}}
+                                  </a>
+                                {%- endif -%}
+                              </div>
+                            </li>
+                          {% endif %}
+                          {% if block.settings.contact_info_email != blank
+                            or block.settings.contact_info_email2 != blank
+                          %}
+                            <li>
+                              <div class="icon">{% render 'icon-email' %}</div>
+                              <div class="text">
+                                {%- if block.settings.contact_info_email != blank -%}
+                                  <a href="mailto: {{ block.settings.contact_info_email }}">
+                                    {{- block.settings.contact_info_email -}}
+                                  </a>
+                                  <br>
+                                {%- endif -%}
+                                {%- if block.settings.contact_info_email2 != blank -%}
+                                  <a href="mailto: {{ block.settings.contact_info_email2 }}">
+                                    {{- block.settings.contact_info_email2 -}}
+                                  </a>
+                                {%- endif -%}
+                              </div>
+                            </li>
+                          {% endif %}
+                          {% if block.settings.contact_info_address != blank %}
+                            <li>
+                              <div class="icon">{% render 'icon-location' %}</div>
+                              <div class="text">
+                                <p>{{ block.settings.contact_info_address }}</p>
+                              </div>
+                            </li>
+                          {% endif %}
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                {%- when 'applink' -%}
+                  <div class="col-lg-{{col_dextop_val}} col-md-6 col-sm-12 footer-column">
+                    <div class="footer-widget contactinfo-widget">
+                      <div class="widget-title">
+                        <h4>{{ block.settings.applink_item_title }}</h4>
+                      </div>
+                      <div class="widget-content">
+                        <ul class="app-link-list">
+                          {% if block.settings.app_store_image_1 != blank %}
+                            <li>
+                              <a href="{{ block.settings.app_store_link_1 }}">
+                                {{
+                                  block.settings.app_store_image_1
+                                  | image_url: width: block.settings.app_store_image_1.width
+                                  | image_tag: loading: 'lazy', class: 'lazyload'
+                                }}
+                              </a>
+                            </li>
+                          {% endif %}
+                          {% if block.settings.app_store_image_2 != blank %}
+                            <li>
+                              <a href="{{ block.settings.app_store_link_2 }}">
+                                {{
+                                  block.settings.app_store_image_2
+                                  | image_url: width: block.settings.app_store_image_2.width
+                                  | image_tag: loading: 'lazy', class: 'lazyload'
+                                }}
+                              </a>
+                            </li>
+                          {% endif %}
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+              {%- endcase -%}
+            {%- endfor -%}
+          </div>
+        </div>
+      </div>
+    {%- endif -%}
+    <div class="copyright centred rif-ftr-bottom">
+      {%- if shop.features.follow_on_shop? and section.settings.enable_follow_on_shop -%}
+        <div class="footer__follow-on-shop">
+          {% comment %} TODO: enable theme-check once `login_button` is accepted as valid filter {% endcomment %}
+          {% # theme-check-disable %}
+          {{ shop | login_button: action: 'follow' }}
+          {% # theme-check-enable %}
+        </div>
+      {%- endif -%}
+
+      {%- if section.settings.payment_enable_icon -%}
+        <div class="footer_payment_icon border-enable-icon-{{ section.settings.payment_enable_icon_border }}">
+          <div class="icon-list">
+            {% for type in shop.enabled_payment_types %}
+              {{ type | payment_type_svg_tag: class: 'payment-icon' }}
+            {% endfor %}
+          </div>
+        </div>
+      {%- endif -%}
+
+      <div class="footer-bottom {%- if section.settings.layout_type_footer_btm == 'inline' -%} copy-right-inline {%- endif -%}">
+        <div class="large-container">
+          <div class="bottom-item">
+            {% if section.settings.footer_logo %}
+              <img src="{{ section.settings.footer_logo | image_url }}" class="f-logo">
+            {% endif %}
+            <div class="copyright-text-only">
+              <p>
+                {{ section.settings.copyright_ }}
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+<!-- footer-style-two end -->
+{% schema %}
+{
+    "name": "Footer",
+    "tag": "footer",
+    "class": "footer-one",
+    "settings": [
+
+        {
+            "type": "color_scheme",
+            "id": "color_scheme",
+            "default": "background-3",
+            "label": "Color scheme"
+        },
+        {
+            "type": "range",
+            "id": "col_settings",
+            "min": 1,
+            "max": 4,
+            "step": 1,
+            "label": "Columns",
+            "default": 4
+        },
+        {
+            "type": "image_picker",
+            "id": "footer_section_bg_image",
+            "label": "Background image"
+        },
+        {
+            "type": "image_picker",
+            "id": "footer_logo",
+            "label": "Logo"
+        },
+        {
+            "type": "text",
+            "id": "copyright_",
+            "label": "Copyright text",
+            "default" : "Copyright ©2024 SPORTea®"
+        },
+        {
+          "label": "Footer bottom layout type",
+          "id": "layout_type_footer_btm",
+          "type": "select",
+          "default": "inline",
+          "options": [
+            {
+              "value": "full_width",
+              "label": "Inline"
+            },
+            {
+              "value": "inline",
+              "label": "Stack"
+            }
+          ]
+        },
+        {
+          "type": "header",
+          "content": "PAYMENT METHODS"
+        },
+        {
+          "type": "checkbox",
+          "id": "payment_enable_icon",
+          "default": false,
+          "label": "t:sections.footer.settings.payment_enable.label"
+        },
+        {
+          "type": "checkbox",
+          "id": "payment_enable_icon_border",
+          "default": false,
+          "label": "Show border"
+        },
+        {
+          "type": "header",
+          "content": "t:sections.footer.settings.header__9.content",
+          "info": "t:sections.footer.settings.header__9.info"
+        },
+        {
+          "type": "checkbox",
+          "id": "enable_follow_on_shop",
+          "default": false,
+          "label": "t:sections.footer.settings.enable_follow_on_shop.label"
+        },
+        {
+            "type": "header",
+            "content": "Country/region selector",
+            "info": "To add a country/region, go to your [market settings.](/admin/settings/markets)"
+        },
+        {
+          "type": "checkbox",
+          "id": "enable_country_selector",
+          "default": false,
+          "label": "Enable country/region selector"
+        },
+        {
+          "type": "checkbox",
+          "id": "enable_country_selector_label",
+          "default": false,
+          "label": "Enable country/region selector label"
+        },
+        {
+            "type": "header",
+            "content": "Language selector",
+            "info": "To add a language, go to your [language settings.](/admin/settings/languages)"
+        },
+        {
+          "type": "checkbox",
+          "id": "enable_language_selector",
+          "default": false,
+          "label": "Enable language selectors"
+        },
+        {
+          "type": "checkbox",
+          "id": "enable_language_selector_label",
+          "default": false,
+          "label": "Enable language selector label"
+        },
+        {
+            "type": "header",
+            "content": "Footer top area padding"
+        },
+        {
+            "type": "range",
+            "id": "pesto_section_padding_top",
+            "min": 0,
+            "max": 200,
+            "step": 10,
+            "unit": "px",
+            "label": "t:sections.all.padding.padding_top",
+            "default": 120
+        },
+        {
+            "type": "range",
+            "id": "pesto_section_padding_bottom",
+            "min": 0,
+            "max": 200,
+            "step": 10,
+            "unit": "px",
+            "label": "t:sections.all.padding.padding_bottom",
+            "default": 100
+        },
+        {
+            "type": "header",
+            "content": "Footer bottom area padding"
+        },
+        {
+            "type": "range",
+            "id": "pesto_footer_bottom_padding_top",
+            "min": 0,
+            "max": 200,
+            "step": 10,
+            "unit": "px",
+            "label": "Padding top",
+            "default": 0
+        },
+        {
+            "type": "range",
+            "id": "pesto_footer_bottom_padding_bottom",
+            "min": 0,
+            "max": 200,
+            "step": 10,
+            "unit": "px",
+            "label": "Padding bottom",
+            "default": 40
+        }
+    ],
+    "blocks": [
+        {
+            "name": "Store information",
+            "type": "contact_us",
+            "limit": 1,
+            "settings": [
+                {
+                    "type": "image_picker",
+                    "id": "pesto_footer_logo",
+                    "label": "Footer logo"
+                },
+                {
+                    "type": "text",
+                    "id": "contact_item_title",
+                    "label": "Heading",
+                    "default": "Heading"
+                },
+                {
+                    "type": "text",
+                    "id": "contact_item_contact_number_title",
+                    "label": "Subheading",
+                    "default": "Block subheading"
+                },
+                {
+                    "type": "range",
+                    "id": "contact_number_title_pb",
+                    "min": 0,
+                    "max": 100,
+                    "step": 1,
+                    "label": "Subheading padding bottom",
+                    "default": 20
+                },
+                {
+                    "type": "text",
+                    "id": "contact_item_contact_number",
+                    "label": "Phone number",
+                    "default": "+123456"
+                },
+                {
+                    "type": "textarea",
+                    "id": "contact_item_contact_address_text",
+                    "label": "Address info",
+                    "default": "Type your store address here"
+                },
+                {
+                    "type": "textarea",
+                    "id": "contact_item_contact_mail",
+                    "label": "Mail info",
+                    "default": "Type store support mail"
+                },
+                {
+                    "type": "range",
+                    "id": "contact_social_pt",
+                    "min": 0,
+                    "max": 100,
+                    "step": 1,
+                    "label": "Social padding top",
+                    "default": 0
+                }
+            ]
+        },
+        {
+            "name": "Store opening time",
+            "type": "opening_hours",
+            "limit": 1,
+            "settings": [
+                {
+                    "type": "text",
+                    "id": "opening_item_title",
+                    "label": "Heading",
+                    "default": "Heading"
+                },
+                {
+                  "label": "Layout type",
+                  "id": "opening_hours_layout_type",
+                  "type": "select",
+                  "default": "colon",
+                  "options": [
+                    {
+                      "value": "colon",
+                      "label": "Colon"
+                    },
+                    {
+                      "value": "dash",
+                      "label": "Dash"
+                    }
+                  ]
+                },
+                {
+                    "type": "header",
+                    "content": "Monday",
+                    "info": "Leave opening hours blank and the closed checkbox unchecked to hide the item"
+                },
+                {
+                    "type": "text",
+                    "id": "opening_item_time_1",
+                    "label": "Opening hours",
+                    "default": "9:00 - 20:30"
+                },
+                {
+                    "type": "checkbox",
+                    "id": "show_closed_1",
+                    "default": false,
+                    "label": "Closed"
+                },
+                {
+                    "type": "header",
+                    "content": "Tuesday",
+                    "info": "Leave opening hours blank and the closed checkbox unchecked to hide the item"
+                },
+                {
+                    "type": "text",
+                    "id": "opening_item_time_2",
+                    "label": "Opening hours",
+                    "default": "9:00 - 20:30"
+                },
+                {
+                    "type": "checkbox",
+                    "id": "show_closed_2",
+                    "default": false,
+                    "label": "Closed"
+                },
+                {
+                    "type": "header",
+                    "content": "Wednesday",
+                    "info": "Leave opening hours blank and the closed checkbox unchecked to hide the item"
+                },
+                {
+                    "type": "text",
+                    "id": "opening_item_time_3",
+                    "label": "Opening hours",
+                    "default": "9:00 - 20:30"
+                },
+                {
+                    "type": "checkbox",
+                    "id": "show_closed_3",
+                    "default": false,
+                    "label": "Closed"
+                },
+                {
+                    "type": "header",
+                    "content": "Thursday",
+                    "info": "Leave opening hours blank and the closed checkbox unchecked to hide the item"
+                },
+                {
+                    "type": "text",
+                    "id": "opening_item_time_4",
+                    "label": "Opening hours",
+                    "default": "9:00 - 20:30"
+                },
+                {
+                    "type": "checkbox",
+                    "id": "show_closed_4",
+                    "default": false,
+                    "label": "Closed"
+                },
+                {
+                    "type": "header",
+                    "content": "Friday",
+                    "info": "Leave opening hours blank and the closed checkbox unchecked to hide the item"
+                },
+                {
+                    "type": "text",
+                    "id": "opening_item_time_5",
+                    "label": "Opening hours",
+                    "default": "9:00 - 20:30"
+                },
+                {
+                    "type": "checkbox",
+                    "id": "show_closed_5",
+                    "default": false,
+                    "label": "Closed"
+                },
+                {
+                    "type": "header",
+                    "content": "Saturday",
+                    "info": "Leave opening hours blank and the closed checkbox unchecked to hide the item"
+                },
+                {
+                    "type": "text",
+                    "id": "opening_item_time_6",
+                    "label": "Opening hours",
+                    "default": "9:00 - 20:30"
+                },
+                {
+                    "type": "checkbox",
+                    "id": "show_closed_6",
+                    "default": false,
+                    "label": "Closed"
+                },
+                {
+                    "type": "header",
+                    "content": "Sunday",
+                    "info": "Leave opening hours blank and the closed checkbox unchecked to hide the item"
+                },
+                {
+                    "type": "text",
+                    "id": "opening_item_time_7",
+                    "label": "Opening hours",
+                    "default": "9:00 - 20:30"
+                },
+                {
+                    "type": "checkbox",
+                    "id": "show_closed_7",
+                    "default": true,
+                    "label": "Closed"
+                }
+
+            ]
+        },
+        {
+            "name": "Menu",
+            "type": "information",
+            "settings": [
+                {
+                    "type": "text",
+                    "id": "information_item_title",
+                    "label": "Heading",
+                    "default": "Heading"
+                },
+                {
+                    "type": "header",
+                    "content": "Information links"
+                },
+                {
+                  "type": "link_list",
+                  "id": "information_item_title_menu",
+                  "default": "footer",
+                  "label": "Footer menu"
+                }
+            ]
+        },
+        {
+            "name": "Newsletter",
+            "type": "newsletter",
+            "limit": 1,
+            "settings": [
+                {
+                    "type": "text",
+                    "id": "newsletter_item_title",
+                    "label": "Heading",
+                    "default": "Heading"
+                },
+                {
+                    "type": "textarea",
+                    "id": "newsletter_item_content_text",
+                    "label": "Subheading",
+                    "default": "Describe a newsletter information."
+                },
+                {
+                    "type": "text",
+                    "id": "newsletter_form_placeholder",
+                    "label": "Input placeholder",
+                    "default": "Enter your email"
+                },
+                {
+                    "type": "text",
+                    "id": "newsletter_subscribe_button_label",
+                    "label": "Button label",
+                    "default": "Button"
+                },
+                {
+                    "type": "textarea",
+                    "id": "newsletter_item_policy_content",
+                    "label": "Subheading",
+                    "default": "Describe a policy of your store."
+                }
+            ]
+        },
+        {
+            "name": "Contact info",
+            "type": "contactinfo",
+            "limit": 1,
+            "settings": [
+                {
+                    "type": "text",
+                    "id": "contactinfo_item_title",
+                    "label": "Heading",
+                    "default": "Heading"
+                },
+                {
+                    "type": "text",
+                    "id": "contact_info_phone",
+                    "label": "Phone number",
+                    "default": "+881234567890"
+                },
+                {
+                    "type": "text",
+                    "id": "contact_info_phone2",
+                    "label": "Secondary phone number"
+                },
+                {
+                    "type": "text",
+                    "id": "contact_info_email",
+                    "label": "Email address",
+                    "default": "support@domain.com"
+                },
+                {
+                    "type": "text",
+                    "id": "contact_info_email2",
+                    "label": "Secondary email address",
+                    "default": "support@domain.com"
+                },
+                {
+                    "type": "text",
+                    "id": "contact_info_address",
+                    "label": "Address",
+                    "default": "Address: 123 Suspendis matti, Visaosang Building VST District, North American"
+                }
+            ]
+        },
+        {
+            "name": "Image list",
+            "type": "applink",
+            "limit": 1,
+            "settings": [
+                {
+                    "type": "text",
+                    "id": "applink_item_title",
+                    "label": "Heading",
+                    "default": "Heading"
+                },
+                {
+                    "type": "image_picker",
+                    "id": "app_store_image_1",
+                    "label": "Image"
+                },
+                {
+                    "type": "url",
+                    "id": "app_store_link_1",
+                    "label": "Image link"
+                },
+                {
+                    "type": "image_picker",
+                    "id": "app_store_image_2",
+                    "label": "Secondary image"
+                },
+                {
+                    "type": "url",
+                    "id": "app_store_link_2",
+                    "label": "Secondary image link"
+                }
+            ]
+        }
+
+    ]
+}
+{% endschema %}

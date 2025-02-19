@@ -1,0 +1,21 @@
+.header-text-logo {
+    font-size: 24px;
+}
+.main-header.header-style-one .header-text-logo{
+    display: inline-block;
+    padding: 10px 10px;
+    text-align: center;
+}
+.main-header.header-style-two.header-style-four .header-text-logo{
+   color: var(--color-text-three);
+}
+.footer-style-three .footer-text-logo{
+    font-size: 20px;
+    line-height: 30px;
+   color: var(--color-text-one);
+}
+.main-footer .footer-text-logo{
+   color: var(--color-text-one);
+    font-size: 22px;
+}
+

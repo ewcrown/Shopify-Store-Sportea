@@ -1,0 +1,30 @@
+
+<div class="logo-box 
+        {% if section.settings.logo_img == blank and section.settings.header_logo_svg == blank %}
+            shop-name-show
+        {% endif %}
+        {% if section.settings.header_logo_svg != blank %}
+            header_logo_svg
+        {% endif %}
+        {% if section.settings.logo_img != blank %}
+            logo_img
+        {% endif %}
+">
+    <figure role="none" class="logo">
+        <a href="{{ routes.root_url }}" aria-label="Link to root url">
+            {%- if section.settings.header_logo_svg != blank -%}
+                {{ section.settings.header_logo_svg }}
+            {%- elsif section.settings.logo_img != blank -%}
+                <img
+                    src="{{ section.settings.logo_img | img_url: 'master' }}"
+                    loading="lazy"  class="lazyload"
+                    width="{{ section.settings.width }}"
+                    height="{{ section.settings.height }}"
+                    alt="{{ section.settings.alt }}"
+                />
+            {% else %}
+                <span class="header-text-logo ">{{ shop.name }}</span>
+            {%- endif -%}
+        </a>
+    </figure>
+</div>

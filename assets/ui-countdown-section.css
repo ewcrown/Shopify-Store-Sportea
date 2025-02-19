@@ -1,0 +1,257 @@
+.pesto-countdown-section {
+    background: rgb(var(--color-background));
+}
+.pesto-countdown-section .countdown-text h3 {
+    color: rgb(var(--color-foreground));
+}
+.pesto-countdown-section .countdown-text p {
+    color: rgb(var(--color-foreground));
+}
+.pesto-countdown-section .countdown-timer-inner .timer-block h3 {
+    color: rgb(var(--color-foreground));
+}
+.pesto-countdown-section .countdown-timer-inner span{
+    color: rgb(var(--color-foreground));
+}
+
+.pesto-countdown-section{
+    padding-top: 33px;
+    padding-bottom: 33px;
+    position: relative;
+}
+.pesto-countdown-section .countdown-bg-media{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+.pesto-countdown-section .countdown-bg-media:after{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(var(--color-background),1);
+}
+.pesto-countdown-section .countdown-bg-media img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.pesto-countdown-section .countdown-text h3 {
+    font-weight: 700;
+}
+.pesto-countdown-section .countdown-text h3.heading-size-small{
+    font-size: 24px;
+    line-height: 29.99px;
+}
+.pesto-countdown-section .countdown-text h3.heading-size-medium{
+    font-size: 40px;
+    line-height: 50px;
+}
+.pesto-countdown-section .countdown-text h3.heading-size-large{
+    font-size: 60px;
+    line-height: 70px;
+}
+.pesto-countdown-section .countdown-text p {
+    font-size: 18px;
+    line-height: 29.99px;
+    margin-top: 3px;
+    font-weight: 400;
+}
+@media (max-width: 1100px) {
+    .pesto-countdown-section .countdown-text p {
+        line-height: 24px;
+    }
+}
+
+.pesto-countdown-section .countdown-section-inner {
+    display: flex;
+    gap: 30px 51px;
+    align-items: center;
+    position: relative;
+}
+
+.pesto-countdown-section .countdown-timer {
+    margin-left: auto;
+    display: flex;
+    justify-content: flex-end;
+}
+
+@media (max-width: 1100px) {
+    .pesto-countdown-section .countdown-section-inner{
+        flex-direction: column;
+        text-align: center;
+    }
+    .pesto-countdown-section .countdown-timer {
+        margin-left: unset;
+        justify-content: center;
+    }
+}
+
+.pesto-countdown-section .countdown-timer-inner {
+    display: flex;
+    gap: 14px;
+    position: relative;
+    opacity: 0;
+    transition: .3s all;
+    flex-wrap: wrap;
+}
+
+.pesto-countdown-section .countdown-timer-inner.active {
+    opacity: 1;
+}
+
+.pesto-countdown-section .countdown-timer-inner .timer-block {
+    text-align: center;
+}
+
+.pesto-countdown-section .countdown-timer-inner .timer-block p {
+    font-size: 14px;
+    opacity: 0.9;
+    line-height: 16px;
+    margin-bottom: 2px;
+    font-weight: 400;
+}
+
+.pesto-countdown-section .countdown-timer-inner.timer-text-size-small .timer-block h3 {
+    font-weight: 600;
+    font-size: 24px;
+    line-height: normal;
+    letter-spacing: -0.041px;
+}
+.pesto-countdown-section .countdown-timer-inner.timer-text-size-medium .timer-block h3 {
+    font-size: 30px;
+    line-height: 40px;
+    font-weight: 700;
+}
+.pesto-countdown-section .countdown-timer-inner.timer-text-size-large .timer-block h3 {
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 48.41px;
+}
+
+.pesto-countdown-section .countdown-timer-inner span{
+    margin-top: 23px;
+}
+
+.pesto-countdown-section .timer-end-message {
+    display: none;
+}
+
+.pesto-countdown-section .timer-end-message.active {
+    display: block;
+}
+
+.pesto-countdown-section .countdown-timer-inner.d-none {
+    display: none;
+}
+.pesto-countdown-section .countdown-section-inner > div:first-child{
+    justify-content: flex-start;
+}
+.pesto-countdown-section .countdown-section-inner > div:last-child{
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column;
+    text-align: right;
+}
+.pesto-countdown-section .countdown-section-inner > div:nth-child(2){
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column;
+    text-align: right;
+}
+@media (max-width: 1100px) {
+    .pesto-countdown-section .countdown-section-inner > div:nth-child(2){
+        align-items: center;
+    }
+}
+.pesto-countdown-section.inActive {
+    display: none;
+}
+.countdown-text,
+.countdown-timer {
+    width: 100%;
+}
+.countdown-button {
+    max-width: 220px;
+    width: 100%;
+}
+@media (max-width: 1100px) {
+    .pesto-countdown-section .countdown-button {
+        display: flex;
+    }
+}
+
+@media (max-width: 1100px) {
+    .pesto-countdown-section .countdown-button {
+        display: flex;
+    }
+    .pesto-countdown-section .countdown-section-inner>div:last-child {
+        align-items: center;
+    }
+}
+/* layout */
+.pesto-countdown-section.layout-direction-column .countdown-section-inner {
+    flex-direction: column;
+    text-align: center;
+    gap: 42px;
+}
+.pesto-countdown-section.layout-direction-column .countdown-section-inner .countdown-timer{
+    justify-content: center;
+    align-items: center;
+}
+.pesto-countdown-section.layout-direction-column .countdown-section-inner .countdown-button{
+    width: unset;
+    max-width: unset;
+}
+.pesto-countdown-section.layout-direction-column  .countdown-text p{
+    max-width: 50%;
+    margin: 10px auto 0;
+}
+.pesto-countdown-section.layout-direction-column .countdown-section-inner *{
+    align-items: center !important;
+    justify-content: center;
+    text-align: center ;
+}
+.pesto-countdown-section.layout-direction-column .countdown-timer-inner .timer-block p{
+    font-size: 16px;
+    line-height: 27px;
+}
+.pesto-countdown-section .countdown-timer-inner.show-border-true{
+    padding: 20px 49px;
+    border-image-source: linear-gradient(89.84deg, rgba(255, 255, 255, 0) -0.41%, rgb(var(--color-foreground)) 49.35%, rgba(255, 255, 255, 0) 99.88%);
+    border-width: 1px;
+    border-style: solid;
+    border-image-slice: 1;
+}
+.pesto-countdown-section .countdown-timer-inner.timer-text-size-large .timer-block p {
+    margin-bottom: 7px;
+}
+@media (max-width: 991px) {
+    .pesto-countdown-section.layout-direction-column .countdown-section-inner {
+        gap: 30px;
+    }
+    .pesto-countdown-section .countdown-timer-inner.show-border-true{
+        padding: 20px 30px;
+    }
+    .pesto-countdown-section.layout-direction-column .countdown-text h3{
+        font-size: 36px !important;
+        line-height: 46px !important;
+    }
+    .pesto-countdown-section.layout-direction-column  .countdown-text p{
+        max-width: 100%;
+    }
+    .pesto-countdown-section .countdown-timer-inner .timer-block h3{
+        font-size: 24px !important;
+        font-weight: 600 !important;
+        line-height: normal !important;
+    }
+}
+@media (max-width: 575px) {
+    .pesto-countdown-section .countdown-timer-inner.show-border-true{
+        width: 100%;
+    }
+}

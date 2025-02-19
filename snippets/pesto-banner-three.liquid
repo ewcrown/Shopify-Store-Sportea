@@ -1,0 +1,59 @@
+{% liquid
+    assign settings = block.settings 
+    assign slider_item_title = settings.slider_item_title
+    assign slider_item_content_one = settings.slider_item_content_one
+    assign slider_item_content_two = settings.slider_item_content_two
+    assign slider_item_button_label = settings.slider_item_button_label
+    assign slider_item_button_link = settings.slider_item_button_link
+    assign slider_item_right_images = settings.slider_item_right_images
+    assign slide_item_background_shap_image = settings.slide_item_background_shap_image | img_url: 'master'
+%}
+<div class="swiper-slide slide-item some-{{ block.id }}">
+    {%- if block.settings.slide_item_background_shap_image != blank -%}
+        <div
+            loading="lazy"
+            class="lazyload shape"
+            {%- if section.settings.slide_item_background_shap_image != blank -%}data-bg="{{ section.settings.slide_item_background_shap_image | img_url: 'master' }}"{%- endif -%}
+        >
+        </div>
+    {%- endif -%}
+    <div class="large-container">
+        <div class="row align-items-center clearfix">
+            <div class="col-lg-7 col-md-12 col-sm-12 content-column">
+                <div class="content-box">
+                    {%- if slider_item_title != blank -%}
+                        <h1 role="heading">{{ slider_item_title }}</h1>
+                    {%- endif -%}
+                    {%- if slider_item_content_one != blank -%}
+                        <p> role="heading"{{ slider_item_content_one }}</p>
+                    {%- endif -%}
+                    {%- if slider_item_content_two != blank -%}
+                        <h2 role="heading">{{ slider_item_content_two }}</h2>
+                    {%- endif -%}
+                    {%- if slider_item_button_label != blank -%}
+                        <div class="btn-box">
+                            <a href="{{ slider_item_button_link }}" class="theme-btn btn-two" aria-label="{{ slider_item_button_label }}">{{ slider_item_button_label }}</a>
+                        </div>
+                    {%- endif -%}
+                </div>
+            </div>  
+            <div class="col-lg-5 col-md-12 col-sm-12 image-column">
+                <div class="image-box">
+                    <figure class="image">
+                        {%- if slider_item_right_images != blank -%}
+                            <img
+                            src="{{ slider_item_right_images | img_url: 'master' }}"
+                            loading="lazy"  class="lazyload"
+                            width="{{ slider_item_right_images.width }}"
+                            height="{{ slider_item_right_images.height }}"
+                            alt="{{ slider_item_right_images.alt | escape }}"
+                            > 
+                        {%- else -%}
+                            {{ 'collection-6' | placeholder_svg_tag: 'placeholder-svg-banner-three' }}
+                        {%- endif -%}
+                    </figure>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

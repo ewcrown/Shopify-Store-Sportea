@@ -1,0 +1,333 @@
+.gf-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 100px 0;
+    text-align: center;
+}
+
+/* Title and description styling */
+.gf-container__title {
+    font-size: 61px;
+    color: #2B4E92;
+    font-weight: 400 !important;
+    padding-bottom: 2rem;
+}
+
+.gf-container__description {
+    font-size: 20px;
+    margin: 10px 0 20px;
+    color: #121212;
+    line-height:34.2px;
+}
+
+.gf-container__content {
+    width: 100%;
+    display: block;
+    margin: auto;
+}
+
+/* Images styling */
+.gf-container__images {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    margin-bottom: 30px;
+}
+
+.gf-image {
+    max-width: 40%;
+    height: auto;
+    border-radius: 5px;
+    object-fit:contain;
+}
+
+/* Features section styling */
+.gf-features {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-bottom: 30px;
+    padding: 0 10px;
+}
+
+.gf-feature {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 176px;
+   padding-top: 1rem;
+    padding-bottom: 2rem;
+}
+
+.gf-feature__icon {
+    max-width: 50px;
+    margin-bottom: 10px;
+}
+
+.gf-feature__text {
+    font-size: 23.7px;
+    color: #000000;
+    margin-top: 5px;
+    line-height:27.33px;
+}
+
+/* Call-to-action button */
+.gf-container__cta,.more-btn {
+    /* margin-top: 20px; */
+    width: 250px;
+    margin: auto;
+}
+
+/* .gf-button {
+    background-color: #d72323;
+    color: #fff;
+    padding: 15px 20px;
+    border-radius: 33px;
+    text-decoration: none;
+    font-size: 20px;
+    width: 208px;
+    display: block;
+    margin: auto;
+    font-weight: 700;
+} */
+
+.gf-button--shop-now:hover {
+    background-color: #bb1d1d;
+}
+
+/* Icons section styling */
+.gf-container__icons {
+    display: flex;
+    justify-content: center;
+    /* gap: 50px; */
+    margin-bottom: 30px;
+}
+
+/* Features grid */
+.gf-container__features {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    /* width: 402px; */
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .gf-container {
+        max-width: 100%;
+        padding: 30px;
+    }
+
+    .gf-container__images {
+        gap: 30px;
+    }
+
+    .gf-feature {
+        width: 150px;
+    }
+
+    .gf-feature__icon {
+        max-width: 40px;
+    }
+
+    .gf-container__features {
+        grid-template-columns: 1fr 1fr;
+        width: 100%;
+    }
+
+    .gf-container__title {
+        font-size: 48px; /* Slightly smaller for medium screens */
+    }
+
+    .gf-container__content {
+        width: 800px; /* Make the content width fluid */
+    }
+    .gf-container__description {
+      line-height: 30.2px;
+    }
+}
+
+@media (max-width: 768px) {
+    .gf-container {
+        padding: 20px;
+    }
+
+    .gf-container__images {
+        flex-direction: row;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .gf-features {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .gf-feature {
+        width: 100%;
+    }
+
+    .gf-container__features {
+        grid-template-columns: 1fr;
+        width: 100%;
+    }
+
+    .gf-button {
+        /* padding: 10px 20px; /* Adjust padding for buttons */ */
+        font-size: 18px; /* Slightly reduced font size */
+    }
+
+    .gf-container__title {
+        font-size: 38px; /* Adjusted for tablet screens */
+    }
+
+    .gf-container__content {
+        width: 100%; /* Make content responsive */
+    }
+    .gf-container__description {
+      line-height: 25.2px;
+    }
+}
+
+@media (max-width: 480px) {
+    .gf-container {
+        padding: 15px;
+    }
+
+    .gf-container__title {
+        font-size: 32px; /* Adjusted title size for mobile */
+    }
+
+    .gf-container__description {
+        font-size: 16px; /* Adjusted description size */
+    }
+
+    .gf-feature__text {
+        font-size: 0.8rem;
+    }
+
+    .gf-button {
+        /* padding: 7px 14px; */
+        font-size: 0.85rem;
+    }
+
+    .gf-container__icons {
+        /* gap: 20px; /* Reduced gap for smaller screens */ */
+    }
+
+    .gf-container__content {
+        width: 100%; /* Full width for mobile */
+    }
+    .gf-container__description {
+      line-height: 20.2px;
+    }
+}
+/* Default Desktop Padding */
+/* .gf-container {
+    padding: 100px 0 100px;
+} */
+
+/* For screens smaller than 1200px (large tablets and smaller desktops) */
+@media (max-width: 1200px) {
+    .gf-container, .sportea-ingredients-row {
+        padding: 60px 0 100px; /* Adjust the padding for larger tablets */
+    }
+
+    .gf-container__title {
+        font-size: 48px; /* Slightly smaller for medium screens */
+    }
+
+    .gf-container__images {
+        gap: 30px;
+    }
+
+    .gf-feature {
+        width: 150px;
+    }
+
+    .gf-feature__icon {
+        max-width: 40px;
+    }
+
+    .gf-container__features {
+        grid-template-columns: 1fr 1fr;
+        width: 100%;
+    }
+
+    .gf-container__content {
+        width: 100%; /* Make the content width fluid */
+    }
+}
+
+/* For screens smaller than 768px (tablets and medium-sized devices) */
+@media (max-width: 768px) {
+    .gf-container, .sportea-ingredients-row {
+        padding: 50px 0 80px; /* Adjust the padding for tablets */
+    }
+
+    .gf-container__title {
+        font-size: 38px; /* Adjusted for tablet screens */
+    }
+
+    .gf-container__description {
+        font-size: 18px; /* Adjust description size */
+    }
+
+    
+
+    .gf-features {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .gf-feature {
+        width: 100%;
+    }
+
+    .gf-container__features {
+        grid-template-columns: 1fr;
+        width: 100%;
+    }
+
+    .gf-button {
+        font-size: 18px; /* Slightly reduced font size */
+    }
+
+    .gf-container__content {
+        width: 100%; /* Make content responsive */
+    }
+}
+
+/* For screens smaller than 480px (mobile devices) */
+@media (max-width: 480px) {
+    .gf-container, .sportea-ingredients-row {
+        padding: 40px 0 60px; /* Reduce the padding for mobile devices */
+    }
+
+    .gf-container__title {
+        font-size: 32px; /* Adjusted title size for mobile */
+    }
+
+    .gf-container__description {
+        font-size: 16px; /* Adjusted description size */
+    }
+
+    .gf-container__images {
+        gap: 20px; /* Reduced gap for smaller screens */
+    }
+
+    .gf-feature__text {
+        font-size: 0.8rem; /* Adjusted feature text size */
+    }
+
+    .gf-button {
+        font-size: 0.85rem; /* Adjusted button size */
+    }
+
+    .gf-container__content {
+        width: 100%; /* Full width for mobile */
+    }
+}
+

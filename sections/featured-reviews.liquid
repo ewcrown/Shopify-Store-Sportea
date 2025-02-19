@@ -1,0 +1,48 @@
+{% assign count = section.settings['ai-count'] %}
+{% assign description = section.settings['ai-featured-review'] %}
+{% assign author = section.settings['ai-author-name'] %}
+{% assign Date = section.settings['ai-date'] %}
+{% assign bg = section.settings['bg-color'] %}
+{% render 'review', count: count, description: description, author: author, date: Date, bg: bg %}
+{% schema %}
+  {
+  "name": "Featured Review",
+  "settings": [
+      {
+        "type": "color",
+        "label": "bg-color",
+        "id": "bg",
+        "default": "#2B4E92"
+      },
+      {
+        "type": "text",
+        "label": "Review count",
+        "id": "ai-count",
+        "default": "5078 Verified 5-star Reviews"
+      },
+      {
+        "type": "html",
+        "label": "Featured review",
+        "id": "ai-featured-review",
+        "default": " have been drinking SPORTea® for over 20 years. It has so many win-win ingredients. No matter what I face over the course of the years the hard times and the good SPORTea® has been part of them."
+      },
+      {
+        "type": "text",
+        "label": "Author",
+        "id": "ai-author-name",
+        "default" : "Diana J."
+      },
+      {
+        "type": "text",
+        "label": "Date",
+        "id": "ai-date",
+        "default": "3/1/2024"
+      }
+    ],
+  "presets": [
+    {
+      "name": "Featured Review"
+    }
+  ]
+}
+{% endschema %}

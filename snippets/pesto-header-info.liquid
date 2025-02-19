@@ -1,0 +1,37 @@
+
+<div class="nav-right">
+    {% for block in section.blocks %}
+        {% case block.type %}
+            {%- when '@app' -%}
+                {% render block %}
+            {% when 'action_button' %}
+                {% if block.settings.action_button_url != blank %}
+                    <div class="btn-box"><a href="{{ block.settings.action_button_url }}" class="theme-btn btn-one">{{ block.settings.action_button_text }}</a></div>
+                {%- endif -%}
+            {% when 'cart_action' %}
+                <div id="cart-icon-bubble">
+                    <div class="cart-box">
+                        <a href="{{ routes.cart_url }}">{% render 'pesto-c-cart' %}
+                            {%- if cart.item_count < 100 -%}
+                                <span>{{ cart.item_count }}</span>
+                            {%- elsif cart.item_count > 100 -%}
+                                <span>+</span>
+                            {%- elsif cart.item_count <= 0 -%}
+                                <span>0</span>
+                            {%- endif -%}
+                        </a>
+                    </div>
+                </div>
+            {% when 'search_action' %}
+                {% render 'pesto-search-icon' %}
+            {% when 'authior_action' %}
+                {%- if shop.customer_accounts_enabled -%}
+                    <div class="user-link">
+                        <a aria-label="Login to Your Account" href="{%- if customer -%}{{ routes.account_url }}{%- else -%}{{ routes.account_login_url }}{%- endif -%}">
+                            {% render 'pesto-c-person' %}
+                        </a>
+                    </div>
+                {%- endif -%}
+        {% endcase %}
+    {% endfor %}
+</div>

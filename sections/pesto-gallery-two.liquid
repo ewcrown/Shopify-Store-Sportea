@@ -1,0 +1,389 @@
+{% assign gallery_hover = section.settings.gallery_hover %}
+{% assign gallery_content_position = section.settings.gallery_content_position %}
+{% assign collection_title_underline = section.settings.collection_title_underline %}
+{% assign collection_item_title_size = section.settings.collection_item_title_size %}
+
+<link rel="stylesheet" href="{{ 'ui-gallery-section.css' | asset_url }}" media="print" onload="this.media='all'">
+<noscript>{{ 'ui-gallery-section.css' | asset_url | stylesheet_tag }}</noscript>
+
+{%- style -%}
+  {%- if section.settings.pesto_section_padding_top != blank -%}
+  #shopify-section-{{section.id}} .gallery-style-two{
+          padding-top: {{ section.settings.pesto_section_padding_top }}px !important;
+      }
+  {%- endif -%}
+  {%- if section.settings.pesto_section_padding_bottom != blank -%}
+  #shopify-section-{{section.id}}  .gallery-style-two{
+          padding-bottom: {{ section.settings.pesto_section_padding_bottom }}px !important;
+      }
+  {%- endif -%}
+  {%- if section.settings.gallery_image_overlay_opacity != blank -%}
+      #shopify-section-{{ section.id }} .gallery-style-two .single-column .gallery-block-two .inner-box:hover .image-box:before{
+          opacity: {{ section.settings.gallery_image_overlay_opacity | divided_by: 100.0 }};
+      }
+  {%- endif -%}
+  {%- if section.settings.image_border_radius != blank -%}
+      #shopify-section-{{ section.id }} .gallery-style-two .single-column .gallery-block-two .inner-box .image-box{
+          border-radius: {{ section.settings.image_border_radius }}px;
+      }
+  {%- endif -%}
+{%- endstyle -%}
+
+<section
+  id="{{ section.id }}"
+  class="color-{{ section.settings.color_scheme }} {% if section.settings.in_page == true %}gallery-page {% endif %}gallery-style-two centred"
+>
+  {% if section.settings.section_background != blank %}
+    <div
+      class="overlay-object-section-bg"
+    >
+      {{ section.settings.section_background | image_url: width: 7680 | image_tag: loading: 'lazy', class: 'lazyload' }}
+    </div>
+  {%- endif -%}
+
+  <div class="large-container">
+    <div class="sec-title">
+      <h2>{{ section.settings.sections_title }}</h2>
+      {% if section.settings.gallery_content != blank %}
+        <p>{{ section.settings.gallery_content }}</p>
+      {%- endif -%}
+    </div>
+    <div class="items-container pes-items-container clearfix">
+      {% for block in section.blocks %}
+        {% case block.type %}
+          {% when 'gallery_items' %}
+            <div class="single-column {% if block.settings.gallery_column_size == 'big-column' %}big-column{% elsif block.settings.gallery_column_size == 'ex-big-column' %}big-column-xl{% else %}small-column{% endif %}">
+              <div class="gallery-block-two gallery-item-hover-{{ gallery_hover }}">
+                <div class="inner-box">
+                  {% if block.settings.gallery_block_heading or block.settings.collection_select.title %}
+                    {% if block.settings.gallery_block_heading != blank %}
+                      <h2 class="pes-heading">
+                        <span>{{ block.settings.gallery_block_heading }}</span>
+                      </h2>
+                    {% elsif block.settings.collection_select.title != blank %}
+                      <h2 class="pes-heading">
+                        <span>{{ block.settings.collection_select.title }}</span>
+                      </h2>
+                    {%- endif -%}
+                  {%- endif -%}
+                  {%- if block.settings.gallery_button_link or block.settings.collection_select.url -%}
+                    {%- if block.settings.gallery_button_link != blank -%}
+                      <a class="all-ver-link" href="{{ block.settings.gallery_button_link }}"></a>
+                    {% elsif block.settings.collection_select.url != blank %}
+                      <a
+                        aria-label="{{ block.settings.collection_select.title }}"
+                        class="all-ver-link"
+                        href="{{ block.settings.collection_select.url }}"
+                      ></a>
+                    {% endif %}
+                  {% endif %}
+                  <figure class="image-box">
+                    {%- if block.settings.item_images != blank -%}
+                      {{
+                        block.settings.item_images
+                        | image_url: width: block.settings.item_images.width
+                        | image_tag: loading: 'lazy', class: 'lazyload'
+                      }}
+
+                    {% elsif block.settings.collection_select != blank %}
+                      {% if block.settings.collection_select.featured_image != blank %}
+                        <img
+                          data-src="{{ block.settings.collection_select.featured_image | img_url: '350x' }}"
+                          loading="lazy"
+                          class="lazyload"
+                          width="{{ block.settings.collection_select.featured_image.width }}"
+                          height="{{ block.settings.collection_select.featured_image.height }}"
+                          alt="{{ block.settings.collection_select.title }}"
+                        >
+                      {% else %}
+                        {{ 'collection-1' | placeholder_svg_tag: 'placeholder-svg-gallery-one' }}
+                      {% endif %}
+                    {%- else -%}
+                      {{ 'image' | placeholder_svg_tag: 'placeholder-svg-gallery-one' }}
+                    {%- endif -%}
+                  </figure>
+
+                  <div class="content-box gallery-item-content-position-{{ gallery_content_position }} {% if collection_title_underline == true %}collection-title-underline{% endif %} collection-title-{{ collection_item_title_size }}">
+                    {% if block.settings.gallery_block_subheading != blank %}
+                      <p>{{ block.settings.gallery_block_subheading }}</p>
+                    {%- endif -%}
+                    {% if block.settings.collection_item_count == true %}
+                      {% if block.settings.collection_select.url != blank %}
+                        <p class="collection-count-item">
+                          {% if block.settings.collection_select.all_products_count > 1 %}
+                            ({{ block.settings.collection_select.all_products_count }} items)
+                          {% else %}
+                            ({{ block.settings.collection_select.all_products_count }} item)
+                          {% endif %}
+                        </p>
+                      {% else %}
+                        <p class="collection-count-item">(0 item)</p>
+                      {% endif %}
+                    {% endif %}
+                  </div>
+                </div>
+              </div>
+            </div>
+        {% endcase %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+    "name": "Collage gallery",
+    "tag": "section",
+    "class": "gallery-area-two",
+    "settings": [
+        {
+            "type": "color_scheme",
+            "id": "color_scheme",
+            "default": "background-2",
+            "label": "Color scheme"
+        },
+        {
+            "type": "image_picker",
+            "id": "section_background",
+            "label": "Image"
+        },
+        {
+            "type": "text",
+            "id": "sections_title",
+            "label": "Heading",
+            "default": "Heading"
+        },
+        {
+            "type": "textarea",
+            "id": "gallery_content",
+            "label": "Content"
+        },
+        {
+            "type": "header",
+            "content": "Card option"
+        },
+        {
+            "type": "range",
+            "id": "image_border_radius",
+            "min": 0,
+            "max": 30,
+            "step": 1,
+            "unit": "px",
+            "label": "Border radius",
+            "default": 8
+        },
+        {
+            "type": "range",
+            "id": "gallery_image_overlay_opacity",
+            "min": 0,
+            "max": 100,
+            "step": 1,
+            "unit": "%",
+            "label": "Overlay opacity",
+            "default": 30
+        },
+        {
+            "type": "checkbox",
+            "id": "collection_title_underline",
+            "default": false,
+            "label": "Show underline"
+        },
+        {
+            "type": "select",
+            "id": "gallery_hover",
+            "label": "Hover",
+            "options": [
+              {
+                "value": "enable",
+                "label": "Enable"
+              },
+              {
+                "value": "disable",
+                "label": "Disable"
+              }
+            ],
+            "default": "enable"
+        },
+        {
+            "type": "select",
+            "id": "gallery_content_position",
+            "label": "Content position",
+            "options": [
+              {
+                "value": "top-left",
+                "label": "Top left"
+              },
+              {
+                "value": "top-center",
+                "label": "Top center"
+              },
+              {
+                "value": "top-right",
+                "label": "Top right"
+              },
+              {
+                "value": "middle-left",
+                "label": "Middle left"
+              },
+              {
+                "value": "middle-center",
+                "label": "Middle center"
+              },
+              {
+                "value": "middle-right",
+                "label": "Middle right"
+              },
+              {
+                "value": "bottom-left",
+                "label": "Bottom left"
+              },
+              {
+                "value": "bottom-center",
+                "label": "Bottom center"
+              },
+              {
+                "value": "bottom-right",
+                "label": "Bottom right"
+              }
+
+            ],
+            "default": "middle-center"
+        },
+        {
+            "type": "select",
+            "id": "collection_item_title_size",
+            "options": [
+                {
+                "value": "sm",
+                "label": "Small"
+                },
+                {
+                "value": "md",
+                "label": "Medium"
+                },
+                {
+                "value": "lg",
+                "label": "Large"
+                }
+            ],
+            "default": "md",
+            "label": "Heading size"
+        },
+        {
+            "type": "header",
+            "content": "Section padding"
+        },
+        {
+            "type": "range",
+            "id": "pesto_section_padding_top",
+            "min": 0,
+            "max": 200,
+            "step": 10,
+            "unit": "px",
+            "label": "t:sections.all.padding.padding_top",
+            "default": 150
+        },
+        {
+            "type": "range",
+            "id": "pesto_section_padding_bottom",
+            "min": 0,
+            "max": 200,
+            "step": 10,
+            "unit": "px",
+            "label": "t:sections.all.padding.padding_bottom",
+            "default": 150
+        }
+    ],
+    "blocks": [
+        {
+            "type": "@app"
+        },
+        {
+            "name": "Item",
+            "type": "gallery_items",
+            "settings": [
+                {
+                    "type": "collection",
+                    "id": "collection_select",
+                    "label": "Collection"
+                },
+                {
+                    "type": "image_picker",
+                    "id": "item_images",
+                    "label": "Image",
+                    "info": "Optional, if collection selected. The selected image will be displayed instead of the collection's image."
+                },
+                {
+                    "type": "select",
+                    "id": "gallery_column_size",
+                    "options": [
+                        {
+                        "value": "ex-big-column",
+                        "label": "Extra large"
+                        },
+                      {
+                        "value": "big-column",
+                        "label": "Large"
+                      },
+                      {
+                        "value": "small-column",
+                        "label": "Small"
+                      }
+                    ],
+                    "default": "big-column",
+                    "label": "Image size"
+                },
+                {
+                    "type": "checkbox",
+                    "id": "collection_item_count",
+                    "default": false,
+                    "label": "Show products count",
+                    "info": "Optional, if collection selected. The count will be displayed"
+                },
+                {
+                    "type": "url",
+                    "id": "gallery_button_link",
+                    "label": "Link",
+                    "info": "Optional, if collection selected. The link will be displayed instead of the collection's link."
+                },
+                {
+                    "type": "text",
+                    "id": "gallery_block_heading",
+                    "label": "Heading",
+                    "info": "Optional, if collection selected. The heading will be displayed instead of the collection's heading."
+                },
+                {
+                    "type": "textarea",
+                    "id": "gallery_block_subheading",
+                    "label": "Content"
+                }
+            ]
+        }
+    ],
+    "presets": [
+      {
+        "name": "Collage gallery",
+        "blocks": [
+                {
+                    "type": "gallery_items"
+                },
+                {
+                    "type": "gallery_items"
+                },
+                {
+                    "type": "gallery_items"
+                },
+                {
+                    "type": "gallery_items"
+                },
+                {
+                    "type": "gallery_items"
+                },
+                {
+                    "type": "gallery_items"
+                }
+            ]
+      }
+    ]
+}
+{% endschema %}

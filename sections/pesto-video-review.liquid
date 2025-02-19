@@ -1,0 +1,249 @@
+<link rel="stylesheet" href="{{ 'ui-testimonial-section.css' | asset_url }}" media="print" onload="this.media='all'">
+<noscript>{{ 'ui-testimonial-section.css' | asset_url | stylesheet_tag }}</noscript>
+
+{% assign col_dextop = section.settings.col_settings %}
+
+{% if col_dextop == 1 %}
+  {% assign col_dextop_val = '12' %}
+{% elsif col_dextop == 2 %}
+  {% assign col_dextop_val = '6' %}
+{% elsif col_dextop == 3 %}
+  {% assign col_dextop_val = '4' %}
+{% elsif col_dextop == 4 %}
+  {% assign col_dextop_val = '3' %}
+{% endif %}
+
+{%- style -%}
+  {%- if section.settings.pesto_section_padding_top != blank -%}
+      #shopify-section-{{section.id}} .video-testimonial{
+          padding-top: {{ section.settings.pesto_section_padding_top }}px;
+      }
+  {%- endif -%}
+  {%- if section.settings.pesto_section_padding_bottom != blank -%}
+      #shopify-section-{{section.id}} .video-testimonial{
+          padding-bottom: {{ section.settings.pesto_section_padding_bottom }}px;
+      }
+  {%- endif -%}
+{%- endstyle -%}
+<style>
+      .masonry-grid {
+      column-count: 3; /* Number of columns */
+      column-gap: 1rem; /* Space between columns */
+    }
+
+    .masonry-item {
+      break-inside: avoid; /* Prevent content from breaking inside the column */
+      margin-bottom: 1rem; /* Space between items */
+      background-color: #f0f0f0; /* Example background color */
+      padding: 1rem;
+      border-radius: 8px;
+    }
+    @media (max-width: 768px) {
+    .masonry-grid {
+      column-count: 2; /* Reduce columns for smaller screens */
+    }
+  }
+
+  @media (max-width: 480px) {
+    .masonry-grid {
+      column-count: 1; /* Single column for mobile */
+    }
+  }
+</style>
+<div
+  id="video-testimonial-{{ section.id }}"
+  class="color-{{ section.settings.color_scheme }} video-testimonial centred"
+>
+  <div class="large-container">
+    {% if section.settings.review_area_title != blank %}
+      <div class="sec-title">
+        <h2>{{ section.settings.review_area_title }}</h2>
+      </div>
+    {% endif %}
+    <div class="masonry-grid">
+      {% for block in section.blocks %}
+        {%- case block.type -%}
+          {%- when '@app' -%}
+            {% render block %}
+
+          {%- when 'review_item' -%}
+            <div class="masonry-item">
+              {% if block.settings.review_item_url %}
+                <div class="single-item">
+                  <figure class="image-box">
+                    {%- if block.settings.review_item_img_url == blank -%}
+                      {{ 'lifestyle-1' | placeholder_svg_tag: 'placeholder-svg-video-one' }}
+                    {%- else -%}
+                      {{
+                        block.settings.review_item_img_url
+                        | image_url: width: block.settings.review_item_img_url.width
+                        | image_tag: loading: 'lazy', class: 'lazyload'
+                      }}
+                    {%- endif -%}
+                  </figure>
+                  <youtube-vimio
+                    data-video-url="{{ block.settings.review_item_url }}"
+                    data-video-id="{{ section.id }}"
+                    data-autoplay="false"
+                    data-background="true"
+                    data-description=""
+                  >
+                    <div></div>
+                    <div class="video-inner">
+                      <a
+                        aria-label="{{ 'general.link_to_video' | t }}"
+                        href="{{ block.settings.review_item_url }}"
+                        target="_blank"
+                        class="main-btn lightbox-image"
+                        data-caption=""
+                      >
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="16"
+                          height="16"
+                          fill="currentColor"
+                          class="bi bi-play"
+                          viewBox="0 0 16 16"
+                        >
+                          <path d="M10.804 8 5 4.633v6.734L10.804 8zm.792-.696a.802.802 0 0 1 0 1.392l-6.363 3.692C4.713 12.69 4 12.345 4 11.692V4.308c0-.653.713-.998 1.233-.696l6.363 3.692z"/>
+                        </svg>
+                      </a>
+                    </div>
+                  </youtube-vimio>
+                </div>
+              {% endif %}
+              {% unless block.settings.review_item_url %}
+                <div class="masonry-item">
+                  <div class="text">
+                    <h3>
+                      <a href="{{ block.settings.review_item_url }}">{{ block.settings.review_item_title }}</a>
+                    </h3>
+                    <p class="review_item_state">{{ block.settings.review_item_state }}</p>
+                    <span class="designation">{{ block.settings.review_item_content }}</span>
+                  </div>
+                </div>
+              {% endunless %}
+            </div>
+        {% endcase %}
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+    "name": "Video testimonials",
+    "tag": "section",
+    "class": "video-review-one",
+    "settings": [
+        {
+            "type": "color_scheme",
+            "id": "color_scheme",
+            "default": "background-4",
+            "label": "Color scheme"
+        },
+        {
+            "type": "range",
+            "id": "col_settings",
+            "min": 1,
+            "max": 4,
+            "step": 1,
+            "label": "Columns",
+            "default": 4
+        },
+        {
+            "type": "text",
+            "id": "review_area_title",
+            "label": "Heading",
+            "default": "Heading"
+        },
+        {
+            "type": "header",
+            "content": "Section padding"
+        },
+        {
+            "type": "range",
+            "id": "pesto_section_padding_top",
+            "min": 0,
+            "max": 200,
+            "step": 10,
+            "unit": "px",
+            "label": "t:sections.all.padding.padding_top",
+            "default": 150
+        },
+        {
+            "type": "range",
+            "id": "pesto_section_padding_bottom",
+            "min": 0,
+            "max": 200,
+            "step": 10,
+            "unit": "px",
+            "label": "t:sections.all.padding.padding_bottom",
+            "default": 150
+        }
+    ],
+    "blocks": [
+        {
+            "type": "@app"
+        },
+        {
+            "name": "Testimonial",
+            "type": "review_item",
+            "settings": [
+                {
+                    "type": "text",
+                    "id": "review_item_title",
+                    "label": "Name",
+                    "default": "Name"
+                },
+                {
+                    "type": "text",
+                    "id": "review_item_state",
+                    "label": "state",
+                    "default": "State"
+                },
+                {
+                    "type": "textarea",
+                    "id": "review_item_content",
+                    "label": "Content",
+                    "default": "“Share what your customers are saying about your products, your company...”"
+                },
+                {
+                    "type": "video_url",
+                    "id": "review_item_url",
+                    "label": "Video link",
+                    "accept": [
+                        "youtube",
+                        "vimeo"
+                    ],
+                    "default": "https://www.youtube.com/watch?v=_9VUPq3SxOc"
+                },
+                {
+                    "type": "image_picker",
+                    "id": "review_item_img_url",
+                    "label": "Cover image"
+                }
+            ]
+        }
+    ],
+    "presets": [
+        {
+            "name": "Video testimonials",
+            "blocks": [
+                {
+                    "type": "review_item"
+                },
+                {
+                    "type": "review_item"
+                },
+                {
+                    "type": "review_item"
+                },
+                {
+                    "type": "review_item"
+                }
+            ]
+        }
+    ]
+}
+{% endschema %}

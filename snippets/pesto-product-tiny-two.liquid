@@ -1,0 +1,40 @@
+
+
+<div class="shop-block-four sin-prd-item">
+    <div class="inner-box">
+        
+        {%- if product.featured_media -%}
+            <figure class="image-box">
+                <img
+                    srcset="
+                        {%- if product.featured_media.width >= 165 -%}{{ product.featured_media | img_url: '165x' }} 165w,{%- endif -%}
+                        {%- if product.featured_media.width >= 360 -%}{{ product.featured_media | img_url: '360x' }} 360w,{%- endif -%}
+                        {%- if product.featured_media.width >= 533 -%}{{ product.featured_media | img_url: '533x' }} 533w,{%- endif -%}
+                        {%- if product.featured_media.width >= 720 -%}{{ product.featured_media | img_url: '720x' }} 720w,{%- endif -%}
+                        {%- if product.featured_media.width >= 940 -%}{{ product.featured_media | img_url: '940x' }} 940w,{%- endif -%}
+                        {%- if product.featured_media.width >= 1066 -%}{{ product.featured_media | img_url: '1066x' }} 1066w,{%- endif -%}
+                        {{ product.featured_media | img_url: 'master' }} {{ product.featured_media.width }}w
+                        "
+                    data-src="{{ product.featured_media | img_url: '533x' }}"
+                    alt="{{ product.featured_media.alt | escape }}"
+                    loading="lazy"  class="lazyload"
+                    class="img-reduce"
+                    width="{{ product.featured_media.width }}"
+                    height="{{ product.featured_media.height }}"
+                >
+            </figure>
+        {%- endif -%}
+
+        <div class="inner">
+            <h4><a href="{{ product.url | default: '#' }}">{{ product.title | escape }}</a></h4>
+            <div class="content-of-product">
+                {% if product.description != blank %}  {{ product.description | strip_html | truncatewords: 10 }} {% endif %}
+            </div>
+            <div class="title-of-product">
+                {% render 'price-raw', product: product %}
+            </div>
+        </div>
+        
+    </div>
+</div>
+

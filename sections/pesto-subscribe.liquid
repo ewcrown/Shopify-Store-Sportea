@@ -1,0 +1,356 @@
+<link rel="stylesheet" href="{{ 'ui-subscribe-section.css' | asset_url }}" media="print" onload="this.media='all'">
+<noscript>{{ 'ui-subscribe-section.css' | asset_url | stylesheet_tag }}</noscript>
+
+{%- style -%}
+  {%- if section.settings.pesto_section_padding_top != blank -%}
+      #shopify-section-{{section.id}} .subscribe-section .subscribe-section-inner{
+          padding-top: {{ section.settings.pesto_section_padding_top }}px;
+      }
+  {%- endif -%}
+  {%- if section.settings.pesto_section_padding_bottom != blank -%}
+      #shopify-section-{{section.id}} .subscribe-section .subscribe-section-inner{
+          padding-bottom: {{ section.settings.pesto_section_padding_bottom }}px;
+      }
+  {%- endif -%}
+
+
+  {%- if section.settings.pesto_section_margin_top != blank -%}
+      #shopify-section-{{section.id}}.shopify-section.pesto-subscribe-area-main{
+          margin-top: {{ section.settings.pesto_section_margin_top }}px;
+      }
+  {%- endif -%}
+  {%- if section.settings.pesto_section_margin_bottom != blank -%}
+      #shopify-section-{{section.id}}.shopify-section.pesto-subscribe-area-main{
+          margin-bottom: {{ section.settings.pesto_section_margin_bottom }}px;
+      }
+  {%- endif -%}
+
+
+  @media(max-width: 991px){
+      #shopify-section-{{section.id}} .subscribe-section .subscribe-section-inner{
+      padding-top: {{ section.settings.pesto_section_padding_top_mobile }}px !important;
+      padding-bottom: {{ section.settings.pesto_section_padding_bottom_mobile }}px !important;
+      }
+  }
+{%- endstyle -%}
+
+<div class="subscribe-section color-{{ section.settings.color_scheme }} layout-type-{{ section.settings.subscribe_layout }} ">
+  {% if section.settings.subscribe_layout == 'box' %}
+    <div class="large-container">
+  {% endif %}
+  <div class="subscribe-section-inner">
+    {%- if section.settings.background_news_letter != blank -%}
+      {% assign dataImg = section.settings.background_news_letter | img_url %}
+      <div
+        class="shape-bg"
+      >
+        {{
+          section.settings.background_news_letter
+          | image_url: width: section.settings.background_news_letter.width
+          | image_tag: loading: 'lazy', class: 'lazyload', rel: 'preload', data-src: dataImg
+        }}
+      </div>
+    {%- endif -%}
+    {% for block in section.blocks %}
+      {% case block.type %}
+        {% when 'heading_area' %}
+          <div class="sec-title centred">
+            <h2>{{ block.settings.heading_title }}</h2>
+            <p>{{ block.settings.heading_content }}</p>
+          </div>
+        {% when 'form_area' %}
+          <!-- Form Section -->
+          <div class="form-container">
+            <div class="form-inner {{ block.settings.subscribe_form_style }}">
+              <div class="klaviyo-form-RZkrvA"></div>
+            </div>
+          </div>
+
+        {% when 'policy_area' %}
+          {%- if block.settings.policy_title != blank -%}
+            <div class="lower-text {{ block.settings.policy_position }} {{ block.settings.policy_position_mobile }}">
+              <p>{{ block.settings.policy_title }}</p>
+            </div>
+          {% endif %}
+        {%- when 'banner_button_text' -%}
+          {%- if block.settings.banner_button_label != blank -%}
+            <div class="btn-box">
+              <a
+                href="{{ block.settings.banner_button_url }}"
+                class="theme-btn btn-two"
+                aria-label="{{ block.settings.banner_button_label }}"
+              >
+                {{- block.settings.banner_button_label -}}
+              </a>
+            </div>
+          {%- endif -%}
+      {% endcase %}
+    {% endfor %}
+  </div>
+  {% if section.settings.subscribe_layout == 'box' %}
+    </div>
+  {% endif %}
+</div>
+
+{% schema %}
+{
+    "name": "Newsletter",
+    "tag": "section",
+    "class": "pesto-subscribe-area-main",
+    "settings": [
+        {
+            "type": "color_scheme",
+            "id": "color_scheme",
+            "default": "background-4",
+            "label": "Color scheme"
+        },
+        {
+            "type": "image_picker",
+            "id": "background_news_letter",
+            "label": "Background image"
+        },
+        {
+            "type": "select",
+            "id": "subscribe_layout",
+            "label": "Layout type",
+            "options": [
+                {
+                    "value": "box",
+                    "label": "Box"
+                },
+                {
+                    "value": "fullwidth",
+                    "label": "Full width"
+                }
+            ],
+            "default": "fullwidth"
+        },
+        {
+            "type": "header",
+            "content": "Section padding"
+        },
+        {
+            "type": "range",
+            "id": "pesto_section_padding_top",
+            "min": 0,
+            "max": 200,
+            "step": 10,
+            "unit": "px",
+            "label": "t:sections.all.padding.padding_top",
+            "default": 150
+        },
+        {
+            "type": "range",
+            "id": "pesto_section_padding_bottom",
+            "min": 0,
+            "max": 200,
+            "step": 10,
+            "unit": "px",
+            "label": "t:sections.all.padding.padding_bottom",
+            "default": 150
+        },
+        {
+            "type": "header",
+            "content": "Section padding for mobile"
+        },
+        {
+            "type": "range",
+            "id": "pesto_section_padding_top_mobile",
+            "min": 0,
+            "max": 300,
+            "step": 10,
+            "unit": "px",
+            "label": "t:sections.all.padding.padding_top",
+            "default": 60
+        },
+        {
+            "type": "range",
+            "id": "pesto_section_padding_bottom_mobile",
+            "min": 0,
+            "max": 300,
+            "step": 10,
+            "unit": "px",
+            "label": "t:sections.all.padding.padding_bottom",
+            "default": 60
+        },
+        {
+            "type": "header",
+            "content": "Section margin"
+        },
+        {
+            "type": "range",
+            "id": "pesto_section_margin_top",
+            "min": 0,
+            "max": 150,
+            "step": 10,
+            "unit": "px",
+            "label": "Top margin",
+            "default": 0
+        },
+        {
+            "type": "range",
+            "id": "pesto_section_margin_bottom",
+            "min": 0,
+            "max": 150,
+            "step": 10,
+            "unit": "px",
+            "label": "Bottom margin",
+            "default": 0
+        }
+   ],
+    "blocks": [
+        {
+            "type": "@app"
+        },
+        {
+          "name": "Heading",
+          "limit": 1,
+          "type": "heading_area",
+          "settings": [
+              {
+                  "type": "text",
+                  "id": "heading_title",
+                  "label": "Heading",
+                  "default": "Subscribe to our emails."
+              },
+              {
+                  "type": "textarea",
+                  "id": "heading_content",
+                  "label": "Content",
+                  "default": "Be the first to know about new collections and exclusive offers."
+              }
+            ]
+        },
+        {
+          "name": "Form",
+          "limit": 1,
+          "type": "form_area",
+          "settings": [
+                {
+                    "type": "select",
+                    "id": "subscribe_form_style",
+                    "label": "Style",
+                    "options": [
+                    {
+                        "value": "style-one",
+                        "label": "Box"
+                    },
+                    {
+                        "value": "style-two",
+                        "label": "Standard"
+                    }
+                    ],
+                    "default": "style-one"
+                },
+                {
+                    "type": "text",
+                    "id": "form_label",
+                    "label": "Label for input field",
+                    "default": "Enter your email address"
+                },
+                {
+                    "type": "text",
+                    "id": "form_placeholder",
+                    "label": "Placeholder for input field",
+                    "default": "Email address"
+                },
+                {
+                    "type": "textarea",
+                    "id": "form_btn",
+                    "label": "Button label",
+                    "default": "Button"
+                }
+
+            ]
+        },
+        {
+          "name": "Content",
+          "limit": 1,
+          "type": "policy_area",
+          "settings": [
+                {
+                    "type": "textarea",
+                    "id": "policy_title",
+                    "label": "Content",
+                    "default": "More information"
+                },
+                {
+                    "type": "select",
+                    "id": "policy_position",
+                    "label": "Desktop content alignment",
+                    "options": [
+                    {
+                        "value": "left",
+                        "label": "Left"
+                    },
+                    {
+                        "value": "center",
+                        "label": "Center"
+                    },
+                    {
+                        "value": "right",
+                        "label": "Right"
+                    }
+                    ],
+                    "default": "left"
+                },
+                {
+                    "type": "select",
+                    "id": "policy_position_mobile",
+                    "label": "Mobile content alignment",
+                    "options": [
+                    {
+                        "value": "m-left",
+                        "label": "Left"
+                    },
+                    {
+                        "value": "m-center",
+                        "label": "Center"
+                    },
+                    {
+                        "value": "m-right",
+                        "label": "Right"
+                    }
+                    ],
+                    "default": "m-left"
+                }
+            ]
+        },
+        {
+            "name": "Button",
+            "type": "banner_button_text",
+            "limit": 1,
+            "settings": [
+                {
+                    "type": "text",
+                    "id": "banner_button_label",
+                    "label": "Button label",
+                   "default": "Button",
+                   "info": "Leave the label blank to hide the button"
+                },
+                {
+                    "type": "url",
+                    "id": "banner_button_url",
+                    "label": "Button link"
+                }
+            ]
+        }
+    ],
+    "presets": [
+        {
+            "name": "Newsletter",
+            "blocks": [
+                {
+                    "type": "heading_area"
+                },
+                {
+                    "type": "form_area"
+                },
+                {
+                    "type": "policy_area"
+                }
+            ]
+        }
+    ]
+}
+{% endschema %}

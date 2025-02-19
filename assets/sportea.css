@@ -1,0 +1,1505 @@
+/* Arial Regular */
+@import url('https://fonts.googleapis.com/css2?family=arial:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+@font-face {
+    font-family: 'Arial';
+    src: url('https://raw.githubusercontent.com/DevExpert-360/my-font-cdn/main/ARIAL.TTF') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Arial Bold */
+@font-face {
+    font-family: 'Arial';
+    src: url('https://raw.githubusercontent.com/DevExpert-360/my-font-cdn/main/ARIALBD.TTF') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+
+:root {
+
+    /* Colors */
+    --primary: #DC232A;
+    --secondary: #2B4E92;
+    --white: #fff;
+    --black: #0A0C13;
+    --grey: #EDEDED;
+
+    /* Fonts */
+    --arial: "'Arial'", sans-serif;
+    --montserrat: "Montserrat", sans-serif;
+
+}
+/* Force Arial as the default font for all elements */
+* {
+    font-family: 'Arial', sans-serif !important;
+}
+
+/* Override specific elements for bold text */
+b, strong, h1, h2, h3, h4, h5, h6 {
+    font-family: 'Arial', sans-serif !important;
+    font-weight: bold !important;
+}
+
+
+.theme-btn svg {
+    position: absolute;
+    top: 35%;
+    right: 20%;
+    font-size: 20px;
+}
+
+/* Universal CSS */
+body#starter-set, body#special-offer-buy-any-2-boxes-of-sportea-get-free-shipping {
+    background: var(--grey);
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.page-width {
+    max-width: 1366px;
+    margin: auto;
+}
+#starter-set .header-top, #special-offer-buy-any-2-boxes-of-sportea-get-free-shipping .header-top {
+    display: none;
+}
+#starter-set #topbar-ai, #special-offer-buy-any-2-boxes-of-sportea-get-free-shipping #topbar-ai {
+    display: block;
+    border-bottom: none;
+
+}
+
+#starter-set p, #special-offer-buy-any-2-boxes-of-sportea-get-free-shipping p {
+    
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 25px;
+    letter-spacing: 0em;
+    /* text-align: left; */
+}
+.class-hide-ai{display:none !important;}
+#starter-set h1, #special-offer-buy-any-2-boxes-of-sportea-get-free-shipping h1 {
+    
+    font-size: 96px;
+    font-weight: 700;
+    line-height: 115px;
+    letter-spacing: 0em;
+    text-align: center;
+}
+p.text-center.topbar-ai-child {
+    font-size: 13px !important;
+}
+#starter-set h2, #special-offer-buy-any-2-boxes-of-sportea-get-free-shipping h2  {
+    
+    font-size: 52px;
+    font-weight: 500;
+    line-height: 62px;
+    letter-spacing: 0em;
+    text-align: center;
+
+}
+
+#starter-set h3, #special-offer-buy-any-2-boxes-of-sportea-get-free-shipping h3 {
+    
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 48px;
+    letter-spacing: 0em;
+    text-align: left;
+
+}
+
+
+#starter-set h5, #special-offer-buy-any-2-boxes-of-sportea-get-free-shipping h5  {
+    
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+    letter-spacing: 0em;
+    text-align: left;
+}
+
+#starter-set h6, #special-offer-buy-any-2-boxes-of-sportea-get-free-shipping h6  {
+    
+    font-size: 28px;
+    font-weight: 500;
+    line-height: 42px;
+    letter-spacing: 0em;
+    text-align: center;
+}
+
+
+
+a {
+    text-decoration: none;
+}
+
+.sportea-secondary-button,
+.sportea-primary-button {
+    padding: 8px 20px;
+    border-radius: 5px;
+    
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 36px;
+    letter-spacing: 0em;
+    text-align: left;
+    display: inline-block;
+    transition: all .3s ease;
+}
+.sportea-primary-button:hover {
+    color: var(--black);
+    background: var(--white);
+}
+.sportea-primary-button {
+    background: var(--primary);
+    color: var(--white);
+}
+.sportea-secondary-button:hover {
+    background: var(--primary);
+    color: var(--white);
+}
+.sportea-secondary-button {
+    color: var(--black);
+    background: var(--white);
+}
+
+.img-responsive {
+    display: block;
+    height: auto;
+    max-width: 100%;
+}
+
+.sportea-row {
+    position: relative;
+}
+
+.sportea-color-white {
+    color: var(--white);
+}
+
+.sportea-color-primary {
+    color: var(--primary);
+}
+
+.sportea-color-secondary {
+    color: var(--secondary);
+}
+
+.sportea-color-black {
+    color: var(--black);
+}
+/* .sportea-hero-wrap h1 {
+    font-size: 70px;
+    line-height: 100px;
+   
+} */
+/* Accordion Component  */
+.sportea-faq-accordion {
+    gap:20px;
+    background-color: var(--white);
+    
+    border: none;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 27px;
+    letter-spacing: 0em;
+    text-align: left;    
+    transition: 0.4s;
+    padding: 20px 24px 20px 24px;
+    width: 100%;
+    margin-bottom: 16px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.sportea-faq-icon {
+    font-size: 35px;
+    
+    font-weight: 300;
+}
+
+
+
+.sportea-faq-accordion.active .sportea-faq-icon {
+    transform: rotate(45deg);
+}
+.sportea-faq-accordion.active,
+.sportea-faq-accordion:hover {
+    background-color: var(--black);
+    color: var(--white);
+}
+
+.sportea-faq-panel {
+    padding: 30px;
+    display: none;
+    background-color: white;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.sportea-faq-panel p {
+    
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 25px;
+    letter-spacing: 0em;
+    text-align: left;
+}
+
+.sportea-faq-panel ul {
+    list-style-position: inside;
+    padding-top: 10px;
+}
+
+.sportea-faq-panel ul li {
+    
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 25px;
+    letter-spacing: 0em;
+    text-align: left;
+}
+
+/* Hero Section */
+.sportea-hero-wrap {
+    /* position: absolute; */
+    top: 0;
+    height: 100%;
+    /* left: 0; */
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 120px 0px;
+    padding-bottom: 40px;
+    padding-top: 70px;
+}
+
+.sportea-hero-wrap h1 span {
+    display: block;
+    font-weight: 400;
+}
+
+.sportea-hero-wrap p {
+    
+    font-size: 28px;
+    font-weight: 500;
+    line-height: 42px;
+    letter-spacing: 0em;
+    text-align: center;
+}
+#starter-set .sportea-row > img.desktop,
+#special-offer-buy-any-2-boxes-of-sportea-get-free-shipping .sportea-row > img.desktop {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+#starter-set .header-main nav,
+#starter-set .mobile-header,
+#starter-set .breadcrumbs,
+#starter-set .site-footer .container .row.bottom30,
+#special-offer-buy-any-2-boxes-of-sportea-get-free-shipping .header-main nav,
+#special-offer-buy-any-2-boxes-of-sportea-get-free-shipping .mobile-header,
+#special-offer-buy-any-2-boxes-of-sportea-get-free-shipping .breadcrumbs,
+#special-offer-buy-any-2-boxes-of-sportea-get-free-shipping .site-footer .container .row.bottom30 {
+    display: none !important;
+}
+
+#starter-set .site-header,
+#special-offer-buy-any-2-boxes-of-sportea-get-free-shipping .site-header {
+    margin-bottom: 0;
+}
+
+#starter-set .header-main,
+#special-offer-buy-any-2-boxes-of-sportea-get-free-shipping .header-main {
+    padding: 10px 0;
+    position: absolute;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    margin-top: 1.5rem;
+}
+ 
+.sportea-hero-button {
+    padding-top: 40px;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+/* Review Sectoin */
+.sportea-review-row {
+    background: var(--secondary);
+    padding: 65px 0;
+}
+
+.sportea-review-wrap {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 50px
+}
+
+.sportea-review-wrap h5 {
+    padding-top: 10px;
+}
+
+.sportea-review-block-qoute p {
+    
+    font-size: 18px;
+    font-weight: 500 !important;
+    line-height: 25.2px;
+    letter-spacing: 0em;
+    text-align: left;
+    font-family: var(--montserrat) !important;
+}
+
+.sportea-review-block-qoute p span {
+    display: block;
+    font-weight: 300;
+    padding-top: 5px;
+}
+
+/* About Section */
+.sportea-about-row {
+    padding: 80px 0px;
+}
+
+.sportea-about-wrap {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 80px;
+    align-items: center;
+}
+
+.sportea-about-img img {
+    border-radius: 5px;
+    height: 600px;
+    object-fit: cover;
+}
+
+.sportea-about-details p {
+    
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 36px;
+    letter-spacing: 0em;
+    text-align: left;
+    margin-bottom: 30px;
+}
+
+.sportea-about-details p b {
+    display: block;
+}
+
+.sportea-about-details h3 {
+    margin-bottom: 20px;
+}
+
+.sportea-about-details h3 span {
+    display: block;
+    font-weight: 600;
+}
+
+/* Why Us Section */
+
+.sportea-why-us-row {
+    /* background: var(--secondary); */
+    padding: 50px 0 40px;
+  
+}
+
+.sportea-why-us-row h2 {
+    margin-bottom: 80px;
+}
+
+.sportea-why-us-wrap ul {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    gap: 80px 40px;
+}
+
+.sportea-why-us-wrap ul li img {
+    margin: auto;
+}
+
+.sportea-why-us-wrap ul li p {
+    
+    font-size: 18.5px;
+    font-weight: 500;
+    line-height: 28px;
+    letter-spacing: 0em;
+    text-align: center;
+    padding-top: 20px;
+   color:#000000;
+}
+.body-for-product-template .sportea-why-us-wrap ul li p {
+font-size:18.5px
+}
+/* Ingredients Section */
+.sportea-ingredients-row {
+    /* padding: 112px 0px; */
+    padding-top:1px;
+    padding-bottom:1px;
+}
+
+.sportea-ingredients-wrap h2 {
+    margin-bottom: 80px;
+   text-align:center;
+}
+
+.sportea-ingredients-wrap ul {
+      list-style: none;
+    grid-template-columns: repeat(6, 1fr);
+    display: grid;
+    gap: 35px;
+    margin-bottom: 80px;
+}
+
+.sportea-ingredients-wrap ul li {
+    /* background: var(--white); */
+    /* padding: 30px; */
+    border-radius: 12px;
+}
+
+.sportea-ingredients-wrap h6 {
+    
+    font-size: 24px;
+    font-weight: 400 !important;
+    line-height: 28px;
+    letter-spacing: 0em;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.sportea-ingredients-wrap h4 {
+    font-size: 14px;
+    font-weight: 400 !important;
+    line-height: 25px;
+    letter-spacing: 0em;
+    text-align: center;
+    margin-bottom: 24px;
+    color:#575757;
+    text-transform: capitalize;
+}
+
+.sportea-ingredients-wrap p {
+    
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 28px;
+    letter-spacing: 0em;
+    text-align: center;
+}
+
+.sportea-ingredients-wrap li img {
+    width: 150px;
+    height: 150px;
+    margin: auto auto 24px;
+    object-fit: cover;
+   mix-blend-mode: darken;
+}
+
+.sportea-ingredients-button {
+    text-align: center;
+}
+
+/* Testimonial Section */
+
+.sportea-testimonials-bg {
+    width: 100%;
+    height: 1000px;
+}
+
+.sportea-testimonials-wrap {
+    position: relative;
+    top: 0;
+    height: 100%;
+    left: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.sportea-testimonials-wrap h2 {
+    margin-bottom: 24px;
+    font-size: 56px;
+    width: 100%;
+    display: block;
+    margin: auto;
+    font-weight: 500;
+}
+.sportea-testimonials-wrap p {
+    margin-bottom: 80px;
+    
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 27px;
+    letter-spacing: 0em;
+    text-align: center;
+}
+
+.sportea-testimonials-wrap h2 span {
+    display: block;
+}
+
+.sportea-testimonials-card {
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 5px;
+  
+}
+
+.sportea-testimonials-card>img {
+    margin-bottom: 32px;
+}
+
+.sportea-testimonials-card>p {
+    
+    font-size: 17px;
+    font-weight: 500;
+    line-height: 25px;
+    letter-spacing: 0em;
+    text-align: left;
+    margin-bottom: 32px;
+    color:#000000;
+}
+
+
+.sportea-testimonials-author {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+
+.sportea-testimonials-text-block p b {
+    display: block;
+}
+
+.sportea-testimonials-text-block p {
+    margin-bottom: 0;
+    
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0em;
+    text-align: left;
+
+}
+
+.sportea-testimonial-slider-options {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 50px;
+}
+
+.sportea-testimonial-slider-options .splide__pagination,
+.sportea-testimonial-slider-options .splide__arrow{
+    position: static;
+    padding: 0;
+}
+.sportea-testimonial-slider-options .splide__arrow{
+    width: 48px;
+    height: 48px;
+    background: var(--white);
+    opacity: 1;
+    transform: none;
+}
+
+.sportea-testimonial-slider-options .splide__arrows  {
+    display: flex;
+    gap:10px
+}
+
+.sportea-testimonial-slider-options .splide__pagination__page.is-active {
+    opacity: 1;
+}
+
+/* FAQ Section */
+.sportea-faq-row {
+    padding: 112px 0px;
+  background: #EDF8FF;
+}
+
+.sportea-faq-wrap {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 60px;
+}
+
+.sportea-faq-details p {
+    padding: 24px 0px;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 27px;
+    letter-spacing: 0em;
+    text-align: left;
+    color:#000000;
+
+}
+.sportea-hero-img {
+    width: 100%;
+}
+.mobile{display:none;}
+span.question-mark {
+    position: relative;
+    left: -20px;
+}
+
+/* New Css */
+.sportea-review-wrap h5 {
+    padding-top: 10px;
+    font-size: 14px;
+    font-family: var(--montserrat) !important;
+}
+/* Desktop View (max-width: 1200px) */
+@media (max-width: 1200px) {
+    .sportea-review-wrap {
+        grid-template-columns: 1fr 1fr; /* Two columns for larger screens */
+        gap: 40px; /* Adjust gap for larger screens */
+    }
+
+    .sportea-review-rating h5 {
+        font-size: 18px; /* Slightly reduce font size */
+    }
+
+    .sportea-review-block-qoute p {
+        font-size: 18px; /* Adjust paragraph font size */
+        line-height: 26px; /* Adjust line height */
+    }
+
+    .sportea-review-block-qoute p span {
+        font-size: 16px; /* Adjust date font size */
+    }
+.sportea-review-rating h5 {
+        text-align: left;
+    }
+    .gf-container__content {
+        padding: 1.5rem;
+    }
+}
+
+/* Tablet View (max-width: 768px) */
+@media (max-width: 768px) {
+ .banner-slider-three   .banner-carousel .btn-group{
+        justify-content: center;
+        width: 100%;
+    }
+    .sportea-review-wrap {
+        grid-template-columns: 1fr; /* Make the layout single column */
+        gap: 20px; /* Reduce gap between elements */
+        text-align: center; /* Center text for smaller screens */
+    }
+
+    .sportea-review-rating h5 {
+        font-size: 16px; /* Reduce the font size */
+    }
+
+    .sportea-review-block-qoute p {
+        font-size: 16px; /* Adjust paragraph font size */
+        line-height: 24px; /* Adjust line height for readability */
+    }
+
+    .sportea-review-block-qoute p span {
+        font-size: 14px; /* Adjust date font size */
+    }
+  .gf-container__cta {
+    padding-top: 2.5rem;
+}
+.sportea-review-rating h5 {
+        text-align: left;
+    }
+    .gf-container__content {
+        padding: 1.5rem;
+    }
+}
+
+/* Mobile View (max-width: 480px) */
+@media (max-width: 480px) {
+    .sportea-review-wrap {
+        grid-template-columns: 1fr; /* Single column layout */
+        gap: 15px; /* Reduce gap between elements */
+        text-align: center; /* Center text for mobile */
+    }
+
+    .sportea-review-rating h5 {
+        font-size: 14px; /* Reduce font size for mobile */
+        line-height: 20px; /* Adjust line height */
+    }
+
+    .sportea-review-block-qoute p {
+        font-size: 14px; /* Adjust paragraph font size */
+        line-height: 22px; /* Adjust line height */
+    }
+
+    .sportea-review-block-qoute p span {
+        font-size: 12px; /* Smaller font size for the date */
+    }
+
+    .sportea-review-row {
+        padding: 30px 15px; /* Adjust padding for mobile screens */
+    }
+
+    .img-responsive {
+        /* max-width: 80%; /* Reduce the size of the image */ */
+        margin: auto; /* Center the image */
+    }
+    .gf-container__content {
+        padding: 1.5rem;
+    }
+}
+.gf-container__cta {
+    padding-top: 2.5rem;
+}
+.sportea-review-rating h5 {
+        text-align: left;
+    }
+}
+
+/* Medium screens (tablets) */
+@media (max-width: 1024px) {
+  .theme-btn {
+      padding: 0 40px; /* Reduce padding */
+      height: 56px; /* Adjust height */
+      font-size: 18px; /* Reduce font-size */
+      gap: 15px; /* Adjust gap */
+  }
+  .theme-btn svg {
+      top: 30%; /* Adjust top position */
+      right: 15%; /* Adjust right position */
+      font-size: 18px; /* Reduce font size */
+  }
+.sportea-review-rating h5 {
+        text-align: left;
+    }
+}
+
+/* Small screens (large mobile phones) */
+@media (max-width: 768px) {
+  .theme-btn {
+      padding: 0 30px;
+      height: 50px;
+      font-size: 16px;
+      gap: 10px;
+  }
+.theme-btn svg {
+      top: 35%; /* Adjust top position further */
+      right: 10%; /* Reduce right position */
+      font-size: 16px; /* Reduce font size */
+  }
+}
+
+/* Extra small screens (small mobile phones) */
+@media (max-width: 480px) {
+  .theme-btn {
+      padding: 0 20px !important;
+      height: 45px;
+      font-size: 14px;
+      gap: 5px;
+  }
+.theme-btn svg {
+      top: 20%; /* Further adjust top */
+      right: 5%; /* Adjust right for smaller screens */
+      font-size: 14px; /* Reduce font size for small screens */
+     display: none;
+  }
+}
+
+.banner-carousel .content-box h1.lg {
+    font-size: 64px;
+    line-height: 76.8px;
+}
+
+/* For screens smaller than 1200px (large tablets and smaller desktops) */
+@media (max-width: 1200px) {
+.banner-carousel .content-box h1.lg {
+        font-size: 50px;
+        line-height: 62.4px;
+    }
+}
+
+/* For screens smaller than 768px (tablets and medium-sized devices) */
+@media (max-width: 768px) {
+.banner-carousel .content-box h1.lg {
+        font-size: 26px;
+        line-height: 38.4px;
+            color: #E8F6FA;
+    
+    }
+.sportea-ultimate {
+  font-size: 40px;
+  line-height: 1;
+  padding-bottom: 1rem;
+      color: #ffffff;
+    
+}
+}
+
+/* For screens smaller than 480px (mobile devices) */
+@media (max-width: 480px) {
+.banner-carousel .content-box h1.lg {
+        font-size: 26px;
+        line-height: 38.4px;
+        color: #E8F6FA;
+    
+    }
+    .sportea-ultimate {
+  font-size: 40px;
+  line-height: 1;
+  padding-bottom: 1rem;
+       color: #ffffff;
+}
+}
+/* For screens smaller than 1200px (large tablets and smaller desktops) */
+@media (max-width: 1200px) {
+    .banner-carousel .content-box {
+        width: 60%; /* Increase width for larger tablets */
+    }
+.shop-section .shop-block-one .inner-box .content-box .theme-btn {
+    font-size: 14px !important;
+}
+
+
+}
+
+/* For screens smaller than 768px (tablets and medium-sized devices) */
+@media (max-width: 768px) {
+    .banner-carousel .content-box {
+        width: 80%; /* Further increase width for tablets */
+    }
+}
+.row {
+    margin: auto;
+}
+/* For screens smaller than 480px (mobile devices) */
+@media (max-width: 480px) {
+    .banner-carousel .content-box {
+        width: 100%; /* Full width for mobile devices */
+    }
+}
+/* For screens smaller than 1200px (large tablets and smaller desktops) */
+@media (max-width: 1200px) {
+    .sportea-ingredients-wrap ul {
+        grid-template-columns: repeat(3, 1fr); /* 3 items per row */
+    }
+
+    .sportea-ingredients-wrap h6 {
+        font-size: 18px; /* Slightly reduce heading size */
+    }
+
+    .sportea-ingredients-wrap h4 {
+        font-size: 14px; /* Reduce subheading size */
+    }
+
+    .sportea-ingredients-wrap p {
+        font-size: 18px; /* Reduce paragraph text size */
+    }
+}
+
+/* For screens smaller than 768px (tablets and medium-sized devices) */
+@media (max-width: 768px) {
+    .sportea-ingredients-wrap ul {
+        grid-template-columns: repeat(2, 1fr); /* 2 items per row */
+    }
+
+    .sportea-ingredients-wrap h6 {
+        font-size: 16px; /* Further reduce heading size */
+    }
+
+    .sportea-ingredients-wrap h4 {
+        font-size: 13px; /* Reduce subheading size */
+    }
+
+    .sportea-ingredients-wrap p {
+        font-size: 16px; /* Reduce paragraph text size */
+    }
+
+    .sportea-ingredients-wrap li img {
+        width: 120px;
+        height: 120px; /* Adjust image size */
+    }
+}
+
+/* For screens smaller than 480px (mobile devices) */
+@media (max-width: 480px) {
+
+    .sportea-ingredients-wrap h6 {
+        font-size: 14px; /* Reduce heading size */
+    }
+
+    .sportea-ingredients-wrap h4 {
+        font-size: 12px; /* Reduce subheading size */
+    }
+
+    .sportea-ingredients-wrap p {
+        font-size: 14px; /* Reduce paragraph text size */
+    }
+
+    .sportea-ingredients-wrap li img {
+        width: 100px;
+        height: 100px; /* Further adjust image size */
+    }
+}
+.sportea-faq-details h3 {
+    font-size: 52px;
+    font-weight: 500;
+}
+.sportea-faq-details a {
+    margin: inherit;
+}
+.he-tvc-button {
+          text-align: center;
+          padding-top: 60px;
+      }
+
+      .he-tvc-button a:hover {
+          background: #fff;
+          color: #000;
+      }
+
+      .he-tvc-video h4 {
+          text-align: center;
+          font-size: 14px;
+          text-transform: uppercase;
+      }
+
+      .he-tvc-button a {
+          border: 1px solid #000;
+          display: inline-block;
+          padding: 16px 20px;
+          background: #272727;
+          color: #fff;
+      }
+
+      .he-tvc-title {
+          margin-bottom: 60px;
+      }
+
+      .he-tvc-wrap {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          grid-gap: 40px;
+      }
+
+      .he-tvc-container {
+        margin: auto;
+        /* width: 1366px; */
+    }
+
+
+      .he-tvc-video video {
+          object-fit: cover;
+      }
+  .he-three-video-column {
+      padding-top: 2rem;
+      padding-bottom: 5.5rem;
+  }
+   @media (max-width:980px) {
+     .he-tvc-row {
+              overflow: scroll;
+              padding: 30px 0px 0px;
+          }
+   }
+      @media (max-width:767px) {
+          .he-three-video-column {
+              padding: 30px 0px 0px;
+          }
+
+          .he-tvc-video video {
+              height: 380px;
+          }
+
+          .he-tvc-wrap {
+              grid-gap: 20px;
+              overflow: scroll;
+              width: 850px;
+              padding-right: 10px;
+          }
+
+          .he-tvc-row::-webkit-scrollbar {
+              display: none;
+          }
+
+          .he-tvc-row {
+              overflow: scroll;
+              padding: 30px 0px 0px;
+          }
+
+          .he-tvc-container {
+              width: 100%;
+          }
+
+          .he-tvc-title {
+              margin-bottom: 0px;
+          }
+
+          .he-tvc-button {
+              padding-top: 20px;
+          }
+
+          .he-tvc-button a {
+              padding: 5px 25px;
+              font-size: 14px;
+          }
+      }
+section#sportea-testimonials-section {
+    text-align: center;
+    padding-top: 75px;
+    padding-bottom:75px;
+}
+.he-tvc-row{margin-bottom:60px}
+/* General Form Styling */
+.form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* padding: 50px 20px;
+    background-color: #EDF8FF; */
+}
+
+.form-inner {
+    width: 100%;
+    max-width: 500px;
+    border-radius: 15px;
+    padding: 30px;
+    /* background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); */
+}
+
+/* Form Group Styling */
+.form-group {
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.field__input {
+    width: 100%;
+    padding: 15px;
+    border: none !important;
+    border-radius: 33px;
+    font-size: 16px;
+    background-color: #ffffff !important;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.field__input:focus {
+    background-color: #fff;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Button Styling */
+.gf-button {
+    background-color: #d72323;
+    color: #fff;
+}
+.shop-block-one .gf-button {
+    width: 205px;
+   margin:auto;
+    font-size:23px !important;
+}
+.body-for-index-template .shop-block-one.sin-prd-item{border:none;}
+.gf-button:hover {
+    background-color: #bb1d1d;
+}
+
+/* Error and Success Messages */
+.newsletter-form__message {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #d72323;
+}
+
+.newsletter-form__message--success {
+    color: #28a745;
+}
+form#contact_form input {
+    margin-bottom: 15px;
+}
+.subscribe-section .form-inner {
+    width: 850px !important;
+}
+.sec-title {
+    margin-bottom: 30px !important;
+}
+form#contact_form button {
+    margin-top: 30px;
+}
+
+
+/* For large desktops and above */
+@media (min-width: 1600px) {
+    .large-container {
+        max-width: 1500px;
+    }
+}
+
+/* For desktops */
+@media (min-width: 1200px) and (max-width: 1599px) {
+    .large-container {
+        max-width: 1350px;
+    }
+}
+
+/* For tablets and small desktops */
+@media (min-width: 768px) and (max-width: 1199px) {
+    .large-container {
+        max-width: 1000px;
+    }
+}
+
+/* For mobile devices */
+@media (max-width: 767px) {
+    .large-container {
+        max-width: 100%;
+    }
+}
+.sportea-faq-panel p, .sportea-faq-panel ul li {
+    color: #000;
+}
+/* Universal Styles for Tablets and Smaller Screens */
+@media (max-width: 1199px) {
+    /* Adjusting padding and layout for form container */
+    .form-container {
+        padding: 30px 10px;
+    }
+
+    /* Adjust form inner container width */
+    .form-inner {
+        max-width: 80%;
+        padding: 20px;
+    }
+
+    /* Adjust font size for buttons */
+    .gf-button {
+font-size: 18px;
+        padding: 16px 16px;
+        /* width: 50%; */
+        margin: auto;
+    }
+    .shop-block-one .gf-button {
+       width: 100% ;
+    }
+    /* Resize inputs for smaller screens */
+    .field__input {
+        padding: 12px;
+        font-size: 15px;
+    }
+
+    /* Testimonial section adjustments */
+    .sportea-testimonials-wrap h2 {
+        font-size: 48px;
+        width: 90%;
+    }
+
+    /* Review Section */
+    .sportea-review-wrap {
+        grid-template-columns: 1fr; /* Single-column layout on smaller screens */
+        gap: 20px;
+    }
+
+    /* Ingredients Section adjustments */
+    .sportea-ingredients-wrap ul {
+        grid-template-columns: repeat(2, 1fr); /* 2 items per row */
+        gap: 20px;
+    }
+
+    .sportea-ingredients-wrap h6 {
+        font-size: 16px;
+    }
+
+    .sportea-ingredients-wrap h4 {
+        font-size: 14px;
+    }
+
+    .sportea-ingredients-wrap p {
+        font-size: 16px;
+    }
+
+    .sportea-ingredients-wrap li img {
+        width: 100px;
+        height: 100px;
+    }
+
+    /* Why Us Section */
+    .sportea-why-us-wrap ul {
+        grid-template-columns: repeat(4, 1fr); /* 4 items per row */
+        gap: 20px;
+    }
+
+    /* FAQ Section */
+    .sportea-faq-wrap {
+        grid-template-columns: 1fr; /* Single-column layout on tablets */
+        gap: 30px;
+    }
+
+    .sportea-faq-details p {
+        font-size: 16px;
+    }
+
+    /* Video Section */
+    .he-tvc-wrap {
+        grid-template-columns: repeat(3,1fr); /* Single-column layout on smaller screens */
+        grid-gap: 30px;
+    }
+
+    .he-tvc-video video {
+        height: auto;
+    }
+}
+
+/* Mobile-specific Styles */
+@media (max-width: 767px) {
+    /* Form container adjustments */
+    .form-container {
+        padding: 20px 5px;
+    }
+
+    .form-inner {
+        max-width: 100%;
+        padding: 15px;
+    }
+
+    /* Adjust font size and padding for inputs */
+    .field__input {
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    /* Adjust button size and font */
+    .gf-button {
+        padding: 10px;
+        /* width: 80%; */
+        margin: auto;
+        padding-top: 15px;
+    }
+
+    /* Testimonial Section Adjustments */
+    .sportea-testimonials-wrap h2 {
+        font-size: 32px;
+        width: 100%;
+    }
+
+    .sportea-testimonials-wrap p {
+        font-size: 16px;
+    }
+
+    /* Review Section */
+    .sportea-review-wrap {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    /* Ingredients Section adjustments */
+    .sportea-ingredients-wrap ul {
+        grid-template-columns: 1fr; /* Single column layout */
+    }
+
+    .sportea-ingredients-wrap h6 {
+        font-size: 14px;
+    }
+
+    .sportea-ingredients-wrap h4 {
+        font-size: 12px;
+    }
+
+    .sportea-ingredients-wrap p {
+        font-size: 14px;
+    }
+
+    .sportea-ingredients-wrap li img {
+        width: 80px;
+        height: 80px;
+    }
+
+    /* Why Us Section */
+    .sportea-why-us-wrap ul {
+        grid-template-columns: 1fr; /* Single-column layout */
+        gap: 15px;
+    }
+
+    /* FAQ Section */
+    .sportea-faq-wrap {
+        grid-template-columns: 1fr; /* Single-column layout on mobile */
+    }
+
+    .sportea-faq-details p {
+        font-size: 14px;
+    }
+
+    /* Video Section */
+    /* .he-tvc-wrap {
+        grid-template-columns: 1fr; /* Single-column layout */
+    } */
+
+    .he-tvc-video video {
+        height: 200px; /* Adjust video height */
+    }
+
+    .he-tvc-button a {
+        font-size: 12px;
+        padding: 10px;
+    }
+}
+.shop-block-one.sin-prd-item {
+    border: 1px solid #f2f2f2;
+}
+.product-recommendations .shop-block-one .inner-box .content-box h4 a {
+    font-size: 16px;
+    color: rgba(var(--color-secondary-foreground), 1);
+    font-weight: 500;
+}
+.title-of-product .price .price__regular .price-item {
+    color: #264786;
+}
+.shop-block-one .inner-box .content-box .price .price__sale .price-item--regular {
+    color: #264786;
+}
+.body-for-product-template .shop-block-one .inner-box .content-box .price .price__sale .price-item--regular {
+    color: #F25555;
+}
+
+.shop-details .price .price__sale .price-item--sale, .body-for-product-template .title-of-product .price .price__regular .price-item {
+    color: #D72A31;
+}
+.shop-details .related-products .title-box h2 {
+    text-align: left !important;
+}
+.is-this-shop .shop-block-one .inner-box .content-box h4 a {
+    color: #000000;
+    font-size: 16px;
+    font-weight: 500;
+}
+/* .theme-btn svg {
+    position: absolute;
+    top: 40%;
+    right: 60px;
+    font-size: 20px;
+} */
+
+.pesto-announcement-bar .announcement-bar-link{
+  font-family: var(--montserrat) !Important;
+}
+
+.banner-carousel .content-box h1.lg .bold-head,.banner-section.no-slider-area .banner-carousel .content-box p {
+   display: block;
+   width: 40%;
+}
+.banner-carousel .content-box h1.lg .no-bold {
+   font-weight: 400;
+}
+.banner-section.no-slider-area .banner-carousel .content-box p{font-size:24px;}
+.user-link.user-account-icon:before , div#cart-icon-bubble:before{
+   content: "";
+   display: block;
+   width: 0.94px;
+   height: 13.22px;
+   background-color: #264786;
+   opacity: 1;
+   position: absolute;
+   top: 50%;
+   transform: translateY(-50%);
+}
+div#cart-icon-bubble:before{
+   left:-3px;8
+}
+/* Medium screens (tablets) */
+@media (max-width: 1200px) {
+  .banner-carousel .content-box h1.lg .bold-head,
+  .banner-section.no-slider-area .banner-carousel .content-box p {
+     width: 80%; /* Adjust width for medium screens */
+  }
+}
+
+/* Small screens (large mobile phones) */
+@media (max-width: 768px) {
+  .banner-carousel .content-box h1.lg .bold-head,
+  .banner-section.no-slider-area .banner-carousel .content-box p {
+     width: 80%; /* Adjust width for smaller screens */
+  }
+}
+
+/* Extra small screens (small mobile phones) */
+@media (max-width: 480px) {
+  .banner-carousel .content-box h1.lg .bold-head,
+  .banner-section.no-slider-area .banner-carousel .content-box p {
+     width: 100%; /* Full width for the smallest screens */
+  }
+}
+/* .body-for-index-template .price,.body-for-index-template  .card__badge {
+    display: none;
+} */
+.content-box-img.position-relative {
+    height: 395px;
+}
+/* Medium screens (tablets) */
+@media (max-width: 1024px) {
+  .user-link.user-account-icon:before , div#cart-icon-bubble:before{
+   content: none;
+}
+  .content-box-img.position-relative {
+      height: 350px; /* Adjust height for tablets */
+  }
+}
+
+/* Small screens (large mobile phones) */
+@media (max-width: 768px) {
+  .content-box-img.position-relative {
+      height: auto; /* Adjust height for mobile screens */
+  }
+}
+
+/* Extra small screens (small mobile phones) */
+@media (max-width: 480px) {
+  .content-box-img.position-relative {
+      height: auto;  Adjust height for small mobile devices */
+  }
+}
+.sportea-faq-details a {
+    width: 215px;
+}
+.gf-container__cta,.more-btn {
+    /* margin-top: 20px; */
+    width: 250px;
+    margin: auto;
+}
+
+form#contact_form button {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.badge {
+    background-color: rgb(215, 42, 49);
+}
+.shop-block-one.sin-prd-item .inner-box .card__badge {
+    background: transparent;
+}
+.icon path {
+    fill: #ffffff;
+}
+.header__sub-nested-menu-link .icon path {
+    fill: #dc222a;
+}
+@media (min-width: 768px) {
+    .header__sub-nested-blocks {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}

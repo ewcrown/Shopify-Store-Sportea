@@ -1,0 +1,186 @@
+<link rel="stylesheet" href="{{ 'component-rte.css' | asset_url }}" media="print" onload="this.media='all'">
+
+<link rel="stylesheet" href="{{ 'ui-page-title.css' | asset_url }}" media="print" onload="this.media='all'">
+<noscript>{{ 'ui-page-title.css' | asset_url | stylesheet_tag }}</noscript>
+
+<noscript>{{ 'component-rte.css' | asset_url | stylesheet_tag }}</noscript>
+
+{%- style -%}
+  {%- if section.settings.pesto_section_padding_top != blank -%}
+      #shopify-section-{{section.id}} .page-the-single-default {
+          padding-top: {{ section.settings.pesto_section_padding_top }}px  !important;
+      }
+  {%- endif -%}
+  {%- if section.settings.pesto_section_padding_bottom != blank -%}
+      #shopify-section-{{section.id}} .page-the-single-default {
+          padding-bottom: {{ section.settings.pesto_section_padding_bottom }}px !important;
+      }
+  {%- endif -%}
+  {%- if section.settings.page_title_breadcrumb_gap != blank -%}
+      #shopify-section-{{section.id}} .page-the-single-default .elements-gap{
+        gap: {{ section.settings.page_title_breadcrumb_gap }}px;
+      }
+  {%- endif -%}
+  #shopify-section-{{section.id}} .page-the-single-default:after{
+      opacity: {{ section.settings.pesto_page_title_bg_opacity | divided_by: 100.0 }};
+  }
+{%- endstyle -%}
+
+<div
+  id="{{ section.id }}"
+  class="page-the-single-default page-title shop-page centred color-{{ section.settings.color_scheme }}"
+>
+  {% if section.settings.pesto_heading_bg_img != blank %}
+    <div class="section-bg">
+      {{
+        section.settings.pesto_heading_bg_img
+        | image_url: width: section.settings.pesto_heading_bg_img.width
+        | image_tag: loading: 'lazy', class: 'lazyload', rel: 'preload', data-src: dataImg
+      }}
+    </div>
+  {% endif %}
+  <div class="large-container">
+    <div class="row">
+      <div class="col-12 d-flex {{ section.settings.main_page_breadcrumb_position }} elements-gap">
+        {% comment %}
+          <div class="text">
+            <h1 class="font-{{ section.settings.title_font_size }}">
+              {{ page.title | escape }}
+            </h1>
+          </div>
+          {% if section.settings.enable_breadcrumb_navigation == true %}
+            <ul class="bread-crumb clearfix">
+                <li><a href="{{ request.origin }}">{{ 'products.product.bred_text' | t }}</a></li>
+                <li>
+                  {{ page.title | escape }}
+                </li>
+            </ul>
+          {% endif %}
+        {% endcomment %}
+        {% if page.content != blank %}
+          <br>
+          <div class=" product-description-content rte-content-area">
+            {{ page.content }}
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "t:sections.main-page.name",
+  "tag": "section",
+  "settings": [
+    {
+        "type": "color_scheme",
+        "id": "color_scheme",
+        "default": "background-2",
+        "label": "Color scheme"
+    },
+    {
+      "type": "header",
+      "content": "Breadcrumb options"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_breadcrumb_navigation",
+      "default": true,
+      "label": "Enable breadcrumb navigation"
+    },
+    {
+      "type": "select",
+      "id": "main_page_breadcrumb_position",
+      "label": "Position",
+      "options": [
+        {
+          "value": "flex-column-reverse",
+          "label": "Before title "
+        },
+        {
+          "value": "flex-column",
+          "label": "After title"
+        }
+      ],
+      "default": "flex-column" ,
+      "info": "Only applies if the breadcrumb navigation is enabled"
+    },
+    {
+      "type": "range",
+      "id": "page_title_breadcrumb_gap",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Spacing",
+      "default": 0,
+      "info": "Only applies if the breadcrumb navigation is enabled"
+    },
+    {
+      "type": "header",
+      "content": "Heading options"
+    },
+    {
+      "type": "select",
+      "id": "title_font_size",
+      "label": "Heading size",
+      "options": [
+        {
+          "value": "small",
+          "label": "Small"
+        },
+        {
+          "value": "medium",
+          "label": "Medium"
+        },
+        {
+          "value": "large",
+          "label": "Large"
+        }
+      ],
+      "default": "medium"
+    },
+    {
+        "type": "image_picker",
+        "id": "pesto_heading_bg_img",
+        "label": "Background image"
+    },
+    {
+        "type": "range",
+        "id": "pesto_page_title_bg_opacity",
+        "min": 0,
+        "max": 100,
+        "step": 10,
+        "unit": "%",
+        "label": "Image overlay opacity",
+        "default": 0
+    },
+    {
+      "type": "header",
+      "content": "Section padding"
+    },
+    {
+      "type": "range",
+      "id": "pesto_section_padding_top",
+      "min": 0,
+      "max": 200,
+      "step": 10,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 100
+    },
+     {
+        "type": "range",
+        "id": "pesto_section_padding_bottom",
+        "min": 0,
+        "max": 200,
+        "step": 10,
+        "unit": "px",
+        "label": "t:sections.all.padding.padding_bottom",
+        "default": 100
+    }
+  ],
+  "class": "section"
+}
+{% endschema %}

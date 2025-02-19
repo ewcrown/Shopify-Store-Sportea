@@ -1,0 +1,58 @@
+
+{% liquid
+    assign settings = block.settings 
+    assign slider_item_title = settings.slider_item_title
+    assign slider_item_content = settings.slider_item_content
+
+    assign slider_item_off_text = settings.slider_item_off_text
+    assign slider_item_off_text_percent = settings.slider_item_off_text_percent
+
+    assign slider_item_url = settings.slider_item_url
+    assign slider_item_url_text = settings.slider_item_url_text
+
+    assign slider_item_images_bg = settings.slider_item_images_bg
+    assign slider_bg_color = settings.slider_bg_color
+    assign slider_item_images_shape = settings.slider_item_images_shape
+%}
+
+<div id="shopify-block-{{ block.id }}" class="swiper-slide slide-item">
+    {%- if slider_item_images_bg.id != blank or slider_bg_color -%}
+        {%- style -%}
+            #shopify-block-{{ block.id }} .image-layer {
+                background-image: url( {{ slider_item_images_bg | img_url: 'master' }} );
+                background-color: {{ slider_bg_color }};
+            }
+        {%- endstyle -%}
+    {%- endif -%}
+
+    {%- if slider_item_images_shape != blank -%}
+        {%- style -%}
+            .banner-style-two .banner-carousel #shopify-block-{{ block.id }}   .content-box  h2 .discount-text:after {
+                background-image: url( {{ slider_item_images_shape | img_url: 'master' }} );
+            }
+        {%- endstyle -%}
+    {%- endif -%}
+    
+    {%- if slider_item_images_bg != blank -%}
+        <div class="image-layer"></div>
+    {%- else -%}
+        {{ 'lifestyle-2' | placeholder_svg_tag: 'placeholder-svg-video-one' }}
+        <div class="placeholder-overlay-video-one"></div>
+    {%- endif -%}
+    
+
+    <div class="large-container">
+        <div class="content-box centred">
+            <h3>{{ slider_item_title }}</h3>
+            <h2>
+                {{ slider_item_content }}
+                <span class="discount-text">{{ slider_item_off_text }}</span>
+                <span class="discount">{{ slider_item_off_text_percent }}</span>
+            </h2>
+            <div class="btn-box">
+                <a href="{{ slider_item_url }}" class="theme-btn btn-two" aria-label="{{ 'general.slider_item_action' | t }}">{{ slider_item_url_text }}</a>
+            </div>
+        </div>
+    </div>
+</div>
+

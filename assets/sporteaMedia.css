@@ -1,0 +1,207 @@
+@media (max-width: 980px) {
+  #starter-set h1,
+  #special-offer-buy-any-2-boxes-of-sportea-get-free-shipping h1 {
+    font-size: 56px;
+    line-height: 65px;
+  }
+
+  .page-width {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+  .sportea-hero-wrap p {
+    font-size: 20px;
+    line-height: 24px;
+  }
+  .sportea-faq-row,
+  .sportea-ingredients-row,
+  .sportea-why-us-row,
+  .sportea-about-row,
+  .sportea-review-row {
+    padding: 30px 0;
+  }
+  .sportea-about-wrap {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 30px;
+  }
+  #starter-set h2,
+  #special-offer-buy-any-2-boxes-of-sportea-get-free-shipping h2 {
+    font-size: 30px;
+    line-height: 50px;
+    width: 275px;
+    margin: auto;
+    padding-bottom: 1.5rem;
+  }
+  #starter-set p.text-center.topbar-ai-child {
+    font-size: 13px !important;
+    /* height: 50px !important; */
+    position: relative;
+    top: -10px;
+  }
+  .sportea-testimonials-section span.trademark-us {
+    position: relative;
+    font-size: 1.7rem;
+    top: -15px;
+    left: -5px;
+  }
+  #starter-set h3,
+  #special-offer-buy-any-2-boxes-of-sportea-get-free-shipping h3 {
+    font-size: 24px;
+    line-height: 28px;
+  }
+
+  .sportea-about-details p {
+    font-size: 18px;
+    line-height: 24px;
+    margin-bottom: 30px;
+  }
+
+  .sportea-secondary-button,
+  .sportea-primary-button {
+    font-size: 16px;
+    padding: 4px 20px;
+  }
+  .sportea-ingredients-wrap h2,
+  .sportea-why-us-row h2 {
+    margin-bottom: 30px;
+  }
+  .sportea-why-us-wrap ul {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+  .sportea-why-us-wrap ul li p {
+    font-size: 16px;
+    line-height: 20px;
+    padding-top: 10px;
+  }
+  .sportea-ingredients-wrap h4 {
+    font-size: 14px;
+    line-height: 24px;
+    margin-bottom: 12px;
+  }
+  .sportea-ingredients-wrap p {
+    font-size: 18px;
+    line-height: 22px;
+  }
+  .sportea-ingredients-wrap h6 {
+    font-size: 16px;
+    line-height: 20px;
+    margin-bottom: 12px;
+  }
+  .sportea-ingredients-wrap ul {
+    gap: 24px;
+    margin-bottom: 30px;
+  }
+  .sportea-testimonials-wrap {
+    display: block;
+    padding: 30px 0px;
+  }
+  .sportea-testimonials-bg {
+    height: 750px;
+    object-fit: cover;
+  }
+  .sportea-faq-wrap {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 30px;
+  }
+  .sportea-testimonials-card > p {
+    margin-bottom: 30px;
+    font-size: 14px;
+  }
+  .sportea-testimonials-wrap .page-width > p {
+    margin-bottom: 30px;
+  }
+  #sportea-why-us-section span.trademark-us {
+    font-size: 1.2rem;
+    top: -22px;
+  }
+}
+@media (max-width: 600px) {
+  a#logo img {
+    width: 90px;
+  }
+  #starter-set h1,
+  #special-offer-buy-any-2-boxes-of-sportea-get-free-shipping h1 {
+    font-size: 25px;
+    line-height: 35px;
+  }
+
+  .sportea-hero-wrap p {
+    font-size: 16px;
+    line-height: 20px;
+  }
+  .sportea-hero-button {
+    padding-top: 30px;
+  }
+  .sportea-ingredients-wrap ul,
+  .sportea-review-wrap {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 30px;
+  }
+  .sportea-testimonials-bg {
+    height: 900px;
+  }
+  .sportea-testimonials-card {
+    padding: 20px;
+  }
+  .sportea-faq-accordion {
+    font-size: 16px;
+  }
+  .payment-types p {
+    margin: auto;
+    text-align: center;
+  }
+  .footer-logo {
+    margin: auto;
+    display: block;
+  }
+  .text-center-ai {
+    text-align: center;
+  }
+  section#sportea-hero-section,
+  .sportea-hero-img {
+    height: 65vh;
+  }
+  #starter-set .header-main,
+  #special-offer-buy-any-2-boxes-of-sportea-get-free-shipping .header-main {
+    margin-top: 4rem;
+  }
+
+  .desktop {
+    display: none;
+  }
+  .mobile {
+    display: block !important;
+  }
+  .sportea-hero-wrap {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    left: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .sportea-hero-wrap h1 {
+    font-size: 25px;
+  }
+  .sportea-hero-wrap h1 {
+    line-height: 40px;
+  }
+  .sportea-ingredients-wrap ul li {
+    padding: 10px;
+  }
+  #sportea-ingredients-section .page-width {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  a:hover,
+  a:focus {
+    text-decoration: none;
+  }
+  #sportea-why-us-section span.trademark-us {
+    font-size: 1.2rem;
+    top: -22px;
+  }
+}

@@ -1,0 +1,218 @@
+<link rel="stylesheet" href="{{ 'ui-contact-section.css' | asset_url }}" media="print" onload="this.media='all'">
+<noscript>{{ 'ui-contact-section.css' | asset_url | stylesheet_tag }}</noscript>
+
+{%- style -%}
+
+    {%- if section.settings.pesto_section_padding_top != blank -%}
+        #shopify-section-{{section.id}} .contact-section{
+            padding-top: {{ section.settings.pesto_section_padding_top }}px;
+        }
+    {%- endif -%}
+    {%- if section.settings.pesto_section_padding_bottom != blank -%}
+        #shopify-section-{{section.id}} .contact-section{
+            padding-bottom: {{ section.settings.pesto_section_padding_bottom }}px;
+        }
+    {%- endif -%}
+
+{%- endstyle -%}
+
+{% if section.settings.make_full_width == true %}
+    {% assign col_dextop_val = '12' %}
+{% else %}
+    {% assign col_dextop_val = '6' %}
+{% endif %}
+
+<div class="contact-section col_dextop_val-{{col_dextop_val}} color-{{ section.settings.color_scheme }} full-width-{{ section.settings.make_full_width }} item_border-{{ section.settings.item_devide_border }}">
+    <div class="large-container">
+        <div class="row clearfix">
+            <div class="col-lg-{{col_dextop_val}} col-md-12 col-sm-12 content-column">
+                <div class="content-box">
+                    <div class="sec-title">
+                        <h2>{{ section.settings.sections_title }}</h2>
+                        <p>{{ section.settings.sections_content }}</p>
+                    </div>
+                    <div class="form-inner">
+                        {%- form 'contact', id: 'ContactForm', class: 'default-form' -%}
+                            <div class="row clearfix">
+                                <div class="col-lg-6 col-md-6 col-sm-12 form-group">
+                                    <label for="name-fields">{{ 'templates.contact.form.full_name' | t }} <span>*</span></label>
+                                    <input id="name-fields" type="text" name="contact[text]" placeholder="{{ 'general.input_name' | t }}" required="">
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-12 form-group">
+                                    <label for="email-fields">{{ 'templates.contact.form.email_address' | t }} <span>*</span></label>
+                                    <input id="email-fields" type="email" name="contact[email]" placeholder="{{ 'general.input_email' | t }}" required="">
+                                </div>
+                                <div class="col-lg-12 col-md-12 col-sm-12 form-group">
+                                    <label for="phone-fields">{{ 'templates.contact.form.phone_number' | t }} <span>*</span></label>
+                                    <input type="tel" id="ContactForm-phone" autocomplete="tel" name="contact[phone]" pattern="[0-9\-]*" value="{% if form.phone %}{{ form.phone }}{% elsif customer %}{{ customer.phone }}{% endif %}" placeholder="{{ 'general.input_number' | t }}" required="">
+                                </div>
+                                <div class="col-lg-12 col-md-12 col-sm-12 form-group">
+                                    <label for="text-message">{{ 'templates.contact.form.special_information' | t }} <span>*</span></label>
+                                    <textarea id="text-message" name="contact[message]" placeholder="{{ 'general.input_sms' | t }}" required=""></textarea>
+                                </div>
+                                <div class="col-lg-12 col-md-12 col-sm-12 form-group message-btn">
+                                    <button class="theme-btn btn-one" type="submit" name="submit-form">{{ 'templates.contact.form.send_message' | t }}</button>
+                                </div>
+                                
+                                {%- if form.errors -%}
+                                    <div class="col-lg-12 col-md-12 col-sm-12 form-group">
+                                        <small class="newsletter-form__message form__message" id="Newsletter-error--{{ section.id }}">{% render 'icon-error' %}{{ form.errors.translated_fields['email'] | capitalize }} {{ form.errors.messages['email'] }}</small>
+                                    </div>
+                                {%- endif -%}
+                                {%- if form.posted_successfully? -%}
+                                    <div class="col-lg-12 col-md-12 col-sm-12 form-group">
+                                        <h3 class="newsletter-form__message newsletter-form__message--success form__message" id="Newsletter-success--{{ section.id }}" tabindex="-1" autofocus>{% render 'icon-success' %} {{ 'general.sms_succc' | t }}</h3>
+                                    </div>
+                                {%- endif -%}
+                            </div>
+                        {%- endform -%}
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-{{col_dextop_val}} col-md-12 col-sm-12 content-column">
+                <div class="map-column">
+                    <div class="google-map-area">
+ 
+                        {% assign blocksize = section.blocks.size %}
+                        {% if blocksize > 0 %}
+                            <la-tab>   
+                                <div class="la-tab-heading-area"> 
+                                <div class="la-tab-heading-items{% if blocksize > 2 %} justify-content-between{% endif %}">
+                                    {%- for block in section.blocks -%}
+                                    {%- case block.type -%}
+                                        {%- when 'iframe_map_list' -%}
+                                        <button
+                                            class="la-tab-heading-item {% if forloop.index0 == 0 %}active{% endif %}"
+                                        >
+                                            {{ block.settings.heading }}
+                                        </button>
+                                    {%- endcase -%}
+                                    {%- endfor -%}
+                                </div>
+                                </div>
+                                <div class="la-tab-content-area">
+                                {%- for block in section.blocks -%}
+                                    {%- case block.type -%}
+                                    {%- when 'iframe_map_list' -%}
+                                        <div class="la-tab-content-single {% if forloop.index0 == 0 %}active{% endif %}">
+                                        {% if block.settings.block_iframe_map != blank %}
+                                            {{ block.settings.block_iframe_map }}
+                                        {% endif %}
+                                        </div>
+                                    {%- endcase -%}
+                                {%- endfor -%}
+                                </div>
+                
+                            </la-tab>
+                        {% else %}
+                            {% if section.settings.sections_map != blank %}
+                                {{ section.settings.sections_map }}
+                            {% else %}
+                                {{ 'lifestyle-2' | placeholder_svg_tag: 'placeholder-svg-map' }}
+                            {% endif %}
+                        {% endif %}
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% schema %}
+    {
+        "name": "Contact info",
+        "tag": "section",
+        "class": "contact-area",
+        "blocks": [
+            {
+                "name": "Map list",
+                "type": "iframe_map_list",
+                "limit": 5,
+                "settings": [
+                    {
+                    "type": "text",
+                    "id": "heading",
+                    "default": "Heading",
+                    "label": "Heading",
+                    "info": "Include a heading that explains the content."
+                    },
+                    {
+                        "type": "textarea",
+                        "id": "block_iframe_map",
+                        "label": "Iframe code"
+                    }
+                ]
+            }
+        ],
+        "settings": [
+            {
+                "type": "color_scheme",
+                "id": "color_scheme",
+                "default": "background-4",
+                "label": "Color scheme"
+            },
+            {
+            "type": "checkbox",
+            "id": "make_full_width",
+            "default": false,
+            "label": "Enable full width"
+            },
+            {
+            "type": "checkbox",
+            "id": "item_devide_border",
+            "default": false,
+            "label": "Column divider",
+            "info": "Border option works, when full width is disabled."
+            },
+            {
+                "type": "text",
+                "id": "sections_title",
+                "label": "Heading",
+                "default": "Talk about your contact info"
+            },
+            {
+                "type": "textarea",
+                "id": "sections_content",
+                "label": "Content",
+                "default": "Describe a product, make announcements, or welcome customers to your store."
+            },
+            {
+                "type": "textarea",
+                "id": "sections_map",
+                "label": "Iframe code",
+                "info": "If the map list block is unavailable, this option will apply"
+            },
+            {
+                "type": "header",
+                "content": "Section padding"
+            },
+            {
+                "type": "range",
+                "id": "pesto_section_padding_top",
+                "min": 0,
+                "max": 200,
+                "step": 10,
+                "unit": "px",
+                "label": "t:sections.all.padding.padding_top",
+                "default": 150
+            },
+            {
+                "type": "range",
+                "id": "pesto_section_padding_bottom",
+                "min": 0,
+                "max": 200,
+                "step": 10,
+                "unit": "px",
+                "label": "t:sections.all.padding.padding_bottom",
+                "default": 150
+            }
+        ],
+        "presets": [
+            {
+                "name": "Contact info"
+            }
+        ]
+    }
+{% endschema %}

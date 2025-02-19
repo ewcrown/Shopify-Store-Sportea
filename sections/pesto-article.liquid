@@ -1,0 +1,689 @@
+<link rel="stylesheet" href="{{ 'ui-page-title.css' | asset_url }}" media="print" onload="this.media='all'">
+<noscript>{{ 'ui-page-title.css' | asset_url | stylesheet_tag }}</noscript>
+
+<link rel="stylesheet" href="{{ 'ui-blog.css' | asset_url }}" media="print" onload="this.media='all'">
+<noscript>{{ 'ui-blog.css' | asset_url | stylesheet_tag }}</noscript>
+
+
+{%- style -%}
+
+    {%- if section.settings.padding_heading_top != blank -%}
+        .section-{{ section.id }}-padding.page-title {
+            padding-top: {{ section.settings.padding_heading_top }}px;
+        }
+    {%- endif -%}
+    {%- if section.settings.padding_heading_bottom != blank -%}
+        .section-{{ section.id }}-padding.page-title {
+            padding-bottom: {{ section.settings.padding_heading_bottom }}px;
+        }
+    {%- endif -%}
+
+{%- endstyle -%}
+
+
+
+{% assign page_width = '1500' %}
+<div class="section-{{ section.id }}-padding page-title style-two blog-details-page-title color-{{ section.settings.color_scheme }}">
+    {% if section.settings.pesto_heading_bg_img != blank %}
+        <div class="section-bg">
+          {{ section.settings.pesto_heading_bg_img | image_url: width: section.settings.pesto_heading_bg_img.width
+          | image_tag: loading: 'lazy', class: 'lazyload', rel: 'preload', data-src: dataImg }}
+        </div>
+      {% endif %}
+        <div class="large-container">
+            {% if section.settings.enable_breadcrumb_navigation == true %}
+            <ul class="bread-crumb clearfix">
+                <li><a href="{{ routes.root_url }}">{{ 'products.product.bred_text' | t }}</a></li>
+                <li>
+                    <a href="{{ blog.url | escape }}">
+                        {{ blog.title | escape }}
+                    </a>
+                </li>
+                <li>
+                    {{ article.title }}
+                </li>
+            </ul>
+            {% endif %}
+            <div class="content-box">
+                <div class="text centred">
+                    <h1>{{ article.title }}</h1>
+                </div>
+            </div>
+    </div>
+</div>
+<div class="sidebar-page-container lay-{{ section.settings.style_layout }} color-{{ section.settings.color_scheme }}">
+    <div class="large-container">
+        <div class="row clearfix">
+            <div class="col-lg-8 col-md-12 col-sm-12 content-side">
+                <div class="blog-details-content">
+                    {% if article.image != blank %}
+                        <figure class="upper-image">
+                            <img
+                                srcset="{% if article.image.width >= 350 %}{{ article.image | img_url: '350x' }} 350w,{% endif %}
+                                    {% if article.image.width >= 750 %}{{ article.image | img_url: '750x' }} 750w,{% endif %}
+                                    {% if article.image.width >= 1100 %}{{ article.image | img_url: '1100x' }} 1100w,{% endif %}
+                                    {% if article.image.width >= 1500 %}{{ article.image | img_url: '1500x' }} 1500w,{% endif %}
+                                    {% if article.image.width >= 2200 %}{{ article.image | img_url: '2200x' }} 2200w,{% endif %}
+                                    {% if article.image.width >= 3000 %}{{ article.image | img_url: '3000x' }} 3000w,{% endif %}
+                                    {{ article.image | img_url: 'master' }} {{ article.image.width }}w"
+                                sizes="(min-width: {{ page_width }}px) {{ page_width | minus: 100 }}px, (min-width: 750px) calc(100vw - 10rem), 100vw"
+                                data-src="{{ article.image | img_url: '1100x' }}"
+                                loading="lazy"  class="lazyload"
+                                width="{{ article.image.width }}"
+                                height="{{ article.image.height }}"
+                                alt="{{ article.image.alt | escape }}"
+                            />
+                        </figure>
+                    {% endif %}
+                    <div class="post-content {% if article.image == blank %}no-image{% endif %}">                      
+                        {%- for block in section.blocks -%}
+                            {%- case block.type -%}
+                                {%- when '@app' -%}
+                                    <div class="render-app-block-single-article">
+                                        {% render block %}
+                                    </div> 
+                                {%- when 'post_info' -%}
+                                    <div class="post-info clearfix post-info-have-border-{{ block.settings.post_info_enable_border_in_item }}">
+                                        <ul class="left-info clearfix pull-left">
+                                            {% for tag in article.tags limit: 1 %}
+                                                <li>
+                                                    <a href="{{ blog.url }}/tagged/{{ tag | handle }}" class="blog-item-tags__link">{{ tag }}</a>{% unless forloop.last %}, {% endunless %}
+                                                </li>
+                                            {% endfor %}
+                                            <li>{{ article.published_at | time_tag: format: 'date' }}</li>
+                                        </ul>
+                                        <ul class="right-info clearfix pull-right">
+                                            <li>
+                                                <svg width="14" height="18" viewBox="0 0 14 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M10.1242 4C10.1242 4.8288 9.79493 5.62366 9.20887 6.20971C8.62282 6.79576 7.82797 7.125 6.99917 7.125C6.17036 7.125 5.37551 6.79576 4.78946 6.20971C4.20341 5.62366 3.87417 4.8288 3.87417 4C3.87417 3.1712 4.20341 2.37634 4.78946 1.79029C5.37551 1.20424 6.17036 0.875 6.99917 0.875C7.82797 0.875 8.62282 1.20424 9.20887 1.79029C9.79493 2.37634 10.1242 3.1712 10.1242 4ZM0.75 15.765C0.776779 14.1253 1.44695 12.5618 2.61598 11.4117C3.78501 10.2616 5.35924 9.61706 6.99917 9.61706C8.63909 9.61706 10.2133 10.2616 11.3824 11.4117C12.5514 12.5618 13.2216 14.1253 13.2483 15.765C11.2878 16.664 9.15596 17.1279 6.99917 17.125C4.76917 17.125 2.6525 16.6383 0.75 15.765Z" stroke="currentcolor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                                </svg>
+                                                {{ 'blogs.by' | t }} <a href="{{ article.url }}"><span>{{ article.author }}</span></a>
+                                            </li>
+                                            <li class="comment-on-post-list">
+                                                <svg width="18" height="17" viewBox="0 0 18 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M9 14.875C13.1417 14.875 16.5 11.7967 16.5 8C16.5 4.20333 13.1417 1.125 9 1.125C4.85833 1.125 1.5 4.20333 1.5 8C1.5 9.75333 2.21583 11.3525 3.39417 12.5667C3.75417 12.9392 4.01083 13.4333 3.8825 13.9342C3.74198 14.4818 3.47898 14.9904 3.11333 15.4217C3.40595 15.4742 3.7027 15.5004 4 15.5C5.06833 15.5 6.05833 15.165 6.87083 14.5942C7.54583 14.7775 8.26083 14.875 9 14.875Z" stroke="currentcolor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+
+                                                <a href="{{ article.url }}">{{ article.comments_count }} {{ 'blogs.blog_comments' | t }}</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                {%- when 'content_main' -%}
+                                    <div class="content-main-text product-description-content rte-content-area">
+                                        {{ article.content }}
+                                    </div>
+                                {%- when 'post_tag' -%}
+                                    {% if article.tags != blank %}
+                                        <div class="post-share-option clearfix">
+                                            <ul class="tags-list pull-left clearfix">
+                                                {% for tag in article.tags limit: 6 %}
+                                                    <li><a href="{{ blog.url }}/tagged/{{ tag | handle }}" class="blog-item-tags__link">{{ tag }}</a>{% unless forloop.last %} {% endunless %}</li>
+                                                {% endfor %}
+                                            </ul>
+                                        </div>
+                                    {% endif %}
+                                {%- when 'author_box' -%}
+                                    <div class="author-box">
+                                        {% if article.user.image %}
+                                            <figure class="author-thumb">
+                                                <img
+                                                data-src="{{ article.user.image | img_url: 'master' }}"
+                                                    loading="lazy"  class="lazyload"
+                                                    width="{{ article.user.image.width }}"
+                                                    height="{{ article.user.image.height }}"
+                                                    alt="{{ article.user.image.alt | escape }}"
+                                                >
+                                            </figure>
+                                        {% endif %}
+                                        <div class="auth-info-blog">
+                                            <h4>{{ article.author }}</h4>
+                                            <span class="designation">{{ 'blogs.placeholder.content_editor' | t }}</span>
+                                            <p>{{ article.user.bio }}</p>
+                                        </div>
+                                    </div>
+                                {%- when 'next_prev_post' -%}
+                                    {% if blog.previous_article.url != nil or blog.next_article.url != nil %}
+                                        <div class="nav-btn clearfix">
+                                            {% if blog.previous_article.url != nil %}
+                                                <div class="single-btn prev-btn text-left pull-left">
+                                                    <a class="single-btn-full" href="{{ blog.next_article.url }}"></a>
+                                                    <div class="icon-box"><a href="{{ blog.previous_article.url }}">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-left" viewBox="0 0 16 16">
+                                                            <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
+                                                        </svg>
+                                                    </a></div>
+                                                    <span>{{ 'blogs.placeholder.previous' | t }}</span>
+                                                    <h3>{{ blog.previous_article.title }}</h3>
+                                                </div>
+                                            {% endif %}
+                                            {% if blog.next_article.url != nil %}
+                                                <div class="single-btn next-btn text-right pull-right">
+                                                    <a class="single-btn-full" href="{{ blog.next_article.url }}"></a>
+                                                    <div class="icon-box"><a href="{{ blog.next_article.url }}">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">
+                                                            <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
+                                                        </svg>
+                                                    </a></div>
+                                                    <span>{{ 'blogs.placeholder.next' | t }}</span>
+                                                    <h3>{{ blog.next_article.title }}</h3>
+                                                </div>
+                                            {% endif %}
+                                        </div>
+                                    {% endif %}
+                                {%- when 'comment_box' -%}
+                                    {%- if blog.comments_enabled? -%}
+                                        {%- if article.comments_count > 0 -%}
+                                            <div class="comment-box">
+                                                <div class="group-title">
+                                                    <h2>{{ 'blogs.article.comments' | t: count: article.comments_count }}</h2>
+                                                </div>
+                                                
+                                                {%- if blog.comments_enabled? -%}
+                                                    {%- if article.comments_count > 0 -%}
+                                                        {%- assign anchorId = '#Comments-' | append: article.id -%}
+                                                        {% paginate article.comments by 5 %}
+
+                                                            {%- for comment in article.comments -%}
+                                                                <div class="comment">
+                                                                    <figure class="thumb-box">
+                                                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
+                                                                            <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+                                                                        </svg>
+                                                                    </figure>
+                                                                    <div class="comment-inner">
+                                                                        <div class="comment-info clearfix">
+                                                                            <h5>{{ comment.author }}</h5>
+                                                                            <span class="post-time"> {{ comment.created_at | date: "%b %d, %Y" }} </span>
+                                                                        </div>
+                                                                        {{ comment.content }}
+                                                                    </div>
+                                                                </div>
+                                                            {%- endfor -%}
+                                                            {% render 'pagination', paginate: paginate, anchor: anchorId %}
+                                                        {% endpaginate %}
+
+                                                    {%- endif -%}
+                                                {%- endif -%}
+
+                                            </div>
+                                        {% endif %}
+                                    {% endif %}
+                                {%- when 'comment_form' -%}
+                                    {%- if blog.comments_enabled? -%}
+                                        <div class="comments-form-area">
+                                            <div class="group-title">
+                                                <h2>{{ 'blogs.article.comments.leave_a_comment' | t }}</h2>
+                                            </div>
+                                            <div class="form-inner">
+                                                {% form 'new_comment', article %}
+                                                    {%- liquid
+                                                        assign post_message = 'blogs.article.success'
+                                                        if blog.moderated? and comment.status == 'unapproved'
+                                                            assign post_message = 'blogs.article.success_moderated'
+                                                        endif
+                                                    -%}
+                                                    <div class="row clearfix">
+                                                    
+                                                        <div class="col-lg-12 col-md-12 col-sm-12 form-group">
+                                                            <textarea id="comment-body" name="comment[body]" aria-required="true" required="" placeholder="Leave A Comment"></textarea>
+                                                        </div>
+                                                        <div class="col-lg-6 col-md-6 col-sm-12 form-group">
+                                                            <label for="comment-author">
+                                                                {{ 'blogs.article.comments.author' | t }}
+                                                            </label>
+                                                            <input id="comment-author" type="text" name="comment[author]" placeholder="{{ 'general.input_name' | t }}" required="" aria-required="true">
+                                                        </div>
+                                                        <div class="col-lg-6 col-md-6 col-sm-12 form-group">
+                                                            <label for="comment-email">
+                                                                {{ 'blogs.article.comments.email' | t }}
+                                                            </label>
+                                                            <input id="comment-email"  type="email" name="comment[email]" placeholder="{{ 'general.input_email' | t }}" required="" aria-required="true">
+                                                        </div>
+                                                        <div class="col-lg-12 col-md-12 col-sm-12 form-group message-btn">
+                                                            <button class="theme-btn btn-one" type="submit" name="submit-form">{{ 'blogs.article.comments.post_comment' | t }}</button>
+                                                        </div>
+                                                                            
+                                                        {%- if form.errors -%}
+                                                            <div class="col-lg-12 col-md-12 col-sm-12 form-group">
+                                                                <small class="newsletter-form__message form__message" id="Newsletter-error--{{ section.id }}">{% render 'icon-error' %}{{ form.errors.translated_fields['email'] | capitalize }} {{ form.errors.messages['email'] }}</small>
+                                                            </div>
+                                                        {%- endif -%}
+                                                        {%- if form.posted_successfully? -%}
+                                                            <div class="col-lg-12 col-md-12 col-sm-12 form-group">
+
+                                                                <h3 class="newsletter-form__message newsletter-form__message--success form__message" id="Newsletter-success--{{ section.id }}" tabindex="-1" autofocus>{% render 'icon-success' %} {{ post_message | t }}</h3>
+
+                                                            </div>
+                                                        {%- endif -%}
+                                                    </div>
+                                                    
+                                                {% endform %}
+                                            </div>
+                                        </div>
+                                    {% endif %}
+
+                            {%- endcase -%}
+                        {%- endfor -%}
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-12 col-sm-12 sidebar-side">
+                <div class="blog-sidebar sidebar-block-border-{{ section.settings.sidebar_block_border }}">
+  
+                  {% for block in section.blocks %}
+                    {% case block.type %}
+                      {% when 'sidebar_tag' %} 
+                        <div class="category-widget sidebar-widget cat-have-border-{{ block.settings.enable_border_in_item }}">
+                            <div class="widget-title">
+                                <h5>{{ block.settings.sidebar_tag_title }}</h5>
+                            </div>
+                            <ul class="category-list clearfix">
+                                {% if blog.tags.size == 0 %}
+                                    <li><a href="#_">{{ 'blogs.article.sidebar.category_name' | t }}</a></li>
+                                    <li><a href="#_">{{ 'blogs.article.sidebar.category_name' | t }}</a></li>
+                                    <li><a href="#_">{{ 'blogs.article.sidebar.category_name' | t }}</a></li>
+                                    <li><a href="#_">{{ 'blogs.article.sidebar.category_name' | t }}</a></li>
+                                    <li><a href="#_">{{ 'blogs.article.sidebar.category_name' | t }}</a></li>
+                                {% else %}
+                                    {% for tag in blog.tags %}
+                                        <li>{{ tag | link_to_tag: tag }}</li>
+                                    {% endfor %}
+                                {% endif %}
+                            </ul>
+                        </div>
+                      {% when 'sidebar_post_list' %} 
+                        <div class="post-widget sidebar-widget postlist-have-border-{{ block.settings.post_enable_border_in_item }}">
+                            <div class="widget-title">
+                                <h5>{{ block.settings.sidebar_post_list_title }}</h5>
+                            </div>
+                            <div class="post-inner">
+                                {% if blog.articles.size > 0 %}
+                                    {%- for article in blog.articles limit: 4 -%}
+                                        <div class="post">
+                                            {% if article.image != blank %}
+                                                <figure class="post-thumb"><a href="{{ article.url }}">
+                                                    {% if article.image != blank %}
+                                                        <img
+                                                        data-src="{{ article.image | img_url: 'master' }}"
+                                                            loading="lazy"  class="lazyload"
+                                                            width="{{ article.image.width }}"
+                                                            height="{{ article.image.height }}"
+                                                            alt="{{ article.image.alt | escape }}"
+                                                        >
+                                                    {% endif %}
+                                                </a></figure>
+                                            {% endif %}
+                                            <div class="post-content">
+                                                {% if block.settings.post_show_meta %}
+                                                    <ul class="post-meta">
+                                                        <li><a href="{{ article.url }}"><span>{{ article.author }}</span></a></li> /
+                                                        <li>{{ article.published_at | date: "%b %d, %Y" }}</li>
+                                                    </ul>
+                                                {% endif %}
+                                                <h6><a href="{{ article.url }}">{{ article.title | truncatewords: 5 }}</a></h6>
+                                                {% if block.settings.post_show_excerpt %}
+                                                    <div class="post-ex-trun">
+                                                        {{ article.excerpt | truncatewords: 8 }}
+                                                    </div>
+                                                {% endif %}
+                                            </div>
+                                        </div>
+                                    {%- endfor -%}
+                                {% else %}
+                                    <div class="post place-holder-img">
+                                        <figure class="post-thumb">
+                                            {{ 'collection-1' | placeholder_svg_tag }}
+                                        </figure>
+                                        <h6>
+                                            {{ 'blogs.article.sidebar.post_title' | t }}
+                                        </h6>
+                                    </div>
+                                    <div class="post place-holder-img">
+                                        <figure class="post-thumb">
+                                            {{ 'collection-1' | placeholder_svg_tag }}
+                                        </figure>
+                                        <h6>
+                                            {{ 'blogs.article.sidebar.post_title' | t }}
+                                        </h6>
+                                    </div>
+                                    <div class="post place-holder-img">
+                                        <figure class="post-thumb">
+                                            {{ 'collection-1' | placeholder_svg_tag }}
+                                        </figure>
+                                        <h6>
+                                            {{ 'blogs.article.sidebar.post_title' | t }}
+                                        </h6>
+                                    </div>
+                                    <div class="post place-holder-img">
+                                        <figure class="post-thumb">
+                                            {{ 'collection-1' | placeholder_svg_tag }}
+                                        </figure>
+                                        <h6>
+                                            {{ 'blogs.article.sidebar.post_title' | t }}
+                                        </h6>
+                                    </div>
+                                {% endif %}
+                            </div>
+                            
+                        </div>
+                      {% when 'product_category' %} 
+                        <div class="product-category sidebar-widget">
+                            <div class="product-category-inner">
+                                <h4>{{ block.settings.product_category_title}}</h4>
+                            <ul class="product-list clearfix">
+                                {% for collection in collections limit: block.settings.product_category_count %}
+                                    <li>
+                                        {% if collection.image != blank %}
+                                            <div class="image">
+                                                <img
+                                                    data-src="{{ collection.image | img_url: '40x40' }}"
+                                                    loading="lazy"  class="lazyload"
+                                                    width="{{ collection.image.width }}"
+                                                    height="{{ collection.image.height }}"
+                                                    alt="{{ collection.title }}"
+                                                >
+                                            </div>
+                                        {% endif %}
+                                        <h6>
+                                            <a href="{{ collection.url }}">{{ collection.title }}</a>
+                                        </h6>
+                                    </li>
+                                {% endfor %}
+                            </ul>
+                            </div>
+                        </div>
+                      {% when 'sidebar_product' %}
+                        <div class="best-product sidebar-widget">
+                            {% if block.settings.product_collection_content != blank %}
+                                <div class="widget-title">
+                                    <h5>{{ block.settings.product_collection_content.title }}</h5>
+                                </div>
+                            {% endif %}
+
+                            <div class="product-inner">
+
+                                {% assign product_collection_content = block.settings.product_collection_content %}
+                                {% if product_collection_content != blank %}
+                                    {%- for product in product_collection_content.products limit: block.settings.product_collection_content_count -%}
+                                        <div class="product-box {% if product.featured_media == blank %}no-post-thumb{% endif %}">
+                                            {% if product.featured_media != blank %}
+                                            <figure class="image">
+                                                <img
+                                                    srcset="
+                                                        {%- if product.featured_media.width >= 165 -%}{{ product.featured_media | img_url: '165x' }} 165w,{%- endif -%}
+                                                        {%- if product.featured_media.width >= 360 -%}{{ product.featured_media | img_url: '360x' }} 360w,{%- endif -%}
+                                                        {%- if product.featured_media.width >= 533 -%}{{ product.featured_media | img_url: '533x' }} 533w,{%- endif -%}
+                                                        {%- if product.featured_media.width >= 720 -%}{{ product.featured_media | img_url: '720x' }} 720w,{%- endif -%}
+                                                        {%- if product.featured_media.width >= 940 -%}{{ product.featured_media | img_url: '940x' }} 940w,{%- endif -%}
+                                                        {%- if product.featured_media.width >= 1066 -%}{{ product.featured_media | img_url: '1066x' }} 1066w,{%- endif -%}
+                                                        {{ product.featured_media | img_url: 'master' }} {{ product.featured_media.width }}w
+                                                        "
+                                                        data-src="{{ product.featured_media | img_url: '533x' }}"
+                                                    alt="{{ product.featured_media.alt | escape }}"
+                                                    loading="lazy"  class="lazyload img-reduce"
+                                                    width="{{ product.featured_media.width }}"
+                                                    height="{{ product.featured_media.height }}"
+                                                >
+                                            </figure>
+                                            {% endif %}
+                                            <h6><a href="{{ product.url }}"> {{ product.title }} </a></h6>
+                                            <div class="content-of-product">
+                                                {% if product.description != blank %}  {{ product.description | strip_html | truncatewords: 10 }} {% endif %}
+                                            </div>
+                                            <div class="title-of-product">
+                                                {% render 'price-raw', product: product %}
+                                            </div>
+                                        </div>
+                                    {%- endfor -%}
+                                {%- else -%}
+                                    <div class="product-box {% if product_collection_content == blank %}image-absu{% endif %}">
+                                        <figure class="image">
+                                            {{ 'collection-1' | placeholder_svg_tag }}
+                                        </figure>
+                                        <h6>
+                                            <a href="#_">
+                                                {{ 'blogs.article.sidebar.product_title' | t }}
+                                            </a>
+                                        </h6>
+                                    </div>
+                                    <div class="product-box {% if product_collection_content == blank %}image-absu{% endif %}">
+                                        <figure class="image">
+                                            {{ 'collection-1' | placeholder_svg_tag }}
+                                        </figure>
+                                        <h6>
+                                            <a href="#_">
+                                                {{ 'blogs.article.sidebar.product_title' | t }}
+                                            </a>
+                                        </h6>
+                                    </div>
+                                {%- endif -%}
+
+                            </div>
+                        </div>
+                    {% endcase %}
+                  {% endfor %}
+                  
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% schema %}
+    {
+        "name": "Blog post",
+        "tag": "section",
+        "settings": [        
+            {
+                "type": "color_scheme",
+                "id": "color_scheme",
+                "default": "background-2",
+                "label": "Color scheme"
+            },
+            {
+              "type": "checkbox",
+              "id": "enable_breadcrumb_navigation",
+              "default": false,
+              "label": "Enable breadcrumb navigation"
+            },
+            {
+                "type": "checkbox",
+                "id": "sidebar_block_border",
+                "default": false,
+                "label": "Show sidebar block border"
+            },
+            {
+                "type": "header",
+                "content": "Card options"
+            },
+            {
+              "type": "select",
+              "id": "style_layout",
+              "label": "Layout type",
+              "default": "style_layout_normal",
+              "options": [
+                {
+                  "value": "style_layout_box",
+                  "label": "Normal"
+                },
+                {
+                  "value": "style_layout_normal",
+                  "label": "Box"
+                }
+              ]
+            }, 
+            {
+                "type": "header",
+                "content": "Heading options"
+            },
+            {
+                "type": "image_picker",
+                "id": "pesto_heading_bg_img",
+                "label": "Background image"
+            },  
+            {
+              "type": "range",
+              "id": "padding_heading_top",
+              "min": 0,
+              "max": 150,
+              "step": 5,
+              "unit": "px",
+              "label": "t:sections.all.padding.padding_top",
+              "default": 125
+            },
+            {
+              "type": "range",
+              "id": "padding_heading_bottom",
+              "min": 0,
+              "max": 150,
+              "step": 5,
+              "unit": "px",
+              "label": "t:sections.all.padding.padding_bottom",
+              "default": 125
+            }
+        ],
+        "class": "blog-article-area-single",
+        "blocks": [
+            {
+                "type": "@app"
+            },
+            {
+                "name": "Post info",
+                "limit": 1,
+                "type": "post_info",
+                "settings": [       
+                    {
+                    "type": "checkbox",
+                    "id": "post_info_enable_border_in_item",
+                    "default": true,
+                    "label": "Show border bottom"
+                    }
+                ]
+            },
+            {
+                "name": "Content",
+                "limit": 1,
+                "type": "content_main"
+            },
+            {
+                "name": "Tag",
+                "limit": 1,
+                "type": "post_tag"
+            },
+            {
+                "name": "Author",
+                "limit": 1,
+                "type": "author_box"
+            },
+            {
+                "name": "Next and prev post",
+                "limit": 1,
+                "type": "next_prev_post"
+            },
+            {
+                "name": "Comment list",
+                "limit": 1,
+                "type": "comment_box"
+            },
+            {
+                "name": "Comment form",
+                "limit": 1,
+                "type": "comment_form"
+            },
+            {
+                "name": "Tag list",
+                "limit": 1,
+                "type": "sidebar_tag",
+                "settings": [
+                    {
+                        "type": "text",
+                        "id": "sidebar_tag_title",
+                        "label": "Heading",
+                        "default": "Categories"
+                    },
+                    {
+                      "type": "checkbox",
+                      "id": "enable_border_in_item",
+                      "default": true,
+                      "label": "Enable border in item"
+                    }
+                ]
+            },
+            {
+                "name": "Post list",
+                "limit": 1,
+                "type": "sidebar_post_list",
+                "settings": [
+                    {
+                        "type": "text",
+                        "id": "sidebar_post_list_title",
+                        "label": "Heading",
+                        "default": "Latest Post"
+                    },
+                    {
+                      "type": "checkbox",
+                      "id": "post_enable_border_in_item",
+                      "default": true,
+                      "label": "Enable border in item"
+                    },
+                    {
+                      "type": "checkbox",
+                      "id": "post_show_excerpt",
+                      "default": true,
+                      "label": "Show excerpt"
+                    },
+                    {
+                      "type": "checkbox",
+                      "id": "post_show_meta",
+                      "default": false,
+                      "label": "Show post meta"
+                    }
+                ]
+            },
+            {
+                "name": "Product category", 
+                "limit": 1,
+                "type": "product_category",
+                "settings": [
+                    {
+                        "type": "text",
+                        "id": "product_category_title",
+                        "label": "Heading",
+                        "default": "Product Category"
+                    },
+                    {
+                        "type": "range",
+                        "id": "product_category_count",
+                        "label": "Number of collections to show",
+                        "min": 1,
+                        "max": 8,
+                        "step": 1,
+                        "default": 5
+                    }
+                ]
+            },
+            {
+                "name": "Sidebar product ",
+                "limit": 2,
+                "type": "sidebar_product",
+                "settings": [
+                    {
+                        "type": "collection",
+                        "id": "product_collection_content",
+                        "label": "Select collection"
+                    },
+                    {
+                        "type": "range",
+                        "id": "product_collection_content_count",
+                        "label": "Number of products to show",
+                        "min": 1,
+                        "max": 8,
+                        "step": 1,
+                        "default": 5
+                    }
+                ]
+            }
+        ]
+    }
+{% endschema %}

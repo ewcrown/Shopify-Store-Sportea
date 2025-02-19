@@ -1,0 +1,298 @@
+
+
+<link rel="stylesheet" href="{{ 'ui-pesto-best-selling.css' | asset_url }}" media="print" onload="this.media='all'">
+<noscript>{{ 'ui-pesto-best-selling.css' | asset_url | stylesheet_tag }}</noscript>
+{%- style -%}
+{%- if section.settings.pesto_section_padding_top != blank -%}
+    #shopify-section-{{section.id}} .best-selling-product{
+        padding-top: {{ section.settings.pesto_section_padding_top }}px;
+        padding-bottom: {{ section.settings.pesto_section_padding_bottom }}px;
+    }
+    @media(max-width: 991px){
+        #shopify-section-{{section.id}} .best-selling-product{
+            padding-top: {{ section.settings.pesto_section_padding_top_mobile }}px;
+            padding-bottom: {{ section.settings.pesto_section_padding_bottom_mobile }}px;
+        }
+    }
+{%- endif -%}
+
+{%- endstyle -%}
+
+<div id="{{ section.id }}" class="best-selling-product color-{{ section.settings.color_scheme }}">
+    {% if section.settings.pesto_bestselling_bg_img != blank %}
+    {% assign dataImg = section.settings.pesto_bestselling_bg_img | img_url %}
+    <div class="bg-image">
+        {{ section.settings.pesto_bestselling_bg_img | image_url: width: section.settings.pesto_bestselling_bg_img.width
+        | image_tag: loading: 'lazy', class: 'lazyload', rel: 'preload', data-src: dataImg }}
+    </div>
+    {% endif %}
+    <div class="large-container">
+        <div class="best-selling-product-inner video-position-{{ section.settings.bestselling_video_position }}">
+            <div class="best-selling-product-slider">
+                <div class="section-title">
+                    <p>{{ section.settings.section_subtitle }}</p>
+                    <h2>{{ section.settings.section_title }}</h2>
+                </div>
+                {% if section.settings.bestselling_collection_select != blank %}
+                <items-carousel>    
+                    <div class="items-carousel-selector"> 
+                        {% for product in section.settings.bestselling_collection_select.products %} 
+                        <div class="items-carousel-items col-lg-6 col-md-6 col-sm-12">
+                            <div class="best-selling-product-single {% if product.featured_media == blank %}no-image{% endif %}">
+                                <a href="{{ product.url }}" class="product-thumb">   
+                                
+                                    {%- render 'prd-card-media-badge', product: product -%}
+ 
+                                    {% if product.featured_media != blank %}
+                                    {% render 'prd-card-media', product: product %}
+                                    {% endif %}
+                                </a>
+                                <div class="product-content">
+                                    <h4 class="product-title {{ section.settings.title_font_family }}"><a href="{{ product.url }}"> {{ product.title }}</a></h4>
+                                    <div class="title-of-product">
+                                        {% render 'price-raw', product: product %}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </items-carousel>
+                {% else %}
+                <items-carousel>
+                    <div class="items-carousel-selector placeholder-slider">
+                        <div class="items-carousel-items col-lg-6 col-md-6 col-sm-12">
+                            <div class="best-selling-product-single">
+                                <div class="product-thumb">
+                                    {{ 'product-1' | placeholder_svg_tag: 'placeholder-svg-all-collection' }}
+                                </div>
+                                <div class="product-content">
+                                    <h4 class="product-title">{{ 'product_flat_layout.placeholder.product_title' | t }}</h4>
+                                    <p class="product-price">{{ 'product_flat_layout.placeholder.product_price' | t }}</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="items-carousel-items col-lg-6 col-md-6 col-sm-12">
+                            <div class="best-selling-product-single">
+                                <div class="product-thumb">
+                                    {{ 'product-1' | placeholder_svg_tag: 'placeholder-svg-all-collection' }}
+                                </div>
+                                <div class="product-content">
+                                    <h4 class="product-title">{{ 'product_flat_layout.placeholder.product_title' | t }}</h4>
+                                    <p class="product-price">{{ 'product_flat_layout.placeholder.product_price' | t }}</p>
+                                </div> 
+                            </div>
+                        </div>
+                        <div class="items-carousel-items col-lg-6 col-md-6 col-sm-12">
+                            <div class="best-selling-product-single">
+                                <div class="product-thumb">
+                                    {{ 'product-1' | placeholder_svg_tag: 'placeholder-svg-all-collection' }}
+                                </div>
+                                <div class="product-content">
+                                    <h4 class="product-title">{{ 'product_flat_layout.placeholder.product_title' | t }}</h4>
+                                    <p class="product-price">{{ 'product_flat_layout.placeholder.product_price' | t }}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </items-carousel>
+                {% endif %}
+            </div>
+            <div class="best-selling-product-video">
+                <div class="section-title">
+                    <p>{{ section.settings.section_subtitle }}</p>
+                    <h2>{{ section.settings.section_title }}</h2>
+                </div> 
+                <div class="best-selling-product-video-inner">
+                    <figure class="image-box">
+                        {%- if section.settings.bestselling_video_bg_image == blank -%}
+                        {{ 'collection-5' | placeholder_svg_tag }}
+                        {%- else -%}
+                        {{ section.settings.bestselling_video_bg_image | image_url: width:
+                        section.settings.bestselling_video_bg_image.width | image_tag: loading: 'lazy', class:
+                        'lazyload' }}
+                        {%- endif -%}
+
+                    </figure>
+                    <div class="popup-video-container">
+                        {% if section.settings.bestselling_video_upload !=  blank%}
+                            {{ section.settings.bestselling_video_upload | video_tag: autoplay: true, loop: true, muted: true }}
+                        {% else %}
+                            <youtube-vimio data-video-url="{{ section.settings.bestselling_video_url }}"
+                                data-video-id="{{ section.id }}" data-autoplay="false" data-background="true"
+                                data-description="">
+                                <div></div>
+                                <div class="video-inner">
+                                    <a href="{{ section.settings.bestselling_video_url }}" aria-label="{{ 'general.link_to_video' | t }}"
+                                        target="_blank" class="play-btn" data-caption="">
+                                        <svg width="22" height="31" viewBox="0 0 22 31" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M0.0012359 15.24C0.0012359 11.3267 0.0012359 7.41174 0.0012359 3.49844C0.0012359 3.38745 0.0012359 3.27478 0.0012359 3.16379C0.00947457 2.01687 0.0885656 0.891823 1.24198 0.267915C2.41022 -0.3644 3.32471 0.232598 4.2458 0.92041C9.68826 4.97497 15.1423 9.01102 20.593 13.0538C22.3972 14.3924 22.4302 15.9984 20.6473 17.3236C15.1126 21.4387 9.56962 25.5404 4.0283 29.647C3.32801 30.1667 2.60301 30.609 1.67863 30.3248C0.849817 30.0692 0.294531 29.531 0.136349 28.6515C0.0473711 28.1604 0.00782663 27.6526 0.0061789 27.1531C-0.0037075 23.1826 0.0012359 19.2138 0.0012359 15.2434V15.24Z"
+                                                fill="currentColor" />
+                                        </svg>
+                                    </a>
+                                </div>
+                            </youtube-vimio>
+                        {% endif %}
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    
+</div>
+{% schema %}
+{
+"name": "Video with product",
+"tag": "section",
+"class": "best-selling-product",
+"settings": [
+    {
+    "type": "color_scheme",
+    "id": "color_scheme",
+    "default": "background-1",
+    "label": "Color scheme"
+    },
+    {
+    "type": "image_picker",
+    "id": "pesto_bestselling_bg_img",
+    "label": "Background image"
+    },
+    {
+    "type": "text",
+    "id": "section_title",
+    "label": "Heading",
+    "default": "Add heading for your sections"
+    },
+    {
+    "type": "text",
+    "id": "section_subtitle",
+    "label": "Content",
+    "default": "Description text here"
+    },
+    {
+    "type": "collection",
+    "id": "bestselling_collection_select",
+    "label": "Collection"
+    },
+    {
+        "type": "header",
+        "content": "Card options"
+    },
+    {
+        "type": "select",
+        "id": "title_font_family",
+        "label": "Title font family",
+        "default": "body-font",
+        "options": [
+            {
+            "value": "title-font",
+            "label": "Heading"
+            },
+            {
+            "value": "body-font",
+            "label": "Body"
+            }
+        ]
+    },
+    {
+        "type": "header",
+        "content": "Video options"
+    },
+    {
+        "type": "select",
+        "id": "bestselling_video_position",
+        "options": [
+            {
+            "value": "left",
+            "label": "Left"
+            },
+            {
+            "value": "right",
+            "label": "Right"
+            }
+        ],
+        "default": "right",
+        "label": "Video position"
+    },
+    {
+        "type": "image_picker",
+        "id": "bestselling_video_bg_image",
+        "label": "Cover image",
+        "info": "Applicable for YouTube or Vimeo video"
+    },
+    {
+    "type": "video_url",
+    "id": "bestselling_video_url",
+    "label": "URL",
+    "accept": [
+    "youtube",
+    "vimeo"
+    ],
+    "default": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+    "info": "Use YouTube or Vimeo URL"
+    },
+    {
+        "type": "video",
+        "id": "bestselling_video_upload",
+        "label": "Shopify-hosted video",
+        "info": "Overrides YouTube or Vimeo URL."
+    },
+    {
+    "type": "header",
+    "content": "Section padding"
+    },
+    {
+    "type": "range",
+    "id": "pesto_section_padding_top",
+    "min": 0,
+    "max": 300,
+    "step": 10,
+    "unit": "px",
+    "label": "t:sections.all.padding.padding_top",
+    "default": 100
+    },
+    {
+    "type": "range",
+    "id": "pesto_section_padding_bottom",
+    "min": 0,
+    "max": 300,
+    "step": 10,
+    "unit": "px",
+    "label": "t:sections.all.padding.padding_bottom",
+    "default": 100
+    },
+    {
+    "type": "header",
+    "content": "Section padding on mobile"
+    },
+    {
+    "type": "range",
+    "id": "pesto_section_padding_top_mobile",
+    "min": 0,
+    "max": 300,
+    "step": 10,
+    "unit": "px",
+    "label": "t:sections.all.padding.padding_top",
+    "default": 30
+    },
+    {
+    "type": "range",
+    "id": "pesto_section_padding_bottom_mobile",
+    "min": 0,
+    "max": 300,
+    "step": 10,
+    "unit": "px",
+    "label": "t:sections.all.padding.padding_bottom",
+    "default": 30
+    }
+    ],
+    "presets": [
+    {
+    "name": "Video with product"
+    }
+]
+}
+{% endschema %}

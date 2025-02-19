@@ -1,0 +1,99 @@
+<!-- FAQ Section -->
+<style>
+  a:not(.is-plain):not(.button):not(.link-btn):not(.link):hover{color: #ffffff}
+</style>
+<section class="sportea-faq-section" id="sportea-faq-section">
+  <div class="sportea-row sportea-faq-row">
+    <div class="page-width">
+      <div class="sportea-faq-wrap">
+        <div class="sportea-faq-details">
+          {% if section.settings.title %}
+            <h3 class="sportea-color-secondary">{{ section.settings.title }}</h3>
+          {% endif %}
+          {% if section.settings.caption %}
+            <p>{{ section.settings.caption }}</p>
+          {% endif %}
+          {% if section.settings.link %}
+            <a href="{{ section.settings.link }}" class="gf-button theme-btn">{{ section.settings.button }}</a>
+          {% endif %}
+        </div>
+        <div class="sportea-faqs-accordion">
+          {% for block in section.blocks %}
+            <!-- FAQ Start -->
+            {% if block.settings.question %}
+              <button class="sportea-faq-accordion">
+                <span>{{ block.settings.question }}</span>
+                <span class="sportea-faq-icon">+</span>
+              </button>
+            {% endif %}
+            {% if block.settings.answer %}
+              <div class="sportea-faq-panel">
+                {{ block.settings.answer }}
+              </div>
+            {% endif %}
+            <!-- FAQ End -->
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- FAQ Section End -->
+{% schema %}
+  {
+  "name": "FAQ",
+  "settings": [
+    {
+      "type": "html",
+      "id": "title",
+      "label": "title",
+      "default": "FAQs",
+      "placeholder": "FAQs"
+    },
+    {
+      "type": "text",
+      "id": "caption",
+      "label": "caption",
+      "default": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      "placeholder": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+    },
+    {
+      "type": "text",
+      "id": "button",
+      "label": "Button",
+      "default": "Shop Now",
+      "placeholder": "Shop Now"
+    },
+    {
+      "type": "url",
+      "id": "link",
+      "label": "link"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "faq",
+      "type": "faq",
+      "settings": [
+        {
+          "type": "text",
+          "id": "question",
+          "label": "question",
+          "default": "question",
+          "placeholder": "question"
+        },
+        {
+          "type": "richtext",
+          "id": "answer",
+          "label": "Answer"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "FAQ"
+    }
+  ]
+}
+{% endschema %}

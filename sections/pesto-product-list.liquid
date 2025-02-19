@@ -1,0 +1,115 @@
+<link rel="stylesheet" href="{{ 'ui-explore-section.css' | asset_url }}" media="print" onload="this.media='all'">
+<noscript>{{ 'ui-explore-section.css' | asset_url | stylesheet_tag }}</noscript>
+<link rel="stylesheet" href="{{ 'ui-menu-section.css' | asset_url }}" media="print" onload="this.media='all'">
+<noscript>{{ 'ui-menu-section.css' | asset_url | stylesheet_tag }}</noscript>
+
+{%- style -%}
+
+    {%- if section.settings.padding_bottom_sections != '' -%}
+        #{{ section.id }} {
+            padding-bottom: {{ section.settings.padding_bottom_sections }}px;
+        }
+    {%- endif -%}
+    {%- if section.settings.padding_top_sections != '' -%}
+        #{{ section.id }} {
+            padding-top: {{ section.settings.padding_top_sections }}px;
+        }
+    {%- endif -%}
+
+{%- endstyle -%}
+
+{% assign all_collection = section.settings.product_collection %}
+{% assign layout_style_one_data = 'layout_style_one' %}
+{% if layout_style_one_data == 'layout_style_one' %}
+    <div id="{{ section.id }}" class="explore-section color-{{ section.settings.color_scheme }}">
+        <div class="large-container">
+            <div class="sec-title centred">
+                <h2>{{ section.settings.section_title }}</h2>
+            </div>
+            <div class="row clearfix">
+                
+                {%- if all_collection != blank and all_collection.all_products_count > 0 -%}
+                    {%- for product in all_collection.products limit: 6 -%}
+                        {%- render 'pesto-product-tiny-width' -%, product: product -%}
+                    {%- endfor -%}
+                {% else %}
+                {%- for i in (1..4) -%}
+                    <div class="col-lg-6 col-md-12 col-sm-12 explore-block">
+                        <div class="explore-block-one wow fadeInLeft animated" data-wow-delay="00ms" data-wow-duration="1500ms">
+                            <div class="inner-box">
+                                <figure class="image-box">{{ 'product-1' | placeholder_svg_tag: 'placeholder-svg-all-collection' }}</figure>
+                                <div class="inner">
+                                    <div class="title-box">
+                                        <h4><a   aria-label="{{ 'general.link_to_product' | t }}" href="#_">{{ 'product_flat_layout.placeholder.product_title' | t }}</a></h4>
+                                        <div class="line"></div>
+                                        <span class="price">{{ 'product_flat_layout.placeholder.product_price' | t }}</span>
+                                    </div>
+                                    <p>{{ 'product_flat_layout.placeholder.size' | t }}</p>
+                                    <div class="cart-box"><a aria-label="{{ 'general.link_to_product' | t }}" href="#_">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
+                                            <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
+                                        </svg>
+                                    </a></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {%- endfor -%}
+            {%- endif -%}
+
+            </div>
+        </div>
+    </div>
+{% endif %}
+
+{% schema %}
+    {
+        "name": "Product flat layout",
+        "tag": "section",
+        "class": "pesto-product-list-try",
+        "settings": [
+            {
+                "type": "color_scheme",
+                "id": "color_scheme",
+                "default": "background-1",
+                "label": "Color scheme"
+            },
+            {
+                "type": "text",
+                "id": "section_title",
+                "label": "Heading",
+                "default": "Heading"
+            },
+            {
+              "type": "collection",
+              "id": "product_collection",
+              "label": "Select collection"
+            },
+            {
+              "type": "range",
+              "id": "padding_top_sections",
+              "min": 0,
+              "max": 200,
+              "step": 10,
+              "unit": "px",
+              "label": "Top padding",
+              "default": 50
+            },
+            {
+              "type": "range",
+              "id": "padding_bottom_sections",
+              "min": 0,
+              "max": 200,
+              "step": 10,
+              "unit": "px",
+              "label": "Bottom padding",
+              "default": 50
+            }
+        ],
+        "presets": [
+            {
+                "name": "Product flat layout"
+            }
+        ]
+    }
+{% endschema %}

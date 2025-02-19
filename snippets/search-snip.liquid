@@ -1,0 +1,236 @@
+<style>
+    .sp-search-container {
+        position: absolute;
+        top: -5px;
+        right: 0;
+        width: 100%;
+        height: 24px;
+        transition: width 0.3s ease;
+        z-index: 1000; /* Ensure it's on top */
+    }
+
+    #sp-search-input {
+        position: absolute;
+        top: -15px;
+        left: 0;
+        width: 100%;
+        padding: 15px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        display: none; /* Hidden by default */
+        outline: none;
+        font-size: 16px;
+        background: white;
+        z-index: 10;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .sp-header-search-btn-click {
+        position: absolute;
+        right: 40px; /* Adjust to leave space for the close button */
+        top: 50%;
+        transform: translateY(-50%);
+        background: none;
+        border: none;
+        cursor: pointer;
+        z-index: 11; /* Ensure it's above other content */
+    }
+
+    .sp-header-search-btn-click svg path {
+        stroke: rgba(var(--color-foreground), 1);
+    }
+
+    /* Close button styles */
+    .sp-close-btn {
+      position: absolute;
+      right: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+      background: none;
+      border: none;
+      cursor: pointer;
+      z-index: 12; /* Ensure it's above other content */
+      font-size: 16px;
+      color: #333;
+      display: none; /* Hidden by default */
+  }
+  .sp-search-container.active .sp-close-btn {
+      display: block; /* Show the close button when search is active */
+  }
+    .sp-search-container.active {
+        width: 300px;
+    }
+
+    /* Styles for the search results dropdown */
+    .sp-search-results {
+        display: none;
+        position: absolute;
+        top: 40px; /* Adjusted below the search input */
+        left: 0;
+        width: 100%;
+        background: white;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        max-height: 350px;
+        overflow-y: auto;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        z-index: 1001; /* Ensure it's above the search input */
+    }
+
+    .sp-search-results ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .sp-search-results li {
+        padding: 10px;
+        border-bottom: 1px solid #ddd;
+        cursor: pointer;
+    }
+
+    .sp-search-results li:hover {
+        background-color: #f0f0f0;
+    }
+    .sp-search-results a{
+      font-size:15px !important;
+      gap: 10px;
+    }
+</style>
+
+<!-- HTML Structure -->
+<div class="sp-search-container mobile-none">
+  <form action="/search" method="get" role="search" class="sp-search-container">
+    <input
+      type="text"
+      name="q"
+      id="sp-search-input"
+      placeholder="What are you looking for?"
+      aria-label="Search"
+      required
+    >
+    <input type="hidden" name="type" value="product">
+    <button type="submit" class="sp-header-search-btn-click" id="sp-search-button" aria-label="Search Button">
+      <svg role="none"  width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M19.0008 18.8016L13.8038 13.6046M13.8038 13.6046C15.2104 12.198 16.0006 10.2903 16.0006 8.30106C16.0006 6.31186 15.2104 4.40414 13.8038 2.99756C12.3972 1.59099 10.4895 0.800781 8.50028 0.800781C6.51108 0.800781 4.60336 1.59099 3.19678 2.99756C1.79021 4.40414 1 6.31186 1 8.30106C1 10.2903 1.79021 12.198 3.19678 13.6046C4.60336 15.0111 6.51108 15.8013 8.50028 15.8013C10.4895 15.8013 12.3972 15.0111 13.8038 13.6046Z" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+      </svg>
+    </button>
+    <button type="button" class="sp-close-btn" id="sp-close-button">X</button>
+  </form>
+  <div class="sp-search-results"></div>
+  <!-- Results container -->
+</div>
+
+<!-- Overlay for closing the search -->
+<div class="sp-overlay"></div>
+
+<!-- JavaScript for Predictive Search and Toggle -->
+<script>
+// Predictive Search
+document.getElementById('sp-search-input').addEventListener('input', function () {
+    const searchQuery = this.value.trim();
+    const resultsContainer = document.querySelector('.sp-search-results');
+
+    if (searchQuery.length > 2) {
+        fetch(`/search/suggest.json?q=${encodeURIComponent(searchQuery)}&resources[type]=product`)
+            .then(response => {
+                if (!response.ok) throw new Error('Network response was not ok');
+                return response.json();
+            })
+            .then(data => {
+                const products = data.resources.results.products;
+
+                // Clear previous results
+                resultsContainer.innerHTML = '';
+
+                if (products.length > 0) {
+                    let resultsHtml = '<ul>';
+                    products.forEach(product => {
+                        resultsHtml += `
+                            <li>
+                                <a href="${product.url}">
+                                    <img src="${product.featured_image.url}" alt="${product.title}" width="50" />
+                                    <div><p>${product.title}</p><p class="price">
+                              <ins>
+                                <span class="amount ">$${product.price}</span>
+                              </ins>      
+                        </p></div>
+                                </a>
+                                
+                            </li>
+                            
+                        `;
+                    });
+                    resultsHtml += `<li><a href="/search?q=${searchQuery}">See all results for "${searchQuery}"</a></li>`;
+                    resultsHtml += '</ul>';
+
+                    resultsContainer.innerHTML = resultsHtml;
+                    resultsContainer.style.display = 'block'; // Show the results once the search starts
+                } else {
+                    resultsContainer.style.display = 'none'; // Hide if no results
+                }
+            })
+            .catch(error => {
+                console.error('Fetch error:', error);
+            });
+    } else {
+        // Hide the search results if the query is too short
+        resultsContainer.style.display = 'none';
+    }
+});
+
+// Toggle search input and expand container on click
+document.getElementById("sp-search-button").addEventListener("click", function (e) {
+    e.preventDefault(); // Prevent form submission on button click
+
+    const searchInput = document.getElementById("sp-search-input");
+    const searchContainer = document.querySelector('.sp-search-container');
+    const overlay = document.querySelector('.sp-overlay');
+    const closeButton = document.getElementById("sp-close-button");
+
+    if (searchContainer.classList.contains('active')) {
+        searchContainer.classList.remove('active');
+        searchInput.style.display = "none";
+        overlay.classList.remove('active');
+        closeButton.style.display = "none"; // Hide the close button
+    } else {
+        searchContainer.classList.add('active');
+        searchInput.style.display = "block";
+        searchInput.focus();
+        overlay.classList.add('active');
+        closeButton.style.display = "block"; // Show the close button
+    }
+});
+
+// Close the search when clicking the close button
+document.getElementById("sp-close-button").addEventListener("click", function () {
+    const searchInput = document.getElementById("sp-search-input");
+    const overlay = document.querySelector('.sp-overlay');
+    const searchContainer = document.querySelector('.sp-search-container');
+    const resultsContainer = document.querySelector('.sp-search-results'); // Get search results container
+    const closeButton = document.getElementById("sp-close-button");
+
+    // Hide the search input, overlay, close button, and results
+    searchInput.style.display = "none";
+    overlay.classList.remove('active');
+    searchContainer.classList.remove('active');
+    resultsContainer.style.display = 'none'; // Hide search results
+    closeButton.style.display = "none"; // Hide the close button
+});
+
+// Close the search overlay when clicking outside the input
+document.querySelector('.sp-overlay').addEventListener("click", function () {
+    const searchInput = document.getElementById("sp-search-input");
+    const overlay = document.querySelector('.sp-overlay');
+    const searchContainer = document.querySelector('.sp-search-container');
+    const resultsContainer = document.querySelector('.sp-search-results'); // Get search results container
+    const closeButton = document.getElementById("sp-close-button");
+
+    // Hide the search input, overlay, close button, and results
+    searchInput.style.display = "none";
+    overlay.classList.remove('active');
+    searchContainer.classList.remove('active');
+    resultsContainer.style.display = 'none'; // Hide search results
+    closeButton.style.display = "none"; // Hide the close button
+});
+</script>
