@@ -1,21 +1,21 @@
 /* Arial Regular */
-@import url('https://fonts.googleapis.com/css2?family=arial:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=arial:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap'); */
+/* @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap'); */
 
-@font-face {
+/* @font-face {
     font-family: 'Arial';
     src: url('https://raw.githubusercontent.com/DevExpert-360/my-font-cdn/main/ARIAL.TTF') format('truetype');
     font-weight: normal;
     font-style: normal;
-}
+} */
 
 /* Arial Bold */
-@font-face {
+/* @font-face {
     font-family: 'Arial';
     src: url('https://raw.githubusercontent.com/DevExpert-360/my-font-cdn/main/ARIALBD.TTF') format('truetype');
     font-weight: bold;
     font-style: normal;
-}
+} */
 
 
 :root {
@@ -758,7 +758,6 @@ span.question-mark {
     }
 
     .img-responsive {
-        /* max-width: 80%; /* Reduce the size of the image */ */
         margin: auto; /* Center the image */
     }
     .gf-container__content {
@@ -771,7 +770,7 @@ span.question-mark {
 .sportea-review-rating h5 {
         text-align: left;
     }
-}
+
 
 /* Medium screens (tablets) */
 @media (max-width: 1024px) {
@@ -1343,13 +1342,7 @@ font-size: 18px;
     .sportea-faq-details p {
         font-size: 14px;
     }
-
-    /* Video Section */
-    /* .he-tvc-wrap {
-        grid-template-columns: 1fr; /* Single-column layout */
-    } */
-
-    .he-tvc-video video {
+.he-tvc-video video {
         height: 200px; /* Adjust video height */
     }
 
@@ -1418,7 +1411,7 @@ font-size: 18px;
    transform: translateY(-50%);
 }
 div#cart-icon-bubble:before{
-   left:-3px;8
+   left:-3px;
 }
 /* Medium screens (tablets) */
 @media (max-width: 1200px) {
@@ -1469,7 +1462,7 @@ div#cart-icon-bubble:before{
 /* Extra small screens (small mobile phones) */
 @media (max-width: 480px) {
   .content-box-img.position-relative {
-      height: auto;  Adjust height for small mobile devices */
+      height: auto;
   }
 }
 .sportea-faq-details a {
