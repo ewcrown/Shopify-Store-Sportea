@@ -311,7 +311,9 @@
                     <div class="header-drawer__expand-wrapper">
                       {% if link.links != blank %}
                         <button class="header-drawer__link">
+                          <div class="ew-drawer-item-inner">
                           {{ link.title }}
+                          </div>
                           <svg
                             aria-hidden="true"
                             focusable="false"
@@ -365,7 +367,9 @@
                                 <div class="header-drawer__expand-wrapper">
                                   {% if sublink.links != blank %}
                                     <button class="header-drawer__link {{ sublink.title | handleize }}">
-                                      {{ sublink.title }}
+                                      <div class="ew-drawer-item-inner">
+                                        {{ sublink.title }}
+                                      </div>
                                       <svg
                                         aria-hidden="true"
                                         focusable="false"
