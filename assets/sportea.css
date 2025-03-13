@@ -204,7 +204,7 @@ a {
 .sportea-faq-accordion {
     gap:20px;
     background-color: var(--white);
-    
+    color:#000;
     border: none;
     font-size: 18px;
     font-weight: 500;
@@ -223,7 +223,7 @@ a {
 
 .sportea-faq-icon {
     font-size: 35px;
-    
+    color: :#000;    
     font-weight: 300;
 }
 
@@ -957,8 +957,11 @@ span.question-mark {
     }
 }
 .sportea-faq-details h3 {
-    font-size: 52px;
-    font-weight: 500;
+    color: #2B4E92;
+font-size: 52px;
+font-style: normal;
+font-weight: 500;
+line-height: 120%; /* 62.4px */
 }
 .sportea-faq-details a {
     margin: inherit;

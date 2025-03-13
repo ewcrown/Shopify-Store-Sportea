@@ -2,7 +2,75 @@
 {
   "name": "<> Product Highlight",
   "tag": "section",
+  "blocks": [
+    {
+      "type": "ingredient",
+      "name": "Herbal Component",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title1",
+          "label": "Herbal Component Name",
+          "default": "Premium Black Tea"
+        },
+        {
+          "type": "text",
+          "id": "title2",
+          "label": "Benefits",
+          "default": "Alertness, Focus, Concentration"
+        },
+        {
+          "type": "text",
+          "id": "title3",
+          "label": "Benefits",
+          "default": "Alertness, Focus, Concentration"
+        }
+      ]
+    }
+  ],
   "settings": [
+    {
+      "type": "header",
+      "content": "Images"
+    },
+    {
+      "type": "image_picker",
+      "id": "image1",
+      "label": "Image1"
+    },
+    {
+      "type": "image_picker",
+      "id": "image2",
+      "label": "Image2"
+    },
+    {
+      "type": "header",
+      "content": "Table"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_table",
+      "label": "Show Table",
+      "default": false
+    },
+    {
+      "type": "text",
+      "id": "table1",
+      "label": "Table Heading1",
+      "default": "Herbal Component"
+    },
+    {
+      "type": "text",
+      "id": "table2",
+      "label": "Table Heading2",
+      "default": "Herbal Component"
+    },
+    {
+      "type": "text",
+      "id": "table3",
+      "label": "Table Heading3",
+      "default": "Herbal Component"
+    },
     {
       "type": "header",
       "content": "Styling"
@@ -48,6 +116,16 @@
       "default": "<p>Discover the ultimate cold brew iced tea designed for active lifestyles. Iced SPORTea® delivers refreshing hydration and natural energy without the sugar, calories, or artificial ingredients found in other iced tea options.</p>"
     },
     {
+      "type": "richtext",
+      "id": "after_images_description",
+      "label": "After Images Description"
+    },
+    {
+      "type": "richtext",
+      "id": "after_description",
+      "label": "After Table Description"
+    },
+    {
       "type": "image_picker",
       "id": "image",
       "label": "Product Image"
@@ -80,6 +158,26 @@
     justify-content: center;
     padding:100px 0;
     gap:60px;
+  }
+
+  .product-highlight table {
+    width: 100%;
+    margin-top: 20px;
+    border-collapse: collapse;
+    background-color: #fff;
+    border-radius: 8px;
+  }
+  
+  .product-highlight table th,
+  .product-highlight table td {
+    border: 1px solid black;
+    padding: 12px;
+    text-align: left;
+  }
+  
+  .product-highlight table th {
+    background: black;
+    color: white;
   }
 
   .product-highlight-text {
@@ -117,10 +215,22 @@ font-style: normal;
 font-weight: 400;
 line-height: 150%; /* 36px */
   }
+  .product-highlight h4 {
+font-family: Arial;
+font-size: 36px;
+font-style: normal;
+font-weight: 700;
+line-height: 150%; /* 54px */
+    margin-bottom:30px;
+  }
   .product-highlight ul {
     padding-left:20px
   }
   
+  .product-highlight p a {
+    color:#2E8FFF;
+    font-weight:600;
+  }
   .product-highlight p {
     font-family: Arial;
     font-size: 24px;
@@ -155,14 +265,24 @@ line-height: 150%; /* 36px */
     font-size: {{ section.settings.list_size }}px;
   }
 
-  .product-highlight-{{ section.id }}  .product-highlight-wrap h3,
-  .product-highlight-{{ section.id }}  .product-highlight-wrap h2,
-  .product-highlight-{{ section.id }}  .product-highlight-wrap ul li,
-  .product-highlight-{{ section.id }}  .product-highlight-wrap ol li,
-  .product-highlight-{{ section.id }}  .product-highlight-wrap p {
+  .product-highlight-{{ section.id }} .product-highlight-wrap h4,
+  .product-highlight-{{ section.id }} .product-highlight-wrap h3,
+  .product-highlight-{{ section.id }} .product-highlight-wrap h2,
+  .product-highlight-{{ section.id }} .product-highlight-wrap ul li,
+  .product-highlight-{{ section.id }} .product-highlight-wrap ol li,
+  .product-highlight-{{ section.id }} .product-highlight-wrap p {
     color: {{ section.settings.text_color }};
   }
-  
+ 
+  .product-highlight-table {
+    margin-bottom:40px;
+  }
+
+  .product-highlight-images {
+  margin-bottom:30px;
+  display:grid;
+  gap:20px
+}
 
   @media (max-width: 768px) {
     .product-highlight-wrap {
@@ -180,6 +300,10 @@ line-height: 150%; /* 36px */
    .product-highlight p {
       font-size: 16px !important;
     }
+    .product-highlight table th, .product-highlight table td {
+      padding: 5px;
+      font-size: 14px;
+  }
   }
   
 </style>
@@ -192,9 +316,68 @@ line-height: 150%; /* 36px */
         {% if section.settings.subheading != blank %}
           <h3>{{ section.settings.subheading }}</h3>
         {% endif %}
-        <div class="product-highlight-description">
-          <p>{{ section.settings.description }}</p>
+
+        {% if section.settings.description != blank %}
+          <div class="product-highlight-description">
+            {{ section.settings.description }}
+          </div>
+        {% endif %}
+
+        {% if section.settings.image1 != blank and section.settings.image1 != blank %}
+        <div class="product-highlight-images">
+          {% if section.settings.image1 != blank %}
+            <img src="{{ section.settings.image1 | img_url: '600x' }}" alt="{{ section.settings.heading }}">
+          {% endif %}
+          {% if section.settings.image1 != blank %}
+            <img src="{{ section.settings.image2 | img_url: '600x' }}" alt="{{ section.settings.heading }}">
+          {% endif %}
         </div>
+        {% endif %}
+
+        {% if section.settings.after_images_description != blank %}
+          <div class="product-highlight-description">
+            {{ section.settings.after_images_description }}
+          </div>
+        {% endif %}
+
+        {% if section.settings.show_table != blank %}
+        <div class="product-highlight-table">
+          <table class="herbal-table">
+            <thead>
+              <tr>
+                {% if section.settings.table1 != blank %}
+                  <th>{{ section.settings.table1 }}</th>
+                {% endif %}
+                {% if section.settings.table2 != blank %}
+                  <th>{{ section.settings.table2 }}</th>
+                {% endif %}
+                {% if section.settings.table3 != blank %}
+                  <th>{{ section.settings.table3 }}</th>
+                {% endif %}
+              </tr>
+            </thead>
+              {% for block in section.blocks %}
+                <tr>
+                  {% if section.settings.table1 != blank %}
+                    <td><strong>{{ block.settings.title1 }}</strong></td>
+                  {% endif %}  
+                  {% if section.settings.table2 != blank %}
+                    <td>{{ block.settings.title2 }}</td>
+                  {% endif %}
+                  {% if section.settings.table3 != blank %}
+                      <td>{{ block.settings.title3 }}</td>
+                  {% endif %}
+                </tr>
+            {% endfor %}
+          </table>
+        </div>
+      {% endif %}
+      {% if section.settings.after_description != blank %}
+        <div class="product-highlight-description ">
+          {{ section.settings.after_description }}
+        </div>
+      {% endif %}
+
         {% if section.settings.button_link != blank %}
           <div class="btn-box">
             <a href="{{section.settings.button_link}}" class="theme-btn btn-two" aria-label="Shop Now" tabindex="0">{{ section.settings.button_text }}<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#ffffff" height="800px" width="800px" version="1.1" id="Layer_1" viewBox="0 0 330 330" xml:space="preserve" role="presentation">

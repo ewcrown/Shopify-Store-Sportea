@@ -12,12 +12,18 @@
     "product_highlight_c7HkiU": {
       "type": "product-highlight",
       "settings": {
+        "show_table": false,
+        "table1": "Herbal Component",
+        "table2": "Herbal Component",
+        "table3": "Herbal Component",
         "background": "#ffffff",
         "list_size": 24,
         "text_color": "#000000",
         "heading": "Iced SPORTea® Premium Cold Brew Iced Tea for Energy & Hydration",
         "subheading": "Refreshing cold brew iced tea with ice and lemon - Iced SPORTea®",
         "description": "<p>Discover the ultimate cold brew iced tea designed for active lifestyles. Iced SPORTea® delivers refreshing hydration and natural energy without the sugar, calories, or artificial ingredients found in other iced tea options.</p>",
+        "after_images_description": "",
+        "after_description": "",
         "image": "shopify://shop_images/image_13.png",
         "button_text": "Shop Now",
         "button_link": "#"
@@ -62,12 +68,18 @@
     "product_highlight_QDCQY9": {
       "type": "product-highlight",
       "settings": {
+        "show_table": false,
+        "table1": "Herbal Component",
+        "table2": "Herbal Component",
+        "table3": "Herbal Component",
         "background": "#edf8ff",
         "list_size": 24,
         "text_color": "#000000",
         "heading": "What Makes Our Iced Tea Different?",
         "subheading": "",
         "description": "<p>Unlike conventional iced tea brands that rely on sugar for flavor, SPORTea® combines premium black tea, green tea, Siberian ginseng, ginger, Brazilian maté, and vitamin C to create a perfectly balanced iced tea that:<br/></p><ul><li>Provides sustained energy without crashes</li><li>Delivers superior hydration with natural electrolytes</li><li>Contains zero calories and no added sugar</li><li>Offers a smooth, refreshing taste without bitterness</li></ul>",
+        "after_images_description": "",
+        "after_description": "",
         "image": "shopify://shop_images/image_13_1.png",
         "button_text": "",
         "button_link": ""
@@ -102,12 +114,18 @@
     "product_highlight_J3Hd9B": {
       "type": "product-highlight",
       "settings": {
+        "show_table": false,
+        "table1": "Herbal Component",
+        "table2": "Herbal Component",
+        "table3": "Herbal Component",
         "background": "#ffffff",
         "list_size": 24,
         "text_color": "#000000",
         "heading": "Iced Tea Benefits: Why SPORTea® Stands Out",
         "subheading": "Health Benefits of Our Premium Iced Tea",
         "description": "<p>Iced SPORTea® offers advantages you won't find in ordinary iced tea:<br/></p><ul><li>Natural Energy Boost - The unique blend of Brazilian maté and teas provides sustained energy without jitters</li><li>Superior Hydration - Replenishes electrolytes naturally, making it the perfect iced tea for active lifestyles</li><li>Zero-Calorie Refreshment - Enjoy a flavorful iced tea with no sugar, sweeteners, or artificial ingredients</li><li>Digestive Support - Ginger and green tea components promote healthy digestion and metabolism<br/></li></ul>",
+        "after_images_description": "",
+        "after_description": "",
         "button_text": "",
         "button_link": ""
       }
@@ -119,48 +137,48 @@
           "type": "ingredient",
           "settings": {
             "ingredient_image": "shopify://shop_images/Screenshot_2025-03-11_at_11.49.21_PM.png",
-            "ingredient_title": "Green Tea",
-            "ingredient_subtitle": "Natural Energizer"
+            "ingredient_title": "Natural Energizer",
+            "ingredient_subtitle": "Green Tea"
           }
         },
         "ingredient_feBzNH": {
           "type": "ingredient",
           "settings": {
             "ingredient_image": "shopify://shop_images/Screenshot_2025-03-11_at_11.49.35_PM.png",
-            "ingredient_title": "Green Tea",
-            "ingredient_subtitle": "Natural Energizer"
+            "ingredient_title": "Robust Health Benefits",
+            "ingredient_subtitle": "Black Tea"
           }
         },
         "ingredient_wQT4wH": {
           "type": "ingredient",
           "settings": {
             "ingredient_image": "shopify://shop_images/Screenshot_2025-03-11_at_11.49.42_PM.png",
-            "ingredient_title": "Green Tea",
-            "ingredient_subtitle": "Natural Energizer"
+            "ingredient_title": "Endurance and Stress Relief",
+            "ingredient_subtitle": "Siberian Ginseng"
           }
         },
         "ingredient_RQT84x": {
           "type": "ingredient",
           "settings": {
             "ingredient_image": "shopify://shop_images/Screenshot_2025-03-11_at_11.49.52_PM.png",
-            "ingredient_title": "Green Tea",
-            "ingredient_subtitle": "Natural Energizer"
+            "ingredient_title": "Circulatory and Comforting",
+            "ingredient_subtitle": "Ginger"
           }
         },
         "ingredient_Vc7Bqy": {
           "type": "ingredient",
           "settings": {
             "ingredient_image": "shopify://shop_images/Screenshot_2025-03-11_at_11.50.01_PM.png",
-            "ingredient_title": "Green Tea",
-            "ingredient_subtitle": "Natural Energizer"
+            "ingredient_title": "Nourishing Energizer",
+            "ingredient_subtitle": "Brazilian Maté"
           }
         },
         "ingredient_DicB6A": {
           "type": "ingredient",
           "settings": {
             "ingredient_image": "shopify://shop_images/Screenshot_2025-03-11_at_11.50.12_PM.png",
-            "ingredient_title": "Green Tea",
-            "ingredient_subtitle": "Natural Energizer"
+            "ingredient_title": "Immune System Booster",
+            "ingredient_subtitle": "Vitamin C"
           }
         }
       },
@@ -179,12 +197,18 @@
     "product_highlight_pXjNpW": {
       "type": "product-highlight",
       "settings": {
+        "show_table": false,
+        "table1": "Herbal Component",
+        "table2": "Herbal Component",
+        "table3": "Herbal Component",
         "background": "#264786",
         "list_size": 20,
         "text_color": "#ffffff",
         "heading": "Creative Iced Tea Variations",
         "subheading": "",
         "description": "<p>Customize your cold brew iced tea experience with these refreshing SPORTea® variations:</p><p><strong>Flavor Infusions</strong></p><ol><li><strong>Citrus Mint</strong> - Add fresh lemon slices and mint leaves</li><li><strong>Berry Blend</strong> - Infuse with strawberries, blueberries, or raspberries</li><li><strong>Cucumber Refresh</strong> - Cool down with cucumber slices</li><li><strong>Ginger Boost</strong> - Enhance with fresh ginger for extra zing<br/><br/><br/></li></ol>",
+        "after_images_description": "",
+        "after_description": "",
         "image": "shopify://shop_images/image_7.png",
         "button_text": "",
         "button_link": ""

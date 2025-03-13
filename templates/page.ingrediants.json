@@ -1,1 +1,424 @@
-{"sections":{"main":{"type":"main-page","disabled":true,"settings":{"color_scheme":"","enable_breadcrumb_navigation":true,"main_page_breadcrumb_position":"flex-column","page_title_breadcrumb_gap":0,"title_font_size":"medium","pesto_page_title_bg_opacity":0,"pesto_section_padding_top":100,"pesto_section_padding_bottom":100}},"ingrediants_UEX9EQ":{"type":"ingrediants","blocks":{"properties_DXmrf8":{"type":"properties","settings":{"title":"Premium Grade Imported Teas","desc":"Each bag contains a unique blend of the finest imported teas, including black and green teas, and other herbs. Our nutritional drinks for adults and kids impart a full-bodied, brisk flavor enjoyed for their greatly invigorating, thirst-quenching properties. The botanicals provide a natural way to satisfy hunger urges during weight loss or diet programs and do not affect the stomach or nerves adversely. ","sub-title":"A Natural Energizer","prop_1":"Antioxidant","prop_2":"Energy","prop_3":"Metabolism","icon":"shopify:\/\/shop_images\/Overlay_4.png"}},"properties_h7UpRN":{"type":"properties","settings":{"title":"Siberian Ginseng \"Eleuthero\"","desc":"Siberian Ginseng is the second most predominant ingredient in SPORTea®. This premium grade of Siberian Ginseng is considered an endurance builder, stamina enhancer, and recovery drink useful before, during, and after illness as an adaptogen and revitalizer. This is also the case for regular everyday workouts. Siberian Ginseng has also been found to be a stress reliever when used regularly throughout the day. SPORTea®'s Siberian Ginseng's adaptogenic qualities allow it to combat daily stress and the physical manifestations of the strains of everyday living that cause muscle strain, headaches, and body aches. The energy provided by Siberian Ginseng is a sustaining energy without the letdowns that are typically associated with traditional heavy caffeine and\/or sugary beverages.","sub-title":"Endurance and  Stress Relief","prop_1":"Endurance","prop_2":"Vitality","prop_3":"Immunity","icon":"shopify:\/\/shop_images\/Overlay_1.png"}},"properties_7bFgJN":{"type":"properties","settings":{"title":"Ginger","desc":"Ginger enhances blood flow and promotes better circulation. It is slightly sweet, has a delightful aroma, and a warming, soothing action. Ginger minimizes the discomfort associated with colds and flu such as headaches, tense muscles, and stomach pain. Ginger is also frequently taken to counteract the effects of alcohol consumption and office burnout due to fatigue.","sub-title":"Circulatory and Comforting","prop_1":"Digestion","prop_2":"Anti-inflammatory","prop_3":"","icon":"shopify:\/\/shop_images\/Overlay_3.png"}},"properties_6zEfr7":{"type":"properties","settings":{"title":"Brazilian Maté","desc":"This ingredient is a South American favorite that is preferred over coffee in many countries due to its lack of harsh acids and plentiful variety of naturally occurring vitamins, minerals, and trace elements. Brazilian Maté also acts to suppress the appetite while nourishing the body.","sub-title":"Nourishing Energizer","prop_1":"Energy","prop_2":"Vigor","prop_3":"Mental Focus","icon":"shopify:\/\/shop_images\/Overlay_2.png"}},"properties_dCadUm":{"type":"properties","settings":{"title":"Vitamin C","desc":"This ingredient is the single most important vitamin for maintaining optimum health and warding off illness. SPORTea® contains a rich supply of this crucial vitamin, which the body cannot produce itself.","sub-title":"Immune System Booster","prop_1":"Antioxidant","prop_2":"Immunity","prop_3":"","icon":"shopify:\/\/shop_images\/Overlay_5.png"}},"properties_Dcgyqg":{"type":"properties","settings":{"title":"Trace Minerals","desc":"<strong>Potassium <\/strong><br> an important electrolyte that helps minimize fatigue and cramping during and after intense exercise. This also helps diffuse stress symptoms.","sub-title":"Robust Health Benefits","prop_1":"Alertness","prop_2":"Heart Health","prop_3":"","icon":"shopify:\/\/shop_images\/Overlay.png"}}},"block_order":["properties_DXmrf8","properties_h7UpRN","properties_7bFgJN","properties_6zEfr7","properties_dCadUm","properties_Dcgyqg"],"settings":{"title":"Ingredients","button":"","link":""}},"custom_liquid_tiNGyB":{"type":"custom-liquid","settings":{"color_scheme":"","custom_liquid":"<style>\nsection#sportea-ingredients-section {\n    padding-top: 30px;\n}\n<\/style>","padding_top":0,"padding_bottom":0}}},"order":["main","ingrediants_UEX9EQ","custom_liquid_tiNGyB"]}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "color_scheme": "",
+        "enable_breadcrumb_navigation": true,
+        "main_page_breadcrumb_position": "flex-column",
+        "page_title_breadcrumb_gap": 0,
+        "title_font_size": "medium",
+        "pesto_page_title_bg_opacity": 0,
+        "pesto_section_padding_top": 100,
+        "pesto_section_padding_bottom": 100
+      }
+    },
+    "product_highlight_whdn3F": {
+      "type": "product-highlight",
+      "settings": {
+        "show_table": false,
+        "table1": "Herbal Component",
+        "table2": "Herbal Component",
+        "table3": "Herbal Component",
+        "background": "#ffffff",
+        "list_size": 24,
+        "text_color": "#000000",
+        "heading": "Understanding the Components of SPORTea® Ingredients",
+        "subheading": "",
+        "description": "<p>Ever wondered what makes SPORTea® so effective for energy and hydration? Let's dive into the key ingredients of SPORTea®, helping you understand what's in your favorite tea. We'll explore the benefits of individual ingredients, and point out some issues with alternative beverage ingredients. By the end, you'll know exactly what's in your iced tea or hot tea and why it's beneficial for your active lifestyle. Plus, we'll answer common questions to help you make informed decisions when evaluating energy drinks, like SPORTea®.</p>",
+        "after_images_description": "",
+        "after_description": "",
+        "image": "shopify://shop_images/image_13.png",
+        "button_text": "Shop Now",
+        "button_link": ""
+      }
+    },
+    "product_highlight_JAW9F4": {
+      "type": "product-highlight",
+      "settings": {
+        "show_table": false,
+        "table1": "Herbal Component",
+        "table2": "Herbal Component",
+        "table3": "Herbal Component",
+        "background": "#edf8ff",
+        "list_size": 24,
+        "text_color": "#000000",
+        "heading": "Overview of SPORTea® Ingredients",
+        "subheading": "",
+        "description": "<p>We'll explore the essential components of SPORTea®, focusing on its key nutrients, unique herbal elements, and caffeine content (Less than or equivalent to decaf coffee). Our analysis covers vital minerals and vitamins that contribute to the SPORTea® nutritional profile. We'll examine how these ingredients work together to create a distinctive taste and serve as a sugar-free alternative for health-conscious individuals.</p>",
+        "after_images_description": "",
+        "after_description": "",
+        "button_text": "Shop Now",
+        "button_link": ""
+      }
+    },
+    "ingrediants_UEX9EQ": {
+      "type": "ingrediants",
+      "blocks": {
+        "properties_DXmrf8": {
+          "type": "properties",
+          "settings": {
+            "title": "Premium Grade Imported Teas",
+            "desc": "Each bag contains a unique blend of the finest imported teas, including black and green teas, and other herbs. Our nutritional drinks for adults and kids impart a full-bodied, brisk flavor enjoyed for their greatly invigorating, thirst-quenching properties. The botanicals provide a natural way to satisfy hunger urges during weight loss or diet programs and do not affect the stomach or nerves adversely. ",
+            "sub-title": "A Natural Energizer",
+            "prop_1": "Antioxidant",
+            "prop_2": "Energy",
+            "prop_3": "Metabolism",
+            "icon": "shopify://shop_images/Overlay_4.png"
+          }
+        },
+        "properties_h7UpRN": {
+          "type": "properties",
+          "settings": {
+            "title": "Siberian Ginseng \"Eleuthero\"",
+            "desc": "Siberian Ginseng is the second most predominant ingredient in SPORTea®. This premium grade of Siberian Ginseng is considered an endurance builder, stamina enhancer, and recovery drink useful before, during, and after illness as an adaptogen and revitalizer. This is also the case for regular everyday workouts. Siberian Ginseng has also been found to be a stress reliever when used regularly throughout the day. SPORTea®'s Siberian Ginseng's adaptogenic qualities allow it to combat daily stress and the physical manifestations of the strains of everyday living that cause muscle strain, headaches, and body aches. The energy provided by Siberian Ginseng is a sustaining energy without the letdowns that are typically associated with traditional heavy caffeine and/or sugary beverages.",
+            "sub-title": "Endurance and  Stress Relief",
+            "prop_1": "Endurance",
+            "prop_2": "Vitality",
+            "prop_3": "Immunity",
+            "icon": "shopify://shop_images/Overlay_1.png"
+          }
+        },
+        "properties_7bFgJN": {
+          "type": "properties",
+          "settings": {
+            "title": "Ginger",
+            "desc": "Ginger enhances blood flow and promotes better circulation. It is slightly sweet, has a delightful aroma, and a warming, soothing action. Ginger minimizes the discomfort associated with colds and flu such as headaches, tense muscles, and stomach pain. Ginger is also frequently taken to counteract the effects of alcohol consumption and office burnout due to fatigue.",
+            "sub-title": "Circulatory and Comforting",
+            "prop_1": "Digestion",
+            "prop_2": "Anti-inflammatory",
+            "prop_3": "",
+            "icon": "shopify://shop_images/Overlay_3.png"
+          }
+        },
+        "properties_6zEfr7": {
+          "type": "properties",
+          "settings": {
+            "title": "Brazilian Maté",
+            "desc": "This ingredient is a South American favorite that is preferred over coffee in many countries due to its lack of harsh acids and plentiful variety of naturally occurring vitamins, minerals, and trace elements. Brazilian Maté also acts to suppress the appetite while nourishing the body.",
+            "sub-title": "Nourishing Energizer",
+            "prop_1": "Energy",
+            "prop_2": "Vigor",
+            "prop_3": "Mental Focus",
+            "icon": "shopify://shop_images/Overlay_2.png"
+          }
+        },
+        "properties_dCadUm": {
+          "type": "properties",
+          "settings": {
+            "title": "Vitamin C",
+            "desc": "This ingredient is the single most important vitamin for maintaining optimum health and warding off illness. SPORTea® contains a rich supply of this crucial vitamin, which the body cannot produce itself.",
+            "sub-title": "Immune System Booster",
+            "prop_1": "Antioxidant",
+            "prop_2": "Immunity",
+            "prop_3": "",
+            "icon": "shopify://shop_images/Overlay_5.png"
+          }
+        },
+        "properties_Dcgyqg": {
+          "type": "properties",
+          "settings": {
+            "title": "Trace Minerals",
+            "desc": "<strong>Potassium </strong><br> an important electrolyte that helps minimize fatigue and cramping during and after intense exercise. This also helps diffuse stress symptoms.",
+            "sub-title": "Robust Health Benefits",
+            "prop_1": "Alertness",
+            "prop_2": "Heart Health",
+            "prop_3": "",
+            "icon": "shopify://shop_images/Overlay.png"
+          }
+        }
+      },
+      "block_order": [
+        "properties_DXmrf8",
+        "properties_h7UpRN",
+        "properties_7bFgJN",
+        "properties_6zEfr7",
+        "properties_dCadUm",
+        "properties_Dcgyqg"
+      ],
+      "settings": {
+        "title": "All-Natural, Wholesome Ingredients",
+        "button": "",
+        "link": ""
+      }
+    },
+    "product_highlight_8RkbVA": {
+      "type": "product-highlight",
+      "settings": {
+        "show_table": false,
+        "table1": "Herbal Component",
+        "table2": "Herbal Component",
+        "table3": "Herbal Component",
+        "background": "#2b4e92",
+        "list_size": 24,
+        "text_color": "#ffffff",
+        "heading": "Key Nutrients Found in SPORTea®",
+        "subheading": "",
+        "description": "<p>We've carefully selected the key nutrients in SPORTea® to provide a refreshing and healthy beverage. Our blend combines the antioxidant properties of green tea and black tea with essential vitamins and minerals. Each tea bag is packed with these beneficial ingredients, making it easy to brew a perfect cup of hot tea or pitcher of iced tea that not only tastes great but also supports your active lifestyle.</p>",
+        "after_images_description": "",
+        "after_description": "",
+        "image": "shopify://shop_images/image_7.png",
+        "button_text": "Shop Now",
+        "button_link": ""
+      }
+    },
+    "product_highlight_yPJXjW": {
+      "type": "product-highlight",
+      "blocks": {
+        "ingredient_zqiwXE": {
+          "type": "ingredient",
+          "settings": {
+            "title1": "Premium Black Tea",
+            "title2": "Alertness, Focus, Concentration",
+            "title3": ""
+          }
+        },
+        "ingredient_pFCQ9W": {
+          "type": "ingredient",
+          "settings": {
+            "title1": "Premium Green Tea",
+            "title2": "Antioxidants, Metabolism, Focus",
+            "title3": ""
+          }
+        },
+        "ingredient_NL8Xkz": {
+          "type": "ingredient",
+          "settings": {
+            "title1": "Siberian Ginseng (Eleuthero)",
+            "title2": "Energy, Stamina, Immunity, Stress-reduction",
+            "title3": ""
+          }
+        },
+        "ingredient_hKCqn9": {
+          "type": "ingredient",
+          "settings": {
+            "title1": "Ginger",
+            "title2": "Digestion, Anti-inflammatory, Circulation",
+            "title3": ""
+          }
+        },
+        "ingredient_bWhzkF": {
+          "type": "ingredient",
+          "settings": {
+            "title1": "Brazilian Maté",
+            "title2": "Energy, Metabolism, Vitamins/Minerals",
+            "title3": ""
+          }
+        }
+      },
+      "block_order": [
+        "ingredient_zqiwXE",
+        "ingredient_pFCQ9W",
+        "ingredient_NL8Xkz",
+        "ingredient_hKCqn9",
+        "ingredient_bWhzkF"
+      ],
+      "settings": {
+        "show_table": true,
+        "table1": "Herbal Component",
+        "table2": "Benefits",
+        "table3": "",
+        "background": "#2b4e92",
+        "list_size": 24,
+        "text_color": "#ffffff",
+        "heading": "Unique Herbal Components",
+        "subheading": "",
+        "description": "<p>We've carefully selected unique herbal components for SPORTea® blend to provide natural stress relief and immune support. Our formula includes citrus elements rich in vitamin C, which acts as a powerful antioxidant and supports electrolyte balance. These herbal ingredients work synergistically to create a refreshing and functional beverage that complements an active lifestyle:</p>",
+        "after_images_description": "",
+        "after_description": "<h2>The Role of Caffeine in SPORTea®</h2><p>We've carefully crafted the caffeine content in SPORTea® to be less than or equivalent to a decaffeinated cup of coffee. Why? We have optimized the ingredients to provide a natural energy boost without the jitters often associated with high-caffeine and high-sugar energy drinks.</p><p>Our combination of ingredients creates a refreshing beverage that delivers sustained energy supporting an active lifestyle without relying on artificial stimulants that attack the central nervous system.</p>",
+        "button_text": "Shop Now",
+        "button_link": ""
+      }
+    },
+    "product_highlight_gQGXBH": {
+      "type": "product-highlight",
+      "settings": {
+        "show_table": false,
+        "table1": "Herbal Component",
+        "table2": "Herbal Component",
+        "table3": "Herbal Component",
+        "background": "#ffffff",
+        "list_size": 24,
+        "text_color": "#000000",
+        "heading": "Benefits of Individual SPORTea® Ingredients",
+        "subheading": "",
+        "description": "<p>We've carefully selected each ingredient in SPORTea® for its unique benefits. Our blend features green tea's antioxidant properties, herbal components that aid hydration during exercise and energy-boosting elements like lemon. These ingredients work together to create a refreshing drink that supports alertness and overall well-being. Let's explore how each component contributes to SPORTea® effectiveness.</p><h4>Antioxidant Properties of Green Tea</h4><p>We've incorporated green tea into our SPORTea® blend for its powerful antioxidant properties. These antioxidants, particularly catechins, help protect our cells from oxidative stress and support overall health. By combining green tea with ginseng, we've created a synergistic effect that enhances the drink's ability to boost energy and mental clarity while providing essential nutrients.</p><h4>Hydration Benefits of Herbal Ingredients</h4><p>We've carefully selected herbal ingredients in SPORTea® that offer excellent hydration benefits. Our blend includes ginger root, which not only enhances flavor but also supports electrolyte balance. These natural components work together to help replenish fluids lost during physical activity, making SPORTea® an ideal choice for staying hydrated during workouts or on hot days.</p><h4>Energy Boosting Effects of Select Ingredients</h4><p>We've carefully selected energy-boosting ingredients for SPORTea® to provide natural vitality without artificial stimulants. Our formula includes Brazilian mate, known for its sustained energy-enhancing properties, and Siberian ginseng, which supports physical endurance. These components work synergistically with green tea to offer a balanced energy lift, making SPORTea® an excellent choice for maintaining alertness during workouts or busy days.</p>",
+        "after_images_description": "",
+        "after_description": "",
+        "button_text": "Shop Now",
+        "button_link": ""
+      }
+    },
+    "product_highlight_zPcUma": {
+      "type": "product-highlight",
+      "blocks": {
+        "ingredient_MMhkCx": {
+          "type": "ingredient",
+          "settings": {
+            "title1": "Artificial Sweeteners",
+            "title2": "No",
+            "title3": "Yes"
+          }
+        },
+        "ingredient_ebhpzJ": {
+          "type": "ingredient",
+          "settings": {
+            "title1": "Synthetic Colors",
+            "title2": "No",
+            "title3": "Yes"
+          }
+        },
+        "ingredient_4CUJe4": {
+          "type": "ingredient",
+          "settings": {
+            "title1": "Chemical Preservatives",
+            "title2": "No",
+            "title3": "Yes"
+          }
+        },
+        "ingredient_D6MiNq": {
+          "type": "ingredient",
+          "settings": {
+            "title1": "Artificial Flavors",
+            "title2": "No",
+            "title3": "Yes"
+          }
+        }
+      },
+      "block_order": [
+        "ingredient_MMhkCx",
+        "ingredient_ebhpzJ",
+        "ingredient_4CUJe4",
+        "ingredient_D6MiNq"
+      ],
+      "settings": {
+        "image1": "shopify://shop_images/image_14.png",
+        "image2": "shopify://shop_images/image_14.png",
+        "show_table": true,
+        "table1": "Herbal Component",
+        "table2": "Herbal Component",
+        "table3": "Herbal Component",
+        "background": "#264786",
+        "list_size": 24,
+        "text_color": "#ffffff",
+        "heading": "How to Read SPORTea® Ingredient Labels",
+        "subheading": "",
+        "description": "<p>We'll guide you through reading SPORTea® ingredient labels to ensure you understand what's in your drink. We'll cover decoding ingredient lists, identifying quality sources, and spotting additives. Our insights will help you make informed choices about the SPORTea® products you consume, aligning with your health and wellness goals.</p>",
+        "after_images_description": "<h4>Understanding Ingredient Lists</h4><p>We prioritize transparency in our ingredient labels, listing components in descending order by weight. Our SPORTea® blend features a mix of teas, herbs, and natural flavors, each contributing to the drink's unique taste and benefits. We encourage our customers to familiarize themselves with common ingredient names and their functions to make informed choices about their beverage consumption.</p><h4>Identifying Quality and Sourcing</h4><p>We source our ingredients from reputable suppliers who meet our strict quality standards. Our team carefully selects each component, ensuring it contributes to the overall benefits and flavor profile of SPORTea®. We prioritize natural and sustainably sourced ingredients whenever possible, reflecting our commitment to both quality and environmental responsibility.</p><h4>Spotting Additives and Preservatives<br/></h4><p>We take pride in crafting SPORTea® without unnecessary additives or preservatives. Our ingredient list is transparent, featuring only natural components that contribute to flavor, nutrition, and functionality. When examining our labels, you'll notice the absence of artificial sweeteners, colors, or preservatives. We achieve this by using high-quality, shelf-stable ingredients and careful processing methods. To help you understand our commitment to clean ingredients, we've created a table highlighting common additives and their status in SPORTea®:</p>",
+        "after_description": "",
+        "button_text": "Shop Now",
+        "button_link": ""
+      }
+    },
+    "product_highlight_LgPHJa": {
+      "type": "product-highlight",
+      "settings": {
+        "show_table": false,
+        "table1": "Herbal Component",
+        "table2": "Herbal Component",
+        "table3": "Herbal Component",
+        "background": "#ffffff",
+        "list_size": 24,
+        "text_color": "#000000",
+        "heading": "The Science Behind SPORTea® Ingredients",
+        "subheading": "",
+        "description": "<p>We've examined the scientific basis of SPORTea® ingredients, focusing on research-backed health claims, ingredient interactions, and effects on athletic performance. Our analysis reveals how each component contributes to the blend's efficacy, providing insights into SPORTea® potential benefits for active individuals. We'll explore these aspects to help you understand the science behind our unique formula.</p><h4>Research Supporting Health Claims</h4><p>There is extensive research to support the health benefits of SPORTea® ingredients. Studies show that green tea catechins can boost metabolism and improve cardiovascular health. Yerba mate enhances mental focus and physical endurance during exercise. </p><h4>Effects on Athletic Performance</h4><p><a href=\"#\" title=\"#\">Customer reviews and testimonials of SPORTea®</a> are full of great examples of athletes opinions of SPORTea® on athletic performance. Olympians, NCAA athletes, weekend warriors, mountain climbers, ultrarunners, traiathletes, and youth athletes rave about SPORTea® benefits.</p>",
+        "after_images_description": "",
+        "after_description": "",
+        "button_text": "Shop Now",
+        "button_link": ""
+      }
+    },
+    "product_highlight_W4yyBU": {
+      "type": "product-highlight",
+      "settings": {
+        "show_table": false,
+        "table1": "Herbal Component",
+        "table2": "Herbal Component",
+        "table3": "Herbal Component",
+        "background": "#edf8ff",
+        "list_size": 24,
+        "text_color": "#000000",
+        "heading": "SPORTea® Flavor and Ingredients",
+        "subheading": "",
+        "description": "<p>Our signature citrus-sweet flavor is achieved without sugar to create optimal flavor. Some SPORTea® drinkers add honey for a sweeter kick and the health benefits honey can provide, others add lemon for even more of a citrus kick!</p>",
+        "after_images_description": "",
+        "after_description": "",
+        "button_text": "",
+        "button_link": ""
+      }
+    },
+    "product_highlight_7bczxk": {
+      "type": "product-highlight",
+      "settings": {
+        "show_table": false,
+        "table1": "Herbal Component",
+        "table2": "Herbal Component",
+        "table3": "Herbal Component",
+        "background": "#264786",
+        "list_size": 24,
+        "text_color": "#ffffff",
+        "heading": "Spotting Additives and Preservatives",
+        "subheading": "",
+        "description": "<p>We address common queries about SPORTea® ingredients, focusing on safety, customization options, and comparisons with other beverages. Our responses provide clear information on ingredient safety measures, personalization possibilities, and how SPORTea® components stack up against alternatives. These insights help you make informed decisions about incorporating SPORTea® into your lifestyle.<br/></p><h4>Are SPORTea® Ingredients Safe?</h4><p>We prioritize the safety of our SPORTea® ingredients, sourcing them from reputable suppliers and conducting rigorous quality control tests. Our blend contains only natural components that have been extensively studied for their health benefits and safety profiles. We carefully monitor the caffeine content to ensure it remains the equivalent of a decaffeinated cup of coffee. Our commitment to transparency means we clearly list all ingredients on our packaging, allowing customers to make informed decisions about their consumption:<br/></p><ul><li>Source ingredients from trusted suppliers</li><li>Conduct thorough quality control tests</li><li>Use only natural, well-studied components</li><li>Monitor caffeine content for safety (aiming for low caffeine content, similar to decaf coffee)</li><li>Provide clear ingredient lists on packaging</li></ul><p></p><h4>How Do SPORTea® Ingredients Compare to Other Beverages?</h4><p>We've carefully formulated SPORTea® to offer unique benefits compared to other beverages. Our blend contains natural energy sources like green tea and yerba mate, providing sustained energy without the crash associated with sugary energy drinks. Unlike many sports drinks, SPORTea® is free from artificial colors (like Red 40, Blue 1, and Yellow 5 found in some Gatorade flavors) and flavors (such as sugar), relying instead on natural herbal ingredients that support hydration and recovery. We've also ensured that SPORTea® has a lower calorie content than most sweetened beverages, making it an excellent choice for health-conscious individuals seeking a refreshing and functional drink.</p>",
+        "after_images_description": "",
+        "after_description": "",
+        "button_text": "Shop Now",
+        "button_link": ""
+      }
+    },
+    "product_highlight_ixYiX6": {
+      "type": "product-highlight",
+      "settings": {
+        "show_table": false,
+        "table1": "Herbal Component",
+        "table2": "Herbal Component",
+        "table3": "Herbal Component",
+        "background": "#ffffff",
+        "list_size": 24,
+        "text_color": "#000000",
+        "heading": "Conclusion",
+        "subheading": "",
+        "description": "<p>Understanding the components of SPORTea® ingredients empowers consumers to make informed choices about their beverage consumption. The carefully selected blend of natural ingredients offers a unique combination of antioxidants, hydration benefits, and energy-boosting properties without artificial additives. By examining the science behind these ingredients and their interactions, we gain insight into how SPORTea® supports athletic performance and overall well-being. This knowledge allows health-conscious individuals to confidently incorporate SPORTea® into their active lifestyles, knowing they're choosing a beverage that aligns with their wellness goals.</p><p>Sources:</p><p><a href=\"#\" title=\"#\">https://time.com/7017512/is-green-tea-good-for-you/<br/></a></p><p><a href=\"#\" title=\"#\">https://www.healthline.com/nutrition/8-benefits-of-yerba-mate</a></p><p><a href=\"#\" title=\"#\">https://www.mountsinai.org/health-library/herb/siberian-ginseng</a></p><p><a href=\"#\" title=\"#\">​​https://www.verywellhealth.com/ginger-shots-8741999</a></p>",
+        "after_images_description": "",
+        "after_description": "",
+        "button_text": "Shop Now",
+        "button_link": ""
+      }
+    },
+    "custom_liquid_tiNGyB": {
+      "type": "custom-liquid",
+      "settings": {
+        "color_scheme": "",
+        "custom_liquid": "<style>\nsection#sportea-ingredients-section {\n    padding-top: 30px;\n}\n</style>",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    }
+  },
+  "order": [
+    "main",
+    "product_highlight_whdn3F",
+    "product_highlight_JAW9F4",
+    "ingrediants_UEX9EQ",
+    "product_highlight_8RkbVA",
+    "product_highlight_yPJXjW",
+    "product_highlight_gQGXBH",
+    "product_highlight_zPcUma",
+    "product_highlight_LgPHJa",
+    "product_highlight_W4yyBU",
+    "product_highlight_7bczxk",
+    "product_highlight_ixYiX6",
+    "custom_liquid_tiNGyB"
+  ]
+}
