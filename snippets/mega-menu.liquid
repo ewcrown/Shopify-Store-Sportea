@@ -185,6 +185,7 @@
                               <button
                                 class="header__sub-nested-menu-link {{ nmenu.title | handleize }} is-active-ai"
                                 data-index="{{ forloop.index0 }}"
+                                onclick="window.location.href = '{{ nmenu.url }}'"
                               >
                                 {{ nmenu.title }}
                                 <svg

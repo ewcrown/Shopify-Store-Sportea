@@ -1,0 +1,144 @@
+{% schema %}
+{
+  "name": "<> Iced Tea Products",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Shop Premium Iced Tea Products"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "product_link",
+      "name": "Product Link",
+      "settings": [
+        {
+          "type": "url",
+          "id": "product_url",
+          "label": "Product URL"
+        },
+        {
+          "type": "text",
+          "id": "product_name",
+          "label": "Product Name",
+          "default": "Product Title"
+        },
+        {
+          "type": "text",
+          "id": "product_description",
+          "label": "Short Description",
+          "default": "Product description goes here."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "<> Iced Tea Products",
+      "category": "Custom",
+      "blocks": [
+        {
+          "type": "product_link"
+        },
+        {
+          "type": "product_link"
+        },
+        {
+          "type": "product_link"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
+
+<style>
+  .iced-tea-products {
+    padding: 40px 0;
+  }
+
+  .iced-tea-container {
+    max-width: 810px;
+    margin: auto;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+  }
+
+  .iced-tea-heading {
+    color: #000;
+text-align: center;
+font-family: Arial;
+font-size: 48px;
+font-style: normal;
+font-weight: 700;
+line-height: 120%; /* 57.6px */
+    margin-bottom: 30px;
+  }
+
+  .iced-tea-list {
+    list-style: none;
+    padding: 0;
+  }
+
+  .iced-tea-item {
+    margin-bottom: 10px;
+    color: #000;
+font-family: Arial;
+font-size: 20px;
+font-style: normal;
+font-weight: 400;
+line-height: 189%;
+  }
+
+  .iced-tea-item a {
+    color: #3C97FF;
+    font-family: Arial;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 189%; /* 37.8px */
+    text-decoration-line: underline;
+    text-decoration-style: solid;
+    text-decoration-skip-ink: none;
+    text-decoration-thickness: auto;
+    text-underline-offset: auto;
+    text-underline-position: from-font;
+  }
+
+  .iced-tea-item a:hover {
+    color: #1a1a1a;
+  }
+  @media(max-width:768px){
+    .iced-tea-container {
+      padding:0;
+    }
+    .iced-tea-heading {
+      font-size: 32px;
+    } 
+    .iced-tea-item a,
+    .iced-tea-item {
+      font-size: 16px;
+    }
+  }
+</style>
+
+<section class="iced-tea-products">
+  <div class="page-width">
+    <div class="iced-tea-container">
+      <h2 class="iced-tea-heading">{{ section.settings.heading }}</h2>
+      <ul class="iced-tea-list">
+        {% for block in section.blocks %}
+          <li class="iced-tea-item">
+            <a href="{{ block.settings.product_url }}">
+              {{ block.settings.product_name }}
+            </a> - {{ block.settings.product_description }}
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+</section>

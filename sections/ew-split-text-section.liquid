@@ -1,0 +1,141 @@
+{% schema %}
+{
+  "name": "<> Cold Brew Section",
+  "settings": [],
+  "blocks": [
+    {
+      "type": "content",
+      "name": "Text Block",
+      "settings": [
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Heading",
+          "default": "Cold Brew Iced Tea: The SPORTea® Way"
+        },
+        {
+          "type": "text",
+          "id": "subheading",
+          "label": "Subheading",
+          "default": "What is Cold Brew Tea?"
+        },
+        {
+          "type": "richtext",
+          "id": "description",
+          "label": "Description",
+          "default": "<p>Cold brewing extracts the best flavors from tea without heat, resulting in a smoother iced tea with:</p>"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "<> Cold Brew Section"
+    }
+  ]
+}
+{% endschema %}
+
+{% style %}
+.cold-brew-section {
+  background-color: #173a72;
+  padding: 100px 0px;
+}
+
+.cold-brew-section h2 {
+  color: #FFF;
+font-family: Arial;
+font-size: 48px;
+font-style: normal;
+font-weight: 700;
+line-height: 120%; /* 57.6px */
+  margin-bottom: 30px;
+}
+
+.cold-brew-section h3 {
+  color: #FFF;
+font-family: Arial;
+font-size: 24px;
+font-style: normal;
+font-weight: 700;
+line-height: 150%; /* 36px */
+  margin-bottom: 30px;
+}
+
+.cold-brew-section p {
+  color: #FFF;
+font-family: Arial;
+font-size: 24px;
+font-style: normal;
+font-weight: 400;
+line-height: 150%; /* 36px */
+  margin-bottom: 30px;
+}
+
+
+.cold-brew-section ol li {
+  list-style:decimal;
+  color: #FFF;
+font-family: Arial;
+font-size: 24px;
+font-style: normal;
+font-weight: 400;
+line-height: 150%; /* 36px */
+}
+.cold-brew-section ol,
+.cold-brew-section ul {
+  padding-left:20px;
+}
+.cold-brew-section ul li {
+  list-style-type: disc;
+  color: #FFF;
+font-family: Arial;
+font-size: 24px;
+font-style: normal;
+font-weight: 400;
+line-height: 150%; /* 36px */
+}
+
+.cold-brew-content {
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:60px;
+}
+
+@media(max-width:768px){
+  .cold-brew-content {
+    grid-template-columns: repeat(1,1fr);
+    gap: 30px;
+  }
+  .cold-brew-section h2 {
+font-size:32px;
+  }
+
+  .cold-brew-section h3 {
+    font-size: 20px;
+}
+  .cold-brew-section{
+    padding:30px 0px;
+  }
+  .cold-brew-section li,
+  .cold-brew-section p {
+    font-size: 16px !important;
+  }
+}
+{% endstyle %}
+
+<div class="cold-brew-section">
+  <div class="large-container">
+    <div class="cold-brew-content">
+      {% for block in section.blocks %}
+        <div class="cold-brew-content-inner">
+          <h2>{{ block.settings.heading }}</h2>
+          <h3>{{ block.settings.subheading }}</h3>
+          <div class="cold-brew-content-inner-description">
+            {{ block.settings.description }}
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>

@@ -1,1 +1,276 @@
-{"sections":{"main":{"type":"main-product","blocks":{"title":{"type":"title","settings":{}},"yotpo_product_reviews_ugc_star_rating_Y3HmJT":{"type":"shopify:\/\/apps\/yotpo-product-reviews-ugc\/blocks\/star-rating\/eb7dfd7d-db44-4334-bc49-c893b51b36cf","settings":{"product":"{{product}}"}},"price":{"type":"price","settings":{}},"variant_picker":{"type":"variant_picker","settings":{"picker_type":"button","picker_btn_type":"normal"}},"quantity_selector":{"type":"quantity_selector","settings":{}},"buy_buttons":{"type":"buy_buttons","settings":{"show_dynamic_checkout":false,"show_gift_card_recipient":true}},"e1a8f174-f755-4fd5-96d1-f56556c2ca8e":{"type":"description","settings":{}}},"block_order":["title","yotpo_product_reviews_ugc_star_rating_Y3HmJT","price","variant_picker","quantity_selector","buy_buttons","e1a8f174-f755-4fd5-96d1-f56556c2ca8e"],"settings":{"color_scheme":"scheme-23d60601-f3f5-4d14-8bd4-c16c0e99b7c4","enable_breadcrumb_navigation":false}},"whyus_XfmRUT":{"type":"whyus","blocks":{"properties_Y8DfPN":{"type":"properties","settings":{"title":"Naturally<br> Energizing","icon":"shopify:\/\/shop_images\/Energy_Saving_Bulb.png"}},"properties_QJtahH":{"type":"properties","settings":{"title":"Diabetic-<br>Friendly","icon":"shopify:\/\/shop_images\/Rh_1_a96d87db-c5fb-4db9-bda6-e79ff85eadb0.png"}},"properties_tWQ8DF":{"type":"properties","settings":{"title":"Vegan","icon":"shopify:\/\/shop_images\/Natural_Food.png"}},"properties_WzXMwR":{"type":"properties","settings":{"title":"Zero Calorie","icon":"shopify:\/\/shop_images\/Creative_Commons_Zero.png"}},"properties_Ep4bE7":{"type":"properties","settings":{"title":"No Sugar","icon":"shopify:\/\/shop_images\/Sugar_Free_1.png"}},"properties_XUDgFb":{"type":"properties","settings":{"title":"Keto-Friendly","icon":"shopify:\/\/shop_images\/Healthy_Eating.png"}},"properties_tj67dX":{"type":"properties","settings":{"title":"Gluten<br>Free","icon":"shopify:\/\/shop_images\/No_Gluten.png"}},"properties_C7tABK":{"type":"properties","settings":{"title":"No Artificial<br>Additives","icon":"shopify:\/\/shop_images\/No_Sugar.png"}}},"block_order":["properties_Y8DfPN","properties_QJtahH","properties_tWQ8DF","properties_WzXMwR","properties_Ep4bE7","properties_XUDgFb","properties_tj67dX","properties_C7tABK"],"settings":{"title":"","button":"Shop Now","link":""}},"testimonials_mU9yKt":{"type":"testimonials","blocks":{"video_UgHDy9":{"type":"video","settings":{"video_url":"https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/64d9cee8759048adbf0c19193d7f6f36.mp4"}},"video_jW4pWH":{"type":"video","settings":{"video_url":"https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/c29035d5356a4198a405e32dcbc8f996.mp4"}},"video_wDM88i":{"type":"video","settings":{"video_url":"https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/cc5d44176de4498ea5294bb18241904b.mp4"}},"review_RtQ3cC":{"type":"Review","settings":{"description":"SPORTea® is an amazing alternative to the sugared sports drinks! This is my absolute favorite workout drink. My family uses it as an electrolyte replacement, an alternative to fruit drinks and we have found it works great on an upset tummy. As I have investigated it, ordered it and recommended it over the years I have found it to be our healthiest alternative to replacing lost nutrients and preventing dehydration in the AZ summers! We love it. Amazing taste that the kids will drink, no aftertaste, and just plain good for you. Thanks and best of luck with continuing to get your name out there.","author":"Carrie","city":"city","state":"Arizona","icon":"shopify:\/\/shop_images\/profile-19-64.png"}},"review_LztpEG":{"type":"Review","settings":{"description":"SPORTea® is an amazing alternative to the sugared sports drinks! This is my absolute favorite workout drink. My family uses it as an electrolyte replacement, an alternative to fruit drinks and we have found it works great on an upset tummy. As I have investigated it, ordered it and recommended it over the years I have found it to be our healthiest alternative to replacing lost nutrients and preventing dehydration in the AZ summers! We love it. Amazing taste that the kids will drink, no aftertaste, and just plain good for you. Thanks and best of luck with continuing to get your name out there.","author":"Carrie","city":"city","state":"Florida","icon":"shopify:\/\/shop_images\/profile-19-64.png"}},"review_bGXC7T":{"type":"Review","settings":{"description":"I don't know what i would do with my SPORTea®! I drink in continually throughout the day, and I have done so for years. It is the one, perfect indulgence that has no down side... it keeps me hydrated, satisfied, so easy to make, tastes great while it provides only healthy ingredients. I can't think of another food or drink that has these attributes. Please don't ever stop making this product!","author":"Karen","city":"city","state":"California","icon":"shopify:\/\/shop_images\/profile-19-64.png"}},"review_agtw97":{"type":"Review","settings":{"description":"We have used SPORTea® for over 15 years. My husband runs a lawn service and in the heat of the summer would normally sweat out his minerals. With SPORTea®, he stays hydrated and completely energized. Our boys grew up on SPORTea® as opposed to sodas. It is a staple in our home and the first thing we go for in the event of a cold, the blahs or illness. It really helps me when I'm stressed out too!","author":"Kathy Ostrander","city":"Farmington","state":"MI"}}},"block_order":["video_UgHDy9","video_jW4pWH","video_wDM88i","review_RtQ3cC","review_LztpEG","review_bGXC7T","review_agtw97"],"settings":{"title":"See What Customers Say About SPORTea®","caption":""}},"product-recommendations":{"type":"product-recommendations","settings":{"color_scheme":"scheme-23d60601-f3f5-4d14-8bd4-c16c0e99b7c4","enable_full_width":false,"heading":"You May Also Like","col_settings":4,"product_limit":4,"product_card_layout_type":"grid","product_card_type":"box","title_font_family":"body-font","product_card_text_size":"large","product_collection_img":"top","pesto_image_ratio":"auto","product_card_image_padding":36,"product_card_content_top_padding":2,"product_card_content_bottom_padding":36,"card_border_raidus":5,"enable_vendor":false,"enable_collection_desc":false,"card_border_visibility":false,"pesto_section_padding_top":60,"pesto_section_padding_bottom":40}},"1727731161d03edd95":{"type":"apps","blocks":{"yotpo_product_reviews_ugc_reviews_PdayMY":{"type":"shopify:\/\/apps\/yotpo-product-reviews-ugc\/blocks\/reviews\/eb7dfd7d-db44-4334-bc49-c893b51b36cf","settings":{"product":"{{product}}"}}},"block_order":["yotpo_product_reviews_ugc_reviews_PdayMY"],"custom_css":[],"settings":{}},"custom_liquid_W3Jthg":{"type":"custom-liquid","settings":{"color_scheme":"","custom_liquid":"<style>\n#yotpo-main-widget-btn[data-v-45e7fb23] {\n  background-color: rgb(215, 42, 49) !important;\n}\n.yotpo-title-text {\n  color: rgb(215, 42, 49) !important;\n}\n<\/style>","padding_top":0,"padding_bottom":0}}},"order":["main","whyus_XfmRUT","testimonials_mU9yKt","product-recommendations","1727731161d03edd95","custom_liquid_W3Jthg"]}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "title": {
+          "type": "title",
+          "settings": {}
+        },
+        "yotpo_product_reviews_ugc_star_rating_Y3HmJT": {
+          "type": "shopify://apps/yotpo-product-reviews/blocks/star-rating/eb7dfd7d-db44-4334-bc49-c893b51b36cf",
+          "settings": {
+            "product": "{{product}}"
+          }
+        },
+        "price": {
+          "type": "price",
+          "settings": {}
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "button",
+            "picker_btn_type": "normal"
+          }
+        },
+        "quantity_selector": {
+          "type": "quantity_selector",
+          "settings": {}
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": false,
+            "show_gift_card_recipient": true
+          }
+        },
+        "e1a8f174-f755-4fd5-96d1-f56556c2ca8e": {
+          "type": "description",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "title",
+        "yotpo_product_reviews_ugc_star_rating_Y3HmJT",
+        "price",
+        "variant_picker",
+        "quantity_selector",
+        "buy_buttons",
+        "e1a8f174-f755-4fd5-96d1-f56556c2ca8e"
+      ],
+      "settings": {
+        "color_scheme": "scheme-23d60601-f3f5-4d14-8bd4-c16c0e99b7c4",
+        "enable_breadcrumb_navigation": false
+      }
+    },
+    "whyus_XfmRUT": {
+      "type": "whyus",
+      "blocks": {
+        "properties_Y8DfPN": {
+          "type": "properties",
+          "settings": {
+            "title": "Naturally<br> Energizing",
+            "icon": "shopify://shop_images/Energy_Saving_Bulb.png"
+          }
+        },
+        "properties_QJtahH": {
+          "type": "properties",
+          "settings": {
+            "title": "Diabetic-<br>Friendly",
+            "icon": "shopify://shop_images/Rh_1_a96d87db-c5fb-4db9-bda6-e79ff85eadb0.png"
+          }
+        },
+        "properties_tWQ8DF": {
+          "type": "properties",
+          "settings": {
+            "title": "Vegan",
+            "icon": "shopify://shop_images/Natural_Food.png"
+          }
+        },
+        "properties_WzXMwR": {
+          "type": "properties",
+          "settings": {
+            "title": "Zero Calorie",
+            "icon": "shopify://shop_images/Creative_Commons_Zero.png"
+          }
+        },
+        "properties_Ep4bE7": {
+          "type": "properties",
+          "settings": {
+            "title": "No Sugar",
+            "icon": "shopify://shop_images/Sugar_Free_1.png"
+          }
+        },
+        "properties_XUDgFb": {
+          "type": "properties",
+          "settings": {
+            "title": "Keto-Friendly",
+            "icon": "shopify://shop_images/Healthy_Eating.png"
+          }
+        },
+        "properties_tj67dX": {
+          "type": "properties",
+          "settings": {
+            "title": "Gluten<br>Free",
+            "icon": "shopify://shop_images/No_Gluten.png"
+          }
+        },
+        "properties_C7tABK": {
+          "type": "properties",
+          "settings": {
+            "title": "No Artificial<br>Additives",
+            "icon": "shopify://shop_images/No_Sugar.png"
+          }
+        }
+      },
+      "block_order": [
+        "properties_Y8DfPN",
+        "properties_QJtahH",
+        "properties_tWQ8DF",
+        "properties_WzXMwR",
+        "properties_Ep4bE7",
+        "properties_XUDgFb",
+        "properties_tj67dX",
+        "properties_C7tABK"
+      ],
+      "settings": {
+        "title": "",
+        "button": "Shop Now",
+        "link": ""
+      }
+    },
+    "testimonials_mU9yKt": {
+      "type": "testimonials",
+      "blocks": {
+        "video_UgHDy9": {
+          "type": "video",
+          "settings": {
+            "video_url": "https://cdn.shopify.com/videos/c/o/v/64d9cee8759048adbf0c19193d7f6f36.mp4"
+          }
+        },
+        "video_jW4pWH": {
+          "type": "video",
+          "settings": {
+            "video_url": "https://cdn.shopify.com/videos/c/o/v/c29035d5356a4198a405e32dcbc8f996.mp4"
+          }
+        },
+        "video_wDM88i": {
+          "type": "video",
+          "settings": {
+            "video_url": "https://cdn.shopify.com/videos/c/o/v/cc5d44176de4498ea5294bb18241904b.mp4"
+          }
+        },
+        "review_RtQ3cC": {
+          "type": "Review",
+          "settings": {
+            "description": "SPORTea® is an amazing alternative to the sugared sports drinks! This is my absolute favorite workout drink. My family uses it as an electrolyte replacement, an alternative to fruit drinks and we have found it works great on an upset tummy. As I have investigated it, ordered it and recommended it over the years I have found it to be our healthiest alternative to replacing lost nutrients and preventing dehydration in the AZ summers! We love it. Amazing taste that the kids will drink, no aftertaste, and just plain good for you. Thanks and best of luck with continuing to get your name out there.",
+            "author": "Carrie",
+            "city": "city",
+            "state": "Arizona",
+            "icon": "shopify://shop_images/profile-19-64.png"
+          }
+        },
+        "review_LztpEG": {
+          "type": "Review",
+          "settings": {
+            "description": "SPORTea® is an amazing alternative to the sugared sports drinks! This is my absolute favorite workout drink. My family uses it as an electrolyte replacement, an alternative to fruit drinks and we have found it works great on an upset tummy. As I have investigated it, ordered it and recommended it over the years I have found it to be our healthiest alternative to replacing lost nutrients and preventing dehydration in the AZ summers! We love it. Amazing taste that the kids will drink, no aftertaste, and just plain good for you. Thanks and best of luck with continuing to get your name out there.",
+            "author": "Carrie",
+            "city": "city",
+            "state": "Florida",
+            "icon": "shopify://shop_images/profile-19-64.png"
+          }
+        },
+        "review_bGXC7T": {
+          "type": "Review",
+          "settings": {
+            "description": "I don't know what i would do with my SPORTea®! I drink in continually throughout the day, and I have done so for years. It is the one, perfect indulgence that has no down side... it keeps me hydrated, satisfied, so easy to make, tastes great while it provides only healthy ingredients. I can't think of another food or drink that has these attributes. Please don't ever stop making this product!",
+            "author": "Karen",
+            "city": "city",
+            "state": "California",
+            "icon": "shopify://shop_images/profile-19-64.png"
+          }
+        },
+        "review_agtw97": {
+          "type": "Review",
+          "settings": {
+            "description": "We have used SPORTea® for over 15 years. My husband runs a lawn service and in the heat of the summer would normally sweat out his minerals. With SPORTea®, he stays hydrated and completely energized. Our boys grew up on SPORTea® as opposed to sodas. It is a staple in our home and the first thing we go for in the event of a cold, the blahs or illness. It really helps me when I'm stressed out too!",
+            "author": "Kathy Ostrander",
+            "city": "Farmington",
+            "state": "MI"
+          }
+        }
+      },
+      "block_order": [
+        "video_UgHDy9",
+        "video_jW4pWH",
+        "video_wDM88i",
+        "review_RtQ3cC",
+        "review_LztpEG",
+        "review_bGXC7T",
+        "review_agtw97"
+      ],
+      "settings": {
+        "title": "See What Customers Say About SPORTea®",
+        "caption": ""
+      }
+    },
+    "product-recommendations": {
+      "type": "product-recommendations",
+      "settings": {
+        "color_scheme": "scheme-23d60601-f3f5-4d14-8bd4-c16c0e99b7c4",
+        "enable_full_width": false,
+        "heading": "You May Also Like",
+        "col_settings": 4,
+        "product_limit": 4,
+        "product_card_layout_type": "grid",
+        "product_card_type": "box",
+        "title_font_family": "body-font",
+        "product_card_text_size": "large",
+        "product_collection_img": "top",
+        "pesto_image_ratio": "auto",
+        "product_card_image_padding": 36,
+        "product_card_content_top_padding": 2,
+        "product_card_content_bottom_padding": 36,
+        "card_border_raidus": 5,
+        "enable_vendor": false,
+        "enable_collection_desc": false,
+        "card_border_visibility": false,
+        "pesto_section_padding_top": 60,
+        "pesto_section_padding_bottom": 40
+      }
+    },
+    "1727731161d03edd95": {
+      "type": "apps",
+      "blocks": {
+        "yotpo_product_reviews_ugc_reviews_PdayMY": {
+          "type": "shopify://apps/yotpo-product-reviews/blocks/reviews/eb7dfd7d-db44-4334-bc49-c893b51b36cf",
+          "settings": {
+            "product": "{{product}}"
+          }
+        }
+      },
+      "block_order": [
+        "yotpo_product_reviews_ugc_reviews_PdayMY"
+      ],
+      "custom_css": [],
+      "settings": {}
+    },
+    "custom_liquid_W3Jthg": {
+      "type": "custom-liquid",
+      "settings": {
+        "color_scheme": "",
+        "custom_liquid": "<style>\n#yotpo-main-widget-btn[data-v-45e7fb23] {\n  background-color: rgb(215, 42, 49) !important;\n}\n.yotpo-title-text {\n  color: rgb(215, 42, 49) !important;\n}\n</style>",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    }
+  },
+  "order": [
+    "main",
+    "whyus_XfmRUT",
+    "testimonials_mU9yKt",
+    "product-recommendations",
+    "1727731161d03edd95",
+    "custom_liquid_W3Jthg"
+  ]
+}

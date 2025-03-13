@@ -1,0 +1,355 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "product_highlight_c7HkiU": {
+      "type": "product-highlight",
+      "settings": {
+        "background": "#ffffff",
+        "list_size": 24,
+        "text_color": "#000000",
+        "heading": "Iced SPORTea® Premium Cold Brew Iced Tea for Energy & Hydration",
+        "subheading": "Refreshing cold brew iced tea with ice and lemon - Iced SPORTea®",
+        "description": "<p>Discover the ultimate cold brew iced tea designed for active lifestyles. Iced SPORTea® delivers refreshing hydration and natural energy without the sugar, calories, or artificial ingredients found in other iced tea options.</p>",
+        "image": "shopify://shop_images/image_13.png",
+        "button_text": "Shop Now",
+        "button_link": "#"
+      }
+    },
+    "featured_reviews_NbPTby": {
+      "type": "featured-reviews",
+      "settings": {
+        "bg": "#2b4e92",
+        "ai-count": "5078 Verified 5-star Reviews",
+        "ai-featured-review": "have been drinking SPORTea® for over 20 years. It has so many win-win ingredients. No matter what I face over the course of the years the hard times and the good SPORTea® has been part of them.",
+        "ai-author-name": "Diana J.",
+        "ai-date": "3/1/2024"
+      }
+    },
+    "main_collection_product_grid_R4cCaJ": {
+      "type": "main-collection-product-grid",
+      "settings": {
+        "color_scheme": "scheme-23d60601-f3f5-4d14-8bd4-c16c0e99b7c4",
+        "enable_full_width": false,
+        "col_settings": 4,
+        "products_per_page": 16,
+        "product_filters_type": "card",
+        "product_card_type": "box",
+        "product_card_text_size": "large",
+        "title_font_family": "body-font",
+        "product_collection_img": "top",
+        "pesto_image_ratio": "auto",
+        "product_card_image_padding": 36,
+        "product_card_content_top_padding": 1,
+        "product_card_content_bottom_padding": 12,
+        "card_border_raidus": 5,
+        "enable_vendor": false,
+        "enable_collection_desc": false,
+        "card_border_visibility": false,
+        "enable_filtering": true,
+        "enable_sorting": true,
+        "padding_top": 52,
+        "padding_bottom": 100
+      }
+    },
+    "product_highlight_QDCQY9": {
+      "type": "product-highlight",
+      "settings": {
+        "background": "#edf8ff",
+        "list_size": 24,
+        "text_color": "#000000",
+        "heading": "What Makes Our Iced Tea Different?",
+        "subheading": "",
+        "description": "<p>Unlike conventional iced tea brands that rely on sugar for flavor, SPORTea® combines premium black tea, green tea, Siberian ginseng, ginger, Brazilian maté, and vitamin C to create a perfectly balanced iced tea that:<br/></p><ul><li>Provides sustained energy without crashes</li><li>Delivers superior hydration with natural electrolytes</li><li>Contains zero calories and no added sugar</li><li>Offers a smooth, refreshing taste without bitterness</li></ul>",
+        "image": "shopify://shop_images/image_13_1.png",
+        "button_text": "",
+        "button_link": ""
+      }
+    },
+    "ew_split_text_section_N9FERz": {
+      "type": "ew-split-text-section",
+      "blocks": {
+        "content_ffbWdp": {
+          "type": "content",
+          "settings": {
+            "heading": "Cold Brew Iced Tea: The SPORTea® Way",
+            "subheading": "What is Cold Brew Tea?",
+            "description": "<p>Cold brewing extracts the best flavors from tea without heat, resulting in a smoother iced tea with:</p><p></p><ul><li>Lower tannin content for reduced bitterness</li><li>Enhanced preservation of antioxidants and nutrients</li><li>A cleaner, more refreshing flavor profile.<br/></li></ul>"
+          }
+        },
+        "content_6AzCRC": {
+          "type": "content",
+          "settings": {
+            "heading": "How to Make Perfect Cold Brew Iced Tea",
+            "subheading": "How to Make Perfect Cold Brew Iced Tea",
+            "description": "<p>Our Arctic Brewing Method™ makes creating delicious iced tea effortless:</p><ol><li>Place one SPORTea® bag in one quart of cold water</li><li>Refrigerate for 4-6 hours (overnight for stronger flavor)</li><li>Remove tea bag and serve over ice</li></ol>"
+          }
+        }
+      },
+      "block_order": [
+        "content_ffbWdp",
+        "content_6AzCRC"
+      ],
+      "settings": {}
+    },
+    "product_highlight_J3Hd9B": {
+      "type": "product-highlight",
+      "settings": {
+        "background": "#ffffff",
+        "list_size": 24,
+        "text_color": "#000000",
+        "heading": "Iced Tea Benefits: Why SPORTea® Stands Out",
+        "subheading": "Health Benefits of Our Premium Iced Tea",
+        "description": "<p>Iced SPORTea® offers advantages you won't find in ordinary iced tea:<br/></p><ul><li>Natural Energy Boost - The unique blend of Brazilian maté and teas provides sustained energy without jitters</li><li>Superior Hydration - Replenishes electrolytes naturally, making it the perfect iced tea for active lifestyles</li><li>Zero-Calorie Refreshment - Enjoy a flavorful iced tea with no sugar, sweeteners, or artificial ingredients</li><li>Digestive Support - Ginger and green tea components promote healthy digestion and metabolism<br/></li></ul>",
+        "button_text": "",
+        "button_link": ""
+      }
+    },
+    "natural_ingredients_gMwFHK": {
+      "type": "natural-ingredients",
+      "blocks": {
+        "ingredient_xhWDMQ": {
+          "type": "ingredient",
+          "settings": {
+            "ingredient_image": "shopify://shop_images/Screenshot_2025-03-11_at_11.49.21_PM.png",
+            "ingredient_title": "Green Tea",
+            "ingredient_subtitle": "Natural Energizer"
+          }
+        },
+        "ingredient_feBzNH": {
+          "type": "ingredient",
+          "settings": {
+            "ingredient_image": "shopify://shop_images/Screenshot_2025-03-11_at_11.49.35_PM.png",
+            "ingredient_title": "Green Tea",
+            "ingredient_subtitle": "Natural Energizer"
+          }
+        },
+        "ingredient_wQT4wH": {
+          "type": "ingredient",
+          "settings": {
+            "ingredient_image": "shopify://shop_images/Screenshot_2025-03-11_at_11.49.42_PM.png",
+            "ingredient_title": "Green Tea",
+            "ingredient_subtitle": "Natural Energizer"
+          }
+        },
+        "ingredient_RQT84x": {
+          "type": "ingredient",
+          "settings": {
+            "ingredient_image": "shopify://shop_images/Screenshot_2025-03-11_at_11.49.52_PM.png",
+            "ingredient_title": "Green Tea",
+            "ingredient_subtitle": "Natural Energizer"
+          }
+        },
+        "ingredient_Vc7Bqy": {
+          "type": "ingredient",
+          "settings": {
+            "ingredient_image": "shopify://shop_images/Screenshot_2025-03-11_at_11.50.01_PM.png",
+            "ingredient_title": "Green Tea",
+            "ingredient_subtitle": "Natural Energizer"
+          }
+        },
+        "ingredient_DicB6A": {
+          "type": "ingredient",
+          "settings": {
+            "ingredient_image": "shopify://shop_images/Screenshot_2025-03-11_at_11.50.12_PM.png",
+            "ingredient_title": "Green Tea",
+            "ingredient_subtitle": "Natural Energizer"
+          }
+        }
+      },
+      "block_order": [
+        "ingredient_xhWDMQ",
+        "ingredient_feBzNH",
+        "ingredient_wQT4wH",
+        "ingredient_RQT84x",
+        "ingredient_Vc7Bqy",
+        "ingredient_DicB6A"
+      ],
+      "settings": {
+        "heading": "Natural ingredients in healthy iced tea - SPORTea® blend"
+      }
+    },
+    "product_highlight_pXjNpW": {
+      "type": "product-highlight",
+      "settings": {
+        "background": "#264786",
+        "list_size": 20,
+        "text_color": "#ffffff",
+        "heading": "Creative Iced Tea Variations",
+        "subheading": "",
+        "description": "<p>Customize your cold brew iced tea experience with these refreshing SPORTea® variations:</p><p><strong>Flavor Infusions</strong></p><ol><li><strong>Citrus Mint</strong> - Add fresh lemon slices and mint leaves</li><li><strong>Berry Blend</strong> - Infuse with strawberries, blueberries, or raspberries</li><li><strong>Cucumber Refresh</strong> - Cool down with cucumber slices</li><li><strong>Ginger Boost</strong> - Enhance with fresh ginger for extra zing<br/><br/><br/></li></ol>",
+        "image": "shopify://shop_images/image_7.png",
+        "button_text": "",
+        "button_link": ""
+      }
+    },
+    "ew_richtext_section_RY84LK": {
+      "type": "ew-richtext-section",
+      "blocks": {
+        "product_link_fPPyFy": {
+          "type": "product_link",
+          "settings": {
+            "product_url": "",
+            "product_name": "Iced SPORTea® Box (7-Count)",
+            "product_description": "Perfect for first-time cold brew tea drinkers"
+          }
+        },
+        "product_link_qUtPyt": {
+          "type": "product_link",
+          "settings": {
+            "product_url": "",
+            "product_name": "Iced SPORTea® Case (12 Boxes)",
+            "product_description": "Best value for regular iced tea enthusiasts"
+          }
+        },
+        "product_link_XkXqqx": {
+          "type": "product_link",
+          "settings": {
+            "product_url": "",
+            "product_name": "SPORTea® Starter Kit",
+            "product_description": "Includes 2 boxes plus our Brew & Go Bottle and a sticker"
+          }
+        },
+        "product_link_MfjUYa": {
+          "type": "product_link",
+          "settings": {
+            "product_url": "#",
+            "product_name": "2 Box First Time Customer Special",
+            "product_description": "2 boxes plus FREE Shipping"
+          }
+        }
+      },
+      "block_order": [
+        "product_link_fPPyFy",
+        "product_link_qUtPyt",
+        "product_link_XkXqqx",
+        "product_link_MfjUYa"
+      ],
+      "settings": {
+        "heading": "Shop Premium Iced Tea Products"
+      }
+    },
+    "ew_testimonial_AUdwCF": {
+      "type": "ew-testimonial",
+      "blocks": {
+        "review_8Rmxy6": {
+          "type": "review",
+          "settings": {
+            "review_text": "“My friend from Ft. Lauderdale introduced me to SPORTea® while on a visit to her home last year. The minute I tasted it... I knew I was hooked. I LOVE the flavor. I play a ton of tennis all year long..and find that SPORTea is the only thing I crave while playing. I also make sure I pack it for my ski trips every year out west....but I also just drink it around the house too. I am not exagerating... I love your product, it is a one-of-a-kind, sustaining, energizing beverage.”",
+            "reviewer_image": "shopify://shop_images/Avatar_Image.png",
+            "reviewer_name": "Rose Northon,",
+            "reviewer_title": "Tennis Player"
+          }
+        },
+        "review_j8gdaj": {
+          "type": "review",
+          "settings": {
+            "review_text": "“We love your tea. My family and I are very active and participate in a variety of activities including cross country and track. I coach track and started our local running club. We are always praising the benefits of SPORTea® to our friends, fellow runners, and kids. I discourage them from drinking high sugar \"sport drinks\" and have converted many to the taste and benefits of SPORTea. My daughter recently qualified for the state meet in track and always have an iced cold SPORTea® in her water bottle. Thank you for giving us a healthy choice.”",
+            "reviewer_image": "shopify://shop_images/Avatar_Image.png",
+            "reviewer_name": "Ron Lambke,",
+            "reviewer_title": "Track Coach"
+          }
+        },
+        "review_zUiKpF": {
+          "type": "review",
+          "settings": {
+            "review_text": "“I started drinking SPORTea® 18 years ago when I was racing in triathlons in St. Croix… I opened Moss Mountain Inn, an organic bed and breakfast on the western edge of Glacier Park, Montana and started serving SPORTea® with our breakfast. Our guests are mostly healthy, fit people who come to Glacier to hike, and they immediately recognize the rehydrating effects and love the taste.”",
+            "reviewer_image": "shopify://shop_images/Avatar_Image.png",
+            "reviewer_name": "Debra Moss,",
+            "reviewer_title": "Triathlete and B&B Owner"
+          }
+        }
+      },
+      "block_order": [
+        "review_8Rmxy6",
+        "review_j8gdaj",
+        "review_zUiKpF"
+      ],
+      "settings": {
+        "title": "Why Customers Love Our Iced Tea",
+        "subtitle": "Discover why SPORTea® is the preferred cold brew iced tea for thousands:"
+      }
+    },
+    "faq_Fck7P4": {
+      "type": "faq",
+      "blocks": {
+        "faq_myqpfk": {
+          "type": "faq",
+          "settings": {
+            "question": "What is SPORTea®?",
+            "answer": "<p>SPORTea® contains trace amounts of caffeine, comparable to the amount found in decaffeinated coffee, making it a 'decaf equivalent.' Despite its low caffeine content, SPORTea® provides a natural energy boost, thanks to its unique blend of ingredients such as Siberian Eleuthero root and mate. These ingredients contribute to sustained energy levels without the crashes or jitters associated with higher-caffeine drinks. This makes SPORTea® an ideal choice for those seeking a mild energy boost while limiting their caffeine intake.</p><ul><li>Low Caffeine Content: Comparable to decaf coffee, suitable for those reducing caffeine.</li><li>Natural Energy Boost: Ingredients like Siberian Eleuthero root and mate provide sustained energy.</li><li>No Crashes or Jitters: Energy without the adverse effects typical of high-caffeine beverages.</li></ul>"
+          }
+        },
+        "faq_6Aabkp": {
+          "type": "faq",
+          "settings": {
+            "question": "Who should drink SPORTea®?",
+            "answer": "<p>SPORTea® stands out from competitors through its unique blend of natural ingredients, high consumer satisfaction, and versatile product usage. Unlike many health beverages, SPORTea® is free from artificial colors, flavors, preservatives, or additives.</p><ul><li>Unique Ingredients: Natural formulation without artificial additives.</li><li>Consumer Loyalty: High satisfaction and repeat purchase rate.</li><li>Versatility: Enjoyable both hot and iced, catering to different preferences.</li></ul>"
+          }
+        },
+        "faq_a9KBbt": {
+          "type": "faq",
+          "settings": {
+            "question": "How should SPORTea® be prepared?",
+            "answer": "<p>SPORTea® offers several health benefits due to its natural and nutritious ingredients. It is known for promoting sustained energy without crashes or jitters, boosting immunity, fighting stress, and enhancing physical performance. The beverage is rich in electrolytes and minerals, making it an excellent choice for hydration. It's also 98% caffeine-free, making it a suitable option for those looking to reduce their caffeine intake while still enjoying a flavorful and energizing drink.</p><ul><li>Health Benefits: Energy boosting, immunity strengthening, and stress fighting.</li><li>Hydration: Contains electrolytes and minerals for optimal hydration.</li><li>Low Caffeine: A great option for those reducing caffeine intake.</li></ul>"
+          }
+        },
+        "faq_BVdUgB": {
+          "type": "faq",
+          "settings": {
+            "question": "What are the benefits of drinking SPORTea®?",
+            "answer": "<p>SPORTea® is a unique health beverage offering a blend of natural ingredients designed for individuals leading an active and health-conscious lifestyle. It is known for its high consumer satisfaction, evidenced by repeat purchases and long-term use. The beverage stands out for its blend of black and green teas, Siberian Eleuthero root, ginger, mate, vitamin C, and natural flavorings, offering health benefits without artificial additives. SPORTea® can be enjoyed both hot and iced, catering to various consumer preferences and occasions.</p><ul><li>Unique Product Offerings: Blend of natural ingredients catering to health-conscious consumers without artificial additives.</li><li>Versatile Usage: Can be consumed hot or iced, suitable for different occasions and consumer preferences.</li><li>High Consumer Satisfaction: Evidenced by repeat purchases and strong loyalty.</li></ul>"
+          }
+        },
+        "faq_W6Ekyw": {
+          "type": "faq",
+          "settings": {
+            "question": "How does SPORTea® differentiate from competitors?",
+            "answer": "<p>SPORTea® offers distinct preparation methods for both its iced and hot varieties to ensure optimal flavor and health benefits. Here's how you can prepare each version:</p><p>ICED Tea Preparation:</p><ul><li>ARCTIC ICED™ Cold Steep Method: Place one SPORTea® BIG BAG (from the 7-count iced tea retail box) into one quart of water. Seal your container and place it in the refrigerator for at least four hours, though overnight steeping is recommended for the best results. SPORTea® prepared this way will last for several days in the refrigerator, retaining a full-bodied and robust flavor thanks to natural preserving elements like vitamin C.</li><li>Coffee Brewer Method: Place one big bag (from the 7-count iced tea retail box) in the brew basket and run one quart of water through the bag. Allow the tea to cool to room temperature before serving over ice. Note that refrigerating the tea after brewing may cause cloudiness, but this will not affect the taste.</li></ul><p>HOT Tea Preparation:</p><ul><li>Place one 2g tea bag into a 6-ounce cup of hot water and allow it to steep for 3 to 5 minutes. You can adjust the steeping time according to your taste preference; the longer it steeps, the stronger the flavor will be. Due to SPORTea®'s unique composition, it never becomes bitter, so you can leave the bag in the water as long as you like.</li></ul><p>Special Notes:</p><ul><li>SPORTea® continues to enhance in flavor over time and does not turn bitter, allowing you to steep it for extended periods without compromising taste.</li><li>Iced SPORTea® may exhibit some settling due to the natural citrus extracts in each tea bag. Stir well before serving to ensure peak flavor.</li><li>Try SPORTea® without additional condiments like lemon or sugar, as it is naturally sweet and possesses a delightful citrus flavor already.</li><li>Versatile Preparation: Offers methods for both hot and iced preferences.</li><li>Longevity: Can be stored for several days when prepared using the ARCTIC ICED™ method.</li><li>Natural Sweetness: Designed to be enjoyed without the need for added condiments.</li></ul>"
+          }
+        },
+        "faq_FMAgTr": {
+          "type": "faq",
+          "settings": {
+            "question": "What is the caffeine content in SPORTea®, and how does it affect energy levels?",
+            "answer": "<p>SPORTea® offers distinct preparation methods for both its iced and hot varieties to ensure optimal flavor and health benefits. Here's how you can prepare each version:</p><p>ICED Tea Preparation:</p><ul><li>ARCTIC ICED™ Cold Steep Method: Place one SPORTea® BIG BAG (from the 7-count iced tea retail box) into one quart of water. Seal your container and place it in the refrigerator for at least four hours, though overnight steeping is recommended for the best results. SPORTea® prepared this way will last for several days in the refrigerator, retaining a full-bodied and robust flavor thanks to natural preserving elements like vitamin C.</li><li>Coffee Brewer Method: Place one big bag (from the 7-count iced tea retail box) in the brew basket and run one quart of water through the bag. Allow the tea to cool to room temperature before serving over ice. Note that refrigerating the tea after brewing may cause cloudiness, but this will not affect the taste.</li></ul><p>HOT Tea Preparation:</p><ul><li>Place one 2g tea bag into a 6-ounce cup of hot water and allow it to steep for 3 to 5 minutes. You can adjust the steeping time according to your taste preference; the longer it steeps, the stronger the flavor will be. Due to SPORTea®'s unique composition, it never becomes bitter, so you can leave the bag in the water as long as you like.</li></ul><p>Special Notes:</p><ul><li>SPORTea® continues to enhance in flavor over time and does not turn bitter, allowing you to steep it for extended periods without compromising taste.</li><li>Iced SPORTea® may exhibit some settling due to the natural citrus extracts in each tea bag. Stir well before serving to ensure peak flavor.</li><li>Try SPORTea® without additional condiments like lemon or sugar, as it is naturally sweet and possesses a delightful citrus flavor already.</li><li>Versatile Preparation: Offers methods for both hot and iced preferences.</li><li>Longevity: Can be stored for several days when prepared using the ARCTIC ICED™ method.</li><li>Natural Sweetness: Designed to be enjoyed without the need for added condiments.</li></ul>"
+          }
+        }
+      },
+      "block_order": [
+        "faq_myqpfk",
+        "faq_6Aabkp",
+        "faq_a9KBbt",
+        "faq_BVdUgB",
+        "faq_W6Ekyw",
+        "faq_FMAgTr"
+      ],
+      "settings": {
+        "title": "FAQs",
+        "caption": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.",
+        "button": "Contact Us",
+        "link": "shopify://pages/contact-us"
+      }
+    }
+  },
+  "order": [
+    "product_highlight_c7HkiU",
+    "featured_reviews_NbPTby",
+    "main_collection_product_grid_R4cCaJ",
+    "product_highlight_QDCQY9",
+    "ew_split_text_section_N9FERz",
+    "product_highlight_J3Hd9B",
+    "natural_ingredients_gMwFHK",
+    "product_highlight_pXjNpW",
+    "ew_richtext_section_RY84LK",
+    "ew_testimonial_AUdwCF",
+    "faq_Fck7P4"
+  ]
+}
