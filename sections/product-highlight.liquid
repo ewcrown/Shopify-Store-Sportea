@@ -94,6 +94,18 @@
       "default": "#fff"
     },
     {
+      "type": "color",
+      "id": "link_color",
+      "label": "Link Color",
+      "default": "#00A4FF"
+    },
+    {
+      "type": "number",
+      "id": "link_weight",
+      "label": "Link Weight",
+      "default": 500
+    },
+    {
       "type": "header",
       "content": "Content"
     },
@@ -159,27 +171,6 @@
     padding:100px 0;
     gap:60px;
   }
-
-  .product-highlight table {
-    width: 100%;
-    margin-top: 20px;
-    border-collapse: collapse;
-    background-color: #fff;
-    border-radius: 8px;
-  }
-  
-  .product-highlight table th,
-  .product-highlight table td {
-    border: 1px solid black;
-    padding: 12px;
-    text-align: left;
-  }
-  
-  .product-highlight table th {
-    background: black;
-    color: white;
-  }
-
   .product-highlight-text {
     flex: 1;
   }
@@ -227,9 +218,16 @@ line-height: 150%; /* 54px */
     padding-left:20px
   }
   
+
   .product-highlight p a {
     color:#2E8FFF;
     font-weight:600;
+  }
+  .product-highlight p a:hover{
+    color:#dc222a !important;
+  }
+  .product-highlight p a {
+    text-decoration:underline;
   }
   .product-highlight p {
     font-family: Arial;
@@ -273,7 +271,11 @@ line-height: 150%; /* 54px */
   .product-highlight-{{ section.id }} .product-highlight-wrap p {
     color: {{ section.settings.text_color }};
   }
- 
+  .product-highlight-{{ section.id }} p a {
+    color: {{ section.settings.link_color }};
+    font-weight:{{ section.settings.link_weight }};
+  }
+  
   .product-highlight-table {
     margin-bottom:40px;
   }
@@ -283,6 +285,57 @@ line-height: 150%; /* 54px */
   display:grid;
   gap:20px
 }
+.herbal-table {
+  display: flex;
+  flex-direction: column;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.herbal-table-header {
+  display: flex;
+  font-weight: bold;
+  background-color: black;
+  color: white;
+  border-radius: 20px 20px 0 0;
+}
+
+.herbal-table-header .herbal-table-cell{
+  border:1px solid transparent;
+  color:#fff;
+  height:auto;
+  font-weight:600;
+  padding: 17px 13px;
+}
+
+.herbal-table-row {
+  display: flex;
+  background-color: white;
+  border-top: 1px solid #ddd;
+}
+
+.herbal-table-cell {
+  flex: 1;
+  padding: 9px 13px;
+  border-right: 1px solid #ddd;
+  height:84px;
+  color: #000;
+font-family: Arial;
+font-size: 23.344px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+}
+
+.herbal-table-cell:last-child {
+  border-right: none;
+}
+
+
+.herbal-table-row:last-child {
+  border-radius: 0 0 20px 20px;
+}
+
 
   @media (max-width: 768px) {
     .product-highlight-wrap {
@@ -291,8 +344,15 @@ line-height: 150%; /* 54px */
       flex-direction: column;
     }
     .product-highlight h2 {
-      font-size: 32px;
-   }
+
+      font-size: 30px;
+      margin-bottom: 10px !important;
+    }
+    .product-highlight h4 {
+      font-size: 26px !important;
+      line-height:120%;
+      margin-bottom: 10px !important;
+  }
     .product-highlight h3 {
       font-size: 20px;
    }
@@ -303,7 +363,14 @@ line-height: 150%; /* 54px */
     .product-highlight table th, .product-highlight table td {
       padding: 5px;
       font-size: 14px;
-  }
+      margin-bottom:10px !important;
+    }
+
+    .herbal-table-cell {
+      padding: 14px !important;
+      height: auto !important;
+      font-size: 16px !important;
+    }
   }
   
 </style>
@@ -342,34 +409,34 @@ line-height: 150%; /* 54px */
 
         {% if section.settings.show_table != blank %}
         <div class="product-highlight-table">
-          <table class="herbal-table">
-            <thead>
-              <tr>
+          <div class="herbal-table">
+            <div class="herbal-table-header">
+              {% if section.settings.table1 != blank %}
+                <div class="herbal-table-cell">{{ section.settings.table1 }}</div>
+              {% endif %}
+              {% if section.settings.table2 != blank %}
+                <div class="herbal-table-cell">{{ section.settings.table2 }}</div>
+              {% endif %}
+              {% if section.settings.table3 != blank %}
+                <div class="herbal-table-cell">{{ section.settings.table3 }}</div>
+              {% endif %}
+            </div>
+          
+            {% for block in section.blocks %}
+              <div class="herbal-table-row">
                 {% if section.settings.table1 != blank %}
-                  <th>{{ section.settings.table1 }}</th>
-                {% endif %}
+                  <div class="herbal-table-cell">{{ block.settings.title1 }}</div>
+                {% endif %}  
                 {% if section.settings.table2 != blank %}
-                  <th>{{ section.settings.table2 }}</th>
+                  <div class="herbal-table-cell">{{ block.settings.title2 }}</div>
                 {% endif %}
                 {% if section.settings.table3 != blank %}
-                  <th>{{ section.settings.table3 }}</th>
+                  <div class="herbal-table-cell">{{ block.settings.title3 }}</div>
                 {% endif %}
-              </tr>
-            </thead>
-              {% for block in section.blocks %}
-                <tr>
-                  {% if section.settings.table1 != blank %}
-                    <td><strong>{{ block.settings.title1 }}</strong></td>
-                  {% endif %}  
-                  {% if section.settings.table2 != blank %}
-                    <td>{{ block.settings.title2 }}</td>
-                  {% endif %}
-                  {% if section.settings.table3 != blank %}
-                      <td>{{ block.settings.title3 }}</td>
-                  {% endif %}
-                </tr>
+              </div>
             {% endfor %}
-          </table>
+          </div>
+
         </div>
       {% endif %}
       {% if section.settings.after_description != blank %}
