@@ -43,7 +43,7 @@
 }
 
 .cold-brew-section h2 {
-  color: #FFF;
+  color: #173a72;
 font-family: Arial;
 font-size: 48px;
 font-style: normal;
@@ -53,7 +53,7 @@ line-height: 120%; /* 57.6px */
 }
 
 .cold-brew-section h3 {
-  color: #FFF;
+  color: #173a72;
 font-family: Arial;
 font-size: 24px;
 font-style: normal;
@@ -63,7 +63,7 @@ line-height: 150%; /* 36px */
 }
 
 .cold-brew-section p {
-  color: #FFF;
+  color: #173a72;
 font-family: Arial;
 font-size: 24px;
 font-style: normal;
@@ -75,7 +75,7 @@ line-height: 150%; /* 36px */
 
 .cold-brew-section ol li {
   list-style:decimal;
-  color: #FFF;
+  color: #173a72;
 font-family: Arial;
 font-size: 24px;
 font-style: normal;
@@ -88,7 +88,7 @@ line-height: 150%; /* 36px */
 }
 .cold-brew-section ul li {
   list-style-type: disc;
-  color: #FFF;
+  color: #173a72;
 font-family: Arial;
 font-size: 24px;
 font-style: normal;
@@ -100,6 +100,12 @@ line-height: 150%; /* 36px */
   display:grid;
   grid-template-columns:repeat(2,1fr);
   gap:60px;
+}
+
+.cold-brew-content-inner {
+  padding: 60px 30px;
+  background:#fff;
+  border-radius:10px;
 }
 
 @media(max-width:768px){
@@ -120,6 +126,9 @@ font-size:32px;
   .cold-brew-section li,
   .cold-brew-section p {
     font-size: 16px !important;
+  }
+  .cold-brew-content-inner {
+    padding: 20px;
   }
 }
 {% endstyle %}

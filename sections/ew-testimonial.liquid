@@ -60,116 +60,115 @@
 {% endschema %}
 
 {% style %}
-.customer-reviews {
-  background: linear-gradient(0deg, #264786 0%, #264786 100%), url(<path-to-image>) lightgray 50% / cover no-repeat;
-  padding: 100px 0px;
-}
-
-.reviews-grid {
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap: 40px;
-  margin-top: 20px;
-}
-
-.review-card {
-  background-color: white;
-  padding: 40px;
-  border-radius: 8px;
-}
-
-.stars svg{
-  width:auto; 
-  height:auto;
-  margin-bottom: 10px;
-}
-
-.review-text {
-  color: #000;
-font-family: Arial;
-font-size: 18px;
-
-font-style: normal;
-font-weight: 400;
-line-height: 140%; /* 25.2px */
-  margin-top: 30px;
-}
-
-.reviewer {
-
-  margin-top:40px;
-  display:flex;
-  align-items:center;
-  gap:20px;
-}
-
-.reviewer span {
-  display:block;
-  color: #000;
-font-family: Arial;
-font-size: 16px;
-font-style: normal;
-font-weight: 400;
-line-height: 150%; /* 24px */
-}
-
-.button-container {
-  margin-top: 40px;
-  text-align:center;
-}
-
-.reviews-button {
-  background-color: #DC222A;
-  padding: 10px 20px;
-  text-decoration: none;
-  border-radius: 8px;
-  color: #FFF;
-font-family: Arial;
-font-size: 15px;
-font-style: normal;
-font-weight: 700;
-line-height: 21.69px; /* 144.6% */
-  display:inline-block;
-}
-
-.customer-reviews-wrap > p {
-  color: #FFF;
-text-align: center;
-font-family: Arial;
-font-size: 20px;
-font-style: normal;
-font-weight: 400;
-line-height: 150%; /* 30px */
-margin-bottom:40px;
-}
-.customer-reviews-wrap > h2 {
-  color: #EDEDED;
-text-align: center;
-font-family: Arial;
-font-size: 56px;
-font-style: normal;
-font-weight: 400;
-line-height: 120%; /* 67.2px */
-margin-bottom:40px;
-}
-
-@media(max-width:768px){
-  .reviews-grid {
-    grid-template-columns: repeat(1,1fr);
-    gap: 20px;
-  }
   .customer-reviews {
-    padding: 30px 0px;
+    background: linear-gradient(0deg, #264786 0%, #264786 100%), url(<path-to-image>) lightgray 50% / cover no-repeat;
+    padding: 100px 0px;
+  }
+
+  .reviews-grid {
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap: 40px;
+    margin-top: 20px;
+  }
+
+  .review-card {
+    background-color: white;
+    padding: 40px;
+    border-radius: 8px;
+  }
+
+  .stars svg{
+    width:auto;
+    height:auto;
+    margin-bottom: 10px;
+  }
+
+  .review-text {
+    color: #000;
+  font-family: Arial;
+  font-size: 18px;
+
+  font-style: normal;
+  font-weight: 400;
+  line-height: 140%; /* 25.2px */
+    margin-top: 30px;
+  }
+
+  .reviewer {
+
+    margin-top:40px;
+    display:flex;
+    align-items:center;
+    gap:20px;
+  }
+
+  .reviewer span {
+    display:block;
+    color: #000;
+  font-family: Arial;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%; /* 24px */
+  }
+
+  .button-container {
+    margin-top: 40px;
+    text-align:center;
+  }
+
+  .reviews-button {
+    background-color: #DC222A;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 8px;
+    color: #FFF;
+  font-family: Arial;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 21.69px; /* 144.6% */
+    display:inline-block;
+  }
+
+  .customer-reviews-wrap > p {
+    color: #FFF;
+  text-align: center;
+  font-family: Arial;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%; /* 30px */
+  margin-bottom:40px;
   }
   .customer-reviews-wrap > h2 {
-    font-size: 32px;
-    margin-bottom: 20px;
-}
-.review-card {
-    padding: 20px;
+    color: #EDEDED;
+  text-align: center;
+  font-family: Arial;
+  font-size: 56px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 120%; /* 67.2px */
+  margin-bottom:40px;
   }
-}
 
+  @media(max-width:768px){
+    .reviews-grid {
+      grid-template-columns: repeat(1,1fr);
+      gap: 20px;
+    }
+    .customer-reviews {
+      padding: 30px 0px;
+    }
+    .customer-reviews-wrap > h2 {
+      font-size: 32px;
+      margin-bottom: 20px;
+  }
+  .review-card {
+      padding: 20px;
+    }
+  }
 {% endstyle %}
 
 <section class="customer-reviews">
@@ -177,7 +176,7 @@ margin-bottom:40px;
     <div class="customer-reviews-wrap">
       <h2>{{ section.settings.title }}</h2>
       <p>{{ section.settings.subtitle }}</p>
-    
+
       <div class="reviews-grid">
         {% for block in section.blocks %}
           <div class="review-card">
@@ -186,9 +185,12 @@ margin-bottom:40px;
             </div>
             <p class="review-text">"{{ block.settings.review_text }}"</p>
             <div class="reviewer">
-              {%  if block.settings.reviewer_image != blank %}
+              {% if block.settings.reviewer_image != blank %}
                 <div class="reviewer-image">
-                  <img src="{{ block.settings.reviewer_image | img_url: '150x150' }}" alt="{{ block.settings.reviewer_title }}">
+                  <img
+                    src="{{ block.settings.reviewer_image | img_url: '150x150' }}"
+                    alt="{{ block.settings.reviewer_title }}"
+                  >
                 </div>
               {% endif %}
               <div class="reviewer-content">
@@ -201,7 +203,7 @@ margin-bottom:40px;
       </div>
 
       <div class="button-container">
-        <a href="#" class="reviews-button">Read More Customer Reviews</a>
+        <a href="/pages/sportea-testimonials-and-reviews" class="reviews-button">Read More Customer Reviews</a>
       </div>
     </div>
   </div>

@@ -166,7 +166,7 @@
                   </p>
                 </div>
               </div>
-              {% if block.settings.desc != '' %}
+              {% if block.settings.desc != blank %}
                 <p style="color:#000000" class="desc">{{ block.settings.desc }}</p>
               {%- endif %}
             </div>
@@ -259,9 +259,3 @@
   ]
 }
 {% endschema %}
-
-{% stylesheet %}
-{% endstylesheet %}
-
-{% javascript %}
-{% endjavascript %}

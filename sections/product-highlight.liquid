@@ -171,6 +171,10 @@
     padding:100px 0;
     gap:60px;
   }
+
+
+  
+
   .product-highlight-text {
     flex: 1;
   }
@@ -218,14 +222,10 @@ line-height: 150%; /* 54px */
     padding-left:20px
   }
   
-
-  .product-highlight p a {
-    color:#2E8FFF;
-    font-weight:600;
-  }
   .product-highlight p a:hover{
-    color:#dc222a !important;
+    color:#c0ae29 !important;
   }
+
   .product-highlight p a {
     text-decoration:underline;
   }
@@ -271,6 +271,7 @@ line-height: 150%; /* 54px */
   .product-highlight-{{ section.id }} .product-highlight-wrap p {
     color: {{ section.settings.text_color }};
   }
+
   .product-highlight-{{ section.id }} p a {
     color: {{ section.settings.link_color }};
     font-weight:{{ section.settings.link_weight }};
@@ -280,11 +281,33 @@ line-height: 150%; /* 54px */
     margin-bottom:40px;
   }
 
+  .product-highlight-description h6 + ul li {
+  margin-bottom:10px;
+}
+  .product-highlight-description h6 + ul li a{
+    color: #2e8fff;
+    font-weight: 600;
+    text-decoration:underline;
+  }
+  .product-highlight-description h6 {
+    font-family: Arial;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+    margin-bottom: 30px;
+    color:#000;
+    margin-bottom:10px
+  }
+
   .product-highlight-images {
   margin-bottom:30px;
-  display:grid;
+  display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
   gap:20px
 }
+
 .herbal-table {
   display: flex;
   flex-direction: column;
@@ -344,7 +367,6 @@ line-height: normal;
       flex-direction: column;
     }
     .product-highlight h2 {
-
       font-size: 30px;
       margin-bottom: 10px !important;
     }
@@ -359,10 +381,6 @@ line-height: normal;
    .product-highlight li,
    .product-highlight p {
       font-size: 16px !important;
-    }
-    .product-highlight table th, .product-highlight table td {
-      padding: 5px;
-      font-size: 14px;
       margin-bottom:10px !important;
     }
 
@@ -436,7 +454,7 @@ line-height: normal;
               </div>
             {% endfor %}
           </div>
-
+          
         </div>
       {% endif %}
       {% if section.settings.after_description != blank %}

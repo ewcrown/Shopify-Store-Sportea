@@ -19,6 +19,8 @@
         "background": "#ffffff",
         "list_size": 24,
         "text_color": "#000000",
+        "link_color": "#00a4ff",
+        "link_weight": 500,
         "heading": "Iced SPORTea® Premium Cold Brew Iced Tea for Energy & Hydration",
         "subheading": "Refreshing cold brew iced tea with ice and lemon - Iced SPORTea®",
         "description": "<p>Discover the ultimate cold brew iced tea designed for active lifestyles. Iced SPORTea® delivers refreshing hydration and natural energy without the sugar, calories, or artificial ingredients found in other iced tea options.</p>",
@@ -26,7 +28,7 @@
         "after_description": "",
         "image": "shopify://shop_images/image_13.png",
         "button_text": "Shop Now",
-        "button_link": "#"
+        "button_link": "shopify://collections/iced-sportea"
       }
     },
     "featured_reviews_NbPTby": {
@@ -75,6 +77,8 @@
         "background": "#edf8ff",
         "list_size": 24,
         "text_color": "#000000",
+        "link_color": "#00a4ff",
+        "link_weight": 500,
         "heading": "What Makes Our Iced Tea Different?",
         "subheading": "",
         "description": "<p>Unlike conventional iced tea brands that rely on sugar for flavor, SPORTea® combines premium black tea, green tea, Siberian ginseng, ginger, Brazilian maté, and vitamin C to create a perfectly balanced iced tea that:<br/></p><ul><li>Provides sustained energy without crashes</li><li>Delivers superior hydration with natural electrolytes</li><li>Contains zero calories and no added sugar</li><li>Offers a smooth, refreshing taste without bitterness</li></ul>",
@@ -121,6 +125,8 @@
         "background": "#ffffff",
         "list_size": 24,
         "text_color": "#000000",
+        "link_color": "#00a4ff",
+        "link_weight": 500,
         "heading": "Iced Tea Benefits: Why SPORTea® Stands Out",
         "subheading": "Health Benefits of Our Premium Iced Tea",
         "description": "<p>Iced SPORTea® offers advantages you won't find in ordinary iced tea:<br/></p><ul><li>Natural Energy Boost - The unique blend of Brazilian maté and teas provides sustained energy without jitters</li><li>Superior Hydration - Replenishes electrolytes naturally, making it the perfect iced tea for active lifestyles</li><li>Zero-Calorie Refreshment - Enjoy a flavorful iced tea with no sugar, sweeteners, or artificial ingredients</li><li>Digestive Support - Ginger and green tea components promote healthy digestion and metabolism<br/></li></ul>",
@@ -204,6 +210,8 @@
         "background": "#264786",
         "list_size": 20,
         "text_color": "#ffffff",
+        "link_color": "#00a4ff",
+        "link_weight": 500,
         "heading": "Creative Iced Tea Variations",
         "subheading": "",
         "description": "<p>Customize your cold brew iced tea experience with these refreshing SPORTea® variations:</p><p><strong>Flavor Infusions</strong></p><ol><li><strong>Citrus Mint</strong> - Add fresh lemon slices and mint leaves</li><li><strong>Berry Blend</strong> - Infuse with strawberries, blueberries, or raspberries</li><li><strong>Cucumber Refresh</strong> - Cool down with cucumber slices</li><li><strong>Ginger Boost</strong> - Enhance with fresh ginger for extra zing<br/><br/><br/></li></ol>",
@@ -220,7 +228,7 @@
         "product_link_fPPyFy": {
           "type": "product_link",
           "settings": {
-            "product_url": "",
+            "product_url": "shopify://products/iced-sportea-cold-brew-tea",
             "product_name": "Iced SPORTea® Box (7-Count)",
             "product_description": "Perfect for first-time cold brew tea drinkers"
           }
@@ -236,7 +244,7 @@
         "product_link_XkXqqx": {
           "type": "product_link",
           "settings": {
-            "product_url": "",
+            "product_url": "https://sportea.com/products/sportea-starter-kit",
             "product_name": "SPORTea® Starter Kit",
             "product_description": "Includes 2 boxes plus our Brew & Go Bottle and a sticker"
           }
@@ -244,7 +252,7 @@
         "product_link_MfjUYa": {
           "type": "product_link",
           "settings": {
-            "product_url": "#",
+            "product_url": "https://sportea.com/pages/special-offer",
             "product_name": "2 Box First Time Customer Special",
             "product_description": "2 boxes plus FREE Shipping"
           }

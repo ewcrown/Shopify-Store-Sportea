@@ -145,19 +145,22 @@
         "video_UgHDy9": {
           "type": "video",
           "settings": {
-            "video_url": "https://cdn.shopify.com/videos/c/o/v/64d9cee8759048adbf0c19193d7f6f36.mp4"
+            "video_url": "https://cdn.shopify.com/videos/c/o/v/64d9cee8759048adbf0c19193d7f6f36.mp4",
+            "video_thumb": "shopify://shop_images/Screenshot_2024-10-31_at_4.01.44_AM.png"
           }
         },
         "video_jW4pWH": {
           "type": "video",
           "settings": {
-            "video_url": "https://cdn.shopify.com/videos/c/o/v/c29035d5356a4198a405e32dcbc8f996.mp4"
+            "video_url": "https://cdn.shopify.com/videos/c/o/v/c29035d5356a4198a405e32dcbc8f996.mp4",
+            "video_thumb": "shopify://shop_images/Screenshot_2024-10-31_at_4.02.15_AM.png"
           }
         },
         "video_wDM88i": {
           "type": "video",
           "settings": {
-            "video_url": "https://cdn.shopify.com/videos/c/o/v/cc5d44176de4498ea5294bb18241904b.mp4"
+            "video_url": "https://cdn.shopify.com/videos/c/o/v/cc5d44176de4498ea5294bb18241904b.mp4",
+            "video_thumb": "shopify://shop_images/Screenshot_2024-10-31_at_4.02.31_AM.png"
           }
         },
         "review_RtQ3cC": {
