@@ -20,9 +20,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <link rel="canonical" href="{{ canonical_url }}">
     <link rel="preconnect" href="https://cdn.shopify.com" crossorigin>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
     {%- if settings.favicon != blank -%}
       <link rel="icon" type="image/png" href="{{ settings.favicon | image_url: width: 32, height: 32 }}">
     {%- endif -%}
@@ -94,7 +95,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
     {{ 'theme-style.css' | asset_url | stylesheet_tag }}
     {{ 'bundle.theme.css' | asset_url | stylesheet_tag }}
-    {{ 'ew-styles.css' | asset_url | stylesheet_tag }}
 
     <link rel="stylesheet" href="{{ 'placeholder-style.css' | asset_url }}" media="print" onload="this.media='all'">
     <noscript>{{ 'placeholder-style.css' | asset_url | stylesheet_tag }}</noscript>

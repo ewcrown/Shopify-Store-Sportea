@@ -1,0 +1,167 @@
+<link rel="stylesheet" href="{{ 'ui-page-title.css' | asset_url }}" media="print" onload="this.media='all'">
+<noscript>{{ 'ui-page-title.css' | asset_url | stylesheet_tag }}</noscript>
+
+
+
+{%- style -%}
+    {%- if section.settings.pesto_section_padding_top != blank -%}
+        #shopify-section-{{section.id}} .product-list-by-cat {
+            padding-top: {{ section.settings.pesto_section_padding_top }}px  !important;
+        }
+    {%- endif -%}
+    {%- if section.settings.pesto_section_padding_bottom != blank -%}
+        #shopify-section-{{section.id}} .product-list-by-cat {
+            padding-bottom: {{ section.settings.pesto_section_padding_bottom }}px !important;
+        }
+    {%- endif -%}
+{%- endstyle -%} 
+
+
+{% assign page_width = '1500' %}
+<div  id="{{ section.id }}"  class="product-list-by-cat color-{{ section.settings.color_scheme }} cat-product-page page-title {% if section.settings.collections_img != blank %} v-aling-center hori-aling-left {% endif %} centred">
+    {% if section.settings.pesto_heading_bg_img != blank %}
+        <div class="section-bg">
+          {{ section.settings.pesto_heading_bg_img | image_url: width: section.settings.pesto_heading_bg_img.width 
+          | image_tag: loading: 'lazy', class: 'lazyload', rel: 'preload', data-src: dataImg }}
+        </div>
+      {% endif %}
+    <div class="large-container"> 
+        <div class="row">
+            <div class="{% if section.settings.collections_img != blank and collection.image %} col-md-7 {% else %} col-md-12 {% endif %} col-12">
+                {% if section.settings.enable_breadcrumb_navigation == true %}
+                    <ul class="bread-crumb clearfix {% if section.settings.collections_img and collection.image %}justify-content-start{% endif %}">
+                        <li><a href="{{ request.origin }}">{{ 'products.product.bred_text' | t }}</a></li>
+                        <li>
+                          {{ collection.title | escape }}
+                        </li>
+                    </ul>
+                  {% endif %}
+                <div class="text">
+                    <h1 class="collections_page_single_heading font-{{ section.settings.title_font_size }}" >{{- collection.title | escape -}}</h1>
+                    {% if section.settings.collections_dec %}
+                         <div class="product-description-content rte-content-area">
+                                {{ collection.description }}
+                        </div> 
+                    {% endif %}
+                </div>
+            </div>
+            
+            {% if section.settings.collections_img and collection.image %} 
+                <div class="col-md-5 col-12">
+                    <img
+                        srcset="{%- if collection.image.width >= 165 -%}{{ collection.image | image_url: width: 165 }} 165w,{%- endif -%}
+                            {%- if collection.image.width >= 360 -%}{{ collection.image | image_url: width: 360 }} 360w,{%- endif -%}
+                            {%- if collection.image.width >= 535 -%}{{ collection.image | image_url: width: 535 }} 535w,{%- endif -%}
+                            {%- if collection.image.width >= 750 -%}{{ collection.image | image_url: width: 750 }} 750w,{%- endif -%}
+                            {%- if collection.image.width >= 1070 -%}{{ collection.image | image_url: width: 1070 }} 1070w,{%- endif -%}
+                            {%- if collection.image.width >= 1500 -%}{{ collection.image | image_url: width: 1500 }} 1500w,{%- endif -%}
+                            {{ collection.image | image_url }} {{ collection.image.width }}w"
+                        src="{{ collection.image | image_url: width: 750 }}"
+                        sizes="(min-width: {{ page_width }}px) {{ page_width | minus: 100 | divided_by: 2 }}px, (min-width: 750px) calc(50vw - 130px), calc(50vw - 55px)"
+                        alt="{{collection.title}}"
+                        width="{{ collection.image.width }}"
+                        height="{{ collection.image.height }}"
+                    >
+                </div>
+            {% endif %}
+        </div>
+    </div>
+</div>
+
+{% schema %}
+    {
+        "name": "Collection banner",
+        "tag": "section",
+        "class": "shop-categories-custom",
+        "settings": [
+            {
+                "type": "color_scheme",
+                "id": "color_scheme",
+                "default": "background-1",
+                "label": "Color scheme"
+            },
+            {
+                "type": "paragraph",
+                "content": "Add a description or image by editing your collection."
+            },
+            {
+                "type": "image_picker",
+                "id": "pesto_heading_bg_img",
+                "label": "Background image"
+            },
+            {
+            "type": "select",
+            "id": "title_font_size",
+            "label": "Heading size",
+            "options": [
+                {
+                "value": "small",
+                "label": "Small"
+                }, 
+                {
+                "value": "medium",
+                "label": "Medium"
+                }, 
+                {
+                "value": "large",
+                "label": "Large"
+                }
+            ],
+            "default": "medium"
+            },
+            {
+            "type": "checkbox",
+            "id": "enable_breadcrumb_navigation",
+            "default": true,
+            "label": "Enable breadcrumb navigation"
+            },
+            {
+                "type": "checkbox",
+                "id": "collections_dec",
+                "default": false,
+                "label": "Show collection description"
+            },
+            {
+                "type": "checkbox",
+                "id": "collections_img",
+                "default": false,
+                "label": "Show collection image"
+            },
+            {
+                "type": "header",
+                "content": "Section padding"
+            },
+            {
+                "type": "range",
+                "id": "pesto_section_padding_top",
+                "min": 0,
+                "max": 200,
+                "step": 10,
+                "unit": "px",
+                "label": "t:sections.all.padding.padding_top",
+                "default": 100
+            },
+            {
+                "type": "range",
+                "id": "pesto_section_padding_bottom",
+                "min": 0,
+                "max": 200,
+                "step": 10,
+                "unit": "px",
+                "label": "t:sections.all.padding.padding_bottom",
+                "default": 100
+            }
+        ]
+    }
+{% endschema %}
+
+
+
+
+
+
+
+
+
+
+

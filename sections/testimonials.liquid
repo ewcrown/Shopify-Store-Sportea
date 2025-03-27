@@ -22,10 +22,10 @@
                         loop
                         controls
                         playsinline
-                        poster="{{ video.settings.video_thumb | image_url }}"
+                        poster="{{ video.settings.video_thumb | image_url }}?text=Video+Thumbnail"
                       >
                         <source src="{{ video.settings.video_url }}" type="video/mp4">
-                      </video>                      
+                      </video>
                       <h4>{{ video.settings.product_title }}</h4>
                     </div>
                   {% endif %}
