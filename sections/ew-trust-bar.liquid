@@ -1,0 +1,76 @@
+{% style %}
+      .ew-img-fluid {
+      max-width:100%;
+      height:auto;
+      display:block;
+    }
+    .ew-trust-bar-row {
+      background: #2b4e92;
+      padding:40px 0;
+  }
+
+    .ew-trust-bar-wrap img {
+      width:100px;
+      height:100px;
+    }
+    .ew-trust-bar-wrap {
+      display:flex;
+      align-items:center;
+      gap:20px;
+      justify-content:space-between;
+    }
+  @media(max-width:767px){
+   .ew-trust-bar-wrap {
+     flex-wrap:wrap;
+   }
+    .ew-trust-bar-block img {
+      margin:auto;
+    }
+    .ew-trust-bar-block {
+      flex-basis:46%;
+    }
+  }
+{% endstyle %}
+
+<section class="ew-trust-bar ew-trust-bar-{{ section.di }}" id="ew-trust-bar">
+  <div class="ew-trust-bar-row">
+    <div class="large-container">
+      <div class="ew-trust-bar-wrap">
+        {% for block in section.blocks %}
+          <div class="ew-trust-bar-block">
+            <img
+              class="ew-img-fluid"
+              src="{{ block.settings.img | img_url: '600x' }}"
+              alt="Trust Icon {{ forloop.index }}"
+            >
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "<> Trust Bar",
+  "settings": [],
+  "blocks": [
+    {
+       "type": "logo",
+        "name":"Logo",
+      "settings": [
+       {
+          "type": "image_picker",
+          "id": "img",
+          "label": "Image Here"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name":"<> Trust Bar"
+    }
+  ]
+}
+{% endschema %}

@@ -133,9 +133,7 @@ line-height: 189%;
       <ul class="iced-tea-list">
         {% for block in section.blocks %}
           <li class="iced-tea-item">
-            <a href="{{ block.settings.product_url }}">
-              {{ block.settings.product_name }}
-            </a> - {{ block.settings.product_description }}
+            <a href="{{ block.settings.product_url }}">{{ block.settings.product_name }}</a> - {{ block.settings.product_description }}
           </li>
         {% endfor %}
       </ul>

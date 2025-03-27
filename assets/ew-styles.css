@@ -21,3 +21,11 @@ button.header-drawer__link.iced-sportea-cold-brewed span.sportea-trademark-sup {
     margin: 0 auto 0 0 !important;
   }
 }
+
+.contact-section .form-inner .theme-btn:hover:before {
+  background:var(--secondary) !important;
+}
+.contact-section .form-inner .theme-btn:hover {
+  background:var(--secondary) !important;
+  color:#fff !important;
+}

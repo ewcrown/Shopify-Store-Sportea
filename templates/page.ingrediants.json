@@ -26,6 +26,7 @@
     "product_highlight_whdn3F": {
       "type": "product-highlight",
       "settings": {
+        "alt": "",
         "show_table": false,
         "table1": "Herbal Component",
         "table2": "Herbal Component",
@@ -33,11 +34,11 @@
         "background": "#ffffff",
         "list_size": 24,
         "text_color": "#000000",
-        "link_color": "#ffffff",
+        "link_color": "#2e8fff",
         "link_weight": 500,
         "heading": "Understanding the Components of SPORTea® Ingredients",
         "subheading": "",
-        "description": "<p>Ever wondered what makes SPORTea® so effective for energy and hydration? Let's dive into the key ingredients of SPORTea®, helping you understand what's in your favorite tea. We'll explore the benefits of individual ingredients, and point out some issues with alternative beverage ingredients. By the end, you'll know exactly what's in your iced tea or hot tea and why it's beneficial for your active lifestyle. Plus, we'll answer common questions to help you make informed decisions when evaluating energy drinks, like SPORTea®.</p>",
+        "description": "<p>Ever wondered what makes SPORTea® so effective for energy and hydration? Let's dive into the key ingredients of SPORTea®, helping you understand what's in your favorite <strong>tea</strong>. We'll explore the benefits of individual <strong>ingredients</strong>, and point out some issues with alternative beverage ingredients. By the end, you'll know exactly what's in your <a href=\"https://sportea.com/collections/iced-sportea\" title=\"https://sportea.com/collections/iced-sportea\">iced tea</a> or <a href=\"https://sportea.com/collections/hot-sportea\" title=\"https://sportea.com/collections/hot-sportea\">hot tea</a> and why it's beneficial for your active lifestyle. Plus, we'll answer common questions to help you make informed decisions when evaluating energy drinks, like SPORTea®.</p>",
         "after_images_description": "",
         "after_description": "",
         "image": "shopify://shop_images/image_13.png",
@@ -48,6 +49,7 @@
     "product_highlight_JAW9F4": {
       "type": "product-highlight",
       "settings": {
+        "alt": "",
         "show_table": false,
         "table1": "Herbal Component",
         "table2": "Herbal Component",
@@ -59,7 +61,7 @@
         "link_weight": 500,
         "heading": "Overview of SPORTea® Ingredients",
         "subheading": "",
-        "description": "<p>We'll explore the essential components of SPORTea®, focusing on its key nutrients, unique herbal elements, and caffeine content (Less than or equivalent to decaf coffee). Our analysis covers vital minerals and vitamins that contribute to the SPORTea® nutritional profile. We'll examine how these ingredients work together to create a distinctive taste and serve as a sugar-free alternative for health-conscious individuals.</p>",
+        "description": "<p>We'll explore the essential components of SPORTea®, focusing on its key nutrients, unique herbal elements, and <strong>caffeine</strong> content (Less than or equivalent to decaf coffee). Our analysis covers vital minerals and vitamins that contribute to the SPORTea® nutritional profile. We'll examine how these <strong>ingredients</strong> work together to create a distinctive <strong>taste</strong> and serve as a sugar-free alternative for health-conscious individuals.</p>",
         "after_images_description": "",
         "after_description": "",
         "button_text": "Shop Now",
@@ -73,7 +75,7 @@
           "type": "properties",
           "settings": {
             "title": "Green Tea",
-            "desc": "",
+            "desc": "Green tea is a natural energizer known for its smooth flavor and gentle lift. It supports mental clarity and alertness without the crash of sugary or high-caffeine drinks. Rich in antioxidants like catechins, green tea helps defend against oxidative stress and supports overall cellular health. It also promotes a healthy metabolism and is often used to assist in weight management and immune defense. This clean, refreshing tea is a perfect companion for an active lifestyle or focused workday.",
             "sub-title": "A Natural Energizer",
             "prop_1": "Antioxidant",
             "prop_2": "Energy",
@@ -85,7 +87,7 @@
           "type": "properties",
           "settings": {
             "title": "Siberian Ginseng",
-            "desc": "",
+            "desc": "Siberian Ginseng is the second most predominant ingredient in SPORTea®. This premium grade of Siberian Ginseng is considered an endurance builder, stamina enhancer, and recovery drink useful before, during, and after illness as an adaptogen and revitalizer. This is also the case for regular everyday workouts. Siberian Ginseng has also been found to be a stress reliever when used regularly throughout the day. SPORTea's Siberian Ginseng's adaptogenic qualities allow it to combat daily stress and the physical manifestations of the strains of everyday living that cause muscle strain, headaches, and body aches. The energy provided by Siberian Ginseng is a sustaining energy without the letdowns that are typically associated with traditional heavy caffeine and/or sugary beverages.",
             "sub-title": "Endurance and  Stress Relief",
             "prop_1": "Endurance",
             "prop_2": "Vitality",
@@ -97,7 +99,7 @@
           "type": "properties",
           "settings": {
             "title": "Brazilian Maté",
-            "desc": "",
+            "desc": "This ingredient is a South American favorite that is preferred over coffee in many countries due to its lack of harsh acids and plentiful variety of naturally occurring vitamins, minerals, and trace elements. Brazilian Maté also acts to suppress the appetite while nourishing the body.",
             "sub-title": "Nourishing Energizer",
             "prop_1": "Energy",
             "prop_2": "Vigor",
@@ -109,7 +111,7 @@
           "type": "properties",
           "settings": {
             "title": "Ginger",
-            "desc": "",
+            "desc": "Ginger enhances blood flow and promotes better circulation. It is slightly sweet, has a delightful aroma, and a warming, soothing action. Ginger minimizes the discomfort associated with colds and flu such as headaches, tense muscles, and stomach pain. Ginger is also frequently taken to counteract the effects of alcohol consumption and office burnout due to fatigue.",
             "sub-title": "Circulatory and Comforting",
             "prop_1": "Digestion",
             "prop_2": "Anti-inflammatory",
@@ -121,7 +123,7 @@
           "type": "properties",
           "settings": {
             "title": "Black Tea",
-            "desc": "",
+            "desc": "Black tea offers a bold flavor and steady energy that’s ideal for starting the day or powering through a mid-afternoon slump. It contains antioxidants called theaflavins, which support heart health and circulation. Known to enhance mental focus, black tea is often turned to for productivity and calm alertness. Its rich, earthy flavor balances beautifully with other herbs and is the foundation for many of the world’s favorite tea blends—including SPORTea®.",
             "sub-title": "Robust Health Benefits",
             "prop_1": "Alertness",
             "prop_2": "Heart Health",
@@ -133,7 +135,7 @@
           "type": "properties",
           "settings": {
             "title": "Vitamin C",
-            "desc": "",
+            "desc": "This ingredient is the single most important vitamin for maintaining optimum health and warding off illness. SPORTea® contains a rich supply of this crucial vitamin, which the body cannot produce itself.",
             "sub-title": "Immune System Booster",
             "prop_1": "Antioxidant",
             "prop_2": "Immunity",
@@ -159,6 +161,7 @@
     "product_highlight_8RkbVA": {
       "type": "product-highlight",
       "settings": {
+        "alt": "",
         "show_table": false,
         "table1": "Herbal Component",
         "table2": "Herbal Component",
@@ -230,6 +233,7 @@
         "ingredient_bWhzkF"
       ],
       "settings": {
+        "alt": "",
         "show_table": true,
         "table1": "Herbal Component",
         "table2": "Benefits",
@@ -250,7 +254,52 @@
     },
     "product_highlight_gQGXBH": {
       "type": "product-highlight",
+      "blocks": {
+        "ingredient_benefits_9LJxi8": {
+          "type": "ingredient_benefits",
+          "settings": {
+            "benefit_title": "Black Tea",
+            "benefit_image": "shopify://shop_images/Screenshot_2025-03-11_at_11.49.35_PM.png"
+          }
+        },
+        "ingredient_benefits_kTxByF": {
+          "type": "ingredient_benefits",
+          "settings": {
+            "benefit_title": "Green Tea",
+            "benefit_image": "shopify://shop_images/Screenshot_2025-03-11_at_11.49.21_PM.png"
+          }
+        },
+        "ingredient_benefits_7KxA3L": {
+          "type": "ingredient_benefits",
+          "settings": {
+            "benefit_title": "Ginger",
+            "benefit_image": "shopify://shop_images/Screenshot_2025-03-11_at_11.49.52_PM.png"
+          }
+        },
+        "ingredient_benefits_pehqeT": {
+          "type": "ingredient_benefits",
+          "settings": {
+            "benefit_title": "Mate",
+            "benefit_image": "shopify://shop_images/Screenshot_2025-03-11_at_11.50.01_PM.png"
+          }
+        },
+        "ingredient_benefits_7Pmwnr": {
+          "type": "ingredient_benefits",
+          "settings": {
+            "benefit_title": "Ginseng",
+            "benefit_image": "shopify://shop_images/Screenshot_2025-03-11_at_11.49.42_PM.png"
+          }
+        }
+      },
+      "block_order": [
+        "ingredient_benefits_9LJxi8",
+        "ingredient_benefits_kTxByF",
+        "ingredient_benefits_7KxA3L",
+        "ingredient_benefits_pehqeT",
+        "ingredient_benefits_7Pmwnr"
+      ],
       "settings": {
+        "alt": "",
         "show_table": false,
         "table1": "Herbal Component",
         "table2": "Herbal Component",
@@ -313,11 +362,12 @@
       ],
       "settings": {
         "image1": "shopify://shop_images/image_14.png",
-        "image2": "shopify://shop_images/image_14.png",
+        "alt": "",
+        "image2": "shopify://shop_images/image_16_ccd30a97-1dfa-41a7-9ed2-532a1cb8408f.png",
         "show_table": true,
         "table1": "Additive Type",
         "table2": "Present in Sportea?",
-        "table3": "Present in Gatorade<span class=\"sportea-trademark-sup\">®</span>?",
+        "table3": "Present in Gatorade®?",
         "background": "#264786",
         "list_size": 24,
         "text_color": "#ffffff",
@@ -335,6 +385,7 @@
     "product_highlight_LgPHJa": {
       "type": "product-highlight",
       "settings": {
+        "alt": "",
         "show_table": false,
         "table1": "Herbal Component",
         "table2": "Herbal Component",
@@ -356,6 +407,7 @@
     "product_highlight_W4yyBU": {
       "type": "product-highlight",
       "settings": {
+        "alt": "",
         "show_table": false,
         "table1": "Herbal Component",
         "table2": "Herbal Component",
@@ -377,6 +429,7 @@
     "product_highlight_7bczxk": {
       "type": "product-highlight",
       "settings": {
+        "alt": "",
         "show_table": false,
         "table1": "Herbal Component",
         "table2": "Herbal Component",
@@ -386,9 +439,9 @@
         "text_color": "#ffffff",
         "link_color": "#ffffff",
         "link_weight": 500,
-        "heading": "Spotting Additives and Preservatives",
+        "heading": "Frequently Asked Questions About SPORTea® Ingredients",
         "subheading": "",
-        "description": "<p>We address common queries about SPORTea® <strong>ingredients</strong>, focusing on safety, customization options, and comparisons with other beverages. Our responses provide clear information on <strong>ingredient</strong> safety measures, personalization possibilities, and how SPORTea® components stack up against alternatives. These insights help you make informed decisions about incorporating SPORTea® into your lifestyle.<br/></p><h4>Are SPORTea® Ingredients Safe?</h4><p>We prioritize the safety of our SPORTea® ingredients, sourcing them from reputable suppliers and conducting rigorous quality control tests. Our blend contains only natural components that have been extensively studied for their health benefits and safety profiles. We carefully monitor the caffeine content to ensure it remains the equivalent of a decaffeinated cup of coffee. Our commitment to transparency means we clearly list all ingredients on our packaging, allowing customers to make informed decisions about their consumption:<br/></p><ul><li>Source ingredients from trusted suppliers</li><li>Conduct thorough quality control tests</li><li>Use only natural, well-studied components</li><li>Monitor caffeine content for safety (aiming for low caffeine content, similar to decaf coffee)</li><li>Provide clear ingredient lists on packaging</li></ul><p></p><h4>How Do SPORTea® Ingredients Compare to Other Beverages?</h4><p>We've carefully formulated SPORTea® to offer unique benefits compared to other beverages. Our blend contains natural energy sources like green tea and yerba mate, providing sustained energy without the crash associated with sugary energy drinks. Unlike many sports drinks, SPORTea® is free from artificial colors (like Red 40, Blue 1, and Yellow 5 found in some Gatorade flavors) and flavors (such as sugar), relying instead on natural herbal ingredients that support hydration and recovery. We've also ensured that SPORTea® has a lower calorie content than most sweetened beverages, making it an excellent choice for health-conscious individuals seeking a refreshing and functional drink.</p>",
+        "description": "<p>We address common queries about SPORTea® <strong>ingredients</strong>, focusing on safety, customization options, and comparisons with other beverages. Our responses provide clear information on <strong>ingredient</strong> safety measures, personalization possibilities, and how SPORTea® components stack up against alternatives. These insights help you make informed decisions about incorporating SPORTea® into your lifestyle.<br/></p><h4>Are SPORTea® Ingredients Safe?</h4><p>We prioritize the safety of our SPORTea® <strong>ingredients</strong>, sourcing them from reputable suppliers and conducting rigorous quality control tests. Our blend contains only <strong>natural</strong> components that have been extensively studied for their health benefits and safety profiles. We carefully monitor the <strong>caffeine</strong> content to ensure it remains the equivalent of a decaffeinated cup of coffee. Our commitment to transparency means we clearly list all <strong>ingredients</strong> on our packaging, allowing customers to make informed decisions about their consumption:<br/></p><ul><li>Source <strong>ingredients</strong> from trusted suppliers</li><li>Conduct thorough quality control tests</li><li>Use only <strong>natural</strong>, well-studied components</li><li>Monitor <strong>caffeine</strong> content for safety (aiming for low caffeine content, similar to decaf coffee)</li><li>Provide clear <strong>ingredient</strong> lists on packaging</li></ul><p></p><h4>How Do SPORTea® Ingredients Compare to Other Beverages?</h4><p>We've carefully formulated SPORTea® to offer unique benefits compared to other beverages. Our blend contains <strong>natural energy</strong> sources like <strong>green tea</strong> and yerba <strong>mate</strong>, providing sustained energy without the crash associated with sugary energy drinks. Unlike many sports drinks, SPORTea® is free from artificial colors (like Red 40, Blue 1, and Yellow 5 found in some Gatorade flavors) and flavors (such as sugar), relying instead on <strong>natural</strong> herbal <strong>ingredients</strong> that support hydration and recovery. We've also ensured that SPORTea® has a lower calorie content than most sweetened beverages, making it an excellent choice for health-conscious individuals seeking a refreshing and functional <strong>drink</strong>.</p>",
         "after_images_description": "",
         "after_description": "",
         "button_text": "Shop Now",
@@ -398,6 +451,7 @@
     "product_highlight_ixYiX6": {
       "type": "product-highlight",
       "settings": {
+        "alt": "",
         "show_table": false,
         "table1": "Herbal Component",
         "table2": "Herbal Component",

@@ -12,6 +12,7 @@
     "product_highlight_c7HkiU": {
       "type": "product-highlight",
       "settings": {
+        "alt": "Refreshing cold brew iced tea with ice and lemon - Iced SPORTea®",
         "show_table": false,
         "table1": "Herbal Component",
         "table2": "Herbal Component",
@@ -33,10 +34,13 @@
     },
     "featured_reviews_NbPTby": {
       "type": "featured-reviews",
+      "custom_css": [
+        ".sportea-trademark-sup {vertical-align: 0;}"
+      ],
       "settings": {
         "bg": "#2b4e92",
         "ai-count": "5078 Verified 5-star Reviews",
-        "ai-featured-review": "have been drinking SPORTea® for over 20 years. It has so many win-win ingredients. No matter what I face over the course of the years the hard times and the good SPORTea® has been part of them.",
+        "ai-featured-review": "I have been drinking SPORTea® for over 20 years. It has so many win-win ingredients. No matter what I face over the course of the years the hard times and the good SPORTea® has been part of them.",
         "ai-author-name": "Diana J.",
         "ai-date": "3/1/2024"
       }
@@ -70,6 +74,7 @@
     "product_highlight_QDCQY9": {
       "type": "product-highlight",
       "settings": {
+        "alt": "Active person drinking healthy iced tea after exercise",
         "show_table": false,
         "table1": "Herbal Component",
         "table2": "Herbal Component",
@@ -118,6 +123,7 @@
     "product_highlight_J3Hd9B": {
       "type": "product-highlight",
       "settings": {
+        "alt": "",
         "show_table": false,
         "table1": "Herbal Component",
         "table2": "Herbal Component",
@@ -203,6 +209,7 @@
     "product_highlight_pXjNpW": {
       "type": "product-highlight",
       "settings": {
+        "alt": "iced tea - SPORTea® with citrus",
         "show_table": false,
         "table1": "Herbal Component",
         "table2": "Herbal Component",
@@ -309,65 +316,26 @@
         "subtitle": "Discover why SPORTea® is the preferred cold brew iced tea for thousands:"
       }
     },
-    "faq_Fck7P4": {
-      "type": "faq",
-      "blocks": {
-        "faq_myqpfk": {
-          "type": "faq",
-          "settings": {
-            "question": "What is SPORTea®?",
-            "answer": "<p>SPORTea® contains trace amounts of caffeine, comparable to the amount found in decaffeinated coffee, making it a 'decaf equivalent.' Despite its low caffeine content, SPORTea® provides a natural energy boost, thanks to its unique blend of ingredients such as Siberian Eleuthero root and mate. These ingredients contribute to sustained energy levels without the crashes or jitters associated with higher-caffeine drinks. This makes SPORTea® an ideal choice for those seeking a mild energy boost while limiting their caffeine intake.</p><ul><li>Low Caffeine Content: Comparable to decaf coffee, suitable for those reducing caffeine.</li><li>Natural Energy Boost: Ingredients like Siberian Eleuthero root and mate provide sustained energy.</li><li>No Crashes or Jitters: Energy without the adverse effects typical of high-caffeine beverages.</li></ul>"
-          }
-        },
-        "faq_6Aabkp": {
-          "type": "faq",
-          "settings": {
-            "question": "Who should drink SPORTea®?",
-            "answer": "<p>SPORTea® stands out from competitors through its unique blend of natural ingredients, high consumer satisfaction, and versatile product usage. Unlike many health beverages, SPORTea® is free from artificial colors, flavors, preservatives, or additives.</p><ul><li>Unique Ingredients: Natural formulation without artificial additives.</li><li>Consumer Loyalty: High satisfaction and repeat purchase rate.</li><li>Versatility: Enjoyable both hot and iced, catering to different preferences.</li></ul>"
-          }
-        },
-        "faq_a9KBbt": {
-          "type": "faq",
-          "settings": {
-            "question": "How should SPORTea® be prepared?",
-            "answer": "<p>SPORTea® offers several health benefits due to its natural and nutritious ingredients. It is known for promoting sustained energy without crashes or jitters, boosting immunity, fighting stress, and enhancing physical performance. The beverage is rich in electrolytes and minerals, making it an excellent choice for hydration. It's also 98% caffeine-free, making it a suitable option for those looking to reduce their caffeine intake while still enjoying a flavorful and energizing drink.</p><ul><li>Health Benefits: Energy boosting, immunity strengthening, and stress fighting.</li><li>Hydration: Contains electrolytes and minerals for optimal hydration.</li><li>Low Caffeine: A great option for those reducing caffeine intake.</li></ul>"
-          }
-        },
-        "faq_BVdUgB": {
-          "type": "faq",
-          "settings": {
-            "question": "What are the benefits of drinking SPORTea®?",
-            "answer": "<p>SPORTea® is a unique health beverage offering a blend of natural ingredients designed for individuals leading an active and health-conscious lifestyle. It is known for its high consumer satisfaction, evidenced by repeat purchases and long-term use. The beverage stands out for its blend of black and green teas, Siberian Eleuthero root, ginger, mate, vitamin C, and natural flavorings, offering health benefits without artificial additives. SPORTea® can be enjoyed both hot and iced, catering to various consumer preferences and occasions.</p><ul><li>Unique Product Offerings: Blend of natural ingredients catering to health-conscious consumers without artificial additives.</li><li>Versatile Usage: Can be consumed hot or iced, suitable for different occasions and consumer preferences.</li><li>High Consumer Satisfaction: Evidenced by repeat purchases and strong loyalty.</li></ul>"
-          }
-        },
-        "faq_W6Ekyw": {
-          "type": "faq",
-          "settings": {
-            "question": "How does SPORTea® differentiate from competitors?",
-            "answer": "<p>SPORTea® offers distinct preparation methods for both its iced and hot varieties to ensure optimal flavor and health benefits. Here's how you can prepare each version:</p><p>ICED Tea Preparation:</p><ul><li>ARCTIC ICED™ Cold Steep Method: Place one SPORTea® BIG BAG (from the 7-count iced tea retail box) into one quart of water. Seal your container and place it in the refrigerator for at least four hours, though overnight steeping is recommended for the best results. SPORTea® prepared this way will last for several days in the refrigerator, retaining a full-bodied and robust flavor thanks to natural preserving elements like vitamin C.</li><li>Coffee Brewer Method: Place one big bag (from the 7-count iced tea retail box) in the brew basket and run one quart of water through the bag. Allow the tea to cool to room temperature before serving over ice. Note that refrigerating the tea after brewing may cause cloudiness, but this will not affect the taste.</li></ul><p>HOT Tea Preparation:</p><ul><li>Place one 2g tea bag into a 6-ounce cup of hot water and allow it to steep for 3 to 5 minutes. You can adjust the steeping time according to your taste preference; the longer it steeps, the stronger the flavor will be. Due to SPORTea®'s unique composition, it never becomes bitter, so you can leave the bag in the water as long as you like.</li></ul><p>Special Notes:</p><ul><li>SPORTea® continues to enhance in flavor over time and does not turn bitter, allowing you to steep it for extended periods without compromising taste.</li><li>Iced SPORTea® may exhibit some settling due to the natural citrus extracts in each tea bag. Stir well before serving to ensure peak flavor.</li><li>Try SPORTea® without additional condiments like lemon or sugar, as it is naturally sweet and possesses a delightful citrus flavor already.</li><li>Versatile Preparation: Offers methods for both hot and iced preferences.</li><li>Longevity: Can be stored for several days when prepared using the ARCTIC ICED™ method.</li><li>Natural Sweetness: Designed to be enjoyed without the need for added condiments.</li></ul>"
-          }
-        },
-        "faq_FMAgTr": {
-          "type": "faq",
-          "settings": {
-            "question": "What is the caffeine content in SPORTea®, and how does it affect energy levels?",
-            "answer": "<p>SPORTea® offers distinct preparation methods for both its iced and hot varieties to ensure optimal flavor and health benefits. Here's how you can prepare each version:</p><p>ICED Tea Preparation:</p><ul><li>ARCTIC ICED™ Cold Steep Method: Place one SPORTea® BIG BAG (from the 7-count iced tea retail box) into one quart of water. Seal your container and place it in the refrigerator for at least four hours, though overnight steeping is recommended for the best results. SPORTea® prepared this way will last for several days in the refrigerator, retaining a full-bodied and robust flavor thanks to natural preserving elements like vitamin C.</li><li>Coffee Brewer Method: Place one big bag (from the 7-count iced tea retail box) in the brew basket and run one quart of water through the bag. Allow the tea to cool to room temperature before serving over ice. Note that refrigerating the tea after brewing may cause cloudiness, but this will not affect the taste.</li></ul><p>HOT Tea Preparation:</p><ul><li>Place one 2g tea bag into a 6-ounce cup of hot water and allow it to steep for 3 to 5 minutes. You can adjust the steeping time according to your taste preference; the longer it steeps, the stronger the flavor will be. Due to SPORTea®'s unique composition, it never becomes bitter, so you can leave the bag in the water as long as you like.</li></ul><p>Special Notes:</p><ul><li>SPORTea® continues to enhance in flavor over time and does not turn bitter, allowing you to steep it for extended periods without compromising taste.</li><li>Iced SPORTea® may exhibit some settling due to the natural citrus extracts in each tea bag. Stir well before serving to ensure peak flavor.</li><li>Try SPORTea® without additional condiments like lemon or sugar, as it is naturally sweet and possesses a delightful citrus flavor already.</li><li>Versatile Preparation: Offers methods for both hot and iced preferences.</li><li>Longevity: Can be stored for several days when prepared using the ARCTIC ICED™ method.</li><li>Natural Sweetness: Designed to be enjoyed without the need for added condiments.</li></ul>"
-          }
-        }
-      },
-      "block_order": [
-        "faq_myqpfk",
-        "faq_6Aabkp",
-        "faq_a9KBbt",
-        "faq_BVdUgB",
-        "faq_W6Ekyw",
-        "faq_FMAgTr"
-      ],
+    "product_highlight_CMbJqB": {
+      "type": "product-highlight",
       "settings": {
-        "title": "FAQs",
-        "caption": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.",
-        "button": "Contact Us",
-        "link": "shopify://pages/contact-us"
+        "alt": "",
+        "show_table": false,
+        "table1": "Herbal Component",
+        "table2": "Herbal Component",
+        "table3": "Herbal Component",
+        "background": "#fff",
+        "list_size": 24,
+        "text_color": "#000000",
+        "link_color": "#00A4FF",
+        "link_weight": 500,
+        "heading": "Frequently Asked Questions About SPORTea® Ingredients",
+        "subheading": "",
+        "description": "<h3>How does Iced SPORTea® compare to other iced tea brands?</h3><p>Unlike conventional iced tea products, SPORTea® is specifically formulated for energy, hydration, and wellness without sugar or artificial ingredients.</p><h3>How long does cold brew iced tea last?</h3><p>Your SPORTea® cold brew stays fresh in the refrigerator for up to 5 days, making it perfect for weekly preparation.</p><h3>Does this iced tea contain caffeine?</h3><p>SPORTea® contains a mild amount of caffeine (equivalent to decaffeinated coffee), providing gentle sustained energy without the crashes associated with highly caffeinated beverages.</p>",
+        "after_images_description": "",
+        "after_description": "",
+        "button_text": "Shop Now",
+        "button_link": ""
       }
     }
   },
@@ -382,6 +350,6 @@
     "product_highlight_pXjNpW",
     "ew_richtext_section_RY84LK",
     "ew_testimonial_AUdwCF",
-    "faq_Fck7P4"
+    "product_highlight_CMbJqB"
   ]
 }

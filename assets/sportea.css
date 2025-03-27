@@ -201,16 +201,22 @@ a {
    
 } */
 /* Accordion Component  */
+.sportea-faq-accordion span {
+  font-family: 'Montserrat', sans-serif !important;
+}
 .sportea-faq-accordion {
+    border-radius: 10px;
+    border: 0.5px solid rgba(38, 71, 134, 0.50);
+    box-shadow: 0px 4px 43.8px 0px rgba(0, 0, 0, 0.08);
     gap:20px;
     background-color: var(--white);
     color:#000;
-    border: none;
-    font-size: 18px;
-    font-weight: 500;
-    line-height: 27px;
-    letter-spacing: 0em;
-    text-align: left;    
+font-family: 'Montserrat', sans-serif !important;
+font-size: 18px;
+font-style: normal;
+font-weight: 500;
+line-height: 150%; /* 27px */
+  text-align:left;
     transition: 0.4s;
     padding: 20px 24px 20px 24px;
     width: 100%;
@@ -646,13 +652,12 @@ font-size:18.5px
 
 .sportea-faq-details p {
     padding: 24px 0px;
-    font-size: 18px;
-    font-weight: 400;
-    line-height: 27px;
-    letter-spacing: 0em;
-    text-align: left;
-    color:#000000;
-
+ color: #000;
+font-family: 'Montserrat',sans-serif !important;
+font-size: 18px;
+font-style: normal;
+font-weight: 400;
+line-height: 150%; /* 27px */
 }
 .sportea-hero-img {
     width: 100%;
@@ -957,10 +962,11 @@ span.question-mark {
     }
 }
 .sportea-faq-details h3 {
-    color: #2B4E92;
+color: #2B4E92;
+font-family: "Montserrat",sans-serif !important;
 font-size: 52px;
 font-style: normal;
-font-weight: 500;
+font-weight: 500 !important;
 line-height: 120%; /* 62.4px */
 }
 .sportea-faq-details a {

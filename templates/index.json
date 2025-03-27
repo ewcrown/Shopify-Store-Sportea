@@ -43,6 +43,50 @@
         "pesto_section_padding_bottom": 80
       }
     },
+    "ew_trust_bar_jdncaF": {
+      "type": "ew-trust-bar",
+      "blocks": {
+        "logo_hUBhfa": {
+          "type": "logo",
+          "settings": {
+            "img": "shopify://shop_images/NCAA_logo_svg.png"
+          }
+        },
+        "logo_9PkcJ7": {
+          "type": "logo",
+          "settings": {
+            "img": "shopify://shop_images/olympic-rings-EMF1N3.jpg"
+          }
+        },
+        "logo_hTGYJx": {
+          "type": "logo",
+          "settings": {
+            "img": "shopify://shop_images/Adobe_Express_-_file.jpg"
+          }
+        },
+        "logo_JBABQ4": {
+          "type": "logo",
+          "settings": {
+            "img": "shopify://shop_images/Ultraman-blue_white-logo_small_b6fe5c74-75f9-4424-ad58-e10b3760dacd.jpg"
+          }
+        },
+        "logo_PE4kCk": {
+          "type": "logo",
+          "settings": {
+            "img": "shopify://shop_images/uspta_logo_color.png"
+          }
+        }
+      },
+      "block_order": [
+        "logo_hUBhfa",
+        "logo_9PkcJ7",
+        "logo_hTGYJx",
+        "logo_JBABQ4",
+        "logo_PE4kCk"
+      ],
+      "disabled": true,
+      "settings": {}
+    },
     "featured_reviews_bp4jha": {
       "type": "featured-reviews",
       "settings": {
@@ -530,6 +574,7 @@
   },
   "order": [
     "99c91902-511f-496c-ae6b-e0a918c99c8e",
+    "ew_trust_bar_jdncaF",
     "featured_reviews_bp4jha",
     "properties_MEdzVY",
     "ingrediants_UEX9EQ",

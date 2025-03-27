@@ -16,7 +16,7 @@
         {
           "type": "text",
           "id": "title2",
-          "label": "Benefits",
+          "label": "Benefits", 
           "default": "Alertness, Focus, Concentration"
         },
         {
@@ -24,6 +24,23 @@
           "id": "title3",
           "label": "Benefits",
           "default": "Alertness, Focus, Concentration"
+        }
+      ]
+    },
+    {
+      "type": "ingredient_benefits",
+      "name": "Benefit",
+      "settings": [
+        {
+          "type": "text",
+          "id": "benefit_title",
+          "label": "Herbal Component Name",
+          "default": "Premium Black Tea"
+        },
+        {
+          "type": "image_picker",
+          "id": "benefit_image",
+          "label": "Image2"
         }
       ]
     }
@@ -37,6 +54,11 @@
       "type": "image_picker",
       "id": "image1",
       "label": "Image1"
+    },
+    {
+      "type": "text",
+      "id": "alt",
+      "label": "Alt text"
     },
     {
       "type": "image_picker",
@@ -164,238 +186,295 @@
 {% endschema %}
 
 <style>
-  .product-highlight-wrap {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding:100px 0;
-    gap:60px;
-  }
+      .product-highlight-wrap {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding:100px 0;
+        gap:60px;
+      }
 
 
-  
+    .product-highlight-wrap-benefits .product-highlight-text > h2 {
+      flex-basis:100%;
+    }
+    .product-highlight-wrap-benefits .product-highlight-text .product-highlight-description {
+      flex-basis:60%;
+    }
+    .product-highlight-wrap-benefits .product-highlight-text .product-highlight-ingredients-columns {
+      flex-basis:35%;
+    }
+    .product-highlight-wrap-benefits .product-highlight-text{
+      display:flex;
+      flex-wrap:wrap;
+      gap:40px;
+      justify-content:space-between;
+      align-items:flex-start;
+    }
 
-  .product-highlight-text {
-    flex: 1;
-  }
+    .product-highlight-ingredients-column span {
+          font-family: Arial;
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 150%;
+      margin-top: 10px;
+    display:block;
+      text-align:center;
+    }
+    .product-highlight-ingredients-column {
+      box-shadow: 0 0 19px -7px #ccc;
+      border-radius: 15px;
+      padding: 30px;
+    }
 
-  .product-highlight h2 {
-    font-family: Arial;
-    font-size: 48px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 120%; /* 57.6px */
-    margin-bottom:30px;
-  }
+    .product-highlight-wrap-benefits .product-highlight-ingredients-columns {
+        display:grid;
+      grid-template-columns:repeat(2,1fr);
+      gap:30px;
+    }
 
-  .product-highlight h3 {
-font-family: Arial;
-font-size: 24px;
-font-style: normal;
-font-weight: 700;
-line-height: 150%; /* 36px */
-margin-bottom:30px;
-  }
 
-  .product-highlight ol li {
-    font-family: Arial;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 150%; /* 30px */
-  }
-  .product-highlight ul li {
-    list-style:disc;
-font-family: Arial;
-font-style: normal;
-font-weight: 400;
-line-height: 150%; /* 36px */
-  }
-  .product-highlight h4 {
-font-family: Arial;
-font-size: 36px;
-font-style: normal;
-font-weight: 700;
-line-height: 150%; /* 54px */
-    margin-bottom:30px;
-  }
-  .product-highlight ul {
-    padding-left:20px
-  }
-  
-  .product-highlight p a:hover{
-    color:#c0ae29 !important;
-  }
 
-  .product-highlight p a {
-    text-decoration:underline;
-  }
-  .product-highlight p {
+      .product-highlight-text {
+        flex: 1;
+      }
+
+      .product-highlight h2 {
+        font-family: Arial;
+        font-size: 48px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 120%; /* 57.6px */
+        margin-bottom:30px;
+      }
+
+      .product-highlight h3 {
     font-family: Arial;
     font-size: 24px;
     font-style: normal;
-    font-weight: 400;
-    line-height: 150%; /* 36px */
-    margin-bottom: 30px;
-  }
+    font-weight: 700;
+    line-height: 120%; /* 36px */
+    margin-bottom:10px;
+      }
 
-  .product-highlight-wrap .btn-box a {
-    background-color: rgb(220,35,42);
-    color: #fff;
-    max-width: 232px;
-}
-
-  .product-highlight-image {
-    flex: 1;
-    text-align: center;
-  }
-
-  .product-highlight-image img {
-    max-width: 100%;
-    border-radius: 10px;
-  }
-
-
-  .product-highlight-{{ section.id }} {
-    background: {{  section.settings.background }};
-  }
-  .product-highlight-{{ section.id }}  .product-highlight-wrap ol li,
-  .product-highlight-{{ section.id }}  .product-highlight-wrap ul li {
-    font-size: {{ section.settings.list_size }}px;
-  }
-
-  .product-highlight-{{ section.id }} .product-highlight-wrap h4,
-  .product-highlight-{{ section.id }} .product-highlight-wrap h3,
-  .product-highlight-{{ section.id }} .product-highlight-wrap h2,
-  .product-highlight-{{ section.id }} .product-highlight-wrap ul li,
-  .product-highlight-{{ section.id }} .product-highlight-wrap ol li,
-  .product-highlight-{{ section.id }} .product-highlight-wrap p {
-    color: {{ section.settings.text_color }};
-  }
-
-  .product-highlight-{{ section.id }} p a {
-    color: {{ section.settings.link_color }};
-    font-weight:{{ section.settings.link_weight }};
-  }
-  
-  .product-highlight-table {
-    margin-bottom:40px;
-  }
-
-  .product-highlight-description h6 + ul li {
-  margin-bottom:10px;
-}
-  .product-highlight-description h6 + ul li a{
-    color: #2e8fff;
-    font-weight: 600;
-    text-decoration:underline;
-  }
-  .product-highlight-description h6 {
+      .product-highlight ol li {
+        font-family: Arial;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 150%; /* 30px */
+      }
+      .product-highlight ul li {
+        list-style:disc;
     font-family: Arial;
-    font-size: 20px;
     font-style: normal;
     font-weight: 400;
-    line-height: 150%;
-    margin-bottom: 30px;
-    color:#000;
-    margin-bottom:10px
-  }
+    line-height: 150%; /* 36px */
+      }
+      .product-highlight h4 {
+    font-family: Arial;
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 150%; /* 54px */
+        margin-bottom:30px;
+      }
+      .product-highlight ul {
+        padding-left:20px
+      }
 
-  .product-highlight-images {
-  margin-bottom:30px;
-  display:flex;
-    flex-wrap:wrap;
-    justify-content:center;
-  gap:20px
-}
+      .product-highlight p a:hover{
+        color:#c0ae29 !important;
+      }
 
-.herbal-table {
-  display: flex;
-  flex-direction: column;
-  border-radius: 8px;
-  overflow: hidden;
-}
+      .product-highlight p a {
+        text-decoration:underline;
+      }
+      .product-highlight p {
+        font-family: Arial;
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 150%; /* 36px */
+        margin-bottom: 30px;
+      }
 
-.herbal-table-header {
-  display: flex;
-  font-weight: bold;
-  background-color: black;
-  color: white;
-  border-radius: 20px 20px 0 0;
-}
+      .product-highlight-wrap .btn-box a {
+        background-color: rgb(220,35,42);
+        color: #fff;
+        max-width: 232px;
+    }
 
-.herbal-table-header .herbal-table-cell{
-  border:1px solid transparent;
-  color:#fff;
-  height:auto;
-  font-weight:600;
-  padding: 17px 13px;
-}
+      .product-highlight-image {
+        flex: 1;
+        text-align: center;
+      }
 
-.herbal-table-row {
-  display: flex;
-  background-color: white;
-  border-top: 1px solid #ddd;
-}
-
-.herbal-table-cell {
-  flex: 1;
-  padding: 9px 13px;
-  border-right: 1px solid #ddd;
-  height:84px;
-  color: #000;
-font-family: Arial;
-font-size: 23.344px;
-font-style: normal;
-font-weight: 400;
-line-height: normal;
-}
-
-.herbal-table-cell:last-child {
-  border-right: none;
-}
+      .product-highlight-image img {
+        max-width: 100%;
+        border-radius: 10px;
+      }
 
 
-.herbal-table-row:last-child {
-  border-radius: 0 0 20px 20px;
-}
+      .product-highlight-{{ section.id }} {
+        background: {{  section.settings.background }};
+      }
+      .product-highlight-{{ section.id }}  .product-highlight-wrap ol li,
+      .product-highlight-{{ section.id }}  .product-highlight-wrap ul li {
+        font-size: {{ section.settings.list_size }}px;
+      }
 
+      .product-highlight-{{ section.id }} .product-highlight-wrap h4,
+      .product-highlight-{{ section.id }} .product-highlight-wrap h3,
+      .product-highlight-{{ section.id }} .product-highlight-wrap h2,
+      .product-highlight-{{ section.id }} .product-highlight-wrap ul li,
+      .product-highlight-{{ section.id }} .product-highlight-wrap ol li,
+      .product-highlight-{{ section.id }} .product-highlight-wrap p {
+        color: {{ section.settings.text_color }};
+      }
 
-  @media (max-width: 768px) {
-    .product-highlight-wrap {
-      padding: 30px 0;
-      gap: 30px;
+      .product-highlight-{{ section.id }} p a {
+        color: {{ section.settings.link_color }};
+        font-weight:{{ section.settings.link_weight }};
+      }
+
+      .product-highlight-table {
+        margin-bottom:40px;
+      }
+
+      .product-highlight-description h6 + ul li {
+      margin-bottom:10px;
+    }
+      .product-highlight-description h6 + ul li a{
+        color: #2e8fff;
+        font-weight: 600;
+        text-decoration:underline;
+      }
+      .product-highlight-description h6 {
+        font-family: Arial;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 150%;
+        margin-bottom: 30px;
+        color:#000;
+        margin-bottom:10px
+      }
+
+      .product-highlight-images {
+      margin-bottom:30px;
+      display:flex;
+        flex-wrap:wrap;
+        justify-content:center;
+      gap:20px
+    }
+
+    .herbal-table {
+      display: flex;
       flex-direction: column;
+      border-radius: 8px;
+      overflow: hidden;
     }
-    .product-highlight h2 {
-      font-size: 30px;
-      margin-bottom: 10px !important;
+
+    .herbal-table-header {
+      display: flex;
+      font-weight: bold;
+      background-color: black;
+      color: white;
+      border-radius: 20px 20px 0 0;
     }
-    .product-highlight h4 {
-      font-size: 26px !important;
-      line-height:120%;
-      margin-bottom: 10px !important;
-  }
-    .product-highlight h3 {
-      font-size: 20px;
-   }
-   .product-highlight li,
-   .product-highlight p {
-      font-size: 16px !important;
-      margin-bottom:10px !important;
+
+    .herbal-table-header .herbal-table-cell{
+      border:1px solid transparent;
+      color:#fff;
+      height:auto;
+      font-weight:600;
+      padding: 17px 13px;
+    }
+
+    .herbal-table-row {
+      display: flex;
+      background-color: white;
+      border-top: 1px solid #ddd;
     }
 
     .herbal-table-cell {
-      padding: 14px !important;
-      height: auto !important;
-      font-size: 16px !important;
+      flex: 1;
+      padding: 9px 13px;
+      border-right: 1px solid #ddd;
+      height:84px;
+      color: #000;
+    font-family: Arial;
+    font-size: 23.344px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
     }
+
+    .herbal-table-cell:last-child {
+      border-right: none;
+    }
+
+
+    .herbal-table-row:last-child {
+      border-radius: 0 0 20px 20px;
+    }
+
+
+      @media (max-width: 980px) {
+        .product-highlight-wrap-benefits .product-highlight-text {
+      gap: 20px;
+      flex-direction: column;
+        }
+        .product-highlight-ingredients-column img {
+          width:100px;
+        }
+        .product-highlight-wrap-benefits .product-highlight-text .product-highlight-ingredients-columns {
+      flex-basis: 100%;
+      width: 100%;
+    }
+        .product-highlight-ingredients-column span {
+      font-size: 14px;
   }
-  
+        .product-highlight-ingredients-column {
+      text-align: center;
+    }
+      }
+      @media (max-width: 768px) {
+        .product-highlight-wrap {
+          padding: 30px 0;
+          gap: 30px;
+          flex-direction: column;
+        }
+        .product-highlight h2 {
+          font-size: 30px;
+          margin-bottom: 10px !important;
+        }
+        .product-highlight h4 {
+          font-size: 26px !important;
+          line-height:120%;
+          margin-bottom: 10px !important;
+      }
+        .product-highlight h3 {
+          font-size: 20px;
+       }
+       .product-highlight li,
+       .product-highlight p {
+          font-size: 16px !important;
+          margin-bottom:10px !important;
+        }
+
+        .herbal-table-cell {
+          padding: 14px !important;
+          height: auto !important;
+          font-size: 16px !important;
+        }
+      }
 </style>
 
 <section class="product-highlight product-highlight-{{ section.id }}">
   <div class="large-container">
-    <div class="product-highlight-wrap">
+    <div class="product-highlight-wrap {% for block in section.blocks %}{% if block.type == 'ingredient_benefits' %}product-highlight-wrap-benefits {% endif %}{% endfor %}">
       <div class="product-highlight-text">
         <h2>{{ section.settings.heading }}</h2>
         {% if section.settings.subheading != blank %}
@@ -409,14 +488,14 @@ line-height: normal;
         {% endif %}
 
         {% if section.settings.image1 != blank and section.settings.image1 != blank %}
-        <div class="product-highlight-images">
-          {% if section.settings.image1 != blank %}
-            <img src="{{ section.settings.image1 | img_url: '600x' }}" alt="{{ section.settings.heading }}">
-          {% endif %}
-          {% if section.settings.image1 != blank %}
-            <img src="{{ section.settings.image2 | img_url: '600x' }}" alt="{{ section.settings.heading }}">
-          {% endif %}
-        </div>
+          <div class="product-highlight-images">
+            {% if section.settings.image1 != blank %}
+              <img src="{{ section.settings.image1 | img_url: '600x' }}" alt="{{ section.settings.heading }}">
+            {% endif %}
+            {% if section.settings.image1 != blank %}
+              <img src="{{ section.settings.image2 | img_url: '600x' }}" alt="{{ section.settings.heading }}">
+            {% endif %}
+          </div>
         {% endif %}
 
         {% if section.settings.after_images_description != blank %}
@@ -426,47 +505,76 @@ line-height: normal;
         {% endif %}
 
         {% if section.settings.show_table != blank %}
-        <div class="product-highlight-table">
-          <div class="herbal-table">
-            <div class="herbal-table-header">
-              {% if section.settings.table1 != blank %}
-                <div class="herbal-table-cell">{{ section.settings.table1 }}</div>
-              {% endif %}
-              {% if section.settings.table2 != blank %}
-                <div class="herbal-table-cell">{{ section.settings.table2 }}</div>
-              {% endif %}
-              {% if section.settings.table3 != blank %}
-                <div class="herbal-table-cell">{{ section.settings.table3 }}</div>
-              {% endif %}
-            </div>
-          
-            {% for block in section.blocks %}
-              <div class="herbal-table-row">
+          <div class="product-highlight-table">
+            <div class="herbal-table">
+              <div class="herbal-table-header">
                 {% if section.settings.table1 != blank %}
-                  <div class="herbal-table-cell">{{ block.settings.title1 }}</div>
-                {% endif %}  
+                  <div class="herbal-table-cell">{{ section.settings.table1 }}</div>
+                {% endif %}
                 {% if section.settings.table2 != blank %}
-                  <div class="herbal-table-cell">{{ block.settings.title2 }}</div>
+                  <div class="herbal-table-cell">{{ section.settings.table2 }}</div>
                 {% endif %}
                 {% if section.settings.table3 != blank %}
-                  <div class="herbal-table-cell">{{ block.settings.title3 }}</div>
+                  <div class="herbal-table-cell">{{ section.settings.table3 }}</div>
                 {% endif %}
               </div>
-            {% endfor %}
+
+              {% for block in section.blocks %}
+                {% if block.type == 'ingredient' %}
+                  <div class="herbal-table-row">
+                    {% if section.settings.table1 != blank %}
+                      <div class="herbal-table-cell">{{ block.settings.title1 }}</div>
+                    {% endif %}
+                    {% if section.settings.table2 != blank %}
+                      <div class="herbal-table-cell">{{ block.settings.title2 }}</div>
+                    {% endif %}
+                    {% if section.settings.table3 != blank %}
+                      <div class="herbal-table-cell">{{ block.settings.title3 }}</div>
+                    {% endif %}
+                  </div>
+                {% endif %}
+              {% endfor %}
+            </div>
           </div>
-          
+        {% endif %}
+
+        {% if section.settings.after_description != blank %}
+          <div class="product-highlight-description">
+            {{ section.settings.after_description }}
+          </div>
+        {% endif %}
+
+        <div class="product-highlight-ingredients-columns">
+          {% for block in section.blocks %}
+            {% if block.type == 'ingredient_benefits' %}
+              <div class="product-highlight-ingredients-column">
+                <img
+                  src="{{ block.settings.benefit_image | img_url: '600x' }}"
+                  alt="{{ block.settings.benefit_title }}"
+                >
+                <span>{{ block.settings.benefit_title }}</span>
+              </div>
+            {% endif %}
+          {% endfor %}
         </div>
-      {% endif %}
-      {% if section.settings.after_description != blank %}
-        <div class="product-highlight-description ">
-          {{ section.settings.after_description }}
-        </div>
-      {% endif %}
 
         {% if section.settings.button_link != blank %}
           <div class="btn-box">
-            <a href="{{section.settings.button_link}}" class="theme-btn btn-two" aria-label="Shop Now" tabindex="0">{{ section.settings.button_text }}<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#ffffff" height="800px" width="800px" version="1.1" id="Layer_1" viewBox="0 0 330 330" xml:space="preserve" role="presentation">
-              <path id="XMLID_27_" d="M15,180h263.787l-49.394,49.394c-5.858,5.857-5.858,15.355,0,21.213C232.322,253.535,236.161,255,240,255  s7.678-1.465,10.606-4.394l75-75c5.858-5.857,5.858-15.355,0-21.213l-75-75c-5.857-5.857-15.355-5.857-21.213,0  c-5.858,5.857-5.858,15.355,0,21.213L278.787,150H15c-8.284,0-15,6.716-15,15S6.716,180,15,180z"></path>
+            <a href="{{section.settings.button_link}}" class="theme-btn btn-two" aria-label="Shop Now" tabindex="0">
+              {{- section.settings.button_text }}
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+                fill="#ffffff"
+                height="800px"
+                width="800px"
+                version="1.1"
+                id="Layer_1"
+                viewBox="0 0 330 330"
+                xml:space="preserve"
+                role="presentation"
+              >
+                <path id="XMLID_27_" d="M15,180h263.787l-49.394,49.394c-5.858,5.857-5.858,15.355,0,21.213C232.322,253.535,236.161,255,240,255  s7.678-1.465,10.606-4.394l75-75c5.858-5.857,5.858-15.355,0-21.213l-75-75c-5.857-5.857-15.355-5.857-21.213,0  c-5.858,5.857-5.858,15.355,0,21.213L278.787,150H15c-8.284,0-15,6.716-15,15S6.716,180,15,180z"></path>
               </svg>
             </a>
           </div>
@@ -474,7 +582,10 @@ line-height: normal;
       </div>
       {% if section.settings.image %}
         <div class="product-highlight-image">
-          <img src="{{ section.settings.image | img_url: '600x' }}" alt="{{ section.settings.heading }}">
+          <img
+            src="{{ section.settings.image | img_url: '600x' }}"
+            alt="{% if section.settings.alt != blank %}{{ section.settings.alt }}{% else %}{{ section.settings.title }}{% endif %}"
+          >
         </div>
       {% endif %}
     </div>
