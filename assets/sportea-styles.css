@@ -241,15 +241,14 @@ button.header-drawer__link.iced-sportea-cold-brewed span.sportea-trademark-sup {
 
 /* For screens 480px and smaller (mobile devices) */
 @media (max-width: 480px) {
-    button.header-drawer__link.iced-sportea-cold-brewed span.sportea-trademark-sup {
-        left: -12%%;
-        top: -2px;
-    }
-
-    .hot-sportea span.sportea-trademark-sup {
-        left: -21%;
-        top: -5px;
-    }
+  button.header-drawer__link.iced-sportea-cold-brewed span.sportea-trademark-sup {
+    left: -2%;
+    top: -2px;
+}
+.hot-sportea span.sportea-trademark-sup {
+  left: -25%;
+  top: -5px;
+}
 }
 a.gf-button span {
     left: -20px;
