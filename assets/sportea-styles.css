@@ -1,3 +1,7 @@
+.cart-count-bubble,
+.product-img--main__image {
+    display: none !important;
+}
 .header-style-two .header-lower.border-true {
   z-index:9;
   position:relative;

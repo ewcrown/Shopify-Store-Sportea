@@ -184,6 +184,56 @@
         "link": "#fp-product"
       }
     },
+    "ew_trust_bar_jdncaF": {
+      "type": "ew-trust-bar",
+      "blocks": {
+        "logo_hUBhfa": {
+          "type": "logo",
+          "settings": {
+            "img": "shopify://shop_images/Vector_df2c82f8-9d1c-4803-bf8e-f770c6459553.png"
+          }
+        },
+        "logo_9PkcJ7": {
+          "type": "logo",
+          "settings": {
+            "img": "shopify://shop_images/Group_2.png"
+          }
+        },
+        "logo_hTGYJx": {
+          "type": "logo",
+          "settings": {
+            "img": "shopify://shop_images/Vector_1_843dd51e-c97d-4df4-9177-a481dfe27eb8.png"
+          }
+        },
+        "logo_JBABQ4": {
+          "type": "logo",
+          "settings": {
+            "img": "shopify://shop_images/Group_4.png"
+          }
+        },
+        "logo_PE4kCk": {
+          "type": "logo",
+          "settings": {
+            "img": "shopify://shop_images/Vector_3_1c40e3d7-eba4-4ad7-8140-e2dd38946e17.png"
+          }
+        },
+        "logo_Gg3WdE": {
+          "type": "logo",
+          "settings": {
+            "img": "shopify://shop_images/Group_1598.png"
+          }
+        }
+      },
+      "block_order": [
+        "logo_hUBhfa",
+        "logo_9PkcJ7",
+        "logo_hTGYJx",
+        "logo_JBABQ4",
+        "logo_PE4kCk",
+        "logo_Gg3WdE"
+      ],
+      "settings": {}
+    },
     "ingrediants_UEX9EQ": {
       "type": "ingrediants",
       "blocks": {
@@ -202,7 +252,7 @@
         "properties_h7UpRN": {
           "type": "properties",
           "settings": {
-            "title": "Siberian Gensing",
+            "title": "Siberian Ginseng",
             "desc": "",
             "sub-title": "Endurance and  Stress Relief",
             "prop_1": "Endurance",
@@ -576,6 +626,7 @@
     "featured_reviews_bp4jha",
     "featured_product_4CWdbU",
     "properties_MEdzVY",
+    "ew_trust_bar_jdncaF",
     "ingrediants_UEX9EQ",
     "featured_collection_KyMqMe",
     "testimonials_mU9yKt",

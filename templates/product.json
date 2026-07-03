@@ -44,6 +44,18 @@
             "show_gift_card_recipient": true
           }
         },
+        "subscriptions_app_block_jarnAP": {
+          "type": "shopify://apps/subscriptions/blocks/app-block/a3bfe9ec-96f8-4508-a003-df608a36d2ad",
+          "settings": {
+            "color_text_body": "#201617",
+            "dividers_color": "#201617",
+            "bacgkround_color": "#ffffff",
+            "border_thickness": 1,
+            "border_radius": 0,
+            "subscription_policy_url": "",
+            "product": "{{product}}"
+          }
+        },
         "e1a8f174-f755-4fd5-96d1-f56556c2ca8e": {
           "type": "description",
           "settings": {}
@@ -56,8 +68,10 @@
         "variant_picker",
         "quantity_selector",
         "buy_buttons",
+        "subscriptions_app_block_jarnAP",
         "e1a8f174-f755-4fd5-96d1-f56556c2ca8e"
       ],
+      "custom_css": [],
       "settings": {
         "color_scheme": "scheme-23d60601-f3f5-4d14-8bd4-c16c0e99b7c4",
         "enable_breadcrumb_navigation": false
@@ -262,7 +276,7 @@
       "type": "custom-liquid",
       "settings": {
         "color_scheme": "",
-        "custom_liquid": "<style>\n#yotpo-main-widget-btn[data-v-45e7fb23] {\n  background-color: rgb(215, 42, 49) !important;\n}\n.yotpo-title-text {\n  color: rgb(215, 42, 49) !important;\n}\n</style>",
+        "custom_liquid": "<style>\nspan.subscription-price {\n    color: rgb(215, 42, 49);\n}\n#yotpo-main-widget-btn[data-v-45e7fb23] {\n  background-color: rgb(215, 42, 49) !important;\n}\n.yotpo-title-text {\n  color: rgb(215, 42, 49) !important;\n}\n/* Reset wrapper */\n/* Reset wrapper */\n.shopify_subscriptions_fieldset {\n  border: none !important;\n  padding: 0;\n}\n\n/* Flatten each choice (one-time + subscriptions) into equal cards */\n.shopify_subscriptions_app_block_label,\n.shopify_subscriptions_app_block_label_children li ,.shopify_subscriptions_app_block_label{\n  border: 2px solid #ddd !important;\n  border-radius: 12px;\n  padding: 1rem;\n  margin: 0.75rem 0;\n  background: #fff;\n  transition: all 0.25s ease;\n  list-style: none;\n  display: flex;\n  gap: 10px;\n    flex-direction: column;\n}\n\n/* Hover + active */\n\n\n/* Show radios, style them clean */\n.shopify_subscriptions_app_block_label input[type=\"radio\"], .shopify_subscriptions_app_block_label_children input[type=\"radio\"] {\n    appearance: none;\n    -webkit-appearance: none;\n    width: 18px;\n    height: 18px;\n    border: 2px solid #aaa;\n    border-radius: 50%;\n    outline: none;\n    cursor: pointer;\n    position: relative;\n    flex-shrink: 0;\n    top: 4px;\n}\n.shopify_subscriptions_app_block_label input[type=\"radio\"]:checked,\n.shopify_subscriptions_app_block_label_children input[type=\"radio\"]:checked {\n  border-color: #c62828;\n}\n\n.shopify_subscriptions_app_block_label input[type=\"radio\"]:checked::after,\n.shopify_subscriptions_app_block_label_children input[type=\"radio\"]:checked::after {\n  content: \"\";\n  position: absolute;\n  top: 2px;\n  left: 2px;\n  width: 10px;\n  height: 10px;\n  background: #c62828;\n  border-radius: 50%;\n}\n\n/* Label text next to radio */\n.shopify_subscriptions_app_block_label label,\n.shopify_subscriptions_app_block_label_children label {\n  font-size: 1rem;\n  font-weight: 600;\n  cursor: pointer;\n}\n\n\n\n/* Policy note */\n.shopify_subscriptions_app_policy {\n  font-size: 0.85rem;\n  color: #666;\n  margin-top: 0.5rem;\n}\n\n.shopify_subscriptions_fieldset div:first-child {\n    border-style: none !important;\n}\nsection.shopify_subscriptions_app_block {\n   border : 2px solid #ddd !important;\n    padding-left: 1rem;\n    padding-bottom: 1rem;\n    padding-right: 1rem;\n    border-radius:25px;\n\n}\n</style>\n\n\n\n<script>\n(function () {\n  let attempts = 0;\n  const maxAttempts = 10; // tries for ~5 seconds\n  const delay = 500; // ms\n\n  function addSubscriptionPrices() {\n    const radios = document.querySelectorAll(\n      '.shopify_subscriptions_app_block_label_children input[type=\"radio\"]'\n    );\n\n    if (!radios.length && attempts < maxAttempts) {\n      attempts++;\n      setTimeout(addSubscriptionPrices, delay);\n      return;\n    }\n\n    radios.forEach(radio => {\n      const label = radio.closest('label');\n      if (!label) return;\n\n      // Prevent duplicate append\n      if (label.querySelector('.subscription-price')) return;\n\n      let price = radio.getAttribute('data-variant-price');\n      if (!price) return;\n\n      // Remove USD text\n      price = price.replace(/\\s?USD/i, '').trim();\n\n      const priceSpan = document.createElement('span');\n      priceSpan.className = 'subscription-price';\n      priceSpan.style.marginLeft = '6px';\n      priceSpan.style.fontWeight = '600';\n      priceSpan.textContent = `– ${price}`;\n\n      label.appendChild(priceSpan);\n    });\n  }\n\n  setTimeout(addSubscriptionPrices, delay);\n})();\n</script>",
         "padding_top": 0,
         "padding_bottom": 0
       }

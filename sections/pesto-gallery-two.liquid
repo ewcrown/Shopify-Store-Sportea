@@ -105,7 +105,13 @@
 
                   <div class="content-box gallery-item-content-position-{{ gallery_content_position }} {% if collection_title_underline == true %}collection-title-underline{% endif %} collection-title-{{ collection_item_title_size }}">
                     {% if block.settings.gallery_block_subheading != blank %}
+                      {% if page.handle == 'who-should-drink-sportea' %}
+                        <div class="pdp-ai">
+                      {% endif %}
                       <p>{{ block.settings.gallery_block_subheading }}</p>
+                      {% if page.handle == 'who-should-drink-sportea' %}
+                        </div>
+                      {% endif %}
                     {%- endif -%}
                     {% if block.settings.collection_item_count == true %}
                       {% if block.settings.collection_select.url != blank %}
