@@ -1,0 +1,126 @@
+<div
+  id="ew-runner-lp-footer"
+  class="ew-runner-lp-footer"
+  style="--ew-runner-lp-footer-bg: {{ section.settings.background_color }};"
+>
+  <div class="large-container ew-runner-lp-footer__container">
+    <div class="ew-runner-lp-footer__grid">
+      <div class="ew-runner-lp-footer__column ew-runner-lp-footer__column--logo">
+        {%- if section.settings.logo != blank -%}
+          <a href="{{ routes.root_url }}" class="ew-runner-lp-footer__logo-link">
+            {{
+              section.settings.logo
+              | image_url: width: 220
+              | image_tag:
+                class: 'ew-runner-lp-footer__logo-img',
+                loading: 'lazy',
+                widths: '120, 160, 220',
+                sizes: '140px',
+                alt: shop.name
+            }}
+          </a>
+        {%- elsif section.settings.logo_text != blank -%}
+          <a href="{{ routes.root_url }}" class="ew-runner-lp-footer__logo-text">{{ section.settings.logo_text | escape }}</a>
+        {%- else -%}
+          <a href="{{ routes.root_url }}" class="ew-runner-lp-footer__logo-text">{{ shop.name | escape }}</a>
+        {%- endif -%}
+      </div>
+
+      {%- if section.blocks.size > 0 -%}
+        <nav class="ew-runner-lp-footer__column ew-runner-lp-footer__column--nav" aria-label="Footer navigation">
+          <ul class="ew-runner-lp-footer__nav-list">
+            {%- for block in section.blocks -%}
+              {%- if block.settings.label != blank -%}
+                <li class="ew-runner-lp-footer__nav-item" {{ block.shopify_attributes }}>
+                  <a
+                    href="{{ block.settings.link | default: '#' }}"
+                    class="ew-runner-lp-footer__nav-link"
+                    {% if block.settings.open_in_new_tab %}target="_blank" rel="noopener"{% endif %}
+                  >
+                    {{ block.settings.label | escape }}
+                  </a>
+                </li>
+              {%- endif -%}
+            {%- endfor -%}
+          </ul>
+        </nav>
+      {%- endif -%}
+
+      <div class="ew-runner-lp-footer__column ew-runner-lp-footer__column--copyright">
+        {%- if section.settings.copyright_text != blank -%}
+          <p class="ew-runner-lp-footer__copyright">{{ section.settings.copyright_text | escape }}</p>
+        {%- endif -%}
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Runner LP — Footer",
+  "tag": "footer",
+  "class": "ew-runner-lp-footer-section",
+  "settings": [
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background color",
+      "default": "#2b2f36"
+    },
+    {
+      "type": "image_picker",
+      "id": "logo",
+      "label": "Logo image"
+    },
+    {
+      "type": "text",
+      "id": "logo_text",
+      "label": "Logo text",
+      "info": "Used if no logo image is uploaded.",
+      "default": "SPORTea®"
+    },
+    {
+      "type": "text",
+      "id": "copyright_text",
+      "label": "Copyright text",
+      "default": "© 2026 SPORTea. All rights reserved."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "link",
+      "name": "Navigation link",
+      "settings": [
+        {
+          "type": "text",
+          "id": "label",
+          "label": "Label",
+          "default": "Link"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Link"
+        },
+        {
+          "type": "checkbox",
+          "id": "open_in_new_tab",
+          "label": "Open in new tab",
+          "default": false
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Runner LP — Footer",
+      "blocks": [
+        { "type": "link", "settings": { "label": "Privacy" } },
+        { "type": "link", "settings": { "label": "Terms" } },
+        { "type": "link", "settings": { "label": "Shipping & Returns" } },
+        { "type": "link", "settings": { "label": "Contact Us" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

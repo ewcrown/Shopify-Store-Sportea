@@ -1,0 +1,588 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "ew_runner_lp_hero": {
+      "type": "ew-runner-lp-hero",
+      "blocks": {
+        "feature_no_sugar": {
+          "type": "feature",
+          "settings": {
+            "text": "No Sugar"
+          }
+        },
+        "feature_electrolytes": {
+          "type": "feature",
+          "settings": {
+            "text": "Real Electrolytes"
+          }
+        },
+        "feature_caffeine": {
+          "type": "feature",
+          "settings": {
+            "text": "98% Caffeine-Free"
+          }
+        },
+        "feature_calorie": {
+          "type": "feature",
+          "settings": {
+            "text": "Zero Calorie"
+          }
+        }
+      },
+      "block_order": [
+        "feature_no_sugar",
+        "feature_electrolytes",
+        "feature_caffeine",
+        "feature_calorie"
+      ],
+      "settings": {
+        "background_image": "shopify://shop_images/Rectangle_1.jpg",
+        "subtitle": "THE RUNNER'S CHOICE",
+        "heading": "Clean Fuel for Every Mile – No Sugar, No Crash, No Junk.",
+        "description": "<p>A naturally energizing, electrolyte-rich tea that fuels your run and keeps you hydrated — with zero sugar, zero calories, and none of the crash. Loved by runners (and 5,000+ five-star reviewers).</p>",
+        "button_label": "GET MY 2-BOX STARTER PACK",
+        "button_link": "shopify://pages/special-offer",
+        "button_note": "Free Shipping · First-Time Customer Special",
+        "reviews_image": "shopify://shop_images/Frame_1321314485.png",
+        "show_stars": true,
+        "reviews_text": "5,078 verified 5-star reviews"
+      }
+    },
+    "ew_runner_lp_about": {
+      "type": "ew-runner-lp-about",
+      "settings": {
+        "background_color": "#f9f9fb",
+        "heading": "From Runners, For Runners.",
+        "description": "<p>We didn't make another lab-engineered sports drink. SPORTea is the real-ingredient tea that runners have relied on for decades — to fuel long runs, replace what they sweat out, and skip the sugar crash that wrecks the back half of a workout.</p>",
+        "image_left": "shopify://shop_images/Rectangle_3.png",
+        "image_right": "shopify://shop_images/Rectangle_4.png"
+      }
+    },
+    "ew_runner_lp_compare": {
+      "type": "ew-runner-lp-compare",
+      "blocks": {
+        "con_sugar": {
+          "type": "con",
+          "settings": {
+            "text": "Loaded with sugar"
+          }
+        },
+        "con_crash": {
+          "type": "con",
+          "settings": {
+            "text": "Sugar high, then a crash"
+          }
+        },
+        "con_artificial": {
+          "type": "con",
+          "settings": {
+            "text": "Artificial colors & additives"
+          }
+        },
+        "con_heavy": {
+          "type": "con",
+          "settings": {
+            "text": "Heavy, syrupy on the stomach"
+          }
+        },
+        "pro_sugar": {
+          "type": "pro",
+          "settings": {
+            "text": "Zero sugar"
+          }
+        },
+        "pro_crash": {
+          "type": "pro",
+          "settings": {
+            "text": "Steady energy, no crash"
+          }
+        },
+        "pro_artificial": {
+          "type": "pro",
+          "settings": {
+            "text": "No artificial colors or additives"
+          }
+        },
+        "pro_light": {
+          "type": "pro",
+          "settings": {
+            "text": "Light, easy on the stomach"
+          }
+        }
+      },
+      "block_order": [
+        "con_sugar",
+        "con_crash",
+        "con_artificial",
+        "con_heavy",
+        "pro_sugar",
+        "pro_crash",
+        "pro_artificial",
+        "pro_light"
+      ],
+      "settings": {
+        "background_color": "#ffffff",
+        "heading": "Your Run Deserves Better Than A Sugar Bomb.",
+        "description": "<p>Most sports drinks fix one problem and create three. You get a hit of energy — then the crash. You get \"hydration\" — packaged with 30+ grams of sugar, artificial dyes, and a label you can't pronounce. For something you drink every single run, that adds up fast.</p>",
+        "cons_title": "MOST SPORTS DRINKS",
+        "cons_background_color": "#eef1f6",
+        "image": "shopify://shop_images/Iced-SPORTea-for-Shopify_1024x1024_2_68bd1f3e-aa28-4211-ba57-9618270e264c.png",
+        "pros_title": "SPORTEA",
+        "pros_background_color": "#2b4e92"
+      }
+    },
+    "ew_runner_lp_features": {
+      "type": "ew-runner-lp-features",
+      "blocks": {
+        "feature_hydration": {
+          "type": "feature",
+          "settings": {
+            "image": "shopify://shop_images/fi_15311844.png",
+            "title": "Hydration + electrolytes",
+            "description": "<p>Replace what you sweat out. SPORTea delivers natural electrolytes and minerals for real hydration — without the sugar that sugary sports drinks hide it behind.</p>"
+          }
+        },
+        "feature_energy": {
+          "type": "feature",
+          "settings": {
+            "image": "shopify://shop_images/fi_14243538.png",
+            "title": "Clean energy, no crash",
+            "description": "<p>Sustained, natural energy from green tea, maté, and Siberian eleuthero — a smooth lift with no sugar spike, no jitters, and no mid-run crash. 98% caffeine-free.</p>"
+          }
+        },
+        "feature_sugar": {
+          "type": "feature",
+          "settings": {
+            "image": "shopify://shop_images/fi_14242762.png",
+            "title": "No sugar, no junk",
+            "description": "<p>Zero sugar. Zero calories. No artificial colors, flavors, or preservatives. Vegan, keto-friendly, gluten-free, and diabetic-friendly — what you put in your body on every run matters.</p>"
+          }
+        },
+        "feature_recovery": {
+          "type": "feature",
+          "settings": {
+            "image": "shopify://shop_images/fi_14229330.png",
+            "title": "Recovery + daily ritual",
+            "description": "<p>Vitamin C, ginger, and antioxidants help you bounce back after hard efforts — and it’s good enough to drink all day, hot or iced, not just on run days.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "feature_hydration",
+        "feature_energy",
+        "feature_sugar",
+        "feature_recovery"
+      ],
+      "settings": {
+        "background_color": "#f5f7fb",
+        "heading": "Everything A Runner Needs In One Clean Cup.",
+        "button_label": "Get My Starter Pack",
+        "button_link": "shopify://pages/special-offer"
+      }
+    },
+    "ew_runner_lp_ingredients": {
+      "type": "ew-runner-lp-ingredients",
+      "blocks": {
+        "ingredient_green_tea": {
+          "type": "ingredient",
+          "settings": {
+            "image": "shopify://shop_images/Overlay_4_6ce65461-8e6c-41e5-8547-e73f2bd4e61d.png",
+            "title": "GREEN TEA",
+            "description": "Antioxidants and clean energy to support metabolism and focus.",
+            "tags": "ANTIOXIDANT, ENERGY, METABOLISM"
+          }
+        },
+        "ingredient_eleuthero": {
+          "type": "ingredient",
+          "settings": {
+            "image": "shopify://shop_images/Overlay_1_6236cd61-fdf1-4ca9-8997-94a1acdd1de4.png",
+            "title": "SIBERIAN ELEUTHERO (GINSENG)",
+            "description": "Traditionally used to support endurance, stamina, and recovery.",
+            "tags": "ENDURANCE, VITALITY, IMMUNITY"
+          }
+        },
+        "ingredient_mate": {
+          "type": "ingredient",
+          "settings": {
+            "image": "shopify://shop_images/Overlay_2_3cfd4e63-05e4-4371-a7b5-8066d06e8033.png",
+            "title": "BRAZILIAN MATÉ",
+            "description": "Natural energy and mental focus to keep your pace and your head in it.",
+            "tags": "ENERGY, VIGOR, MENTAL FOCUS"
+          }
+        },
+        "ingredient_ginger": {
+          "type": "ingredient",
+          "settings": {
+            "image": "shopify://shop_images/Overlay_3_0bf4bbaf-4c2f-4bcf-a5c7-6be41a691802.png",
+            "title": "GINGER",
+            "description": "Supports digestion and has anti-inflammatory properties — easy on the stomach mid-run.",
+            "tags": "DIGESTION, ANTI-INFLAMMATORY"
+          }
+        },
+        "ingredient_black_tea": {
+          "type": "ingredient",
+          "settings": {
+            "image": "shopify://shop_images/Overlay_0cc878e0-2972-45c6-a535-508f8360b843.png",
+            "title": "BLACK TEA",
+            "description": "Gentle alertness plus heart-health antioxidants.",
+            "tags": "ALERTNESS, HEART HEALTH"
+          }
+        },
+        "ingredient_vitamin_c": {
+          "type": "ingredient",
+          "settings": {
+            "image": "shopify://shop_images/Overlay_5_790ac61b-551a-4e99-bb3e-315bd8b33b1b.png",
+            "title": "VITAMIN C",
+            "description": "Antioxidant + immune support to help you recover and stay consistent.",
+            "tags": "ANTIOXIDANT, IMMUNITY"
+          }
+        }
+      },
+      "block_order": [
+        "ingredient_green_tea",
+        "ingredient_eleuthero",
+        "ingredient_mate",
+        "ingredient_ginger",
+        "ingredient_black_tea",
+        "ingredient_vitamin_c"
+      ],
+      "settings": {
+        "background_color": "#ffffff",
+        "heading": "Real Ingredients, Each With A Job."
+      }
+    },
+    "ew_runner_lp_run": {
+      "type": "ew-runner-lp-run",
+      "blocks": {
+        "step_before": {
+          "type": "step",
+          "settings": {
+            "number": "01",
+            "title": "BEFORE",
+            "description": "Sip 30-60 minutes pre-run for smooth, natural energy — no sugar spike before you hit the road."
+          }
+        },
+        "step_during": {
+          "type": "step",
+          "settings": {
+            "number": "02",
+            "title": "DURING",
+            "description": "Cold-brewed Iced SPORTea is light and easy on the stomach for hydration on long runs and hot days."
+          }
+        },
+        "step_after": {
+          "type": "step",
+          "settings": {
+            "number": "03",
+            "title": "AFTER",
+            "description": "Rehydrate and replace minerals you sweat out, with vitamin C and antioxidants to support recovery."
+          }
+        },
+        "step_every_day": {
+          "type": "step",
+          "settings": {
+            "number": "04",
+            "title": "EVERY DAY",
+            "description": "Hot or iced, it's a clean all-day swap for soda, sugary drinks, and that second coffee."
+          }
+        }
+      },
+      "block_order": [
+        "step_before",
+        "step_during",
+        "step_after",
+        "step_every_day"
+      ],
+      "settings": {
+        "background_color": "#f9f9fb",
+        "heading": "Built Into Every Part Of Your Run.",
+        "callout_heading": "ARCTIC ICED COLD-STEEP PREP",
+        "callout_description": "One bag, one quart, in the fridge overnight."
+      }
+    },
+    "ew_runner_lp_testimonials": {
+      "type": "ew-runner-lp-testimonials",
+      "blocks": {
+        "video_1": {
+          "type": "video",
+          "settings": {
+            "video_url": "",
+            "open_in_new_tab": true
+          }
+        },
+        "video_2": {
+          "type": "video",
+          "settings": {
+            "video_url": "",
+            "open_in_new_tab": true
+          }
+        },
+        "video_3": {
+          "type": "video",
+          "settings": {
+            "video_url": "",
+            "open_in_new_tab": true
+          }
+        },
+        "testimonial_carrie": {
+          "type": "testimonial",
+          "settings": {
+            "description": "SPORTea is an amazing alternative to the sugar-filled sports drinks I used to rely on. I believe that SPORTea is the reason I find it easy to run distances and that I don't seem to wear out.",
+            "author_name": "— Carrie",
+            "author_subtext": "Arizona"
+          }
+        },
+        "testimonial_diana": {
+          "type": "testimonial",
+          "settings": {
+            "description": "I have been drinking SPORTea for over 20 years. It has so many win-win ingredients. No matter what I face over the course of the years the hard times and the good SPORTea has been part of them.",
+            "author_name": "— Diana J.",
+            "author_subtext": "Verified customer"
+          }
+        },
+        "testimonial_mark": {
+          "type": "testimonial",
+          "settings": {
+            "description": "Clean fuel for every run. No sugar crash, no junk — just real ingredients that keep me going mile after mile.",
+            "author_name": "— Mark",
+            "author_subtext": "Marathon runner"
+          }
+        }
+      },
+      "block_order": [
+        "video_1",
+        "video_2",
+        "video_3",
+        "testimonial_carrie",
+        "testimonial_diana",
+        "testimonial_mark"
+      ],
+      "settings": {
+        "background_color": "#ffffff",
+        "show_stars": true,
+        "reviews_text": "5,078 verified 5-star reviews",
+        "heading": "5,078 Five-Star Reasons To Make The Switch."
+      }
+    },
+    "ew_runner_lp_product": {
+      "type": "ew-runner-lp-product",
+      "settings": {
+        "product": "",
+        "card_background_color": "#ffffff",
+        "title": "The Runner's Starter Pack",
+        "description": "2 boxes of SPORTea + FREE shipping — first-time customer special.",
+        "variant_label": "Choose your mix:",
+        "button_label": "START MY ORDER — FREE SHIPPING",
+        "footer_text": "Free Shipping + Guarantee"
+      }
+    },
+    "ew_runner_lp_usp": {
+      "type": "ew-runner-lp-usp",
+      "blocks": {
+        "usp_no_sugar": {
+          "type": "usp",
+          "settings": {
+            "text": "No Sugar"
+          }
+        },
+        "usp_zero_calories": {
+          "type": "usp",
+          "settings": {
+            "text": "Zero Calories"
+          }
+        },
+        "usp_diabetic": {
+          "type": "usp",
+          "settings": {
+            "text": "Diabetic-Friendly"
+          }
+        },
+        "usp_gluten_free": {
+          "type": "usp",
+          "settings": {
+            "text": "Gluten Free"
+          }
+        },
+        "usp_no_artificial": {
+          "type": "usp",
+          "settings": {
+            "text": "No Artificial Additives"
+          }
+        },
+        "usp_vegan": {
+          "type": "usp",
+          "settings": {
+            "text": "Vegan"
+          }
+        },
+        "usp_keto": {
+          "type": "usp",
+          "settings": {
+            "text": "Keto-Friendly"
+          }
+        },
+        "usp_caffeine_free": {
+          "type": "usp",
+          "settings": {
+            "text": "98% Caffeine-Free"
+          }
+        }
+      },
+      "block_order": [
+        "usp_no_sugar",
+        "usp_zero_calories",
+        "usp_diabetic",
+        "usp_gluten_free",
+        "usp_no_artificial",
+        "usp_vegan",
+        "usp_keto",
+        "usp_caffeine_free"
+      ],
+      "settings": {
+        "background_color": "#f9f9fb"
+      }
+    },
+    "ew_runner_lp_faq": {
+      "type": "ew-runner-lp-faq",
+      "blocks": {
+        "faq_electrolytes": {
+          "type": "faq",
+          "settings": {
+            "question": "Does SPORTea actually replace electrolytes like a sports drink?",
+            "answer": "<p>Yes — SPORTea contains natural electrolytes and minerals to support hydration, without the added sugar and artificial ingredients found in most sports drinks.</p>"
+          }
+        },
+        "faq_crash": {
+          "type": "faq",
+          "settings": {
+            "question": "Will it give me energy without a crash?",
+            "answer": "<p>Yes. SPORTea delivers smooth, natural energy from real ingredients — without the sugar spike and crash of typical sports drinks.</p>"
+          }
+        },
+        "faq_during_run": {
+          "type": "faq",
+          "settings": {
+            "question": "Can I drink it during a run?",
+            "answer": "<p>Absolutely. Cold-brewed Iced SPORTea is light, easy on the stomach, and great for hydration on long runs and hot days.</p>"
+          }
+        },
+        "faq_how_to_make": {
+          "type": "faq",
+          "settings": {
+            "question": "How do I make it?",
+            "answer": "<p>For Arctic Iced Cold-Steep Prep: one bag, one quart, in the fridge overnight. Hot or iced, it's ready when you are.</p>"
+          }
+        },
+        "faq_sugar_free": {
+          "type": "faq",
+          "settings": {
+            "question": "Is it really sugar-free and low calorie?",
+            "answer": "<p>Yes. SPORTea has zero sugar and zero calories — no artificial colors, flavors, or preservatives.</p>"
+          }
+        },
+        "faq_guarantee": {
+          "type": "faq",
+          "settings": {
+            "question": "What if I don't like it?",
+            "answer": "<p>We stand behind SPORTea. Contact us if you're not satisfied — we'll make it right.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq_electrolytes",
+        "faq_crash",
+        "faq_during_run",
+        "faq_how_to_make",
+        "faq_sugar_free",
+        "faq_guarantee"
+      ],
+      "settings": {
+        "background_color": "#ffffff",
+        "heading": "Frequently Asked Questions",
+        "open_first": true
+      }
+    },
+    "ew_runner_lp_cta": {
+      "type": "ew-runner-lp-cta",
+      "settings": {
+        "heading": "Run Cleaner. Feel Better. Skip The Sugar.",
+        "description": "Try the Runner's Starter Pack — 2 boxes + free shipping, first-time customer special",
+        "button_label": "GET MY STARTER PACK",
+        "button_link": "shopify://pages/special-offer",
+        "button_note": "Free Shipping · First-Time Customer Special",
+        "show_stars": true,
+        "reviews_text": "5,078 verified 5-star reviews"
+      }
+    },
+    "ew_runner_lp_footer": {
+      "type": "ew-runner-lp-footer",
+      "blocks": {
+        "link_privacy": {
+          "type": "link",
+          "settings": {
+            "label": "Privacy",
+            "link": "",
+            "open_in_new_tab": false
+          }
+        },
+        "link_terms": {
+          "type": "link",
+          "settings": {
+            "label": "Terms",
+            "link": "",
+            "open_in_new_tab": false
+          }
+        },
+        "link_shipping": {
+          "type": "link",
+          "settings": {
+            "label": "Shipping & Returns",
+            "link": "",
+            "open_in_new_tab": false
+          }
+        },
+        "link_contact": {
+          "type": "link",
+          "settings": {
+            "label": "Contact Us",
+            "link": "",
+            "open_in_new_tab": false
+          }
+        }
+      },
+      "block_order": [
+        "link_privacy",
+        "link_terms",
+        "link_shipping",
+        "link_contact"
+      ],
+      "settings": {
+        "background_color": "#2b2f36",
+        "logo_text": "SPORTea®",
+        "copyright_text": "© 2026 SPORTea. All rights reserved."
+      }
+    }
+  },
+  "order": [
+    "ew_runner_lp_hero",
+    "ew_runner_lp_about",
+    "ew_runner_lp_compare",
+    "ew_runner_lp_features",
+    "ew_runner_lp_ingredients",
+    "ew_runner_lp_run",
+    "ew_runner_lp_testimonials",
+    "ew_runner_lp_product",
+    "ew_runner_lp_usp",
+    "ew_runner_lp_faq",
+    "ew_runner_lp_cta",
+    "ew_runner_lp_footer"
+  ]
+}

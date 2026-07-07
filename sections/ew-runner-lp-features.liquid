@@ -1,0 +1,147 @@
+<section
+  id="ew-runner-lp-features"
+  class="ew-runner-lp-features"
+  style="--ew-runner-lp-features-bg: {{ section.settings.background_color }};"
+>
+  <div class="large-container ew-runner-lp-features__container">
+    {%- if section.settings.heading != blank -%}
+      <h2 class="ew-runner-lp-features__heading">{{ section.settings.heading | escape }}</h2>
+    {%- endif -%}
+
+    {%- if section.blocks.size > 0 -%}
+      <div class="ew-runner-lp-features__grid">
+        {%- for block in section.blocks -%}
+          <div class="ew-runner-lp-features__card" {{ block.shopify_attributes }}>
+            {%- if block.settings.image != blank -%}
+              <div class="ew-runner-lp-features__icon">
+                {{
+                  block.settings.image
+                  | image_url: width: 120
+                  | image_tag:
+                    class: 'ew-runner-lp-features__icon-img',
+                    loading: 'lazy',
+                    widths: '60, 80, 120',
+                    sizes: '48px',
+                    alt: block.settings.title
+                }}
+              </div>
+            {%- else -%}
+              <div class="ew-runner-lp-features__icon ew-runner-lp-features__icon--placeholder" aria-hidden="true"></div>
+            {%- endif -%}
+
+            {%- if block.settings.title != blank -%}
+              <h3 class="ew-runner-lp-features__card-title">{{ block.settings.title | escape }}</h3>
+            {%- endif -%}
+
+            {%- if block.settings.description != blank -%}
+              <div class="ew-runner-lp-features__card-description rte">{{ block.settings.description }}</div>
+            {%- endif -%}
+          </div>
+        {%- endfor -%}
+      </div>
+    {%- endif -%}
+
+    {%- if section.settings.button_label != blank -%}
+      <div class="ew-runner-lp-features__cta-wrap">
+        <a
+          href="{{ section.settings.button_link | default: '#' }}"
+          class="theme-btn btn-one ew-runner-lp-features__cta"
+        >
+          {{ section.settings.button_label | escape }}
+        </a>
+      </div>
+    {%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Runner LP — Features",
+  "tag": "section",
+  "class": "ew-runner-lp-features-section",
+  "settings": [
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background color",
+      "default": "#f5f7fb"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Everything A Runner Needs In One Clean Cup."
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button label",
+      "default": "GET MY STARTER PACK"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button link"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "feature",
+      "name": "Feature",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image / icon"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Heading",
+          "default": "Feature title"
+        },
+        {
+          "type": "richtext",
+          "id": "description",
+          "label": "Description"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Runner LP — Features",
+      "blocks": [
+        {
+          "type": "feature",
+          "settings": {
+            "title": "HYDRATION + ELECTROLYTES",
+            "description": "<p>Replace what you sweat out. SPORTea delivers natural electrolytes and minerals for real hydration — without the sugar that sugary sports drinks hide it behind.</p>"
+          }
+        },
+        {
+          "type": "feature",
+          "settings": {
+            "title": "CLEAN ENERGY, NO CRASH",
+            "description": "<p>Sustained, natural energy from green tea, maté, and Siberian eleuthero — a smooth lift with no sugar spike, no jitters, and no mid-run crash. 98% caffeine-free.</p>"
+          }
+        },
+        {
+          "type": "feature",
+          "settings": {
+            "title": "NO SUGAR, NO JUNK",
+            "description": "<p>Zero sugar. Zero calories. No artificial colors, flavors, or preservatives. Vegan, keto-friendly, gluten-free, and diabetic-friendly — what you put in your body on every run matters.</p>"
+          }
+        },
+        {
+          "type": "feature",
+          "settings": {
+            "title": "RECOVERY + DAILY RITUAL",
+            "description": "<p>Vitamin C, ginger, and antioxidants help you bounce back after hard efforts — and it's good enough to drink all day, hot or iced, not just on run days.</p>"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,314 @@
+{%- liquid
+  assign product = section.settings.product
+  assign product_form_id = 'product-form-' | append: section.id
+-%}
+
+<script src="{{ 'product-form.js' | asset_url }}" defer="defer"></script>
+
+<section
+  id="ew-runner-lp-product"
+  class="ew-runner-lp-product"
+  {% if section.settings.background_image != blank %}
+    style="--ew-runner-lp-product-bg: url('{{ section.settings.background_image | image_url: width: 2400 }}'); --ew-runner-lp-product-card-bg: {{ section.settings.card_background_color }};"
+  {% else %}
+    style="--ew-runner-lp-product-card-bg: {{ section.settings.card_background_color }};"
+  {% endif %}
+>
+  <div class="large-container ew-runner-lp-product__container">
+    <div class="ew-runner-lp-product__card">
+      {%- if product != blank -%}
+        <div class="ew-runner-lp-product__grid">
+          <div class="ew-runner-lp-product__info">
+            <h2 class="ew-runner-lp-product__title">
+              {%- if section.settings.title != blank -%}
+                {{ section.settings.title | escape }}
+              {%- else -%}
+                {{ product.title | escape }}
+              {%- endif -%}
+            </h2>
+
+            {%- if section.settings.description != blank -%}
+              <p class="ew-runner-lp-product__description">{{ section.settings.description | escape }}</p>
+            {%- elsif product.description != blank -%}
+              <p class="ew-runner-lp-product__description">{{ product.description | strip_html | truncate: 220 }}</p>
+            {%- endif -%}
+
+            <div id="price-{{ section.id }}" class="ew-runner-lp-product__pricing">
+              {%- assign current_variant = product.selected_or_first_available_variant -%}
+              <span class="ew-runner-lp-product__price">{{ current_variant.price | money }}</span>
+
+              {%- if current_variant.compare_at_price > current_variant.price -%}
+                <s class="ew-runner-lp-product__compare-price">{{ current_variant.compare_at_price | money }}</s>
+                {%- assign savings = current_variant.compare_at_price | minus: current_variant.price | times: 100.0 | divided_by: current_variant.compare_at_price | round -%}
+                <span class="ew-runner-lp-product__savings-badge">you save ~{{ savings }}%</span>
+              {%- endif -%}
+            </div>
+
+            {%- unless product.has_only_default_variant -%}
+              <variant-radios
+                id="variant-radios-{{ section.id }}"
+                class="ew-runner-lp-product__variants no-js-hidden"
+                data-section="{{ section.id }}"
+                data-url="{{ product.url }}"
+                data-update-url="false"
+              >
+                {%- for option in product.options_with_values -%}
+                  <fieldset class="ew-runner-lp-product__variant-fieldset js product-form__input">
+                    {%- if section.settings.variant_label != blank and forloop.first -%}
+                      <legend class="ew-runner-lp-product__variant-label">{{ section.settings.variant_label | escape }}</legend>
+                    {%- else -%}
+                      <legend class="visually-hidden">{{ option.name }}</legend>
+                    {%- endif -%}
+
+                    <div class="ew-runner-lp-product__variant-list">
+                      {%- for value in option.values -%}
+                        {%- liquid
+                          assign option_disabled = true
+                          assign variants_available_arr = product.variants | map: 'available'
+                          assign variants_option1_arr = product.variants | map: 'option1'
+                          assign variants_option2_arr = product.variants | map: 'option2'
+                          assign variants_option3_arr = product.variants | map: 'option3'
+
+                          for option1_name in variants_option1_arr
+                            case option.position
+                              when 1
+                                if variants_option1_arr[forloop.index0] == value and variants_available_arr[forloop.index0]
+                                  assign option_disabled = false
+                                endif
+                              when 2
+                                if option1_name == product.selected_or_first_available_variant.option1 and variants_option2_arr[forloop.index0] == value and variants_available_arr[forloop.index0]
+                                  assign option_disabled = false
+                                endif
+                              when 3
+                                if option1_name == product.selected_or_first_available_variant.option1 and variants_option2_arr[forloop.index0] == product.selected_or_first_available_variant.option2 and variants_option3_arr[forloop.index0] == value and variants_available_arr[forloop.index0]
+                                  assign option_disabled = false
+                                endif
+                            endcase
+                          endfor
+
+                          assign input_id = section.id | append: '-' | append: option.position | append: '-' | append: forloop.index0
+                        -%}
+
+                        <div class="ew-runner-lp-product__variant-option">
+                          <input
+                            type="radio"
+                            id="{{ input_id }}"
+                            name="{{ option.name }}"
+                            value="{{ value | escape }}"
+                            form="{{ product_form_id }}"
+                            {% if option.selected_value == value %}
+                              checked
+                            {% endif %}
+                            {% if option_disabled %}
+                              class="disabled"
+                              disabled
+                            {% endif %}
+                          >
+                          <label for="{{ input_id }}">{{ value }}</label>
+                        </div>
+                      {%- endfor -%}
+                    </div>
+                  </fieldset>
+                {%- endfor -%}
+
+                <script type="application/json">
+                  {{ product.variants | json }}
+                </script>
+              </variant-radios>
+            {%- endunless -%}
+
+            <product-form class="ew-runner-lp-product__form product-form">
+              <div class="product-form__error-message-wrapper" role="alert" hidden>
+                <span class="product-form__error-message"></span>
+              </div>
+
+              {%- form 'product',
+                product,
+                id: product_form_id,
+                class: 'ew-runner-lp-product__cart-form',
+                novalidate: 'novalidate',
+                data-type: 'add-to-cart-form'
+              -%}
+                <input
+                  type="hidden"
+                  name="id"
+                  value="{{ product.selected_or_first_available_variant.id }}"
+                  disabled
+                >
+
+                <button
+                  type="submit"
+                  name="add"
+                  class="product-form__submit theme-btn btn-one ew-runner-lp-product__submit"
+                  data-label="{{ section.settings.button_label | escape }}"
+                  {% if product.selected_or_first_available_variant.available == false %}
+                    disabled
+                  {% endif %}
+                >
+                  <span>
+                    {%- if product.selected_or_first_available_variant.available -%}
+                      {{ section.settings.button_label | escape }}
+                    {%- else -%}
+                      {{ 'products.product.sold_out' | t }}
+                    {%- endif -%}
+                  </span>
+                  <div class="loading-overlay__spinner hidden ew-runner-lp-product__spinner"></div>
+                </button>
+              {%- endform -%}
+            </product-form>
+
+            {%- if section.settings.footer_text != blank -%}
+              <p class="ew-runner-lp-product__footer-text">{{ section.settings.footer_text | escape }}</p>
+            {%- endif -%}
+          </div>
+
+          <div class="ew-runner-lp-product__media">
+            {%- assign featured_media = product.selected_or_first_available_variant.featured_media | default: product.featured_media -%}
+            <div id="ew-runner-lp-product-media-{{ section.id }}" class="ew-runner-lp-product__media-wrap">
+              {%- if featured_media -%}
+                {{
+                  featured_media
+                  | image_url: width: 900
+                  | image_tag:
+                    class: 'ew-runner-lp-product__image',
+                    loading: 'lazy',
+                    widths: '400, 600, 900',
+                    sizes: '(min-width: 990px) 420px, 80vw',
+                    alt: product.title
+                }}
+              {%- else -%}
+                <div class="ew-runner-lp-product__image ew-runner-lp-product__image--placeholder" aria-hidden="true"></div>
+              {%- endif -%}
+            </div>
+          </div>
+        </div>
+      {%- else -%}
+        <div class="ew-runner-lp-product__empty">
+          <p>Select a product in the theme editor.</p>
+        </div>
+      {%- endif -%}
+    </div>
+  </div>
+</section>
+
+{%- if product != blank -%}
+  <script type="application/json" id="ew-runner-lp-product-variants-{{ section.id }}">
+    {{ product.variants | json }}
+  </script>
+
+  <script>
+    (function () {
+      var sectionId = '{{ section.id }}';
+      var buttonLabel = {{ section.settings.button_label | json }};
+      var variantRadios = document.getElementById('variant-radios-' + sectionId);
+      var productForm = document.getElementById('product-form-' + sectionId);
+      var mediaWrap = document.getElementById('ew-runner-lp-product-media-' + sectionId);
+      var variantsData = [];
+
+      try {
+        variantsData = JSON.parse(document.getElementById('ew-runner-lp-product-variants-' + sectionId).textContent);
+      } catch (error) {}
+
+      function updateProductMedia(variantId) {
+        if (!mediaWrap || !variantsData.length) return;
+
+        var variant = variantsData.find(function (item) {
+          return String(item.id) === String(variantId);
+        });
+
+        if (!variant || !variant.featured_media) return;
+
+        var preview = variant.featured_media.preview_image;
+        if (!preview || !preview.src) return;
+
+        var image = mediaWrap.querySelector('.ew-runner-lp-product__image');
+        if (!image) {
+          mediaWrap.innerHTML = '<img class="ew-runner-lp-product__image" alt="" loading="lazy">';
+          image = mediaWrap.querySelector('.ew-runner-lp-product__image');
+        }
+
+        image.src = preview.src;
+        image.srcset = '';
+      }
+
+      function restoreButtonLabel() {
+        if (!productForm) return;
+        var button = productForm.querySelector('[name="add"]');
+        var label = button && button.querySelector('span');
+        if (button && label && !button.disabled && buttonLabel) {
+          label.textContent = buttonLabel;
+        }
+      }
+
+      if (variantRadios) {
+        variantRadios.addEventListener('change', function () {
+          var idInput = productForm && productForm.querySelector('input[name="id"]');
+          if (idInput) updateProductMedia(idInput.value);
+          window.setTimeout(restoreButtonLabel, 150);
+        });
+      }
+
+      document.addEventListener('shopify:section:load', restoreButtonLabel);
+    })();
+  </script>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "Runner LP — Product",
+  "tag": "section",
+  "class": "ew-runner-lp-product-section",
+  "settings": [
+    {
+      "type": "product",
+      "id": "product",
+      "label": "Product"
+    },
+    {
+      "type": "image_picker",
+      "id": "background_image",
+      "label": "Background image"
+    },
+    {
+      "type": "color",
+      "id": "card_background_color",
+      "label": "Card background color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title override"
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Description override",
+      "default": "2 boxes of SPORTea + FREE shipping — first-time customer special."
+    },
+    {
+      "type": "text",
+      "id": "variant_label",
+      "label": "Variant label",
+      "default": "Choose your mix:"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Add to cart button label",
+      "default": "START MY ORDER — FREE SHIPPING"
+    },
+    {
+      "type": "text",
+      "id": "footer_text",
+      "label": "Button bottom text",
+      "default": "Free Shipping + Guarantee"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Runner LP — Product"
+    }
+  ]
+}
+{% endschema %}

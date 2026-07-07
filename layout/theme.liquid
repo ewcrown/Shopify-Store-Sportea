@@ -136,6 +136,7 @@
     {{ 'sportea.css' | asset_url | stylesheet_tag }}
     {{ 'sporteaMedia.css' | asset_url | stylesheet_tag }}
     {{ 'sportea-styles.css' | asset_url | stylesheet_tag }}
+    {{ 'ew-styles.css' | asset_url | stylesheet_tag }}
 
     <style>
                     .header__menu-btn:hover{color:rgb(220,35,42)}
@@ -278,7 +279,9 @@
       <main id="MainContent" class="content-for-layout focus-none" role="main" tabindex="-1">
         {{ content_for_layout }}
       </main>
-      {% sections 'footer-group' %}
+      {%- unless template.suffix == 'runner-lp' -%}
+        {% sections 'footer-group' %}
+      {%- endunless -%}
       {% assign backToTop = settings.pesto_back_to_top %}
       {% if backToTop %}
         <a href="#" class="back-to-top color-{{ settings.color_scheme_back_to_top }}">

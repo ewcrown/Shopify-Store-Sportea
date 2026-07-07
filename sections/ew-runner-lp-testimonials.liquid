@@ -1,0 +1,303 @@
+<section
+  id="ew-runner-lp-testimonials"
+  class="ew-runner-lp-testimonials"
+  style="--ew-runner-lp-testimonials-bg: {{ section.settings.background_color }};"
+>
+  <div class="large-container ew-runner-lp-testimonials__container">
+    <div class="ew-runner-lp-testimonials__header">
+      {%- if section.settings.reviews_image != blank -%}
+        <div class="ew-runner-lp-testimonials__avatars">
+          {{
+            section.settings.reviews_image
+            | image_url: width: 200
+            | image_tag:
+              class: 'ew-runner-lp-testimonials__avatars-img',
+              loading: 'lazy',
+              widths: '120, 160, 200',
+              sizes: '160px',
+              alt: section.settings.reviews_text
+          }}
+        </div>
+      {%- endif -%}
+
+      {%- if section.settings.show_stars -%}
+        <div class="ew-runner-lp-testimonials__stars" aria-hidden="true">
+          {%- for i in (1..5) -%}
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
+              <path d="M9 1.31836L11.3175 6.01086L16.5 6.72711L12.75 10.3521L13.635 15.5109L9 12.9434L4.365 15.5109L5.25 10.3521L1.5 6.72711L6.6825 6.01086L9 1.31836Z" fill="currentColor"/>
+            </svg>
+          {%- endfor -%}
+        </div>
+      {%- endif -%}
+
+      {%- if section.settings.reviews_text != blank -%}
+        <p class="ew-runner-lp-testimonials__reviews-text">{{ section.settings.reviews_text | escape }}</p>
+      {%- endif -%}
+
+      {%- if section.settings.heading != blank -%}
+        <h2 class="ew-runner-lp-testimonials__heading">{{ section.settings.heading | escape }}</h2>
+      {%- endif -%}
+    </div>
+
+    {%- assign video_blocks = section.blocks | where: 'type', 'video' -%}
+    {%- if video_blocks.size > 0 -%}
+      <div class="ew-runner-lp-testimonials__videos">
+        {%- for block in video_blocks -%}
+          <div class="ew-runner-lp-testimonials__video" {{ block.shopify_attributes }}>
+            {%- if block.settings.video_url != blank -%}
+              <a
+                href="{{ block.settings.video_url }}"
+                class="ew-runner-lp-testimonials__video-link"
+                {% if block.settings.open_in_new_tab %}target="_blank" rel="noopener"{% endif %}
+              >
+            {%- endif -%}
+
+            <div
+              class="ew-runner-lp-testimonials__video-media{% if block.settings.poster_image == blank %} ew-runner-lp-testimonials__video-media--placeholder{% endif %}"
+              {% if block.settings.poster_image != blank %}
+                style="--ew-runner-lp-testimonials-video-bg: url('{{ block.settings.poster_image | image_url: width: 600 }}');"
+              {% endif %}
+            >
+              <span class="ew-runner-lp-testimonials__play" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="20" viewBox="0 0 18 20" fill="none">
+                  <path d="M2 2.5L16 10L2 17.5V2.5Z" fill="currentColor"/>
+                </svg>
+              </span>
+            </div>
+
+            {%- if block.settings.video_url != blank -%}
+              </a>
+            {%- endif -%}
+          </div>
+        {%- endfor -%}
+      </div>
+    {%- endif -%}
+
+    {%- assign testimonial_blocks = section.blocks | where: 'type', 'testimonial' -%}
+    {%- if testimonial_blocks.size > 0 -%}
+      <div
+        class="splide ew-runner-lp-testimonials__slider"
+        id="ew-runner-lp-testimonials-slider-{{ section.id }}"
+      >
+        <div class="splide__track">
+          <ul class="splide__list">
+            {%- for block in testimonial_blocks -%}
+              <li class="splide__slide" {{ block.shopify_attributes }}>
+                <article class="ew-runner-lp-testimonials__card">
+                  <div class="ew-runner-lp-testimonials__card-stars" aria-hidden="true">
+                    {%- for i in (1..5) -%}
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 18 18" fill="none">
+                        <path d="M9 1.31836L11.3175 6.01086L16.5 6.72711L12.75 10.3521L13.635 15.5109L9 12.9434L4.365 15.5109L5.25 10.3521L1.5 6.72711L6.6825 6.01086L9 1.31836Z" fill="currentColor"/>
+                      </svg>
+                    {%- endfor -%}
+                  </div>
+
+                  {%- if block.settings.description != blank -%}
+                    <p class="ew-runner-lp-testimonials__card-description">{{ block.settings.description | escape }}</p>
+                  {%- endif -%}
+
+                  <div class="ew-runner-lp-testimonials__author">
+                    {%- if block.settings.author_image != blank -%}
+                      <img
+                        class="ew-runner-lp-testimonials__author-image"
+                        src="{{ block.settings.author_image | image_url: width: 80, height: 80, crop: 'center' }}"
+                        alt="{{ block.settings.author_name | escape }}"
+                        width="40"
+                        height="40"
+                        loading="lazy"
+                      >
+                    {%- else -%}
+                      <span class="ew-runner-lp-testimonials__author-image ew-runner-lp-testimonials__author-image--placeholder" aria-hidden="true"></span>
+                    {%- endif -%}
+
+                    <div class="ew-runner-lp-testimonials__author-meta">
+                      {%- if block.settings.author_name != blank -%}
+                        <p class="ew-runner-lp-testimonials__author-name">{{ block.settings.author_name | escape }}</p>
+                      {%- endif -%}
+                      {%- if block.settings.author_subtext != blank -%}
+                        <p class="ew-runner-lp-testimonials__author-subtext">{{ block.settings.author_subtext | escape }}</p>
+                      {%- endif -%}
+                    </div>
+                  </div>
+                </article>
+              </li>
+            {%- endfor -%}
+          </ul>
+        </div>
+
+        <div class="ew-runner-lp-testimonials__arrows splide__arrows">
+          <button class="splide__arrow splide__arrow--prev ew-runner-lp-testimonials__arrow ew-runner-lp-testimonials__arrow--prev" type="button" aria-label="Previous testimonial">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
+              <path d="M11.25 3.75L6.75 9L11.25 14.25" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+          <button class="splide__arrow splide__arrow--next ew-runner-lp-testimonials__arrow ew-runner-lp-testimonials__arrow--next" type="button" aria-label="Next testimonial">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
+              <path d="M6.75 3.75L11.25 9L6.75 14.25" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+    {%- endif -%}
+  </div>
+</section>
+
+<script>
+  (function () {
+    function initEwRunnerLpTestimonialsSlider() {
+      var slider = document.getElementById('ew-runner-lp-testimonials-slider-{{ section.id }}');
+      if (!slider || typeof Splide === 'undefined' || slider.dataset.splideMounted === 'true') return;
+
+      slider.dataset.splideMounted = 'true';
+
+      new Splide(slider, {
+        type: 'loop',
+        perPage: 2,
+        gap: '24px',
+        arrows: true,
+        pagination: false,
+        speed: 500,
+        breakpoints: {
+          989: {
+            perPage: 1
+          }
+        }
+      }).mount();
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initEwRunnerLpTestimonialsSlider);
+    } else {
+      initEwRunnerLpTestimonialsSlider();
+    }
+
+    document.addEventListener('shopify:section:load', initEwRunnerLpTestimonialsSlider);
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "Runner LP — Testimonials",
+  "tag": "section",
+  "class": "ew-runner-lp-testimonials-section",
+  "settings": [
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "image_picker",
+      "id": "reviews_image",
+      "label": "Reviews avatars image"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_stars",
+      "label": "Show star rating",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "reviews_text",
+      "label": "Reviews subtext",
+      "default": "5,078 verified 5-star reviews"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "5,078 Five-Star Reasons To Make The Switch."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "video",
+      "name": "Video",
+      "limit": 3,
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "poster_image",
+          "label": "Poster image"
+        },
+        {
+          "type": "url",
+          "id": "video_url",
+          "label": "Video URL"
+        },
+        {
+          "type": "checkbox",
+          "id": "open_in_new_tab",
+          "label": "Open video in new tab",
+          "default": true
+        }
+      ]
+    },
+    {
+      "type": "testimonial",
+      "name": "Testimonial",
+      "settings": [
+        {
+          "type": "textarea",
+          "id": "description",
+          "label": "Description",
+          "default": "SPORTea is an amazing alternative to the sugar-filled sports drinks I used to rely on."
+        },
+        {
+          "type": "image_picker",
+          "id": "author_image",
+          "label": "Author image"
+        },
+        {
+          "type": "text",
+          "id": "author_name",
+          "label": "Author name",
+          "default": "— Carrie"
+        },
+        {
+          "type": "text",
+          "id": "author_subtext",
+          "label": "Author subtext",
+          "default": "Arizona"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Runner LP — Testimonials",
+      "blocks": [
+        { "type": "video" },
+        { "type": "video" },
+        { "type": "video" },
+        {
+          "type": "testimonial",
+          "settings": {
+            "description": "SPORTea is an amazing alternative to the sugar-filled sports drinks I used to rely on. I believe that SPORTea is the reason I find it easy to run distances and that I don't seem to wear out.",
+            "author_name": "— Carrie",
+            "author_subtext": "Arizona"
+          }
+        },
+        {
+          "type": "testimonial",
+          "settings": {
+            "description": "I have been drinking SPORTea for over 20 years. It has so many win-win ingredients. No matter what I face over the course of the years the hard times and the good SPORTea has been part of them.",
+            "author_name": "— Diana J.",
+            "author_subtext": "Verified customer"
+          }
+        },
+        {
+          "type": "testimonial",
+          "settings": {
+            "description": "Clean fuel for every run. No sugar crash, no junk — just real ingredients that keep me going mile after mile.",
+            "author_name": "— Mark",
+            "author_subtext": "Marathon runner"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

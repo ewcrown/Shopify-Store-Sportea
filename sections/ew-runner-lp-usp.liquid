@@ -1,0 +1,86 @@
+<section
+  id="ew-runner-lp-usp"
+  class="ew-runner-lp-usp"
+  style="--ew-runner-lp-usp-bg: {{ section.settings.background_color }};"
+>
+  <div class="large-container ew-runner-lp-usp__container">
+    {%- if section.blocks.size > 0 -%}
+      <div class="ew-runner-lp-usp__grid">
+        {%- for block in section.blocks -%}
+          <div class="ew-runner-lp-usp__item" {{ block.shopify_attributes }}>
+            {%- if block.settings.image != blank -%}
+              <div class="ew-runner-lp-usp__icon">
+                {{
+                  block.settings.image
+                  | image_url: width: 120
+                  | image_tag:
+                    class: 'ew-runner-lp-usp__icon-img',
+                    loading: 'lazy',
+                    widths: '60, 80, 120',
+                    sizes: '48px',
+                    alt: block.settings.text
+                }}
+              </div>
+            {%- else -%}
+              <div class="ew-runner-lp-usp__icon ew-runner-lp-usp__icon--placeholder" aria-hidden="true"></div>
+            {%- endif -%}
+
+            {%- if block.settings.text != blank -%}
+              <p class="ew-runner-lp-usp__text">{{ block.settings.text | escape }}</p>
+            {%- endif -%}
+          </div>
+        {%- endfor -%}
+      </div>
+    {%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Runner LP — USP",
+  "tag": "section",
+  "class": "ew-runner-lp-usp-section",
+  "settings": [
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background color",
+      "default": "#f9f9fb"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "usp",
+      "name": "USP item",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image / icon"
+        },
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Text",
+          "default": "USP label"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Runner LP — USP",
+      "blocks": [
+        { "type": "usp", "settings": { "text": "No Sugar" } },
+        { "type": "usp", "settings": { "text": "Zero Calories" } },
+        { "type": "usp", "settings": { "text": "Diabetic-Friendly" } },
+        { "type": "usp", "settings": { "text": "Gluten Free" } },
+        { "type": "usp", "settings": { "text": "No Artificial Additives" } },
+        { "type": "usp", "settings": { "text": "Vegan" } },
+        { "type": "usp", "settings": { "text": "Keto-Friendly" } },
+        { "type": "usp", "settings": { "text": "98% Caffeine-Free" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,158 @@
+<section
+  id="ew-runner-lp-ingredients"
+  class="ew-runner-lp-ingredients"
+  style="--ew-runner-lp-ingredients-bg: {{ section.settings.background_color }};"
+>
+  <div class="large-container ew-runner-lp-ingredients__container">
+    {%- if section.settings.heading != blank -%}
+      <h2 class="ew-runner-lp-ingredients__heading">{{ section.settings.heading | escape }}</h2>
+    {%- endif -%}
+
+    {%- if section.blocks.size > 0 -%}
+      <div class="ew-runner-lp-ingredients__grid">
+        {%- for block in section.blocks -%}
+          <article
+            class="ew-runner-lp-ingredients__card{% if block.settings.image == blank %} ew-runner-lp-ingredients__card--placeholder{% endif %}"
+            {% if block.settings.image != blank %}
+              style="--ew-runner-lp-ingredients-card-bg: url('{{ block.settings.image | image_url: width: 900 }}');"
+            {% endif %}
+            {{ block.shopify_attributes }}
+          >
+            <div class="ew-runner-lp-ingredients__overlay" aria-hidden="true"></div>
+
+            <div class="ew-runner-lp-ingredients__content">
+              {%- if block.settings.title != blank -%}
+                <h3 class="ew-runner-lp-ingredients__title">{{ block.settings.title | escape }}</h3>
+              {%- endif -%}
+
+              {%- if block.settings.description != blank -%}
+                <p class="ew-runner-lp-ingredients__description">{{ block.settings.description | escape }}</p>
+              {%- endif -%}
+
+              {%- if block.settings.tags != blank -%}
+                {%- assign tag_list = block.settings.tags | split: ',' -%}
+                <div class="ew-runner-lp-ingredients__tags">
+                  {%- for tag in tag_list -%}
+                    {%- assign tag_label = tag | strip -%}
+                    {%- if tag_label != blank -%}
+                      <span class="ew-runner-lp-ingredients__tag">{{ tag_label | escape }}</span>
+                    {%- endif -%}
+                  {%- endfor -%}
+                </div>
+              {%- endif -%}
+            </div>
+          </article>
+        {%- endfor -%}
+      </div>
+    {%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Runner LP — Ingredients",
+  "tag": "section",
+  "class": "ew-runner-lp-ingredients-section",
+  "settings": [
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Real Ingredients, Each With A Job."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "ingredient",
+      "name": "Ingredient",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Background image"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Ingredient title"
+        },
+        {
+          "type": "textarea",
+          "id": "description",
+          "label": "Description",
+          "default": "Ingredient description goes here."
+        },
+        {
+          "type": "text",
+          "id": "tags",
+          "label": "Tags",
+          "info": "Separate tags with commas.",
+          "default": "TAG ONE, TAG TWO"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Runner LP — Ingredients",
+      "blocks": [
+        {
+          "type": "ingredient",
+          "settings": {
+            "title": "GREEN TEA",
+            "description": "Antioxidants and clean energy to support metabolism and focus.",
+            "tags": "ANTIOXIDANT, ENERGY, METABOLISM"
+          }
+        },
+        {
+          "type": "ingredient",
+          "settings": {
+            "title": "SIBERIAN ELEUTHERO (GINSENG)",
+            "description": "Traditionally used to support endurance, stamina, and recovery.",
+            "tags": "ENDURANCE, VITALITY, IMMUNITY"
+          }
+        },
+        {
+          "type": "ingredient",
+          "settings": {
+            "title": "BRAZILIAN MATÉ",
+            "description": "Natural energy and mental focus to keep your pace and your head in it.",
+            "tags": "ENERGY, VIGOR, MENTAL FOCUS"
+          }
+        },
+        {
+          "type": "ingredient",
+          "settings": {
+            "title": "GINGER",
+            "description": "Supports digestion and has anti-inflammatory properties — easy on the stomach mid-run.",
+            "tags": "DIGESTION, ANTI-INFLAMMATORY"
+          }
+        },
+        {
+          "type": "ingredient",
+          "settings": {
+            "title": "BLACK TEA",
+            "description": "Gentle alertness plus heart-health antioxidants.",
+            "tags": "ALERTNESS, HEART HEALTH"
+          }
+        },
+        {
+          "type": "ingredient",
+          "settings": {
+            "title": "VITAMIN C",
+            "description": "Antioxidant + immune support to help you recover and stay consistent.",
+            "tags": "ANTIOXIDANT, IMMUNITY"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

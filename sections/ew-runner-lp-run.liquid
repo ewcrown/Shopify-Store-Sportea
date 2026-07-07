@@ -1,0 +1,179 @@
+<section
+  id="ew-runner-lp-run"
+  class="ew-runner-lp-run"
+  style="--ew-runner-lp-run-bg: {{ section.settings.background_color }};"
+>
+  <div class="large-container ew-runner-lp-run__container">
+    {%- if section.settings.heading != blank -%}
+      <h2 class="ew-runner-lp-run__heading">{{ section.settings.heading | escape }}</h2>
+    {%- endif -%}
+
+    {%- if section.blocks.size > 0 -%}
+      <div class="ew-runner-lp-run__grid">
+        {%- for block in section.blocks -%}
+          <div class="ew-runner-lp-run__column" {{ block.shopify_attributes }}>
+            <div class="ew-runner-lp-run__number-row">
+              <span class="ew-runner-lp-run__spacer" aria-hidden="true"></span>
+              {%- if block.settings.number != blank -%}
+                <span class="ew-runner-lp-run__number">{{ block.settings.number | escape }}</span>
+              {%- endif -%}
+              <span class="ew-runner-lp-run__spacer" aria-hidden="true"></span>
+            </div>
+
+            {%- if block.settings.title != blank -%}
+              <h3 class="ew-runner-lp-run__title">{{ block.settings.title | escape }}</h3>
+            {%- endif -%}
+
+            {%- if block.settings.description != blank -%}
+              <p class="ew-runner-lp-run__description">{{ block.settings.description | escape }}</p>
+            {%- endif -%}
+          </div>
+        {%- endfor -%}
+      </div>
+    {%- endif -%}
+
+    {%- if section.settings.callout_heading != blank or section.settings.callout_description != blank -%}
+      <div class="ew-runner-lp-run__callout">
+        {%- if section.settings.callout_icon != blank -%}
+          <div class="ew-runner-lp-run__callout-icon">
+            {{
+              section.settings.callout_icon
+              | image_url: width: 80
+              | image_tag:
+                class: 'ew-runner-lp-run__callout-icon-img',
+                loading: 'lazy',
+                widths: '40, 56, 80',
+                sizes: '40px',
+                alt: ''
+            }}
+          </div>
+        {%- else -%}
+          <div class="ew-runner-lp-run__callout-icon ew-runner-lp-run__callout-icon--placeholder" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" fill="none">
+              <circle cx="14" cy="14" r="6" fill="#e5534b"/>
+              <path d="M14 2V5M14 23V26M2 14H5M23 14H26M5.05 5.05L7.22 7.22M20.78 20.78L22.95 22.95M5.05 22.95L7.22 20.78M20.78 7.22L22.95 5.05" stroke="#e5534b" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </div>
+        {%- endif -%}
+
+        <div class="ew-runner-lp-run__callout-text">
+          {%- if section.settings.callout_heading != blank -%}
+            <p class="ew-runner-lp-run__callout-heading">{{ section.settings.callout_heading | escape }}</p>
+          {%- endif -%}
+
+          {%- if section.settings.callout_description != blank -%}
+            <p class="ew-runner-lp-run__callout-description">{{ section.settings.callout_description | escape }}</p>
+          {%- endif -%}
+        </div>
+      </div>
+    {%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Runner LP — Run Phases",
+  "tag": "section",
+  "class": "ew-runner-lp-run-section",
+  "settings": [
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background color",
+      "default": "#f9f9fb"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Built Into Every Part Of Your Run."
+    },
+    {
+      "type": "header",
+      "content": "Bottom callout"
+    },
+    {
+      "type": "image_picker",
+      "id": "callout_icon",
+      "label": "Callout icon"
+    },
+    {
+      "type": "text",
+      "id": "callout_heading",
+      "label": "Callout heading",
+      "default": "ARCTIC ICED COLD-STEEP PREP"
+    },
+    {
+      "type": "text",
+      "id": "callout_description",
+      "label": "Callout description",
+      "default": "One bag, one quart, in the fridge overnight."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "step",
+      "name": "Step",
+      "settings": [
+        {
+          "type": "text",
+          "id": "number",
+          "label": "Number",
+          "default": "01"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "BEFORE"
+        },
+        {
+          "type": "textarea",
+          "id": "description",
+          "label": "Description",
+          "default": "Step description goes here."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Runner LP — Run Phases",
+      "blocks": [
+        {
+          "type": "step",
+          "settings": {
+            "number": "01",
+            "title": "BEFORE",
+            "description": "Sip 30-60 minutes pre-run for smooth, natural energy — no sugar spike before you hit the road."
+          }
+        },
+        {
+          "type": "step",
+          "settings": {
+            "number": "02",
+            "title": "DURING",
+            "description": "Cold-brewed Iced SPORTea is light and easy on the stomach for hydration on long runs and hot days."
+          }
+        },
+        {
+          "type": "step",
+          "settings": {
+            "number": "03",
+            "title": "AFTER",
+            "description": "Rehydrate and replace minerals you sweat out, with vitamin C and antioxidants to support recovery."
+          }
+        },
+        {
+          "type": "step",
+          "settings": {
+            "number": "04",
+            "title": "EVERY DAY",
+            "description": "Hot or iced, it's a clean all-day swap for soda, sugary drinks, and that second coffee."
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
