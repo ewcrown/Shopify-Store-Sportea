@@ -15,41 +15,35 @@
         {%- endif -%}
       </div>
 
-      <div class="ew-runner-lp-about__images">
-        {%- if section.settings.image_left != blank -%}
-          <div class="ew-runner-lp-about__image-wrap ew-runner-lp-about__image-wrap--left">
-            {{
-              section.settings.image_left
-              | image_url: width: 800
-              | image_tag:
-                class: 'ew-runner-lp-about__image',
-                loading: 'lazy',
-                widths: '400, 600, 800',
-                sizes: '(min-width: 990px) 280px, 45vw',
-                alt: section.settings.image_left.alt
-            }}
-          </div>
-        {%- else -%}
-          <div class="ew-runner-lp-about__image-wrap ew-runner-lp-about__image-wrap--left ew-runner-lp-about__image-wrap--placeholder" aria-hidden="true"></div>
-        {%- endif -%}
+      {%- if section.settings.video_url != blank -%}
+        <div class="ew-runner-lp-about__video">
+          {%- if section.settings.video_title != blank -%}
+            <h3 class="ew-runner-lp-about__heading ew-runner-lp-about__video-title">
+              {{ section.settings.video_title | escape }}
+            </h3>
+          {%- endif -%}
 
-        {%- if section.settings.image_right != blank -%}
-          <div class="ew-runner-lp-about__image-wrap ew-runner-lp-about__image-wrap--right">
-            {{
-              section.settings.image_right
-              | image_url: width: 900
-              | image_tag:
-                class: 'ew-runner-lp-about__image',
-                loading: 'lazy',
-                widths: '450, 700, 900',
-                sizes: '(min-width: 990px) 320px, 50vw',
-                alt: section.settings.image_right.alt
-            }}
+          <div class="ew-runner-lp-about__video-embed">
+            {%- if section.settings.video_url.type == 'youtube' -%}
+              <iframe
+                src="https://www.youtube.com/embed/{{ section.settings.video_url.id }}"
+                title="{{ section.settings.video_title | default: 'SPORTea for Half Marathon Prep' | escape }}"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen
+                loading="lazy"
+              ></iframe>
+            {%- elsif section.settings.video_url.type == 'vimeo' -%}
+              <iframe
+                src="https://player.vimeo.com/video/{{ section.settings.video_url.id }}"
+                title="{{ section.settings.video_title | default: 'SPORTea for Half Marathon Prep' | escape }}"
+                allow="autoplay; fullscreen; picture-in-picture"
+                allowfullscreen
+                loading="lazy"
+              ></iframe>
+            {%- endif -%}
           </div>
-        {%- else -%}
-          <div class="ew-runner-lp-about__image-wrap ew-runner-lp-about__image-wrap--right ew-runner-lp-about__image-wrap--placeholder" aria-hidden="true"></div>
-        {%- endif -%}
-      </div>
+        </div>
+      {%- endif -%}
     </div>
   </div>
 </section>
@@ -79,14 +73,18 @@
       "default": "<p>We didn't make another lab-engineered sports drink. SPORTea is the real-ingredient tea that runners have relied on for decades — to fuel long runs, replace what they sweat out, and skip the sugar crash that wrecks the back half of a workout.</p>"
     },
     {
-      "type": "image_picker",
-      "id": "image_left",
-      "label": "Left image"
+      "type": "text",
+      "id": "video_title",
+      "label": "Video title",
+      "default": "SPORTea for Half Marathon Prep"
     },
     {
-      "type": "image_picker",
-      "id": "image_right",
-      "label": "Right image"
+      "type": "video_url",
+      "id": "video_url",
+      "label": "Video URL",
+      "accept": ["youtube", "vimeo"],
+      "default": "https://www.youtube.com/watch?v=cOKVX9pMI0I",
+      "info": "Use a YouTube or Vimeo URL"
     }
   ],
   "presets": [

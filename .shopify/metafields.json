@@ -3,22 +3,22 @@
   "blog": [],
   "collection": [
     {
-      "key": "timer",
+      "key": "metacopy",
       "namespace": "custom",
-      "name": "Timer",
+      "name": "Content to Display",
       "description": "",
       "type": {
-        "name": "boolean",
-        "category": "TRUE_FALSE"
+        "name": "rich_text_field",
+        "category": "TEXT"
       }
     },
     {
-      "key": "child_collections",
+      "key": "meta_copy",
       "namespace": "custom",
-      "name": "Child Collections",
+      "name": "Page to Display",
       "description": "",
       "type": {
-        "name": "list.collection_reference",
+        "name": "page_reference",
         "category": "REFERENCE"
       }
     }
@@ -28,129 +28,8 @@
   "location": [],
   "market": [],
   "order": [],
-  "page": [
-    {
-      "key": "img",
-      "namespace": "custom",
-      "name": "Img",
-      "description": "",
-      "type": {
-        "name": "list.file_reference",
-        "category": "REFERENCE"
-      }
-    }
-  ],
+  "page": [],
   "product": [
-    {
-      "key": "queries",
-      "namespace": "shopify--discovery--product_search_boost",
-      "name": "Search product boosts",
-      "description": "List of search queries for which a product gets higher rank in search results",
-      "type": {
-        "name": "list.single_line_text_field",
-        "category": "TEXT"
-      }
-    },
-    {
-      "key": "related_products",
-      "namespace": "shopify--discovery--product_recommendation",
-      "name": "Related products",
-      "description": "List of related products",
-      "type": {
-        "name": "list.product_reference",
-        "category": "REFERENCE"
-      }
-    },
-    {
-      "key": "related_products_display",
-      "namespace": "shopify--discovery--product_recommendation",
-      "name": "Related products settings",
-      "description": "Determines how related products are displayed along with algorithmic product recommendations",
-      "type": {
-        "name": "single_line_text_field",
-        "category": "TEXT"
-      }
-    },
-    {
-      "key": "complementary_products",
-      "namespace": "shopify--discovery--product_recommendation",
-      "name": "Complementary products",
-      "description": "List of complementary products",
-      "type": {
-        "name": "list.product_reference",
-        "category": "REFERENCE"
-      }
-    },
-    {
-      "key": "custom_product",
-      "namespace": "mm-google-shopping",
-      "name": "Google: Custom Product",
-      "description": "Use to indicate whether or not the unique product identifiers (UPIs) GTIN, MPN, and brand are available for your product.",
-      "type": {
-        "name": "boolean",
-        "category": "TRUE_FALSE"
-      }
-    },
-    {
-      "key": "color-pattern",
-      "namespace": "shopify",
-      "name": "Color",
-      "description": "Defines the primary color or pattern, such as blue or striped",
-      "type": {
-        "name": "list.metaobject_reference",
-        "category": "REFERENCE"
-      }
-    },
-    {
-      "key": "age-group",
-      "namespace": "shopify",
-      "name": "Age group",
-      "description": "Defines the target age range for a product, such as adults or kids",
-      "type": {
-        "name": "list.metaobject_reference",
-        "category": "REFERENCE"
-      }
-    },
-    {
-      "key": "target-gender",
-      "namespace": "shopify",
-      "name": "Target gender",
-      "description": "Identifies the intended gender for a product, such as female, male or unisex",
-      "type": {
-        "name": "list.metaobject_reference",
-        "category": "REFERENCE"
-      }
-    },
-    {
-      "key": "size",
-      "namespace": "shopify",
-      "name": "Size",
-      "description": "Used to specify the size of a product, such as 0-3 months or Extra large (XL)",
-      "type": {
-        "name": "list.metaobject_reference",
-        "category": "REFERENCE"
-      }
-    },
-    {
-      "key": "fabric",
-      "namespace": "shopify",
-      "name": "Fabric",
-      "description": "Identifies the type of fabric used in a product, for example, cotton or denim",
-      "type": {
-        "name": "list.metaobject_reference",
-        "category": "REFERENCE"
-      }
-    },
-    {
-      "key": "size_guide_image",
-      "namespace": "custom",
-      "name": "Size Guide Image",
-      "description": "",
-      "type": {
-        "name": "file_reference",
-        "category": "REFERENCE"
-      }
-    },
     {
       "key": "rating",
       "namespace": "reviews",
@@ -172,23 +51,13 @@
       }
     },
     {
-      "key": "type",
-      "namespace": "custom",
-      "name": "Type",
-      "description": "",
+      "key": "custom_product",
+      "namespace": "mm-google-shopping",
+      "name": "Google: Custom Product",
+      "description": "Use to indicate whether or not the unique product identifiers (UPIs) GTIN, MPN, and brand are available for your product.",
       "type": {
-        "name": "single_line_text_field",
-        "category": "TEXT"
-      }
-    },
-    {
-      "key": "product_description",
-      "namespace": "custom",
-      "name": "Product Description",
-      "description": "",
-      "type": {
-        "name": "rich_text_field",
-        "category": "TEXT"
+        "name": "boolean",
+        "category": "TRUE_FALSE"
       }
     }
   ],
@@ -302,87 +171,17 @@
         "name": "single_line_text_field",
         "category": "TEXT"
       }
-    },
-    {
-      "key": "shipping_text",
-      "namespace": "restockrocket_production",
-      "name": "Shipping Text",
-      "description": "Custom shipping text for the variant",
-      "type": {
-        "name": "single_line_text_field",
-        "category": "TEXT"
-      }
-    },
-    {
-      "key": "preorder_max_count",
-      "namespace": "restockrocket_production",
-      "name": "Preorder Max Count",
-      "description": "Maximum preorder count allowed for the variant",
-      "type": {
-        "name": "number_integer",
-        "category": "NUMBER"
-      }
-    },
-    {
-      "key": "preorder_count",
-      "namespace": "restockrocket_production",
-      "name": "Preorder Count",
-      "description": "Current preorder count for the variant",
-      "type": {
-        "name": "number_integer",
-        "category": "NUMBER"
-      }
-    },
-    {
-      "key": "market_shipping_text",
-      "namespace": "restockrocket_production",
-      "name": "Market Shipping Text",
-      "description": "Market-specific shipping text for the variant",
-      "type": {
-        "name": "json",
-        "category": "JSON"
-      }
-    },
-    {
-      "key": "market_preorder_max_count",
-      "namespace": "restockrocket_production",
-      "name": "Market Preorder Max Count",
-      "description": "Market-specific preorder max counts for the variant",
-      "type": {
-        "name": "json",
-        "category": "JSON"
-      }
-    },
-    {
-      "key": "market_preorder_count",
-      "namespace": "restockrocket_production",
-      "name": "Market Preorder Count",
-      "description": "Market-specific preorder counts for the variant",
-      "type": {
-        "name": "json",
-        "category": "JSON"
-      }
-    },
-    {
-      "key": "selling_plan_ids",
-      "namespace": "restockrocket_production",
-      "name": "Selling Plan IDs",
-      "description": "Selling plan IDs the variant belongs to",
-      "type": {
-        "name": "json",
-        "category": "JSON"
-      }
     }
   ],
   "shop": [
     {
-      "key": "blocks_list_checkout_static_content",
-      "namespace": "checkoutblocks",
-      "name": "Checkout Blocks: Blocks List for: checkout_static_content",
-      "description": null,
+      "key": "merchant_id",
+      "namespace": "mm_google_shopping_extension",
+      "name": "Google: Merchant ID",
+      "description": "Currently Linked Merchant Center ID",
       "type": {
-        "name": "list.metaobject_reference",
-        "category": "REFERENCE"
+        "name": "single_line_text_field",
+        "category": "TEXT"
       }
     },
     {
@@ -396,113 +195,193 @@
       }
     },
     {
-      "key": "merchant_id",
-      "namespace": "mm_google_shopping_extension",
-      "name": "Google: Merchant ID",
-      "description": "Currently Linked Merchant Center ID",
+      "key": "app_url",
+      "namespace": "appstle_loyalty",
+      "name": "Loyalty App URL",
+      "description": null,
       "type": {
         "name": "single_line_text_field",
         "category": "TEXT"
       }
     },
     {
-      "key": "storefront_access_token",
-      "namespace": "restockrocket_production",
-      "name": "Storefront Access Token",
-      "description": "Storefront API access token used by the theme app extension",
+      "key": "enable_inactive_customer",
+      "namespace": "appstle_loyalty",
+      "name": "Loyalty Enable Inactive Customer",
+      "description": null,
+      "type": {
+        "name": "boolean",
+        "category": "TRUE_FALSE"
+      }
+    },
+    {
+      "key": "proxy_path_prefix",
+      "namespace": "appstle_loyalty",
+      "name": "Loyalty Proxy Path Prefix",
+      "description": null,
       "type": {
         "name": "single_line_text_field",
         "category": "TEXT"
       }
     },
     {
-      "key": "settings",
-      "namespace": "restockrocket_production",
-      "name": "Settings",
-      "description": "Settings for the app",
+      "key": "currency",
+      "namespace": "appstle_loyalty",
+      "name": "Loyalty Currency",
+      "description": null,
+      "type": {
+        "name": "single_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "pointRoundType",
+      "namespace": "appstle_loyalty",
+      "name": "Loyalty Point Round Type",
+      "description": null,
+      "type": {
+        "name": "single_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "referral_enabled",
+      "namespace": "appstle_loyalty",
+      "name": "Loyalty Referral Enabled",
+      "description": null,
+      "type": {
+        "name": "boolean",
+        "category": "TRUE_FALSE"
+      }
+    },
+    {
+      "key": "vip_tier_enabled",
+      "namespace": "appstle_loyalty",
+      "name": "Loyalty VIP Tier Enabled",
+      "description": null,
+      "type": {
+        "name": "boolean",
+        "category": "TRUE_FALSE"
+      }
+    },
+    {
+      "key": "vip_tier_setting",
+      "namespace": "appstle_loyalty",
+      "name": "Loyalty VIP Tier Setting",
+      "description": null,
       "type": {
         "name": "json",
         "category": "JSON"
       }
     },
     {
-      "key": "selling_plans",
-      "namespace": "restockrocket_production",
-      "name": "Selling Plans",
-      "description": "Settings and variant IDs for preorder offers",
+      "key": "vip_tiers",
+      "namespace": "appstle_loyalty",
+      "name": "Loyalty VIP Tiers",
+      "description": null,
       "type": {
         "name": "json",
         "category": "JSON"
       }
     },
     {
-      "key": "preorder_variant_ids",
-      "namespace": "restockrocket_production",
-      "name": "Preorder Variant IDs",
-      "description": "List of variant IDs that are available for preorder",
+      "key": "point_earn_rules",
+      "namespace": "appstle_loyalty",
+      "name": "Loyalty Point Earn Rules",
+      "description": null,
       "type": {
         "name": "json",
         "category": "JSON"
       }
     },
     {
-      "key": "in_stock_variant_ids",
-      "namespace": "restockrocket_production",
-      "name": "In Stock Variant IDs",
-      "description": "List of variant IDs that are currently in stock",
+      "key": "point_redeem_rules",
+      "namespace": "appstle_loyalty",
+      "name": "Loyalty Point Redeem Rules",
+      "description": null,
       "type": {
         "name": "json",
         "category": "JSON"
       }
     },
     {
-      "key": "out_of_stock_variant_ids",
-      "namespace": "restockrocket_production",
-      "name": "Out of Stock Variant IDs",
-      "description": "List of variant IDs that are currently out of stock",
+      "key": "vip_rewards",
+      "namespace": "appstle_loyalty",
+      "name": "Loyalty VIP Rewards",
+      "description": null,
       "type": {
         "name": "json",
         "category": "JSON"
       }
     },
     {
-      "key": "enabled_notify_me_variant_ids",
-      "namespace": "restockrocket_production",
-      "name": "Enabled Notify Me Variant IDs",
-      "description": "List of variant IDs with notify me explicitly enabled",
+      "key": "vip_point_rewards",
+      "namespace": "appstle_loyalty",
+      "name": "Loyalty VIP Point Rewards",
+      "description": null,
       "type": {
         "name": "json",
         "category": "JSON"
       }
     },
     {
-      "key": "back_in_stock_templates",
-      "namespace": "restockrocket_production",
-      "name": "Back in Stock Templates",
-      "description": "Back in stock template configuration for the storefront widget",
+      "key": "widget_setting",
+      "namespace": "appstle_loyalty",
+      "name": "Loyalty Widget Setting",
+      "description": null,
       "type": {
         "name": "json",
         "category": "JSON"
       }
     },
     {
-      "key": "variant_shipping_texts",
-      "namespace": "restockrocket_production",
-      "name": "Variant Shipping Texts",
-      "description": "Shipping texts for preorder variants",
+      "key": "shop_labels",
+      "namespace": "appstle_loyalty",
+      "name": "Loyalty Shop Labels",
+      "description": null,
       "type": {
         "name": "json",
         "category": "JSON"
       }
     },
     {
-      "key": "variant_preorder_limits",
-      "namespace": "restockrocket_production",
-      "name": "Variant Preorder Limits",
-      "description": "Preorder limits for preorder variants",
+      "key": "referral_loyalty",
+      "namespace": "appstle_loyalty",
+      "name": "Loyalty Referral Loyalty",
+      "description": null,
       "type": {
         "name": "json",
         "category": "JSON"
+      }
+    },
+    {
+      "key": "points_expiration_setting",
+      "namespace": "appstle_loyalty",
+      "name": "Loyalty Points Expiration Setting",
+      "description": null,
+      "type": {
+        "name": "json",
+        "category": "JSON"
+      }
+    },
+    {
+      "key": "allow_customer_opt_in",
+      "namespace": "appstle_loyalty",
+      "name": "Loyalty Allow Customer Opt In",
+      "description": null,
+      "type": {
+        "name": "boolean",
+        "category": "TRUE_FALSE"
+      }
+    },
+    {
+      "key": "has_dedicated_page_access",
+      "namespace": "appstle_loyalty",
+      "name": "Loyalty Has Dedicated Page Access",
+      "description": null,
+      "type": {
+        "name": "boolean",
+        "category": "TRUE_FALSE"
       }
     }
   ]

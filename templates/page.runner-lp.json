@@ -62,8 +62,8 @@
         "background_color": "#f9f9fb",
         "heading": "From Runners, For Runners.",
         "description": "<p>We didn't make another lab-engineered sports drink. SPORTea is the real-ingredient tea that runners have relied on for decades — to fuel long runs, replace what they sweat out, and skip the sugar crash that wrecks the back half of a workout.</p>",
-        "image_left": "shopify://shop_images/Rectangle_3.png",
-        "image_right": "shopify://shop_images/Rectangle_4.png"
+        "video_title": "SPORTea for Half Marathon Prep",
+        "video_url": "https://www.youtube.com/watch?v=cOKVX9pMI0I"
       }
     },
     "ew_runner_lp_compare": {
@@ -311,27 +311,6 @@
     "ew_runner_lp_testimonials": {
       "type": "ew-runner-lp-testimonials",
       "blocks": {
-        "video_1": {
-          "type": "video",
-          "settings": {
-            "video_url": "",
-            "open_in_new_tab": true
-          }
-        },
-        "video_2": {
-          "type": "video",
-          "settings": {
-            "video_url": "",
-            "open_in_new_tab": true
-          }
-        },
-        "video_3": {
-          "type": "video",
-          "settings": {
-            "video_url": "",
-            "open_in_new_tab": true
-          }
-        },
         "testimonial_carrie": {
           "type": "testimonial",
           "settings": {
@@ -358,9 +337,6 @@
         }
       },
       "block_order": [
-        "video_1",
-        "video_2",
-        "video_3",
         "testimonial_carrie",
         "testimonial_diana",
         "testimonial_mark"
@@ -369,7 +345,9 @@
         "background_color": "#ffffff",
         "show_stars": true,
         "reviews_text": "5,078 verified 5-star reviews",
-        "heading": "5,078 Five-Star Reasons To Make The Switch."
+        "heading": "5,078 Five-Star Reasons To Make The Switch.",
+        "video_title": "He Ran Across Mongolia Fueled by SPORTea!",
+        "video_url": "https://www.youtube.com/watch?v=2uPfNousqJE"
       }
     },
     "ew_runner_lp_product": {

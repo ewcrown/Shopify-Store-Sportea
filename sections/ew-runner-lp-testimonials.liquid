@@ -39,37 +39,33 @@
       {%- endif -%}
     </div>
 
-    {%- assign video_blocks = section.blocks | where: 'type', 'video' -%}
-    {%- if video_blocks.size > 0 -%}
-      <div class="ew-runner-lp-testimonials__videos">
-        {%- for block in video_blocks -%}
-          <div class="ew-runner-lp-testimonials__video" {{ block.shopify_attributes }}>
-            {%- if block.settings.video_url != blank -%}
-              <a
-                href="{{ block.settings.video_url }}"
-                class="ew-runner-lp-testimonials__video-link"
-                {% if block.settings.open_in_new_tab %}target="_blank" rel="noopener"{% endif %}
-              >
-            {%- endif -%}
+    {%- if section.settings.video_url != blank -%}
+      <div class="ew-runner-lp-testimonials__featured-video">
+        {%- if section.settings.video_title != blank -%}
+          <h3 class="ew-runner-lp-testimonials__heading ew-runner-lp-testimonials__video-title">
+            {{ section.settings.video_title | escape }}
+          </h3>
+        {%- endif -%}
 
-            <div
-              class="ew-runner-lp-testimonials__video-media{% if block.settings.poster_image == blank %} ew-runner-lp-testimonials__video-media--placeholder{% endif %}"
-              {% if block.settings.poster_image != blank %}
-                style="--ew-runner-lp-testimonials-video-bg: url('{{ block.settings.poster_image | image_url: width: 600 }}');"
-              {% endif %}
-            >
-              <span class="ew-runner-lp-testimonials__play" aria-hidden="true">
-                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="20" viewBox="0 0 18 20" fill="none">
-                  <path d="M2 2.5L16 10L2 17.5V2.5Z" fill="currentColor"/>
-                </svg>
-              </span>
-            </div>
-
-            {%- if block.settings.video_url != blank -%}
-              </a>
-            {%- endif -%}
-          </div>
-        {%- endfor -%}
+        <div class="ew-runner-lp-testimonials__video-embed">
+          {%- if section.settings.video_url.type == 'youtube' -%}
+            <iframe
+              src="https://www.youtube.com/embed/{{ section.settings.video_url.id }}"
+              title="{{ section.settings.video_title | default: 'He Ran Across Mongolia Fueled by SPORTea!' | escape }}"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen
+              loading="lazy"
+            ></iframe>
+          {%- elsif section.settings.video_url.type == 'vimeo' -%}
+            <iframe
+              src="https://player.vimeo.com/video/{{ section.settings.video_url.id }}"
+              title="{{ section.settings.video_title | default: 'He Ran Across Mongolia Fueled by SPORTea!' | escape }}"
+              allow="autoplay; fullscreen; picture-in-picture"
+              allowfullscreen
+              loading="lazy"
+            ></iframe>
+          {%- endif -%}
+        </div>
       </div>
     {%- endif -%}
 
@@ -209,32 +205,23 @@
       "id": "heading",
       "label": "Heading",
       "default": "5,078 Five-Star Reasons To Make The Switch."
+    },
+    {
+      "type": "text",
+      "id": "video_title",
+      "label": "Video title",
+      "default": "He Ran Across Mongolia Fueled by SPORTea!"
+    },
+    {
+      "type": "video_url",
+      "id": "video_url",
+      "label": "Video URL",
+      "accept": ["youtube", "vimeo"],
+      "default": "https://www.youtube.com/watch?v=2uPfNousqJE",
+      "info": "Use a YouTube or Vimeo URL"
     }
   ],
   "blocks": [
-    {
-      "type": "video",
-      "name": "Video",
-      "limit": 3,
-      "settings": [
-        {
-          "type": "image_picker",
-          "id": "poster_image",
-          "label": "Poster image"
-        },
-        {
-          "type": "url",
-          "id": "video_url",
-          "label": "Video URL"
-        },
-        {
-          "type": "checkbox",
-          "id": "open_in_new_tab",
-          "label": "Open video in new tab",
-          "default": true
-        }
-      ]
-    },
     {
       "type": "testimonial",
       "name": "Testimonial",
@@ -269,9 +256,6 @@
     {
       "name": "Runner LP — Testimonials",
       "blocks": [
-        { "type": "video" },
-        { "type": "video" },
-        { "type": "video" },
         {
           "type": "testimonial",
           "settings": {
